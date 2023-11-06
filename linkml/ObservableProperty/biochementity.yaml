@@ -1,0 +1,72 @@
+id: https://w3id.org/peh/biochementity
+name: biochementity
+description: |-
+  Reference list of biological, chemical or biochemical entities, linked to concepts in [CHEBI](https://www.ebi.ac.uk/chebi) or other BioChem ontologies, or to IUPAC, InChI, SMILES or CAS identifiers
+license: https://creativecommons.org/publicdomain/zero/1.0/
+default_curi_maps:
+  - semweb_context
+prefixes:
+  biochementity: https://w3id.org/peh/biochementity
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  # DATA PREFIXES
+  # P: http://example.org/P/
+  # ROR: http://example.org/ror/
+  # CODE: http://example.org/code/
+  # GEO: http://example.org/geoloc/
+default_prefix: biochementity
+default_range: string
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+imports:
+  - linkml:types
+
+classes:
+  BioChemEntityList:
+    tree_root: true
+    slots:
+      - biochementities
+  BioChemEntity:
+    class_uri:
+      schema:BioChemEntity
+    description: >-
+      A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
+    slots:
+      - shortname
+      - name
+      - aliases
+      - biochemidentifiers
+  BioChemIdentifier:
+    slots:
+      - schema
+      - identifier
+  BioChemIdentifierSchema:
+    slots:
+      - name
+      - description
+      - web_uri
+
+slots:
+  shortname:
+  name:
+  aliases:
+    multivalued: true
+  description:
+  web_uri:
+  biochemidentifiers:
+    multivalued: true
+    inlined_as_list: true
+    range: BioChemIdentifier
+  biochementities:
+    multivalued: true
+    inlined_as_list: true
+    range: BioChemEntity
+  schema:
+    range: BioChemIdentifierSchema
+  identifier:

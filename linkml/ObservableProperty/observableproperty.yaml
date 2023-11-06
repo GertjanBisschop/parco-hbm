@@ -1,0 +1,107 @@
+id: https://w3id.org/peh/observableproperty
+name: observableproperty
+description: |-
+  Reference list of biological, chemical or biochemical entities, linked to concepts in [CHEBI](https://www.ebi.ac.uk/chebi) or other BioChem ontologies, or to IUPAC, InChI, SMILES or CAS identifiers
+license: https://creativecommons.org/publicdomain/zero/1.0/
+default_curi_maps:
+  - semweb_context
+prefixes:
+  observableproperty: https://w3id.org/peh/observableproperty
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  qudt: http://qudt.org/vocab/
+  # DATA PREFIXES
+  # P: http://example.org/P/
+  # ROR: http://example.org/ror/
+  # CODE: http://example.org/code/
+  # GEO: http://example.org/geoloc/
+default_prefix: observableproperty
+default_range: string
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+imports:
+  - linkml:types
+
+classes:
+  ObservablePropertyList:
+    tree_root: true
+    slots:
+      - observableproperties
+  ObservableProperty:
+    slots:
+      - name
+      - value_type
+      - value_metadata
+      - quantity_kind
+      - default_unit
+      - relevant_observable_entity_types
+      - relevant_observation_design_types
+      - indicator
+      - calculation_design
+  ObservablePropertyMetadataElement:
+    slots:
+      - field
+      - value
+  ObservablePropertyMetadataField:
+    slots:
+      - name
+      - value_type
+  ObservablePropertyMetadataFieldList:
+    tree_root: true
+    slots:
+      - metadata_fields
+
+slots:
+  name:
+  observableproperties:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservableProperty
+  value_type:
+    range: xsd:type
+  value_metadata:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservablePropertyMetadataElement
+  quantity_kind:
+  default_unit:
+  relevant_observable_entity_types:
+    multivalued: true
+    range: ObservableEntityType
+  relevant_observation_design_types:
+    multivalued: true
+    range: ObservationDesignType
+  indicator:
+    range: Indicator
+  calculation_design:
+    range: CalculationDesign
+  field:
+    range: ObservablePropertyMetadataField
+  value:
+  metadata_fields:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservablePropertyMetadataField
+
+enums:
+  ObservableEntityType:
+    permissible_values:
+      PERSON:
+      PERSONGROUP:
+      ENVIRONMENT:
+      LOCATION:
+      STUDY:
+      DATASET:
+      SAMPLE:
+  ObservationDesignType:
+    permissible_values:
+      SAMPLE:
+      QUESTIONNAIRE:
+      GEOSPATIAL:
+      METADATA:

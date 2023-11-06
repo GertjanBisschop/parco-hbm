@@ -1,0 +1,17 @@
+metadata_fields:
+  - name: default_serialized
+    value_type: str
+  - name: min
+    value_type: decimal
+  - name: max
+    value_type: decimal
+  - name: length
+    value_type: integer
+  - name: minlength
+    value_type: integer
+  - name: maxlength
+    value_type: integer
+  - name: multivalued
+    value_type: bool
+  - name: allowed_values
+    value_type: list

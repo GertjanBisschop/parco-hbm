@@ -1,0 +1,28 @@
+observableproperties:
+  - name: Age
+    value_type: integer
+    value_metadata:
+      - field: min
+        value: 0
+      - field: max
+        value: 150
+    quantity_kind: quantitykind:Period
+    default_unit: unit:YR
+    relevant_observable_entity_types:
+      - PERSON
+    relevant_observation_design_types:
+      - QUESTIONNAIRE
+    indicator: Age of a person
+    calculation_design: abs(total_years({current_date} - {birth_date}))
+  - name: Concentration of mercury in morning urine
+    value_type: decimal
+    value_metadata:
+      - field: min
+        value: 0
+    quantity_kind: quantitykind:MassConcentration
+    default_unit: unit:NanoGM-PER-MilliL
+    relevant_observable_entity_types:
+      - PERSON
+    relevant_observation_design_types:
+      - SAMPLE
+    indicator: Concentration of mercury in morning urine

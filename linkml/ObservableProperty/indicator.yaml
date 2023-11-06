@@ -1,0 +1,116 @@
+id: https://w3id.org/peh/indicator
+name: indicator
+description: |-
+  Reference list of indicators, optionally linked to I-Adopt Variables 
+license: https://creativecommons.org/publicdomain/zero/1.0/
+default_curi_maps:
+  - semweb_context
+prefixes:
+  indicator: https://w3id.org/peh/indicator
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  iop: https://w3id.org/iadopt/ont/
+  qudt: http://qudt.org/vocab/
+  # DATA PREFIXES
+  # P: http://example.org/P/
+  # ROR: http://example.org/ror/
+  # CODE: http://example.org/code/
+  # GEO: http://example.org/geoloc/
+default_prefix: indicator
+default_range: string
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+imports:
+  - linkml:types
+
+classes:
+  Matrix:
+    slots:
+      - shortname
+      - name
+      - is_a
+  MatrixList:
+    tree_root: true
+    slots:
+      - matrices
+  Indicator:
+    description: >-
+      A measurable indicator that is relevant to the Personal Exposure and Health domain
+    close_mappings:
+      - iop:Variable
+    slots:
+      - name
+      - quantity_kind
+      - matrix
+      - constraints
+      - relevant_observable_entity_types
+      - biochementity_links
+  IndicatorList:
+    tree_root: true
+    slots:
+      - indicators
+  BioChemEntityLink:
+    slots:
+      - linktype
+      - biochementity
+
+slots:
+  shortname:
+  name:
+  matrices:
+    multivalued: true
+    inlined_as_list: true
+    range: Matrix
+  quantity_kind:
+    range: QuantityKind
+  matrix:
+    range: Matrix
+  constraints:
+    multivalued: true
+    inlined_as_list: true
+  relevant_observable_entity_types:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservableEntityType
+  biochementity_links:
+    multivalued: true
+    inlined_as_list: true
+    range: BioChemEntityLink
+  linktype:
+    range: BioChemEntityLinkType
+  biochementity:
+    range: BioChemEntity
+
+enums:
+  QuantityKind:
+    reachable_from:
+      source_ontology: qudt
+      source_nodes:
+        - qudt:QuantityKind
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+  ObservableEntityType:
+    permissible_values:
+      PERSON:
+      PERSONGROUP:
+      ENVIRONMENT:
+      LOCATION:
+      STUDY:
+      DATASET:
+      SAMPLE:
+  BioChemEntityLinkType:
+    permissible_values:
+      EXACT_MATCH:
+      CLOSE_MATCH:
+      BROADER:
+      PART_OF:
+      GROUP_CONTAINS:
+
+# TODO: model how the I-Adopt Variable the indicator can be linked to the appropriate I-Adopt object_of_interest [1..1] and context_object(s) [0..n]

@@ -1,0 +1,16 @@
+indicators:
+  - name: Age of a person
+    quantity_kind: quantitykind:Period
+    relevant_observable_entity_types:
+      - PERSON
+  - name: Concentration of mercury in morning urine
+    quantity_kind: quantitykind:MassConcentration
+    matrix: Urine
+    constraints: Morning
+    relevant_observable_entity_types:
+      - SAMPLE
+      - PERSON
+    biochementity_links:
+      - linktype: EXACT_MATCH
+        biochementity: hg
+

@@ -1,0 +1,13 @@
+matrices:
+  - name: WholeBlood
+    shortname: WB
+    is_a: Blood
+  - name: CordBlood
+    shortname: CB
+    is_a: Blood
+  - name: Blood
+    shortname: B
+    is_a: Matrix
+  - name: Urine
+    shortname: U
+    is_a: Matrix
