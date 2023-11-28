@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:adms="http://www.w3.org/ns/adms#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://dd.eionet.europa.eu/property/" xml:base="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/">
+<skos:ConceptScheme rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/">
+<rdfs:label>Degree of urbanisation</rdfs:label>
+<skos:notation>deg_urb</skos:notation>
+<dcterms:isPartOf rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/"/>
+<registrationStatus>Released</registrationStatus>
+<userModified>system</userModified>
+<dateModified>2020-10-20 14:03:54.0</dateModified>
+<vocabularyType>Common</vocabularyType>
+<version></version>
+<workingUser></workingUser>
+<isNumericConceptIdentifiers>false</isNumericConceptIdentifiers>
+<isNotationsEqualIdentifiers>true</isNotationsEqualIdentifiers>
+</skos:ConceptScheme>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/TOTAL">
+<skos:notation>TOTAL</skos:notation>
+<skos:prefLabel>Total</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2012-12-06</statusModified>
+<acceptedDate>2012-12-06</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/DEG1">
+<skos:notation>DEG1</skos:notation>
+<skos:prefLabel>Cities</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2012-12-06</statusModified>
+<acceptedDate>2012-12-06</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/DEG2">
+<skos:notation>DEG2</skos:notation>
+<skos:prefLabel>Towns and suburbs</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2012-12-06</statusModified>
+<acceptedDate>2012-12-06</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/DEG3">
+<skos:notation>DEG3</skos:notation>
+<skos:prefLabel>Rural areas</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2012-12-06</statusModified>
+<acceptedDate>2012-12-06</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/NRP">
+<skos:notation>NRP</skos:notation>
+<skos:prefLabel>No response</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2012-12-06</statusModified>
+<acceptedDate>2012-12-06</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/UNK">
+<skos:notation>UNK</skos:notation>
+<skos:prefLabel>Unknown</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2012-12-06</statusModified>
+<acceptedDate>2012-12-06</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/DEG1_DEG2">
+<skos:notation>DEG1_DEG2</skos:notation>
+<skos:prefLabel>Urban areas</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2020-10-20</statusModified>
+<acceptedDate>2020-10-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/"/>
+</skos:Concept>
+</rdf:RDF>

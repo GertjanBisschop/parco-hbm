@@ -1,0 +1,14 @@
+studies:
+- shortname: 3XG
+  project stakeholders:
+    - VITO
+- shortname: HBM4EU
+  name: HBM4EU
+  project stakeholders:
+    - VITO
+    - MU
+  studies:
+    - aligned
+    - chromate
+    - SPECIMEn
+    - occupational

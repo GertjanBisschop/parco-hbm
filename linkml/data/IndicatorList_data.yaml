@@ -1,9 +1,11 @@
 indicators:
-  - name: Age of a person
+  - name: Age of a person in years
+    indicator_type: OBSERVATION
     quantity_kind: quantitykind:Period
     relevant_observable_entity_types:
       - PERSON
   - name: Concentration of mercury in morning urine
+    indicator_type: EXPOSUREMARKER
     quantity_kind: quantitykind:MassConcentration
     matrix: Urine
     constraints: Morning

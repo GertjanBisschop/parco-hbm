@@ -2,7 +2,6 @@ id: https://w3id.org/peh/indicator
 name: indicator
 description: |-
   Reference list of indicators, optionally linked to I-Adopt Variables 
-license: https://creativecommons.org/publicdomain/zero/1.0/
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -30,31 +29,34 @@ imports:
   - linkml:types
 
 classes:
-  Matrix:
-    slots:
-      - shortname
-      - name
-      - is_a
   MatrixList:
     tree_root: true
     slots:
       - matrices
+  IndicatorList:
+    tree_root: true
+    slots:
+      - indicators
+  
+  Matrix:
+    is_a: NamedThing
+    slots:
+      - sort_order
+      - aggregation_target
+      - parent
   Indicator:
     description: >-
       A measurable indicator that is relevant to the Personal Exposure and Health domain
     close_mappings:
       - iop:Variable
+    is_a: NamedThing
     slots:
-      - name
+      - indicator_type
       - quantity_kind
       - matrix
       - constraints
       - relevant_observable_entity_types
       - biochementity_links
-  IndicatorList:
-    tree_root: true
-    slots:
-      - indicators
   BioChemEntityLink:
     slots:
       - linktype
@@ -63,12 +65,20 @@ classes:
 slots:
   shortname:
   name:
+  sort_order:
+    range: decimal
+  aggregation_target:
+    range: Boolean
+  parent:
+    range: Matrix
+  indicator_type:
+    range: IndicatorType
   matrices:
     multivalued: true
     inlined_as_list: true
     range: Matrix
   quantity_kind:
-    range: QuantityKind
+    range: QudtQuantityKind
   matrix:
     range: Matrix
   constraints:
@@ -88,14 +98,12 @@ slots:
     range: BioChemEntity
 
 enums:
-  QuantityKind:
-    reachable_from:
-      source_ontology: qudt
-      source_nodes:
-        - qudt:QuantityKind
-      include_self: false
-      relationship_types:
-        - rdfs:subClassOf
+  IndicatorType:
+    permissible_values:
+      EFFECTMARKER:
+      EXPOSUREMARKER:
+      GEOMARKER:
+      OBSERVATION:
   ObservableEntityType:
     permissible_values:
       PERSON:

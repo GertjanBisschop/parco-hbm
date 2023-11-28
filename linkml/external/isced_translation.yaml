@@ -1,0 +1,6 @@
+- id: http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED0-2
+  hbm4eu: 1
+- id: http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3_4
+  hbm4eu: 2
+- id: http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED5-8
+  hbm4eu: 3

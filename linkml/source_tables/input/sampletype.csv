@@ -1,0 +1,34 @@
+sampletype_key;sampletype_initials;sampletype_sort;samplegroup_key;sampletype_name_en;sampletype_name_nl
+blood-whole blood;bwb;1;blood;blood-whole blood;bloed-volbloed
+blood serum;bs;2;blood;blood serum;bloed-serum
+blood plasma;bp;3;blood;blood plasma;bloed-plasma
+blood-blood cells;bbc;4;bloodcells;blood-blood cells;bloed-bloedcellen
+blood - red blood cells;rbc;5;bloodcells;blood-red blood cells;bloed-rode bloedcellen
+cord blood-whole blood;cbwb;6;cord blood;umbilical cord blood-whole blood;navelstrengbloed-volbloed
+cord blood-serum;cbs;7;cord blood;umbilical cord blood-serum;navelstrengbloed-serum
+cord blood-plasma;cbp;8;cord blood;umbilical cord blood-plasma;navelstrengbloed-plasma
+cord blood-cells;cbbc;9;cord blood-cells;umbilical cord blood-cells;navelstrengbloed-bloed cellen
+random spot urine;us;10;urine;random spot urine;random spot-urine
+first morning urine;um;11;urine;first morning urine;eerste ochtend-urine
+fasting urine;uf;12;urine;urine fasting;urine nuchter
+urine 24h;ud;13;urine;urine 24 hours;urine 24u
+breast milk;bm;15;breast milk;breast milk;moedermelk
+hair;h;14;hair;hair;haar
+nail;n;16;nail;nail;nagel
+All toe nail;atn;17;nail;all toe nails;alle teennagels
+Big toe nail;btn;18;nail;big toe nail;grote teen nagel
+nasal mucus;nm;19;nasal mucus;nasal mucus;neusslijm
+saliva/sputum;sa;20;saliva/sputum;saliva;speeksel
+stool;st;21;stool;stool;stoelgang
+semen;sem;22;semen;semen;zaad
+exhaled breath condensate;ebc;23;exhaled breath condensate;exhaled air condensate;uitgeademde lucht condensaat
+umbilical cord tissue;cbt;24;umbilical cord tissue;tissue of umbilical cord;weefsel van navelstreng
+adipose tissue/fat;adi;25;adipose tissue/fat;adipose tissue/fat;vetweefsel/vet
+dermal wipes;dw;26;dermal wipes;dermal wipes;dermale doekjes
+amniotic fluid;af;27;amniotic fluid;amniotic fluid;vruchtwater
+placenta tissue;plt;28;placenta tissue;placenta tissue;placenta weefsel
+house dust;dust;29;air;dust;huisstof
+soil;soil;30;soil;soil;grond
+kitchengarden food;kgfood;31;food;kitchengarden food;moestuin voedsel
+eggs;egg;32;food;chicken egg;kippenei
+water;water;33;water;water;water

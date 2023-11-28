@@ -1,0 +1,2101 @@
+{
+  "@context" : {
+    "@base" : "http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "concepts" : "skos:Concept",
+    "prefLabel" : "skos:prefLabel",
+    "broader" : "skos:broader",
+    "narrower" : "skos:narrower",
+    "@language" : "en",
+    "VocabularyId" : "1087",
+    "ContinuityId" : "f5e257fc-329d-11e3-a193-525400c3d02c",
+    "Identifier" : "isced11",
+    "Label" : "International Standard Classification of Education (ISCED 2011)",
+    "RegistrationStatus" : "Released",
+    "IsWorkingCopy" : "false",
+    "CheckedOutCopyId" : "0",
+    "WorkingUser" : null,
+    "DateModified" : "2019-05-08 14:04:00.0",
+    "UserModified" : "system",
+    "IsNumericConceptIdentifiers" : "false",
+    "VocabularyType" : "Common",
+    "FolderId" : "15",
+    "FolderName" : "eurostat",
+    "FolderLabel" : "Eurostat dictionaries",
+    "IsNotationsEqualIdentifiers" : "true",
+    "Definition" : null,
+    "Version" : null
+  },
+  "concepts" : [ {
+    "@id" : "TOTAL",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "All ISCED 2011 levels",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766844",
+    "VocabularyId" : "1087",
+    "Identifier" : "TOTAL",
+    "Label" : "All ISCED 2011 levels",
+    "Definition" : "",
+    "Notation" : "TOTAL",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED0-2",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Less than primary, primary and lower secondary education (levels 0-2)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766845",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED0-2",
+    "Label" : "Less than primary, primary and lower secondary education (levels 0-2)",
+    "Definition" : "",
+    "Notation" : "ED0-2",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED0",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Early childhood education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766846",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED0",
+    "Label" : "Early childhood education",
+    "Definition" : "",
+    "Notation" : "ED0",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED1",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Primary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766847",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED1",
+    "Label" : "Primary education",
+    "Definition" : "",
+    "Notation" : "ED1",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED2",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Lower secondary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766848",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED2",
+    "Label" : "Lower secondary education",
+    "Definition" : "",
+    "Notation" : "ED2",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3_4",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766849",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3_4",
+    "Label" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4)",
+    "Definition" : "",
+    "Notation" : "ED3_4",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766850",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3",
+    "Label" : "Upper secondary education",
+    "Definition" : "",
+    "Notation" : "ED3",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED4",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766851",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED4",
+    "Label" : "Post-secondary non-tertiary education",
+    "Definition" : "",
+    "Notation" : "ED4",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED5-8",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Tertiary education (levels 5-8)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766852",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED5-8",
+    "Label" : "Tertiary education (levels 5-8)",
+    "Definition" : "",
+    "Notation" : "ED5-8",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED5",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766853",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED5",
+    "Label" : "Short-cycle tertiary education",
+    "Definition" : "",
+    "Notation" : "ED5",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED6",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766854",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED6",
+    "Label" : "Bachelor's or equivalent level",
+    "Definition" : "",
+    "Notation" : "ED6",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED7",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766855",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED7",
+    "Label" : "Master's or equivalent level",
+    "Definition" : "",
+    "Notation" : "ED7",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED8",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Doctoral or equivalent level",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766856",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED8",
+    "Label" : "Doctoral or equivalent level",
+    "Definition" : "",
+    "Notation" : "ED8",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED9",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Not elsewhere classified",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766857",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED9",
+    "Label" : "Not elsewhere classified",
+    "Definition" : "",
+    "Notation" : "ED9",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "UNK",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Unknown",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "766858",
+    "VocabularyId" : "1087",
+    "Identifier" : "UNK",
+    "Label" : "Unknown",
+    "Definition" : "",
+    "Notation" : "UNK",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2013-07-22",
+    "AcceptedDate" : "2013-07-22",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "NRP",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "No response",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "885014",
+    "VocabularyId" : "1087",
+    "Identifier" : "NRP",
+    "Label" : "No response",
+    "Definition" : "",
+    "Notation" : "NRP",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2014-06-03",
+    "AcceptedDate" : "2014-06-03",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED0-4",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Less than primary, primary, secondary and post-secondary non-tertiary education (levels 0-4)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017922",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED0-4",
+    "Label" : "Less than primary, primary, secondary and post-secondary non-tertiary education (levels 0-4)",
+    "Definition" : "",
+    "Notation" : "ED0-4",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED01",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Early childhood educational development",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017923",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED01",
+    "Label" : "Early childhood educational development",
+    "Definition" : "",
+    "Notation" : "ED01",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED02",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Pre-primary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017924",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED02",
+    "Label" : "Pre-primary education",
+    "Definition" : "",
+    "Notation" : "ED02",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED1-3",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Primary and secondary education (levels 1-3)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017925",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED1-3",
+    "Label" : "Primary and secondary education (levels 1-3)",
+    "Definition" : "",
+    "Notation" : "ED1-3",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED1_2",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Primary and lower secondary education (levels 1 and 2)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017926",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED1_2",
+    "Label" : "Primary and lower secondary education (levels 1 and 2)",
+    "Definition" : "",
+    "Notation" : "ED1_2",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED2_3",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Secondary education (levels 2 and 3)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017927",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED2_3",
+    "Label" : "Secondary education (levels 2 and 3)",
+    "Definition" : "",
+    "Notation" : "ED2_3",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED24",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Lower secondary education - general",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017928",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED24",
+    "Label" : "Lower secondary education - general",
+    "Definition" : "",
+    "Notation" : "ED24",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED25",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Lower secondary education - vocational",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017929",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED25",
+    "Label" : "Lower secondary education - vocational",
+    "Definition" : "",
+    "Notation" : "ED25",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3-8",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017930",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3-8",
+    "Label" : "Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)",
+    "Definition" : "",
+    "Notation" : "ED3-8",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3SW",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - school and work-based vocational programmes",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017931",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3SW",
+    "Label" : "Upper secondary education - school and work-based vocational programmes",
+    "Definition" : "",
+    "Notation" : "ED3SW",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED34_44",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary and post-secondary non-tertiary education - general (levels 34 and 44)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017932",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED34_44",
+    "Label" : "Upper secondary and post-secondary non-tertiary education - general (levels 34 and 44)",
+    "Definition" : "",
+    "Notation" : "ED34_44",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED34",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - general",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017933",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED34",
+    "Label" : "Upper secondary education - general",
+    "Definition" : "",
+    "Notation" : "ED34",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED341",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - general, insufficient for level completion or partial level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017934",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED341",
+    "Label" : "Upper secondary education - general, insufficient for level completion or partial level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED341",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED342",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - general, sufficient for partial level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017935",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED342",
+    "Label" : "Upper secondary education - general, sufficient for partial level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED342",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED343",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - general, sufficient for level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017936",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED343",
+    "Label" : "Upper secondary education - general, sufficient for level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED343",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED344",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - general, sufficient for level completion, with direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017937",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED344",
+    "Label" : "Upper secondary education - general, sufficient for level completion, with direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED344",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED35_45",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary and post-secondary non-tertiary education - vocational (levels 35 and 45)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017938",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED35_45",
+    "Label" : "Upper secondary and post-secondary non-tertiary education - vocational (levels 35 and 45)",
+    "Definition" : "",
+    "Notation" : "ED35_45",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED35",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - vocational",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017939",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED35",
+    "Label" : "Upper secondary education - vocational",
+    "Definition" : "",
+    "Notation" : "ED35",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED351",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - vocational, insufficient for level completion or partial level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017940",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED351",
+    "Label" : "Upper secondary education - vocational, insufficient for level completion or partial level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED351",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED352",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - vocational, sufficient for partial level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017941",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED352",
+    "Label" : "Upper secondary education - vocational, sufficient for partial level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED352",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED353",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - vocational, sufficient for level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017942",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED353",
+    "Label" : "Upper secondary education - vocational, sufficient for level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED353",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED354",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - vocational, sufficient for level completion, with direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017943",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED354",
+    "Label" : "Upper secondary education - vocational, sufficient for level completion, with direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED354",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED4SW",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - school and work-based vocational programmes",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017944",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED4SW",
+    "Label" : "Post-secondary non-tertiary education - school and work-based vocational programmes",
+    "Definition" : "",
+    "Notation" : "ED4SW",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED44",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - general",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017945",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED44",
+    "Label" : "Post-secondary non-tertiary education - general",
+    "Definition" : "",
+    "Notation" : "ED44",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED441",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - general, insufficient for level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017946",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED441",
+    "Label" : "Post-secondary non-tertiary education - general, insufficient for level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED441",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED443",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - general, sufficient for level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017947",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED443",
+    "Label" : "Post-secondary non-tertiary education - general, sufficient for level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED443",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED444",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - general, sufficient for level completion, with direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017948",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED444",
+    "Label" : "Post-secondary non-tertiary education - general, sufficient for level completion, with direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED444",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED45",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - vocational",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017949",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED45",
+    "Label" : "Post-secondary non-tertiary education - vocational",
+    "Definition" : "",
+    "Notation" : "ED45",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED451",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - vocational, insufficient for level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017950",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED451",
+    "Label" : "Post-secondary non-tertiary education - vocational, insufficient for level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED451",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED453",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - vocational, sufficient for level completion, without direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017951",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED453",
+    "Label" : "Post-secondary non-tertiary education - vocational, sufficient for level completion, without direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED453",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED454",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - vocational, sufficient for level completion, with direct access to tertiary education",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017952",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED454",
+    "Label" : "Post-secondary non-tertiary education - vocational, sufficient for level completion, with direct access to tertiary education",
+    "Definition" : "",
+    "Notation" : "ED454",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED5-7",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Tertiary education excluding doctoral or equivalent level (levels 5-7)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017953",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED5-7",
+    "Label" : "Tertiary education excluding doctoral or equivalent level (levels 5-7)",
+    "Definition" : "",
+    "Notation" : "ED5-7",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED5SW",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - school and work-based vocational programmes",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017954",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED5SW",
+    "Label" : "Short-cycle tertiary education - school and work-based vocational programmes",
+    "Definition" : "",
+    "Notation" : "ED5SW",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED54",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - general/academic",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017955",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED54",
+    "Label" : "Short-cycle tertiary education - general/academic",
+    "Definition" : "",
+    "Notation" : "ED54",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED541",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - general/academic, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017956",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED541",
+    "Label" : "Short-cycle tertiary education - general/academic, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED541",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED544",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - general/academic, sufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017957",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED544",
+    "Label" : "Short-cycle tertiary education - general/academic, sufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED544",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED55",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - vocational/professional",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017958",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED55",
+    "Label" : "Short-cycle tertiary education - vocational/professional",
+    "Definition" : "",
+    "Notation" : "ED55",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED551",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - vocational/professional, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017959",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED551",
+    "Label" : "Short-cycle tertiary education - vocational/professional, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED551",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED554",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education - vocational/professional, sufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017960",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED554",
+    "Label" : "Short-cycle tertiary education - vocational/professional, sufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED554",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED6-8",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Tertiary education excluding short-cycle tertiary education (levels 6-8)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017961",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED6-8",
+    "Label" : "Tertiary education excluding short-cycle tertiary education (levels 6-8)",
+    "Definition" : "",
+    "Notation" : "ED6-8",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED64",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - academic",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017962",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED64",
+    "Label" : "Bachelor's or equivalent level - academic",
+    "Definition" : "",
+    "Notation" : "ED64",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED641",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - academic, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017963",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED641",
+    "Label" : "Bachelor's or equivalent level - academic, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED641",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED645",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - academic, first degree (3-4 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017964",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED645",
+    "Label" : "Bachelor's or equivalent level - academic, first degree (3-4 years)",
+    "Definition" : "",
+    "Notation" : "ED645",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED646",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - academic, long first degree (more than 4 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017965",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED646",
+    "Label" : "Bachelor's or equivalent level - academic, long first degree (more than 4 years)",
+    "Definition" : "",
+    "Notation" : "ED646",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED647",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - academic, second or further degree (following a Bachelor's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017966",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED647",
+    "Label" : "Bachelor's or equivalent level - academic, second or further degree (following a Bachelor's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED647",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED65",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - professional",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017967",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED65",
+    "Label" : "Bachelor's or equivalent level - professional",
+    "Definition" : "",
+    "Notation" : "ED65",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED651",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - professional, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017968",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED651",
+    "Label" : "Bachelor's or equivalent level - professional, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED651",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED655",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - professional, first degree (3-4 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017969",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED655",
+    "Label" : "Bachelor's or equivalent level - professional, first degree (3-4 years)",
+    "Definition" : "",
+    "Notation" : "ED655",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED656",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - professional, long first degree (more than 4 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017970",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED656",
+    "Label" : "Bachelor's or equivalent level - professional, long first degree (more than 4 years)",
+    "Definition" : "",
+    "Notation" : "ED656",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED657",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - professional, second or further degree (following a Bachelor's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017971",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED657",
+    "Label" : "Bachelor's or equivalent level - professional, second or further degree (following a Bachelor's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED657",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED66",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - orientation unspecified",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017972",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED66",
+    "Label" : "Bachelor's or equivalent level - orientation unspecified",
+    "Definition" : "",
+    "Notation" : "ED66",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED661",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - orientation unspecified, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017973",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED661",
+    "Label" : "Bachelor's or equivalent level - orientation unspecified, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED661",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED665",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - orientation unspecified, first degree (3-4 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017974",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED665",
+    "Label" : "Bachelor's or equivalent level - orientation unspecified, first degree (3-4 years)",
+    "Definition" : "",
+    "Notation" : "ED665",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED666",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - orientation unspecified, long first degree (more than 4 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017975",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED666",
+    "Label" : "Bachelor's or equivalent level - orientation unspecified, long first degree (more than 4 years)",
+    "Definition" : "",
+    "Notation" : "ED666",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED667",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelor's or equivalent level - orientation unspecified, second or further degree (following a Bachelor's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017976",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED667",
+    "Label" : "Bachelor's or equivalent level - orientation unspecified, second or further degree (following a Bachelor's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED667",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED74",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - academic",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017977",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED74",
+    "Label" : "Master's or equivalent level - academic",
+    "Definition" : "",
+    "Notation" : "ED74",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED741",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - academic, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017978",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED741",
+    "Label" : "Master's or equivalent level - academic, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED741",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED746",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - academic, long first degree (at least 5 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017979",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED746",
+    "Label" : "Master's or equivalent level - academic, long first degree (at least 5 years)",
+    "Definition" : "",
+    "Notation" : "ED746",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED747",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - academic, second or further degree (following a Bachelor's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017980",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED747",
+    "Label" : "Master's or equivalent level - academic, second or further degree (following a Bachelor's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED747",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED748",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - academic, second or further degree (following a Master's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017981",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED748",
+    "Label" : "Master's or equivalent level - academic, second or further degree (following a Master's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED748",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED75",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - professional",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017982",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED75",
+    "Label" : "Master's or equivalent level - professional",
+    "Definition" : "",
+    "Notation" : "ED75",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED751",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - professional, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017983",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED751",
+    "Label" : "Master's or equivalent level - professional, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED751",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED756",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - professional, long first degree (at least 5 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017984",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED756",
+    "Label" : "Master's or equivalent level - professional, long first degree (at least 5 years)",
+    "Definition" : "",
+    "Notation" : "ED756",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED757",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - professional, second or further degree (following a Bachelor's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017985",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED757",
+    "Label" : "Master's or equivalent level - professional, second or further degree (following a Bachelor's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED757",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED758",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - professional, second or further degree (following a Master's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017986",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED758",
+    "Label" : "Master's or equivalent level - professional, second or further degree (following a Master's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED758",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED76",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - orientation unspecified",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017987",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED76",
+    "Label" : "Master's or equivalent level - orientation unspecified",
+    "Definition" : "",
+    "Notation" : "ED76",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED761",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - orientation unspecified, insufficient for level completion",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017988",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED761",
+    "Label" : "Master's or equivalent level - orientation unspecified, insufficient for level completion",
+    "Definition" : "",
+    "Notation" : "ED761",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED766",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - orientation unspecified, long first degree (at least 5 years)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017989",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED766",
+    "Label" : "Master's or equivalent level - orientation unspecified, long first degree (at least 5 years)",
+    "Definition" : "",
+    "Notation" : "ED766",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED767",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - orientation unspecified, second or further degree (following a Bachelor's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017990",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED767",
+    "Label" : "Master's or equivalent level - orientation unspecified, second or further degree (following a Bachelor's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED767",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED768",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - orientation unspecified, second or further degree (following a Master's or equivalent programme)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1017991",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED768",
+    "Label" : "Master's or equivalent level - orientation unspecified, second or further degree (following a Master's or equivalent programme)",
+    "Definition" : "",
+    "Notation" : "ED768",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-02-20",
+    "AcceptedDate" : "2015-02-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED1-4",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Primary, lower secondary, upper secondary and post-secondary non-tertiary education (levels 1-4)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019128",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED1-4",
+    "Label" : "Primary, lower secondary, upper secondary and post-secondary non-tertiary education (levels 1-4)",
+    "Definition" : "",
+    "Notation" : "ED1-4",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED25_35_45",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Lower secondary, upper secondary and post-secondary non-tertiary education - vocational (levels 25, 35 and 45)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019129",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED25_35_45",
+    "Label" : "Lower secondary, upper secondary and post-secondary non-tertiary education - vocational (levels 25, 35 and 45)",
+    "Definition" : "",
+    "Notation" : "ED25_35_45",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED641_651_661",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelors's or equivalent level - all programmes, insufficient for level completion (levels 641, 651 and 661)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019130",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED641_651_661",
+    "Label" : "Bachelors's or equivalent level - all programmes, insufficient for level completion (levels 641, 651 and 661)",
+    "Definition" : "",
+    "Notation" : "ED641_651_661",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED645_655_665",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelors's or equivalent level - all programmes, first degree (3-4 years) (levels 645, 655 and 665)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019131",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED645_655_665",
+    "Label" : "Bachelors's or equivalent level - all programmes, first degree (3-4 years) (levels 645, 655 and 665)",
+    "Definition" : "",
+    "Notation" : "ED645_655_665",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED646_656_666",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelors's or equivalent level - all programmes, long first degree (more than 4 years) (levels 646, 656 and 666)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019132",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED646_656_666",
+    "Label" : "Bachelors's or equivalent level - all programmes, long first degree (more than 4 years) (levels 646, 656 and 666)",
+    "Definition" : "",
+    "Notation" : "ED646_656_666",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED647_657_667",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Bachelors's or equivalent level - all programmes, second or further degree (following a Bachelor's or equivalent programme) (levels 647, 657 and 667)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019133",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED647_657_667",
+    "Label" : "Bachelors's or equivalent level - all programmes, second or further degree (following a Bachelor's or equivalent programme) (levels 647, 657 and 667)",
+    "Definition" : "",
+    "Notation" : "ED647_657_667",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED741_751_761",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - all programmes, insufficient for level completion (levels 741, 751 and 761)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019134",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED741_751_761",
+    "Label" : "Master's or equivalent level - all programmes, insufficient for level completion (levels 741, 751 and 761)",
+    "Definition" : "",
+    "Notation" : "ED741_751_761",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED746_756_766",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - all programmes, long first degree (at least 5 years) (levels 746, 756 and 766)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019135",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED746_756_766",
+    "Label" : "Master's or equivalent level - all programmes, long first degree (at least 5 years) (levels 746, 756 and 766)",
+    "Definition" : "",
+    "Notation" : "ED746_756_766",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED747_757_767",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - all programmes, second or further degree (following a Bachelor's or equivalent programme) (levels 747, 757 and 767)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019136",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED747_757_767",
+    "Label" : "Master's or equivalent level - all programmes, second or further degree (following a Bachelor's or equivalent programme) (levels 747, 757 and 767)",
+    "Definition" : "",
+    "Notation" : "ED747_757_767",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED748_758_768",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's or equivalent level - all programmes, second or further degree (following a Master's or equivalent programme) (levels 748, 758 and 768)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1019137",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED748_758_768",
+    "Label" : "Master's or equivalent level - all programmes, second or further degree (following a Master's or equivalent programme) (levels 748, 758 and 768)",
+    "Definition" : "",
+    "Notation" : "ED748_758_768",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-03-20",
+    "AcceptedDate" : "2015-03-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED02-8",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "All ISCED 2011 levels excluding early childhood educational development",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1038871",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED02-8",
+    "Label" : "All ISCED 2011 levels excluding early childhood educational development",
+    "Definition" : "",
+    "Notation" : "ED02-8",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-06-08",
+    "AcceptedDate" : "2015-06-08",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED342_352",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - all programmes, sufficient for partial level completion, without direct access to tertiary education (levels 342 and 352)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1038872",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED342_352",
+    "Label" : "Upper secondary education - all programmes, sufficient for partial level completion, without direct access to tertiary education (levels 342 and 352)",
+    "Definition" : "",
+    "Notation" : "ED342_352",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-06-08",
+    "AcceptedDate" : "2015-06-08",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED343_353",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - all programmes, sufficient for level completion, without direct access to tertiary education (levels 343 and 353)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1038873",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED343_353",
+    "Label" : "Upper secondary education - all programmes, sufficient for level completion, without direct access to tertiary education (levels 343 and 353)",
+    "Definition" : "",
+    "Notation" : "ED343_353",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-06-08",
+    "AcceptedDate" : "2015-06-08",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED344_354",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary education - all programmes, sufficient for level completion, with direct access to tertiary education (levels 344 and 354)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1038874",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED344_354",
+    "Label" : "Upper secondary education - all programmes, sufficient for level completion, with direct access to tertiary education (levels 344 and 354)",
+    "Definition" : "",
+    "Notation" : "ED344_354",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-06-08",
+    "AcceptedDate" : "2015-06-08",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED443_453",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - all programmes, sufficient for level completion, without direct access to tertiary education (levels 443 and 453)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1038875",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED443_453",
+    "Label" : "Post-secondary non-tertiary education - all programmes, sufficient for level completion, without direct access to tertiary education (levels 443 and 453)",
+    "Definition" : "",
+    "Notation" : "ED443_453",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-06-08",
+    "AcceptedDate" : "2015-06-08",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED444_454",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Post-secondary non-tertiary education - all programmes, sufficient for level completion, with direct access to tertiary education (levels 444 and 454)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1038876",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED444_454",
+    "Label" : "Post-secondary non-tertiary education - all programmes, sufficient for level completion, with direct access to tertiary education (levels 444 and 454)",
+    "Definition" : "",
+    "Notation" : "ED444_454",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-06-08",
+    "AcceptedDate" : "2015-06-08",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED5_6",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Short-cycle tertiary education and Bachelor's or equivalent level (levels 5 and 6)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1108750",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED5_6",
+    "Label" : "Short-cycle tertiary education and Bachelor's or equivalent level (levels 5 and 6)",
+    "Definition" : "",
+    "Notation" : "ED5_6",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-09-03",
+    "AcceptedDate" : "2015-09-03",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED7_8",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Master's and Doctoral or equivalent level (levels 7 and 8)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1108751",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED7_8",
+    "Label" : "Master's and Doctoral or equivalent level (levels 7 and 8)",
+    "Definition" : "",
+    "Notation" : "ED7_8",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-09-03",
+    "AcceptedDate" : "2015-09-03",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3_4GEN",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1116168",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3_4GEN",
+    "Label" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general",
+    "Definition" : "",
+    "Notation" : "ED3_4GEN",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-09-15",
+    "AcceptedDate" : "2015-09-15",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3_4VOC",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1116169",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3_4VOC",
+    "Label" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational",
+    "Definition" : "",
+    "Notation" : "ED3_4VOC",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-09-15",
+    "AcceptedDate" : "2015-09-15",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED2-4",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Lower secondary, upper secondary and post-secondary non-tertiary education (levels 2-4)",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1185088",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED2-4",
+    "Label" : "Lower secondary, upper secondary and post-secondary non-tertiary education (levels 2-4)",
+    "Definition" : "",
+    "Notation" : "ED2-4",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-10-28",
+    "AcceptedDate" : "2015-10-28",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "NAP",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Not applicable",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "1185089",
+    "VocabularyId" : "1087",
+    "Identifier" : "NAP",
+    "Label" : "Not applicable",
+    "Definition" : "",
+    "Notation" : "NAP",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2015-10-28",
+    "AcceptedDate" : "2015-10-28",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "ED3_4UNK",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - orientation unknown",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "6190510",
+    "VocabularyId" : "1087",
+    "Identifier" : "ED3_4UNK",
+    "Label" : "Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - orientation unknown",
+    "Definition" : "",
+    "Notation" : "ED3_4UNK",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2017-12-14",
+    "AcceptedDate" : "2017-12-14",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  } ]
+}

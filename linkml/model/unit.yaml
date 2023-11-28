@@ -1,0 +1,73 @@
+id: https://w3id.org/peh/unit
+name: unit
+description: |-
+  Reference list of units, linked to QUDT Units and legacy VITO names
+default_curi_maps:
+  - semweb_context
+prefixes:
+  unit: https://w3id.org/peh/unit
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  iop: https://w3id.org/iadopt/ont/
+  qudt: http://qudt.org/vocab/
+  # DATA PREFIXES
+  # P: http://example.org/P/
+  # ROR: http://example.org/ror/
+  # CODE: http://example.org/code/
+  # GEO: http://example.org/geoloc/
+default_prefix: unit
+default_range: string
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+imports:
+  - linkml:types
+
+classes:
+  UnitList:
+    tree_root: true
+    slots:
+      - units
+  Unit:
+    is_a: NamedThing
+    slots:
+      - same_as
+      - quantity_kind
+      - vito_aliases
+
+slots:
+  units:
+    multivalued: true
+    inlined_as_list: true
+    range: Unit
+  shortname:
+  same_as:
+    range: QudtUnit
+  quantity_kind:
+    range: QudtQuantityKind
+  vito_aliases:
+    multivalued: true
+    inlined_as_list: true
+
+enums:
+  QudtUnit:
+    reachable_from:
+      source_ontology: qudt
+      source_nodes:
+        - qudt:Unit
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+  QudtQuantityKind:
+    reachable_from:
+      source_ontology: qudt
+      source_nodes:
+        - qudt:QuantityKind
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf

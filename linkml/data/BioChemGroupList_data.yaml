@@ -1,0 +1,29 @@
+biochemgroups:
+  - name: Acrylamide
+  - name: Alkaloid
+  - name: Anilines and MOCA
+  - name: Aprotic Solvents
+  - name: Bisphenols
+  - name: Care Products
+  - name: DINCH
+  - name: Diisocyanates
+  - name: Dioxins
+  - name: Flame Retardants
+  - name: Furans
+  - name: Glycol Ethers
+  - name: Glyphosate
+  - name: Herbicides
+  - name: Metals
+  - name: Musks
+  - name: Mycotoxins
+  - name: PCBs
+  - name: Parabens
+  - name: Per-/Poly-Fluorinated Compounds (PFASs)
+  - name: Pesticides
+  - name: Pesticides (Carbamate)
+  - name: Pesticides (Pyrethroids)
+  - name: Phthalates
+  - name: Polycyclic Aromatic Hydrocarbons (PAHs)
+  - name: UV-filters (Benzophenones)
+  - name: Volatile Organic Compounds (VOCs)
+  - name: Volatile Anaesthetics

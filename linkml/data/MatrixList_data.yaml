@@ -1,13 +1,168 @@
 matrices:
-  - name: WholeBlood
-    shortname: WB
-    is_a: Blood
-  - name: CordBlood
-    shortname: CB
-    is_a: Blood
-  - name: Blood
-    shortname: B
-    is_a: Matrix
-  - name: Urine
-    shortname: U
-    is_a: Matrix
+- aggregation_target: false
+  name: blood-whole blood
+  parent: blood
+  shortname: bwb
+  sort_order: 1
+- aggregation_target: false
+  name: blood serum
+  parent: blood
+  shortname: bs
+  sort_order: 2
+- aggregation_target: false
+  name: blood plasma
+  parent: blood
+  shortname: bp
+  sort_order: 3
+- aggregation_target: false
+  name: blood-blood cells
+  parent: bloodcells
+  shortname: bbc
+  sort_order: 4
+- aggregation_target: false
+  name: blood - red blood cells
+  parent: bloodcells
+  shortname: rbc
+  sort_order: 5
+- aggregation_target: false
+  name: cord blood-whole blood
+  parent: cord blood
+  shortname: cbwb
+  sort_order: 6
+- aggregation_target: false
+  name: cord blood-serum
+  parent: cord blood
+  shortname: cbs
+  sort_order: 7
+- aggregation_target: false
+  name: cord blood-plasma
+  parent: cord blood
+  shortname: cbp
+  sort_order: 8
+- aggregation_target: false
+  name: cord blood-cells
+  shortname: cbbc
+  sort_order: 9
+- aggregation_target: false
+  name: random spot urine
+  parent: urine
+  shortname: us
+  sort_order: 10
+- aggregation_target: false
+  name: first morning urine
+  parent: urine
+  shortname: um
+  sort_order: 11
+- aggregation_target: false
+  name: fasting urine
+  parent: urine
+  shortname: uf
+  sort_order: 12
+- aggregation_target: false
+  name: urine 24h
+  parent: urine
+  shortname: ud
+  sort_order: 13
+- aggregation_target: false
+  name: breast milk
+  shortname: bm
+  sort_order: 15
+- aggregation_target: false
+  name: hair
+  shortname: h
+  sort_order: 14
+- aggregation_target: false
+  name: nail
+  shortname: n
+  sort_order: 16
+- aggregation_target: false
+  name: All toe nail
+  parent: nail
+  shortname: atn
+  sort_order: 17
+- aggregation_target: false
+  name: Big toe nail
+  parent: nail
+  shortname: btn
+  sort_order: 18
+- aggregation_target: false
+  name: nasal mucus
+  shortname: nm
+  sort_order: 19
+- aggregation_target: false
+  name: saliva/sputum
+  shortname: sa
+  sort_order: 20
+- aggregation_target: false
+  name: stool
+  shortname: st
+  sort_order: 21
+- aggregation_target: false
+  name: semen
+  shortname: sem
+  sort_order: 22
+- aggregation_target: false
+  name: exhaled breath condensate
+  shortname: ebc
+  sort_order: 23
+- aggregation_target: false
+  name: umbilical cord tissue
+  shortname: cbt
+  sort_order: 24
+- aggregation_target: false
+  name: adipose tissue/fat
+  shortname: adi
+  sort_order: 25
+- aggregation_target: false
+  name: dermal wipes
+  shortname: dw
+  sort_order: 26
+- aggregation_target: false
+  name: amniotic fluid
+  shortname: af
+  sort_order: 27
+- aggregation_target: false
+  name: placenta tissue
+  shortname: plt
+  sort_order: 28
+- aggregation_target: false
+  name: house dust
+  parent: air
+  shortname: dust
+  sort_order: 29
+- aggregation_target: false
+  name: soil
+  shortname: soil
+  sort_order: 30
+- aggregation_target: false
+  name: kitchengarden food
+  parent: food
+  shortname: kgfood
+  sort_order: 31
+- aggregation_target: false
+  name: eggs
+  parent: food
+  shortname: egg
+  sort_order: 32
+- aggregation_target: false
+  name: water
+  shortname: water
+  sort_order: 33
+- aggregation_target: false
+  name: blood
+  sort_order: 0.1
+- aggregation_target: false
+  name: bloodcells
+  sort_order: 0.1
+- aggregation_target: false
+  name: cord blood
+  sort_order: 0.1
+- aggregation_target: false
+  name: urine
+  sort_order: 0.1
+- aggregation_target: false
+  name: air
+  sort_order: 0.1
+- aggregation_target: false
+  name: food
+  sort_order: 0.1

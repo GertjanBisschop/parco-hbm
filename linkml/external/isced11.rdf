@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:adms="http://www.w3.org/ns/adms#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://dd.eionet.europa.eu/property/" xml:base="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/">
+<skos:ConceptScheme rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/">
+<rdfs:label>International Standard Classification of Education (ISCED 2011)</rdfs:label>
+<skos:notation>isced11</skos:notation>
+<dcterms:isPartOf rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/"/>
+<registrationStatus>Released</registrationStatus>
+<userModified>system</userModified>
+<dateModified>2019-05-08 14:04:00.0</dateModified>
+<vocabularyType>Common</vocabularyType>
+<version></version>
+<workingUser></workingUser>
+<isNumericConceptIdentifiers>false</isNumericConceptIdentifiers>
+<isNotationsEqualIdentifiers>true</isNotationsEqualIdentifiers>
+</skos:ConceptScheme>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/TOTAL">
+<skos:notation>TOTAL</skos:notation>
+<skos:prefLabel>All ISCED 2011 levels</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED0-2">
+<skos:notation>ED0-2</skos:notation>
+<skos:prefLabel>Less than primary, primary and lower secondary education (levels 0-2)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED0">
+<skos:notation>ED0</skos:notation>
+<skos:prefLabel>Early childhood education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED1">
+<skos:notation>ED1</skos:notation>
+<skos:prefLabel>Primary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED2">
+<skos:notation>ED2</skos:notation>
+<skos:prefLabel>Lower secondary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3_4">
+<skos:notation>ED3_4</skos:notation>
+<skos:prefLabel>Upper secondary and post-secondary non-tertiary education (levels 3 and 4)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3">
+<skos:notation>ED3</skos:notation>
+<skos:prefLabel>Upper secondary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED4">
+<skos:notation>ED4</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED5-8">
+<skos:notation>ED5-8</skos:notation>
+<skos:prefLabel>Tertiary education (levels 5-8)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED5">
+<skos:notation>ED5</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED6">
+<skos:notation>ED6</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED7">
+<skos:notation>ED7</skos:notation>
+<skos:prefLabel>Master's or equivalent level</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED8">
+<skos:notation>ED8</skos:notation>
+<skos:prefLabel>Doctoral or equivalent level</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED9">
+<skos:notation>ED9</skos:notation>
+<skos:prefLabel>Not elsewhere classified</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/UNK">
+<skos:notation>UNK</skos:notation>
+<skos:prefLabel>Unknown</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2013-07-22</statusModified>
+<acceptedDate>2013-07-22</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/NRP">
+<skos:notation>NRP</skos:notation>
+<skos:prefLabel>No response</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2014-06-03</statusModified>
+<acceptedDate>2014-06-03</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED0-4">
+<skos:notation>ED0-4</skos:notation>
+<skos:prefLabel>Less than primary, primary, secondary and post-secondary non-tertiary education (levels 0-4)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED01">
+<skos:notation>ED01</skos:notation>
+<skos:prefLabel>Early childhood educational development</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED02">
+<skos:notation>ED02</skos:notation>
+<skos:prefLabel>Pre-primary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED1-3">
+<skos:notation>ED1-3</skos:notation>
+<skos:prefLabel>Primary and secondary education (levels 1-3)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED1_2">
+<skos:notation>ED1_2</skos:notation>
+<skos:prefLabel>Primary and lower secondary education (levels 1 and 2)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED2_3">
+<skos:notation>ED2_3</skos:notation>
+<skos:prefLabel>Secondary education (levels 2 and 3)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED24">
+<skos:notation>ED24</skos:notation>
+<skos:prefLabel>Lower secondary education - general</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED25">
+<skos:notation>ED25</skos:notation>
+<skos:prefLabel>Lower secondary education - vocational</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3-8">
+<skos:notation>ED3-8</skos:notation>
+<skos:prefLabel>Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3SW">
+<skos:notation>ED3SW</skos:notation>
+<skos:prefLabel>Upper secondary education - school and work-based vocational programmes</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED34_44">
+<skos:notation>ED34_44</skos:notation>
+<skos:prefLabel>Upper secondary and post-secondary non-tertiary education - general (levels 34 and 44)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED34">
+<skos:notation>ED34</skos:notation>
+<skos:prefLabel>Upper secondary education - general</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED341">
+<skos:notation>ED341</skos:notation>
+<skos:prefLabel>Upper secondary education - general, insufficient for level completion or partial level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED342">
+<skos:notation>ED342</skos:notation>
+<skos:prefLabel>Upper secondary education - general, sufficient for partial level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED343">
+<skos:notation>ED343</skos:notation>
+<skos:prefLabel>Upper secondary education - general, sufficient for level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED344">
+<skos:notation>ED344</skos:notation>
+<skos:prefLabel>Upper secondary education - general, sufficient for level completion, with direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED35_45">
+<skos:notation>ED35_45</skos:notation>
+<skos:prefLabel>Upper secondary and post-secondary non-tertiary education - vocational (levels 35 and 45)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED35">
+<skos:notation>ED35</skos:notation>
+<skos:prefLabel>Upper secondary education - vocational</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED351">
+<skos:notation>ED351</skos:notation>
+<skos:prefLabel>Upper secondary education - vocational, insufficient for level completion or partial level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED352">
+<skos:notation>ED352</skos:notation>
+<skos:prefLabel>Upper secondary education - vocational, sufficient for partial level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED353">
+<skos:notation>ED353</skos:notation>
+<skos:prefLabel>Upper secondary education - vocational, sufficient for level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED354">
+<skos:notation>ED354</skos:notation>
+<skos:prefLabel>Upper secondary education - vocational, sufficient for level completion, with direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED4SW">
+<skos:notation>ED4SW</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - school and work-based vocational programmes</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED44">
+<skos:notation>ED44</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - general</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED441">
+<skos:notation>ED441</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - general, insufficient for level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED443">
+<skos:notation>ED443</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - general, sufficient for level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED444">
+<skos:notation>ED444</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - general, sufficient for level completion, with direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED45">
+<skos:notation>ED45</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - vocational</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED451">
+<skos:notation>ED451</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - vocational, insufficient for level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED453">
+<skos:notation>ED453</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - vocational, sufficient for level completion, without direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED454">
+<skos:notation>ED454</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - vocational, sufficient for level completion, with direct access to tertiary education</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED5-7">
+<skos:notation>ED5-7</skos:notation>
+<skos:prefLabel>Tertiary education excluding doctoral or equivalent level (levels 5-7)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED5SW">
+<skos:notation>ED5SW</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - school and work-based vocational programmes</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED54">
+<skos:notation>ED54</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - general/academic</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED541">
+<skos:notation>ED541</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - general/academic, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED544">
+<skos:notation>ED544</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - general/academic, sufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED55">
+<skos:notation>ED55</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - vocational/professional</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED551">
+<skos:notation>ED551</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - vocational/professional, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED554">
+<skos:notation>ED554</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education - vocational/professional, sufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED6-8">
+<skos:notation>ED6-8</skos:notation>
+<skos:prefLabel>Tertiary education excluding short-cycle tertiary education (levels 6-8)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED64">
+<skos:notation>ED64</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - academic</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED641">
+<skos:notation>ED641</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - academic, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED645">
+<skos:notation>ED645</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - academic, first degree (3-4 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED646">
+<skos:notation>ED646</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - academic, long first degree (more than 4 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED647">
+<skos:notation>ED647</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - academic, second or further degree (following a Bachelor's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED65">
+<skos:notation>ED65</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - professional</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED651">
+<skos:notation>ED651</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - professional, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED655">
+<skos:notation>ED655</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - professional, first degree (3-4 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED656">
+<skos:notation>ED656</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - professional, long first degree (more than 4 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED657">
+<skos:notation>ED657</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - professional, second or further degree (following a Bachelor's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED66">
+<skos:notation>ED66</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - orientation unspecified</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED661">
+<skos:notation>ED661</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - orientation unspecified, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED665">
+<skos:notation>ED665</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - orientation unspecified, first degree (3-4 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED666">
+<skos:notation>ED666</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - orientation unspecified, long first degree (more than 4 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED667">
+<skos:notation>ED667</skos:notation>
+<skos:prefLabel>Bachelor's or equivalent level - orientation unspecified, second or further degree (following a Bachelor's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED74">
+<skos:notation>ED74</skos:notation>
+<skos:prefLabel>Master's or equivalent level - academic</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED741">
+<skos:notation>ED741</skos:notation>
+<skos:prefLabel>Master's or equivalent level - academic, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED746">
+<skos:notation>ED746</skos:notation>
+<skos:prefLabel>Master's or equivalent level - academic, long first degree (at least 5 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED747">
+<skos:notation>ED747</skos:notation>
+<skos:prefLabel>Master's or equivalent level - academic, second or further degree (following a Bachelor's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED748">
+<skos:notation>ED748</skos:notation>
+<skos:prefLabel>Master's or equivalent level - academic, second or further degree (following a Master's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED75">
+<skos:notation>ED75</skos:notation>
+<skos:prefLabel>Master's or equivalent level - professional</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED751">
+<skos:notation>ED751</skos:notation>
+<skos:prefLabel>Master's or equivalent level - professional, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED756">
+<skos:notation>ED756</skos:notation>
+<skos:prefLabel>Master's or equivalent level - professional, long first degree (at least 5 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED757">
+<skos:notation>ED757</skos:notation>
+<skos:prefLabel>Master's or equivalent level - professional, second or further degree (following a Bachelor's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED758">
+<skos:notation>ED758</skos:notation>
+<skos:prefLabel>Master's or equivalent level - professional, second or further degree (following a Master's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED76">
+<skos:notation>ED76</skos:notation>
+<skos:prefLabel>Master's or equivalent level - orientation unspecified</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED761">
+<skos:notation>ED761</skos:notation>
+<skos:prefLabel>Master's or equivalent level - orientation unspecified, insufficient for level completion</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED766">
+<skos:notation>ED766</skos:notation>
+<skos:prefLabel>Master's or equivalent level - orientation unspecified, long first degree (at least 5 years)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED767">
+<skos:notation>ED767</skos:notation>
+<skos:prefLabel>Master's or equivalent level - orientation unspecified, second or further degree (following a Bachelor's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED768">
+<skos:notation>ED768</skos:notation>
+<skos:prefLabel>Master's or equivalent level - orientation unspecified, second or further degree (following a Master's or equivalent programme)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-02-20</statusModified>
+<acceptedDate>2015-02-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED1-4">
+<skos:notation>ED1-4</skos:notation>
+<skos:prefLabel>Primary, lower secondary, upper secondary and post-secondary non-tertiary education (levels 1-4)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED25_35_45">
+<skos:notation>ED25_35_45</skos:notation>
+<skos:prefLabel>Lower secondary, upper secondary and post-secondary non-tertiary education - vocational (levels 25, 35 and 45)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED641_651_661">
+<skos:notation>ED641_651_661</skos:notation>
+<skos:prefLabel>Bachelors's or equivalent level - all programmes, insufficient for level completion (levels 641, 651 and 661)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED645_655_665">
+<skos:notation>ED645_655_665</skos:notation>
+<skos:prefLabel>Bachelors's or equivalent level - all programmes, first degree (3-4 years) (levels 645, 655 and 665)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED646_656_666">
+<skos:notation>ED646_656_666</skos:notation>
+<skos:prefLabel>Bachelors's or equivalent level - all programmes, long first degree (more than 4 years) (levels 646, 656 and 666)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED647_657_667">
+<skos:notation>ED647_657_667</skos:notation>
+<skos:prefLabel>Bachelors's or equivalent level - all programmes, second or further degree (following a Bachelor's or equivalent programme) (levels 647, 657 and 667)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED741_751_761">
+<skos:notation>ED741_751_761</skos:notation>
+<skos:prefLabel>Master's or equivalent level - all programmes, insufficient for level completion (levels 741, 751 and 761)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED746_756_766">
+<skos:notation>ED746_756_766</skos:notation>
+<skos:prefLabel>Master's or equivalent level - all programmes, long first degree (at least 5 years) (levels 746, 756 and 766)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED747_757_767">
+<skos:notation>ED747_757_767</skos:notation>
+<skos:prefLabel>Master's or equivalent level - all programmes, second or further degree (following a Bachelor's or equivalent programme) (levels 747, 757 and 767)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED748_758_768">
+<skos:notation>ED748_758_768</skos:notation>
+<skos:prefLabel>Master's or equivalent level - all programmes, second or further degree (following a Master's or equivalent programme) (levels 748, 758 and 768)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-03-20</statusModified>
+<acceptedDate>2015-03-20</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED02-8">
+<skos:notation>ED02-8</skos:notation>
+<skos:prefLabel>All ISCED 2011 levels excluding early childhood educational development</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-06-08</statusModified>
+<acceptedDate>2015-06-08</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED342_352">
+<skos:notation>ED342_352</skos:notation>
+<skos:prefLabel>Upper secondary education - all programmes, sufficient for partial level completion, without direct access to tertiary education (levels 342 and 352)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-06-08</statusModified>
+<acceptedDate>2015-06-08</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED343_353">
+<skos:notation>ED343_353</skos:notation>
+<skos:prefLabel>Upper secondary education - all programmes, sufficient for level completion, without direct access to tertiary education (levels 343 and 353)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-06-08</statusModified>
+<acceptedDate>2015-06-08</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED344_354">
+<skos:notation>ED344_354</skos:notation>
+<skos:prefLabel>Upper secondary education - all programmes, sufficient for level completion, with direct access to tertiary education (levels 344 and 354)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-06-08</statusModified>
+<acceptedDate>2015-06-08</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED443_453">
+<skos:notation>ED443_453</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - all programmes, sufficient for level completion, without direct access to tertiary education (levels 443 and 453)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-06-08</statusModified>
+<acceptedDate>2015-06-08</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED444_454">
+<skos:notation>ED444_454</skos:notation>
+<skos:prefLabel>Post-secondary non-tertiary education - all programmes, sufficient for level completion, with direct access to tertiary education (levels 444 and 454)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-06-08</statusModified>
+<acceptedDate>2015-06-08</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED5_6">
+<skos:notation>ED5_6</skos:notation>
+<skos:prefLabel>Short-cycle tertiary education and Bachelor's or equivalent level (levels 5 and 6)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-09-03</statusModified>
+<acceptedDate>2015-09-03</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED7_8">
+<skos:notation>ED7_8</skos:notation>
+<skos:prefLabel>Master's and Doctoral or equivalent level (levels 7 and 8)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-09-03</statusModified>
+<acceptedDate>2015-09-03</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3_4GEN">
+<skos:notation>ED3_4GEN</skos:notation>
+<skos:prefLabel>Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-09-15</statusModified>
+<acceptedDate>2015-09-15</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3_4VOC">
+<skos:notation>ED3_4VOC</skos:notation>
+<skos:prefLabel>Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-09-15</statusModified>
+<acceptedDate>2015-09-15</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED2-4">
+<skos:notation>ED2-4</skos:notation>
+<skos:prefLabel>Lower secondary, upper secondary and post-secondary non-tertiary education (levels 2-4)</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-10-28</statusModified>
+<acceptedDate>2015-10-28</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/NAP">
+<skos:notation>NAP</skos:notation>
+<skos:prefLabel>Not applicable</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2015-10-28</statusModified>
+<acceptedDate>2015-10-28</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+<skos:Concept rdf:about="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/ED3_4UNK">
+<skos:notation>ED3_4UNK</skos:notation>
+<skos:prefLabel>Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - orientation unknown</skos:prefLabel>
+<skos:definition></skos:definition>
+<adms:status>valid</adms:status>
+<statusModified>2017-12-14</statusModified>
+<acceptedDate>2017-12-14</acceptedDate>
+<notAcceptedDate></notAcceptedDate>
+<skos:inScheme rdf:resource="http://dd.eionet.europa.eu/vocabulary/eurostat/isced11/"/>
+</skos:Concept>
+</rdf:RDF>

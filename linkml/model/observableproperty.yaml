@@ -2,7 +2,6 @@ id: https://w3id.org/peh/observableproperty
 name: observableproperty
 description: |-
   Reference list of biological, chemical or biochemical entities, linked to concepts in [CHEBI](https://www.ebi.ac.uk/chebi) or other BioChem ontologies, or to IUPAC, InChI, SMILES or CAS identifiers
-license: https://creativecommons.org/publicdomain/zero/1.0/
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -29,21 +28,46 @@ imports:
   - linkml:types
 
 classes:
+  ObservablePropertyGroupList:
+    tree_root: true
+    slots:
+      - observablepropertygroups
   ObservablePropertyList:
     tree_root: true
     slots:
       - observableproperties
-  ObservableProperty:
+  
+  ObservablePropertyGroup:
+    is_a: NamedThing
     slots:
-      - name
+      - sort_order
+      - is_abstract
+      - parent_groups
+  ObservableProperty:
+    is_a: NamedThing
+    slots:
+      - label
       - value_type
+      - categorical
+      - multivalued
       - value_metadata
       - quantity_kind
       - default_unit
+      - default_significantdecimals
+      - default_immutable
+      - groups
       - relevant_observable_entity_types
       - relevant_observation_design_types
       - indicator
       - calculation_design
+      - validation_design
+  CalculationDesign:
+    slots:
+      - unit
+      - formula
+  ValidationDesign:
+    slots:
+      - conditional
   ObservablePropertyMetadataElement:
     slots:
       - field
@@ -58,11 +82,28 @@ classes:
       - metadata_fields
 
 slots:
-  name:
+  observablepropertygroups:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservablePropertyGroup
   observableproperties:
     multivalued: true
     inlined_as_list: true
     range: ObservableProperty
+  name:
+  description:
+  label:
+  categorical:
+    range: Boolean
+  multivalued:
+    range: Boolean
+  sort_order:
+    range: decimal
+  is_abstract:
+    range: Boolean
+  parent_groups:
+    multivalued: true
+    range: ObservablePropertyGroup
   value_type:
     range: xsd:type
   value_metadata:
@@ -70,7 +111,14 @@ slots:
     inlined_as_list: true
     range: ObservablePropertyMetadataElement
   quantity_kind:
+  default_immutable:
+    range: Boolean
+  default_significantdecimals:
+    range: int
   default_unit:
+  groups:
+    multivalued: true
+    range: ObservablePropertyGroup
   relevant_observable_entity_types:
     multivalued: true
     range: ObservableEntityType
@@ -81,6 +129,8 @@ slots:
     range: Indicator
   calculation_design:
     range: CalculationDesign
+  validation_design:
+    range: ValidationDesign
   field:
     range: ObservablePropertyMetadataField
   value:

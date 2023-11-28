@@ -1,0 +1,163 @@
+{
+  "@context" : {
+    "@base" : "http://dd.eionet.europa.eu/vocabulary/eurostat/deg_urb/",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "concepts" : "skos:Concept",
+    "prefLabel" : "skos:prefLabel",
+    "broader" : "skos:broader",
+    "narrower" : "skos:narrower",
+    "@language" : "en",
+    "VocabularyId" : "1067",
+    "ContinuityId" : "f4ccab2e-329d-11e3-a193-525400c3d02c",
+    "Identifier" : "deg_urb",
+    "Label" : "Degree of urbanisation",
+    "RegistrationStatus" : "Released",
+    "IsWorkingCopy" : "false",
+    "CheckedOutCopyId" : "0",
+    "WorkingUser" : null,
+    "DateModified" : "2020-10-20 14:03:54.0",
+    "UserModified" : "system",
+    "IsNumericConceptIdentifiers" : "false",
+    "VocabularyType" : "Common",
+    "FolderId" : "15",
+    "FolderName" : "eurostat",
+    "FolderLabel" : "Eurostat dictionaries",
+    "IsNotationsEqualIdentifiers" : "true",
+    "Definition" : null,
+    "Version" : null
+  },
+  "concepts" : [ {
+    "@id" : "TOTAL",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Total",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "764554",
+    "VocabularyId" : "1067",
+    "Identifier" : "TOTAL",
+    "Label" : "Total",
+    "Definition" : "",
+    "Notation" : "TOTAL",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2012-12-06",
+    "AcceptedDate" : "2012-12-06",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "DEG1",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Cities",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "764555",
+    "VocabularyId" : "1067",
+    "Identifier" : "DEG1",
+    "Label" : "Cities",
+    "Definition" : "",
+    "Notation" : "DEG1",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2012-12-06",
+    "AcceptedDate" : "2012-12-06",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "DEG2",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Towns and suburbs",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "764556",
+    "VocabularyId" : "1067",
+    "Identifier" : "DEG2",
+    "Label" : "Towns and suburbs",
+    "Definition" : "",
+    "Notation" : "DEG2",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2012-12-06",
+    "AcceptedDate" : "2012-12-06",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "DEG3",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Rural areas",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "764557",
+    "VocabularyId" : "1067",
+    "Identifier" : "DEG3",
+    "Label" : "Rural areas",
+    "Definition" : "",
+    "Notation" : "DEG3",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2012-12-06",
+    "AcceptedDate" : "2012-12-06",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "NRP",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "No response",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "764558",
+    "VocabularyId" : "1067",
+    "Identifier" : "NRP",
+    "Label" : "No response",
+    "Definition" : "",
+    "Notation" : "NRP",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2012-12-06",
+    "AcceptedDate" : "2012-12-06",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "UNK",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Unknown",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "764559",
+    "VocabularyId" : "1067",
+    "Identifier" : "UNK",
+    "Label" : "Unknown",
+    "Definition" : "",
+    "Notation" : "UNK",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2012-12-06",
+    "AcceptedDate" : "2012-12-06",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  }, {
+    "@id" : "DEG1_DEG2",
+    "@type" : "skos:Concept",
+    "prefLabel" : [ {
+      "@value" : "Urban areas",
+      "@language" : "en"
+    } ],
+    "VocabularyConceptId" : "27517931",
+    "VocabularyId" : "1067",
+    "Identifier" : "DEG1_DEG2",
+    "Label" : "Urban areas",
+    "Definition" : "",
+    "Notation" : "DEG1_DEG2",
+    "Status" : "Valid",
+    "StatusModifiedDate" : "2020-10-20",
+    "AcceptedDate" : "2020-10-20",
+    "NotAcceptedDate" : null,
+    "broader" : [ ],
+    "narrower" : [ ]
+  } ]
+}

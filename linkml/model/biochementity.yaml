@@ -2,7 +2,6 @@ id: https://w3id.org/peh/biochementity
 name: biochementity
 description: |-
   Reference list of biological, chemical or biochemical entities, linked to concepts in [CHEBI](https://www.ebi.ac.uk/chebi) or other BioChem ontologies, or to IUPAC, InChI, SMILES or CAS identifiers
-license: https://creativecommons.org/publicdomain/zero/1.0/
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -28,37 +27,43 @@ imports:
   - linkml:types
 
 classes:
+  BioChemGroupList:
+    tree_root: true
+    slots:
+      - biochemgroups
   BioChemEntityList:
     tree_root: true
     slots:
       - biochementities
+  
+  BioChemGroup:
+    is_a: NamedThing
   BioChemEntity:
     class_uri:
       schema:BioChemEntity
     description: >-
       A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
+    is_a: NamedThing
     slots:
-      - shortname
-      - name
       - aliases
+      - group
+      - validation_status
+      - validation_actor
+      - validation_remark
       - biochemidentifiers
   BioChemIdentifier:
     slots:
       - schema
       - identifier
+      - validation_status
+      - validation_actor
+      - validation_remark
   BioChemIdentifierSchema:
+    is_a: NamedThing
     slots:
-      - name
-      - description
       - web_uri
 
 slots:
-  shortname:
-  name:
-  aliases:
-    multivalued: true
-  description:
-  web_uri:
   biochemidentifiers:
     multivalued: true
     inlined_as_list: true
@@ -67,6 +72,22 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: BioChemEntity
+  
+  aliases:
+    multivalued: true
+  group: BioChemGroup
+  web_uri:
   schema:
     range: BioChemIdentifierSchema
   identifier:
+  validation_status:
+    range: ValidationStatus
+  validation_actor:
+  validation_remark:
+
+enums:
+  ValidationStatus:
+    permissible_values:
+      UNVALIDATED:
+      IN PROGRESS:
+      VALIDATED:

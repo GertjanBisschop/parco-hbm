@@ -1,4 +1,4 @@
-biochemintities:
+biochementities:
   - shortname: hg
     name: mercury
     aliases:
@@ -7,8 +7,14 @@ biochemintities:
       - kwik
       - mercure
       - mercurio
+    validation_status: VALIDATED
+    validation_actor: VITO
     biochemidentifiers:
       - schema: CHEBI
         identifier: CHEBI:16170
+        validation_status: VALIDATED
+        validation_actor: VITO-auto
       - schema: CAS
         identifier: 7487-94-7
+        validation_status: VALIDATED
+        validation_actor: VITO-auto

@@ -1,0 +1,223 @@
+id: https://w3id.org/peh/project
+name: project
+description: |-
+  Studies
+default_curi_maps:
+  - semweb_context
+prefixes:
+  project: https://w3id.org/peh/project
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  iop: https://w3id.org/iadopt/ont/
+  # DATA PREFIXES
+  # P: http://example.org/P/
+  # ROR: http://example.org/ror/
+  # CODE: http://example.org/code/
+  # GEO: http://example.org/geoloc/
+default_prefix: project
+default_range: string
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+imports:
+  - linkml:types
+
+classes:
+  NamedThing:
+    abstract: true
+    description: >-
+      A generic grouping for any identifiable entity
+    slots:
+      - id
+      - name
+      - shortname
+      - description
+    close_mappings:
+     - schema:Thing
+  Stakeholder:
+    is_a: NamedThing
+    slots:
+      - geographic scope
+  Project:
+    is_a: NamedThing
+    slots:
+      - project stakeholders
+      - studies
+  ProjectStakeholder:
+    slots:
+      - stakeholder
+      - project roles
+  Study:
+    is_a: NamedThing
+    slots:
+      - study stakeholders
+      - timepoints
+      - study entities
+  StudyStakeholder:
+    slots:
+      - stakeholder
+      - study roles
+  Timepoint:
+    is_a: NamedThing
+    slots:
+      - observations
+  StudyEntity:
+    abstract: true
+    is_a: NamedThing
+    slots:
+      - entity links
+  StudyEntityLink:
+    slots:
+      - linktype
+      - entity
+  Sample:
+    is_a: StudyEntity
+    slots:
+      - matrix
+  StudySubject:
+    is_a: StudyEntity
+  Person:
+    is_a: StudyEntity
+  PersonGroup:
+    is_a: StudyEntity
+  Geolocation:
+    is_a: StudyEntity
+    slots:
+      - location
+  Environment:
+    is_a: StudyEntity
+  Observation:
+    slots:
+      - observation design
+      - observation result
+  ObservationDesign:
+    abstract: true
+    slots:
+      - observed entities
+      - observable properties
+  MetadataDesign:
+    is_a: ObservationDesign
+  QuestionnaireDesign:
+    is_a: ObservationDesign
+  SamplingDesign:
+    is_a: ObservationDesign
+  GeospatialDesign:
+    is_a: ObservationDesign
+  ObservationResult:
+    abstract: true
+    slots:
+      - observed values
+  MetadataResult:
+    is_a: ObservationResult
+  QuestionnaireResult:
+    is_a: ObservationResult
+  SamplingResult:
+    is_a: ObservationResult
+  GeospatialResult:
+    is_a: ObservationResult
+  ObservedValue:
+    slots:
+      - observed entity
+      - observable property
+      - value
+      - unit
+      - quality or confidence info
+      - provenance info
+
+slots:
+  id:
+    identifier: true
+    slot_uri: schema:identifier
+  name:
+    slot_uri: schema:name
+  shortname:
+  description:
+    slot_uri: schema:description
+  geographic scope:
+  project:
+    slot_uri: schema:ResearchProject
+  project stakeholders:
+    multivalued: true
+    inlined_as_list: true
+    range: ProjectStakeholder
+  studies:
+    multivalued: true
+    range: Study
+  project roles:
+    multivalued: true
+    inlined_as_list: true
+    range: ProjectRole
+  study stakeholders:
+    multivalued: true
+    range: StudyStakeholder
+  study roles:
+    multivalued: true
+    inlined_as_list: true
+    range: StudyRole
+  timepoints:
+    multivalued: true
+    range: Timepoint
+  study entities:
+    multivalued: true
+    range: StudyEntity
+  observations:
+    multivalued: true
+    range: Observation
+  entity links:
+    multivalued: true
+    range: StudyEntityLink
+  linktype:
+    range: LinkType
+  entity:
+    range: StudyEntity
+  matrix:
+    range: Matrix
+  location:
+  observation design:
+    range: ObservationDesign
+  observation result:
+    range: ObservationResult
+  observed entities:
+    multivalued: true
+    range: StudyEntity
+  observable properties:
+    multivalued: true
+    range: ObservableProperty
+  observed values:
+    multivalued: true
+    range: ObservedValue
+  observed entity:
+    range: StudyEntity
+  observable property:
+    range: ObservableProperty
+  value:
+  unit:
+    range: Unit
+  quality or confidence info:
+  provenance info:
+
+enums:
+  ProjectRole:
+    permissible_values:
+      SUBSIDISING_PARTY:
+      PRINCIPAL_INVESTIGATOR:
+      DATA_CONTROLLER:
+      DATA_PROCESSOR:
+      DATA_USER:
+  StudyRole:
+    permissible_values:
+      SUBSIDISING_PARTY:
+      PRINCIPAL_INVESTIGATOR:
+      DATA_CONTROLLER:
+      DATA_PROCESSOR:
+      DATA_USER:
+  LinkType:
+    permissible_values:
+      IS_SAME_AS:
+      IS_PART_OF:
+      IS_LOCATED_AT:

@@ -1,0 +1,125 @@
+lingo;unit_key;unit_initials;unit_name
+en;pg/mL;;pg/mL
+nl;pg/mL;;pg/mL
+en;ng/mL;;ng/mL
+nl;ng/mL;;ng/mL
+en;ng/dL;;ng/dL
+nl;ng/dL;;ng/dL
+en;ng/L;;ng/L
+nl;ng/L;;ng/L
+en;µg/L;;µg/L
+nl;µg/L;;µg/L
+en;µg/mL;;µg/mL
+nl;µg/mL;;µg/mL
+en;mg/L;;mg/L
+nl;mg/L;;mg/L
+en;mg/dL;;mg/dL
+nl;mg/dL;;mg/dL
+en;g/dL;;g/dL
+nl;g/dL;;g/dL
+en;g/L;;g/L
+nl;g/L;;g/L
+en;-;;
+nl;-;;
+en;%;;%
+nl;%;;%
+en;IU/L;;IU/L
+nl;IU/L;;IU/L
+en;mIU/L;;mIU/L
+nl;mIU/L;;mIU/L
+en;mmol/mol;;mmol/mol
+nl;mmol/mol;;mmol/mol
+en;ng/g;;ng/g
+nl;ng/g;;ng/g
+en;µLU/mL;;µLU/mL
+nl;µLU/mL;;µLU/mL
+en;nmol/L;;nmol/L
+nl;nmol/L;;nmol/L
+en;µmol/L;;µmol/L
+nl;µmol/L;;µmol/L
+en;L;;L
+nl;L;;L
+en;kg/m²;;kg/m²
+nl;kg/m²;;kg/m²
+en;kg/m³;;kg/m³
+nl;kg/m³;;kg/m³
+en;amount/µL;;amount/µL
+nl;amount/µL;;aantal/µL
+en;kU/L;;kU/L
+nl;kU/L;;kU/L
+en;pg BEQ/g;;pg BEQ/g
+nl;pg BEQ/g;;pg BEQ/g
+en;milj/µL;;milj/µL
+nl;milj/µL;;milj/µL
+en;index %;;index %
+nl;index %;;index %
+en;pg;;pg
+nl;pg;;pg
+en;ppb;;ppb
+nl;ppb;;ppb
+en;fL;;fL
+nl;fL;;fL
+en;mLU/L;;mLU/L
+nl;mLU/L;;mLU/L
+en;Osm/L;;Osm/L
+nl;Osm/L;;Osm/L
+en;g/mol;;g/mol
+nl;g/mol;;g/mol
+en;µg/kg dm;;µg/kg dm
+nl;µg/kg dm;;µg/kg ds
+en;% (g/100g);;% (g/100g)
+nl;% (g/100g);;% (g/100g)
+en;% dm;;% dm
+nl;% dm;;% ds
+en;µg/kg ww;;µg/kg ww
+nl;µg/kg ww;;µg/kg ng
+en;pmol/g globin;;pmol/g globin
+nl;pmol/g globin;;pmol/g globin
+en;ng/filter;;ng/filter
+nl;ng/filter;;ng/filter
+en;number per week;;number per week
+nl;number per week;;aantal per week
+en;number;;number
+nl;number;;aantal
+en;number per day;;number per day
+nl;number per day;;aantal per dag
+en;months;;months
+nl;months;;maanden
+en;month;;month
+nl;month;;maand
+en;years;;years
+nl;years;;jaren
+en;year;;year
+nl;year;;jaar
+en;yearindication;;yearindication
+nl;yearindication;;jaartal
+en;weeks;;weeks
+nl;weeks;;weken
+en;days;;days
+nl;days;;dagen
+en;hours per week;;hours per week
+nl;hours per week;;uren per week
+en;times per week;;times per week
+nl;times per week;;keer per week
+en;times per day;;times per day
+nl;times per day;;keer per dag
+en;age;;age
+nl;age;;leeftijd
+en;hour;;hour
+nl;hour;;uur
+en;hours;;hours
+nl;hours;;uren
+en;cm;;cm
+nl;cm;;cm
+en;kg;;kg
+nl;kg;;kg
+en;gram;;gram
+nl;gram;;gram
+en;score;;score
+nl;score;;score
+en;children;;children
+nl;children;;kinderen
+en;adults;;adults
+nl;adults;;volwassenen
+en;pregnancies;;pregnancies
+nl;pregnancies;;zwangerschappen
