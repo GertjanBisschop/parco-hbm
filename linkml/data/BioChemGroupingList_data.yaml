@@ -1,0 +1,57 @@
+biochemgroupings:
+  - name: Acrylamide
+    id: Acrylamide
+  - name: Alkaloid
+    id: Alkaloid
+  - name: Anilines and MOCA
+    id: Anilines and MOCA
+  - name: Aprotic Solvents
+    id: Aprotic Solvents
+  - name: Bisphenols
+    id: Bisphenols
+  - name: Care Products
+    id: Care Products
+  - name: DINCH
+    id: DINCH
+  - name: Diisocyanates
+    id: Diisocyanates
+  - name: Dioxins
+    id: Dioxins
+  - name: Flame Retardants
+    id: Flame Retardants
+  - name: Furans
+    id: Furans
+  - name: Glycol Ethers
+    id: Glycol Ethers
+  - name: Glyphosate
+    id: Glyphosate
+  - name: Herbicides
+    id: Herbicides
+  - name: Metals
+    id: Metals
+  - name: Musks
+    id: Musks
+  - name: Mycotoxins
+    id: Mycotoxins
+  - name: PCBs
+    id: PCBs
+  - name: Parabens
+    id: Parabens
+  - name: Per-/Poly-Fluorinated Compounds (PFASs)
+    id: Per-/Poly-Fluorinated Compounds (PFASs)
+  - name: Pesticides
+    id: Pesticides
+  - name: Pesticides (Carbamate)
+    id: Pesticides (Carbamate)
+  - name: Pesticides (Pyrethroids)
+    id: Pesticides (Pyrethroids)
+  - name: Phthalates
+    id: Phthalates
+  - name: Polycyclic Aromatic Hydrocarbons (PAHs)
+    id: Polycyclic Aromatic Hydrocarbons (PAHs)
+  - name: UV-filters (Benzophenones)
+    id: UV-filters (Benzophenones)
+  - name: Volatile Organic Compounds (VOCs)
+    id: Volatile Organic Compounds (VOCs)
+  - name: Volatile Anaesthetics
+    id: Volatile Anaesthetics

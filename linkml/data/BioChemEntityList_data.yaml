@@ -1,5 +1,6 @@
 biochementities:
-  - shortname: hg
+  - id: hg
+    shortname: hg
     name: mercury
     aliases:
       - mercury

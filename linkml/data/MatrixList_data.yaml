@@ -3,166 +3,211 @@ matrices:
   name: blood-whole blood
   parent: blood
   shortname: bwb
+  id: bwb
   sort_order: 1
 - aggregation_target: false
   name: blood serum
   parent: blood
   shortname: bs
+  id: bs
   sort_order: 2
 - aggregation_target: false
   name: blood plasma
   parent: blood
   shortname: bp
+  id: bp
   sort_order: 3
 - aggregation_target: false
   name: blood-blood cells
   parent: bloodcells
   shortname: bbc
+  id: bbc
   sort_order: 4
 - aggregation_target: false
   name: blood - red blood cells
   parent: bloodcells
   shortname: rbc
+  id: rbc
   sort_order: 5
 - aggregation_target: false
   name: cord blood-whole blood
   parent: cord blood
   shortname: cbwb
+  id: cbwb
   sort_order: 6
 - aggregation_target: false
   name: cord blood-serum
   parent: cord blood
   shortname: cbs
+  id: cbs
   sort_order: 7
 - aggregation_target: false
   name: cord blood-plasma
   parent: cord blood
   shortname: cbp
+  id: cbp
   sort_order: 8
 - aggregation_target: false
   name: cord blood-cells
   shortname: cbbc
+  id: cbbc
   sort_order: 9
 - aggregation_target: false
   name: random spot urine
   parent: urine
   shortname: us
+  id: us
   sort_order: 10
 - aggregation_target: false
   name: first morning urine
   parent: urine
   shortname: um
+  id: um
   sort_order: 11
 - aggregation_target: false
   name: fasting urine
   parent: urine
   shortname: uf
+  id: uf
   sort_order: 12
 - aggregation_target: false
   name: urine 24h
   parent: urine
   shortname: ud
+  id: ud
   sort_order: 13
 - aggregation_target: false
   name: breast milk
   shortname: bm
+  id: bm
   sort_order: 15
 - aggregation_target: false
   name: hair
   shortname: h
+  id: h
   sort_order: 14
 - aggregation_target: false
   name: nail
   shortname: n
+  id: n
   sort_order: 16
 - aggregation_target: false
   name: All toe nail
   parent: nail
   shortname: atn
+  id: atn
   sort_order: 17
 - aggregation_target: false
   name: Big toe nail
   parent: nail
   shortname: btn
+  id: btn
   sort_order: 18
 - aggregation_target: false
   name: nasal mucus
   shortname: nm
+  id: nm
   sort_order: 19
 - aggregation_target: false
   name: saliva/sputum
   shortname: sa
+  id: sa
   sort_order: 20
 - aggregation_target: false
   name: stool
   shortname: st
+  id: st
   sort_order: 21
 - aggregation_target: false
   name: semen
   shortname: sem
+  id: sem
   sort_order: 22
 - aggregation_target: false
   name: exhaled breath condensate
   shortname: ebc
+  id: ebc
   sort_order: 23
 - aggregation_target: false
   name: umbilical cord tissue
   shortname: cbt
+  id: cbt
   sort_order: 24
 - aggregation_target: false
   name: adipose tissue/fat
   shortname: adi
+  id: adi
   sort_order: 25
 - aggregation_target: false
   name: dermal wipes
   shortname: dw
+  id: dw
   sort_order: 26
 - aggregation_target: false
   name: amniotic fluid
   shortname: af
+  id: af
   sort_order: 27
 - aggregation_target: false
   name: placenta tissue
   shortname: plt
+  id: plt
   sort_order: 28
 - aggregation_target: false
   name: house dust
   parent: air
   shortname: dust
+  id: dust
   sort_order: 29
 - aggregation_target: false
   name: soil
   shortname: soil
+  id: soil
   sort_order: 30
 - aggregation_target: false
   name: kitchengarden food
   parent: food
   shortname: kgfood
+  id: kgfood
   sort_order: 31
 - aggregation_target: false
   name: eggs
   parent: food
   shortname: egg
+  id: egg
   sort_order: 32
 - aggregation_target: false
   name: water
   shortname: water
+  id: water
   sort_order: 33
 - aggregation_target: false
+  id: blood
+  shortname: blood
   name: blood
   sort_order: 0.1
 - aggregation_target: false
+  id: bloodcells
+  shortname: bloodcells
   name: bloodcells
   sort_order: 0.1
 - aggregation_target: false
-  name: cord blood
+  id: cb
+  shortname: cord blood
+  name: cb
   sort_order: 0.1
 - aggregation_target: false
+  id: urine
+  shortname: urine
   name: urine
   sort_order: 0.1
 - aggregation_target: false
+  id: air
+  shortname: air
   name: air
   sort_order: 0.1
 - aggregation_target: false
+  id: food
+  shortname: food
   name: food
   sort_order: 0.1
