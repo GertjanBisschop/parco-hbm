@@ -1,7 +1,7 @@
 projects:
 - shortname: PARC
   name: Partnership for the Assessment of Risks from Chemicals
-  project stakeholders:
+  project_stakeholders:
     - VITO
     - MU
     - UoB
@@ -9,7 +9,7 @@ projects:
     - ISSEP
 - shortname: HBM4EU
   name: HBM4EU
-  project stakeholders:
+  project_stakeholders:
     - VITO
     - MU
   studies:

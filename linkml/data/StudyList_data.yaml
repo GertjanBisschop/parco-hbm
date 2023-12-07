@@ -1,10 +1,10 @@
 studies:
 - shortname: 3XG
-  project stakeholders:
+  project_stakeholders:
     - VITO
 - shortname: HBM4EU
   name: HBM4EU
-  project stakeholders:
+  project_stakeholders:
     - VITO
     - MU
   studies:

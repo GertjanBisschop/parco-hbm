@@ -2,9 +2,7 @@ id: https://w3id.org/peh/peh-model
 name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
-default_curi_maps:
-  - obo_context
-  - semweb_context
+
 prefixes:
   peh: https://w3id.org/peh/peh-model
   linkml: https://w3id.org/linkml/
@@ -16,14 +14,14 @@ prefixes:
   # ROR: http://example.org/ror/
   # CODE: http://example.org/code/
   # GEO: http://example.org/geoloc/
+
 default_prefix: peh
 default_range: string
 
-emit_prefixes:
-  - rdf
-  - rdfs
-  - xsd
-  - skos
+default_curi_maps:
+  - obo_context
+  - semweb_context
+
 imports:
   - linkml:types
 
@@ -155,26 +153,26 @@ classes:
   Stakeholder:
     is_a: NamedThing
     slots:
-      - geographic scope
+      - geographic_scope
   Project:
     is_a: NamedThing
     slots:
-      - project stakeholders
+      - project_stakeholders
       - studies
   ProjectStakeholder:
     slots:
       - stakeholder
-      - project roles
+      - project_roles
   Study:
     is_a: NamedThing
     slots:
-      - study stakeholders
+      - study_stakeholders
       - timepoints
-      - study entities
+      - study_entities
   StudyStakeholder:
     slots:
       - stakeholder
-      - study roles
+      - study_roles
   Timepoint:
     is_a: NamedThing
     slots:
@@ -183,11 +181,11 @@ classes:
     abstract: true
     is_a: NamedThing
     slots:
-      - study entity links
+      - study_entity_links
   StudyEntityLink:
     slots:
       - linktype
-      - study entity
+      - study_entity
   Sample:
     is_a: StudyEntity
     slots:
@@ -206,13 +204,13 @@ classes:
     is_a: StudyEntity
   Observation:
     slots:
-      - observation design
-      - observation result
+      - observation_design
+      - observation_result
   ObservationDesign:
     abstract: true
     slots:
-      - observed entities
-      - observable properties
+      - observed_entities
+      - observable_properties
   MetadataDesign:
     is_a: ObservationDesign
   QuestionnaireDesign:
@@ -235,52 +233,52 @@ classes:
     is_a: ObservationResult
   ObservedValue:
     slots:
-      - observed entity
-      - observable property
+      - observed_entity
+      - observable_property
       - value
       - unit
-      - quality or confidence info
-      - provenance info
+      - quality_or_confidence_info
+      - provenance_info
 
   DataRequest:
     is_a: NamedThing
     slots:
-      - contact name
-      - contact email
-      - contact phone
-      - request properties
-      - data stakeholders
-      - research objectives
-      - processing actions
-      - processing steps
-      - remarks on content
-      - remarks on methodology
-      - observed entity properties
+      - contact_name
+      - contact_email
+      - contact_phone
+      - request_properties
+      - data_stakeholders
+      - research_objectives
+      - processing_actions
+      - processing_steps
+      - remarks_on_content
+      - remarks_on_methodology
+      - observed_entity_properties
   ObservedEntityProperty:
     slots:
-      - observed entity
-      - observable property
+      - observed_entity
+      - observable_property
   DataStakeholder:
     is_a: NamedThing
     slots:
       - stakeholder
-      - data roles
-      - processing description
+      - data_roles
+      - processing_description
   ResearchObjective:
     is_a: NamedThing
     slots:
-      - objective type
-      - co-authors
+      - objective_type
+      - authors
   ProcessingAction:
     is_a: NamedThing
   ProcessingStep:
     is_a: NamedThing
     slots:
-      - start date
-      - delivery date
+      - start_date
+      - delivery_date
   DataExtract:
     slots:
-      - observed values
+      - observed_values
 
 slots:
   id:
@@ -414,102 +412,102 @@ slots:
     inlined_as_list: true
     range: ObservablePropertyMetadataField
 
-  geographic scope:
+  geographic_scope:
   project:
     slot_uri: schema:ResearchProject
   stakeholder:
     range: Stakeholder
-  project stakeholders:
+  project_stakeholders:
     multivalued: true
     inlined_as_list: true
     range: ProjectStakeholder
   studies:
     multivalued: true
     range: Study
-  project roles:
+  project_roles:
     multivalued: true
     inlined_as_list: true
     range: ProjectRole
-  study stakeholders:
+  study_stakeholders:
     multivalued: true
     range: StudyStakeholder
-  study roles:
+  study_roles:
     multivalued: true
     inlined_as_list: true
     range: StudyRole
   timepoints:
     multivalued: true
     range: Timepoint
-  study entities:
+  study_entities:
     multivalued: true
     range: StudyEntity
   observations:
     multivalued: true
     range: Observation
-  study entity links:
+  study_entity_links:
     multivalued: true
     range: StudyEntityLink
   linktype:
     range: LinkType
-  study entity:
+  study_entity:
     range: StudyEntity
   location:
-  observation design:
+  observation_design:
     range: ObservationDesign
-  observation result:
+  observation_result:
     range: ObservationResult
-  observed entities:
+  observed_entities:
     multivalued: true
     range: StudyEntity
-  observable properties:
+  observable_properties:
     multivalued: true
     range: ObservableProperty
-  observed values:
+  observed_values:
     multivalued: true
     range: ObservedValue
-  observed entity:
+  observed_entity:
     range: StudyEntity
-  observable property:
+  observable_property:
     range: ObservableProperty
   unit:
     range: Unit
-  quality or confidence info:
-  provenance info:
+  quality_or_confidence_info:
+  provenance_info:
 
-  data roles:
+  data_roles:
     multivalued: true
     inlined_as_list: true
     range: DataRole
-  contact name:
-  contact email:
-  contact phone:
-  request properties:
-  data stakeholders:
+  contact_name:
+  contact_email:
+  contact_phone:
+  request_properties:
+  data_stakeholders:
     multivalued: true
     range: DataStakeholder
-  research objectives:
+  research_objectives:
     multivalued: true
     range: ResearchObjective
-  processing actions:
+  processing_actions:
     multivalued: true
     range: ProcessingAction
-  processing steps:
+  processing_steps:
     multivalued: true
     range: ProcessingStep
-  remarks on content:
+  remarks_on_content:
     multivalued: true
-  remarks on methodology:
+  remarks_on_methodology:
     multivalued: true
-  observed entity properties:
+  observed_entity_properties:
     multivalued: true
     range: ObservedEntityProperty
-  processing description:
-  objective type:
+  processing_description:
+  objective_type:
     range: ObjectiveType
-  co-authors:
+  authors:
     multivalued: true
-  start date:
-  delivery date:
+  start_date:
+  delivery_date:
 
 enums:
   QudtUnit:
@@ -531,66 +529,66 @@ enums:
 
   ValidationStatus:
     permissible_values:
-      UNVALIDATED:
-      IN PROGRESS:
-      VALIDATED:
+      unvalidated:
+      in_progress:
+      validated:
   IndicatorType:
     permissible_values:
-      EFFECTMARKER:
-      EXPOSUREMARKER:
-      GEOMARKER:
-      OBSERVATION:
+      effectmarker:
+      exposuremarker:
+      geomorker:
+      observation:
   BioChemEntityLinkType:
     permissible_values:
-      EXACT_MATCH:
-      CLOSE_MATCH:
-      BROADER:
-      PART_OF:
-      GROUP_CONTAINS:
+      exact_match:
+      close_match:
+      broader:
+      part_of:
+      group_contains:
   ObservableEntityType:
     permissible_values:
-      PERSON:
-      PERSONGROUP:
-      ENVIRONMENT:
-      LOCATION:
-      STUDY:
-      DATASET:
-      SAMPLE:
+      person:
+      persongroup:
+      environment:
+      location:
+      study:
+      dataset:
+      sample:
   ObservationDesignType:
     permissible_values:
-      SAMPLE:
-      QUESTIONNAIRE:
-      GEOSPATIAL:
-      METADATA:
+      sampling:
+      questionnaire:
+      geospatial:
+      metadata:
   ProjectRole:
     permissible_values:
-      SUBSIDISING_PARTY:
-      PRINCIPAL_INVESTIGATOR:
-      DATA_CONTROLLER:
-      DATA_PROCESSOR:
-      DATA_USER:
+      subsidising_party:
+      principal_investigator:
+      data_controller:
+      data_processor:
+      data_user:
   StudyRole:
     permissible_values:
-      SUBSIDISING_PARTY:
-      PRINCIPAL_INVESTIGATOR:
-      DATA_CONTROLLER:
-      DATA_PROCESSOR:
-      DATA_USER:
+      subsidising_party:
+      principal_investigator:
+      data_controller:
+      data_processor:
+      data_user:
   DataRole:
     permissible_values:
-      MAIN_STAKEHOLDER:
-      SUPPLYING_DATA_CONTROLLER:
-      RECEIVING_DATA_CONTROLLER:
-      EXTERNAL_DATA_PROCESSOR:
+      main_stakeholder:
+      supplying_data_controller:
+      receiving_data_controller:
+      external_data_controller:
   ObjectiveType:
     permissible_values:
-      RESEARCH_OBJECTIVE:
-      PROJECT_RESULT:
-      PUBLICATION:
+      research_objective:
+      project_result:
+      publication:
   LinkType:
     permissible_values:
-      IS_SAME_AS:
-      IS_PART_OF:
-      IS_LOCATED_AT:
+      is_same_as:
+      is_part_of:
+      is_located_at:
 
 # TODO: model how the I-Adopt Variable the indicator can be linked to the appropriate I-Adopt object_of_interest [1..1] and context_object(s) [0..n]
