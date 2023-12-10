@@ -43,18 +43,45 @@ classes:
       A generic grouping for any identifiable entity
     slots:
       - id
-      - name
       - shortname
+      - name
       - description
+      - label
     close_mappings:
      - schema:Thing
 
+  HasValidationStatus:
+    mixin: true
+    slots:
+      - current_validation_status
+      - validation_history
+  ValidationHistoryRecord:
+    slots:
+      - validation_datetime
+      - validation_status
+      - validation_actor
+      - validation_remark
+
+  HasAliases:
+    mixin: true
+    slots:
+      - aliases
+  HasContextAliases:
+    mixin: true
+    slots:
+      - context_aliases
+  ContextAlias:
+    slots:
+      - context
+      - alias
+
   Unit:
     is_a: NamedThing
+    mixins:
+      - HasContextAliases
     slots:
       - same_unit_as
       - quantity_kind
-      - vito_aliases
   
   BioChemGrouping:
     is_a: NamedThing
@@ -64,20 +91,18 @@ classes:
     description: >-
       A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
     is_a: NamedThing
+    mixins:
+      - HasContextAliases
+      - HasValidationStatus
     slots:
-      - aliases
       - grouping
-      - validation_status
-      - validation_actor
-      - validation_remark
       - biochemidentifiers
   BioChemIdentifier:
+    mixins:
+      - HasValidationStatus
     slots:
       - schema
-      - identifier
-      - validation_status
-      - validation_actor
-      - validation_remark
+      - code
   BioChemIdentifierSchema:
     is_a: NamedThing
     slots:
@@ -115,7 +140,6 @@ classes:
   ObservableProperty:
     is_a: NamedThing
     slots:
-      - label
       - value_type
       - categorical
       - multivalued
@@ -222,7 +246,7 @@ classes:
   ObservationResult:
     abstract: true
     slots:
-      - observed values
+      - observed_values
   MetadataResult:
     is_a: ObservationResult
   QuestionnaireResult:
@@ -284,11 +308,29 @@ slots:
   id:
     identifier: true
     slot_uri: schema:identifier
+  shortname:
   name:
     slot_uri: schema:name
-  shortname:
   description:
     slot_uri: schema:description
+  label:
+    slot_uri: rdfs:label
+
+  alias:
+  aliases:
+    multivalued: true
+    inlined_as_list: true
+  context_aliases:
+    multivalued: true
+    inlined_as_list: true
+    range: ContextAlias
+  context:
+    range: NamedThing
+  
+  validation_history:
+    multivalued: true
+    inlined_as_list: true
+    range: ValidationHistoryRecord
 
   units:
     multivalued: true
@@ -298,9 +340,6 @@ slots:
     range: QudtUnit
   quantity_kind:
     range: QudtQuantityKind
-  vito_aliases:
-    multivalued: true
-    inlined_as_list: true
 
   biochemgroupings:
     multivalued: true
@@ -319,13 +358,15 @@ slots:
     inlined_as_list: true
     range: Indicator
 
-  aliases:
-    multivalued: true
   grouping: BioChemGrouping
   web_uri:
   schema:
     range: BioChemIdentifierSchema
-  identifier:
+  code:
+  current_validation_status:
+    range: ValidationStatus
+  validation_datetime:
+    range: datetime
   validation_status:
     range: ValidationStatus
   validation_actor:
@@ -334,7 +375,7 @@ slots:
   sort_order:
     range: decimal
   aggregation_target:
-    range: Boolean
+    range: boolean
   parent:
     range: Matrix
   indicator_type:
@@ -369,26 +410,25 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: ObservableProperty
-  label:
   categorical:
-    range: Boolean
+    range: boolean
   multivalued:
-    range: Boolean
+    range: boolean
   is_abstract:
-    range: Boolean
+    range: boolean
   parent_groups:
     multivalued: true
     range: ObservablePropertyGroup
   value_type:
-    range: xsd:type
+    designates_type: true
   value_metadata:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyMetadataElement
   default_immutable:
-    range: Boolean
+    range: boolean
   default_significantdecimals:
-    range: int
+    range: integer
   default_unit:
   groups:
     multivalued: true
