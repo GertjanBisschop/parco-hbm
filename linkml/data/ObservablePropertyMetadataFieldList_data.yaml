@@ -11,11 +11,3 @@ metadata_fields:
     value_type: integer
   - name: maxlength
     value_type: integer
-  - name: multivalued
-    value_type: bool
-  - name: allowed_keys
-    value_type: list
-  - name: allowed_values
-    value_type: list
-  - name: allowed_dict
-    value_type: dict

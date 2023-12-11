@@ -11,19 +11,15 @@ observableproperties:
   relevant_observation_design_types:
   - QUESTIONNAIRE
   shortname: relation
-  value_metadata:
-  - field: allowed_values
-    value:
-    - participant itself
-    - mother of participant
-    - father of participant
-    - sibling of participant
-  - field: allowed_keys
-    value:
-    - P
-    - M
-    - F
-    - S
+  value_options:
+  - key: P
+    value: participant itself
+  - key: M
+    value: mother of participant
+  - key: F
+    value: father of participant
+  - key: S
+    value: sibling of participant
   value_type: string
 - categorical: true
   default_immutable: 1
@@ -38,15 +34,11 @@ observableproperties:
   relevant_observation_design_types:
   - QUESTIONNAIRE
   shortname: sex
-  value_metadata:
-  - field: allowed_values
-    value:
-    - female
-    - male
-  - field: allowed_keys
-    value:
-    - F
-    - M
+  value_options:
+  - key: F
+    value: female
+  - key: M
+    value: male
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -61,21 +53,17 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: subpopulation
   validation_design: IF population IS 0 THEN subpopulation IS not empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - hotspot
-    - pregnant women
-    - occupationally exposed
-    - clinical
-    - other
-  - field: allowed_keys
-    value:
-    - '1'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
+  value_options:
+  - key: '1'
+    value: hotspot
+  - key: '2'
+    value: pregnant women
+  - key: '3'
+    value: occupationally exposed
+  - key: '4'
+    value: clinical
+  - key: '5'
+    value: other
   value_type: string
 - categorical: true
   default_immutable: 1
@@ -90,15 +78,11 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: smoking_m
   validation_design: IF any(ageyears) IS < 20 THEN smoking_m IS not empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - 'no'
-    - yes (smoker during pregnancy)
-  - field: allowed_keys
-    value:
-    - '0'
-    - '1'
+  value_options:
+  - key: '0'
+    value: 'no'
+  - key: '1'
+    value: yes (smoker during pregnancy)
   value_type: string
 - categorical: true
   default_immutable: 1
@@ -113,15 +97,11 @@ observableproperties:
   relevant_observation_design_types:
   - QUESTIONNAIRE
   shortname: case_control
-  value_metadata:
-  - field: allowed_values
-    value:
-    - control
-    - case
-  - field: allowed_keys
-    value:
-    - '0'
-    - '1'
+  value_options:
+  - key: '0'
+    value: control
+  - key: '1'
+    value: case
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -134,15 +114,11 @@ observableproperties:
   relevant_observation_design_types:
   - QUESTIONNAIRE
   shortname: population
-  value_metadata:
-  - field: allowed_values
-    value:
-    - 'yes'
-    - 'no'
-  - field: allowed_keys
-    value:
-    - '1'
-    - '0'
+  value_options:
+  - key: '1'
+    value: 'yes'
+  - key: '0'
+    value: 'no'
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -156,17 +132,13 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: isced
   validation_design: IF ageyears IS >= 20 THEN isced IS not empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - Low education (ISCED 0-2)
-    - Medium education (ISCED 3-4)
-    - High education (ISCED >
-  - field: allowed_keys
-    value:
-    - '1'
-    - '2'
-    - '3'
+  value_options:
+  - key: '1'
+    value: Low education (ISCED 0-2)
+  - key: '2'
+    value: Medium education (ISCED 3-4)
+  - key: '3'
+    value: High education (ISCED >=5)
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -180,17 +152,13 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: isced_m
   validation_design: IF ageyears IS < 20 THEN isced_m IS not empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - Low education (ISCED 0-2)
-    - Medium education (ISCED 3-4)
-    - High education (ISCED >
-  - field: allowed_keys
-    value:
-    - '1'
-    - '2'
-    - '3'
+  value_options:
+  - key: '1'
+    value: Low education (ISCED 0-2)
+  - key: '2'
+    value: Medium education (ISCED 3-4)
+  - key: '3'
+    value: High education (ISCED >=5)
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -204,17 +172,13 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: isced_f
   validation_design: IF ageyears IS < 20 THEN isced_f IS not empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - Low education (ISCED 0-2)
-    - Medium education (ISCED 3-4)
-    - High education (ISCED >
-  - field: allowed_keys
-    value:
-    - '1'
-    - '2'
-    - '3'
+  value_options:
+  - key: '1'
+    value: Low education (ISCED 0-2)
+  - key: '2'
+    value: Medium education (ISCED 3-4)
+  - key: '3'
+    value: High education (ISCED >=5)
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -227,17 +191,13 @@ observableproperties:
   relevant_observation_design_types:
   - QUESTIONNAIRE
   shortname: degurba
-  value_metadata:
-  - field: allowed_values
-    value:
-    - Densely populated area (cities)
-    - Intermediate density area (towns or suburbs)
-    - Thinly populated area (rural area)
-  - field: allowed_keys
-    value:
-    - '1'
-    - '2'
-    - '3'
+  value_options:
+  - key: '1'
+    value: Densely populated area (cities)
+  - key: '2'
+    value: Intermediate density area (towns or suburbs)
+  - key: '3'
+    value: Thinly populated area (rural area)
   value_type: string
 - categorical: true
   default_unit: '-'
@@ -252,15 +212,11 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: smoking
   validation_design: IF ageyears IS < 12 THEN smoking IS empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - 'no'
-    - yes (current smoker)
-  - field: allowed_keys
-    value:
-    - '0'
-    - '1'
+  value_options:
+  - key: '0'
+    value: 'no'
+  - key: '1'
+    value: yes (current smoker)
   value_type: string
 - calculation_design: max(isced_m, isced_f)
   categorical: true
@@ -275,17 +231,13 @@ observableproperties:
   - QUESTIONNAIRE
   shortname: isced_hh
   validation_design: IF ageyears IS < 20 THEN isced_hh IS not empty
-  value_metadata:
-  - field: allowed_values
-    value:
-    - Low education (ISCED 0-2)
-    - Medium education (ISCED 3-4)
-    - High education (ISCED >
-  - field: allowed_keys
-    value:
-    - '1'
-    - '2'
-    - '3'
+  value_options:
+  - key: '1'
+    value: Low education (ISCED 0-2)
+  - key: '2'
+    value: Medium education (ISCED 3-4)
+  - key: '3'
+    value: High education (ISCED >=5)
   value_type: string
 - categorical: false
   default_unit: '-'
