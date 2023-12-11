@@ -1,8 +1,10 @@
 studies:
-- shortname: 3XG
+- id: 3XG
+  shortname: 3XG
   project_stakeholders:
     - VITO
-- shortname: HBM4EU
+- id: HBM4EU
+  shortname: HBM4EU
   name: HBM4EU
   project_stakeholders:
     - VITO

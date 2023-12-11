@@ -1,13 +1,17 @@
 stakeholders:
-- shortname: PARC
+- id: PARC
+  shortname: PARC
   name: PARC
   geographic_scope: EU
-- shortname: FHBM
+- id: FHBM
+  shortname: FHBM
   name: Flemish HBM
   geographic_scope: BE
-- shortname: VITO
+- id: VITO
+  shortname: VITO
   name: VITO
   geographic_scope: BE
-- shortname: MU
+- id: MU
+  shortname: MU
   name: MU
   geographic_scope: CZ

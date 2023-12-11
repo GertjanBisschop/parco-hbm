@@ -1,5 +1,6 @@
 timepoints:
-  - shortname: 3xGST03
+  - id: 3xGST03
+    shortname: 3xGST03
     observations:
     - shortname: questionnaire_000x1
       observation_design:

@@ -1,5 +1,6 @@
 projects:
-- shortname: PARC
+- id: PARC
+  shortname: PARC
   name: Partnership for the Assessment of Risks from Chemicals
   project_stakeholders:
     - VITO
@@ -7,7 +8,8 @@ projects:
     - UoB
     - JSI
     - ISSEP
-- shortname: HBM4EU
+- id: HBM4EU
+  shortname: HBM4EU
   name: HBM4EU
   project_stakeholders:
     - VITO

@@ -2,49 +2,49 @@ matrices:
 - aggregation_target: false
   id: bwb
   name: blood-whole blood
-  parent: blood
+  parent_matrix: blood
   shortname: bwb
   sort_order: 1.0
 - aggregation_target: false
   id: bs
   name: blood serum
-  parent: blood
+  parent_matrix: blood
   shortname: bs
   sort_order: 2.0
 - aggregation_target: false
   id: bp
   name: blood plasma
-  parent: blood
+  parent_matrix: blood
   shortname: bp
   sort_order: 3.0
 - aggregation_target: false
   id: bbc
   name: blood-blood cells
-  parent: bloodcells
+  parent_matrix: bloodcells
   shortname: bbc
   sort_order: 4.0
 - aggregation_target: false
   id: rbc
   name: blood - red blood cells
-  parent: bloodcells
+  parent_matrix: bloodcells
   shortname: rbc
   sort_order: 5.0
 - aggregation_target: false
   id: cbwb
   name: cord blood-whole blood
-  parent: cord blood
+  parent_matrix: cord blood
   shortname: cbwb
   sort_order: 6.0
 - aggregation_target: false
   id: cbs
   name: cord blood-serum
-  parent: cord blood
+  parent_matrix: cord blood
   shortname: cbs
   sort_order: 7.0
 - aggregation_target: false
   id: cbp
   name: cord blood-plasma
-  parent: cord blood
+  parent_matrix: cord blood
   shortname: cbp
   sort_order: 8.0
 - aggregation_target: false
@@ -55,25 +55,25 @@ matrices:
 - aggregation_target: false
   id: us
   name: random spot urine
-  parent: urine
+  parent_matrix: urine
   shortname: us
   sort_order: 10.0
 - aggregation_target: false
   id: um
   name: first morning urine
-  parent: urine
+  parent_matrix: urine
   shortname: um
   sort_order: 11.0
 - aggregation_target: false
   id: uf
   name: fasting urine
-  parent: urine
+  parent_matrix: urine
   shortname: uf
   sort_order: 12.0
 - aggregation_target: false
   id: ud
   name: urine 24h
-  parent: urine
+  parent_matrix: urine
   shortname: ud
   sort_order: 13.0
 - aggregation_target: false
@@ -94,13 +94,13 @@ matrices:
 - aggregation_target: false
   id: atn
   name: All toe nail
-  parent: nail
+  parent_matrix: nail
   shortname: atn
   sort_order: 17.0
 - aggregation_target: false
   id: btn
   name: Big toe nail
-  parent: nail
+  parent_matrix: nail
   shortname: btn
   sort_order: 18.0
 - aggregation_target: false
@@ -156,31 +156,31 @@ matrices:
 - aggregation_target: false
   id: idust
   name: indoor dust
-  parent: air
+  parent_matrix: air
   shortname: idust
   sort_order: 29.0
 - aggregation_target: false
   id: odust
   name: outdoor dust
-  parent: air
+  parent_matrix: air
   shortname: odust
   sort_order: 30.0
 - aggregation_target: false
   id: oair
   name: outdoor air-stationary
-  parent: air
+  parent_matrix: air
   shortname: oair
   sort_order: 31.0
 - aggregation_target: false
   id: iair
   name: indoor air-stationary
-  parent: air
+  parent_matrix: air
   shortname: iair
   sort_order: 32.0
 - aggregation_target: false
   id: pair
   name: personal air
-  parent: air
+  parent_matrix: air
   shortname: pair
   sort_order: null
 - aggregation_target: false
@@ -191,13 +191,13 @@ matrices:
 - aggregation_target: false
   id: kgfood
   name: kitchengarden food
-  parent: food
+  parent_matrix: food
   shortname: kgfood
   sort_order: 34.0
 - aggregation_target: false
   id: egg
   name: eggs
-  parent: food
+  parent_matrix: food
   shortname: egg
   sort_order: 35.0
 - aggregation_target: false
@@ -208,13 +208,13 @@ matrices:
 - aggregation_target: false
   id: vams
   name: volumetric absorptive microsample (VAMS)
-  parent: blood
+  parent_matrix: blood
   shortname: vams
   sort_order: null
 - aggregation_target: false
   id: dbs
   name: dried blood spots
-  parent: blood
+  parent_matrix: blood
   shortname: dbs
   sort_order: null
 - aggregation_target: false
