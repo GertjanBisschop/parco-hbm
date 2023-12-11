@@ -9,6 +9,8 @@ prefixes:
   schema: http://schema.org/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   prov: http://www.w3.org/ns/prov#
+  qudt: http://qudt.org/2.1/schema/qudt
+  qudt-qk:   http://qudt.org/2.1/vocab/quantitykind
   # DATA PREFIXES
   # P: http://example.org/P/
   # ROR: http://example.org/ror/
@@ -85,6 +87,8 @@ classes:
   
   BioChemGrouping:
     is_a: NamedThing
+    mixins:
+      - HasContextAliases
   BioChemEntity:
     class_uri:
       schema:BioChemEntity
@@ -109,10 +113,12 @@ classes:
       - web_uri
   Matrix:
     is_a: NamedThing
+    mixins:
+      - HasContextAliases
     slots:
       - sort_order
       - aggregation_target
-      - parent
+      - parent_matrix
   Indicator:
     description: >-
       A measurable indicator that is relevant to the Personal Exposure and Health domain
@@ -143,6 +149,7 @@ classes:
       - value_type
       - categorical
       - multivalued
+      - value_options
       - value_metadata
       - quantity_kind
       - default_unit
@@ -154,13 +161,13 @@ classes:
       - indicator
       - calculation_design
       - validation_design
-  CalculationDesign:
+  ObservablePropertyValueOption:
+    mixins:
+      - HasContextAliases
     slots:
-      - unit
-      - formula
-  ValidationDesign:
-    slots:
-      - conditional
+      - key
+      - value
+      - label
   ObservablePropertyMetadataElement:
     slots:
       - field
@@ -173,6 +180,13 @@ classes:
     tree_root: true
     slots:
       - metadata_fields
+  CalculationDesign:
+    slots:
+      - unit
+      - formula
+  ValidationDesign:
+    slots:
+      - conditional
 
   Stakeholder:
     is_a: NamedThing
@@ -233,8 +247,16 @@ classes:
   ObservationDesign:
     abstract: true
     slots:
-      - observed_entities
-      - observable_properties
+      - observation_entities
+      - observation_properties
+  ObservationEntity:
+    is_a: NamedThing
+    slots:
+      - study_entity
+  ObservationProperty:
+    is_a: NamedThing
+    slots:
+      - observable_property
   MetadataDesign:
     is_a: ObservationDesign
   QuestionnaireDesign:
@@ -376,7 +398,7 @@ slots:
     range: decimal
   aggregation_target:
     range: boolean
-  parent:
+  parent_matrix:
     range: Matrix
   indicator_type:
     range: IndicatorType
@@ -425,6 +447,10 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyMetadataElement
+  value_options:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservablePropertyValueOption
   default_immutable:
     range: boolean
   default_significantdecimals:
@@ -446,6 +472,7 @@ slots:
   conditional:
   field:
     range: ObservablePropertyMetadataField
+  key:
   value:
   metadata_fields:
     multivalued: true
@@ -496,12 +523,12 @@ slots:
     range: ObservationDesign
   observation_result:
     range: ObservationResult
-  observed_entities:
+  observation_entities:
     multivalued: true
-    range: StudyEntity
-  observable_properties:
+    range: ObservationEntity
+  observation_properties:
     multivalued: true
-    range: ObservableProperty
+    range: ObservationProperty
   observed_values:
     multivalued: true
     range: ObservedValue
@@ -560,9 +587,9 @@ enums:
         - rdfs:subClassOf
   QudtQuantityKind:
     reachable_from:
-      source_ontology: qudt
+      source_ontology: qudt-qk
       source_nodes:
-        - qudt:QuantityKind
+        - qudt-qk:QuantityKind
       include_self: false
       relationship_types:
         - rdfs:subClassOf
@@ -630,5 +657,6 @@ enums:
       is_same_as:
       is_part_of:
       is_located_at:
+
 
 # TODO: model how the I-Adopt Variable the indicator can be linked to the appropriate I-Adopt object_of_interest [1..1] and context_object(s) [0..n]
