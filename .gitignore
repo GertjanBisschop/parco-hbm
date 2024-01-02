@@ -2,6 +2,8 @@
 semantic.cache
 bin/
 
+*.pyc
+
 *.tmp
 *.tmp.obo
 *.tmp.owl
