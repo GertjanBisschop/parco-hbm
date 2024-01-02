@@ -1,0 +1,230 @@
+codebeh_choice1:
+  name: beh_choice
+  values:
+  - 7 - Agree strongly
+  - 6 - Agree
+  - 5 - Agree mildly
+  - 4 - Neither agree nor disagree
+  - 3 - Disagree mildly
+  - 2 - Disagree
+  - 1 - Disagree strongly
+  - 99 - I don't know or prefer not to answer
+codebeh_choices1:
+  name: beh_choices
+  values:
+  - 5 - Agree mildly
+  - 4 - Neither agree nor disagree
+  - 3 - Disagree mildly
+  - 2 - Disagree
+  - 1 - Disagree strongly
+  - 7 - Agree strongly
+  - 6 - Agree
+  - 99 - I don't know or prefer not to answer
+codebreast_feeding1:
+  name: breast_feeding
+  values:
+  - 0 - No
+  - 1 - Yes, I am/the mother is currently breastfeeding
+  - 2 - Yes, for less than 3 months
+  - 3 - Yes, between 3 to 6 months
+  - 4 - Yes, between 6 months to 1 year
+  - 5 - Yes, for longer than 1 year
+  - "99 - I don\u2019t know/prefer not to answer"
+codecare_products_child1:
+  name: personalcareproducts
+  values:
+  - 0 - None
+  - 1 - 1-4 products
+  - 2 - 5-8 products
+  - 3 - 9 products or more
+  - "99 - Don\u2019t know/prefer not to answer"
+codecareproducts_ecolabel_child1:
+  name: personalcareproducts
+  values:
+  - 0 - None
+  - 1 - 1-4 products
+  - 2 - 5-8 products
+  - 3 - 9 products or more
+  - "99 - Don\u2019t know/prefer not to answer"
+codeconcern_airquality1:
+  name: concern_airquality
+  values:
+  - 0 - Not at all
+  - 1 - A little
+  - 2 - Partly
+  - 3 - Quite a lot
+  - 4 - Extremely
+  - "99 - I don\u2019t know/prefer not to answer"
+codeconsciousness_ladder1:
+  name: consciousness_ladder
+  values:
+  - 9 - Very conscious on the importance of indoor air quality
+  - '8'
+  - '7'
+  - '6'
+  - '5'
+  - '4'
+  - '3'
+  - '2'
+  - 1 - Not at all conscious on the importance of indoor air quality
+  - "99 - I don\u2019t know/prefer not to answer"
+codecycling_walking_child1:
+  name: smoking_room
+  values:
+  - 1 - Yes
+  - 0 - No
+  - "99 - Don\u2019t know/prefer not to answer"
+codedd_asthma_allergy_family1:
+  name: dd_asthma_allergy_family
+  values: []
+codedoyouhaveddasthma1:
+  name: doyouhaveddasthma
+  values:
+  - 1 - Yes
+  - 0 - No
+  - 99 - Don't know
+codeelectronics_child1:
+  name: electronics_child
+  values:
+  - 0 - Never
+  - 1 - Once per month
+  - 2 - Once per week
+  - 3 - Several times per week
+  - 4 - Daily
+  - "99 - I don\u2019t know/prefer not to answer"
+codeeyeproblem1:
+  name: eyeproblem
+  values:
+  - 0 - Never
+  - 1 - A few times
+  - 2 - Sometimes
+  - 3 - Often
+  - 99 - Don't know
+codejudged_airquality1:
+  name: judged_airquality
+  values:
+  - 7 - Extremely pleasant
+  - 6 - Very pleasant
+  - 5 - Pleasant
+  - 4 - Rather pleasant
+  - 3 - Unpleasant
+  - 2 - Very unpleasant
+  - 1 - Extremely unpleasant
+  - 88 - I have never thought about it
+  - "99 - I don\u2019t know/prefer not to answer"
+codemotorizedvehicle_child1:
+  name: smoking_room
+  values:
+  - 1 - Yes
+  - 0 - No
+  - "99 - Don\u2019t know/prefer not to answer"
+codemouthing_behaviour1:
+  name: mouthing_behaviour
+  values:
+  - 0 - No
+  - 1 - Yes, often
+  - 2 - Yes, sometimes
+  - 3 - Yes, a few times
+  - 77 - Other
+coden71educationrespondent1:
+  name: n71educationrespondent
+  values:
+  - 0 - No formal education or below primary education (ISCED 0)
+  - 1 - Primary education (ISCED 1)
+  - 2 - Secondary school education,or second stage of basic education (ISCED 2, ISCED
+    3)
+  - 3 - Upper secondary education (ISCED 3)
+  - 4 - Post-secondary non-tertiary education (ISCED 4)
+  - 5 - Short-cycle tertiary education (ISCED 5)
+  - "6 - Bachelor\u2019s or equivalent level (ISCED 6)"
+  - "7 - Master\u2019s or equivalent level (ISCED 7)"
+  - 8 - Doctoral or equivalent level (ISCED 8)
+  - "99 - I don\u2019t know/prefer not to answer"
+coden72educationpartner1:
+  name: n71educationrespondent
+  values:
+  - 0 - No formal education or below primary education (ISCED 0)
+  - 1 - Primary education (ISCED 1)
+  - 2 - Secondary school education,or second stage of basic education (ISCED 2, ISCED
+    3)
+  - 3 - Upper secondary education (ISCED 3)
+  - 4 - Post-secondary non-tertiary education (ISCED 4)
+  - 5 - Short-cycle tertiary education (ISCED 5)
+  - "6 - Bachelor\u2019s or equivalent level (ISCED 6)"
+  - "7 - Master\u2019s or equivalent level (ISCED 7)"
+  - 8 - Doctoral or equivalent level (ISCED 8)
+  - "99 - I don\u2019t know/prefer not to answer"
+codenoseproblem1:
+  name: eyeproblem
+  values:
+  - 0 - Never
+  - 1 - A few times
+  - 2 - Sometimes
+  - 3 - Often
+  - 99 - Don't know
+codepersonalcareproducts1:
+  name: personalcareproducts
+  values:
+  - 0 - None
+  - 1 - 1-4 products
+  - 2 - 5-8 products
+  - 3 - 9 products or more
+  - "99 - Don\u2019t know/prefer not to answer"
+codeplay_floor_child1:
+  name: electronics_child
+  values:
+  - 0 - Never
+  - 1 - Once per month
+  - 2 - Once per week
+  - 3 - Several times per week
+  - 4 - Daily
+  - "99 - I don\u2019t know/prefer not to answer"
+codesex_child1:
+  name: sex_child
+  values:
+  - 1 - Male
+  - 2 - Female
+codesmoking_room1:
+  name: smoking_room
+  values:
+  - 1 - Yes
+  - 0 - No
+  - "99 - Don\u2019t know/prefer not to answer"
+codespecify_place1:
+  name: specify_place
+  values:
+  - 1 - Kindergarten or childcare
+  - 2 - Other house
+  - 3 - Indoor public space
+  - 4 - Outside
+  - 77 - Other
+codestagnantbadair1:
+  name: stagnantbadair
+  values:
+  - 0 - No, never
+  - 1 - Yes, sometimes
+  - 2 - Yes, Often
+  - 99 - Don't know
+codetemperature_reg1:
+  name: temperature_reg
+  values:
+  - 88 - Not applicable
+  - 0 - Never
+  - 1 - Seldom
+  - 2 - Sometimes
+  - 3 - Often
+  - 4 - Most of the time
+  - 5 - Always
+  - 99 - I don't know pr prefer not to answer
+codetotal_income_category1:
+  name: total_income_category
+  values:
+  - 1 - Cat 1
+  - 2 - Cat 2
+  - 3 - Cat 3
+  - 4 - Cat 4
+  - 5 - Cat 5
+  - 6 - Cat 6
+  - 7 - Cat 7
+  - 8 - Cat 8
+  - 99 - I don't know/prefer not to answer
