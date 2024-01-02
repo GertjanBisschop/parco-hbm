@@ -55,6 +55,22 @@ projects_as_list:
     - chromate
     - SPECIMEn
     - HBM4EU-Occupational
+- id: FHBM
+  shortname: FHBM
+  name: Flemish HBM
+  translations_as_list:
+    - property_name: name
+      language: nl-be
+      translated_value: Vlaamse HBM
+  project_stakeholders_as_list:
+    - stakeholder: VITO
+      project_roles:
+          - principal_investigator
+          - data_controller
+          - data_processor
+          - data_user
+  studies:
+    - 3XG
 - id: EIRENE-Flanders
   shortname: EIRENE-Flanders
   name: EIRENE-Flanders

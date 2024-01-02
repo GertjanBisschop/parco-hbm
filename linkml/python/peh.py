@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-31T15:16:30
+# Generation date: 2024-01-02T14:06:50
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -381,6 +381,51 @@ class ContextAlias(YAMLRoot):
 
 
 @dataclass
+class HasTranslations(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["HasTranslations"]
+    class_class_curie: ClassVar[str] = "peh:HasTranslations"
+    class_name: ClassVar[str] = "HasTranslations"
+    class_model_uri: ClassVar[URIRef] = PEH.HasTranslations
+
+    translations_as_list: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Translation(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Translation"]
+    class_class_curie: ClassVar[str] = "peh:Translation"
+    class_name: ClassVar[str] = "Translation"
+    class_model_uri: ClassVar[URIRef] = PEH.Translation
+
+    property_name: Optional[str] = None
+    language: Optional[str] = None
+    translated_value: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.property_name is not None and not isinstance(self.property_name, str):
+            self.property_name = str(self.property_name)
+
+        if self.language is not None and not isinstance(self.language, str):
+            self.language = str(self.language)
+
+        if self.translated_value is not None and not isinstance(self.translated_value, str):
+            self.translated_value = str(self.translated_value)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Unit(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -393,6 +438,7 @@ class Unit(NamedThing):
     same_unit_as: Optional[Union[str, "QudtUnit"]] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -410,6 +456,10 @@ class Unit(NamedThing):
             self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
         self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
 
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+
         super().__post_init__(**kwargs)
 
 
@@ -424,6 +474,7 @@ class BioChemGrouping(NamedThing):
 
     id: Union[str, BioChemGroupingId] = None
     context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -434,6 +485,10 @@ class BioChemGrouping(NamedThing):
         if not isinstance(self.context_aliases_as_list, list):
             self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
         self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -455,6 +510,7 @@ class BioChemEntity(NamedThing):
     biochemidentifiers_as_list: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
     aliases_as_list: Optional[Union[str, List[str]]] = empty_list()
     context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
     current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
     validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]] = empty_list()
 
@@ -478,6 +534,10 @@ class BioChemEntity(NamedThing):
         if not isinstance(self.context_aliases_as_list, list):
             self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
         self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         if self.current_validation_status is not None and not isinstance(self.current_validation_status, ValidationStatus):
             self.current_validation_status = ValidationStatus(self.current_validation_status)
@@ -666,6 +726,7 @@ class ObservablePropertyGroup(NamedThing):
     sort_order: Optional[Decimal] = None
     is_abstract: Optional[Union[bool, Bool]] = None
     parent_groups: Optional[Union[Union[str, ObservablePropertyGroupId], List[Union[str, ObservablePropertyGroupId]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -682,6 +743,10 @@ class ObservablePropertyGroup(NamedThing):
         if not isinstance(self.parent_groups, list):
             self.parent_groups = [self.parent_groups] if self.parent_groups is not None else []
         self.parent_groups = [v if isinstance(v, ObservablePropertyGroupId) else ObservablePropertyGroupId(v) for v in self.parent_groups]
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -711,6 +776,7 @@ class ObservableProperty(NamedThing):
     indicator: Optional[Union[str, IndicatorId]] = None
     calculation_design: Optional[Union[dict, "CalculationDesign"]] = None
     validation_design: Optional[Union[dict, "ValidationDesign"]] = None
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -766,6 +832,10 @@ class ObservableProperty(NamedThing):
 
         if self.validation_design is not None and not isinstance(self.validation_design, ValidationDesign):
             self.validation_design = ValidationDesign(**as_dict(self.validation_design))
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -897,6 +967,7 @@ class Stakeholder(NamedThing):
 
     id: Union[str, StakeholderId] = None
     geographic_scope: Optional[str] = None
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -906,6 +977,10 @@ class Stakeholder(NamedThing):
 
         if self.geographic_scope is not None and not isinstance(self.geographic_scope, str):
             self.geographic_scope = str(self.geographic_scope)
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -922,6 +997,7 @@ class Project(NamedThing):
     id: Union[str, ProjectId] = None
     project_stakeholders_as_list: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
     studies: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -937,6 +1013,10 @@ class Project(NamedThing):
             self.studies = [self.studies] if self.studies is not None else []
         self.studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.studies]
 
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+
         super().__post_init__(**kwargs)
 
 
@@ -951,6 +1031,7 @@ class ProjectStakeholder(YAMLRoot):
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
     project_roles: Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
@@ -959,6 +1040,10 @@ class ProjectStakeholder(YAMLRoot):
         if not isinstance(self.project_roles, list):
             self.project_roles = [self.project_roles] if self.project_roles is not None else []
         self.project_roles = [v if isinstance(v, ProjectRole) else ProjectRole(v) for v in self.project_roles]
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -977,6 +1062,7 @@ class Study(NamedThing):
     timepoints: Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]] = empty_list()
     study_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
     projects: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
+    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -999,6 +1085,10 @@ class Study(NamedThing):
         if not isinstance(self.projects, list):
             self.projects = [self.projects] if self.projects is not None else []
         self.projects = [v if isinstance(v, ProjectId) else ProjectId(v) for v in self.projects]
+
+        if not isinstance(self.translations_as_list, list):
+            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
+        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -1678,25 +1768,6 @@ class DataExtract(YAMLRoot):
 
 
 # Enumerations
-class QudtUnit(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="QudtUnit",
-    )
-
-class QudtQuantityKind(EnumDefinitionImpl):
-
-    MassConcentration = PermissibleValue(
-        text="MassConcentration",
-        meaning=QUDTQK["MassConcentration"])
-    Period = PermissibleValue(
-        text="Period",
-        meaning=QUDTQK["Period"])
-
-    _defn = EnumDefinition(
-        name="QudtQuantityKind",
-    )
-
 class ValidationStatus(EnumDefinitionImpl):
 
     unvalidated = PermissibleValue(text="unvalidated")
@@ -1711,7 +1782,7 @@ class IndicatorType(EnumDefinitionImpl):
 
     effectmarker = PermissibleValue(text="effectmarker")
     exposuremarker = PermissibleValue(text="exposuremarker")
-    geomorker = PermissibleValue(text="geomorker")
+    geomarker = PermissibleValue(text="geomarker")
     observation = PermissibleValue(text="observation")
 
     _defn = EnumDefinition(
@@ -1755,6 +1826,26 @@ class ObservationType(EnumDefinitionImpl):
         name="ObservationType",
     )
 
+class ObjectiveType(EnumDefinitionImpl):
+
+    research_objective = PermissibleValue(text="research_objective")
+    project_result = PermissibleValue(text="project_result")
+    publication = PermissibleValue(text="publication")
+
+    _defn = EnumDefinition(
+        name="ObjectiveType",
+    )
+
+class LinkType(EnumDefinitionImpl):
+
+    is_same_as = PermissibleValue(text="is_same_as")
+    is_part_of = PermissibleValue(text="is_part_of")
+    is_located_at = PermissibleValue(text="is_located_at")
+
+    _defn = EnumDefinition(
+        name="LinkType",
+    )
+
 class ProjectRole(EnumDefinitionImpl):
 
     subsidising_party = PermissibleValue(text="subsidising_party")
@@ -1790,24 +1881,23 @@ class DataRole(EnumDefinitionImpl):
         name="DataRole",
     )
 
-class ObjectiveType(EnumDefinitionImpl):
-
-    research_objective = PermissibleValue(text="research_objective")
-    project_result = PermissibleValue(text="project_result")
-    publication = PermissibleValue(text="publication")
+class QudtUnit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="ObjectiveType",
+        name="QudtUnit",
     )
 
-class LinkType(EnumDefinitionImpl):
+class QudtQuantityKind(EnumDefinitionImpl):
 
-    is_same_as = PermissibleValue(text="is_same_as")
-    is_part_of = PermissibleValue(text="is_part_of")
-    is_located_at = PermissibleValue(text="is_located_at")
+    MassConcentration = PermissibleValue(
+        text="MassConcentration",
+        meaning=QUDTQK["MassConcentration"])
+    Period = PermissibleValue(
+        text="Period",
+        meaning=QUDTQK["Period"])
 
     _defn = EnumDefinition(
-        name="LinkType",
+        name="QudtQuantityKind",
     )
 
 # Slots
@@ -1840,6 +1930,18 @@ slots.context_aliases_as_list = Slot(uri=PEH.context_aliases_as_list, name="cont
 
 slots.context = Slot(uri=PEH.context, name="context", curie=PEH.curie('context'),
                    model_uri=PEH.context, domain=None, range=Optional[Union[str, NamedThingId]])
+
+slots.translations_as_list = Slot(uri=PEH.translations_as_list, name="translations_as_list", curie=PEH.curie('translations_as_list'),
+                   model_uri=PEH.translations_as_list, domain=None, range=Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]])
+
+slots.property_name = Slot(uri=PEH.property_name, name="property_name", curie=PEH.curie('property_name'),
+                   model_uri=PEH.property_name, domain=None, range=Optional[str])
+
+slots.language = Slot(uri=PEH.language, name="language", curie=PEH.curie('language'),
+                   model_uri=PEH.language, domain=None, range=Optional[str])
+
+slots.translated_value = Slot(uri=PEH.translated_value, name="translated_value", curie=PEH.curie('translated_value'),
+                   model_uri=PEH.translated_value, domain=None, range=Optional[str])
 
 slots.validation_history = Slot(uri=PEH.validation_history, name="validation_history", curie=PEH.curie('validation_history'),
                    model_uri=PEH.validation_history, domain=None, range=Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]])

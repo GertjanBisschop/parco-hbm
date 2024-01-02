@@ -81,11 +81,21 @@ classes:
     slots:
       - context
       - alias
+  HasTranslations:
+    mixin: true
+    slots:
+      - translations_as_list
+  Translation:
+    slots:
+      - property_name
+      - language
+      - translated_value
 
   Unit:
     is_a: NamedThing
     mixins:
       - HasContextAliases
+      - HasTranslations
     slots:
       - same_unit_as
       - quantity_kind
@@ -94,6 +104,7 @@ classes:
     is_a: NamedThing
     mixins:
       - HasContextAliases
+      - HasTranslations
   BioChemEntity:
     class_uri:
       schema:BioChemEntity
@@ -103,6 +114,7 @@ classes:
     mixins:
       - HasAliases
       - HasContextAliases
+      - HasTranslations
       - HasValidationStatus
     slots:
       - grouping
@@ -145,12 +157,16 @@ classes:
 
   ObservablePropertyGroup:
     is_a: NamedThing
+    mixins:
+      - HasTranslations
     slots:
       - sort_order
       - is_abstract
       - parent_groups
   ObservableProperty:
     is_a: NamedThing
+    mixins:
+      - HasTranslations
     slots:
       - value_type
       - categorical
@@ -192,10 +208,14 @@ classes:
 
   Stakeholder:
     is_a: NamedThing
+    mixins:
+      - HasTranslations
     slots:
       - geographic_scope
   Project:
     is_a: NamedThing
+    mixins:
+      - HasTranslations
     slots:
       - project_stakeholders_as_list
       - studies
@@ -203,8 +223,12 @@ classes:
     slots:
       - stakeholder
       - project_roles
+    mixins:
+      - HasTranslations
   Study:
     is_a: NamedThing
+    mixins:
+      - HasTranslations
     slots:
       - study_stakeholders_as_list
       - timepoints
@@ -345,7 +369,14 @@ slots:
   context:
     range: NamedThing
     inlined: false
-  
+  translations_as_list:
+    multivalued: true
+    inlined_as_list: true
+    range: Translation
+  property_name:
+  language:
+  translated_value:
+
   validation_history:
     multivalued: true
     inlined_as_list: true
@@ -594,39 +625,17 @@ slots:
   delivery_date:
 
 enums:
-  QudtUnit:
-    reachable_from:
-      source_ontology: qudt
-      source_nodes:
-        - qudt:Unit
-      include_self: false
-      relationship_types:
-        - rdfs:subClassOf
-  QudtQuantityKind:
-    permissible_values:
-      MassConcentration:
-        meaning: qudtqk:MassConcentration
-      Period:
-        meaning: qudtqk:Period
-    include:
-    - reachable_from:
-        source_ontology: qudtqk
-        source_nodes:
-          - qudtqk:QuantityKind
-        include_self: false
-        relationship_types:
-          - rdfs:subClassOf
-
   ValidationStatus:
     permissible_values:
       unvalidated:
       in_progress:
       validated:
+  # Types
   IndicatorType:
     permissible_values:
       effectmarker:
       exposuremarker:
-      geomorker:
+      geomarker:
       observation:
   BioChemEntityLinkType:
     permissible_values:
@@ -650,6 +659,17 @@ enums:
       questionnaire:
       geospatial:
       metadata:
+  ObjectiveType:
+    permissible_values:
+      research_objective:
+      project_result:
+      publication:
+  LinkType:
+    permissible_values:
+      is_same_as:
+      is_part_of:
+      is_located_at:
+  # Roles
   ProjectRole:
     permissible_values:
       subsidising_party:
@@ -670,16 +690,28 @@ enums:
       supplying_data_controller:
       receiving_data_controller:
       external_data_controller:
-  ObjectiveType:
+  # Ontology Based
+  QudtUnit:
+    reachable_from:
+      source_ontology: qudt
+      source_nodes:
+        - qudt:Unit
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+  QudtQuantityKind:
     permissible_values:
-      research_objective:
-      project_result:
-      publication:
-  LinkType:
-    permissible_values:
-      is_same_as:
-      is_part_of:
-      is_located_at:
-
+      MassConcentration:
+        meaning: qudtqk:MassConcentration
+      Period:
+        meaning: qudtqk:Period
+    include:
+    - reachable_from:
+        source_ontology: qudtqk
+        source_nodes:
+          - qudtqk:QuantityKind
+        include_self: false
+        relationship_types:
+          - rdfs:subClassOf
 
 # TODO: model how the I-Adopt Variable the indicator can be linked to the appropriate I-Adopt object_of_interest [1..1] and context_object(s) [0..n]
