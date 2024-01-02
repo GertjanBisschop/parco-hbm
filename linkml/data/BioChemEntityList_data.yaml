@@ -1,21 +1,30 @@
-biochementities:
+biochementities_as_list:
   - id: hg
     shortname: hg
     name: mercury
-    aliases:
+    aliases_as_list:
       - mercury
       - Hg(0)
       - kwik
       - mercure
       - mercurio
-    validation_status: validated
-    validation_actor: VITO
-    biochemidentifiers:
-      - schema: CHEBI
-        identifier: CHEBI:16170
-        validation_status: validated
-        validation_actor: VITO-auto
-      - schema: CAS
-        identifier: 7487-94-7
-        validation_status: validated
-        validation_actor: VITO-auto
+    current_validation_status: validated
+    validation_history:
+    - validation_status: validated
+      validation_actor: VITO
+      validation_datetime: 2023-12-23T15:20:00Z
+    biochemidentifiers_as_list:
+      - identifier_schema: CHEBI
+        identifier_code: CHEBI:16170
+        current_validation_status: validated
+        validation_history:
+        - validation_status: validated
+          validation_actor: VITO-auto
+          validation_datetime: 2023-12-23T15:20:00Z
+      - identifier_schema: CAS
+        identifier_code: 7487-94-7
+        current_validation_status: validated
+        validation_history:
+        - validation_status: validated
+          validation_actor: VITO-auto
+          validation_datetime: 2023-12-23T15:20:00Z

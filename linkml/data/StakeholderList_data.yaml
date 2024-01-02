@@ -1,4 +1,4 @@
-stakeholders:
+stakeholders_as_list:
 - id: PARC
   shortname: PARC
   name: PARC
@@ -15,3 +15,7 @@ stakeholders:
   shortname: MU
   name: MU
   geographic_scope: CZ
+- id: JSI
+  shortname: JSI
+  name: JSI
+  geographic_scope: SI

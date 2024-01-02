@@ -1,4 +1,4 @@
-observablepropertygroups:
+observablepropertygroups_as_list:
 - description: tijdelijk
   id: '<TODO: nog aan te vullen effect>'
   is_abstract: false

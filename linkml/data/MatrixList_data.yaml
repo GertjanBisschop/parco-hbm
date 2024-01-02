@@ -1,4 +1,4 @@
-matrices:
+matrices_as_list:
 - aggregation_target: false
   id: bwb
   name: blood-whole blood

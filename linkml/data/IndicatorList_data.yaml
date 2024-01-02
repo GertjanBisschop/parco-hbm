@@ -1,21 +1,21 @@
-indicators:
+indicators_as_list:
   - id: Age of a person in years
     name: Age of a person in years
     indicator_type: observation
-    quantity_kind: quantitykind:Period
+    quantity_kind: Period
     relevant_observable_entity_types:
       - person
   - id: Concentration of mercury in morning urine
     name: Concentration of mercury in morning urine
     indicator_type: exposuremarker
-    quantity_kind: quantitykind:MassConcentration
+    quantity_kind: MassConcentration
     matrix: Urine
     constraints:
       - Morning
     relevant_observable_entity_types:
       - sample
       - person
-    biochementity_links:
+    biochementity_links_as_list:
       - biochementity_linktype: exact_match
         biochementity: hg
 

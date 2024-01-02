@@ -1,16 +1,49 @@
-studies:
+studies_as_list:
+- id: HBM4EU-Occupational
+  shortname: HBM4EU-Occupational
+- id: PARC-Occupational
+  shortname: PARC-Occupational
+- id: chromate
+  shortname: chromate
+- id: SPECIMEn
+  shortname: SPECIMEn
 - id: 3XG
   shortname: 3XG
-  project_stakeholders:
-    - VITO
-- id: HBM4EU
-  shortname: HBM4EU
-  name: HBM4EU
-  project_stakeholders:
-    - VITO
-    - MU
-  studies:
-    - aligned
-    - chromate
-    - SPECIMEn
-    - occupational
+  timepoints:
+    - 3xGST03
+  study_stakeholders_as_list:
+    - stakeholder: VITO
+      study_roles:
+          - principal_investigator
+          - data_controller
+          - data_processor
+          - data_user
+  projects:
+    - HBM4EU
+    - PARC
+    - EIRENE
+- id: HBM4EU-aligned
+  shortname: HBM4EU-aligned
+  name: HBM4EU-aligned
+  study_stakeholders_as_list:
+    - stakeholder: VITO
+      study_roles:
+          - principal_investigator
+          - data_controller
+          - data_processor
+          - data_user
+    - stakeholder: MU
+      study_roles:
+          - principal_investigator
+          - data_controller
+          - data_processor
+          - data_user
+    - stakeholder: JSI
+      study_roles:
+          - principal_investigator
+          - data_controller
+          - data_processor
+          - data_user
+  projects:
+    - HBM4EU
+    - PARC

@@ -1,13 +1,19 @@
-metadata_fields:
-  - name: default_serialized
+metadata_fields_as_list:
+  - id: default_serialized
+    name: default_serialized
     value_type: str
-  - name: min
+  - id: min
+    name: min
     value_type: decimal
-  - name: max
+  - id: max
+    name: max
     value_type: decimal
-  - name: length
+  - id: length
+    name: length
     value_type: integer
-  - name: minlength
+  - id: minlength
+    name: minlength
     value_type: integer
-  - name: maxlength
+  - id: maxlength
+    name: maxlength
     value_type: integer

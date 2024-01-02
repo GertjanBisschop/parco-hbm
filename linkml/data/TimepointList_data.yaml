@@ -1,20 +1,24 @@
-timepoints:
+timepoints_as_list:
   - id: 3xGST03
     shortname: 3xGST03
-    observations:
-    - shortname: questionnaire_000x1
+    observations_as_list:
+    - id: questionnaire_000x1
+      shortname: questionnaire_000x1
+      observation_type: questionnaire
       observation_design:
-        observed_entities:
+        observation_entities:
           - person01
           - person02
-        observable_properties:
+        observation_properties:
           - ageyears
           - isced
       observation_result:
-    - shortname: metadata_000x5
+    - id: metadata_000x5
+      shortname: metadata_000x5
+      observation_type: metadata
       observation_design:
-        observed_entities:
+        observation_entities:
           - study01
-        observable_properties:
+        observation_properties:
           - participants
       observation_result:
