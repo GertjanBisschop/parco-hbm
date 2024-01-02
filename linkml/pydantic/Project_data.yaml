@@ -1,0 +1,30 @@
+id: PARC
+shortname: PARC
+name: Partnership for the Assessment of Risks from Chemicals
+project_stakeholders_as_list:
+  - stakeholder: VITO
+    project_roles:
+        - principal_investigator
+        - data_controller
+        - data_processor
+        - data_user
+  - stakeholder: MU
+    project_roles:
+        - principal_investigator
+        - data_controller
+        - data_processor
+        - data_user
+  - stakeholder: UoB
+    project_roles:
+        - principal_investigator
+        - data_controller
+        - data_processor
+        - data_user
+  - stakeholder: JSI
+    project_roles:
+        - data_controller
+        - data_processor
+        - data_user
+  - stakeholder: ISSEP
+    project_roles:
+        - data_user
