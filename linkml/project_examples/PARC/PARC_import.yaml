@@ -1,0 +1,102 @@
+study:
+  timepoint_0:
+    designs:
+      metadata:
+        study:
+          - Metadatafiche
+          - Data transfer form
+          - Ethics template
+          - Codebook Reference
+          - Codebook Name
+          - Codebook Version
+          - Study ID
+          - Study Name
+          - Study Description
+          - Country
+          - EC Funded Project
+          - Sampling frame
+          - IPCHEM Metadata link
+        subject:
+          - case_control
+        analysis:
+          - '? analysis name'
+          - biomarkercode
+          - matrix
+          - labinstitution
+          - labgroup
+          - labcountry
+          - accreditedmethod
+          - accreditedmethod_multiple
+          - accreditedmethod_other
+          - method
+          - method_other
+        sample:
+          - matrix
+          - samplingyear
+          - samplingmonth
+          - samplingday
+          - samplingseason
+          - samplinghour
+          - samplingminutes
+          - analysisyear
+          - analysismonth
+          - analysisday
+          - lipidassessment
+      questionnaire:
+        subject:
+          - sex
+          - age_birth_m
+          - smoking_m
+  timepoint_1:
+    designs:
+      questionnaire:
+        subject:
+          - population
+          - subpopulation
+          - subpopulation_other
+          - country
+          - nuts1
+          - nuts2
+          - nuts3
+          - subdivision
+          - degurba
+          - ageyears
+          - agemonths
+          - ageweeks
+          - agedays
+          - isced_raw
+          - isced
+          - isced_m_raw
+          - isced_m
+          - isced_f_raw
+          - isced_f
+          - isced_hh_raw
+          - isced_hh
+          - smoking
+          - height
+          - weight
+          - bmi
+          - company_code
+      sampling:
+        sample:
+          - chol
+          - chol_lod
+          - chol_loq
+          - trigl
+          - trigl_lod
+          - trigl_loq
+          - lipid
+          - lipid_lod
+          - lipid_loq
+          - lipid_enz
+          - density
+          - crt
+          - crt_lod
+          - crt_loq
+          - osm
+          - sg
+          - uvolume
+          - mehp
+          - mehp_lod
+          - mehp_loq
+
