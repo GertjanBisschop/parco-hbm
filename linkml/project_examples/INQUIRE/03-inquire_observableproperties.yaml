@@ -1,0 +1,35 @@
+observablepropertygroups_as_list:
+- description: tijdelijk
+  id: '<TODO: nog aan te vullen effect>'
+  is_abstract: false
+  name: '<TODO: nog aan te vullen effect>'
+  parent_groups:
+  - Effect marker
+  sort_order: 2005.0
+metadata_fields_as_list:
+  - id: default_serialized
+    name: default_serialized
+    value_type: str
+observableproperties_as_list:
+- categorical: true
+  default_immutable: 1
+  description: Relation id_subject vs id_participant (main subject of the study)
+  groups:
+  - Personal parameters
+  id: relation
+  name: relation
+  relevant_observable_entity_types:
+  - person
+  relevant_observation_types:
+  - questionnaire
+  shortname: relation
+  value_options_as_list:
+  - key: P
+    value: participant itself
+  - key: M
+    value: mother of participant
+  - key: F
+    value: father of participant
+  - key: S
+    value: sibling of participant
+  value_type: string

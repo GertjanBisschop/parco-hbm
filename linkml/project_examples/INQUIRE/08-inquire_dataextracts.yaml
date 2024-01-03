@@ -1,0 +1,16 @@
+dataextracts_as_list:
+- observedentities_as_list:
+  - id:
+    observedvalues_as_list:
+    - observableproperty:
+      observationdatetime:
+      value_as_string:
+      unit:
+      quality:
+        lod:
+        loq:
+      provenance:
+    - observableproperty:
+      observationdatetime:
+      value_as_string:
+      unit:

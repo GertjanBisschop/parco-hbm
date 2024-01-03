@@ -1,0 +1,21 @@
+studies_as_list:
+- id: INQUIRE
+  shortname: INQUIRE
+  timepoints:
+    - INQ_HOME_Q1
+    - INQ_HOME_L1
+    - INQ_PEOPLE_L1_ISS
+    - INQ_PEOPLE_L1_UA
+  study_stakeholders_as_list:
+    - stakeholder: VITO
+      study_roles:
+          - data_processor
+          - data_user
+    - stakeholder: MU
+      study_roles:
+          - principal_investigator
+          - data_controller
+          - data_processor
+          - data_user
+  projects:
+    - INQUIRE

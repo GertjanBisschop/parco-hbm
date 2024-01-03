@@ -1,0 +1,29 @@
+questionnairedesigns_as_list:
+  - observation: INQ_HOME_Q1
+    sections:
+    - prompt: "PART 1: QUESTIONS ABOUT YOU AND YOUR FAMILY"
+      sort_order: 1
+      relevant_observablepropertygroups:
+      - demographics
+      items:
+      - question_item_type: label
+        prompt: my_caption
+        sort_order: 1
+      - question_item_type: observableproperty
+        question_ui_type: radio
+        question_data_type: string
+        question_subject_relation:
+        observableproperty: N1Roleoftherespondent
+        prompt_numbering: 1
+        prompt_text: Role of respondent
+        permissible_values:
+        - Mother
+        - Father
+        - Other
+        multiselect: false
+        required: false
+        sort_order: 2
+samplingdesigns_as_list:
+  - observation: INQ_HOME_L1
+  - observation: INQ_PEOPLE_L1_ISS
+  - observation: INQ_PEOPLE_L1_UA
