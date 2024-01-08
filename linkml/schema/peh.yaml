@@ -469,7 +469,6 @@ slots:
     multivalued: true
     range: ObservablePropertyGroup
   value_type:
-    designates_type: true
   value_metadata_as_list:
     multivalued: true
     inlined_as_list: true

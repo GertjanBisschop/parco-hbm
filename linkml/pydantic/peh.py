@@ -358,7 +358,7 @@ class ObservablePropertyGroup(HasTranslations, NamedThing):
 
 class ObservableProperty(HasTranslations, NamedThing):
     
-    value_type: Literal["ObservableProperty"] = Field("ObservableProperty")
+    value_type: Optional[str] = Field(None)
     categorical: Optional[bool] = Field(None)
     multivalued: Optional[bool] = Field(None)
     value_options_as_list: Optional[List[ObservablePropertyValueOption]] = Field(default_factory=list)
@@ -397,7 +397,7 @@ class ObservablePropertyMetadataElement(ConfiguredBaseModel):
 
 class ObservablePropertyMetadataField(NamedThing):
     
-    value_type: Literal["ObservablePropertyMetadataField"] = Field("ObservablePropertyMetadataField")
+    value_type: Optional[str] = Field(None)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)

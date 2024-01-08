@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-02T14:06:50
+# Generation date: 2024-01-04T15:54:25
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -784,7 +784,8 @@ class ObservableProperty(NamedThing):
         if not isinstance(self.id, ObservablePropertyId):
             self.id = ObservablePropertyId(self.id)
 
-        self.value_type = str(self.class_name)
+        if self.value_type is not None and not isinstance(self.value_type, str):
+            self.value_type = str(self.value_type)
 
         if self.categorical is not None and not isinstance(self.categorical, Bool):
             self.categorical = Bool(self.categorical)
@@ -911,7 +912,8 @@ class ObservablePropertyMetadataField(NamedThing):
         if not isinstance(self.id, ObservablePropertyMetadataFieldId):
             self.id = ObservablePropertyMetadataFieldId(self.id)
 
-        self.value_type = str(self.class_name)
+        if self.value_type is not None and not isinstance(self.value_type, str):
+            self.value_type = str(self.value_type)
 
         super().__post_init__(**kwargs)
 
