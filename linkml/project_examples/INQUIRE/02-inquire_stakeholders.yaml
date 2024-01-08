@@ -1,12 +1,4 @@
 stakeholders_as_list:
-- id: PARC
-  shortname: PARC
-  name: Partnership for the Assessment of Risks from Chemicals
-  geographic_scope: EU
-- id: FHBM
-  shortname: FHBM
-  name: Flemish Human Biomonitoring
-  geographic_scope: BE
 - id: VITO
   shortname: VITO
   name: VITO
@@ -23,7 +15,3 @@ stakeholders_as_list:
   shortname: UoB
   name: University of Birmingham
   geographic_scope: UK
-- id: JSI
-  shortname: JSI
-  name: Jozef Stefan Institute
-  geographic_scope: SI

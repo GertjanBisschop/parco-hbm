@@ -7,7 +7,7 @@ questionnairedesigns_as_list:
       - demographics
       items:
       - question_item_type: label
-        prompt: my_caption
+        prompt_text: my_caption
         sort_order: 1
       - question_item_type: observableproperty
         question_ui_type: radio

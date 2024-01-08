@@ -19,3 +19,22 @@ studies_as_list:
           - data_user
   projects:
     - INQUIRE
+- id: SELMA
+  shortname: SELMA
+  timepoints:
+    - SELMA_INIT
+    - SELMA_INQ_DUST
+  study_stakeholders_as_list:
+    - stakeholder: VITO
+      study_roles:
+          - data_processor
+    - stakeholder: MU
+      study_roles:
+          - data_processor
+    - stakeholder: KU
+      study_roles:
+          - principal_investigator
+          - data_controller
+          - data_user
+  projects:
+    - INQUIRE

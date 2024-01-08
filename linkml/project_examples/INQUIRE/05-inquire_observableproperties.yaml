@@ -1,0 +1,1496 @@
+observablepropertygroups_as_list:
+- id: Identifier and demographics
+  shortname: Identifier and demographics
+  name: Identifier and demographics
+  sort_order: 1
+  is_abstract: false
+- id: Perceived indoor air quality
+  shortname: Perceived indoor air quality
+  name: Perceived indoor air quality
+  sort_order: 3
+  is_abstract: false
+- id: Recent behaviour
+  shortname: Recent behaviour
+  name: Recent behaviour
+  sort_order: 4
+  is_abstract: false
+- id: Child recent behaviour
+  shortname: Child recent behaviour
+  name: Child recent behaviour
+  sort_order: 6
+  is_abstract: false
+- id: Reasons to improve indoor air quality
+  shortname: Reasons to improve indoor air quality
+  name: Reasons to improve indoor air quality
+  sort_order: 8
+  is_abstract: false
+- id: Medical history
+  shortname: Medical history
+  name: Medical history
+  sort_order: 2
+  is_abstract: false
+- id: Observation on air quality
+  shortname: Observation on air quality
+  name: Observation on air quality
+  sort_order: 7
+  is_abstract: false
+- id: Child demography and health
+  shortname: Child demography and health
+  name: Child demography and health
+  sort_order: 5
+  is_abstract: false
+metadata_fields_as_list:
+- id: min
+  name: min
+  value_type: decimal
+- id: max
+  name: max
+  value_type: decimal
+- id: lower
+  name: lower
+  value_type: string
+- id: upper
+  name: upper
+  value_type: string
+- id: minlength
+  name: minlength
+  value_type: integer
+- id: maxlength
+  name: maxlength
+  value_type: integer
+- id: format
+  name: format
+  value_type: string
+observableproperties_as_list:
+- id: total_income_category
+  shortname: total_income_category
+  name: total_income_category
+  value_options_as_list:
+  - key: '1'
+    value: Cat 1
+  - key: '2'
+    value: Cat 2
+  - key: '3'
+    value: Cat 3
+  - key: '4'
+    value: Cat 4
+  - key: '5'
+    value: Cat 5
+  - key: '6'
+    value: Cat 6
+  - key: '7'
+    value: Cat 7
+  - key: '8'
+    value: Cat 8
+  - key: '99'
+    value: I don't know/prefer not to answer
+- id: N71educationrespondent
+  shortname: N71educationrespondent
+  name: N71educationrespondent
+  value_options_as_list:
+  - key: '0'
+    value: No formal education or below primary education (ISCED 0)
+  - key: '1'
+    value: Primary education (ISCED 1)
+  - key: '2'
+    value: Secondary school education,or second stage of basic education (ISCED 2,
+      ISCED 3)
+  - key: '3'
+    value: Upper secondary education (ISCED 3)
+  - key: '4'
+    value: Post
+  - key: '5'
+    value: Short
+  - key: '6'
+    value: Bachelor’s or equivalent level (ISCED 6)
+  - key: '7'
+    value: Master’s or equivalent level (ISCED 7)
+  - key: '8'
+    value: Doctoral or equivalent level (ISCED 8)
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: N72educationpartner
+  shortname: N72educationpartner
+  name: N72educationpartner
+  value_options_as_list:
+  - key: '0'
+    value: No formal education or below primary education (ISCED 0)
+  - key: '1'
+    value: Primary education (ISCED 1)
+  - key: '2'
+    value: Secondary school education,or second stage of basic education (ISCED 2,
+      ISCED 3)
+  - key: '3'
+    value: Upper secondary education (ISCED 3)
+  - key: '4'
+    value: Post
+  - key: '5'
+    value: Short
+  - key: '6'
+    value: Bachelor’s or equivalent level (ISCED 6)
+  - key: '7'
+    value: Master’s or equivalent level (ISCED 7)
+  - key: '8'
+    value: Doctoral or equivalent level (ISCED 8)
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: DD_asthma_allergy_family
+  shortname: DD_asthma_allergy_family
+  name: DD_asthma_allergy_family
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don't know
+- id: Eyeproblem
+  shortname: Eyeproblem
+  name: Eyeproblem
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Noseproblem
+  shortname: Noseproblem
+  name: Noseproblem
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Throatproblem
+  shortname: Throatproblem
+  name: Throatproblem
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Headache
+  shortname: Headache
+  name: Headache
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Memoryproblem
+  shortname: Memoryproblem
+  name: Memoryproblem
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Dizziness
+  shortname: Dizziness
+  name: Dizziness
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Fatiguesleepiness
+  shortname: Fatiguesleepiness
+  name: Fatiguesleepiness
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: heavyhead
+  shortname: heavyhead
+  name: heavyhead
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Eczema_lastmonth
+  shortname: Eczema_lastmonth
+  name: Eczema_lastmonth
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Wheezing
+  shortname: Wheezing
+  name: Wheezing
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Stagnantbadair
+  shortname: Stagnantbadair
+  name: Stagnantbadair
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Unpleasantair
+  shortname: Unpleasantair
+  name: Unpleasantair
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Pungentodor
+  shortname: Pungentodor
+  name: Pungentodor
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Mouldodor
+  shortname: Mouldodor
+  name: Mouldodor
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Earthyodor
+  shortname: Earthyodor
+  name: Earthyodor
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Tobaccosmoke
+  shortname: Tobaccosmoke
+  name: Tobaccosmoke
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Dryair
+  shortname: Dryair
+  name: Dryair
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: Dampair
+  shortname: Dampair
+  name: Dampair
+  value_options_as_list:
+  - key: '0'
+    value: No, never
+  - key: '1'
+    value: Yes, sometimes
+  - key: '2'
+    value: Yes, Often
+  - key: '99'
+    value: Don't know
+- id: smoking_room
+  shortname: smoking_room
+  name: smoking_room
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: burning_fireplace
+  shortname: burning_fireplace
+  name: burning_fireplace
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Cigarettesmoking
+  shortname: Cigarettesmoking
+  name: Cigarettesmoking
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Ecigarette
+  shortname: Ecigarette
+  name: Ecigarette
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: grilled_barbeque
+  shortname: grilled_barbeque
+  name: grilled_barbeque
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: deepfriedfood
+  shortname: deepfriedfood
+  name: deepfriedfood
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: ffish_seafood
+  shortname: ffish_seafood
+  name: ffish_seafood
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: readymademeals
+  shortname: readymademeals
+  name: readymademeals
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: fastfood
+  shortname: fastfood
+  name: fastfood
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: cannedfoods
+  shortname: cannedfoods
+  name: cannedfoods
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: motorizedvehicle
+  shortname: motorizedvehicle
+  name: motorizedvehicle
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Cycling_walking
+  shortname: Cycling_walking
+  name: Cycling_walking
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: personalcareproducts
+  shortname: personalcareproducts
+  name: personalcareproducts
+  value_options_as_list:
+  - key: '0'
+    value: None
+  - key: '1'
+    value: '1'
+  - key: '2'
+    value: '5'
+  - key: '3'
+    value: 9 products or more
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: personalcareproducts_Ecolabel
+  shortname: personalcareproducts_Ecolabel
+  name: personalcareproducts_Ecolabel
+  value_options_as_list:
+  - key: '0'
+    value: None
+  - key: '1'
+    value: '1'
+  - key: '2'
+    value: '5'
+  - key: '3'
+    value: 9 products or more
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Fragrancediffusers
+  shortname: Fragrancediffusers
+  name: Fragrancediffusers
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Indoor_pesticide_insecticide
+  shortname: Indoor_pesticide_insecticide
+  name: Indoor_pesticide_insecticide
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: outdoor_pesticide_insecticide
+  shortname: outdoor_pesticide_insecticide
+  name: outdoor_pesticide_insecticide
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Antifleaproduct
+  shortname: Antifleaproduct
+  name: Antifleaproduct
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Material_ceramics
+  shortname: Material_ceramics
+  name: Material_ceramics
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Paintgluevarnish
+  shortname: Paintgluevarnish
+  name: Paintgluevarnish
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Cleaningproducts
+  shortname: Cleaningproducts
+  name: Cleaningproducts
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Cleaning_Ecolabel
+  shortname: Cleaning_Ecolabel
+  name: Cleaning_Ecolabel
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Personalhygienesprays
+  shortname: Personalhygienesprays
+  name: Personalhygienesprays
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Sex_child
+  shortname: Sex_child
+  name: Sex_child
+  value_options_as_list:
+  - key: '1'
+    value: Male
+  - key: '2'
+    value: Female
+- id: Wheezing_child
+  shortname: Wheezing_child
+  name: Wheezing_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Allergies_child_dd
+  shortname: Allergies_child_dd
+  name: Allergies_child_dd
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Asthma_child_dd
+  shortname: Asthma_child_dd
+  name: Asthma_child_dd
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: eczema_child_dd
+  shortname: eczema_child_dd
+  name: eczema_child_dd
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Eyeproblem_child
+  shortname: Eyeproblem_child
+  name: Eyeproblem_child
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Noseproblem_child
+  shortname: Noseproblem_child
+  name: Noseproblem_child
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: Throatproblem_child
+  shortname: Throatproblem_child
+  name: Throatproblem_child
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: eczema_child
+  shortname: eczema_child
+  name: eczema_child
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: wheezing_child_lm
+  shortname: wheezing_child_lm
+  name: wheezing_child_lm
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: A few times
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '99'
+    value: Don't know
+- id: mouthing_behaviour
+  shortname: mouthing_behaviour
+  name: mouthing_behaviour
+  value_options_as_list:
+  - key: '0'
+    value: 'No'
+  - key: '1'
+    value: Yes, often
+  - key: '2'
+    value: Yes, sometimes
+  - key: '3'
+    value: Yes, a few times
+  - key: '77'
+    value: Other
+- id: smoking_room_child
+  shortname: smoking_room_child
+  name: smoking_room_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: another_place
+  shortname: another_place
+  name: another_place
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: specify_place
+  shortname: specify_place
+  name: specify_place
+  value_options_as_list:
+  - key: '1'
+    value: Kindergarten or childcare
+  - key: '2'
+    value: Other house
+  - key: '3'
+    value: Indoor public space
+  - key: '4'
+    value: Outside
+  - key: '77'
+    value: Other
+- id: burning_place_child
+  shortname: burning_place_child
+  name: burning_place_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: grilled_food_child
+  shortname: grilled_food_child
+  name: grilled_food_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: deepfriedfood_child
+  shortname: deepfriedfood_child
+  name: deepfriedfood_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: fish_seafood_child
+  shortname: fish_seafood_child
+  name: fish_seafood_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: readymademeals_child
+  shortname: readymademeals_child
+  name: readymademeals_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: fastfood_child
+  shortname: fastfood_child
+  name: fastfood_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: cannedfoods_child
+  shortname: cannedfoods_child
+  name: cannedfoods_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: motorizedvehicle_child
+  shortname: motorizedvehicle_child
+  name: motorizedvehicle_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: Cycling_walking_child
+  shortname: Cycling_walking_child
+  name: Cycling_walking_child
+  value_options_as_list:
+  - key: '1'
+    value: 'Yes'
+  - key: '0'
+    value: 'No'
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: care_products_child
+  shortname: care_products_child
+  name: care_products_child
+  value_options_as_list:
+  - key: '0'
+    value: None
+  - key: '1'
+    value: '1'
+  - key: '2'
+    value: '5'
+  - key: '3'
+    value: 9 products or more
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: careproducts_Ecolabel_child
+  shortname: careproducts_Ecolabel_child
+  name: careproducts_Ecolabel_child
+  value_options_as_list:
+  - key: '0'
+    value: None
+  - key: '1'
+    value: '1'
+  - key: '2'
+    value: '5'
+  - key: '3'
+    value: 9 products or more
+  - key: '99'
+    value: Don’t know/prefer not to answer
+- id: breast_feeding
+  shortname: breast_feeding
+  name: breast_feeding
+  value_options_as_list:
+  - key: '0'
+    value: 'No'
+  - key: '1'
+    value: Yes, I am/the mother is currently breastfeeding
+  - key: '2'
+    value: Yes, for less than 3 months
+  - key: '3'
+    value: Yes, between 3 to 6 months
+  - key: '4'
+    value: Yes, between 6 months to 1 year
+  - key: '5'
+    value: Yes, for longer than 1 year
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: electronics_child
+  shortname: electronics_child
+  name: electronics_child
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Once per month
+  - key: '2'
+    value: Once per week
+  - key: '3'
+    value: Several times per week
+  - key: '4'
+    value: Daily
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: play_floor_child
+  shortname: play_floor_child
+  name: play_floor_child
+  value_options_as_list:
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Once per month
+  - key: '2'
+    value: Once per week
+  - key: '3'
+    value: Several times per week
+  - key: '4'
+    value: Daily
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: judged_airquality
+  shortname: judged_airquality
+  name: judged_airquality
+  value_options_as_list:
+  - key: '7'
+    value: Extremely pleasant
+  - key: '6'
+    value: Very pleasant
+  - key: '5'
+    value: Pleasant
+  - key: '4'
+    value: Rather pleasant
+  - key: '3'
+    value: Unpleasant
+  - key: '2'
+    value: Very unpleasant
+  - key: '1'
+    value: Extremely unpleasant
+  - key: '88'
+    value: I have never thought about it
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: concern_airquality
+  shortname: concern_airquality
+  name: concern_airquality
+  value_options_as_list:
+  - key: '0'
+    value: Not at all
+  - key: '1'
+    value: A little
+  - key: '2'
+    value: Partly
+  - key: '3'
+    value: Quite a lot
+  - key: '4'
+    value: Extremely
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: consciousness_ladder
+  shortname: consciousness_ladder
+  name: consciousness_ladder
+  value_options_as_list:
+  - key: '9'
+    value: Very conscious on the importance of indoor air quality
+  - key: '8'
+    value: '8'
+  - key: '7'
+    value: '7'
+  - key: '6'
+    value: '6'
+  - key: '5'
+    value: '5'
+  - key: '4'
+    value: '4'
+  - key: '3'
+    value: '3'
+  - key: '2'
+    value: '2'
+  - key: '1'
+    value: Not at all conscious on the importance of indoor air quality
+  - key: '99'
+    value: I don’t know/prefer not to answer
+- id: beh_choice
+  shortname: beh_choice
+  name: beh_choice
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: influence
+  shortname: influence
+  name: influence
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: adjusttheventilation
+  shortname: adjusttheventilation
+  name: adjusttheventilation
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: open_window
+  shortname: open_window
+  name: open_window
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: healthiness_indoor
+  shortname: healthiness_indoor
+  name: healthiness_indoor
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: healthiness_outdoor
+  shortname: healthiness_outdoor
+  name: healthiness_outdoor
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: necessity_improvement
+  shortname: necessity_improvement
+  name: necessity_improvement
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: enjoyable
+  shortname: enjoyable
+  name: enjoyable
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: expect_health_benefit
+  shortname: expect_health_benefit
+  name: expect_health_benefit
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: expect_health_benefit_child
+  shortname: expect_health_benefit_child
+  name: expect_health_benefit_child
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: recognition_others
+  shortname: recognition_others
+  name: recognition_others
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: required_to_do
+  shortname: required_to_do
+  name: required_to_do
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: feel_pressure
+  shortname: feel_pressure
+  name: feel_pressure
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: good_look_to_others
+  shortname: good_look_to_others
+  name: good_look_to_others
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: dont_want_improve
+  shortname: dont_want_improve
+  name: dont_want_improve
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: too_much_effort
+  shortname: too_much_effort
+  name: too_much_effort
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: difficult_to_improve
+  shortname: difficult_to_improve
+  name: difficult_to_improve
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: dont_have_tools
+  shortname: dont_have_tools
+  name: dont_have_tools
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: dont_know_how
+  shortname: dont_know_how
+  name: dont_know_how
+  value_options_as_list:
+  - key: '7'
+    value: Agree strongly
+  - key: '6'
+    value: Agree
+  - key: '5'
+    value: Agree mildly
+  - key: '4'
+    value: Neither agree nor disagree
+  - key: '3'
+    value: Disagree mildly
+  - key: '2'
+    value: Disagree
+  - key: '1'
+    value: Disagree strongly
+  - key: '99'
+    value: I don't know or prefer not to answer
+- id: temperature_reg
+  shortname: temperature_reg
+  name: temperature_reg
+  value_options_as_list:
+  - key: '88'
+    value: Not applicable
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Seldom
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '4'
+    value: Most of the time
+  - key: '5'
+    value: Always
+  - key: '99'
+    value: I don't know pr prefer not to answer
+- id: ventilation_reg
+  shortname: ventilation_reg
+  name: ventilation_reg
+  value_options_as_list:
+  - key: '88'
+    value: Not applicable
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Seldom
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '4'
+    value: Most of the time
+  - key: '5'
+    value: Always
+  - key: '99'
+    value: I don't know pr prefer not to answer
+- id: Openwindow
+  shortname: Openwindow
+  name: Openwindow
+  value_options_as_list:
+  - key: '88'
+    value: Not applicable
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Seldom
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '4'
+    value: Most of the time
+  - key: '5'
+    value: Always
+  - key: '99'
+    value: I don't know pr prefer not to answer
+- id: Useproducts_Ecolabel
+  shortname: Useproducts_Ecolabel
+  name: Useproducts_Ecolabel
+  value_options_as_list:
+  - key: '88'
+    value: Not applicable
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Seldom
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '4'
+    value: Most of the time
+  - key: '5'
+    value: Always
+  - key: '99'
+    value: I don't know pr prefer not to answer
+- id: use_natural_products
+  shortname: use_natural_products
+  name: use_natural_products
+  value_options_as_list:
+  - key: '88'
+    value: Not applicable
+  - key: '0'
+    value: Never
+  - key: '1'
+    value: Seldom
+  - key: '2'
+    value: Sometimes
+  - key: '3'
+    value: Often
+  - key: '4'
+    value: Most of the time
+  - key: '5'
+    value: Always
+  - key: '99'
+    value: I don't know pr prefer not to answer
