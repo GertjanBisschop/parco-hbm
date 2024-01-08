@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-04T15:54:25
+# Generation date: 2024-01-08T10:37:14
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -147,14 +147,6 @@ class SamplingObservationId(ObservationId):
 
 
 class GeospatialObservationId(ObservationId):
-    pass
-
-
-class ObservationEntityId(NamedThingId):
-    pass
-
-
-class ObservationPropertyId(NamedThingId):
     pass
 
 
@@ -445,9 +437,6 @@ class Unit(NamedThing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, UnitId):
             self.id = UnitId(self.id)
-
-        if self.same_unit_as is not None and not isinstance(self.same_unit_as, QudtUnit):
-            self.same_unit_as = QudtUnit(self.same_unit_as)
 
         if self.quantity_kind is not None and not isinstance(self.quantity_kind, QudtQuantityKind):
             self.quantity_kind = QudtQuantityKind(self.quantity_kind)
@@ -1427,65 +1416,40 @@ class ObservationDesign(YAMLRoot):
     class_name: ClassVar[str] = "ObservationDesign"
     class_model_uri: ClassVar[URIRef] = PEH.ObservationDesign
 
-    observation_entities: Optional[Union[Union[str, ObservationEntityId], List[Union[str, ObservationEntityId]]]] = empty_list()
-    observation_properties: Optional[Union[Union[str, ObservationPropertyId], List[Union[str, ObservationPropertyId]]]] = empty_list()
+    observation_sets: Optional[Union[Union[dict, "ObservationSet"], List[Union[dict, "ObservationSet"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.observation_entities, list):
-            self.observation_entities = [self.observation_entities] if self.observation_entities is not None else []
-        self.observation_entities = [v if isinstance(v, ObservationEntityId) else ObservationEntityId(v) for v in self.observation_entities]
-
-        if not isinstance(self.observation_properties, list):
-            self.observation_properties = [self.observation_properties] if self.observation_properties is not None else []
-        self.observation_properties = [v if isinstance(v, ObservationPropertyId) else ObservationPropertyId(v) for v in self.observation_properties]
+        if not isinstance(self.observation_sets, list):
+            self.observation_sets = [self.observation_sets] if self.observation_sets is not None else []
+        self.observation_sets = [v if isinstance(v, ObservationSet) else ObservationSet(**as_dict(v)) for v in self.observation_sets]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ObservationEntity(NamedThing):
+class ObservationSet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEH["ObservationEntity"]
-    class_class_curie: ClassVar[str] = "peh:ObservationEntity"
-    class_name: ClassVar[str] = "ObservationEntity"
-    class_model_uri: ClassVar[URIRef] = PEH.ObservationEntity
+    class_class_uri: ClassVar[URIRef] = PEH["ObservationSet"]
+    class_class_curie: ClassVar[str] = "peh:ObservationSet"
+    class_name: ClassVar[str] = "ObservationSet"
+    class_model_uri: ClassVar[URIRef] = PEH.ObservationSet
 
-    id: Union[str, ObservationEntityId] = None
-    study_entity: Optional[Union[str, StudyEntityId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ObservationEntityId):
-            self.id = ObservationEntityId(self.id)
-
-        if self.study_entity is not None and not isinstance(self.study_entity, StudyEntityId):
-            self.study_entity = StudyEntityId(self.study_entity)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ObservationProperty(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["ObservationProperty"]
-    class_class_curie: ClassVar[str] = "peh:ObservationProperty"
-    class_name: ClassVar[str] = "ObservationProperty"
-    class_model_uri: ClassVar[URIRef] = PEH.ObservationProperty
-
-    id: Union[str, ObservationPropertyId] = None
-    observable_property: Optional[Union[str, ObservablePropertyId]] = None
+    observable_entity_type: Optional[Union[str, "ObservableEntityType"]] = None
+    observable_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
+    observable_properties: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ObservationPropertyId):
-            self.id = ObservationPropertyId(self.id)
+        if self.observable_entity_type is not None and not isinstance(self.observable_entity_type, ObservableEntityType):
+            self.observable_entity_type = ObservableEntityType(self.observable_entity_type)
 
-        if self.observable_property is not None and not isinstance(self.observable_property, ObservablePropertyId):
-            self.observable_property = ObservablePropertyId(self.observable_property)
+        if not isinstance(self.observable_entities, list):
+            self.observable_entities = [self.observable_entities] if self.observable_entities is not None else []
+        self.observable_entities = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.observable_entities]
+
+        if not isinstance(self.observable_properties, list):
+            self.observable_properties = [self.observable_properties] if self.observable_properties is not None else []
+        self.observable_properties = [v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v) for v in self.observable_properties]
 
         super().__post_init__(**kwargs)
 
@@ -1499,12 +1463,12 @@ class ObservationResult(YAMLRoot):
     class_name: ClassVar[str] = "ObservationResult"
     class_model_uri: ClassVar[URIRef] = PEH.ObservationResult
 
-    observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
+    observed_values_as_list: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.observed_values, list):
-            self.observed_values = [self.observed_values] if self.observed_values is not None else []
-        self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
+        if not isinstance(self.observed_values_as_list, list):
+            self.observed_values_as_list = [self.observed_values_as_list] if self.observed_values_as_list is not None else []
+        self.observed_values_as_list = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -1518,7 +1482,7 @@ class ObservedValue(YAMLRoot):
     class_name: ClassVar[str] = "ObservedValue"
     class_model_uri: ClassVar[URIRef] = PEH.ObservedValue
 
-    observed_entity: Optional[Union[str, StudyEntityId]] = None
+    observable_entity: Optional[Union[str, StudyEntityId]] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
     value: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
@@ -1526,8 +1490,8 @@ class ObservedValue(YAMLRoot):
     provenance_info: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.observed_entity is not None and not isinstance(self.observed_entity, StudyEntityId):
-            self.observed_entity = StudyEntityId(self.observed_entity)
+        if self.observable_entity is not None and not isinstance(self.observable_entity, StudyEntityId):
+            self.observable_entity = StudyEntityId(self.observable_entity)
 
         if self.observable_property is not None and not isinstance(self.observable_property, ObservablePropertyId):
             self.observable_property = ObservablePropertyId(self.observable_property)
@@ -1627,12 +1591,12 @@ class ObservedEntityProperty(YAMLRoot):
     class_name: ClassVar[str] = "ObservedEntityProperty"
     class_model_uri: ClassVar[URIRef] = PEH.ObservedEntityProperty
 
-    observed_entity: Optional[Union[str, StudyEntityId]] = None
+    observable_entity: Optional[Union[str, StudyEntityId]] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.observed_entity is not None and not isinstance(self.observed_entity, StudyEntityId):
-            self.observed_entity = StudyEntityId(self.observed_entity)
+        if self.observable_entity is not None and not isinstance(self.observable_entity, StudyEntityId):
+            self.observable_entity = StudyEntityId(self.observable_entity)
 
         if self.observable_property is not None and not isinstance(self.observable_property, ObservablePropertyId):
             self.observable_property = ObservablePropertyId(self.observable_property)
@@ -1759,12 +1723,12 @@ class DataExtract(YAMLRoot):
     class_name: ClassVar[str] = "DataExtract"
     class_model_uri: ClassVar[URIRef] = PEH.DataExtract
 
-    observed_values: Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]] = empty_list()
+    observed_values_as_list: Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.observed_values, list):
-            self.observed_values = [self.observed_values] if self.observed_values is not None else []
-        self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
+        if not isinstance(self.observed_values_as_list, list):
+            self.observed_values_as_list = [self.observed_values_as_list] if self.observed_values_as_list is not None else []
+        self.observed_values_as_list = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values_as_list]
 
         super().__post_init__(**kwargs)
 
@@ -2164,20 +2128,26 @@ slots.observation_type = Slot(uri=PEH.observation_type, name="observation_type",
 slots.observation_design = Slot(uri=PEH.observation_design, name="observation_design", curie=PEH.curie('observation_design'),
                    model_uri=PEH.observation_design, domain=None, range=Optional[Union[dict, ObservationDesign]])
 
+slots.observation_sets = Slot(uri=PEH.observation_sets, name="observation_sets", curie=PEH.curie('observation_sets'),
+                   model_uri=PEH.observation_sets, domain=None, range=Optional[Union[Union[dict, ObservationSet], List[Union[dict, ObservationSet]]]])
+
 slots.observation_result = Slot(uri=PEH.observation_result, name="observation_result", curie=PEH.curie('observation_result'),
                    model_uri=PEH.observation_result, domain=None, range=Optional[Union[dict, ObservationResult]])
 
-slots.observation_entities = Slot(uri=PEH.observation_entities, name="observation_entities", curie=PEH.curie('observation_entities'),
-                   model_uri=PEH.observation_entities, domain=None, range=Optional[Union[Union[str, ObservationEntityId], List[Union[str, ObservationEntityId]]]])
+slots.observable_entity_type = Slot(uri=PEH.observable_entity_type, name="observable_entity_type", curie=PEH.curie('observable_entity_type'),
+                   model_uri=PEH.observable_entity_type, domain=None, range=Optional[Union[str, "ObservableEntityType"]])
 
-slots.observation_properties = Slot(uri=PEH.observation_properties, name="observation_properties", curie=PEH.curie('observation_properties'),
-                   model_uri=PEH.observation_properties, domain=None, range=Optional[Union[Union[str, ObservationPropertyId], List[Union[str, ObservationPropertyId]]]])
+slots.observable_entities = Slot(uri=PEH.observable_entities, name="observable_entities", curie=PEH.curie('observable_entities'),
+                   model_uri=PEH.observable_entities, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
 
-slots.observed_values = Slot(uri=PEH.observed_values, name="observed_values", curie=PEH.curie('observed_values'),
-                   model_uri=PEH.observed_values, domain=None, range=Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]])
+slots.observable_properties = Slot(uri=PEH.observable_properties, name="observable_properties", curie=PEH.curie('observable_properties'),
+                   model_uri=PEH.observable_properties, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]])
 
-slots.observed_entity = Slot(uri=PEH.observed_entity, name="observed_entity", curie=PEH.curie('observed_entity'),
-                   model_uri=PEH.observed_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
+slots.observed_values_as_list = Slot(uri=PEH.observed_values_as_list, name="observed_values_as_list", curie=PEH.curie('observed_values_as_list'),
+                   model_uri=PEH.observed_values_as_list, domain=None, range=Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]])
+
+slots.observable_entity = Slot(uri=PEH.observable_entity, name="observable_entity", curie=PEH.curie('observable_entity'),
+                   model_uri=PEH.observable_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
 
 slots.observable_property = Slot(uri=PEH.observable_property, name="observable_property", curie=PEH.curie('observable_property'),
                    model_uri=PEH.observable_property, domain=None, range=Optional[Union[str, ObservablePropertyId]])

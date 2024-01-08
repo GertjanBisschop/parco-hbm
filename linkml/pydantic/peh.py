@@ -3,7 +3,8 @@ from datetime import datetime, date
 from enum import Enum
 from typing import List, Dict, Optional, Any, Union
 from decimal import Decimal
-from pydantic import BaseModel as BaseModel, ConfigDict, Field
+from pydantic import BaseModel as BaseModel, ConfigDict,  Field, field_validator
+import re
 import sys
 if sys.version_info >= (3, 8):
     from typing import Literal
@@ -14,17 +15,13 @@ else:
 metamodel_version = "None"
 version = "None"
 
-class WeakRefShimBaseModel(BaseModel):
-   __slots__ = '__weakref__'
-
-class ConfiguredBaseModel(WeakRefShimBaseModel,
-                validate_assignment = True,
-                validate_all = True,
-                underscore_attrs_are_private = True,
-                extra = 'forbid',
-                arbitrary_types_allowed = True,
-                use_enum_values = True):
-    pass
+class ConfiguredBaseModel(BaseModel):
+    model_config = ConfigDict(
+        validate_assignment=True,
+        validate_default=True,
+        extra = 'forbid',
+        arbitrary_types_allowed=True,
+        use_enum_values = True)
 
 
 class ValidationStatus(str, Enum):
@@ -193,6 +190,7 @@ class EntityList(ConfiguredBaseModel):
     studies_as_list: Optional[List[Study]] = Field(default_factory=list)
     timepoints_as_list: Optional[List[Timepoint]] = Field(default_factory=list)
     
+        
 
 class NamedThing(ConfiguredBaseModel):
     """
@@ -204,12 +202,14 @@ class NamedThing(ConfiguredBaseModel):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class HasValidationStatus(ConfiguredBaseModel):
     
     current_validation_status: Optional[ValidationStatus] = Field(None)
     validation_history: Optional[List[ValidationHistoryRecord]] = Field(default_factory=list)
     
+        
 
 class ValidationHistoryRecord(ConfiguredBaseModel):
     
@@ -218,27 +218,32 @@ class ValidationHistoryRecord(ConfiguredBaseModel):
     validation_actor: Optional[str] = Field(None)
     validation_remark: Optional[str] = Field(None)
     
+        
 
 class HasAliases(ConfiguredBaseModel):
     
     aliases_as_list: Optional[List[str]] = Field(default_factory=list)
     
+        
 
 class HasContextAliases(ConfiguredBaseModel):
     
     context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
     
+        
 
 class ContextAlias(ConfiguredBaseModel):
     
     context: Optional[str] = Field(None)
     alias: Optional[str] = Field(None)
     
+        
 
 class HasTranslations(ConfiguredBaseModel):
     
     translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
     
+        
 
 class Translation(ConfiguredBaseModel):
     
@@ -246,6 +251,7 @@ class Translation(ConfiguredBaseModel):
     language: Optional[str] = Field(None)
     translated_value: Optional[str] = Field(None)
     
+        
 
 class Unit(HasTranslations, HasContextAliases, NamedThing):
     
@@ -259,6 +265,7 @@ class Unit(HasTranslations, HasContextAliases, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class BioChemGrouping(HasTranslations, HasContextAliases, NamedThing):
     
@@ -270,6 +277,7 @@ class BioChemGrouping(HasTranslations, HasContextAliases, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class BioChemEntity(HasTranslations, HasContextAliases, HasAliases, HasValidationStatus, NamedThing):
     """
@@ -288,6 +296,7 @@ class BioChemEntity(HasTranslations, HasContextAliases, HasAliases, HasValidatio
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class BioChemIdentifier(HasValidationStatus):
     
@@ -296,6 +305,7 @@ class BioChemIdentifier(HasValidationStatus):
     current_validation_status: Optional[ValidationStatus] = Field(None)
     validation_history: Optional[List[ValidationHistoryRecord]] = Field(default_factory=list)
     
+        
 
 class BioChemIdentifierSchema(NamedThing):
     
@@ -306,6 +316,7 @@ class BioChemIdentifierSchema(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Matrix(HasContextAliases, NamedThing):
     
@@ -319,6 +330,7 @@ class Matrix(HasContextAliases, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Indicator(NamedThing):
     """
@@ -336,12 +348,14 @@ class Indicator(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class BioChemEntityLink(ConfiguredBaseModel):
     
     biochementity_linktype: Optional[BioChemEntityLinkType] = Field(None)
     biochementity: Optional[str] = Field(None)
     
+        
 
 class ObservablePropertyGroup(HasTranslations, NamedThing):
     
@@ -355,6 +369,7 @@ class ObservablePropertyGroup(HasTranslations, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ObservableProperty(HasTranslations, NamedThing):
     
@@ -380,6 +395,7 @@ class ObservableProperty(HasTranslations, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ObservablePropertyValueOption(HasContextAliases):
     
@@ -388,12 +404,14 @@ class ObservablePropertyValueOption(HasContextAliases):
     label: Optional[str] = Field(None)
     context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
     
+        
 
 class ObservablePropertyMetadataElement(ConfiguredBaseModel):
     
     field: Optional[str] = Field(None)
     value: Optional[str] = Field(None)
     
+        
 
 class ObservablePropertyMetadataField(NamedThing):
     
@@ -404,17 +422,20 @@ class ObservablePropertyMetadataField(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class CalculationDesign(ConfiguredBaseModel):
     
     unit: Optional[str] = Field(None)
     formula: Optional[str] = Field(None)
     
+        
 
 class ValidationDesign(ConfiguredBaseModel):
     
     conditional: Optional[str] = Field(None)
     
+        
 
 class Stakeholder(HasTranslations, NamedThing):
     
@@ -426,6 +447,7 @@ class Stakeholder(HasTranslations, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Project(HasTranslations, NamedThing):
     
@@ -438,6 +460,7 @@ class Project(HasTranslations, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ProjectStakeholder(HasTranslations):
     
@@ -445,6 +468,7 @@ class ProjectStakeholder(HasTranslations):
     project_roles: Optional[List[ProjectRole]] = Field(default_factory=list)
     translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
     
+        
 
 class Study(HasTranslations, NamedThing):
     
@@ -459,12 +483,14 @@ class Study(HasTranslations, NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class StudyStakeholder(ConfiguredBaseModel):
     
     stakeholder: Optional[str] = Field(None)
     study_roles: Optional[List[StudyRole]] = Field(default_factory=list)
     
+        
 
 class Timepoint(NamedThing):
     
@@ -475,6 +501,7 @@ class Timepoint(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class StudyEntity(NamedThing):
     
@@ -485,12 +512,14 @@ class StudyEntity(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class StudyEntityLink(ConfiguredBaseModel):
     
     linktype: Optional[LinkType] = Field(None)
     study_entity: Optional[str] = Field(None)
     
+        
 
 class Sample(StudyEntity):
     
@@ -502,6 +531,7 @@ class Sample(StudyEntity):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class StudySubject(StudyEntity):
     
@@ -512,6 +542,7 @@ class StudySubject(StudyEntity):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Person(StudyEntity):
     
@@ -522,6 +553,7 @@ class Person(StudyEntity):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class PersonGroup(StudyEntity):
     
@@ -532,6 +564,7 @@ class PersonGroup(StudyEntity):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Geolocation(StudyEntity):
     
@@ -543,6 +576,7 @@ class Geolocation(StudyEntity):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Environment(StudyEntity):
     
@@ -553,6 +587,7 @@ class Environment(StudyEntity):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class Observation(NamedThing):
     
@@ -565,6 +600,7 @@ class Observation(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class MetadataObservation(Observation):
     
@@ -577,6 +613,7 @@ class MetadataObservation(Observation):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class QuestionnaireObservation(Observation):
     
@@ -589,6 +626,7 @@ class QuestionnaireObservation(Observation):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class SamplingObservation(Observation):
     
@@ -601,6 +639,7 @@ class SamplingObservation(Observation):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class GeospatialObservation(Observation):
     
@@ -613,47 +652,38 @@ class GeospatialObservation(Observation):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ObservationDesign(ConfiguredBaseModel):
     
-    observation_entities: Optional[List[str]] = Field(default_factory=list)
-    observation_properties: Optional[List[str]] = Field(default_factory=list)
+    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
     
+        
 
-class ObservationEntity(NamedThing):
+class ObservationSet(ConfiguredBaseModel):
     
-    study_entity: Optional[str] = Field(None)
-    id: str = Field(...)
-    shortname: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    description: Optional[str] = Field(None)
-    label: Optional[str] = Field(None)
+    observable_entity_type: Optional[ObservableEntityType] = Field(None)
+    observable_entities: Optional[List[str]] = Field(default_factory=list)
+    observable_properties: Optional[List[str]] = Field(default_factory=list)
     
-
-class ObservationProperty(NamedThing):
-    
-    observable_property: Optional[str] = Field(None)
-    id: str = Field(...)
-    shortname: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    description: Optional[str] = Field(None)
-    label: Optional[str] = Field(None)
-    
+        
 
 class ObservationResult(ConfiguredBaseModel):
     
-    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
+    observed_values_as_list: Optional[List[ObservedValue]] = Field(default_factory=list)
     
+        
 
 class ObservedValue(ConfiguredBaseModel):
     
-    observed_entity: Optional[str] = Field(None)
+    observable_entity: Optional[str] = Field(None)
     observable_property: Optional[str] = Field(None)
     value: Optional[str] = Field(None)
     unit: Optional[str] = Field(None)
     quality_or_confidence_info: Optional[str] = Field(None)
     provenance_info: Optional[str] = Field(None)
     
+        
 
 class DataRequest(NamedThing):
     
@@ -674,12 +704,14 @@ class DataRequest(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ObservedEntityProperty(ConfiguredBaseModel):
     
-    observed_entity: Optional[str] = Field(None)
+    observable_entity: Optional[str] = Field(None)
     observable_property: Optional[str] = Field(None)
     
+        
 
 class DataStakeholder(NamedThing):
     
@@ -692,6 +724,7 @@ class DataStakeholder(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ResearchObjective(NamedThing):
     
@@ -703,6 +736,7 @@ class ResearchObjective(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ProcessingAction(NamedThing):
     
@@ -712,6 +746,7 @@ class ProcessingAction(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class ProcessingStep(NamedThing):
     
@@ -723,68 +758,69 @@ class ProcessingStep(NamedThing):
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
     
+        
 
 class DataExtract(ConfiguredBaseModel):
     
-    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
+    observed_values_as_list: Optional[List[ObservedValue]] = Field(default_factory=list)
     
+        
 
 
-# Update forward refs
-# see https://pydantic-docs.helpmanual.io/usage/postponed_annotations/
-EntityList.update_forward_refs()
-NamedThing.update_forward_refs()
-HasValidationStatus.update_forward_refs()
-ValidationHistoryRecord.update_forward_refs()
-HasAliases.update_forward_refs()
-HasContextAliases.update_forward_refs()
-ContextAlias.update_forward_refs()
-HasTranslations.update_forward_refs()
-Translation.update_forward_refs()
-Unit.update_forward_refs()
-BioChemGrouping.update_forward_refs()
-BioChemEntity.update_forward_refs()
-BioChemIdentifier.update_forward_refs()
-BioChemIdentifierSchema.update_forward_refs()
-Matrix.update_forward_refs()
-Indicator.update_forward_refs()
-BioChemEntityLink.update_forward_refs()
-ObservablePropertyGroup.update_forward_refs()
-ObservableProperty.update_forward_refs()
-ObservablePropertyValueOption.update_forward_refs()
-ObservablePropertyMetadataElement.update_forward_refs()
-ObservablePropertyMetadataField.update_forward_refs()
-CalculationDesign.update_forward_refs()
-ValidationDesign.update_forward_refs()
-Stakeholder.update_forward_refs()
-Project.update_forward_refs()
-ProjectStakeholder.update_forward_refs()
-Study.update_forward_refs()
-StudyStakeholder.update_forward_refs()
-Timepoint.update_forward_refs()
-StudyEntity.update_forward_refs()
-StudyEntityLink.update_forward_refs()
-Sample.update_forward_refs()
-StudySubject.update_forward_refs()
-Person.update_forward_refs()
-PersonGroup.update_forward_refs()
-Geolocation.update_forward_refs()
-Environment.update_forward_refs()
-Observation.update_forward_refs()
-MetadataObservation.update_forward_refs()
-QuestionnaireObservation.update_forward_refs()
-SamplingObservation.update_forward_refs()
-GeospatialObservation.update_forward_refs()
-ObservationDesign.update_forward_refs()
-ObservationEntity.update_forward_refs()
-ObservationProperty.update_forward_refs()
-ObservationResult.update_forward_refs()
-ObservedValue.update_forward_refs()
-DataRequest.update_forward_refs()
-ObservedEntityProperty.update_forward_refs()
-DataStakeholder.update_forward_refs()
-ResearchObjective.update_forward_refs()
-ProcessingAction.update_forward_refs()
-ProcessingStep.update_forward_refs()
-DataExtract.update_forward_refs()
+# Model rebuild
+# see https://pydantic-docs.helpmanual.io/usage/models/#rebuilding-a-model
+EntityList.model_rebuild()
+NamedThing.model_rebuild()
+HasValidationStatus.model_rebuild()
+ValidationHistoryRecord.model_rebuild()
+HasAliases.model_rebuild()
+HasContextAliases.model_rebuild()
+ContextAlias.model_rebuild()
+HasTranslations.model_rebuild()
+Translation.model_rebuild()
+Unit.model_rebuild()
+BioChemGrouping.model_rebuild()
+BioChemEntity.model_rebuild()
+BioChemIdentifier.model_rebuild()
+BioChemIdentifierSchema.model_rebuild()
+Matrix.model_rebuild()
+Indicator.model_rebuild()
+BioChemEntityLink.model_rebuild()
+ObservablePropertyGroup.model_rebuild()
+ObservableProperty.model_rebuild()
+ObservablePropertyValueOption.model_rebuild()
+ObservablePropertyMetadataElement.model_rebuild()
+ObservablePropertyMetadataField.model_rebuild()
+CalculationDesign.model_rebuild()
+ValidationDesign.model_rebuild()
+Stakeholder.model_rebuild()
+Project.model_rebuild()
+ProjectStakeholder.model_rebuild()
+Study.model_rebuild()
+StudyStakeholder.model_rebuild()
+Timepoint.model_rebuild()
+StudyEntity.model_rebuild()
+StudyEntityLink.model_rebuild()
+Sample.model_rebuild()
+StudySubject.model_rebuild()
+Person.model_rebuild()
+PersonGroup.model_rebuild()
+Geolocation.model_rebuild()
+Environment.model_rebuild()
+Observation.model_rebuild()
+MetadataObservation.model_rebuild()
+QuestionnaireObservation.model_rebuild()
+SamplingObservation.model_rebuild()
+GeospatialObservation.model_rebuild()
+ObservationDesign.model_rebuild()
+ObservationSet.model_rebuild()
+ObservationResult.model_rebuild()
+ObservedValue.model_rebuild()
+DataRequest.model_rebuild()
+ObservedEntityProperty.model_rebuild()
+DataStakeholder.model_rebuild()
+ResearchObjective.model_rebuild()
+ProcessingAction.model_rebuild()
+ProcessingStep.model_rebuild()
+DataExtract.model_rebuild()
 
