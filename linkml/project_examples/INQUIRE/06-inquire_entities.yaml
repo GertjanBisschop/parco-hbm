@@ -1,10 +1,10 @@
-persons_as_list:
-samples_as_list:
-homeenvironments_as_list:
-workenvironments_as_list:
-geolocations_as_list:
+persons:
+samples:
+homeenvironments:
+workenvironments:
+geolocations:
 subjects:
-entityrelations_as_list:
+entityrelations:
   - subject:
     relation:
     object:

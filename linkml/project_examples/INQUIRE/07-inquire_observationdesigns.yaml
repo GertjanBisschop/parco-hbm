@@ -1,4 +1,4 @@
-questionnairedesigns_as_list:
+questionnairedesigns:
   - observation: INQ_HOME_Q1
     sections:
     - prompt: "PART 1: QUESTIONS ABOUT YOU AND YOUR FAMILY"
@@ -23,7 +23,7 @@ questionnairedesigns_as_list:
         multiselect: false
         required: false
         sort_order: 2
-samplingdesigns_as_list:
+samplingdesigns:
   - observation: INQ_HOME_L1
   - observation: INQ_PEOPLE_L1_ISS
   - observation: INQ_PEOPLE_L1_UA

@@ -1,12 +1,12 @@
-studies_as_list:
+studies:
 - id: INQUIRE
   shortname: INQUIRE
-  timepoints:
+  timepoint_id_list:
     - INQ_HOME_Q1
     - INQ_HOME_L1
     - INQ_PEOPLE_L1_ISS
     - INQ_PEOPLE_L1_UA
-  study_stakeholders_as_list:
+  study_stakeholders:
     - stakeholder: VITO
       study_roles:
           - data_processor
@@ -17,14 +17,14 @@ studies_as_list:
           - data_controller
           - data_processor
           - data_user
-  projects:
+  project_id_list:
     - INQUIRE
 - id: SELMA
   shortname: SELMA
-  timepoints:
+  timepoint_id_list:
     - SELMA_INIT
     - SELMA_INQ_DUST
-  study_stakeholders_as_list:
+  study_stakeholders:
     - stakeholder: VITO
       study_roles:
           - data_processor
@@ -36,5 +36,5 @@ studies_as_list:
           - principal_investigator
           - data_controller
           - data_user
-  projects:
+  project_id_list:
     - INQUIRE

@@ -2,7 +2,7 @@ projects_as_list:
 - id: INQUIRE
   shortname: INQUIRE
   name: INQUIRE
-  project_stakeholders_as_list:
+  project_stakeholders:
     - stakeholder: VITO
       project_roles:
           - data_processor
@@ -13,5 +13,5 @@ projects_as_list:
           - data_controller
           - data_processor
           - data_user
-  studies:
+  study_id_list:
     - INQUIRE

@@ -1,4 +1,4 @@
-observableproperties_as_list:
+observable_properties:
 - categorical: true
   default_immutable: 1
   description: Relation id_subject vs id_participant (main subject of the study)
@@ -11,7 +11,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: relation
-  value_options_as_list:
+  value_options:
   - key: P
     value: participant itself
   - key: M
@@ -34,7 +34,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: sex
-  value_options_as_list:
+  value_options:
   - key: F
     value: female
   - key: M
@@ -54,7 +54,7 @@ observableproperties_as_list:
   shortname: subpopulation
   validation_design:
     conditional: IF population IS 0 THEN subpopulation IS not empty
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: hotspot
   - key: '2'
@@ -80,7 +80,7 @@ observableproperties_as_list:
   shortname: smoking_m
   validation_design:
     conditional: IF any(ageyears) IS < 20 THEN smoking_m IS not empty
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: 'no'
   - key: '1'
@@ -99,7 +99,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: case_control
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: control
   - key: '1'
@@ -116,7 +116,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: population
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'yes'
   - key: '0'
@@ -135,7 +135,7 @@ observableproperties_as_list:
   shortname: isced
   validation_design:
     conditional: IF ageyears IS >= 20 THEN isced IS not empty
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Low education (ISCED 0-2)
   - key: '2'
@@ -156,7 +156,7 @@ observableproperties_as_list:
   shortname: isced_m
   validation_design:
     conditional: IF ageyears IS < 20 THEN isced_m IS not empty
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Low education (ISCED 0-2)
   - key: '2'
@@ -177,7 +177,7 @@ observableproperties_as_list:
   shortname: isced_f
   validation_design:
     conditional: IF ageyears IS < 20 THEN isced_f IS not empty
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Low education (ISCED 0-2)
   - key: '2'
@@ -196,7 +196,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: degurba
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Densely populated area (cities)
   - key: '2'
@@ -218,7 +218,7 @@ observableproperties_as_list:
   shortname: smoking
   validation_design:
     conditional: IF ageyears IS < 12 THEN smoking IS empty
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: 'no'
   - key: '1'
@@ -239,7 +239,7 @@ observableproperties_as_list:
   shortname: isced_hh
   validation_design:
     conditional: IF ageyears IS < 20 THEN isced_hh IS not empty
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Low education (ISCED 0-2)
   - key: '2'
@@ -345,7 +345,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: height
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 30.0
@@ -367,7 +367,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: weight
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 1.0
@@ -391,7 +391,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: bmi
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 12.0
@@ -414,7 +414,7 @@ observableproperties_as_list:
   shortname: agedays
   validation_design:
     conditional: IF ageweeks IS > 1 THEN agedays IS empty
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 1.0
@@ -437,7 +437,7 @@ observableproperties_as_list:
   shortname: agemonths
   validation_design:
     conditional: IF ageyears IS >= 20 THEN agemonths IS empty
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: max
     value: 228.0
@@ -457,7 +457,7 @@ observableproperties_as_list:
   shortname: ageweeks
   validation_design:
     conditional: IF ageyears IS >= 1 THEN ageweeks IS empty
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: max
     value: 52.0
@@ -477,7 +477,7 @@ observableproperties_as_list:
   shortname: age_birth_m
   validation_design:
     conditional: IF any(ageyears) IS < 20 THEN age_birth_m IS not empty
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 15.0
@@ -498,7 +498,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: ageyears
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: max
     value: 150.0
@@ -2037,7 +2037,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: chol
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 50.0
@@ -2548,7 +2548,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: density
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 1000.0
@@ -4559,7 +4559,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: lipid
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 680.0
@@ -4580,7 +4580,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: lipid_enz
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 150.0
@@ -5712,7 +5712,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: osm
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 0.1
@@ -7470,7 +7470,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: sg
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 1.0
@@ -8678,7 +8678,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - sampling
   shortname: trigl
-  value_metadata_as_list:
+  value_metadata:
   - field:
       name: min
     value: 10.0

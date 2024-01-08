@@ -1,4 +1,4 @@
-biochemgroupings_as_list:
+biochemgroupings:
   - name: Acrylamide
     id: Acrylamide
   - name: Alkaloid

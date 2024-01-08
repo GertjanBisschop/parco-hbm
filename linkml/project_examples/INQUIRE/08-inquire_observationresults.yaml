@@ -1,6 +1,6 @@
-questionnaireresults_as_list:
+questionnaireresults:
   - observation: INQ_HOME_Q1
-    observedvalues_as_list:
+    observedvalues:
     - observableproperty:
       observedentity:
       unit:
@@ -13,7 +13,7 @@ questionnaireresults_as_list:
       observedentity:
       unit:
       value_as_string:
-samplingresults_as_list:
+samplingresults:
   - observation: INQ_HOME_L1
   - observation: INQ_PEOPLE_L1_ISS
   - observation: INQ_PEOPLE_L1_UA

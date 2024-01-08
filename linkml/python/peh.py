@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-08T10:37:14
+# Generation date: 2024-01-08T15:50:55
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -179,43 +179,43 @@ class EntityList(YAMLRoot):
     class_name: ClassVar[str] = "EntityList"
     class_model_uri: ClassVar[URIRef] = PEH.EntityList
 
-    matrices_as_list: Optional[Union[Dict[Union[str, MatrixId], Union[dict, "Matrix"]], List[Union[dict, "Matrix"]]]] = empty_dict()
-    metadata_fields_as_list: Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, "ObservablePropertyMetadataField"]], List[Union[dict, "ObservablePropertyMetadataField"]]]] = empty_dict()
-    biochementities_as_list: Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, "BioChemEntity"]], List[Union[dict, "BioChemEntity"]]]] = empty_dict()
-    biochemgroupings_as_list: Optional[Union[Dict[Union[str, BioChemGroupingId], Union[dict, "BioChemGrouping"]], List[Union[dict, "BioChemGrouping"]]]] = empty_dict()
-    indicators_as_list: Optional[Union[Dict[Union[str, IndicatorId], Union[dict, "Indicator"]], List[Union[dict, "Indicator"]]]] = empty_dict()
-    units_as_list: Optional[Union[Dict[Union[str, UnitId], Union[dict, "Unit"]], List[Union[dict, "Unit"]]]] = empty_dict()
-    observablepropertygroups_as_list: Optional[Union[Dict[Union[str, ObservablePropertyGroupId], Union[dict, "ObservablePropertyGroup"]], List[Union[dict, "ObservablePropertyGroup"]]]] = empty_dict()
-    observableproperties_as_list: Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, "ObservableProperty"]], List[Union[dict, "ObservableProperty"]]]] = empty_dict()
-    stakeholders_as_list: Optional[Union[Dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], List[Union[dict, "Stakeholder"]]]] = empty_dict()
-    projects_as_list: Optional[Union[Dict[Union[str, ProjectId], Union[dict, "Project"]], List[Union[dict, "Project"]]]] = empty_dict()
-    studies_as_list: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
-    timepoints_as_list: Optional[Union[Dict[Union[str, TimepointId], Union[dict, "Timepoint"]], List[Union[dict, "Timepoint"]]]] = empty_dict()
+    matrices: Optional[Union[Dict[Union[str, MatrixId], Union[dict, "Matrix"]], List[Union[dict, "Matrix"]]]] = empty_dict()
+    metadata_fields: Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, "ObservablePropertyMetadataField"]], List[Union[dict, "ObservablePropertyMetadataField"]]]] = empty_dict()
+    biochementities: Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, "BioChemEntity"]], List[Union[dict, "BioChemEntity"]]]] = empty_dict()
+    biochemgroupings: Optional[Union[Dict[Union[str, BioChemGroupingId], Union[dict, "BioChemGrouping"]], List[Union[dict, "BioChemGrouping"]]]] = empty_dict()
+    indicators: Optional[Union[Dict[Union[str, IndicatorId], Union[dict, "Indicator"]], List[Union[dict, "Indicator"]]]] = empty_dict()
+    units: Optional[Union[Dict[Union[str, UnitId], Union[dict, "Unit"]], List[Union[dict, "Unit"]]]] = empty_dict()
+    observable_property_groups: Optional[Union[Dict[Union[str, ObservablePropertyGroupId], Union[dict, "ObservablePropertyGroup"]], List[Union[dict, "ObservablePropertyGroup"]]]] = empty_dict()
+    observable_properties: Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, "ObservableProperty"]], List[Union[dict, "ObservableProperty"]]]] = empty_dict()
+    stakeholders: Optional[Union[Dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], List[Union[dict, "Stakeholder"]]]] = empty_dict()
+    projects: Optional[Union[Dict[Union[str, ProjectId], Union[dict, "Project"]], List[Union[dict, "Project"]]]] = empty_dict()
+    studies: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
+    timepoints: Optional[Union[Dict[Union[str, TimepointId], Union[dict, "Timepoint"]], List[Union[dict, "Timepoint"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_list(slot_name="matrices_as_list", slot_type=Matrix, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="matrices", slot_type=Matrix, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="metadata_fields_as_list", slot_type=ObservablePropertyMetadataField, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="metadata_fields", slot_type=ObservablePropertyMetadataField, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="biochementities_as_list", slot_type=BioChemEntity, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="biochementities", slot_type=BioChemEntity, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="biochemgroupings_as_list", slot_type=BioChemGrouping, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="biochemgroupings", slot_type=BioChemGrouping, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="indicators_as_list", slot_type=Indicator, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="indicators", slot_type=Indicator, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="units_as_list", slot_type=Unit, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="units", slot_type=Unit, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="observablepropertygroups_as_list", slot_type=ObservablePropertyGroup, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="observable_property_groups", slot_type=ObservablePropertyGroup, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="observableproperties_as_list", slot_type=ObservableProperty, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="observable_properties", slot_type=ObservableProperty, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="stakeholders_as_list", slot_type=Stakeholder, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="stakeholders", slot_type=Stakeholder, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="projects_as_list", slot_type=Project, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="projects", slot_type=Project, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="studies_as_list", slot_type=Study, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="studies", slot_type=Study, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="timepoints_as_list", slot_type=Timepoint, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="timepoints", slot_type=Timepoint, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -321,12 +321,12 @@ class HasAliases(YAMLRoot):
     class_name: ClassVar[str] = "HasAliases"
     class_model_uri: ClassVar[URIRef] = PEH.HasAliases
 
-    aliases_as_list: Optional[Union[str, List[str]]] = empty_list()
+    aliases: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.aliases_as_list, list):
-            self.aliases_as_list = [self.aliases_as_list] if self.aliases_as_list is not None else []
-        self.aliases_as_list = [v if isinstance(v, str) else str(v) for v in self.aliases_as_list]
+        if not isinstance(self.aliases, list):
+            self.aliases = [self.aliases] if self.aliases is not None else []
+        self.aliases = [v if isinstance(v, str) else str(v) for v in self.aliases]
 
         super().__post_init__(**kwargs)
 
@@ -340,12 +340,12 @@ class HasContextAliases(YAMLRoot):
     class_name: ClassVar[str] = "HasContextAliases"
     class_model_uri: ClassVar[URIRef] = PEH.HasContextAliases
 
-    context_aliases_as_list: Optional[Union[Union[dict, "ContextAlias"], List[Union[dict, "ContextAlias"]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, "ContextAlias"], List[Union[dict, "ContextAlias"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.context_aliases_as_list, list):
-            self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
-        self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -381,12 +381,12 @@ class HasTranslations(YAMLRoot):
     class_name: ClassVar[str] = "HasTranslations"
     class_model_uri: ClassVar[URIRef] = PEH.HasTranslations
 
-    translations_as_list: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
+    translations: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -429,8 +429,8 @@ class Unit(NamedThing):
     id: Union[str, UnitId] = None
     same_unit_as: Optional[Union[str, "QudtUnit"]] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
-    context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -441,13 +441,13 @@ class Unit(NamedThing):
         if self.quantity_kind is not None and not isinstance(self.quantity_kind, QudtQuantityKind):
             self.quantity_kind = QudtQuantityKind(self.quantity_kind)
 
-        if not isinstance(self.context_aliases_as_list, list):
-            self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
-        self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -462,8 +462,8 @@ class BioChemGrouping(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.BioChemGrouping
 
     id: Union[str, BioChemGroupingId] = None
-    context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -471,13 +471,13 @@ class BioChemGrouping(NamedThing):
         if not isinstance(self.id, BioChemGroupingId):
             self.id = BioChemGroupingId(self.id)
 
-        if not isinstance(self.context_aliases_as_list, list):
-            self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
-        self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -496,10 +496,10 @@ class BioChemEntity(NamedThing):
 
     id: Union[str, BioChemEntityId] = None
     grouping: Optional[str] = None
-    biochemidentifiers_as_list: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
-    aliases_as_list: Optional[Union[str, List[str]]] = empty_list()
-    context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    biochemidentifiers: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
+    aliases: Optional[Union[str, List[str]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
     current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
     validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]] = empty_list()
 
@@ -512,21 +512,21 @@ class BioChemEntity(NamedThing):
         if self.grouping is not None and not isinstance(self.grouping, str):
             self.grouping = str(self.grouping)
 
-        if not isinstance(self.biochemidentifiers_as_list, list):
-            self.biochemidentifiers_as_list = [self.biochemidentifiers_as_list] if self.biochemidentifiers_as_list is not None else []
-        self.biochemidentifiers_as_list = [v if isinstance(v, BioChemIdentifier) else BioChemIdentifier(**as_dict(v)) for v in self.biochemidentifiers_as_list]
+        if not isinstance(self.biochemidentifiers, list):
+            self.biochemidentifiers = [self.biochemidentifiers] if self.biochemidentifiers is not None else []
+        self.biochemidentifiers = [v if isinstance(v, BioChemIdentifier) else BioChemIdentifier(**as_dict(v)) for v in self.biochemidentifiers]
 
-        if not isinstance(self.aliases_as_list, list):
-            self.aliases_as_list = [self.aliases_as_list] if self.aliases_as_list is not None else []
-        self.aliases_as_list = [v if isinstance(v, str) else str(v) for v in self.aliases_as_list]
+        if not isinstance(self.aliases, list):
+            self.aliases = [self.aliases] if self.aliases is not None else []
+        self.aliases = [v if isinstance(v, str) else str(v) for v in self.aliases]
 
-        if not isinstance(self.context_aliases_as_list, list):
-            self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
-        self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         if self.current_validation_status is not None and not isinstance(self.current_validation_status, ValidationStatus):
             self.current_validation_status = ValidationStatus(self.current_validation_status)
@@ -606,7 +606,8 @@ class Matrix(NamedThing):
     sort_order: Optional[Decimal] = None
     aggregation_target: Optional[Union[bool, Bool]] = None
     parent_matrix: Optional[Union[str, MatrixId]] = None
-    context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -623,9 +624,13 @@ class Matrix(NamedThing):
         if self.parent_matrix is not None and not isinstance(self.parent_matrix, MatrixId):
             self.parent_matrix = MatrixId(self.parent_matrix)
 
-        if not isinstance(self.context_aliases_as_list, list):
-            self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
-        self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
+
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -648,7 +653,7 @@ class Indicator(NamedThing):
     matrix: Optional[Union[str, MatrixId]] = None
     constraints: Optional[Union[str, List[str]]] = empty_list()
     relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
-    biochementity_links_as_list: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
+    biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -673,9 +678,9 @@ class Indicator(NamedThing):
             self.relevant_observable_entity_types = [self.relevant_observable_entity_types] if self.relevant_observable_entity_types is not None else []
         self.relevant_observable_entity_types = [v if isinstance(v, ObservableEntityType) else ObservableEntityType(v) for v in self.relevant_observable_entity_types]
 
-        if not isinstance(self.biochementity_links_as_list, list):
-            self.biochementity_links_as_list = [self.biochementity_links_as_list] if self.biochementity_links_as_list is not None else []
-        self.biochementity_links_as_list = [v if isinstance(v, BioChemEntityLink) else BioChemEntityLink(**as_dict(v)) for v in self.biochementity_links_as_list]
+        if not isinstance(self.biochementity_links, list):
+            self.biochementity_links = [self.biochementity_links] if self.biochementity_links is not None else []
+        self.biochementity_links = [v if isinstance(v, BioChemEntityLink) else BioChemEntityLink(**as_dict(v)) for v in self.biochementity_links]
 
         super().__post_init__(**kwargs)
 
@@ -715,7 +720,7 @@ class ObservablePropertyGroup(NamedThing):
     sort_order: Optional[Decimal] = None
     is_abstract: Optional[Union[bool, Bool]] = None
     parent_groups: Optional[Union[Union[str, ObservablePropertyGroupId], List[Union[str, ObservablePropertyGroupId]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -733,9 +738,9 @@ class ObservablePropertyGroup(NamedThing):
             self.parent_groups = [self.parent_groups] if self.parent_groups is not None else []
         self.parent_groups = [v if isinstance(v, ObservablePropertyGroupId) else ObservablePropertyGroupId(v) for v in self.parent_groups]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -753,8 +758,8 @@ class ObservableProperty(NamedThing):
     value_type: Optional[str] = None
     categorical: Optional[Union[bool, Bool]] = None
     multivalued: Optional[Union[bool, Bool]] = None
-    value_options_as_list: Optional[Union[Union[dict, "ObservablePropertyValueOption"], List[Union[dict, "ObservablePropertyValueOption"]]]] = empty_list()
-    value_metadata_as_list: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], List[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
+    value_options: Optional[Union[Union[dict, "ObservablePropertyValueOption"], List[Union[dict, "ObservablePropertyValueOption"]]]] = empty_list()
+    value_metadata: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], List[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     default_unit: Optional[str] = None
     default_significantdecimals: Optional[int] = None
@@ -765,7 +770,7 @@ class ObservableProperty(NamedThing):
     indicator: Optional[Union[str, IndicatorId]] = None
     calculation_design: Optional[Union[dict, "CalculationDesign"]] = None
     validation_design: Optional[Union[dict, "ValidationDesign"]] = None
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -782,13 +787,13 @@ class ObservableProperty(NamedThing):
         if self.multivalued is not None and not isinstance(self.multivalued, Bool):
             self.multivalued = Bool(self.multivalued)
 
-        if not isinstance(self.value_options_as_list, list):
-            self.value_options_as_list = [self.value_options_as_list] if self.value_options_as_list is not None else []
-        self.value_options_as_list = [v if isinstance(v, ObservablePropertyValueOption) else ObservablePropertyValueOption(**as_dict(v)) for v in self.value_options_as_list]
+        if not isinstance(self.value_options, list):
+            self.value_options = [self.value_options] if self.value_options is not None else []
+        self.value_options = [v if isinstance(v, ObservablePropertyValueOption) else ObservablePropertyValueOption(**as_dict(v)) for v in self.value_options]
 
-        if not isinstance(self.value_metadata_as_list, list):
-            self.value_metadata_as_list = [self.value_metadata_as_list] if self.value_metadata_as_list is not None else []
-        self.value_metadata_as_list = [v if isinstance(v, ObservablePropertyMetadataElement) else ObservablePropertyMetadataElement(**as_dict(v)) for v in self.value_metadata_as_list]
+        if not isinstance(self.value_metadata, list):
+            self.value_metadata = [self.value_metadata] if self.value_metadata is not None else []
+        self.value_metadata = [v if isinstance(v, ObservablePropertyMetadataElement) else ObservablePropertyMetadataElement(**as_dict(v)) for v in self.value_metadata]
 
         if self.quantity_kind is not None and not isinstance(self.quantity_kind, QudtQuantityKind):
             self.quantity_kind = QudtQuantityKind(self.quantity_kind)
@@ -823,9 +828,9 @@ class ObservableProperty(NamedThing):
         if self.validation_design is not None and not isinstance(self.validation_design, ValidationDesign):
             self.validation_design = ValidationDesign(**as_dict(self.validation_design))
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -842,7 +847,7 @@ class ObservablePropertyValueOption(YAMLRoot):
     key: Optional[str] = None
     value: Optional[str] = None
     label: Optional[str] = None
-    context_aliases_as_list: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.key is not None and not isinstance(self.key, str):
@@ -854,9 +859,9 @@ class ObservablePropertyValueOption(YAMLRoot):
         if self.label is not None and not isinstance(self.label, str):
             self.label = str(self.label)
 
-        if not isinstance(self.context_aliases_as_list, list):
-            self.context_aliases_as_list = [self.context_aliases_as_list] if self.context_aliases_as_list is not None else []
-        self.context_aliases_as_list = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases_as_list]
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -958,7 +963,7 @@ class Stakeholder(NamedThing):
 
     id: Union[str, StakeholderId] = None
     geographic_scope: Optional[str] = None
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -969,9 +974,9 @@ class Stakeholder(NamedThing):
         if self.geographic_scope is not None and not isinstance(self.geographic_scope, str):
             self.geographic_scope = str(self.geographic_scope)
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -986,9 +991,9 @@ class Project(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Project
 
     id: Union[str, ProjectId] = None
-    project_stakeholders_as_list: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
-    studies: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    project_stakeholders: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
+    study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -996,17 +1001,17 @@ class Project(NamedThing):
         if not isinstance(self.id, ProjectId):
             self.id = ProjectId(self.id)
 
-        if not isinstance(self.project_stakeholders_as_list, list):
-            self.project_stakeholders_as_list = [self.project_stakeholders_as_list] if self.project_stakeholders_as_list is not None else []
-        self.project_stakeholders_as_list = [v if isinstance(v, ProjectStakeholder) else ProjectStakeholder(**as_dict(v)) for v in self.project_stakeholders_as_list]
+        if not isinstance(self.project_stakeholders, list):
+            self.project_stakeholders = [self.project_stakeholders] if self.project_stakeholders is not None else []
+        self.project_stakeholders = [v if isinstance(v, ProjectStakeholder) else ProjectStakeholder(**as_dict(v)) for v in self.project_stakeholders]
 
-        if not isinstance(self.studies, list):
-            self.studies = [self.studies] if self.studies is not None else []
-        self.studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.studies]
+        if not isinstance(self.study_id_list, list):
+            self.study_id_list = [self.study_id_list] if self.study_id_list is not None else []
+        self.study_id_list = [v if isinstance(v, StudyId) else StudyId(v) for v in self.study_id_list]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -1022,7 +1027,7 @@ class ProjectStakeholder(YAMLRoot):
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
     project_roles: Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
@@ -1032,9 +1037,9 @@ class ProjectStakeholder(YAMLRoot):
             self.project_roles = [self.project_roles] if self.project_roles is not None else []
         self.project_roles = [v if isinstance(v, ProjectRole) else ProjectRole(v) for v in self.project_roles]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -1049,11 +1054,11 @@ class Study(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Study
 
     id: Union[str, StudyId] = None
-    study_stakeholders_as_list: Optional[Union[Union[dict, "StudyStakeholder"], List[Union[dict, "StudyStakeholder"]]]] = empty_list()
-    timepoints: Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]] = empty_list()
+    study_stakeholders: Optional[Union[Union[dict, "StudyStakeholder"], List[Union[dict, "StudyStakeholder"]]]] = empty_list()
+    timepoint_id_list: Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]] = empty_list()
     study_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
-    projects: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
-    translations_as_list: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    project_id_list: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1061,25 +1066,25 @@ class Study(NamedThing):
         if not isinstance(self.id, StudyId):
             self.id = StudyId(self.id)
 
-        if not isinstance(self.study_stakeholders_as_list, list):
-            self.study_stakeholders_as_list = [self.study_stakeholders_as_list] if self.study_stakeholders_as_list is not None else []
-        self.study_stakeholders_as_list = [v if isinstance(v, StudyStakeholder) else StudyStakeholder(**as_dict(v)) for v in self.study_stakeholders_as_list]
+        if not isinstance(self.study_stakeholders, list):
+            self.study_stakeholders = [self.study_stakeholders] if self.study_stakeholders is not None else []
+        self.study_stakeholders = [v if isinstance(v, StudyStakeholder) else StudyStakeholder(**as_dict(v)) for v in self.study_stakeholders]
 
-        if not isinstance(self.timepoints, list):
-            self.timepoints = [self.timepoints] if self.timepoints is not None else []
-        self.timepoints = [v if isinstance(v, TimepointId) else TimepointId(v) for v in self.timepoints]
+        if not isinstance(self.timepoint_id_list, list):
+            self.timepoint_id_list = [self.timepoint_id_list] if self.timepoint_id_list is not None else []
+        self.timepoint_id_list = [v if isinstance(v, TimepointId) else TimepointId(v) for v in self.timepoint_id_list]
 
         if not isinstance(self.study_entities, list):
             self.study_entities = [self.study_entities] if self.study_entities is not None else []
         self.study_entities = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.study_entities]
 
-        if not isinstance(self.projects, list):
-            self.projects = [self.projects] if self.projects is not None else []
-        self.projects = [v if isinstance(v, ProjectId) else ProjectId(v) for v in self.projects]
+        if not isinstance(self.project_id_list, list):
+            self.project_id_list = [self.project_id_list] if self.project_id_list is not None else []
+        self.project_id_list = [v if isinstance(v, ProjectId) else ProjectId(v) for v in self.project_id_list]
 
-        if not isinstance(self.translations_as_list, list):
-            self.translations_as_list = [self.translations_as_list] if self.translations_as_list is not None else []
-        self.translations_as_list = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations_as_list]
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -1117,7 +1122,7 @@ class Timepoint(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Timepoint
 
     id: Union[str, TimepointId] = None
-    observations_as_list: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
+    observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1125,7 +1130,7 @@ class Timepoint(NamedThing):
         if not isinstance(self.id, TimepointId):
             self.id = TimepointId(self.id)
 
-        self._normalize_inlined_as_list(slot_name="observations_as_list", slot_type=Observation, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="observations", slot_type=Observation, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -1436,20 +1441,20 @@ class ObservationSet(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEH.ObservationSet
 
     observable_entity_type: Optional[Union[str, "ObservableEntityType"]] = None
-    observable_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
-    observable_properties: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
+    observable_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
+    observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.observable_entity_type is not None and not isinstance(self.observable_entity_type, ObservableEntityType):
             self.observable_entity_type = ObservableEntityType(self.observable_entity_type)
 
-        if not isinstance(self.observable_entities, list):
-            self.observable_entities = [self.observable_entities] if self.observable_entities is not None else []
-        self.observable_entities = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.observable_entities]
+        if not isinstance(self.observable_entity_id_list, list):
+            self.observable_entity_id_list = [self.observable_entity_id_list] if self.observable_entity_id_list is not None else []
+        self.observable_entity_id_list = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.observable_entity_id_list]
 
-        if not isinstance(self.observable_properties, list):
-            self.observable_properties = [self.observable_properties] if self.observable_properties is not None else []
-        self.observable_properties = [v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v) for v in self.observable_properties]
+        if not isinstance(self.observable_property_id_list, list):
+            self.observable_property_id_list = [self.observable_property_id_list] if self.observable_property_id_list is not None else []
+        self.observable_property_id_list = [v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v) for v in self.observable_property_id_list]
 
         super().__post_init__(**kwargs)
 
@@ -1463,12 +1468,12 @@ class ObservationResult(YAMLRoot):
     class_name: ClassVar[str] = "ObservationResult"
     class_model_uri: ClassVar[URIRef] = PEH.ObservationResult
 
-    observed_values_as_list: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
+    observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.observed_values_as_list, list):
-            self.observed_values_as_list = [self.observed_values_as_list] if self.observed_values_as_list is not None else []
-        self.observed_values_as_list = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values_as_list]
+        if not isinstance(self.observed_values, list):
+            self.observed_values = [self.observed_values] if self.observed_values is not None else []
+        self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
 
         super().__post_init__(**kwargs)
 
@@ -1723,12 +1728,12 @@ class DataExtract(YAMLRoot):
     class_name: ClassVar[str] = "DataExtract"
     class_model_uri: ClassVar[URIRef] = PEH.DataExtract
 
-    observed_values_as_list: Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]] = empty_list()
+    observed_values: Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.observed_values_as_list, list):
-            self.observed_values_as_list = [self.observed_values_as_list] if self.observed_values_as_list is not None else []
-        self.observed_values_as_list = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values_as_list]
+        if not isinstance(self.observed_values, list):
+            self.observed_values = [self.observed_values] if self.observed_values is not None else []
+        self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
 
         super().__post_init__(**kwargs)
 
@@ -1888,17 +1893,17 @@ slots.label = Slot(uri=RDFS.label, name="label", curie=RDFS.curie('label'),
 slots.alias = Slot(uri=PEH.alias, name="alias", curie=PEH.curie('alias'),
                    model_uri=PEH.alias, domain=None, range=Optional[str])
 
-slots.aliases_as_list = Slot(uri=PEH.aliases_as_list, name="aliases_as_list", curie=PEH.curie('aliases_as_list'),
-                   model_uri=PEH.aliases_as_list, domain=None, range=Optional[Union[str, List[str]]])
+slots.aliases = Slot(uri=PEH.aliases, name="aliases", curie=PEH.curie('aliases'),
+                   model_uri=PEH.aliases, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.context_aliases_as_list = Slot(uri=PEH.context_aliases_as_list, name="context_aliases_as_list", curie=PEH.curie('context_aliases_as_list'),
-                   model_uri=PEH.context_aliases_as_list, domain=None, range=Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]])
+slots.context_aliases = Slot(uri=PEH.context_aliases, name="context_aliases", curie=PEH.curie('context_aliases'),
+                   model_uri=PEH.context_aliases, domain=None, range=Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]])
 
 slots.context = Slot(uri=PEH.context, name="context", curie=PEH.curie('context'),
                    model_uri=PEH.context, domain=None, range=Optional[Union[str, NamedThingId]])
 
-slots.translations_as_list = Slot(uri=PEH.translations_as_list, name="translations_as_list", curie=PEH.curie('translations_as_list'),
-                   model_uri=PEH.translations_as_list, domain=None, range=Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]])
+slots.translations = Slot(uri=PEH.translations, name="translations", curie=PEH.curie('translations'),
+                   model_uri=PEH.translations, domain=None, range=Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]])
 
 slots.property_name = Slot(uri=PEH.property_name, name="property_name", curie=PEH.curie('property_name'),
                    model_uri=PEH.property_name, domain=None, range=Optional[str])
@@ -1912,8 +1917,8 @@ slots.translated_value = Slot(uri=PEH.translated_value, name="translated_value",
 slots.validation_history = Slot(uri=PEH.validation_history, name="validation_history", curie=PEH.curie('validation_history'),
                    model_uri=PEH.validation_history, domain=None, range=Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]])
 
-slots.units_as_list = Slot(uri=PEH.units_as_list, name="units_as_list", curie=PEH.curie('units_as_list'),
-                   model_uri=PEH.units_as_list, domain=None, range=Optional[Union[Dict[Union[str, UnitId], Union[dict, Unit]], List[Union[dict, Unit]]]])
+slots.units = Slot(uri=PEH.units, name="units", curie=PEH.curie('units'),
+                   model_uri=PEH.units, domain=None, range=Optional[Union[Dict[Union[str, UnitId], Union[dict, Unit]], List[Union[dict, Unit]]]])
 
 slots.same_unit_as = Slot(uri=PEH.same_unit_as, name="same_unit_as", curie=PEH.curie('same_unit_as'),
                    model_uri=PEH.same_unit_as, domain=None, range=Optional[Union[str, "QudtUnit"]])
@@ -1921,17 +1926,17 @@ slots.same_unit_as = Slot(uri=PEH.same_unit_as, name="same_unit_as", curie=PEH.c
 slots.quantity_kind = Slot(uri=PEH.quantity_kind, name="quantity_kind", curie=PEH.curie('quantity_kind'),
                    model_uri=PEH.quantity_kind, domain=None, range=Optional[Union[str, "QudtQuantityKind"]])
 
-slots.biochemgroupings_as_list = Slot(uri=PEH.biochemgroupings_as_list, name="biochemgroupings_as_list", curie=PEH.curie('biochemgroupings_as_list'),
-                   model_uri=PEH.biochemgroupings_as_list, domain=None, range=Optional[Union[Dict[Union[str, BioChemGroupingId], Union[dict, BioChemGrouping]], List[Union[dict, BioChemGrouping]]]])
+slots.biochemgroupings = Slot(uri=PEH.biochemgroupings, name="biochemgroupings", curie=PEH.curie('biochemgroupings'),
+                   model_uri=PEH.biochemgroupings, domain=None, range=Optional[Union[Dict[Union[str, BioChemGroupingId], Union[dict, BioChemGrouping]], List[Union[dict, BioChemGrouping]]]])
 
-slots.biochemidentifiers_as_list = Slot(uri=PEH.biochemidentifiers_as_list, name="biochemidentifiers_as_list", curie=PEH.curie('biochemidentifiers_as_list'),
-                   model_uri=PEH.biochemidentifiers_as_list, domain=None, range=Optional[Union[Union[dict, BioChemIdentifier], List[Union[dict, BioChemIdentifier]]]])
+slots.biochemidentifiers = Slot(uri=PEH.biochemidentifiers, name="biochemidentifiers", curie=PEH.curie('biochemidentifiers'),
+                   model_uri=PEH.biochemidentifiers, domain=None, range=Optional[Union[Union[dict, BioChemIdentifier], List[Union[dict, BioChemIdentifier]]]])
 
-slots.biochementities_as_list = Slot(uri=PEH.biochementities_as_list, name="biochementities_as_list", curie=PEH.curie('biochementities_as_list'),
-                   model_uri=PEH.biochementities_as_list, domain=None, range=Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, BioChemEntity]], List[Union[dict, BioChemEntity]]]])
+slots.biochementities = Slot(uri=PEH.biochementities, name="biochementities", curie=PEH.curie('biochementities'),
+                   model_uri=PEH.biochementities, domain=None, range=Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, BioChemEntity]], List[Union[dict, BioChemEntity]]]])
 
-slots.indicators_as_list = Slot(uri=PEH.indicators_as_list, name="indicators_as_list", curie=PEH.curie('indicators_as_list'),
-                   model_uri=PEH.indicators_as_list, domain=None, range=Optional[Union[Dict[Union[str, IndicatorId], Union[dict, Indicator]], List[Union[dict, Indicator]]]])
+slots.indicators = Slot(uri=PEH.indicators, name="indicators", curie=PEH.curie('indicators'),
+                   model_uri=PEH.indicators, domain=None, range=Optional[Union[Dict[Union[str, IndicatorId], Union[dict, Indicator]], List[Union[dict, Indicator]]]])
 
 slots.grouping = Slot(uri=PEH.grouping, name="grouping", curie=PEH.curie('grouping'),
                    model_uri=PEH.grouping, domain=None, range=Optional[str])
@@ -1972,8 +1977,8 @@ slots.parent_matrix = Slot(uri=PEH.parent_matrix, name="parent_matrix", curie=PE
 slots.indicator_type = Slot(uri=PEH.indicator_type, name="indicator_type", curie=PEH.curie('indicator_type'),
                    model_uri=PEH.indicator_type, domain=None, range=Optional[Union[str, "IndicatorType"]])
 
-slots.matrices_as_list = Slot(uri=PEH.matrices_as_list, name="matrices_as_list", curie=PEH.curie('matrices_as_list'),
-                   model_uri=PEH.matrices_as_list, domain=None, range=Optional[Union[Dict[Union[str, MatrixId], Union[dict, Matrix]], List[Union[dict, Matrix]]]])
+slots.matrices = Slot(uri=PEH.matrices, name="matrices", curie=PEH.curie('matrices'),
+                   model_uri=PEH.matrices, domain=None, range=Optional[Union[Dict[Union[str, MatrixId], Union[dict, Matrix]], List[Union[dict, Matrix]]]])
 
 slots.matrix = Slot(uri=PEH.matrix, name="matrix", curie=PEH.curie('matrix'),
                    model_uri=PEH.matrix, domain=None, range=Optional[Union[str, MatrixId]])
@@ -1984,8 +1989,8 @@ slots.constraints = Slot(uri=PEH.constraints, name="constraints", curie=PEH.curi
 slots.relevant_observable_entity_types = Slot(uri=PEH.relevant_observable_entity_types, name="relevant_observable_entity_types", curie=PEH.curie('relevant_observable_entity_types'),
                    model_uri=PEH.relevant_observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]])
 
-slots.biochementity_links_as_list = Slot(uri=PEH.biochementity_links_as_list, name="biochementity_links_as_list", curie=PEH.curie('biochementity_links_as_list'),
-                   model_uri=PEH.biochementity_links_as_list, domain=None, range=Optional[Union[Union[dict, BioChemEntityLink], List[Union[dict, BioChemEntityLink]]]])
+slots.biochementity_links = Slot(uri=PEH.biochementity_links, name="biochementity_links", curie=PEH.curie('biochementity_links'),
+                   model_uri=PEH.biochementity_links, domain=None, range=Optional[Union[Union[dict, BioChemEntityLink], List[Union[dict, BioChemEntityLink]]]])
 
 slots.biochementity_linktype = Slot(uri=PEH.biochementity_linktype, name="biochementity_linktype", curie=PEH.curie('biochementity_linktype'),
                    model_uri=PEH.biochementity_linktype, domain=None, range=Optional[Union[str, "BioChemEntityLinkType"]])
@@ -1993,11 +1998,8 @@ slots.biochementity_linktype = Slot(uri=PEH.biochementity_linktype, name="bioche
 slots.biochementity = Slot(uri=PEH.biochementity, name="biochementity", curie=PEH.curie('biochementity'),
                    model_uri=PEH.biochementity, domain=None, range=Optional[Union[str, BioChemEntityId]])
 
-slots.observablepropertygroups_as_list = Slot(uri=PEH.observablepropertygroups_as_list, name="observablepropertygroups_as_list", curie=PEH.curie('observablepropertygroups_as_list'),
-                   model_uri=PEH.observablepropertygroups_as_list, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyGroupId], Union[dict, ObservablePropertyGroup]], List[Union[dict, ObservablePropertyGroup]]]])
-
-slots.observableproperties_as_list = Slot(uri=PEH.observableproperties_as_list, name="observableproperties_as_list", curie=PEH.curie('observableproperties_as_list'),
-                   model_uri=PEH.observableproperties_as_list, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, ObservableProperty]], List[Union[dict, ObservableProperty]]]])
+slots.observable_property_groups = Slot(uri=PEH.observable_property_groups, name="observable_property_groups", curie=PEH.curie('observable_property_groups'),
+                   model_uri=PEH.observable_property_groups, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyGroupId], Union[dict, ObservablePropertyGroup]], List[Union[dict, ObservablePropertyGroup]]]])
 
 slots.categorical = Slot(uri=PEH.categorical, name="categorical", curie=PEH.curie('categorical'),
                    model_uri=PEH.categorical, domain=None, range=Optional[Union[bool, Bool]])
@@ -2014,11 +2016,11 @@ slots.parent_groups = Slot(uri=PEH.parent_groups, name="parent_groups", curie=PE
 slots.value_type = Slot(uri=PEH.value_type, name="value_type", curie=PEH.curie('value_type'),
                    model_uri=PEH.value_type, domain=None, range=Optional[str])
 
-slots.value_metadata_as_list = Slot(uri=PEH.value_metadata_as_list, name="value_metadata_as_list", curie=PEH.curie('value_metadata_as_list'),
-                   model_uri=PEH.value_metadata_as_list, domain=None, range=Optional[Union[Union[dict, ObservablePropertyMetadataElement], List[Union[dict, ObservablePropertyMetadataElement]]]])
+slots.value_metadata = Slot(uri=PEH.value_metadata, name="value_metadata", curie=PEH.curie('value_metadata'),
+                   model_uri=PEH.value_metadata, domain=None, range=Optional[Union[Union[dict, ObservablePropertyMetadataElement], List[Union[dict, ObservablePropertyMetadataElement]]]])
 
-slots.value_options_as_list = Slot(uri=PEH.value_options_as_list, name="value_options_as_list", curie=PEH.curie('value_options_as_list'),
-                   model_uri=PEH.value_options_as_list, domain=None, range=Optional[Union[Union[dict, ObservablePropertyValueOption], List[Union[dict, ObservablePropertyValueOption]]]])
+slots.value_options = Slot(uri=PEH.value_options, name="value_options", curie=PEH.curie('value_options'),
+                   model_uri=PEH.value_options, domain=None, range=Optional[Union[Union[dict, ObservablePropertyValueOption], List[Union[dict, ObservablePropertyValueOption]]]])
 
 slots.default_immutable = Slot(uri=PEH.default_immutable, name="default_immutable", curie=PEH.curie('default_immutable'),
                    model_uri=PEH.default_immutable, domain=None, range=Optional[Union[bool, Bool]])
@@ -2059,17 +2061,17 @@ slots.key = Slot(uri=PEH.key, name="key", curie=PEH.curie('key'),
 slots.value = Slot(uri=PEH.value, name="value", curie=PEH.curie('value'),
                    model_uri=PEH.value, domain=None, range=Optional[str])
 
-slots.metadata_fields_as_list = Slot(uri=PEH.metadata_fields_as_list, name="metadata_fields_as_list", curie=PEH.curie('metadata_fields_as_list'),
-                   model_uri=PEH.metadata_fields_as_list, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, ObservablePropertyMetadataField]], List[Union[dict, ObservablePropertyMetadataField]]]])
+slots.metadata_fields = Slot(uri=PEH.metadata_fields, name="metadata_fields", curie=PEH.curie('metadata_fields'),
+                   model_uri=PEH.metadata_fields, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, ObservablePropertyMetadataField]], List[Union[dict, ObservablePropertyMetadataField]]]])
 
-slots.stakeholders_as_list = Slot(uri=PEH.stakeholders_as_list, name="stakeholders_as_list", curie=PEH.curie('stakeholders_as_list'),
-                   model_uri=PEH.stakeholders_as_list, domain=None, range=Optional[Union[Dict[Union[str, StakeholderId], Union[dict, Stakeholder]], List[Union[dict, Stakeholder]]]])
+slots.stakeholders = Slot(uri=PEH.stakeholders, name="stakeholders", curie=PEH.curie('stakeholders'),
+                   model_uri=PEH.stakeholders, domain=None, range=Optional[Union[Dict[Union[str, StakeholderId], Union[dict, Stakeholder]], List[Union[dict, Stakeholder]]]])
+
+slots.project_id_list = Slot(uri=PEH.project_id_list, name="project_id_list", curie=PEH.curie('project_id_list'),
+                   model_uri=PEH.project_id_list, domain=None, range=Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]])
 
 slots.projects = Slot(uri=PEH.projects, name="projects", curie=PEH.curie('projects'),
-                   model_uri=PEH.projects, domain=None, range=Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]])
-
-slots.projects_as_list = Slot(uri=PEH.projects_as_list, name="projects_as_list", curie=PEH.curie('projects_as_list'),
-                   model_uri=PEH.projects_as_list, domain=None, range=Optional[Union[Dict[Union[str, ProjectId], Union[dict, Project]], List[Union[dict, Project]]]])
+                   model_uri=PEH.projects, domain=None, range=Optional[Union[Dict[Union[str, ProjectId], Union[dict, Project]], List[Union[dict, Project]]]])
 
 slots.geographic_scope = Slot(uri=PEH.geographic_scope, name="geographic_scope", curie=PEH.curie('geographic_scope'),
                    model_uri=PEH.geographic_scope, domain=None, range=Optional[str])
@@ -2080,35 +2082,35 @@ slots.project = Slot(uri=SCHEMA.ResearchProject, name="project", curie=SCHEMA.cu
 slots.stakeholder = Slot(uri=PEH.stakeholder, name="stakeholder", curie=PEH.curie('stakeholder'),
                    model_uri=PEH.stakeholder, domain=None, range=Optional[Union[str, StakeholderId]])
 
-slots.project_stakeholders_as_list = Slot(uri=PEH.project_stakeholders_as_list, name="project_stakeholders_as_list", curie=PEH.curie('project_stakeholders_as_list'),
-                   model_uri=PEH.project_stakeholders_as_list, domain=None, range=Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]])
+slots.project_stakeholders = Slot(uri=PEH.project_stakeholders, name="project_stakeholders", curie=PEH.curie('project_stakeholders'),
+                   model_uri=PEH.project_stakeholders, domain=None, range=Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]])
+
+slots.study_id_list = Slot(uri=PEH.study_id_list, name="study_id_list", curie=PEH.curie('study_id_list'),
+                   model_uri=PEH.study_id_list, domain=None, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
 
 slots.studies = Slot(uri=PEH.studies, name="studies", curie=PEH.curie('studies'),
-                   model_uri=PEH.studies, domain=None, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
-
-slots.studies_as_list = Slot(uri=PEH.studies_as_list, name="studies_as_list", curie=PEH.curie('studies_as_list'),
-                   model_uri=PEH.studies_as_list, domain=None, range=Optional[Union[Dict[Union[str, StudyId], Union[dict, Study]], List[Union[dict, Study]]]])
+                   model_uri=PEH.studies, domain=None, range=Optional[Union[Dict[Union[str, StudyId], Union[dict, Study]], List[Union[dict, Study]]]])
 
 slots.project_roles = Slot(uri=PEH.project_roles, name="project_roles", curie=PEH.curie('project_roles'),
                    model_uri=PEH.project_roles, domain=None, range=Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]])
 
-slots.study_stakeholders_as_list = Slot(uri=PEH.study_stakeholders_as_list, name="study_stakeholders_as_list", curie=PEH.curie('study_stakeholders_as_list'),
-                   model_uri=PEH.study_stakeholders_as_list, domain=None, range=Optional[Union[Union[dict, StudyStakeholder], List[Union[dict, StudyStakeholder]]]])
+slots.study_stakeholders = Slot(uri=PEH.study_stakeholders, name="study_stakeholders", curie=PEH.curie('study_stakeholders'),
+                   model_uri=PEH.study_stakeholders, domain=None, range=Optional[Union[Union[dict, StudyStakeholder], List[Union[dict, StudyStakeholder]]]])
 
 slots.study_roles = Slot(uri=PEH.study_roles, name="study_roles", curie=PEH.curie('study_roles'),
                    model_uri=PEH.study_roles, domain=None, range=Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]])
 
-slots.timepoints = Slot(uri=PEH.timepoints, name="timepoints", curie=PEH.curie('timepoints'),
-                   model_uri=PEH.timepoints, domain=None, range=Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]])
+slots.timepoint_id_list = Slot(uri=PEH.timepoint_id_list, name="timepoint_id_list", curie=PEH.curie('timepoint_id_list'),
+                   model_uri=PEH.timepoint_id_list, domain=None, range=Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]])
 
-slots.timepoints_as_list = Slot(uri=PEH.timepoints_as_list, name="timepoints_as_list", curie=PEH.curie('timepoints_as_list'),
-                   model_uri=PEH.timepoints_as_list, domain=None, range=Optional[Union[Dict[Union[str, TimepointId], Union[dict, Timepoint]], List[Union[dict, Timepoint]]]])
+slots.timepoints = Slot(uri=PEH.timepoints, name="timepoints", curie=PEH.curie('timepoints'),
+                   model_uri=PEH.timepoints, domain=None, range=Optional[Union[Dict[Union[str, TimepointId], Union[dict, Timepoint]], List[Union[dict, Timepoint]]]])
 
 slots.study_entities = Slot(uri=PEH.study_entities, name="study_entities", curie=PEH.curie('study_entities'),
                    model_uri=PEH.study_entities, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
 
-slots.observations_as_list = Slot(uri=PEH.observations_as_list, name="observations_as_list", curie=PEH.curie('observations_as_list'),
-                   model_uri=PEH.observations_as_list, domain=None, range=Optional[Union[Dict[Union[str, ObservationId], Union[dict, Observation]], List[Union[dict, Observation]]]])
+slots.observations = Slot(uri=PEH.observations, name="observations", curie=PEH.curie('observations'),
+                   model_uri=PEH.observations, domain=None, range=Optional[Union[Dict[Union[str, ObservationId], Union[dict, Observation]], List[Union[dict, Observation]]]])
 
 slots.study_entity_links = Slot(uri=PEH.study_entity_links, name="study_entity_links", curie=PEH.curie('study_entity_links'),
                    model_uri=PEH.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], List[Union[dict, StudyEntityLink]]]])
@@ -2137,20 +2139,26 @@ slots.observation_result = Slot(uri=PEH.observation_result, name="observation_re
 slots.observable_entity_type = Slot(uri=PEH.observable_entity_type, name="observable_entity_type", curie=PEH.curie('observable_entity_type'),
                    model_uri=PEH.observable_entity_type, domain=None, range=Optional[Union[str, "ObservableEntityType"]])
 
+slots.observable_entity_id_list = Slot(uri=PEH.observable_entity_id_list, name="observable_entity_id_list", curie=PEH.curie('observable_entity_id_list'),
+                   model_uri=PEH.observable_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+
 slots.observable_entities = Slot(uri=PEH.observable_entities, name="observable_entities", curie=PEH.curie('observable_entities'),
-                   model_uri=PEH.observable_entities, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
-
-slots.observable_properties = Slot(uri=PEH.observable_properties, name="observable_properties", curie=PEH.curie('observable_properties'),
-                   model_uri=PEH.observable_properties, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]])
-
-slots.observed_values_as_list = Slot(uri=PEH.observed_values_as_list, name="observed_values_as_list", curie=PEH.curie('observed_values_as_list'),
-                   model_uri=PEH.observed_values_as_list, domain=None, range=Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]])
+                   model_uri=PEH.observable_entities, domain=None, range=Optional[Union[Dict[Union[str, StudyEntityId], Union[dict, StudyEntity]], List[Union[dict, StudyEntity]]]])
 
 slots.observable_entity = Slot(uri=PEH.observable_entity, name="observable_entity", curie=PEH.curie('observable_entity'),
                    model_uri=PEH.observable_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
 
+slots.observable_property_id_list = Slot(uri=PEH.observable_property_id_list, name="observable_property_id_list", curie=PEH.curie('observable_property_id_list'),
+                   model_uri=PEH.observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]])
+
+slots.observable_properties = Slot(uri=PEH.observable_properties, name="observable_properties", curie=PEH.curie('observable_properties'),
+                   model_uri=PEH.observable_properties, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, ObservableProperty]], List[Union[dict, ObservableProperty]]]])
+
 slots.observable_property = Slot(uri=PEH.observable_property, name="observable_property", curie=PEH.curie('observable_property'),
                    model_uri=PEH.observable_property, domain=None, range=Optional[Union[str, ObservablePropertyId]])
+
+slots.observed_values = Slot(uri=PEH.observed_values, name="observed_values", curie=PEH.curie('observed_values'),
+                   model_uri=PEH.observed_values, domain=None, range=Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]])
 
 slots.unit = Slot(uri=PEH.unit, name="unit", curie=PEH.curie('unit'),
                    model_uri=PEH.unit, domain=None, range=Optional[Union[str, UnitId]])

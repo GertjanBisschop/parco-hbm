@@ -1,4 +1,4 @@
-observablepropertygroups_as_list:
+observablepropertygroups:
 - description: tijdelijk
   id: '<TODO: nog aan te vullen effect>'
   is_abstract: false
@@ -6,11 +6,11 @@ observablepropertygroups_as_list:
   parent_groups:
   - Effect marker
   sort_order: 2005.0
-metadata_fields_as_list:
+metadata_fields:
   - id: default_serialized
     name: default_serialized
     value_type: str
-observableproperties_as_list:
+observableproperties:
 - categorical: true
   default_immutable: 1
   description: Relation id_subject vs id_participant (main subject of the study)
@@ -23,7 +23,7 @@ observableproperties_as_list:
   relevant_observation_types:
   - questionnaire
   shortname: relation
-  value_options_as_list:
+  value_options:
   - key: P
     value: participant itself
   - key: M

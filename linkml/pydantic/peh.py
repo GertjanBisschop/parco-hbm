@@ -177,18 +177,18 @@ class QudtQuantityKind(str, Enum):
 
 class EntityList(ConfiguredBaseModel):
     
-    matrices_as_list: Optional[List[Matrix]] = Field(default_factory=list)
-    metadata_fields_as_list: Optional[List[ObservablePropertyMetadataField]] = Field(default_factory=list)
-    biochementities_as_list: Optional[List[BioChemEntity]] = Field(default_factory=list)
-    biochemgroupings_as_list: Optional[List[BioChemGrouping]] = Field(default_factory=list)
-    indicators_as_list: Optional[List[Indicator]] = Field(default_factory=list)
-    units_as_list: Optional[List[Unit]] = Field(default_factory=list)
-    observablepropertygroups_as_list: Optional[List[ObservablePropertyGroup]] = Field(default_factory=list)
-    observableproperties_as_list: Optional[List[ObservableProperty]] = Field(default_factory=list)
-    stakeholders_as_list: Optional[List[Stakeholder]] = Field(default_factory=list)
-    projects_as_list: Optional[List[Project]] = Field(default_factory=list)
-    studies_as_list: Optional[List[Study]] = Field(default_factory=list)
-    timepoints_as_list: Optional[List[Timepoint]] = Field(default_factory=list)
+    matrices: Optional[List[Matrix]] = Field(default_factory=list)
+    metadata_fields: Optional[List[ObservablePropertyMetadataField]] = Field(default_factory=list)
+    biochementities: Optional[List[BioChemEntity]] = Field(default_factory=list)
+    biochemgroupings: Optional[List[BioChemGrouping]] = Field(default_factory=list)
+    indicators: Optional[List[Indicator]] = Field(default_factory=list)
+    units: Optional[List[Unit]] = Field(default_factory=list)
+    observable_property_groups: Optional[List[ObservablePropertyGroup]] = Field(default_factory=list)
+    observable_properties: Optional[List[ObservableProperty]] = Field(default_factory=list)
+    stakeholders: Optional[List[Stakeholder]] = Field(default_factory=list)
+    projects: Optional[List[Project]] = Field(default_factory=list)
+    studies: Optional[List[Study]] = Field(default_factory=list)
+    timepoints: Optional[List[Timepoint]] = Field(default_factory=list)
     
         
 
@@ -222,13 +222,13 @@ class ValidationHistoryRecord(ConfiguredBaseModel):
 
 class HasAliases(ConfiguredBaseModel):
     
-    aliases_as_list: Optional[List[str]] = Field(default_factory=list)
+    aliases: Optional[List[str]] = Field(default_factory=list)
     
         
 
 class HasContextAliases(ConfiguredBaseModel):
     
-    context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     
         
 
@@ -241,7 +241,7 @@ class ContextAlias(ConfiguredBaseModel):
 
 class HasTranslations(ConfiguredBaseModel):
     
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     
         
 
@@ -257,8 +257,8 @@ class Unit(HasTranslations, HasContextAliases, NamedThing):
     
     same_unit_as: Optional[QudtUnit] = Field(None)
     quantity_kind: Optional[QudtQuantityKind] = Field(None)
-    context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -269,8 +269,8 @@ class Unit(HasTranslations, HasContextAliases, NamedThing):
 
 class BioChemGrouping(HasTranslations, HasContextAliases, NamedThing):
     
-    context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -284,10 +284,10 @@ class BioChemEntity(HasTranslations, HasContextAliases, HasAliases, HasValidatio
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
     """
     grouping: Optional[str] = Field(None)
-    biochemidentifiers_as_list: Optional[List[BioChemIdentifier]] = Field(default_factory=list)
-    aliases_as_list: Optional[List[str]] = Field(default_factory=list)
-    context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    biochemidentifiers: Optional[List[BioChemIdentifier]] = Field(default_factory=list)
+    aliases: Optional[List[str]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     current_validation_status: Optional[ValidationStatus] = Field(None)
     validation_history: Optional[List[ValidationHistoryRecord]] = Field(default_factory=list)
     id: str = Field(...)
@@ -318,12 +318,13 @@ class BioChemIdentifierSchema(NamedThing):
     
         
 
-class Matrix(HasContextAliases, NamedThing):
+class Matrix(HasTranslations, HasContextAliases, NamedThing):
     
     sort_order: Optional[Decimal] = Field(None)
     aggregation_target: Optional[bool] = Field(None)
     parent_matrix: Optional[str] = Field(None)
-    context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -341,7 +342,7 @@ class Indicator(NamedThing):
     matrix: Optional[str] = Field(None)
     constraints: Optional[List[str]] = Field(default_factory=list)
     relevant_observable_entity_types: Optional[List[ObservableEntityType]] = Field(default_factory=list)
-    biochementity_links_as_list: Optional[List[BioChemEntityLink]] = Field(default_factory=list)
+    biochementity_links: Optional[List[BioChemEntityLink]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -362,7 +363,7 @@ class ObservablePropertyGroup(HasTranslations, NamedThing):
     sort_order: Optional[Decimal] = Field(None)
     is_abstract: Optional[bool] = Field(None)
     parent_groups: Optional[List[str]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -376,8 +377,8 @@ class ObservableProperty(HasTranslations, NamedThing):
     value_type: Optional[str] = Field(None)
     categorical: Optional[bool] = Field(None)
     multivalued: Optional[bool] = Field(None)
-    value_options_as_list: Optional[List[ObservablePropertyValueOption]] = Field(default_factory=list)
-    value_metadata_as_list: Optional[List[ObservablePropertyMetadataElement]] = Field(default_factory=list)
+    value_options: Optional[List[ObservablePropertyValueOption]] = Field(default_factory=list)
+    value_metadata: Optional[List[ObservablePropertyMetadataElement]] = Field(default_factory=list)
     quantity_kind: Optional[QudtQuantityKind] = Field(None)
     default_unit: Optional[str] = Field(None)
     default_significantdecimals: Optional[int] = Field(None)
@@ -388,7 +389,7 @@ class ObservableProperty(HasTranslations, NamedThing):
     indicator: Optional[str] = Field(None)
     calculation_design: Optional[CalculationDesign] = Field(None)
     validation_design: Optional[ValidationDesign] = Field(None)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -402,7 +403,7 @@ class ObservablePropertyValueOption(HasContextAliases):
     key: Optional[str] = Field(None)
     value: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
-    context_aliases_as_list: Optional[List[ContextAlias]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     
         
 
@@ -440,7 +441,7 @@ class ValidationDesign(ConfiguredBaseModel):
 class Stakeholder(HasTranslations, NamedThing):
     
     geographic_scope: Optional[str] = Field(None)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -451,9 +452,9 @@ class Stakeholder(HasTranslations, NamedThing):
 
 class Project(HasTranslations, NamedThing):
     
-    project_stakeholders_as_list: Optional[List[ProjectStakeholder]] = Field(default_factory=list)
-    studies: Optional[List[str]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    project_stakeholders: Optional[List[ProjectStakeholder]] = Field(default_factory=list)
+    study_id_list: Optional[List[str]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -466,17 +467,17 @@ class ProjectStakeholder(HasTranslations):
     
     stakeholder: Optional[str] = Field(None)
     project_roles: Optional[List[ProjectRole]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     
         
 
 class Study(HasTranslations, NamedThing):
     
-    study_stakeholders_as_list: Optional[List[StudyStakeholder]] = Field(default_factory=list)
-    timepoints: Optional[List[str]] = Field(default_factory=list)
+    study_stakeholders: Optional[List[StudyStakeholder]] = Field(default_factory=list)
+    timepoint_id_list: Optional[List[str]] = Field(default_factory=list)
     study_entities: Optional[List[str]] = Field(default_factory=list)
-    projects: Optional[List[str]] = Field(default_factory=list)
-    translations_as_list: Optional[List[Translation]] = Field(default_factory=list)
+    project_id_list: Optional[List[str]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -494,7 +495,7 @@ class StudyStakeholder(ConfiguredBaseModel):
 
 class Timepoint(NamedThing):
     
-    observations_as_list: Optional[List[Observation]] = Field(default_factory=list)
+    observations: Optional[List[Observation]] = Field(default_factory=list)
     id: str = Field(...)
     shortname: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -663,14 +664,14 @@ class ObservationDesign(ConfiguredBaseModel):
 class ObservationSet(ConfiguredBaseModel):
     
     observable_entity_type: Optional[ObservableEntityType] = Field(None)
-    observable_entities: Optional[List[str]] = Field(default_factory=list)
-    observable_properties: Optional[List[str]] = Field(default_factory=list)
+    observable_entity_id_list: Optional[List[str]] = Field(default_factory=list)
+    observable_property_id_list: Optional[List[str]] = Field(default_factory=list)
     
         
 
 class ObservationResult(ConfiguredBaseModel):
     
-    observed_values_as_list: Optional[List[ObservedValue]] = Field(default_factory=list)
+    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
     
         
 
@@ -762,7 +763,7 @@ class ProcessingStep(NamedThing):
 
 class DataExtract(ConfiguredBaseModel):
     
-    observed_values_as_list: Optional[List[ObservedValue]] = Field(default_factory=list)
+    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
     
         
 

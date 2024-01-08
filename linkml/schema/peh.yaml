@@ -31,18 +31,18 @@ classes:
   EntityList:
     tree_root: true
     slots:
-      - matrices_as_list
-      - metadata_fields_as_list
-      - biochementities_as_list
-      - biochemgroupings_as_list
-      - indicators_as_list
-      - units_as_list
-      - observablepropertygroups_as_list
-      - observableproperties_as_list
-      - stakeholders_as_list
-      - projects_as_list
-      - studies_as_list
-      - timepoints_as_list
+      - matrices
+      - metadata_fields
+      - biochementities
+      - biochemgroupings
+      - indicators
+      - units
+      - observable_property_groups
+      - observable_properties
+      - stakeholders
+      - projects
+      - studies
+      - timepoints
 
   NamedThing:
     abstract: true
@@ -72,11 +72,11 @@ classes:
   HasAliases:
     mixin: true
     slots:
-      - aliases_as_list
+      - aliases
   HasContextAliases:
     mixin: true
     slots:
-      - context_aliases_as_list
+      - context_aliases
   ContextAlias:
     slots:
       - context
@@ -84,7 +84,7 @@ classes:
   HasTranslations:
     mixin: true
     slots:
-      - translations_as_list
+      - translations
   Translation:
     slots:
       - property_name
@@ -118,7 +118,7 @@ classes:
       - HasValidationStatus
     slots:
       - grouping
-      - biochemidentifiers_as_list
+      - biochemidentifiers
   BioChemIdentifier:
     mixins:
       - HasValidationStatus
@@ -133,6 +133,7 @@ classes:
     is_a: NamedThing
     mixins:
       - HasContextAliases
+      - HasTranslations
     slots:
       - sort_order
       - aggregation_target
@@ -149,7 +150,7 @@ classes:
       - matrix
       - constraints
       - relevant_observable_entity_types
-      - biochementity_links_as_list
+      - biochementity_links
   BioChemEntityLink:
     slots:
       - biochementity_linktype
@@ -171,8 +172,8 @@ classes:
       - value_type
       - categorical
       - multivalued
-      - value_options_as_list
-      - value_metadata_as_list
+      - value_options
+      - value_metadata
       - quantity_kind
       - default_unit
       - default_significantdecimals
@@ -217,8 +218,8 @@ classes:
     mixins:
       - HasTranslations
     slots:
-      - project_stakeholders_as_list
-      - studies
+      - project_stakeholders
+      - study_id_list
   ProjectStakeholder:
     slots:
       - stakeholder
@@ -230,10 +231,10 @@ classes:
     mixins:
       - HasTranslations
     slots:
-      - study_stakeholders_as_list
-      - timepoints
+      - study_stakeholders
+      - timepoint_id_list
       - study_entities
-      - projects
+      - project_id_list
   StudyStakeholder:
     slots:
       - stakeholder
@@ -241,7 +242,7 @@ classes:
   Timepoint:
     is_a: NamedThing
     slots:
-      - observations_as_list
+      - observations
   StudyEntity:
     abstract: true
     is_a: NamedThing
@@ -288,11 +289,11 @@ classes:
   ObservationSet:
     slots:
       - observable_entity_type
-      - observable_entities
-      - observable_properties
+      - observable_entity_id_list
+      - observable_property_id_list
   ObservationResult:
     slots:
-      - observed_values_as_list
+      - observed_values
   ObservedValue:
     slots:
       - observable_entity
@@ -340,7 +341,7 @@ classes:
       - delivery_date
   DataExtract:
     slots:
-      - observed_values_as_list
+      - observed_values
 
 slots:
   id:
@@ -355,17 +356,17 @@ slots:
     slot_uri: rdfs:label
 
   alias:
-  aliases_as_list:
+  aliases:
     multivalued: true
     inlined_as_list: true
-  context_aliases_as_list:
+  context_aliases:
     multivalued: true
     inlined_as_list: true
     range: ContextAlias
   context:
     range: NamedThing
     inlined: false
-  translations_as_list:
+  translations:
     multivalued: true
     inlined_as_list: true
     range: Translation
@@ -378,7 +379,7 @@ slots:
     inlined_as_list: true
     range: ValidationHistoryRecord
 
-  units_as_list:
+  units:
     multivalued: true
     inlined_as_list: true
     range: Unit
@@ -387,19 +388,19 @@ slots:
   quantity_kind:
     range: QudtQuantityKind
 
-  biochemgroupings_as_list:
+  biochemgroupings:
     multivalued: true
     inlined_as_list: true
     range: BioChemGrouping
-  biochemidentifiers_as_list:
+  biochemidentifiers:
     multivalued: true
     inlined_as_list: true
     range: BioChemIdentifier
-  biochementities_as_list:
+  biochementities:
     multivalued: true
     inlined_as_list: true
     range: BioChemEntity
-  indicators_as_list:
+  indicators:
     multivalued: true
     inlined_as_list: true
     range: Indicator
@@ -426,7 +427,7 @@ slots:
     range: Matrix
   indicator_type:
     range: IndicatorType
-  matrices_as_list:
+  matrices:
     multivalued: true
     inlined_as_list: true
     range: Matrix
@@ -438,7 +439,7 @@ slots:
   relevant_observable_entity_types:
     multivalued: true
     range: ObservableEntityType
-  biochementity_links_as_list:
+  biochementity_links:
     multivalued: true
     inlined_as_list: true
     range: BioChemEntityLink
@@ -447,14 +448,10 @@ slots:
   biochementity:
     range: BioChemEntity
 
-  observablepropertygroups_as_list:
+  observable_property_groups:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyGroup
-  observableproperties_as_list:
-    multivalued: true
-    inlined_as_list: true
-    range: ObservableProperty
   categorical:
     range: boolean
   multivalued:
@@ -465,11 +462,11 @@ slots:
     multivalued: true
     range: ObservablePropertyGroup
   value_type:
-  value_metadata_as_list:
+  value_metadata:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyMetadataElement
-  value_options_as_list:
+  value_options:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyValueOption
@@ -496,19 +493,19 @@ slots:
     range: ObservablePropertyMetadataField
   key:
   value:
-  metadata_fields_as_list:
+  metadata_fields:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyMetadataField
 
-  stakeholders_as_list:
+  stakeholders:
     multivalued: true
     inlined_as_list: true
     range: Stakeholder
-  projects:
+  project_id_list:
     multivalued: true
     range: Project
-  projects_as_list:
+  projects:
     multivalued: true
     inlined_as_list: true
     range: Project
@@ -517,38 +514,38 @@ slots:
     slot_uri: schema:ResearchProject
   stakeholder:
     range: Stakeholder
-  project_stakeholders_as_list:
+  project_stakeholders:
     multivalued: true
     inlined_as_list: true
     range: ProjectStakeholder
-  studies:
+  study_id_list:
     multivalued: true
     range: Study
-  studies_as_list:
+  studies:
     multivalued: true
     inlined_as_list: true
     range: Study
   project_roles:
     multivalued: true
     range: ProjectRole
-  study_stakeholders_as_list:
+  study_stakeholders:
     multivalued: true
     inlined_as_list: true
     range: StudyStakeholder
   study_roles:
     multivalued: true
     range: StudyRole
-  timepoints:
+  timepoint_id_list:
     multivalued: true
     range: Timepoint
-  timepoints_as_list:
+  timepoints:
     multivalued: true
     inlined_as_list: true
     range: Timepoint
   study_entities:
     multivalued: true
     range: StudyEntity
-  observations_as_list:
+  observations:
     multivalued: true
     inlined_as_list: true
     range: Observation
@@ -572,20 +569,28 @@ slots:
     range: ObservationResult
   observable_entity_type:
     range: ObservableEntityType
-  observable_entities:
+  observable_entity_id_list:
     multivalued: true
     range: StudyEntity
-  observable_properties:
+  observable_entities:
+    multivalued: true
+    inlined_as_list: true
+    range: StudyEntity
+  observable_entity:
+    range: StudyEntity
+  observable_property_id_list:
     multivalued: true
     range: ObservableProperty
-  observed_values_as_list:
+  observable_properties:
+    multivalued: true
+    inlined_as_list: true
+    range: ObservableProperty
+  observable_property:
+    range: ObservableProperty
+  observed_values:
     multivalued: true
     inlined_as_list: true
     range: ObservedValue
-  observable_entity:
-    range: StudyEntity
-  observable_property:
-    range: ObservableProperty
   unit:
     range: Unit
   quality_or_confidence_info:

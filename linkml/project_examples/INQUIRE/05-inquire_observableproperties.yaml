@@ -1,4 +1,4 @@
-observablepropertygroups_as_list:
+observablepropertygroups:
 - id: Identifier and demographics
   shortname: Identifier and demographics
   name: Identifier and demographics
@@ -39,7 +39,7 @@ observablepropertygroups_as_list:
   name: Child demography and health
   sort_order: 5
   is_abstract: false
-metadata_fields_as_list:
+metadata_fields:
 - id: min
   name: min
   value_type: decimal
@@ -61,11 +61,11 @@ metadata_fields_as_list:
 - id: format
   name: format
   value_type: string
-observableproperties_as_list:
+observableproperties:
 - id: total_income_category
   shortname: total_income_category
   name: total_income_category
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Cat 1
   - key: '2'
@@ -87,7 +87,7 @@ observableproperties_as_list:
 - id: N71educationrespondent
   shortname: N71educationrespondent
   name: N71educationrespondent
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No formal education or below primary education (ISCED 0)
   - key: '1'
@@ -112,7 +112,7 @@ observableproperties_as_list:
 - id: N72educationpartner
   shortname: N72educationpartner
   name: N72educationpartner
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No formal education or below primary education (ISCED 0)
   - key: '1'
@@ -137,7 +137,7 @@ observableproperties_as_list:
 - id: DD_asthma_allergy_family
   shortname: DD_asthma_allergy_family
   name: DD_asthma_allergy_family
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -147,7 +147,7 @@ observableproperties_as_list:
 - id: Eyeproblem
   shortname: Eyeproblem
   name: Eyeproblem
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -161,7 +161,7 @@ observableproperties_as_list:
 - id: Noseproblem
   shortname: Noseproblem
   name: Noseproblem
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -175,7 +175,7 @@ observableproperties_as_list:
 - id: Throatproblem
   shortname: Throatproblem
   name: Throatproblem
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -189,7 +189,7 @@ observableproperties_as_list:
 - id: Headache
   shortname: Headache
   name: Headache
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -203,7 +203,7 @@ observableproperties_as_list:
 - id: Memoryproblem
   shortname: Memoryproblem
   name: Memoryproblem
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -217,7 +217,7 @@ observableproperties_as_list:
 - id: Dizziness
   shortname: Dizziness
   name: Dizziness
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -231,7 +231,7 @@ observableproperties_as_list:
 - id: Fatiguesleepiness
   shortname: Fatiguesleepiness
   name: Fatiguesleepiness
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -245,7 +245,7 @@ observableproperties_as_list:
 - id: heavyhead
   shortname: heavyhead
   name: heavyhead
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -259,7 +259,7 @@ observableproperties_as_list:
 - id: Eczema_lastmonth
   shortname: Eczema_lastmonth
   name: Eczema_lastmonth
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -273,7 +273,7 @@ observableproperties_as_list:
 - id: Wheezing
   shortname: Wheezing
   name: Wheezing
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -287,7 +287,7 @@ observableproperties_as_list:
 - id: Stagnantbadair
   shortname: Stagnantbadair
   name: Stagnantbadair
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -299,7 +299,7 @@ observableproperties_as_list:
 - id: Unpleasantair
   shortname: Unpleasantair
   name: Unpleasantair
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -311,7 +311,7 @@ observableproperties_as_list:
 - id: Pungentodor
   shortname: Pungentodor
   name: Pungentodor
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -323,7 +323,7 @@ observableproperties_as_list:
 - id: Mouldodor
   shortname: Mouldodor
   name: Mouldodor
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -335,7 +335,7 @@ observableproperties_as_list:
 - id: Earthyodor
   shortname: Earthyodor
   name: Earthyodor
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -347,7 +347,7 @@ observableproperties_as_list:
 - id: Tobaccosmoke
   shortname: Tobaccosmoke
   name: Tobaccosmoke
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -359,7 +359,7 @@ observableproperties_as_list:
 - id: Dryair
   shortname: Dryair
   name: Dryair
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -371,7 +371,7 @@ observableproperties_as_list:
 - id: Dampair
   shortname: Dampair
   name: Dampair
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: No, never
   - key: '1'
@@ -383,7 +383,7 @@ observableproperties_as_list:
 - id: smoking_room
   shortname: smoking_room
   name: smoking_room
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -393,7 +393,7 @@ observableproperties_as_list:
 - id: burning_fireplace
   shortname: burning_fireplace
   name: burning_fireplace
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -403,7 +403,7 @@ observableproperties_as_list:
 - id: Cigarettesmoking
   shortname: Cigarettesmoking
   name: Cigarettesmoking
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -413,7 +413,7 @@ observableproperties_as_list:
 - id: Ecigarette
   shortname: Ecigarette
   name: Ecigarette
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -423,7 +423,7 @@ observableproperties_as_list:
 - id: grilled_barbeque
   shortname: grilled_barbeque
   name: grilled_barbeque
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -433,7 +433,7 @@ observableproperties_as_list:
 - id: deepfriedfood
   shortname: deepfriedfood
   name: deepfriedfood
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -443,7 +443,7 @@ observableproperties_as_list:
 - id: ffish_seafood
   shortname: ffish_seafood
   name: ffish_seafood
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -453,7 +453,7 @@ observableproperties_as_list:
 - id: readymademeals
   shortname: readymademeals
   name: readymademeals
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -463,7 +463,7 @@ observableproperties_as_list:
 - id: fastfood
   shortname: fastfood
   name: fastfood
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -473,7 +473,7 @@ observableproperties_as_list:
 - id: cannedfoods
   shortname: cannedfoods
   name: cannedfoods
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -483,7 +483,7 @@ observableproperties_as_list:
 - id: motorizedvehicle
   shortname: motorizedvehicle
   name: motorizedvehicle
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -493,7 +493,7 @@ observableproperties_as_list:
 - id: Cycling_walking
   shortname: Cycling_walking
   name: Cycling_walking
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -503,7 +503,7 @@ observableproperties_as_list:
 - id: personalcareproducts
   shortname: personalcareproducts
   name: personalcareproducts
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: None
   - key: '1'
@@ -517,7 +517,7 @@ observableproperties_as_list:
 - id: personalcareproducts_Ecolabel
   shortname: personalcareproducts_Ecolabel
   name: personalcareproducts_Ecolabel
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: None
   - key: '1'
@@ -531,7 +531,7 @@ observableproperties_as_list:
 - id: Fragrancediffusers
   shortname: Fragrancediffusers
   name: Fragrancediffusers
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -541,7 +541,7 @@ observableproperties_as_list:
 - id: Indoor_pesticide_insecticide
   shortname: Indoor_pesticide_insecticide
   name: Indoor_pesticide_insecticide
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -551,7 +551,7 @@ observableproperties_as_list:
 - id: outdoor_pesticide_insecticide
   shortname: outdoor_pesticide_insecticide
   name: outdoor_pesticide_insecticide
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -561,7 +561,7 @@ observableproperties_as_list:
 - id: Antifleaproduct
   shortname: Antifleaproduct
   name: Antifleaproduct
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -571,7 +571,7 @@ observableproperties_as_list:
 - id: Material_ceramics
   shortname: Material_ceramics
   name: Material_ceramics
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -581,7 +581,7 @@ observableproperties_as_list:
 - id: Paintgluevarnish
   shortname: Paintgluevarnish
   name: Paintgluevarnish
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -591,7 +591,7 @@ observableproperties_as_list:
 - id: Cleaningproducts
   shortname: Cleaningproducts
   name: Cleaningproducts
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -601,7 +601,7 @@ observableproperties_as_list:
 - id: Cleaning_Ecolabel
   shortname: Cleaning_Ecolabel
   name: Cleaning_Ecolabel
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -611,7 +611,7 @@ observableproperties_as_list:
 - id: Personalhygienesprays
   shortname: Personalhygienesprays
   name: Personalhygienesprays
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -621,7 +621,7 @@ observableproperties_as_list:
 - id: Sex_child
   shortname: Sex_child
   name: Sex_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Male
   - key: '2'
@@ -629,7 +629,7 @@ observableproperties_as_list:
 - id: Wheezing_child
   shortname: Wheezing_child
   name: Wheezing_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -639,7 +639,7 @@ observableproperties_as_list:
 - id: Allergies_child_dd
   shortname: Allergies_child_dd
   name: Allergies_child_dd
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -649,7 +649,7 @@ observableproperties_as_list:
 - id: Asthma_child_dd
   shortname: Asthma_child_dd
   name: Asthma_child_dd
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -659,7 +659,7 @@ observableproperties_as_list:
 - id: eczema_child_dd
   shortname: eczema_child_dd
   name: eczema_child_dd
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -669,7 +669,7 @@ observableproperties_as_list:
 - id: Eyeproblem_child
   shortname: Eyeproblem_child
   name: Eyeproblem_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -683,7 +683,7 @@ observableproperties_as_list:
 - id: Noseproblem_child
   shortname: Noseproblem_child
   name: Noseproblem_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -697,7 +697,7 @@ observableproperties_as_list:
 - id: Throatproblem_child
   shortname: Throatproblem_child
   name: Throatproblem_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -711,7 +711,7 @@ observableproperties_as_list:
 - id: eczema_child
   shortname: eczema_child
   name: eczema_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -725,7 +725,7 @@ observableproperties_as_list:
 - id: wheezing_child_lm
   shortname: wheezing_child_lm
   name: wheezing_child_lm
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -739,7 +739,7 @@ observableproperties_as_list:
 - id: mouthing_behaviour
   shortname: mouthing_behaviour
   name: mouthing_behaviour
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: 'No'
   - key: '1'
@@ -753,7 +753,7 @@ observableproperties_as_list:
 - id: smoking_room_child
   shortname: smoking_room_child
   name: smoking_room_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -763,7 +763,7 @@ observableproperties_as_list:
 - id: another_place
   shortname: another_place
   name: another_place
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -773,7 +773,7 @@ observableproperties_as_list:
 - id: specify_place
   shortname: specify_place
   name: specify_place
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: Kindergarten or childcare
   - key: '2'
@@ -787,7 +787,7 @@ observableproperties_as_list:
 - id: burning_place_child
   shortname: burning_place_child
   name: burning_place_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -797,7 +797,7 @@ observableproperties_as_list:
 - id: grilled_food_child
   shortname: grilled_food_child
   name: grilled_food_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -807,7 +807,7 @@ observableproperties_as_list:
 - id: deepfriedfood_child
   shortname: deepfriedfood_child
   name: deepfriedfood_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -817,7 +817,7 @@ observableproperties_as_list:
 - id: fish_seafood_child
   shortname: fish_seafood_child
   name: fish_seafood_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -827,7 +827,7 @@ observableproperties_as_list:
 - id: readymademeals_child
   shortname: readymademeals_child
   name: readymademeals_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -837,7 +837,7 @@ observableproperties_as_list:
 - id: fastfood_child
   shortname: fastfood_child
   name: fastfood_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -847,7 +847,7 @@ observableproperties_as_list:
 - id: cannedfoods_child
   shortname: cannedfoods_child
   name: cannedfoods_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -857,7 +857,7 @@ observableproperties_as_list:
 - id: motorizedvehicle_child
   shortname: motorizedvehicle_child
   name: motorizedvehicle_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -867,7 +867,7 @@ observableproperties_as_list:
 - id: Cycling_walking_child
   shortname: Cycling_walking_child
   name: Cycling_walking_child
-  value_options_as_list:
+  value_options:
   - key: '1'
     value: 'Yes'
   - key: '0'
@@ -877,7 +877,7 @@ observableproperties_as_list:
 - id: care_products_child
   shortname: care_products_child
   name: care_products_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: None
   - key: '1'
@@ -891,7 +891,7 @@ observableproperties_as_list:
 - id: careproducts_Ecolabel_child
   shortname: careproducts_Ecolabel_child
   name: careproducts_Ecolabel_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: None
   - key: '1'
@@ -905,7 +905,7 @@ observableproperties_as_list:
 - id: breast_feeding
   shortname: breast_feeding
   name: breast_feeding
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: 'No'
   - key: '1'
@@ -923,7 +923,7 @@ observableproperties_as_list:
 - id: electronics_child
   shortname: electronics_child
   name: electronics_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -939,7 +939,7 @@ observableproperties_as_list:
 - id: play_floor_child
   shortname: play_floor_child
   name: play_floor_child
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Never
   - key: '1'
@@ -955,7 +955,7 @@ observableproperties_as_list:
 - id: judged_airquality
   shortname: judged_airquality
   name: judged_airquality
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Extremely pleasant
   - key: '6'
@@ -977,7 +977,7 @@ observableproperties_as_list:
 - id: concern_airquality
   shortname: concern_airquality
   name: concern_airquality
-  value_options_as_list:
+  value_options:
   - key: '0'
     value: Not at all
   - key: '1'
@@ -993,7 +993,7 @@ observableproperties_as_list:
 - id: consciousness_ladder
   shortname: consciousness_ladder
   name: consciousness_ladder
-  value_options_as_list:
+  value_options:
   - key: '9'
     value: Very conscious on the importance of indoor air quality
   - key: '8'
@@ -1017,7 +1017,7 @@ observableproperties_as_list:
 - id: beh_choice
   shortname: beh_choice
   name: beh_choice
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1037,7 +1037,7 @@ observableproperties_as_list:
 - id: influence
   shortname: influence
   name: influence
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1057,7 +1057,7 @@ observableproperties_as_list:
 - id: adjusttheventilation
   shortname: adjusttheventilation
   name: adjusttheventilation
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1077,7 +1077,7 @@ observableproperties_as_list:
 - id: open_window
   shortname: open_window
   name: open_window
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1097,7 +1097,7 @@ observableproperties_as_list:
 - id: healthiness_indoor
   shortname: healthiness_indoor
   name: healthiness_indoor
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1117,7 +1117,7 @@ observableproperties_as_list:
 - id: healthiness_outdoor
   shortname: healthiness_outdoor
   name: healthiness_outdoor
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1137,7 +1137,7 @@ observableproperties_as_list:
 - id: necessity_improvement
   shortname: necessity_improvement
   name: necessity_improvement
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1157,7 +1157,7 @@ observableproperties_as_list:
 - id: enjoyable
   shortname: enjoyable
   name: enjoyable
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1177,7 +1177,7 @@ observableproperties_as_list:
 - id: expect_health_benefit
   shortname: expect_health_benefit
   name: expect_health_benefit
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1197,7 +1197,7 @@ observableproperties_as_list:
 - id: expect_health_benefit_child
   shortname: expect_health_benefit_child
   name: expect_health_benefit_child
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1217,7 +1217,7 @@ observableproperties_as_list:
 - id: recognition_others
   shortname: recognition_others
   name: recognition_others
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1237,7 +1237,7 @@ observableproperties_as_list:
 - id: required_to_do
   shortname: required_to_do
   name: required_to_do
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1257,7 +1257,7 @@ observableproperties_as_list:
 - id: feel_pressure
   shortname: feel_pressure
   name: feel_pressure
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1277,7 +1277,7 @@ observableproperties_as_list:
 - id: good_look_to_others
   shortname: good_look_to_others
   name: good_look_to_others
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1297,7 +1297,7 @@ observableproperties_as_list:
 - id: dont_want_improve
   shortname: dont_want_improve
   name: dont_want_improve
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1317,7 +1317,7 @@ observableproperties_as_list:
 - id: too_much_effort
   shortname: too_much_effort
   name: too_much_effort
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1337,7 +1337,7 @@ observableproperties_as_list:
 - id: difficult_to_improve
   shortname: difficult_to_improve
   name: difficult_to_improve
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1357,7 +1357,7 @@ observableproperties_as_list:
 - id: dont_have_tools
   shortname: dont_have_tools
   name: dont_have_tools
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1377,7 +1377,7 @@ observableproperties_as_list:
 - id: dont_know_how
   shortname: dont_know_how
   name: dont_know_how
-  value_options_as_list:
+  value_options:
   - key: '7'
     value: Agree strongly
   - key: '6'
@@ -1397,7 +1397,7 @@ observableproperties_as_list:
 - id: temperature_reg
   shortname: temperature_reg
   name: temperature_reg
-  value_options_as_list:
+  value_options:
   - key: '88'
     value: Not applicable
   - key: '0'
@@ -1417,7 +1417,7 @@ observableproperties_as_list:
 - id: ventilation_reg
   shortname: ventilation_reg
   name: ventilation_reg
-  value_options_as_list:
+  value_options:
   - key: '88'
     value: Not applicable
   - key: '0'
@@ -1437,7 +1437,7 @@ observableproperties_as_list:
 - id: Openwindow
   shortname: Openwindow
   name: Openwindow
-  value_options_as_list:
+  value_options:
   - key: '88'
     value: Not applicable
   - key: '0'
@@ -1457,7 +1457,7 @@ observableproperties_as_list:
 - id: Useproducts_Ecolabel
   shortname: Useproducts_Ecolabel
   name: Useproducts_Ecolabel
-  value_options_as_list:
+  value_options:
   - key: '88'
     value: Not applicable
   - key: '0'
@@ -1477,7 +1477,7 @@ observableproperties_as_list:
 - id: use_natural_products
   shortname: use_natural_products
   name: use_natural_products
-  value_options_as_list:
+  value_options:
   - key: '88'
     value: Not applicable
   - key: '0'

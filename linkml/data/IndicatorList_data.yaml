@@ -1,4 +1,4 @@
-indicators_as_list:
+indicators:
   - id: Age of a person in years
     name: Age of a person in years
     indicator_type: observation
@@ -15,7 +15,7 @@ indicators_as_list:
     relevant_observable_entity_types:
       - sample
       - person
-    biochementity_links_as_list:
+    biochementity_links:
       - biochementity_linktype: exact_match
         biochementity: hg
 

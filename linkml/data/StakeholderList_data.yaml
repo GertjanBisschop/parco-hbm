@@ -1,4 +1,4 @@
-stakeholders_as_list:
+stakeholders:
 - id: PARC
   shortname: PARC
   name: Partnership for the Assessment of Risks from Chemicals

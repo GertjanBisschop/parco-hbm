@@ -1,15 +1,15 @@
-timepoints_as_list:
+timepoints:
   - id: INQ_HOME_Q1
     shortname: INQ_HOME_Q1
-    observations_as_list:
+    observations:
     - id: INQ_HOME_Q1
       shortname: INQ_HOME_Q1
       observation_type: questionnaire
       observation_design:
-        observation_entities:
+        observation_entity_id_list:
           - home01
           - home02
-        observation_properties:
+        observation_property_id_list:
           - Todaysdate
           - N1Roleoftherespondent
           - N2Ageofrespondent
@@ -178,10 +178,10 @@ timepoints_as_list:
     shortname: INQ_PEOPLE_L1_ISS
       observation_type: sampling
       observation_design:
-        observation_entities:
+        observation_entity_id_list:
           - sample01
           - sample02
-        observation_properties:
+        observation_property_id_list:
           - fourhphe
           - ninehfluo
           - ohpyr
@@ -195,10 +195,10 @@ timepoints_as_list:
   - id: INQ_PEOPLE_L1_UA
     shortname: INQ_PEOPLE_L1_UA
       observation_design: sampling
-        observation_entities:
+        observation_entity_id_list:
           - sample01
           - sample02
-        observation_properties:
+        observation_property_id_list:
           - bpa
           - bpaf
           - bpb

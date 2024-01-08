@@ -1,7 +1,7 @@
-dataextracts_as_list:
-- observedentities_as_list:
+dataextracts:
+- observedentities:
   - id:
-    observedvalues_as_list:
+    observedvalues:
     - observableproperty:
       observationdatetime:
       value_as_string:

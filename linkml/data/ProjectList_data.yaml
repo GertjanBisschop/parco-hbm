@@ -1,8 +1,8 @@
-projects_as_list:
+projects:
 - id: PARC
   shortname: PARC
   name: Partnership for the Assessment of Risks from Chemicals
-  project_stakeholders_as_list:
+  project_stakeholders:
     - stakeholder: VITO
       project_roles:
           - principal_investigator
@@ -29,7 +29,7 @@ projects_as_list:
     - stakeholder: ISSEP
       project_roles:
           - data_user
-  studies:
+  study_id_list:
     - HBM4EU-aligned
     - HBM4EU-Occupational
     - PARC-Occupational
@@ -37,7 +37,7 @@ projects_as_list:
 - id: HBM4EU
   shortname: HBM4EU
   name: HBM4EU
-  project_stakeholders_as_list:
+  project_stakeholders:
     - stakeholder: VITO
       project_roles:
           - principal_investigator
@@ -50,7 +50,7 @@ projects_as_list:
           - data_controller
           - data_processor
           - data_user
-  studies:
+  study_id_list:
     - HBM4EU-aligned
     - chromate
     - SPECIMEn
@@ -58,29 +58,29 @@ projects_as_list:
 - id: FHBM
   shortname: FHBM
   name: Flemish HBM
-  translations_as_list:
+  translations:
     - property_name: name
       language: nl-be
       translated_value: Vlaamse HBM
-  project_stakeholders_as_list:
+  project_stakeholders:
     - stakeholder: VITO
       project_roles:
           - principal_investigator
           - data_controller
           - data_processor
           - data_user
-  studies:
+  study_id_list:
     - 3XG
 - id: EIRENE-Flanders
   shortname: EIRENE-Flanders
   name: EIRENE-Flanders
-  project_stakeholders_as_list:
+  project_stakeholders:
     - stakeholder: VITO
       project_roles:
           - principal_investigator
           - data_controller
           - data_processor
           - data_user
-  studies:
+  study_id_list:
     - HBM4EU-aligned
     - 3XG

@@ -1,4 +1,4 @@
-metadata_fields_as_list:
+metadata_fields:
   - id: default_serialized
     name: default_serialized
     value_type: str

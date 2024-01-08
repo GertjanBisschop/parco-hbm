@@ -5,7 +5,7 @@ matrices:
   parent_matrix: blood
   shortname: bwb
   sort_order: 1.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloed-volbloed
@@ -15,7 +15,7 @@ matrices:
   parent_matrix: blood
   shortname: bs
   sort_order: 2.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloed-serum
@@ -25,7 +25,7 @@ matrices:
   parent_matrix: blood
   shortname: bp
   sort_order: 3.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloed-plasma
@@ -35,7 +35,7 @@ matrices:
   parent_matrix: bloodcells
   shortname: bbc
   sort_order: 4.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloed-bloedcellen
@@ -45,7 +45,7 @@ matrices:
   parent_matrix: bloodcells
   shortname: rbc
   sort_order: 5.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloed-rode bloedcellen
@@ -55,7 +55,7 @@ matrices:
   parent_matrix: cord blood
   shortname: cbwb
   sort_order: 6.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: navelstrengbloed-volbloed
@@ -65,7 +65,7 @@ matrices:
   parent_matrix: cord blood
   shortname: cbs
   sort_order: 7.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: navelstrengbloed-serum
@@ -75,7 +75,7 @@ matrices:
   parent_matrix: cord blood
   shortname: cbp
   sort_order: 8.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: navelstrengbloed-plasma
@@ -84,7 +84,7 @@ matrices:
   name: cord blood-cells
   shortname: cbbc
   sort_order: 9.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: navelstrengbloed-bloed cellen
@@ -94,7 +94,7 @@ matrices:
   parent_matrix: urine
   shortname: us
   sort_order: 10.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: random spot-urine
@@ -104,7 +104,7 @@ matrices:
   parent_matrix: urine
   shortname: um
   sort_order: 11.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: eerste ochtend-urine
@@ -114,7 +114,7 @@ matrices:
   parent_matrix: urine
   shortname: uf
   sort_order: 12.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: urine nuchter
@@ -124,7 +124,7 @@ matrices:
   parent_matrix: urine
   shortname: ud
   sort_order: 13.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: urine 24u
@@ -133,7 +133,7 @@ matrices:
   name: breast milk
   shortname: bm
   sort_order: 15.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: moedermelk
@@ -142,7 +142,7 @@ matrices:
   name: hair
   shortname: h
   sort_order: 14.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: haar
@@ -151,7 +151,7 @@ matrices:
   name: nail
   shortname: n
   sort_order: 16.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: nagel
@@ -161,7 +161,7 @@ matrices:
   parent_matrix: nail
   shortname: atn
   sort_order: 17.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: alle teennagels
@@ -171,7 +171,7 @@ matrices:
   parent_matrix: nail
   shortname: btn
   sort_order: 18.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: grote teen nagel
@@ -180,7 +180,7 @@ matrices:
   name: nasal mucus
   shortname: nm
   sort_order: 19.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: neusslijm
@@ -189,7 +189,7 @@ matrices:
   name: saliva/sputum
   shortname: sa
   sort_order: 20.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: speeksel
@@ -198,7 +198,7 @@ matrices:
   name: stool
   shortname: st
   sort_order: 21.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: stoelgang
@@ -207,7 +207,7 @@ matrices:
   name: semen
   shortname: sem
   sort_order: 22.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: zaad
@@ -216,7 +216,7 @@ matrices:
   name: exhaled breath condensate
   shortname: ebc
   sort_order: 23.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: uitgeademde lucht condensaat
@@ -225,7 +225,7 @@ matrices:
   name: umbilical cord tissue
   shortname: cbt
   sort_order: 24.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: weefsel van navelstreng
@@ -234,7 +234,7 @@ matrices:
   name: adipose tissue/fat
   shortname: adi
   sort_order: 25.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: vetweefsel/vet
@@ -243,7 +243,7 @@ matrices:
   name: dermal wipes
   shortname: dw
   sort_order: 26.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: dermale doekjes
@@ -252,7 +252,7 @@ matrices:
   name: amniotic fluid
   shortname: af
   sort_order: 27.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: vruchtwater
@@ -261,7 +261,7 @@ matrices:
   name: placenta tissue
   shortname: plt
   sort_order: 28.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: placenta weefsel
@@ -271,7 +271,7 @@ matrices:
   parent_matrix: air
   shortname: idust
   sort_order: 29.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: binnen stof
@@ -281,7 +281,7 @@ matrices:
   parent_matrix: air
   shortname: odust
   sort_order: 30.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: outdoor stof
@@ -291,7 +291,7 @@ matrices:
   parent_matrix: air
   shortname: oair
   sort_order: 31.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: buitenlucht
@@ -301,7 +301,7 @@ matrices:
   parent_matrix: air
   shortname: iair
   sort_order: 32.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: binnenlucht
@@ -311,7 +311,7 @@ matrices:
   parent_matrix: air
   shortname: pair
   sort_order: null
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: persoonlijke lucht
@@ -320,7 +320,7 @@ matrices:
   name: soil
   shortname: soil
   sort_order: 33.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: grond
@@ -330,7 +330,7 @@ matrices:
   parent_matrix: food
   shortname: kgfood
   sort_order: 34.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: moestuin voedsel
@@ -340,7 +340,7 @@ matrices:
   parent_matrix: food
   shortname: egg
   sort_order: 35.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: kippenei
@@ -349,7 +349,7 @@ matrices:
   name: water
   shortname: water
   sort_order: 36.0
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: water
@@ -359,7 +359,7 @@ matrices:
   parent_matrix: blood
   shortname: vams
   sort_order: null
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: blood volumetrische absorptieve microsample
@@ -369,7 +369,7 @@ matrices:
   parent_matrix: blood
   shortname: dbs
   sort_order: null
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: blood spot gedroogd
@@ -378,7 +378,7 @@ matrices:
   name: silicone wrist band
   shortname: swb
   sort_order: null
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: siliconen polsbandje
@@ -387,7 +387,7 @@ matrices:
   name: surface wipe
   shortname: sw
   sort_order: null
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: oppervlakteveeg
@@ -396,7 +396,7 @@ matrices:
   name: blood
   shortname: blood
   sort_order: 0.1
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloed
@@ -405,7 +405,7 @@ matrices:
   name: bloodcells
   shortname: bloodcells
   sort_order: 0.1
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: bloedcellen
@@ -414,7 +414,7 @@ matrices:
   name: cord blood
   shortname: cord blood
   sort_order: 0.1
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: navelstrengbloed
@@ -423,7 +423,7 @@ matrices:
   name: urine
   shortname: urine
   sort_order: 0.1
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: urine
@@ -432,7 +432,7 @@ matrices:
   name: air
   shortname: air
   sort_order: 0.1
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: lucht
@@ -441,7 +441,7 @@ matrices:
   name: food
   shortname: food
   sort_order: 0.1
-  translations_as_list:
+  translations:
   - language: nl-be
     property_name: name
     translated_value: voedsel
