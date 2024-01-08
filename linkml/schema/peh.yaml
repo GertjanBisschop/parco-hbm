@@ -284,22 +284,18 @@ classes:
     is_a: Observation
   ObservationDesign:
     slots:
-      - observation_entities
-      - observation_properties
-  ObservationEntity:
-    is_a: NamedThing
+      - observation_sets
+  ObservationSet:
     slots:
-      - study_entity
-  ObservationProperty:
-    is_a: NamedThing
-    slots:
-      - observable_property
+      - observable_entity_type
+      - observable_entities
+      - observable_properties
   ObservationResult:
     slots:
-      - observed_values
+      - observed_values_as_list
   ObservedValue:
     slots:
-      - observed_entity
+      - observable_entity
       - observable_property
       - value
       - unit
@@ -322,7 +318,7 @@ classes:
       - observed_entity_properties
   ObservedEntityProperty:
     slots:
-      - observed_entity
+      - observable_entity
       - observable_property
   DataStakeholder:
     is_a: NamedThing
@@ -344,7 +340,7 @@ classes:
       - delivery_date
   DataExtract:
     slots:
-      - observed_values
+      - observed_values_as_list
 
 slots:
   id:
@@ -569,18 +565,24 @@ slots:
     range: ObservationType
   observation_design:
     range: ObservationDesign
+  observation_sets:
+    multivalued: true
+    range: ObservationSet
   observation_result:
     range: ObservationResult
-  observation_entities:
+  observable_entity_type:
+    range: ObservableEntityType
+  observable_entities:
     multivalued: true
-    range: ObservationEntity
-  observation_properties:
+    range: StudyEntity
+  observable_properties:
     multivalued: true
-    range: ObservationProperty
-  observed_values:
+    range: ObservableProperty
+  observed_values_as_list:
     multivalued: true
+    inlined_as_list: true
     range: ObservedValue
-  observed_entity:
+  observable_entity:
     range: StudyEntity
   observable_property:
     range: ObservableProperty
