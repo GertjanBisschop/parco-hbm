@@ -3,7 +3,7 @@ matrices:
   id: bwb
   name: blood-whole blood
   parent_matrix: blood
-  shortname: bwb
+  unique_name: bwb
   sort_order: 1.0
   translations:
   - language: nl-be
@@ -13,7 +13,7 @@ matrices:
   id: bs
   name: blood serum
   parent_matrix: blood
-  shortname: bs
+  unique_name: bs
   sort_order: 2.0
   translations:
   - language: nl-be
@@ -23,7 +23,7 @@ matrices:
   id: bp
   name: blood plasma
   parent_matrix: blood
-  shortname: bp
+  unique_name: bp
   sort_order: 3.0
   translations:
   - language: nl-be
@@ -33,7 +33,7 @@ matrices:
   id: bbc
   name: blood-blood cells
   parent_matrix: bloodcells
-  shortname: bbc
+  unique_name: bbc
   sort_order: 4.0
   translations:
   - language: nl-be
@@ -43,7 +43,7 @@ matrices:
   id: rbc
   name: blood - red blood cells
   parent_matrix: bloodcells
-  shortname: rbc
+  unique_name: rbc
   sort_order: 5.0
   translations:
   - language: nl-be
@@ -53,7 +53,7 @@ matrices:
   id: cbwb
   name: cord blood-whole blood
   parent_matrix: cord blood
-  shortname: cbwb
+  unique_name: cbwb
   sort_order: 6.0
   translations:
   - language: nl-be
@@ -63,7 +63,7 @@ matrices:
   id: cbs
   name: cord blood-serum
   parent_matrix: cord blood
-  shortname: cbs
+  unique_name: cbs
   sort_order: 7.0
   translations:
   - language: nl-be
@@ -73,7 +73,7 @@ matrices:
   id: cbp
   name: cord blood-plasma
   parent_matrix: cord blood
-  shortname: cbp
+  unique_name: cbp
   sort_order: 8.0
   translations:
   - language: nl-be
@@ -82,7 +82,7 @@ matrices:
 - aggregation_target: false
   id: cbbc
   name: cord blood-cells
-  shortname: cbbc
+  unique_name: cbbc
   sort_order: 9.0
   translations:
   - language: nl-be
@@ -92,7 +92,7 @@ matrices:
   id: us
   name: random spot urine
   parent_matrix: urine
-  shortname: us
+  unique_name: us
   sort_order: 10.0
   translations:
   - language: nl-be
@@ -102,7 +102,7 @@ matrices:
   id: um
   name: first morning urine
   parent_matrix: urine
-  shortname: um
+  unique_name: um
   sort_order: 11.0
   translations:
   - language: nl-be
@@ -112,7 +112,7 @@ matrices:
   id: uf
   name: fasting urine
   parent_matrix: urine
-  shortname: uf
+  unique_name: uf
   sort_order: 12.0
   translations:
   - language: nl-be
@@ -122,7 +122,7 @@ matrices:
   id: ud
   name: urine 24h
   parent_matrix: urine
-  shortname: ud
+  unique_name: ud
   sort_order: 13.0
   translations:
   - language: nl-be
@@ -131,7 +131,7 @@ matrices:
 - aggregation_target: false
   id: bm
   name: breast milk
-  shortname: bm
+  unique_name: bm
   sort_order: 15.0
   translations:
   - language: nl-be
@@ -140,7 +140,7 @@ matrices:
 - aggregation_target: false
   id: h
   name: hair
-  shortname: h
+  unique_name: h
   sort_order: 14.0
   translations:
   - language: nl-be
@@ -149,7 +149,7 @@ matrices:
 - aggregation_target: false
   id: n
   name: nail
-  shortname: n
+  unique_name: n
   sort_order: 16.0
   translations:
   - language: nl-be
@@ -159,7 +159,7 @@ matrices:
   id: atn
   name: All toe nail
   parent_matrix: nail
-  shortname: atn
+  unique_name: atn
   sort_order: 17.0
   translations:
   - language: nl-be
@@ -169,7 +169,7 @@ matrices:
   id: btn
   name: Big toe nail
   parent_matrix: nail
-  shortname: btn
+  unique_name: btn
   sort_order: 18.0
   translations:
   - language: nl-be
@@ -178,7 +178,7 @@ matrices:
 - aggregation_target: false
   id: nm
   name: nasal mucus
-  shortname: nm
+  unique_name: nm
   sort_order: 19.0
   translations:
   - language: nl-be
@@ -187,7 +187,7 @@ matrices:
 - aggregation_target: false
   id: sa
   name: saliva/sputum
-  shortname: sa
+  unique_name: sa
   sort_order: 20.0
   translations:
   - language: nl-be
@@ -196,7 +196,7 @@ matrices:
 - aggregation_target: false
   id: st
   name: stool
-  shortname: st
+  unique_name: st
   sort_order: 21.0
   translations:
   - language: nl-be
@@ -205,7 +205,7 @@ matrices:
 - aggregation_target: false
   id: sem
   name: semen
-  shortname: sem
+  unique_name: sem
   sort_order: 22.0
   translations:
   - language: nl-be
@@ -214,7 +214,7 @@ matrices:
 - aggregation_target: false
   id: ebc
   name: exhaled breath condensate
-  shortname: ebc
+  unique_name: ebc
   sort_order: 23.0
   translations:
   - language: nl-be
@@ -223,7 +223,7 @@ matrices:
 - aggregation_target: false
   id: cbt
   name: umbilical cord tissue
-  shortname: cbt
+  unique_name: cbt
   sort_order: 24.0
   translations:
   - language: nl-be
@@ -232,7 +232,7 @@ matrices:
 - aggregation_target: false
   id: adi
   name: adipose tissue/fat
-  shortname: adi
+  unique_name: adi
   sort_order: 25.0
   translations:
   - language: nl-be
@@ -241,7 +241,7 @@ matrices:
 - aggregation_target: false
   id: dw
   name: dermal wipes
-  shortname: dw
+  unique_name: dw
   sort_order: 26.0
   translations:
   - language: nl-be
@@ -250,7 +250,7 @@ matrices:
 - aggregation_target: false
   id: af
   name: amniotic fluid
-  shortname: af
+  unique_name: af
   sort_order: 27.0
   translations:
   - language: nl-be
@@ -259,7 +259,7 @@ matrices:
 - aggregation_target: false
   id: plt
   name: placenta tissue
-  shortname: plt
+  unique_name: plt
   sort_order: 28.0
   translations:
   - language: nl-be
@@ -269,7 +269,7 @@ matrices:
   id: idust
   name: indoor dust
   parent_matrix: air
-  shortname: idust
+  unique_name: idust
   sort_order: 29.0
   translations:
   - language: nl-be
@@ -279,7 +279,7 @@ matrices:
   id: odust
   name: outdoor dust
   parent_matrix: air
-  shortname: odust
+  unique_name: odust
   sort_order: 30.0
   translations:
   - language: nl-be
@@ -289,7 +289,7 @@ matrices:
   id: oair
   name: outdoor air-stationary
   parent_matrix: air
-  shortname: oair
+  unique_name: oair
   sort_order: 31.0
   translations:
   - language: nl-be
@@ -299,7 +299,7 @@ matrices:
   id: iair
   name: indoor air-stationary
   parent_matrix: air
-  shortname: iair
+  unique_name: iair
   sort_order: 32.0
   translations:
   - language: nl-be
@@ -309,7 +309,7 @@ matrices:
   id: pair
   name: personal air
   parent_matrix: air
-  shortname: pair
+  unique_name: pair
   sort_order: null
   translations:
   - language: nl-be
@@ -318,7 +318,7 @@ matrices:
 - aggregation_target: false
   id: soil
   name: soil
-  shortname: soil
+  unique_name: soil
   sort_order: 33.0
   translations:
   - language: nl-be
@@ -328,7 +328,7 @@ matrices:
   id: kgfood
   name: kitchengarden food
   parent_matrix: food
-  shortname: kgfood
+  unique_name: kgfood
   sort_order: 34.0
   translations:
   - language: nl-be
@@ -338,7 +338,7 @@ matrices:
   id: egg
   name: eggs
   parent_matrix: food
-  shortname: egg
+  unique_name: egg
   sort_order: 35.0
   translations:
   - language: nl-be
@@ -347,7 +347,7 @@ matrices:
 - aggregation_target: false
   id: water
   name: water
-  shortname: water
+  unique_name: water
   sort_order: 36.0
   translations:
   - language: nl-be
@@ -357,7 +357,7 @@ matrices:
   id: vams
   name: volumetric absorptive microsample (VAMS)
   parent_matrix: blood
-  shortname: vams
+  unique_name: vams
   sort_order: null
   translations:
   - language: nl-be
@@ -367,7 +367,7 @@ matrices:
   id: dbs
   name: dried blood spots
   parent_matrix: blood
-  shortname: dbs
+  unique_name: dbs
   sort_order: null
   translations:
   - language: nl-be
@@ -376,7 +376,7 @@ matrices:
 - aggregation_target: false
   id: swb
   name: silicone wrist band
-  shortname: swb
+  unique_name: swb
   sort_order: null
   translations:
   - language: nl-be
@@ -385,7 +385,7 @@ matrices:
 - aggregation_target: false
   id: sw
   name: surface wipe
-  shortname: sw
+  unique_name: sw
   sort_order: null
   translations:
   - language: nl-be
@@ -394,7 +394,7 @@ matrices:
 - aggregation_target: false
   id: blood
   name: blood
-  shortname: blood
+  unique_name: blood
   sort_order: 0.1
   translations:
   - language: nl-be
@@ -403,7 +403,7 @@ matrices:
 - aggregation_target: false
   id: bloodcells
   name: bloodcells
-  shortname: bloodcells
+  unique_name: bloodcells
   sort_order: 0.1
   translations:
   - language: nl-be
@@ -412,7 +412,7 @@ matrices:
 - aggregation_target: false
   id: cord blood
   name: cord blood
-  shortname: cord blood
+  unique_name: cord blood
   sort_order: 0.1
   translations:
   - language: nl-be
@@ -421,7 +421,7 @@ matrices:
 - aggregation_target: false
   id: urine
   name: urine
-  shortname: urine
+  unique_name: urine
   sort_order: 0.1
   translations:
   - language: nl-be
@@ -430,7 +430,7 @@ matrices:
 - aggregation_target: false
   id: air
   name: air
-  shortname: air
+  unique_name: air
   sort_order: 0.1
   translations:
   - language: nl-be
@@ -439,7 +439,7 @@ matrices:
 - aggregation_target: false
   id: food
   name: food
-  shortname: food
+  unique_name: food
   sort_order: 0.1
   translations:
   - language: nl-be

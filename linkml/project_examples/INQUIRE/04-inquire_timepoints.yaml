@@ -1,9 +1,9 @@
 timepoints:
   - id: INQ_HOME_Q1
-    shortname: INQ_HOME_Q1
+    unique_name: INQ_HOME_Q1
     observations:
     - id: INQ_HOME_Q1
-      shortname: INQ_HOME_Q1
+      unique_name: INQ_HOME_Q1
       observation_type: questionnaire
       observation_design:
         observation_entity_id_list:
@@ -173,9 +173,9 @@ timepoints:
           - Useproducts_Ecolabel
           - use_natural_products
   - id: INQ_HOME_L1
-    shortname: INQ_HOME_L1
+    unique_name: INQ_HOME_L1
   - id: INQ_PEOPLE_L1_ISS
-    shortname: INQ_PEOPLE_L1_ISS
+    unique_name: INQ_PEOPLE_L1_ISS
       observation_type: sampling
       observation_design:
         observation_entity_id_list:
@@ -193,7 +193,7 @@ timepoints:
           - twohphe
           - twoohnap
   - id: INQ_PEOPLE_L1_UA
-    shortname: INQ_PEOPLE_L1_UA
+    unique_name: INQ_PEOPLE_L1_UA
       observation_design: sampling
         observation_entity_id_list:
           - sample01

@@ -50,7 +50,7 @@ classes:
       A generic grouping for any identifiable entity
     slots:
       - id
-      - shortname
+      - unique_name
       - name
       - description
       - label
@@ -217,6 +217,7 @@ classes:
     is_a: NamedThing
     mixins:
       - HasTranslations
+      - HasContextAliases
     slots:
       - project_stakeholders
       - study_id_list
@@ -232,6 +233,8 @@ classes:
       - HasTranslations
     slots:
       - study_stakeholders
+      - start_date
+      - end_date
       - timepoint_id_list
       - study_entities
       - project_id_list
@@ -260,6 +263,8 @@ classes:
     is_a: StudyEntity
   Person:
     is_a: StudyEntity
+    slots:
+      - recruited_in_project
   PersonGroup:
     is_a: StudyEntity
   Geolocation:
@@ -347,7 +352,7 @@ slots:
   id:
     identifier: true
     slot_uri: schema:identifier
-  shortname:
+  unique_name:
   name:
     slot_uri: schema:name
   description:
@@ -557,6 +562,9 @@ slots:
   study_entity:
     range: StudyEntity
     inlined: false
+  recruited_in_project:
+    range: Project
+    inlined: false
   location:
   observation_type:
     range: ObservationType
@@ -628,7 +636,11 @@ slots:
   authors:
     multivalued: true
   start_date:
+    range: date
+  end_date:
+    range: date
   delivery_date:
+    range: date
 
 enums:
   ValidationStatus:

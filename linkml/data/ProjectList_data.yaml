@@ -1,6 +1,6 @@
 projects:
 - id: PARC
-  shortname: PARC
+  unique_name: PARC
   name: Partnership for the Assessment of Risks from Chemicals
   project_stakeholders:
     - stakeholder: VITO
@@ -35,7 +35,7 @@ projects:
     - PARC-Occupational
     - 3XG
 - id: HBM4EU
-  shortname: HBM4EU
+  unique_name: HBM4EU
   name: HBM4EU
   project_stakeholders:
     - stakeholder: VITO
@@ -56,7 +56,7 @@ projects:
     - SPECIMEn
     - HBM4EU-Occupational
 - id: FHBM
-  shortname: FHBM
+  unique_name: FHBM
   name: Flemish HBM
   translations:
     - property_name: name
@@ -72,7 +72,7 @@ projects:
   study_id_list:
     - 3XG
 - id: EIRENE-Flanders
-  shortname: EIRENE-Flanders
+  unique_name: EIRENE-Flanders
   name: EIRENE-Flanders
   project_stakeholders:
     - stakeholder: VITO

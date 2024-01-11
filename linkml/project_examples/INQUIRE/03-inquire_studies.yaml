@@ -1,6 +1,6 @@
 studies:
 - id: INQUIRE
-  shortname: INQUIRE
+  unique_name: INQUIRE
   timepoint_id_list:
     - INQ_HOME_Q1
     - INQ_HOME_L1
@@ -20,7 +20,7 @@ studies:
   project_id_list:
     - INQUIRE
 - id: SELMA
-  shortname: SELMA
+  unique_name: SELMA
   timepoint_id_list:
     - SELMA_INIT
     - SELMA_INQ_DUST

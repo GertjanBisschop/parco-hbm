@@ -22,7 +22,7 @@ observableproperties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: relation
+  unique_name: relation
   value_options:
   - key: P
     value: participant itself

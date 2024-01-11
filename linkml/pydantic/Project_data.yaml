@@ -1,5 +1,5 @@
 id: PARC
-shortname: PARC
+unique_name: PARC
 name: Partnership for the Assessment of Risks from Chemicals
 project_stakeholders_as_list:
   - stakeholder: VITO

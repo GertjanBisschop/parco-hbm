@@ -1,14 +1,14 @@
 studies:
 - id: HBM4EU-Occupational
-  shortname: HBM4EU-Occupational
+  unique_name: HBM4EU-Occupational
 - id: PARC-Occupational
-  shortname: PARC-Occupational
+  unique_name: PARC-Occupational
 - id: chromate
-  shortname: chromate
+  unique_name: chromate
 - id: SPECIMEn
-  shortname: SPECIMEn
+  unique_name: SPECIMEn
 - id: 3XG
-  shortname: 3XG
+  unique_name: 3XG
   timepoint_id_list:
     - 3xGST03
   study_stakeholders:
@@ -23,7 +23,7 @@ studies:
     - PARC
     - EIRENE
 - id: HBM4EU-aligned
-  shortname: HBM4EU-aligned
+  unique_name: HBM4EU-aligned
   name: HBM4EU-aligned
   study_stakeholders:
     - stakeholder: VITO

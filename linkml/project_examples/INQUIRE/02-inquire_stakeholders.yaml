@@ -1,17 +1,17 @@
 stakeholders:
 - id: VITO
-  shortname: VITO
+  unique_name: VITO
   name: VITO
   geographic_scope: BE
 - id: MU
-  shortname: MU
+  unique_name: MU
   name: Masaryk University
   geographic_scope: CZ
 - id: KU
-  shortname: KU
+  unique_name: KU
   name: KarlStads University
   geographic_scope: SE
 - id: UoB
-  shortname: UoB
+  unique_name: UoB
   name: University of Birmingham
   geographic_scope: UK

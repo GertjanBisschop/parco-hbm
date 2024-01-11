@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-08T15:50:55
+# Generation date: 2024-01-11T21:27:53
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -21,8 +21,8 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Integer, String
-from linkml_runtime.utils.metamodelcore import Bool, Decimal, XSDDateTime
+from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, Integer, String
+from linkml_runtime.utils.metamodelcore import Bool, Decimal, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
 version = None
@@ -233,7 +233,7 @@ class NamedThing(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEH.NamedThing
 
     id: Union[str, NamedThingId] = None
-    shortname: Optional[str] = None
+    unique_name: Optional[str] = None
     name: Optional[str] = None
     description: Optional[str] = None
     label: Optional[str] = None
@@ -244,8 +244,8 @@ class NamedThing(YAMLRoot):
         if not isinstance(self.id, NamedThingId):
             self.id = NamedThingId(self.id)
 
-        if self.shortname is not None and not isinstance(self.shortname, str):
-            self.shortname = str(self.shortname)
+        if self.unique_name is not None and not isinstance(self.unique_name, str):
+            self.unique_name = str(self.unique_name)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -994,6 +994,7 @@ class Project(NamedThing):
     project_stakeholders: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
     study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1012,6 +1013,10 @@ class Project(NamedThing):
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
         self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -1055,6 +1060,8 @@ class Study(NamedThing):
 
     id: Union[str, StudyId] = None
     study_stakeholders: Optional[Union[Union[dict, "StudyStakeholder"], List[Union[dict, "StudyStakeholder"]]]] = empty_list()
+    start_date: Optional[Union[str, XSDDate]] = None
+    end_date: Optional[Union[str, XSDDate]] = None
     timepoint_id_list: Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]] = empty_list()
     study_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
     project_id_list: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
@@ -1069,6 +1076,12 @@ class Study(NamedThing):
         if not isinstance(self.study_stakeholders, list):
             self.study_stakeholders = [self.study_stakeholders] if self.study_stakeholders is not None else []
         self.study_stakeholders = [v if isinstance(v, StudyStakeholder) else StudyStakeholder(**as_dict(v)) for v in self.study_stakeholders]
+
+        if self.start_date is not None and not isinstance(self.start_date, XSDDate):
+            self.start_date = XSDDate(self.start_date)
+
+        if self.end_date is not None and not isinstance(self.end_date, XSDDate):
+            self.end_date = XSDDate(self.end_date)
 
         if not isinstance(self.timepoint_id_list, list):
             self.timepoint_id_list = [self.timepoint_id_list] if self.timepoint_id_list is not None else []
@@ -1231,12 +1244,16 @@ class Person(StudyEntity):
     class_model_uri: ClassVar[URIRef] = PEH.Person
 
     id: Union[str, PersonId] = None
+    recruited_in_project: Optional[Union[str, ProjectId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PersonId):
             self.id = PersonId(self.id)
+
+        if self.recruited_in_project is not None and not isinstance(self.recruited_in_project, ProjectId):
+            self.recruited_in_project = ProjectId(self.recruited_in_project)
 
         super().__post_init__(**kwargs)
 
@@ -1701,8 +1718,8 @@ class ProcessingStep(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.ProcessingStep
 
     id: Union[str, ProcessingStepId] = None
-    start_date: Optional[str] = None
-    delivery_date: Optional[str] = None
+    start_date: Optional[Union[str, XSDDate]] = None
+    delivery_date: Optional[Union[str, XSDDate]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1710,11 +1727,11 @@ class ProcessingStep(NamedThing):
         if not isinstance(self.id, ProcessingStepId):
             self.id = ProcessingStepId(self.id)
 
-        if self.start_date is not None and not isinstance(self.start_date, str):
-            self.start_date = str(self.start_date)
+        if self.start_date is not None and not isinstance(self.start_date, XSDDate):
+            self.start_date = XSDDate(self.start_date)
 
-        if self.delivery_date is not None and not isinstance(self.delivery_date, str):
-            self.delivery_date = str(self.delivery_date)
+        if self.delivery_date is not None and not isinstance(self.delivery_date, XSDDate):
+            self.delivery_date = XSDDate(self.delivery_date)
 
         super().__post_init__(**kwargs)
 
@@ -1878,8 +1895,8 @@ class slots:
 slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
                    model_uri=PEH.id, domain=None, range=URIRef)
 
-slots.shortname = Slot(uri=PEH.shortname, name="shortname", curie=PEH.curie('shortname'),
-                   model_uri=PEH.shortname, domain=None, range=Optional[str])
+slots.unique_name = Slot(uri=PEH.unique_name, name="unique_name", curie=PEH.curie('unique_name'),
+                   model_uri=PEH.unique_name, domain=None, range=Optional[str])
 
 slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
                    model_uri=PEH.name, domain=None, range=Optional[str])
@@ -2121,6 +2138,9 @@ slots.linktype = Slot(uri=PEH.linktype, name="linktype", curie=PEH.curie('linkty
 slots.study_entity = Slot(uri=PEH.study_entity, name="study_entity", curie=PEH.curie('study_entity'),
                    model_uri=PEH.study_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
 
+slots.recruited_in_project = Slot(uri=PEH.recruited_in_project, name="recruited_in_project", curie=PEH.curie('recruited_in_project'),
+                   model_uri=PEH.recruited_in_project, domain=None, range=Optional[Union[str, ProjectId]])
+
 slots.location = Slot(uri=PEH.location, name="location", curie=PEH.curie('location'),
                    model_uri=PEH.location, domain=None, range=Optional[str])
 
@@ -2215,7 +2235,10 @@ slots.authors = Slot(uri=PEH.authors, name="authors", curie=PEH.curie('authors')
                    model_uri=PEH.authors, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.start_date = Slot(uri=PEH.start_date, name="start_date", curie=PEH.curie('start_date'),
-                   model_uri=PEH.start_date, domain=None, range=Optional[str])
+                   model_uri=PEH.start_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.end_date = Slot(uri=PEH.end_date, name="end_date", curie=PEH.curie('end_date'),
+                   model_uri=PEH.end_date, domain=None, range=Optional[Union[str, XSDDate]])
 
 slots.delivery_date = Slot(uri=PEH.delivery_date, name="delivery_date", curie=PEH.curie('delivery_date'),
-                   model_uri=PEH.delivery_date, domain=None, range=Optional[str])
+                   model_uri=PEH.delivery_date, domain=None, range=Optional[Union[str, XSDDate]])

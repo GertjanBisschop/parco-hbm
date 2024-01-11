@@ -1,6 +1,6 @@
 projects_as_list:
 - id: INQUIRE
-  shortname: INQUIRE
+  unique_name: INQUIRE
   name: INQUIRE
   project_stakeholders:
     - stakeholder: VITO

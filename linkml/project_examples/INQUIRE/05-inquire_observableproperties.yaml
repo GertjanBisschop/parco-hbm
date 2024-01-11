@@ -1,41 +1,41 @@
 observablepropertygroups:
 - id: Identifier and demographics
-  shortname: Identifier and demographics
+  unique_name: Identifier and demographics
   name: Identifier and demographics
   sort_order: 1
   is_abstract: false
 - id: Perceived indoor air quality
-  shortname: Perceived indoor air quality
+  unique_name: Perceived indoor air quality
   name: Perceived indoor air quality
   sort_order: 3
   is_abstract: false
 - id: Recent behaviour
-  shortname: Recent behaviour
+  unique_name: Recent behaviour
   name: Recent behaviour
   sort_order: 4
   is_abstract: false
 - id: Child recent behaviour
-  shortname: Child recent behaviour
+  unique_name: Child recent behaviour
   name: Child recent behaviour
   sort_order: 6
   is_abstract: false
 - id: Reasons to improve indoor air quality
-  shortname: Reasons to improve indoor air quality
+  unique_name: Reasons to improve indoor air quality
   name: Reasons to improve indoor air quality
   sort_order: 8
   is_abstract: false
 - id: Medical history
-  shortname: Medical history
+  unique_name: Medical history
   name: Medical history
   sort_order: 2
   is_abstract: false
 - id: Observation on air quality
-  shortname: Observation on air quality
+  unique_name: Observation on air quality
   name: Observation on air quality
   sort_order: 7
   is_abstract: false
 - id: Child demography and health
-  shortname: Child demography and health
+  unique_name: Child demography and health
   name: Child demography and health
   sort_order: 5
   is_abstract: false
@@ -63,7 +63,7 @@ metadata_fields:
   value_type: string
 observableproperties:
 - id: total_income_category
-  shortname: total_income_category
+  unique_name: total_income_category
   name: total_income_category
   value_options:
   - key: '1'
@@ -85,7 +85,7 @@ observableproperties:
   - key: '99'
     value: I don't know/prefer not to answer
 - id: N71educationrespondent
-  shortname: N71educationrespondent
+  unique_name: N71educationrespondent
   name: N71educationrespondent
   value_options:
   - key: '0'
@@ -110,7 +110,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: N72educationpartner
-  shortname: N72educationpartner
+  unique_name: N72educationpartner
   name: N72educationpartner
   value_options:
   - key: '0'
@@ -135,7 +135,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: DD_asthma_allergy_family
-  shortname: DD_asthma_allergy_family
+  unique_name: DD_asthma_allergy_family
   name: DD_asthma_allergy_family
   value_options:
   - key: '1'
@@ -145,7 +145,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Eyeproblem
-  shortname: Eyeproblem
+  unique_name: Eyeproblem
   name: Eyeproblem
   value_options:
   - key: '0'
@@ -159,7 +159,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Noseproblem
-  shortname: Noseproblem
+  unique_name: Noseproblem
   name: Noseproblem
   value_options:
   - key: '0'
@@ -173,7 +173,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Throatproblem
-  shortname: Throatproblem
+  unique_name: Throatproblem
   name: Throatproblem
   value_options:
   - key: '0'
@@ -187,7 +187,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Headache
-  shortname: Headache
+  unique_name: Headache
   name: Headache
   value_options:
   - key: '0'
@@ -201,7 +201,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Memoryproblem
-  shortname: Memoryproblem
+  unique_name: Memoryproblem
   name: Memoryproblem
   value_options:
   - key: '0'
@@ -215,7 +215,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Dizziness
-  shortname: Dizziness
+  unique_name: Dizziness
   name: Dizziness
   value_options:
   - key: '0'
@@ -229,7 +229,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Fatiguesleepiness
-  shortname: Fatiguesleepiness
+  unique_name: Fatiguesleepiness
   name: Fatiguesleepiness
   value_options:
   - key: '0'
@@ -243,7 +243,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: heavyhead
-  shortname: heavyhead
+  unique_name: heavyhead
   name: heavyhead
   value_options:
   - key: '0'
@@ -257,7 +257,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Eczema_lastmonth
-  shortname: Eczema_lastmonth
+  unique_name: Eczema_lastmonth
   name: Eczema_lastmonth
   value_options:
   - key: '0'
@@ -271,7 +271,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Wheezing
-  shortname: Wheezing
+  unique_name: Wheezing
   name: Wheezing
   value_options:
   - key: '0'
@@ -285,7 +285,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Stagnantbadair
-  shortname: Stagnantbadair
+  unique_name: Stagnantbadair
   name: Stagnantbadair
   value_options:
   - key: '0'
@@ -297,7 +297,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Unpleasantair
-  shortname: Unpleasantair
+  unique_name: Unpleasantair
   name: Unpleasantair
   value_options:
   - key: '0'
@@ -309,7 +309,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Pungentodor
-  shortname: Pungentodor
+  unique_name: Pungentodor
   name: Pungentodor
   value_options:
   - key: '0'
@@ -321,7 +321,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Mouldodor
-  shortname: Mouldodor
+  unique_name: Mouldodor
   name: Mouldodor
   value_options:
   - key: '0'
@@ -333,7 +333,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Earthyodor
-  shortname: Earthyodor
+  unique_name: Earthyodor
   name: Earthyodor
   value_options:
   - key: '0'
@@ -345,7 +345,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Tobaccosmoke
-  shortname: Tobaccosmoke
+  unique_name: Tobaccosmoke
   name: Tobaccosmoke
   value_options:
   - key: '0'
@@ -357,7 +357,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Dryair
-  shortname: Dryair
+  unique_name: Dryair
   name: Dryair
   value_options:
   - key: '0'
@@ -369,7 +369,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Dampair
-  shortname: Dampair
+  unique_name: Dampair
   name: Dampair
   value_options:
   - key: '0'
@@ -381,7 +381,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: smoking_room
-  shortname: smoking_room
+  unique_name: smoking_room
   name: smoking_room
   value_options:
   - key: '1'
@@ -391,7 +391,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: burning_fireplace
-  shortname: burning_fireplace
+  unique_name: burning_fireplace
   name: burning_fireplace
   value_options:
   - key: '1'
@@ -401,7 +401,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Cigarettesmoking
-  shortname: Cigarettesmoking
+  unique_name: Cigarettesmoking
   name: Cigarettesmoking
   value_options:
   - key: '1'
@@ -411,7 +411,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Ecigarette
-  shortname: Ecigarette
+  unique_name: Ecigarette
   name: Ecigarette
   value_options:
   - key: '1'
@@ -421,7 +421,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: grilled_barbeque
-  shortname: grilled_barbeque
+  unique_name: grilled_barbeque
   name: grilled_barbeque
   value_options:
   - key: '1'
@@ -431,7 +431,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: deepfriedfood
-  shortname: deepfriedfood
+  unique_name: deepfriedfood
   name: deepfriedfood
   value_options:
   - key: '1'
@@ -441,7 +441,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: ffish_seafood
-  shortname: ffish_seafood
+  unique_name: ffish_seafood
   name: ffish_seafood
   value_options:
   - key: '1'
@@ -451,7 +451,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: readymademeals
-  shortname: readymademeals
+  unique_name: readymademeals
   name: readymademeals
   value_options:
   - key: '1'
@@ -461,7 +461,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: fastfood
-  shortname: fastfood
+  unique_name: fastfood
   name: fastfood
   value_options:
   - key: '1'
@@ -471,7 +471,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: cannedfoods
-  shortname: cannedfoods
+  unique_name: cannedfoods
   name: cannedfoods
   value_options:
   - key: '1'
@@ -481,7 +481,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: motorizedvehicle
-  shortname: motorizedvehicle
+  unique_name: motorizedvehicle
   name: motorizedvehicle
   value_options:
   - key: '1'
@@ -491,7 +491,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Cycling_walking
-  shortname: Cycling_walking
+  unique_name: Cycling_walking
   name: Cycling_walking
   value_options:
   - key: '1'
@@ -501,7 +501,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: personalcareproducts
-  shortname: personalcareproducts
+  unique_name: personalcareproducts
   name: personalcareproducts
   value_options:
   - key: '0'
@@ -515,7 +515,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: personalcareproducts_Ecolabel
-  shortname: personalcareproducts_Ecolabel
+  unique_name: personalcareproducts_Ecolabel
   name: personalcareproducts_Ecolabel
   value_options:
   - key: '0'
@@ -529,7 +529,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Fragrancediffusers
-  shortname: Fragrancediffusers
+  unique_name: Fragrancediffusers
   name: Fragrancediffusers
   value_options:
   - key: '1'
@@ -539,7 +539,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Indoor_pesticide_insecticide
-  shortname: Indoor_pesticide_insecticide
+  unique_name: Indoor_pesticide_insecticide
   name: Indoor_pesticide_insecticide
   value_options:
   - key: '1'
@@ -549,7 +549,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: outdoor_pesticide_insecticide
-  shortname: outdoor_pesticide_insecticide
+  unique_name: outdoor_pesticide_insecticide
   name: outdoor_pesticide_insecticide
   value_options:
   - key: '1'
@@ -559,7 +559,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Antifleaproduct
-  shortname: Antifleaproduct
+  unique_name: Antifleaproduct
   name: Antifleaproduct
   value_options:
   - key: '1'
@@ -569,7 +569,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Material_ceramics
-  shortname: Material_ceramics
+  unique_name: Material_ceramics
   name: Material_ceramics
   value_options:
   - key: '1'
@@ -579,7 +579,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Paintgluevarnish
-  shortname: Paintgluevarnish
+  unique_name: Paintgluevarnish
   name: Paintgluevarnish
   value_options:
   - key: '1'
@@ -589,7 +589,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Cleaningproducts
-  shortname: Cleaningproducts
+  unique_name: Cleaningproducts
   name: Cleaningproducts
   value_options:
   - key: '1'
@@ -599,7 +599,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Cleaning_Ecolabel
-  shortname: Cleaning_Ecolabel
+  unique_name: Cleaning_Ecolabel
   name: Cleaning_Ecolabel
   value_options:
   - key: '1'
@@ -609,7 +609,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Personalhygienesprays
-  shortname: Personalhygienesprays
+  unique_name: Personalhygienesprays
   name: Personalhygienesprays
   value_options:
   - key: '1'
@@ -619,7 +619,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Sex_child
-  shortname: Sex_child
+  unique_name: Sex_child
   name: Sex_child
   value_options:
   - key: '1'
@@ -627,7 +627,7 @@ observableproperties:
   - key: '2'
     value: Female
 - id: Wheezing_child
-  shortname: Wheezing_child
+  unique_name: Wheezing_child
   name: Wheezing_child
   value_options:
   - key: '1'
@@ -637,7 +637,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Allergies_child_dd
-  shortname: Allergies_child_dd
+  unique_name: Allergies_child_dd
   name: Allergies_child_dd
   value_options:
   - key: '1'
@@ -647,7 +647,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Asthma_child_dd
-  shortname: Asthma_child_dd
+  unique_name: Asthma_child_dd
   name: Asthma_child_dd
   value_options:
   - key: '1'
@@ -657,7 +657,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: eczema_child_dd
-  shortname: eczema_child_dd
+  unique_name: eczema_child_dd
   name: eczema_child_dd
   value_options:
   - key: '1'
@@ -667,7 +667,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Eyeproblem_child
-  shortname: Eyeproblem_child
+  unique_name: Eyeproblem_child
   name: Eyeproblem_child
   value_options:
   - key: '0'
@@ -681,7 +681,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Noseproblem_child
-  shortname: Noseproblem_child
+  unique_name: Noseproblem_child
   name: Noseproblem_child
   value_options:
   - key: '0'
@@ -695,7 +695,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: Throatproblem_child
-  shortname: Throatproblem_child
+  unique_name: Throatproblem_child
   name: Throatproblem_child
   value_options:
   - key: '0'
@@ -709,7 +709,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: eczema_child
-  shortname: eczema_child
+  unique_name: eczema_child
   name: eczema_child
   value_options:
   - key: '0'
@@ -723,7 +723,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: wheezing_child_lm
-  shortname: wheezing_child_lm
+  unique_name: wheezing_child_lm
   name: wheezing_child_lm
   value_options:
   - key: '0'
@@ -737,7 +737,7 @@ observableproperties:
   - key: '99'
     value: Don't know
 - id: mouthing_behaviour
-  shortname: mouthing_behaviour
+  unique_name: mouthing_behaviour
   name: mouthing_behaviour
   value_options:
   - key: '0'
@@ -751,7 +751,7 @@ observableproperties:
   - key: '77'
     value: Other
 - id: smoking_room_child
-  shortname: smoking_room_child
+  unique_name: smoking_room_child
   name: smoking_room_child
   value_options:
   - key: '1'
@@ -761,7 +761,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: another_place
-  shortname: another_place
+  unique_name: another_place
   name: another_place
   value_options:
   - key: '1'
@@ -771,7 +771,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: specify_place
-  shortname: specify_place
+  unique_name: specify_place
   name: specify_place
   value_options:
   - key: '1'
@@ -785,7 +785,7 @@ observableproperties:
   - key: '77'
     value: Other
 - id: burning_place_child
-  shortname: burning_place_child
+  unique_name: burning_place_child
   name: burning_place_child
   value_options:
   - key: '1'
@@ -795,7 +795,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: grilled_food_child
-  shortname: grilled_food_child
+  unique_name: grilled_food_child
   name: grilled_food_child
   value_options:
   - key: '1'
@@ -805,7 +805,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: deepfriedfood_child
-  shortname: deepfriedfood_child
+  unique_name: deepfriedfood_child
   name: deepfriedfood_child
   value_options:
   - key: '1'
@@ -815,7 +815,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: fish_seafood_child
-  shortname: fish_seafood_child
+  unique_name: fish_seafood_child
   name: fish_seafood_child
   value_options:
   - key: '1'
@@ -825,7 +825,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: readymademeals_child
-  shortname: readymademeals_child
+  unique_name: readymademeals_child
   name: readymademeals_child
   value_options:
   - key: '1'
@@ -835,7 +835,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: fastfood_child
-  shortname: fastfood_child
+  unique_name: fastfood_child
   name: fastfood_child
   value_options:
   - key: '1'
@@ -845,7 +845,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: cannedfoods_child
-  shortname: cannedfoods_child
+  unique_name: cannedfoods_child
   name: cannedfoods_child
   value_options:
   - key: '1'
@@ -855,7 +855,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: motorizedvehicle_child
-  shortname: motorizedvehicle_child
+  unique_name: motorizedvehicle_child
   name: motorizedvehicle_child
   value_options:
   - key: '1'
@@ -865,7 +865,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: Cycling_walking_child
-  shortname: Cycling_walking_child
+  unique_name: Cycling_walking_child
   name: Cycling_walking_child
   value_options:
   - key: '1'
@@ -875,7 +875,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: care_products_child
-  shortname: care_products_child
+  unique_name: care_products_child
   name: care_products_child
   value_options:
   - key: '0'
@@ -889,7 +889,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: careproducts_Ecolabel_child
-  shortname: careproducts_Ecolabel_child
+  unique_name: careproducts_Ecolabel_child
   name: careproducts_Ecolabel_child
   value_options:
   - key: '0'
@@ -903,7 +903,7 @@ observableproperties:
   - key: '99'
     value: Don’t know/prefer not to answer
 - id: breast_feeding
-  shortname: breast_feeding
+  unique_name: breast_feeding
   name: breast_feeding
   value_options:
   - key: '0'
@@ -921,7 +921,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: electronics_child
-  shortname: electronics_child
+  unique_name: electronics_child
   name: electronics_child
   value_options:
   - key: '0'
@@ -937,7 +937,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: play_floor_child
-  shortname: play_floor_child
+  unique_name: play_floor_child
   name: play_floor_child
   value_options:
   - key: '0'
@@ -953,7 +953,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: judged_airquality
-  shortname: judged_airquality
+  unique_name: judged_airquality
   name: judged_airquality
   value_options:
   - key: '7'
@@ -975,7 +975,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: concern_airquality
-  shortname: concern_airquality
+  unique_name: concern_airquality
   name: concern_airquality
   value_options:
   - key: '0'
@@ -991,7 +991,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: consciousness_ladder
-  shortname: consciousness_ladder
+  unique_name: consciousness_ladder
   name: consciousness_ladder
   value_options:
   - key: '9'
@@ -1015,7 +1015,7 @@ observableproperties:
   - key: '99'
     value: I don’t know/prefer not to answer
 - id: beh_choice
-  shortname: beh_choice
+  unique_name: beh_choice
   name: beh_choice
   value_options:
   - key: '7'
@@ -1035,7 +1035,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: influence
-  shortname: influence
+  unique_name: influence
   name: influence
   value_options:
   - key: '7'
@@ -1055,7 +1055,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: adjusttheventilation
-  shortname: adjusttheventilation
+  unique_name: adjusttheventilation
   name: adjusttheventilation
   value_options:
   - key: '7'
@@ -1075,7 +1075,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: open_window
-  shortname: open_window
+  unique_name: open_window
   name: open_window
   value_options:
   - key: '7'
@@ -1095,7 +1095,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: healthiness_indoor
-  shortname: healthiness_indoor
+  unique_name: healthiness_indoor
   name: healthiness_indoor
   value_options:
   - key: '7'
@@ -1115,7 +1115,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: healthiness_outdoor
-  shortname: healthiness_outdoor
+  unique_name: healthiness_outdoor
   name: healthiness_outdoor
   value_options:
   - key: '7'
@@ -1135,7 +1135,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: necessity_improvement
-  shortname: necessity_improvement
+  unique_name: necessity_improvement
   name: necessity_improvement
   value_options:
   - key: '7'
@@ -1155,7 +1155,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: enjoyable
-  shortname: enjoyable
+  unique_name: enjoyable
   name: enjoyable
   value_options:
   - key: '7'
@@ -1175,7 +1175,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: expect_health_benefit
-  shortname: expect_health_benefit
+  unique_name: expect_health_benefit
   name: expect_health_benefit
   value_options:
   - key: '7'
@@ -1195,7 +1195,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: expect_health_benefit_child
-  shortname: expect_health_benefit_child
+  unique_name: expect_health_benefit_child
   name: expect_health_benefit_child
   value_options:
   - key: '7'
@@ -1215,7 +1215,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: recognition_others
-  shortname: recognition_others
+  unique_name: recognition_others
   name: recognition_others
   value_options:
   - key: '7'
@@ -1235,7 +1235,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: required_to_do
-  shortname: required_to_do
+  unique_name: required_to_do
   name: required_to_do
   value_options:
   - key: '7'
@@ -1255,7 +1255,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: feel_pressure
-  shortname: feel_pressure
+  unique_name: feel_pressure
   name: feel_pressure
   value_options:
   - key: '7'
@@ -1275,7 +1275,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: good_look_to_others
-  shortname: good_look_to_others
+  unique_name: good_look_to_others
   name: good_look_to_others
   value_options:
   - key: '7'
@@ -1295,7 +1295,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: dont_want_improve
-  shortname: dont_want_improve
+  unique_name: dont_want_improve
   name: dont_want_improve
   value_options:
   - key: '7'
@@ -1315,7 +1315,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: too_much_effort
-  shortname: too_much_effort
+  unique_name: too_much_effort
   name: too_much_effort
   value_options:
   - key: '7'
@@ -1335,7 +1335,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: difficult_to_improve
-  shortname: difficult_to_improve
+  unique_name: difficult_to_improve
   name: difficult_to_improve
   value_options:
   - key: '7'
@@ -1355,7 +1355,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: dont_have_tools
-  shortname: dont_have_tools
+  unique_name: dont_have_tools
   name: dont_have_tools
   value_options:
   - key: '7'
@@ -1375,7 +1375,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: dont_know_how
-  shortname: dont_know_how
+  unique_name: dont_know_how
   name: dont_know_how
   value_options:
   - key: '7'
@@ -1395,7 +1395,7 @@ observableproperties:
   - key: '99'
     value: I don't know or prefer not to answer
 - id: temperature_reg
-  shortname: temperature_reg
+  unique_name: temperature_reg
   name: temperature_reg
   value_options:
   - key: '88'
@@ -1415,7 +1415,7 @@ observableproperties:
   - key: '99'
     value: I don't know pr prefer not to answer
 - id: ventilation_reg
-  shortname: ventilation_reg
+  unique_name: ventilation_reg
   name: ventilation_reg
   value_options:
   - key: '88'
@@ -1435,7 +1435,7 @@ observableproperties:
   - key: '99'
     value: I don't know pr prefer not to answer
 - id: Openwindow
-  shortname: Openwindow
+  unique_name: Openwindow
   name: Openwindow
   value_options:
   - key: '88'
@@ -1455,7 +1455,7 @@ observableproperties:
   - key: '99'
     value: I don't know pr prefer not to answer
 - id: Useproducts_Ecolabel
-  shortname: Useproducts_Ecolabel
+  unique_name: Useproducts_Ecolabel
   name: Useproducts_Ecolabel
   value_options:
   - key: '88'
@@ -1475,7 +1475,7 @@ observableproperties:
   - key: '99'
     value: I don't know pr prefer not to answer
 - id: use_natural_products
-  shortname: use_natural_products
+  unique_name: use_natural_products
   name: use_natural_products
   value_options:
   - key: '88'

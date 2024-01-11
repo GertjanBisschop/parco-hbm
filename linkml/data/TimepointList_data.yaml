@@ -1,9 +1,9 @@
 timepoints:
   - id: 3xGST03
-    shortname: 3xGST03
+    unique_name: 3xGST03
     observations:
     - id: questionnaire_000x1
-      shortname: questionnaire_000x1
+      unique_name: questionnaire_000x1
       observation_type: questionnaire
       observation_design:
         observation_sets:
@@ -15,7 +15,7 @@ timepoints:
               - isced
       observation_result:
     - id: metadata_000x5
-      shortname: metadata_000x5
+      unique_name: metadata_000x5
       observation_type: metadata
       observation_design:
         observation_sets:

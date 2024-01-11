@@ -10,7 +10,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: relation
+  unique_name: relation
   value_options:
   - key: P
     value: participant itself
@@ -33,7 +33,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: sex
+  unique_name: sex
   value_options:
   - key: F
     value: female
@@ -51,7 +51,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: subpopulation
+  unique_name: subpopulation
   validation_design:
     conditional: IF population IS 0 THEN subpopulation IS not empty
   value_options:
@@ -77,7 +77,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: smoking_m
+  unique_name: smoking_m
   validation_design:
     conditional: IF any(ageyears) IS < 20 THEN smoking_m IS not empty
   value_options:
@@ -98,7 +98,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: case_control
+  unique_name: case_control
   value_options:
   - key: '0'
     value: control
@@ -115,7 +115,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: population
+  unique_name: population
   value_options:
   - key: '1'
     value: 'yes'
@@ -132,7 +132,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: isced
+  unique_name: isced
   validation_design:
     conditional: IF ageyears IS >= 20 THEN isced IS not empty
   value_options:
@@ -153,7 +153,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: isced_m
+  unique_name: isced_m
   validation_design:
     conditional: IF ageyears IS < 20 THEN isced_m IS not empty
   value_options:
@@ -174,7 +174,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: isced_f
+  unique_name: isced_f
   validation_design:
     conditional: IF ageyears IS < 20 THEN isced_f IS not empty
   value_options:
@@ -195,7 +195,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: degurba
+  unique_name: degurba
   value_options:
   - key: '1'
     value: Densely populated area (cities)
@@ -215,7 +215,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: smoking
+  unique_name: smoking
   validation_design:
     conditional: IF ageyears IS < 12 THEN smoking IS empty
   value_options:
@@ -236,7 +236,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: isced_hh
+  unique_name: isced_hh
   validation_design:
     conditional: IF ageyears IS < 20 THEN isced_hh IS not empty
   value_options:
@@ -259,7 +259,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: subpopulation_other
+  unique_name: subpopulation_other
   validation_design:
     conditional: IF subpopulation IS 5 THEN subpopulation_other IS not empty
   value_type: string
@@ -274,7 +274,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: country
+  unique_name: country
   value_type: string
 - categorical: false
   description: 'NUTS Level 2 of residence of the subject: (Nomenclature of Territorial
@@ -288,7 +288,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: nuts2
+  unique_name: nuts2
   value_type: string
 - categorical: false
   description: 'NUTS Level 3 of residence of the subject: (Nomenclature of Territorial
@@ -302,7 +302,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: nuts3
+  unique_name: nuts3
   value_type: string
 - categorical: false
   description: Subdivision of country of residence of the subject according to ISO
@@ -315,7 +315,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: subdivision
+  unique_name: subdivision
   value_type: string
 - categorical: false
   description: 'NUTS Level 1 of residence of the subject: (Nomenclature of Territorial
@@ -329,7 +329,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: nuts1
+  unique_name: nuts1
   value_type: string
 - categorical: false
   default_significantdecimals: 1.0
@@ -344,7 +344,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: height
+  unique_name: height
   value_metadata:
   - field:
       name: min
@@ -366,7 +366,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: weight
+  unique_name: weight
   value_metadata:
   - field:
       name: min
@@ -390,7 +390,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: bmi
+  unique_name: bmi
   value_metadata:
   - field:
       name: min
@@ -411,7 +411,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: agedays
+  unique_name: agedays
   validation_design:
     conditional: IF ageweeks IS > 1 THEN agedays IS empty
   value_metadata:
@@ -434,7 +434,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: agemonths
+  unique_name: agemonths
   validation_design:
     conditional: IF ageyears IS >= 20 THEN agemonths IS empty
   value_metadata:
@@ -454,7 +454,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: ageweeks
+  unique_name: ageweeks
   validation_design:
     conditional: IF ageyears IS >= 1 THEN ageweeks IS empty
   value_metadata:
@@ -474,7 +474,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: age_birth_m
+  unique_name: age_birth_m
   validation_design:
     conditional: IF any(ageyears) IS < 20 THEN age_birth_m IS not empty
   value_metadata:
@@ -497,7 +497,7 @@ observable_properties:
   - person
   relevant_observation_types:
   - questionnaire
-  shortname: ageyears
+  unique_name: ageyears
   value_metadata:
   - field:
       name: max
@@ -516,7 +516,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: aama
+  unique_name: aama
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -531,7 +531,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: aamasulf
+  unique_name: aamasulf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -546,7 +546,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ace
+  unique_name: ace
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -561,7 +561,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: achlor
+  unique_name: achlor
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -576,7 +576,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: acy
+  unique_name: acy
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/mL"
@@ -590,7 +590,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: adipon
+  unique_name: adipon
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -605,7 +605,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: adp
+  unique_name: adp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -619,7 +619,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: afbgua
+  unique_name: afbgua
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -634,7 +634,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: afbone
+  unique_name: afbone
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -649,7 +649,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: afbtwo
+  unique_name: afbtwo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -664,7 +664,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: afgone
+  unique_name: afgone
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -679,7 +679,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: afgtwo
+  unique_name: afgtwo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -694,7 +694,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: afm
+  unique_name: afm
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -709,7 +709,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ag
+  unique_name: ag
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -724,7 +724,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ahch
+  unique_name: ahch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -739,7 +739,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ahtn
+  unique_name: ahtn
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -754,7 +754,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: al
+  unique_name: al
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -769,7 +769,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: alchlor
+  unique_name: alchlor
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -784,7 +784,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: aldrin
+  unique_name: aldrin
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -798,7 +798,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: almer
+  unique_name: almer
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -813,7 +813,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: amcc
+  unique_name: amcc
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -828,7 +828,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ame
+  unique_name: ame
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -843,7 +843,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ampa
+  unique_name: ampa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -858,7 +858,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: an
+  unique_name: an
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -873,7 +873,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: aoh
+  unique_name: aoh
   value_type: decimal
 - categorical: false
   default_unit: g/L
@@ -888,7 +888,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: apoa1
+  unique_name: apoa1
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/mL"
@@ -902,7 +902,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: apoa2
+  unique_name: apoa2
   value_type: decimal
 - categorical: false
   default_unit: g/L
@@ -916,7 +916,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: apob100
+  unique_name: apob100
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -931,7 +931,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: asb
+  unique_name: asb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -946,7 +946,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: asfive
+  unique_name: asfive
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -961,7 +961,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: asthree
+  unique_name: asthree
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -975,7 +975,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: atmer
+  unique_name: atmer
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -989,7 +989,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: atrz
+  unique_name: atrz
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1004,7 +1004,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: au
+  unique_name: au
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1019,7 +1019,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: azal
+  unique_name: azal
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1034,7 +1034,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: azel
+  unique_name: azel
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1049,7 +1049,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: b
+  unique_name: b
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1064,7 +1064,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ba
+  unique_name: ba
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1079,7 +1079,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: baa
+  unique_name: baa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1094,7 +1094,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: baac
+  unique_name: baac
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1109,7 +1109,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bap
+  unique_name: bap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1124,7 +1124,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bboehep
+  unique_name: bboehep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1139,7 +1139,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bboephr
+  unique_name: bboephr
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1154,7 +1154,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bcepms
+  unique_name: bcepms
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1169,7 +1169,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bciphipp
+  unique_name: bciphipp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1184,7 +1184,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bcippms
+  unique_name: bcippms
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1199,7 +1199,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdcippms
+  unique_name: bdcippms
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1214,7 +1214,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde15
+  unique_name: bde15
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1229,7 +1229,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde17
+  unique_name: bde17
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1244,7 +1244,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde196
+  unique_name: bde196
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1259,7 +1259,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde197
+  unique_name: bde197
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1274,7 +1274,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde203
+  unique_name: bde203
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1289,7 +1289,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde25
+  unique_name: bde25
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1304,7 +1304,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bde33
+  unique_name: bde33
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1319,7 +1319,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdea
+  unique_name: bdea
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1334,7 +1334,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdeb
+  unique_name: bdeb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1349,7 +1349,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdec
+  unique_name: bdec
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1364,7 +1364,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bded
+  unique_name: bded
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1379,7 +1379,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdee
+  unique_name: bdee
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1394,7 +1394,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdef
+  unique_name: bdef
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1409,7 +1409,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdeg
+  unique_name: bdeg
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1424,7 +1424,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdeh
+  unique_name: bdeh
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1439,7 +1439,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdei
+  unique_name: bdei
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1454,7 +1454,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdej
+  unique_name: bdej
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1469,7 +1469,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdek
+  unique_name: bdek
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1484,7 +1484,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdel
+  unique_name: bdel
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1499,7 +1499,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdem
+  unique_name: bdem
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1514,7 +1514,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bden
+  unique_name: bden
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1529,7 +1529,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdeo
+  unique_name: bdeo
   value_type: decimal
 - categorical: false
   default_unit: ng/mL
@@ -1543,7 +1543,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bdnf
+  unique_name: bdnf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1558,7 +1558,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: be
+  unique_name: be
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1572,7 +1572,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: benpar
+  unique_name: benpar
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1587,7 +1587,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bghip
+  unique_name: bghip
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1602,7 +1602,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bhch
+  unique_name: bhch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1617,7 +1617,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bi
+  unique_name: bi
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1632,7 +1632,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: boscalid
+  unique_name: boscalid
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1647,7 +1647,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bp
+  unique_name: bp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1662,7 +1662,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpa
+  unique_name: bpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1677,7 +1677,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpaf
+  unique_name: bpaf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1692,7 +1692,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpb
+  unique_name: bpb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1707,7 +1707,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpc
+  unique_name: bpc
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1722,7 +1722,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpf
+  unique_name: bpf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1737,7 +1737,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpone
+  unique_name: bpone
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1752,7 +1752,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bps
+  unique_name: bps
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1767,7 +1767,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpseven
+  unique_name: bpseven
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1782,7 +1782,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpthree
+  unique_name: bpthree
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1797,7 +1797,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bptwo
+  unique_name: bptwo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1812,7 +1812,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bpz
+  unique_name: bpz
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1827,7 +1827,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: btbpe
+  unique_name: btbpe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1841,7 +1841,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: butpar
+  unique_name: butpar
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1856,7 +1856,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bzal
+  unique_name: bzal
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1871,7 +1871,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: bzel
+  unique_name: bzel
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1886,7 +1886,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ca
+  unique_name: ca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1901,7 +1901,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: carphe
+  unique_name: carphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1916,7 +1916,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cd
+  unique_name: cd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1931,7 +1931,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cdcca
+  unique_name: cdcca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1946,7 +1946,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ce
+  unique_name: ce
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1961,7 +1961,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: chlormet
+  unique_name: chlormet
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1976,7 +1976,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: chlormetox
+  unique_name: chlormetox
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -1991,7 +1991,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: chlorox
+  unique_name: chlorox
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2006,7 +2006,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: chlorpyr
+  unique_name: chlorpyr
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2021,7 +2021,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: chltr
+  unique_name: chltr
   value_type: decimal
 - categorical: false
   default_unit: mg/dL
@@ -2036,7 +2036,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: chol
+  unique_name: chol
   value_metadata:
   - field:
       name: min
@@ -2058,7 +2058,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cifca
+  unique_name: cifca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2073,7 +2073,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cisdbca
+  unique_name: cisdbca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2087,7 +2087,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cishepexepo
+  unique_name: cishepexepo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2101,7 +2101,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cisnonac
+  unique_name: cisnonac
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2116,7 +2116,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cit
+  unique_name: cit
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2131,7 +2131,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: co
+  unique_name: co
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2145,7 +2145,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cot
+  unique_name: cot
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2160,7 +2160,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: crt
+  unique_name: crt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2175,7 +2175,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cry
+  unique_name: cry
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2190,7 +2190,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cs
+  unique_name: cs
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2205,7 +2205,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cu
+  unique_name: cu
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2220,7 +2220,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cxmepp
+  unique_name: cxmepp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2235,7 +2235,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cxmeptp
+  unique_name: cxmeptp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2250,7 +2250,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cxmidp
+  unique_name: cxmidp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2265,7 +2265,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cxmmhtp
+  unique_name: cxmmhtp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2280,7 +2280,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cxmphp
+  unique_name: cxmphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2295,7 +2295,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cxmpp
+  unique_name: cxmpp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2310,7 +2310,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: cyprodiniloh
+  unique_name: cyprodiniloh
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2324,7 +2324,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: da26
+  unique_name: da26
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2339,7 +2339,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dbaha
+  unique_name: dbaha
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2354,7 +2354,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dbca
+  unique_name: dbca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2369,7 +2369,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dbdpe
+  unique_name: dbdpe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2384,7 +2384,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dbph
+  unique_name: dbph
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2399,7 +2399,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dbt
+  unique_name: dbt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2414,7 +2414,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dcp
+  unique_name: dcp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2429,7 +2429,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dcp24
+  unique_name: dcp24
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2444,7 +2444,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dcp26
+  unique_name: dcp26
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2458,7 +2458,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dcpa
+  unique_name: dcpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2473,7 +2473,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: deampy
+  unique_name: deampy
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2488,7 +2488,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: decfour
+  unique_name: decfour
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2503,7 +2503,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: decthree
+  unique_name: decthree
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2518,7 +2518,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dectwo
+  unique_name: dectwo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2533,7 +2533,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dedtp
+  unique_name: dedtp
   value_type: decimal
 - categorical: false
   default_unit: g/L
@@ -2547,7 +2547,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: density
+  unique_name: density
   value_metadata:
   - field:
       name: min
@@ -2569,7 +2569,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dep
+  unique_name: dep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2583,7 +2583,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: des2hyat
+  unique_name: des2hyat
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2597,7 +2597,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: desat
+  unique_name: desat
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2611,7 +2611,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: desdesisoat
+  unique_name: desdesisoat
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2625,7 +2625,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: desisoat
+  unique_name: desisoat
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2640,7 +2640,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: detp
+  unique_name: detp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2655,7 +2655,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dgua
+  unique_name: dgua
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2670,7 +2670,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dieldrin
+  unique_name: dieldrin
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2685,7 +2685,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dihphediol
+  unique_name: dihphediol
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2700,7 +2700,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dimetachlor
+  unique_name: dimetachlor
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2715,7 +2715,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: diohnap
+  unique_name: diohnap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2730,7 +2730,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: diuron
+  unique_name: diuron
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2745,7 +2745,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dma
+  unique_name: dma
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2760,7 +2760,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dmdtp
+  unique_name: dmdtp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2775,7 +2775,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dmp
+  unique_name: dmp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2790,7 +2790,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dmtp
+  unique_name: dmtp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2805,7 +2805,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dnbphr
+  unique_name: dnbphr
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2821,7 +2821,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dona
+  unique_name: dona
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2836,7 +2836,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: donfglca
+  unique_name: donfglca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2851,7 +2851,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dontglca
+  unique_name: dontglca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2866,7 +2866,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dot
+  unique_name: dot
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2881,7 +2881,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dphpms
+  unique_name: dphpms
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2896,7 +2896,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dpht
+  unique_name: dpht
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2911,7 +2911,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: dpte
+  unique_name: dpte
   value_type: decimal
 - categorical: false
   default_unit: pg/mL
@@ -2925,7 +2925,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: e2
+  unique_name: e2
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2940,7 +2940,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: eaa
+  unique_name: eaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2955,7 +2955,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: eeaa
+  unique_name: eeaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2970,7 +2970,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ehphp
+  unique_name: ehphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -2985,7 +2985,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ehtbb
+  unique_name: ehtbb
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -3000,7 +3000,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: eightdipap
+  unique_name: eightdipap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3015,7 +3015,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: eightfts
+  unique_name: eightfts
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3030,7 +3030,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: eightmonopap
+  unique_name: eightmonopap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3045,7 +3045,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: endrin
+  unique_name: endrin
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3060,7 +3060,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: etfosaa
+  unique_name: etfosaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3075,7 +3075,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: etfose
+  unique_name: etfose
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3090,7 +3090,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: etpar
+  unique_name: etpar
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3105,7 +3105,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: etu
+  unique_name: etu
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3120,7 +3120,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fbone
+  unique_name: fbone
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3135,7 +3135,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fbpa
+  unique_name: fbpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3150,7 +3150,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fbpf
+  unique_name: fbpf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3165,7 +3165,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fbps
+  unique_name: fbps
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3180,7 +3180,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fdon
+  unique_name: fdon
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3195,7 +3195,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fe
+  unique_name: fe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3210,7 +3210,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fivehphe
+  unique_name: fivehphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3225,7 +3225,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fivemch
+  unique_name: fivemch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3240,7 +3240,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fiveohthiabendazole
+  unique_name: fiveohthiabendazole
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3255,7 +3255,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fla
+  unique_name: fla
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3270,7 +3270,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fluo
+  unique_name: fluo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3285,7 +3285,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fosa
+  unique_name: fosa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3300,7 +3300,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourcry
+  unique_name: fourcry
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3315,7 +3315,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourfts
+  unique_name: fourfts
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3330,7 +3330,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourhbp
+  unique_name: fourhbp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3345,7 +3345,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourhphe
+  unique_name: fourhphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3360,7 +3360,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourmbp
+  unique_name: fourmbp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3375,7 +3375,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourohdphp
+  unique_name: fourohdphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3390,7 +3390,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fourohpyrimeth
+  unique_name: fourohpyrimeth
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3405,7 +3405,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fpba
+  unique_name: fpba
   value_type: decimal
 - categorical: false
   default_unit: IU/L
@@ -3420,7 +3420,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: fsh
+  unique_name: fsh
   value_type: decimal
 - categorical: false
   default_unit: ng/dL
@@ -3435,7 +3435,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ft3
+  unique_name: ft3
   value_type: decimal
 - categorical: false
   default_unit: ng/dL
@@ -3450,7 +3450,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ft4
+  unique_name: ft4
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3464,7 +3464,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: galax
+  unique_name: galax
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3479,7 +3479,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: gama
+  unique_name: gama
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3493,7 +3493,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ghch
+  unique_name: ghch
   value_type: decimal
 - categorical: false
   default_unit: mg/dL
@@ -3507,7 +3507,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: glucose
+  unique_name: glucose
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3522,7 +3522,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: glyp
+  unique_name: glyp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3536,7 +3536,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ha2
+  unique_name: ha2
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3551,7 +3551,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hbaa
+  unique_name: hbaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3566,7 +3566,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hbb
+  unique_name: hbb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3581,7 +3581,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hbcd
+  unique_name: hbcd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3596,7 +3596,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hbcda
+  unique_name: hbcda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3611,7 +3611,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hbcdb
+  unique_name: hbcdb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3626,7 +3626,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hbcdg
+  unique_name: hbcdg
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3641,7 +3641,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hcb
+  unique_name: hcb
   value_type: decimal
 - categorical: false
   default_unit: mg/dL
@@ -3655,7 +3655,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hdl
+  unique_name: hdl
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3670,7 +3670,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hepip
+  unique_name: hepip
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3685,7 +3685,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: heptachlor
+  unique_name: heptachlor
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3700,7 +3700,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hesi
+  unique_name: hesi
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3715,7 +3715,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hf
+  unique_name: hf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3730,7 +3730,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hfpoda
+  unique_name: hfpoda
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -3745,7 +3745,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hg
+  unique_name: hg
   value_type: decimal
 - categorical: false
   description: 'HIstone modification AR (Androgen receptor): normalised expression
@@ -3759,7 +3759,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_ar
+  unique_name: hist_ar
   value_type: decimal
 - categorical: false
   description: 'HIstone modification ESR1 (Estrogen receptor alfa): normalised expression
@@ -3773,7 +3773,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_esr1
+  unique_name: hist_esr1
   value_type: decimal
 - categorical: false
   description: 'HIstone modification ESR2 (Estrogen receptor beta): normalised expression
@@ -3787,7 +3787,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_esr2
+  unique_name: hist_esr2
   value_type: decimal
 - categorical: false
   description: 'HIstone modification GR (nuclear receptor subfamily 3 group C member
@@ -3801,7 +3801,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_gr
+  unique_name: hist_gr
   value_type: decimal
 - categorical: false
   description: 'HIstone modification OGG1 (8-oxoguanine DNA glycosylase): normalised
@@ -3815,7 +3815,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_ogg1
+  unique_name: hist_ogg1
   value_type: decimal
 - categorical: false
   description: 'HIstone modification PPARa (peroxisome proliferator activated receptor
@@ -3829,7 +3829,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_ppara
+  unique_name: hist_ppara
   value_type: decimal
 - categorical: false
   description: 'HIstone modification PPARg (peroxisome proliferator activated receptor
@@ -3843,7 +3843,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_pparg
+  unique_name: hist_pparg
   value_type: decimal
 - categorical: false
   description: 'HIstone modification SUV39H1 (SUV39H1 histone lysine methyltransferase):
@@ -3857,7 +3857,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_suv39h
+  unique_name: hist_suv39h
   value_type: decimal
 - categorical: false
   description: 'HIstone modification TERT (Telomerase): normalised expression compared
@@ -3871,7 +3871,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_tert
+  unique_name: hist_tert
   value_type: decimal
 - categorical: false
   description: 'HIstone modification THRA (Thyroid receptor alfa): normalised expression
@@ -3885,7 +3885,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_thra
+  unique_name: hist_thra
   value_type: decimal
 - categorical: false
   description: 'HIstone modification THRB (Thyroid receptor beta): normalised expression
@@ -3899,7 +3899,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hist_thrb
+  unique_name: hist_thrb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3914,7 +3914,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hmsi
+  unique_name: hmsi
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3929,7 +3929,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hnep
+  unique_name: hnep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3944,7 +3944,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hnmp
+  unique_name: hnmp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3958,7 +3958,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hocb107
+  unique_name: hocb107
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3972,7 +3972,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hocb146
+  unique_name: hocb146
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -3986,7 +3986,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hocb187
+  unique_name: hocb187
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4001,7 +4001,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hpcdd
+  unique_name: hpcdd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4015,7 +4015,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: hs2
+  unique_name: hs2
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5LU/mL"
@@ -4029,7 +4029,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: insulin
+  unique_name: insulin
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4043,7 +4043,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: iod
+  unique_name: iod
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4058,7 +4058,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ip
+  unique_name: ip
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4073,7 +4073,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ipp
+  unique_name: ipp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4088,7 +4088,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ippmu
+  unique_name: ippmu
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4102,7 +4102,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: iproppar
+  unique_name: iproppar
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4117,7 +4117,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ir
+  unique_name: ir
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4132,7 +4132,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: isobip
+  unique_name: isobip
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4146,7 +4146,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: isoproturon
+  unique_name: isoproturon
   value_type: decimal
 - categorical: false
   default_unit: '%'
@@ -4161,7 +4161,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: kiss_cpg1
+  unique_name: kiss_cpg1
   value_type: decimal
 - categorical: false
   default_unit: '%'
@@ -4175,7 +4175,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: kiss_cpg2
+  unique_name: kiss_cpg2
   value_type: decimal
 - categorical: false
   default_unit: '%'
@@ -4189,7 +4189,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: kiss_cpg3
+  unique_name: kiss_cpg3
   value_type: decimal
 - categorical: false
   default_unit: '%'
@@ -4203,7 +4203,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: kiss_cpg4
+  unique_name: kiss_cpg4
   value_type: decimal
 - categorical: false
   default_unit: pg/mL
@@ -4217,7 +4217,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: kiss54
+  unique_name: kiss54
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4232,7 +4232,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbnmepfosa
+  unique_name: lbnmepfosa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4247,7 +4247,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfbs
+  unique_name: lbpfbs
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4262,7 +4262,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfda
+  unique_name: lbpfda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4277,7 +4277,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfdoda
+  unique_name: lbpfdoda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4292,7 +4292,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfds
+  unique_name: lbpfds
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4307,7 +4307,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfhpa
+  unique_name: lbpfhpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4322,7 +4322,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfhps
+  unique_name: lbpfhps
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4337,7 +4337,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfhxa
+  unique_name: lbpfhxa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4352,7 +4352,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfhxs
+  unique_name: lbpfhxs
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4367,7 +4367,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfna
+  unique_name: lbpfna
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4382,7 +4382,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfoa
+  unique_name: lbpfoa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4397,7 +4397,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfos
+  unique_name: lbpfos
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4412,7 +4412,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfosa
+  unique_name: lbpfosa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4427,7 +4427,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfpea
+  unique_name: lbpfpea
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4442,7 +4442,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfteda
+  unique_name: lbpfteda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4457,7 +4457,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpftrda
+  unique_name: lbpftrda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4472,7 +4472,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lbpfunda
+  unique_name: lbpfunda
   value_type: decimal
 - categorical: false
   default_unit: mg/dL
@@ -4486,7 +4486,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ldl
+  unique_name: ldl
   value_type: decimal
 - categorical: false
   default_unit: ng/mL
@@ -4500,7 +4500,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: leptin
+  unique_name: leptin
   value_type: decimal
 - categorical: false
   default_unit: IU/L
@@ -4515,7 +4515,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lh
+  unique_name: lh
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4530,7 +4530,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: li
+  unique_name: li
   value_type: decimal
 - categorical: false
   description: Retroelement LINE L1 copy number variation normalized values to RPLP0
@@ -4544,7 +4544,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: line1
+  unique_name: line1
   value_type: decimal
 - categorical: false
   default_unit: mg/dL
@@ -4558,7 +4558,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lipid
+  unique_name: lipid
   value_metadata:
   - field:
       name: min
@@ -4579,7 +4579,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lipid_enz
+  unique_name: lipid_enz
   value_metadata:
   - field:
       name: min
@@ -4602,7 +4602,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: lipid_enz_harm
+  unique_name: lipid_enz_harm
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4617,7 +4617,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: maa
+  unique_name: maa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4632,7 +4632,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mbt
+  unique_name: mbt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4647,7 +4647,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mbzp
+  unique_name: mbzp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4662,7 +4662,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mchp
+  unique_name: mchp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4677,7 +4677,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mchxp
+  unique_name: mchxp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4692,7 +4692,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mcmhp
+  unique_name: mcmhp
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -4707,7 +4707,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mcoch
+  unique_name: mcoch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4722,7 +4722,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mcop
+  unique_name: mcop
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4737,7 +4737,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mcp4
+  unique_name: mcp4
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4752,7 +4752,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mcpep
+  unique_name: mcpep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4767,7 +4767,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: meaa
+  unique_name: meaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4782,7 +4782,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: meha
+  unique_name: meha
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4797,7 +4797,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mehp
+  unique_name: mehp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4812,7 +4812,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mehtp
+  unique_name: mehtp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4827,7 +4827,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mep
+  unique_name: mep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4841,7 +4841,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: metpar
+  unique_name: metpar
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4856,7 +4856,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mg
+  unique_name: mg
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -4871,7 +4871,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mhg
+  unique_name: mhg
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4886,7 +4886,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mhhpp
+  unique_name: mhhpp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4901,7 +4901,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mhhxp
+  unique_name: mhhxp
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -4916,7 +4916,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mhnch
+  unique_name: mhnch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4931,7 +4931,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mhnp
+  unique_name: mhnp
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -4946,7 +4946,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mibp
+  unique_name: mibp
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -4961,7 +4961,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: midp
+  unique_name: midp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4976,7 +4976,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: minch
+  unique_name: minch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -4991,7 +4991,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: minp
+  unique_name: minp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5006,7 +5006,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mipep
+  unique_name: mipep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5021,7 +5021,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mirex
+  unique_name: mirex
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5036,7 +5036,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mk
+  unique_name: mk
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5051,7 +5051,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mma
+  unique_name: mma
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -5066,7 +5066,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mmp
+  unique_name: mmp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5081,7 +5081,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mn
+  unique_name: mn
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -5096,7 +5096,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mnbp
+  unique_name: mnbp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5111,7 +5111,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mnhpp
+  unique_name: mnhpp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5126,7 +5126,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mnhxp
+  unique_name: mnhxp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5141,7 +5141,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mnpep
+  unique_name: mnpep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5156,7 +5156,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mo
+  unique_name: mo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5171,7 +5171,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: monch
+  unique_name: monch
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5186,7 +5186,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: monp
+  unique_name: monp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5201,7 +5201,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mop
+  unique_name: mop
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5216,7 +5216,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mot
+  unique_name: mot
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5231,7 +5231,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mpa
+  unique_name: mpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5246,7 +5246,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mpht
+  unique_name: mpht
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5261,7 +5261,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mprp
+  unique_name: mprp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5276,7 +5276,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: mx
+  unique_name: mx
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5291,7 +5291,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: nafourap
+  unique_name: nafourap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5306,7 +5306,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: naph
+  unique_name: naph
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5321,7 +5321,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: netfosa
+  unique_name: netfosa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5336,7 +5336,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ni
+  unique_name: ni
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5351,7 +5351,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ninehfluo
+  unique_name: ninehfluo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5366,7 +5366,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ninehphe
+  unique_name: ninehphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5381,7 +5381,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: niphen
+  unique_name: niphen
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5396,7 +5396,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: niv
+  unique_name: niv
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5411,7 +5411,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: nmefosa
+  unique_name: nmefosa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5426,7 +5426,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: obind
+  unique_name: obind
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5441,7 +5441,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ocdd
+  unique_name: ocdd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5456,7 +5456,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohbap
+  unique_name: ohbap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5471,7 +5471,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohehdphp
+  unique_name: ohehdphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5486,7 +5486,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmeha
+  unique_name: ohmeha
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5501,7 +5501,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmehp
+  unique_name: ohmehp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5516,7 +5516,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmehtp
+  unique_name: ohmehtp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5531,7 +5531,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmibp
+  unique_name: ohmibp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5547,7 +5547,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmidp
+  unique_name: ohmidp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5562,7 +5562,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmnbp
+  unique_name: ohmnbp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5577,7 +5577,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohmphp
+  unique_name: ohmphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5592,7 +5592,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohpyr
+  unique_name: ohpyr
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5607,7 +5607,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohtboep
+  unique_name: ohtboep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5622,7 +5622,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ohtphp
+  unique_name: ohtphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5637,7 +5637,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: onehcry
+  unique_name: onehcry
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5652,7 +5652,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: onehphe
+  unique_name: onehphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5667,7 +5667,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oneohnap
+  unique_name: oneohnap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5682,7 +5682,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: opdde
+  unique_name: opdde
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5697,7 +5697,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: opddt
+  unique_name: opddt
   value_type: decimal
 - categorical: false
   default_unit: Osm/L
@@ -5711,7 +5711,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: osm
+  unique_name: osm
   value_metadata:
   - field:
       name: min
@@ -5733,7 +5733,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ota
+  unique_name: ota
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5748,7 +5748,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oxc
+  unique_name: oxc
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5763,7 +5763,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oxomeha
+  unique_name: oxomeha
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5778,7 +5778,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oxomehp
+  unique_name: oxomehp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5793,7 +5793,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oxomehtp
+  unique_name: oxomehtp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5809,7 +5809,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oxomidp
+  unique_name: oxomidp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5824,7 +5824,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: oxomphp
+  unique_name: oxomphp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5839,7 +5839,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: paa
+  unique_name: paa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5853,7 +5853,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: paret
+  unique_name: paret
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5867,7 +5867,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: parmet
+  unique_name: parmet
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5882,7 +5882,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pb
+  unique_name: pb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5897,7 +5897,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pbb153
+  unique_name: pbb153
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5912,7 +5912,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pbeb
+  unique_name: pbeb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5927,7 +5927,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pbph
+  unique_name: pbph
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5942,7 +5942,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pbt
+  unique_name: pbt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5957,7 +5957,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb101
+  unique_name: pcb101
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5972,7 +5972,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb105
+  unique_name: pcb105
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -5987,7 +5987,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb110
+  unique_name: pcb110
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6002,7 +6002,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb114
+  unique_name: pcb114
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6017,7 +6017,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb118
+  unique_name: pcb118
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6032,7 +6032,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb123
+  unique_name: pcb123
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6047,7 +6047,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb126
+  unique_name: pcb126
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6062,7 +6062,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb128
+  unique_name: pcb128
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6077,7 +6077,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb138
+  unique_name: pcb138
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6092,7 +6092,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb146
+  unique_name: pcb146
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6107,7 +6107,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb149
+  unique_name: pcb149
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6122,7 +6122,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb151
+  unique_name: pcb151
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6137,7 +6137,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb153
+  unique_name: pcb153
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6152,7 +6152,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb156
+  unique_name: pcb156
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6167,7 +6167,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb157
+  unique_name: pcb157
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6182,7 +6182,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb158
+  unique_name: pcb158
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6197,7 +6197,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb167
+  unique_name: pcb167
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6212,7 +6212,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb169
+  unique_name: pcb169
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6227,7 +6227,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb170
+  unique_name: pcb170
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6242,7 +6242,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb171
+  unique_name: pcb171
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6257,7 +6257,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb172
+  unique_name: pcb172
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6272,7 +6272,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb174
+  unique_name: pcb174
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6287,7 +6287,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb177
+  unique_name: pcb177
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6302,7 +6302,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb178
+  unique_name: pcb178
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6317,7 +6317,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb18
+  unique_name: pcb18
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6332,7 +6332,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb180
+  unique_name: pcb180
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6347,7 +6347,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb183
+  unique_name: pcb183
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6362,7 +6362,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb187
+  unique_name: pcb187
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6377,7 +6377,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb189
+  unique_name: pcb189
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6392,7 +6392,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb194
+  unique_name: pcb194
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6407,7 +6407,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb195
+  unique_name: pcb195
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6422,7 +6422,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb196
+  unique_name: pcb196
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6436,7 +6436,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb196and203
+  unique_name: pcb196and203
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6451,7 +6451,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb199
+  unique_name: pcb199
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6466,7 +6466,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb201
+  unique_name: pcb201
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6481,7 +6481,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb203
+  unique_name: pcb203
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6496,7 +6496,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb206
+  unique_name: pcb206
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6511,7 +6511,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb209
+  unique_name: pcb209
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6526,7 +6526,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb28
+  unique_name: pcb28
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6541,7 +6541,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb44
+  unique_name: pcb44
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6556,7 +6556,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb49
+  unique_name: pcb49
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6571,7 +6571,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb52
+  unique_name: pcb52
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6586,7 +6586,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb66
+  unique_name: pcb66
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6601,7 +6601,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb74
+  unique_name: pcb74
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6616,7 +6616,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb77
+  unique_name: pcb77
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6631,7 +6631,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb81
+  unique_name: pcb81
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6646,7 +6646,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb87
+  unique_name: pcb87
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6661,7 +6661,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcb99
+  unique_name: pcb99
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6676,7 +6676,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdd66
+  unique_name: pcdd66
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6691,7 +6691,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdd67
+  unique_name: pcdd67
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6706,7 +6706,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdd70
+  unique_name: pcdd70
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6721,7 +6721,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf114
+  unique_name: pcdf114
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6736,7 +6736,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf118
+  unique_name: pcdf118
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6751,7 +6751,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf121
+  unique_name: pcdf121
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6766,7 +6766,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf124
+  unique_name: pcdf124
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6781,7 +6781,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf130
+  unique_name: pcdf130
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6796,7 +6796,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf131
+  unique_name: pcdf131
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6811,7 +6811,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf134
+  unique_name: pcdf134
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6826,7 +6826,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf135
+  unique_name: pcdf135
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6841,7 +6841,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf83
+  unique_name: pcdf83
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6856,7 +6856,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcdf94
+  unique_name: pcdf94
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6871,7 +6871,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pcp
+  unique_name: pcp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6886,7 +6886,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pd
+  unique_name: pd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6901,7 +6901,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pecdd
+  unique_name: pecdd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6916,7 +6916,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pentip
+  unique_name: pentip
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6931,7 +6931,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfba
+  unique_name: pfba
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6946,7 +6946,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfbs
+  unique_name: pfbs
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6961,7 +6961,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfda
+  unique_name: pfda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6976,7 +6976,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfdoda
+  unique_name: pfdoda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -6991,7 +6991,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfdpa
+  unique_name: pfdpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7006,7 +7006,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfds
+  unique_name: pfds
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7022,7 +7022,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfesa
+  unique_name: pfesa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7037,7 +7037,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfhpa
+  unique_name: pfhpa
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -7052,7 +7052,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfhps
+  unique_name: pfhps
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7067,7 +7067,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfhxa
+  unique_name: pfhxa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7082,7 +7082,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfhxpa
+  unique_name: pfhxpa
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -7097,7 +7097,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfhxs
+  unique_name: pfhxs
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7112,7 +7112,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfna
+  unique_name: pfna
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7127,7 +7127,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfns
+  unique_name: pfns
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7142,7 +7142,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfoa
+  unique_name: pfoa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7157,7 +7157,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfopa
+  unique_name: pfopa
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -7172,7 +7172,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfos
+  unique_name: pfos
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7187,7 +7187,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfpea
+  unique_name: pfpea
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7202,7 +7202,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfpes
+  unique_name: pfpes
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7217,7 +7217,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfteda
+  unique_name: pfteda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7232,7 +7232,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pftrda
+  unique_name: pftrda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7247,7 +7247,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pfunda
+  unique_name: pfunda
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7262,7 +7262,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: phaa
+  unique_name: phaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7277,7 +7277,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: phba
+  unique_name: phba
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7292,7 +7292,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: phediol
+  unique_name: phediol
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7307,7 +7307,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: phetetrol
+  unique_name: phetetrol
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7321,7 +7321,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ppb
+  unique_name: ppb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7336,7 +7336,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ppdde
+  unique_name: ppdde
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7351,7 +7351,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ppddt
+  unique_name: ppddt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7366,7 +7366,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: propoxur
+  unique_name: propoxur
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7381,7 +7381,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pt
+  unique_name: pt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7396,7 +7396,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: pyr
+  unique_name: pyr
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7411,7 +7411,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sb
+  unique_name: sb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7426,7 +7426,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sdp
+  unique_name: sdp
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7440,7 +7440,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: se
+  unique_name: se
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7455,7 +7455,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sevoflurane
+  unique_name: sevoflurane
   value_type: decimal
 - categorical: false
   description: Specific gravity
@@ -7469,7 +7469,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sg
+  unique_name: sg
   value_metadata:
   - field:
       name: min
@@ -7491,7 +7491,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: shbg
+  unique_name: shbg
   value_type: decimal
 - calculation_design:
     formula: "onehphe [\xC2\xB5g/L] + twohphe [\xC2\xB5g/L] + threehphe [\xC2\xB5\
@@ -7510,7 +7510,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: shphe
+  unique_name: shphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7524,7 +7524,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: simz
+  unique_name: simz
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7538,7 +7538,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: simzmerc
+  unique_name: simzmerc
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7553,7 +7553,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sixdipap
+  unique_name: sixdipap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7568,7 +7568,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sixeightdipap
+  unique_name: sixeightdipap
   value_type: decimal
 - categorical: false
   default_unit: ng/g
@@ -7583,7 +7583,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sixfts
+  unique_name: sixfts
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7598,7 +7598,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sixhcry
+  unique_name: sixhcry
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7613,7 +7613,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sixmonopap
+  unique_name: sixmonopap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7628,7 +7628,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sn
+  unique_name: sn
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7643,7 +7643,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ster
+  unique_name: ster
   value_type: decimal
 - calculation_design:
     formula: "twohphe [\xC2\xB5g/L] + ninehphe [\xC2\xB5g/L]"
@@ -7660,7 +7660,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: stwoninehphe
+  unique_name: stwoninehphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -7675,7 +7675,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: stwothreehfluo
+  unique_name: stwothreehfluo
   value_type: decimal
 - calculation_design:
     formula: "twohphe [\xC2\xB5g/L] + threehphe [\xC2\xB5g/L]"
@@ -7692,7 +7692,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: stwothreehphe
+  unique_name: stwothreehphe
   value_type: decimal
 - calculation_design:
     formula: "asthree [\xC2\xB5g/L] + asfive [\xC2\xB5g/L] + mma [\xC2\xB5g/L]"
@@ -7709,7 +7709,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumastfmma
+  unique_name: sumastfmma
   value_type: decimal
 - calculation_design:
     formula: "cdcca [\xC2\xB5g/L] + tdcca [\xC2\xB5g/L]"
@@ -7727,7 +7727,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumdcca
+  unique_name: sumdcca
   value_type: decimal
 - calculation_design:
     formula: "oneohnap [\xC2\xB5g/L] + twoohnap [\xC2\xB5g/L] + diohnap [\xC2\xB5\
@@ -7745,7 +7745,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumdiohnap
+  unique_name: sumdiohnap
   value_type: decimal
 - calculation_design:
     formula: "sdp [\xC2\xB5g/L] + adp [\xC2\xB5g/L]"
@@ -7762,7 +7762,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumdp
+  unique_name: sumdp
   value_type: decimal
 - calculation_design:
     formula: "oxomehp [\xC2\xB5g/L] + ohmehp [\xC2\xB5g/L] + mehp [\xC2\xB5g/L] +\
@@ -7784,7 +7784,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumeightphthal
+  unique_name: sumeightphthal
   value_type: decimal
 - calculation_design:
     formula: "pfoa [\xC2\xB5g/L] + pfna [\xC2\xB5g/L] + pfhxs [\xC2\xB5g/L] + pfos\
@@ -7803,7 +7803,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumfourpfas
+  unique_name: sumfourpfas
   value_type: decimal
 - calculation_design:
     formula: "glyp [\xC2\xB5g/L] + ampa [\xC2\xB5g/L]"
@@ -7820,7 +7820,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumglyphampa
+  unique_name: sumglyphampa
   value_type: decimal
 - calculation_design:
     formula: "twohfluo [\xC2\xB5g/L] + threehfluo [\xC2\xB5g/L] + ninehfluo [\xC2\xB5\
@@ -7838,7 +7838,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumhfluo
+  unique_name: sumhfluo
   value_type: decimal
 - calculation_design:
     formula: "oxomehp [\xC2\xB5g/L] + ohmehp [\xC2\xB5g/L] + mehp [\xC2\xB5g/L] +\
@@ -7856,7 +7856,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumhmwphthal
+  unique_name: sumhmwphthal
   value_type: decimal
 - calculation_design:
     formula: "onehphe [\xC2\xB5g/L] + twohphe [\xC2\xB5g/L] + fourhphe [\xC2\xB5g/L]"
@@ -7873,7 +7873,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumhpheone
+  unique_name: sumhpheone
   value_type: decimal
 - calculation_design:
     formula: "onehphe [\xC2\xB5g/L] + twohphe [\xC2\xB5g/L] + threehphe [\xC2\xB5\
@@ -7892,7 +7892,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumhphetwo
+  unique_name: sumhphetwo
   value_type: decimal
 - calculation_design:
     formula: "mibp [\xC2\xB5g/L] + mnbp [\xC2\xB5g/L] + mep [\xC2\xB5g/L]"
@@ -7909,7 +7909,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumlmwphthal
+  unique_name: sumlmwphthal
   value_type: decimal
 - calculation_design:
     formula: "ohmidp [\xC2\xB5g/L] + cxmidp [\xC2\xB5g/L]"
@@ -7928,7 +7928,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: summidp
+  unique_name: summidp
   value_type: decimal
 - calculation_design:
     formula: "mcoch [\xC2\xB5g/L] + mhnch [\xC2\xB5g/L]"
@@ -7946,7 +7946,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: summinch
+  unique_name: summinch
   value_type: decimal
 - calculation_design:
     formula: "mhnp [\xC2\xB5g/L] + mcop [\xC2\xB5g/L]"
@@ -7964,7 +7964,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: summinp
+  unique_name: summinp
   value_type: decimal
 - calculation_design:
     formula: "ohmehp [\xC2\xB5g/L] + cxmepp [\xC2\xB5g/L]"
@@ -7982,7 +7982,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumohcxmehp
+  unique_name: sumohcxmehp
   value_type: decimal
 - calculation_design:
     formula: "oneohnap [\xC2\xB5g/L] + twoohnap [\xC2\xB5g/L]"
@@ -7999,7 +7999,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumohnap
+  unique_name: sumohnap
   value_type: decimal
 - calculation_design:
     formula: "oxomehp [\xC2\xB5g/L] + ohmehp [\xC2\xB5g/L] + mehp [\xC2\xB5g/L] +\
@@ -8018,7 +8018,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumohoxocxmehp
+  unique_name: sumohoxocxmehp
   value_type: decimal
 - calculation_design:
     formula: "oxomehp [\xC2\xB5g/L] + ohmehp [\xC2\xB5g/L]"
@@ -8036,7 +8036,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumohoxomehp
+  unique_name: sumohoxomehp
   value_type: decimal
 - calculation_design:
     formula: "oxomehp [\xC2\xB5g/L] + ohmehp [\xC2\xB5g/L] + mehp [\xC2\xB5g/L]"
@@ -8054,7 +8054,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumohoxomehptwo
+  unique_name: sumohoxomehptwo
   value_type: decimal
 - calculation_design:
     formula: "threepba [\xC2\xB5g/L] + fpba [\xC2\xB5g/L]"
@@ -8071,7 +8071,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumpba
+  unique_name: sumpba
   value_type: decimal
 - calculation_design:
     formula: "pfhxs [\xC2\xB5g/L] + pfos [\xC2\xB5g/L]"
@@ -8089,7 +8089,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumpfhxspfos
+  unique_name: sumpfhxspfos
   value_type: decimal
 - calculation_design:
     formula: "pfoa [\xC2\xB5g/L] + pfna [\xC2\xB5g/L]"
@@ -8106,7 +8106,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumpfoapfna
+  unique_name: sumpfoapfna
   value_type: decimal
 - calculation_design:
     formula: "asb [\xC2\xB5g/L] + asthree [\xC2\xB5g/L] + asfive [\xC2\xB5g/L] + dma\
@@ -8124,7 +8124,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumtas
+  unique_name: sumtas
   value_type: decimal
 - calculation_design:
     formula: "asthree [\xC2\xB5g/L] + asfive [\xC2\xB5g/L] + dma [\xC2\xB5g/L] + mma\
@@ -8142,7 +8142,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: sumtra
+  unique_name: sumtra
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8157,7 +8157,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tas
+  unique_name: tas
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8172,7 +8172,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tbbpa
+  unique_name: tbbpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8187,7 +8187,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tbbpadbpe
+  unique_name: tbbpadbpe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8202,7 +8202,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tbph
+  unique_name: tbph
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8217,7 +8217,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tbt
+  unique_name: tbt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8232,7 +8232,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcbd
+  unique_name: tcbd
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8247,7 +8247,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcep
+  unique_name: tcep
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8262,7 +8262,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcp234
+  unique_name: tcp234
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8277,7 +8277,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcp245
+  unique_name: tcp245
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8292,7 +8292,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcp246
+  unique_name: tcp246
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8306,7 +8306,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcpa
+  unique_name: tcpa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8321,7 +8321,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcpy
+  unique_name: tcpy
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8336,7 +8336,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tcr
+  unique_name: tcr
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8351,7 +8351,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tdcca
+  unique_name: tdcca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8366,7 +8366,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tdomone
+  unique_name: tdomone
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8381,7 +8381,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tdon
+  unique_name: tdon
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8396,7 +8396,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tebuconazoleoh
+  unique_name: tebuconazoleoh
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8411,7 +8411,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tecp2346
+  unique_name: tecp2346
   value_type: decimal
 - categorical: false
   description: Telomere Length (TEL) copy number variations normalized values to RPLP0
@@ -8426,7 +8426,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: telleng
+  unique_name: telleng
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8441,7 +8441,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: thb
+  unique_name: thb
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8456,7 +8456,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: threecry
+  unique_name: threecry
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8471,7 +8471,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: threehfluo
+  unique_name: threehfluo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8486,7 +8486,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: threehphe
+  unique_name: threehphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8501,7 +8501,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: threeninebaa
+  unique_name: threeninebaa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8516,7 +8516,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: threeohfa
+  unique_name: threeohfa
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8531,7 +8531,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: threepba
+  unique_name: threepba
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8546,7 +8546,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ti
+  unique_name: ti
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8561,7 +8561,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tl
+  unique_name: tl
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8575,7 +8575,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tnona
+  unique_name: tnona
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8590,7 +8590,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tot
+  unique_name: tot
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8605,7 +8605,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tota
+  unique_name: tota
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8620,7 +8620,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tpht
+  unique_name: tpht
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8635,7 +8635,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tra
+  unique_name: tra
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8649,7 +8649,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: transhepexepo
+  unique_name: transhepexepo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8663,7 +8663,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: triclos
+  unique_name: triclos
   value_type: decimal
 - categorical: false
   default_unit: mg/dL
@@ -8677,7 +8677,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: trigl
+  unique_name: trigl
   value_metadata:
   - field:
       name: min
@@ -8699,7 +8699,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tsh
+  unique_name: tsh
   value_type: decimal
 - categorical: false
   default_unit: ng/dL
@@ -8713,7 +8713,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tt
+  unique_name: tt
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8727,7 +8727,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ttmca
+  unique_name: ttmca
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8742,7 +8742,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ttwo
+  unique_name: ttwo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8757,7 +8757,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: twocry
+  unique_name: twocry
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8772,7 +8772,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: twohfluo
+  unique_name: twohfluo
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8787,7 +8787,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: twohphe
+  unique_name: twohphe
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8802,7 +8802,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: twoohnap
+  unique_name: twoohnap
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8817,7 +8817,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: tzen
+  unique_name: tzen
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8832,7 +8832,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: u
+  unique_name: u
   value_type: decimal
 - categorical: false
   default_unit: L
@@ -8846,7 +8846,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: uvolume
+  unique_name: uvolume
   value_type: decimal
 - categorical: false
   default_unit: L
@@ -8860,7 +8860,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: uvolumeday
+  unique_name: uvolumeday
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8875,7 +8875,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: v
+  unique_name: v
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8890,7 +8890,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: w
+  unique_name: w
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8905,7 +8905,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: ychlor
+  unique_name: ychlor
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8920,7 +8920,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: zan
+  unique_name: zan
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8935,7 +8935,7 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: zensulf
+  unique_name: zensulf
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
@@ -8950,5 +8950,5 @@ observable_properties:
   - sample
   relevant_observation_types:
   - sampling
-  shortname: zn
+  unique_name: zn
   value_type: decimal
