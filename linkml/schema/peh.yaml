@@ -255,6 +255,10 @@ classes:
     slots:
       - linktype
       - study_entity
+  StudyPopulation:
+    is_a: StudyEntity
+    slots:
+      - research_population_type
   Sample:
     is_a: StudyEntity
     slots:
@@ -537,6 +541,8 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: StudyStakeholder
+  research_population_type:
+    range: ResearchPopulationType
   study_roles:
     multivalued: true
     range: StudyRole
@@ -662,6 +668,13 @@ enums:
       broader:
       part_of:
       group_contains:
+  ResearchPopulationType:
+    permissible_values:
+      newborn:
+      adolescent:
+      mother:
+      parent:
+      pregnant_person:
   ObservableEntityType:
     permissible_values:
       person:
