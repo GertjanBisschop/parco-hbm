@@ -1,4 +1,4 @@
-observable_property_groups:
+observablepropertygroups:
 - description: tijdelijk
   id: '<TODO: nog aan te vullen effect>'
   is_abstract: false
@@ -47,7 +47,6 @@ observable_property_groups:
   is_abstract: false
   name: Animals
   parent_groups:
-  - Residence
   - Residence
   sort_order: 0.2
 - description: Aprotic solvents
@@ -460,7 +459,6 @@ observable_property_groups:
   name: General food
   parent_groups:
   - Nutricion and diet
-  - Nutricion and diet
   sort_order: 0.2
 - description: "This category contains all questions on general food consumption like\
     \ basic diet (vegetarian, gluten free,etc.) but also like if you use fresh butter\
@@ -527,7 +525,6 @@ observable_property_groups:
   is_abstract: false
   name: General physical activity
   parent_groups:
-  - Personal behavior
   - Personal behavior
   sort_order: 0.2
 - description: This category contains all questions on walking, working in the garden,
@@ -658,8 +655,6 @@ observable_property_groups:
   name: Housing
   parent_groups:
   - Residence
-  - Residence
-  - Residence
   sort_order: 0.2
 - description: 'This category contains all kinds of questions related to problems
     that can occur in the house: water leaks, moisture, mold, rot, condensation on
@@ -693,8 +688,6 @@ observable_property_groups:
   is_abstract: false
   name: Indoor environment
   parent_groups:
-  - Residence
-  - Residence
   - Residence
   sort_order: 0.2
 - description: identiek aan' Housing - Ventilation systems' ???
@@ -800,7 +793,6 @@ observable_property_groups:
   name: Local food
   parent_groups:
   - Nutricion and diet
-  - Nutricion and diet
   sort_order: 0.2
 - description: This category contains info on medication during pregnancy
   id: Medication during pregnancy
@@ -821,9 +813,6 @@ observable_property_groups:
   is_abstract: false
   name: Mental health
   parent_groups:
-  - Health data
-  - Health data
-  - Health data
   - Health data
   sort_order: 0.2
 - description: This category contains all measurements of metabolic hormones in human
@@ -938,10 +927,6 @@ observable_property_groups:
   name: Neuro development
   parent_groups:
   - Child development
-  - Child development
-  - Child development
-  - Child development
-  - Child development
   sort_order: 0.2
 - description: This category contains all questions related to problems with neuro-cognition
   id: Neuro general
@@ -955,7 +940,6 @@ observable_property_groups:
   is_abstract: false
   name: Neuro-cognition
   parent_groups:
-  - Health data
   - Health data
   sort_order: 0.2
 - description: This category contains all measurements related to nicotine
@@ -994,8 +978,6 @@ observable_property_groups:
   is_abstract: false
   name: Outdoor environment
   parent_groups:
-  - Residence
-  - Residence
   - Residence
   sort_order: 0.2
 - description: This category contains all questions related to terrace and garden
@@ -1142,10 +1124,6 @@ observable_property_groups:
   name: Personal care and hygiene
   parent_groups:
   - Personal exposure
-  - Personal exposure
-  - Personal exposure
-  - Personal exposure
-  - Personal exposure
   sort_order: 0.2
 - description: 1st level group for Personal exposure information
   id: Personal exposure
@@ -1224,16 +1202,6 @@ observable_property_groups:
   is_abstract: false
   name: Physical health
   parent_groups:
-  - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
   - Health data
   sort_order: 0.2
 - description: This category contains special questions on health that are only posed
@@ -1359,8 +1327,8 @@ observable_property_groups:
   is_abstract: true
   name: Recent personal exposure
   parent_groups:
-  - Exposure
   - Recent personal exposure
+  - Exposure
   sort_order: 0.1
 - description: This category contains questions including current and historical adress,
     hotspot zone, whether it is a deprived neighborhood, etc. The questions can be
@@ -1394,10 +1362,6 @@ observable_property_groups:
   name: Reproductive health
   parent_groups:
   - Health data
-  - Health data
-  - Health data
-  - Health data
-  - Health data
   sort_order: 0.2
 - description: 1st level group for Residence information
   id: Residence
@@ -1411,10 +1375,6 @@ observable_property_groups:
   is_abstract: false
   name: Sample information
   parent_groups:
-  - Questionnaire and sample information
-  - Questionnaire and sample information
-  - Questionnaire and sample information
-  - Questionnaire and sample information
   - Questionnaire and sample information
   sort_order: 0.2
 - description: This category contains all data relevant to the blood sampling collection,
@@ -1528,8 +1488,8 @@ observable_property_groups:
   is_abstract: true
   name: Study design
   parent_groups:
-  - Practical
   - Study design
+  - Practical
   sort_order: 0.1
 - description: 1st level group for Study information information
   id: Study information
