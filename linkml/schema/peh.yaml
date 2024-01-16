@@ -219,6 +219,7 @@ classes:
       - HasTranslations
       - HasContextAliases
     slots:
+      - default_language
       - project_stakeholders
       - study_id_list
   ProjectStakeholder:
@@ -232,6 +233,7 @@ classes:
     mixins:
       - HasTranslations
     slots:
+      - default_language
       - study_stakeholders
       - start_date
       - end_date
@@ -524,6 +526,7 @@ slots:
   geographic_scope:
   project:
     slot_uri: schema:ResearchProject
+  default_language:
   stakeholder:
     range: Stakeholder
   project_stakeholders:
