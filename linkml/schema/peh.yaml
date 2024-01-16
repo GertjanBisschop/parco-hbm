@@ -678,6 +678,7 @@ enums:
       mother:
       parent:
       pregnant_person:
+      household:
   ObservableEntityType:
     permissible_values:
       person:
@@ -706,14 +707,15 @@ enums:
   # Roles
   ProjectRole:
     permissible_values:
-      subsidising_party:
+      funding_partner:
       principal_investigator:
+      data_governance:
       data_controller:
       data_processor:
       data_user:
   StudyRole:
     permissible_values:
-      subsidising_party:
+      funding_partner:
       principal_investigator:
       data_controller:
       data_processor:
