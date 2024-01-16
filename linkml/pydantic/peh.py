@@ -63,6 +63,23 @@ class BioChemEntityLinkType(str, Enum):
     
     
 
+class ResearchPopulationType(str, Enum):
+    
+    
+    newborn = "newborn"
+    
+    adolescent = "adolescent"
+    
+    mother = "mother"
+    
+    parent = "parent"
+    
+    pregnant_person = "pregnant_person"
+    
+    household = "household"
+    
+    
+
 class ObservableEntityType(str, Enum):
     
     
@@ -120,9 +137,11 @@ class LinkType(str, Enum):
 class ProjectRole(str, Enum):
     
     
-    subsidising_party = "subsidising_party"
+    funding_partner = "funding_partner"
     
     principal_investigator = "principal_investigator"
+    
+    data_governance = "data_governance"
     
     data_controller = "data_controller"
     
@@ -135,7 +154,7 @@ class ProjectRole(str, Enum):
 class StudyRole(str, Enum):
     
     
-    subsidising_party = "subsidising_party"
+    funding_partner = "funding_partner"
     
     principal_investigator = "principal_investigator"
     
@@ -452,6 +471,7 @@ class Stakeholder(HasTranslations, NamedThing):
 
 class Project(HasTranslations, HasContextAliases, NamedThing):
     
+    default_language: Optional[str] = Field(None)
     project_stakeholders: Optional[List[ProjectStakeholder]] = Field(default_factory=list)
     study_id_list: Optional[List[str]] = Field(default_factory=list)
     translations: Optional[List[Translation]] = Field(default_factory=list)
@@ -472,41 +492,6 @@ class ProjectStakeholder(HasTranslations):
     
         
 
-class Study(HasTranslations, NamedThing):
-    
-    study_stakeholders: Optional[List[StudyStakeholder]] = Field(default_factory=list)
-    start_date: Optional[date] = Field(None)
-    end_date: Optional[date] = Field(None)
-    timepoint_id_list: Optional[List[str]] = Field(default_factory=list)
-    study_entities: Optional[List[str]] = Field(default_factory=list)
-    project_id_list: Optional[List[str]] = Field(default_factory=list)
-    translations: Optional[List[Translation]] = Field(default_factory=list)
-    id: str = Field(...)
-    unique_name: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    description: Optional[str] = Field(None)
-    label: Optional[str] = Field(None)
-    
-        
-
-class StudyStakeholder(ConfiguredBaseModel):
-    
-    stakeholder: Optional[str] = Field(None)
-    study_roles: Optional[List[StudyRole]] = Field(default_factory=list)
-    
-        
-
-class Timepoint(NamedThing):
-    
-    observations: Optional[List[Observation]] = Field(default_factory=list)
-    id: str = Field(...)
-    unique_name: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    description: Optional[str] = Field(None)
-    label: Optional[str] = Field(None)
-    
-        
-
 class StudyEntity(NamedThing):
     
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
@@ -522,6 +507,60 @@ class StudyEntityLink(ConfiguredBaseModel):
     
     linktype: Optional[LinkType] = Field(None)
     study_entity: Optional[str] = Field(None)
+    
+        
+
+class Study(StudyEntity, HasTranslations):
+    
+    default_language: Optional[str] = Field(None)
+    study_stakeholders: Optional[List[StudyStakeholder]] = Field(default_factory=list)
+    start_date: Optional[date] = Field(None)
+    end_date: Optional[date] = Field(None)
+    timepoint_id_list: Optional[List[str]] = Field(default_factory=list)
+    study_entities: Optional[List[str]] = Field(default_factory=list)
+    project_id_list: Optional[List[str]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
+    study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    id: str = Field(...)
+    unique_name: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    label: Optional[str] = Field(None)
+    
+        
+
+class StudyStakeholder(ConfiguredBaseModel):
+    
+    stakeholder: Optional[str] = Field(None)
+    study_roles: Optional[List[StudyRole]] = Field(default_factory=list)
+    
+        
+
+class Timepoint(StudyEntity):
+    
+    sort_order: Optional[Decimal] = Field(None)
+    start_date: Optional[date] = Field(None)
+    end_date: Optional[date] = Field(None)
+    observations: Optional[List[Observation]] = Field(default_factory=list)
+    study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    id: str = Field(...)
+    unique_name: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    label: Optional[str] = Field(None)
+    
+        
+
+class StudyPopulation(StudyEntity, HasContextAliases):
+    
+    research_population_type: Optional[ResearchPopulationType] = Field(None)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
+    study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    id: str = Field(...)
+    unique_name: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    label: Optional[str] = Field(None)
     
         
 
@@ -801,11 +840,12 @@ ValidationDesign.model_rebuild()
 Stakeholder.model_rebuild()
 Project.model_rebuild()
 ProjectStakeholder.model_rebuild()
+StudyEntity.model_rebuild()
+StudyEntityLink.model_rebuild()
 Study.model_rebuild()
 StudyStakeholder.model_rebuild()
 Timepoint.model_rebuild()
-StudyEntity.model_rebuild()
-StudyEntityLink.model_rebuild()
+StudyPopulation.model_rebuild()
 Sample.model_rebuild()
 StudySubject.model_rebuild()
 Person.model_rebuild()

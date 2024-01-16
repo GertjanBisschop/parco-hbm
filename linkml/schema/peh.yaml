@@ -228,8 +228,17 @@ classes:
       - project_roles
     mixins:
       - HasTranslations
-  Study:
+  StudyEntity:
+    abstract: true
     is_a: NamedThing
+    slots:
+      - study_entity_links
+  StudyEntityLink:
+    slots:
+      - linktype
+      - study_entity
+  Study:
+    is_a: StudyEntity
     mixins:
       - HasTranslations
     slots:
@@ -245,23 +254,16 @@ classes:
       - stakeholder
       - study_roles
   Timepoint:
-    is_a: NamedThing
+    is_a: StudyEntity
     slots:
       - sort_order
       - start_date
       - end_date
       - observations
-  StudyEntity:
-    abstract: true
-    is_a: NamedThing
-    slots:
-      - study_entity_links
-  StudyEntityLink:
-    slots:
-      - linktype
-      - study_entity
   StudyPopulation:
     is_a: StudyEntity
+    mixins:
+      - HasContextAliases
     slots:
       - research_population_type
   Sample:

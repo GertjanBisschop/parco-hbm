@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-11T21:27:53
+# Generation date: 2024-01-16T09:14:50
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -94,15 +94,19 @@ class ProjectId(NamedThingId):
     pass
 
 
-class StudyId(NamedThingId):
-    pass
-
-
-class TimepointId(NamedThingId):
-    pass
-
-
 class StudyEntityId(NamedThingId):
+    pass
+
+
+class StudyId(StudyEntityId):
+    pass
+
+
+class TimepointId(StudyEntityId):
+    pass
+
+
+class StudyPopulationId(StudyEntityId):
     pass
 
 
@@ -991,6 +995,7 @@ class Project(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Project
 
     id: Union[str, ProjectId] = None
+    default_language: Optional[str] = None
     project_stakeholders: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
     study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
@@ -1001,6 +1006,9 @@ class Project(NamedThing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProjectId):
             self.id = ProjectId(self.id)
+
+        if self.default_language is not None and not isinstance(self.default_language, str):
+            self.default_language = str(self.default_language)
 
         if not isinstance(self.project_stakeholders, list):
             self.project_stakeholders = [self.project_stakeholders] if self.project_stakeholders is not None else []
@@ -1050,7 +1058,49 @@ class ProjectStakeholder(YAMLRoot):
 
 
 @dataclass
-class Study(NamedThing):
+class StudyEntity(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["StudyEntity"]
+    class_class_curie: ClassVar[str] = "peh:StudyEntity"
+    class_name: ClassVar[str] = "StudyEntity"
+    class_model_uri: ClassVar[URIRef] = PEH.StudyEntity
+
+    id: Union[str, StudyEntityId] = None
+    study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.study_entity_links, list):
+            self.study_entity_links = [self.study_entity_links] if self.study_entity_links is not None else []
+        self.study_entity_links = [v if isinstance(v, StudyEntityLink) else StudyEntityLink(**as_dict(v)) for v in self.study_entity_links]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class StudyEntityLink(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["StudyEntityLink"]
+    class_class_curie: ClassVar[str] = "peh:StudyEntityLink"
+    class_name: ClassVar[str] = "StudyEntityLink"
+    class_model_uri: ClassVar[URIRef] = PEH.StudyEntityLink
+
+    linktype: Optional[Union[str, "LinkType"]] = None
+    study_entity: Optional[Union[str, StudyEntityId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.linktype is not None and not isinstance(self.linktype, LinkType):
+            self.linktype = LinkType(self.linktype)
+
+        if self.study_entity is not None and not isinstance(self.study_entity, StudyEntityId):
+            self.study_entity = StudyEntityId(self.study_entity)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Study(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEH["Study"]
@@ -1059,6 +1109,7 @@ class Study(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Study
 
     id: Union[str, StudyId] = None
+    default_language: Optional[str] = None
     study_stakeholders: Optional[Union[Union[dict, "StudyStakeholder"], List[Union[dict, "StudyStakeholder"]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
@@ -1072,6 +1123,9 @@ class Study(NamedThing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyId):
             self.id = StudyId(self.id)
+
+        if self.default_language is not None and not isinstance(self.default_language, str):
+            self.default_language = str(self.default_language)
 
         if not isinstance(self.study_stakeholders, list):
             self.study_stakeholders = [self.study_stakeholders] if self.study_stakeholders is not None else []
@@ -1126,7 +1180,7 @@ class StudyStakeholder(YAMLRoot):
 
 
 @dataclass
-class Timepoint(NamedThing):
+class Timepoint(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEH["Timepoint"]
@@ -1135,6 +1189,9 @@ class Timepoint(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Timepoint
 
     id: Union[str, TimepointId] = None
+    sort_order: Optional[Decimal] = None
+    start_date: Optional[Union[str, XSDDate]] = None
+    end_date: Optional[Union[str, XSDDate]] = None
     observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1143,49 +1200,45 @@ class Timepoint(NamedThing):
         if not isinstance(self.id, TimepointId):
             self.id = TimepointId(self.id)
 
+        if self.sort_order is not None and not isinstance(self.sort_order, Decimal):
+            self.sort_order = Decimal(self.sort_order)
+
+        if self.start_date is not None and not isinstance(self.start_date, XSDDate):
+            self.start_date = XSDDate(self.start_date)
+
+        if self.end_date is not None and not isinstance(self.end_date, XSDDate):
+            self.end_date = XSDDate(self.end_date)
+
         self._normalize_inlined_as_list(slot_name="observations", slot_type=Observation, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class StudyEntity(NamedThing):
+class StudyPopulation(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEH["StudyEntity"]
-    class_class_curie: ClassVar[str] = "peh:StudyEntity"
-    class_name: ClassVar[str] = "StudyEntity"
-    class_model_uri: ClassVar[URIRef] = PEH.StudyEntity
+    class_class_uri: ClassVar[URIRef] = PEH["StudyPopulation"]
+    class_class_curie: ClassVar[str] = "peh:StudyPopulation"
+    class_name: ClassVar[str] = "StudyPopulation"
+    class_model_uri: ClassVar[URIRef] = PEH.StudyPopulation
 
-    id: Union[str, StudyEntityId] = None
-    study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.study_entity_links, list):
-            self.study_entity_links = [self.study_entity_links] if self.study_entity_links is not None else []
-        self.study_entity_links = [v if isinstance(v, StudyEntityLink) else StudyEntityLink(**as_dict(v)) for v in self.study_entity_links]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class StudyEntityLink(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["StudyEntityLink"]
-    class_class_curie: ClassVar[str] = "peh:StudyEntityLink"
-    class_name: ClassVar[str] = "StudyEntityLink"
-    class_model_uri: ClassVar[URIRef] = PEH.StudyEntityLink
-
-    linktype: Optional[Union[str, "LinkType"]] = None
-    study_entity: Optional[Union[str, StudyEntityId]] = None
+    id: Union[str, StudyPopulationId] = None
+    research_population_type: Optional[Union[str, "ResearchPopulationType"]] = None
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.linktype is not None and not isinstance(self.linktype, LinkType):
-            self.linktype = LinkType(self.linktype)
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyPopulationId):
+            self.id = StudyPopulationId(self.id)
 
-        if self.study_entity is not None and not isinstance(self.study_entity, StudyEntityId):
-            self.study_entity = StudyEntityId(self.study_entity)
+        if self.research_population_type is not None and not isinstance(self.research_population_type, ResearchPopulationType):
+            self.research_population_type = ResearchPopulationType(self.research_population_type)
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -1789,6 +1842,19 @@ class BioChemEntityLinkType(EnumDefinitionImpl):
         name="BioChemEntityLinkType",
     )
 
+class ResearchPopulationType(EnumDefinitionImpl):
+
+    newborn = PermissibleValue(text="newborn")
+    adolescent = PermissibleValue(text="adolescent")
+    mother = PermissibleValue(text="mother")
+    parent = PermissibleValue(text="parent")
+    pregnant_person = PermissibleValue(text="pregnant_person")
+    household = PermissibleValue(text="household")
+
+    _defn = EnumDefinition(
+        name="ResearchPopulationType",
+    )
+
 class ObservableEntityType(EnumDefinitionImpl):
 
     person = PermissibleValue(text="person")
@@ -1836,8 +1902,9 @@ class LinkType(EnumDefinitionImpl):
 
 class ProjectRole(EnumDefinitionImpl):
 
-    subsidising_party = PermissibleValue(text="subsidising_party")
+    funding_partner = PermissibleValue(text="funding_partner")
     principal_investigator = PermissibleValue(text="principal_investigator")
+    data_governance = PermissibleValue(text="data_governance")
     data_controller = PermissibleValue(text="data_controller")
     data_processor = PermissibleValue(text="data_processor")
     data_user = PermissibleValue(text="data_user")
@@ -1848,7 +1915,7 @@ class ProjectRole(EnumDefinitionImpl):
 
 class StudyRole(EnumDefinitionImpl):
 
-    subsidising_party = PermissibleValue(text="subsidising_party")
+    funding_partner = PermissibleValue(text="funding_partner")
     principal_investigator = PermissibleValue(text="principal_investigator")
     data_controller = PermissibleValue(text="data_controller")
     data_processor = PermissibleValue(text="data_processor")
@@ -2096,6 +2163,9 @@ slots.geographic_scope = Slot(uri=PEH.geographic_scope, name="geographic_scope",
 slots.project = Slot(uri=SCHEMA.ResearchProject, name="project", curie=SCHEMA.curie('ResearchProject'),
                    model_uri=PEH.project, domain=None, range=Optional[str])
 
+slots.default_language = Slot(uri=PEH.default_language, name="default_language", curie=PEH.curie('default_language'),
+                   model_uri=PEH.default_language, domain=None, range=Optional[str])
+
 slots.stakeholder = Slot(uri=PEH.stakeholder, name="stakeholder", curie=PEH.curie('stakeholder'),
                    model_uri=PEH.stakeholder, domain=None, range=Optional[Union[str, StakeholderId]])
 
@@ -2113,6 +2183,9 @@ slots.project_roles = Slot(uri=PEH.project_roles, name="project_roles", curie=PE
 
 slots.study_stakeholders = Slot(uri=PEH.study_stakeholders, name="study_stakeholders", curie=PEH.curie('study_stakeholders'),
                    model_uri=PEH.study_stakeholders, domain=None, range=Optional[Union[Union[dict, StudyStakeholder], List[Union[dict, StudyStakeholder]]]])
+
+slots.research_population_type = Slot(uri=PEH.research_population_type, name="research_population_type", curie=PEH.curie('research_population_type'),
+                   model_uri=PEH.research_population_type, domain=None, range=Optional[Union[str, "ResearchPopulationType"]])
 
 slots.study_roles = Slot(uri=PEH.study_roles, name="study_roles", curie=PEH.curie('study_roles'),
                    model_uri=PEH.study_roles, domain=None, range=Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]])
