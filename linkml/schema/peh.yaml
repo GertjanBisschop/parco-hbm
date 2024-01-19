@@ -266,10 +266,18 @@ classes:
       - HasContextAliases
     slots:
       - research_population_type
+  SampleCollection:
+    is_a: StudyEntity
+    slots:
+      - matrix
+      - constraints
+      - remarks
   Sample:
     is_a: StudyEntity
     slots:
       - matrix
+      - constraints
+      - remarks
   StudySubject:
     is_a: StudyEntity
   Person:
@@ -302,6 +310,14 @@ classes:
   ObservationDesign:
     slots:
       - observation_sets
+  MetadataDesign:
+    is_a: ObservationDesign
+  QuestionnaireDesign:
+    is_a: ObservationDesign
+  SamplingDesign:
+    is_a: ObservationDesign
+  GeospatialDesign:
+    is_a: ObservationDesign
   ObservationSet:
     slots:
       - observable_entity_type
@@ -310,6 +326,14 @@ classes:
   ObservationResult:
     slots:
       - observed_values
+  MetadataResult:
+    is_a: ObservationResult
+  QuestionnaireResult:
+    is_a: ObservationResult
+  SamplingResult:
+    is_a: ObservationResult
+  GeospatialResult:
+    is_a: ObservationResult
   ObservedValue:
     slots:
       - observable_entity
@@ -449,9 +473,10 @@ slots:
     range: Matrix
   matrix:
     range: Matrix
+  remarks:
+    multivalued: true
   constraints:
     multivalued: true
-    inlined_as_list: true
   relevant_observable_entity_types:
     multivalued: true
     range: ObservableEntityType

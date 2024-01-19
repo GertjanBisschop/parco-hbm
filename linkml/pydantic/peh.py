@@ -704,6 +704,30 @@ class ObservationDesign(ConfiguredBaseModel):
     
         
 
+class MetadataDesign(ObservationDesign):
+    
+    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    
+        
+
+class QuestionnaireDesign(ObservationDesign):
+    
+    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    
+        
+
+class SamplingDesign(ObservationDesign):
+    
+    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    
+        
+
+class GeospatialDesign(ObservationDesign):
+    
+    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    
+        
+
 class ObservationSet(ConfiguredBaseModel):
     
     observable_entity_type: Optional[ObservableEntityType] = Field(None)
@@ -713,6 +737,30 @@ class ObservationSet(ConfiguredBaseModel):
         
 
 class ObservationResult(ConfiguredBaseModel):
+    
+    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
+    
+        
+
+class MetadataResult(ObservationResult):
+    
+    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
+    
+        
+
+class QuestionnaireResult(ObservationResult):
+    
+    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
+    
+        
+
+class SamplingResult(ObservationResult):
+    
+    observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
+    
+        
+
+class GeospatialResult(ObservationResult):
     
     observed_values: Optional[List[ObservedValue]] = Field(default_factory=list)
     
@@ -858,8 +906,16 @@ QuestionnaireObservation.model_rebuild()
 SamplingObservation.model_rebuild()
 GeospatialObservation.model_rebuild()
 ObservationDesign.model_rebuild()
+MetadataDesign.model_rebuild()
+QuestionnaireDesign.model_rebuild()
+SamplingDesign.model_rebuild()
+GeospatialDesign.model_rebuild()
 ObservationSet.model_rebuild()
 ObservationResult.model_rebuild()
+MetadataResult.model_rebuild()
+QuestionnaireResult.model_rebuild()
+SamplingResult.model_rebuild()
+GeospatialResult.model_rebuild()
 ObservedValue.model_rebuild()
 DataRequest.model_rebuild()
 ObservedEntityProperty.model_rebuild()

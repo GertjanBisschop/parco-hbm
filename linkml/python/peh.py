@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-16T09:14:50
+# Generation date: 2024-01-16T09:52:00
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1501,6 +1501,42 @@ class ObservationDesign(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+class MetadataDesign(ObservationDesign):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["MetadataDesign"]
+    class_class_curie: ClassVar[str] = "peh:MetadataDesign"
+    class_name: ClassVar[str] = "MetadataDesign"
+    class_model_uri: ClassVar[URIRef] = PEH.MetadataDesign
+
+
+class QuestionnaireDesign(ObservationDesign):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["QuestionnaireDesign"]
+    class_class_curie: ClassVar[str] = "peh:QuestionnaireDesign"
+    class_name: ClassVar[str] = "QuestionnaireDesign"
+    class_model_uri: ClassVar[URIRef] = PEH.QuestionnaireDesign
+
+
+class SamplingDesign(ObservationDesign):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["SamplingDesign"]
+    class_class_curie: ClassVar[str] = "peh:SamplingDesign"
+    class_name: ClassVar[str] = "SamplingDesign"
+    class_model_uri: ClassVar[URIRef] = PEH.SamplingDesign
+
+
+class GeospatialDesign(ObservationDesign):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["GeospatialDesign"]
+    class_class_curie: ClassVar[str] = "peh:GeospatialDesign"
+    class_name: ClassVar[str] = "GeospatialDesign"
+    class_model_uri: ClassVar[URIRef] = PEH.GeospatialDesign
+
+
 @dataclass
 class ObservationSet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
@@ -1546,6 +1582,42 @@ class ObservationResult(YAMLRoot):
         self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
 
         super().__post_init__(**kwargs)
+
+
+class MetadataResult(ObservationResult):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["MetadataResult"]
+    class_class_curie: ClassVar[str] = "peh:MetadataResult"
+    class_name: ClassVar[str] = "MetadataResult"
+    class_model_uri: ClassVar[URIRef] = PEH.MetadataResult
+
+
+class QuestionnaireResult(ObservationResult):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["QuestionnaireResult"]
+    class_class_curie: ClassVar[str] = "peh:QuestionnaireResult"
+    class_name: ClassVar[str] = "QuestionnaireResult"
+    class_model_uri: ClassVar[URIRef] = PEH.QuestionnaireResult
+
+
+class SamplingResult(ObservationResult):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["SamplingResult"]
+    class_class_curie: ClassVar[str] = "peh:SamplingResult"
+    class_name: ClassVar[str] = "SamplingResult"
+    class_model_uri: ClassVar[URIRef] = PEH.SamplingResult
+
+
+class GeospatialResult(ObservationResult):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["GeospatialResult"]
+    class_class_curie: ClassVar[str] = "peh:GeospatialResult"
+    class_name: ClassVar[str] = "GeospatialResult"
+    class_model_uri: ClassVar[URIRef] = PEH.GeospatialResult
 
 
 @dataclass
