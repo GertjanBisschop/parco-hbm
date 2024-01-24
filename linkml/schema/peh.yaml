@@ -221,6 +221,8 @@ classes:
     slots:
       - default_language
       - project_stakeholders
+      - start_date
+      - end_date
       - study_id_list
   ProjectStakeholder:
     slots:
