@@ -506,8 +506,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: N-acetyl-S-(2-carbamoyl-ethyl)cysteine
-  groups:
-  - Acrylamide
   id: aama
   label: AAMA
   name: aama
@@ -521,8 +519,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: N-acetyl-S-(2-carbamoyl-ethyl)-L-cysteine-sulfoxide
-  groups:
-  - Acrylamide
   id: aamasulf
   label: AAMA-sulf
   name: aamasulf
@@ -536,8 +532,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Acenaphthene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: ace
   label: ACE
   name: ace
@@ -551,8 +545,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cis-chlordane
-  groups:
-  - Pesticides
   id: achlor
   label: "\xCE\xB1-chlordane"
   name: achlor
@@ -566,8 +558,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Acenaphthylene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: acy
   label: ACY
   name: acy
@@ -581,8 +571,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/mL"
   description: Adiponectine
-  groups:
-  - Lab markers for cardiometabolic health and metabolic diseases
   id: adipon
   name: adipon
   relevant_observable_entity_types:
@@ -595,8 +583,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Anti-dechlorane plus
-  groups:
-  - Flame retardants
   id: adp
   label: Anti-DP
   name: adp
@@ -610,8 +596,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: AFB-N7-guanine
-  groups:
-  - Mycotoxins
   id: afbgua
   name: afbgua
   relevant_observable_entity_types:
@@ -624,8 +608,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aflatoxin B1
-  groups:
-  - Mycotoxins
   id: afbone
   label: AFB1
   name: afbone
@@ -639,8 +621,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aflatoxin B2
-  groups:
-  - Mycotoxins
   id: afbtwo
   label: AFB2
   name: afbtwo
@@ -654,8 +634,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aflatoxin G1
-  groups:
-  - Mycotoxins
   id: afgone
   label: AFG1
   name: afgone
@@ -669,8 +647,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aflatoxin G2
-  groups:
-  - Mycotoxins
   id: afgtwo
   label: AFG2
   name: afgtwo
@@ -684,8 +660,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aflatoxin M1
-  groups:
-  - Mycotoxins
   id: afm
   label: AFM1
   name: afm
@@ -699,8 +673,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Argentum
-  groups:
-  - Metals
   id: ag
   label: Ag
   name: ag
@@ -714,8 +686,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Alpha-hexachlorocyclohexane
-  groups:
-  - Pesticides
   id: ahch
   label: "\xCE\xB1-HCH"
   name: ahch
@@ -729,8 +699,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tonalide
-  groups:
-  - Musks
   id: ahtn
   label: AHTN
   name: ahtn
@@ -744,8 +712,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aluminium
-  groups:
-  - Metals
   id: al
   label: Al
   name: al
@@ -759,8 +725,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-Chloro-N-(2,6-diethylphenyl)-N-(methoxymethyl)acetamide
-  groups:
-  - Herbicides
   id: alchlor
   label: Alachlor
   name: alchlor
@@ -774,8 +738,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aldrin
-  groups:
-  - Pesticides
   id: aldrin
   label: Aldrin
   name: aldrin
@@ -789,8 +751,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Alachlor mercapturate
-  groups:
-  - Herbicides
   id: almer
   name: almer
   relevant_observable_entity_types:
@@ -803,8 +763,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: N-Acetyl-S-(N-methylcarbamoyl)cysteine
-  groups:
-  - Aprotic solvents
   id: amcc
   label: AMCC
   name: amcc
@@ -818,8 +776,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Alternariol Monomethyl Ether
-  groups:
-  - Mycotoxins
   id: ame
   label: AME
   name: ame
@@ -833,8 +789,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Aminomethylyphosphonic acid
-  groups:
-  - Pesticides
   id: ampa
   label: AMPA
   name: ampa
@@ -848,8 +802,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Anthracene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: an
   label: AN
   name: an
@@ -863,8 +815,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Alternariol
-  groups:
-  - Mycotoxins
   id: aoh
   label: AOH
   name: aoh
@@ -878,8 +828,6 @@ observable_properties:
 - categorical: false
   default_unit: g/L
   description: Apolipoprotein-A1
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: apoa1
   label: APOB
   name: apoa1
@@ -893,8 +841,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/mL"
   description: Lipoprotein A
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: apoa2
   name: apoa2
   relevant_observable_entity_types:
@@ -907,8 +853,6 @@ observable_properties:
 - categorical: false
   default_unit: g/L
   description: Apolipoprotein B
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: apob100
   name: apob100
   relevant_observable_entity_types:
@@ -921,8 +865,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Arsenobetaine
-  groups:
-  - Metals
   id: asb
   label: AsB
   name: asb
@@ -936,8 +878,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Arsenic(V) acid
-  groups:
-  - Metals
   id: asfive
   label: As(V)
   name: asfive
@@ -951,8 +891,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Arsenic(III) acid
-  groups:
-  - Metals
   id: asthree
   label: As(III)
   name: asthree
@@ -966,8 +904,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Atrazine mercapturate
-  groups:
-  - Herbicides
   id: atmer
   name: atmer
   relevant_observable_entity_types:
@@ -980,8 +916,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Atrazine
-  groups:
-  - Herbicides
   id: atrz
   name: atrz
   relevant_observable_entity_types:
@@ -994,8 +928,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Gold
-  groups:
-  - Metals
   id: au
   label: Au
   name: au
@@ -1008,9 +940,7 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: "\xCE\u2018-zearalanol"
-  groups:
-  - Mycotoxins
+  description: "\xCE\xB1-zearalanol"
   id: azal
   label: "\xCE\xB1-ZAL"
   name: azal
@@ -1023,9 +953,7 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: "\xCE\u2018-zearalenol Free"
-  groups:
-  - Mycotoxins
+  description: "\xCE\xB1-zearalenol Free"
   id: azel
   label: "\xCE\xB1-ZEL"
   name: azel
@@ -1039,8 +967,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Boron
-  groups:
-  - Metals
   id: b
   label: B
   name: b
@@ -1054,8 +980,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Barium
-  groups:
-  - Metals
   id: ba
   label: Ba
   name: ba
@@ -1069,8 +993,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benz[a]anthracene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: baa
   label: BaA
   name: baa
@@ -1084,8 +1006,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-butoxyacetic acid
-  groups:
-  - Glycol ethers
   id: baac
   label: BAA
   name: baac
@@ -1099,8 +1019,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzo[a]pyrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: bap
   label: BaP
   name: bap
@@ -1114,8 +1032,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxyethyl bis(2-butoxyethyl) phosphate
-  groups:
-  - Flame retardants
   id: bboehep
   label: BBOEHEP
   name: bboehep
@@ -1129,8 +1045,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bis(2-butoxyethyl) phosphate
-  groups:
-  - Flame retardants
   id: bboephr
   label: BBOEP
   name: bboephr
@@ -1144,8 +1058,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bis(2-chloroethyl) phosphate
-  groups:
-  - Flame retardants
   id: bcepms
   label: BCEP
   name: bcepms
@@ -1159,8 +1071,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxy-2propyl bis (1-chloro-2-propyl) phosphate
-  groups:
-  - Flame retardants
   id: bciphipp
   label: BCIPHIPP
   name: bciphipp
@@ -1174,8 +1084,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bis(1-chloro-2-propyl) phosphate
-  groups:
-  - Flame retardants
   id: bcippms
   label: BCIPP
   name: bcippms
@@ -1189,8 +1097,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bis(1,3-dichloro-2-propyl) phosphate
-  groups:
-  - Flame retardants
   id: bdcippms
   label: BDCIPP
   name: bdcippms
@@ -1204,8 +1110,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 15
-  groups:
-  - Flame retardants
   id: bde15
   label: BDE-15
   name: bde15
@@ -1219,8 +1123,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 17
-  groups:
-  - Flame retardants
   id: bde17
   label: BDE-17
   name: bde17
@@ -1234,8 +1136,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,2',3,3',4,4',5,6'-Octabromodiphenyl ether
-  groups:
-  - Flame retardants
   id: bde196
   label: BDE-196
   name: bde196
@@ -1249,8 +1149,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,2',3,3',4,4',6,6'-Octabromodiphenyl ether
-  groups:
-  - Flame retardants
   id: bde197
   label: BDE-197
   name: bde197
@@ -1264,8 +1162,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,2',3,4,4',5,5',6-Octabromodiphenyl ether
-  groups:
-  - Flame retardants
   id: bde203
   label: BDE-203
   name: bde203
@@ -1279,8 +1175,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 25
-  groups:
-  - Flame retardants
   id: bde25
   label: BDE-25
   name: bde25
@@ -1294,8 +1188,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 33
-  groups:
-  - Flame retardants
   id: bde33
   label: BDE-33
   name: bde33
@@ -1309,8 +1201,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 28
-  groups:
-  - Flame retardants
   id: bdea
   label: BDE-28
   name: bdea
@@ -1324,8 +1214,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 47
-  groups:
-  - Flame retardants
   id: bdeb
   label: BDE-47
   name: bdeb
@@ -1339,8 +1227,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 99
-  groups:
-  - Flame retardants
   id: bdec
   label: BDE-99
   name: bdec
@@ -1354,8 +1240,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 100
-  groups:
-  - Flame retardants
   id: bded
   label: BDE-100
   name: bded
@@ -1369,8 +1253,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 153
-  groups:
-  - Flame retardants
   id: bdee
   label: BDE-153
   name: bdee
@@ -1384,8 +1266,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 154
-  groups:
-  - Flame retardants
   id: bdef
   label: BDE-154
   name: bdef
@@ -1399,8 +1279,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 183
-  groups:
-  - Flame retardants
   id: bdeg
   label: BDE-183
   name: bdeg
@@ -1414,8 +1292,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 209
-  groups:
-  - Flame retardants
   id: bdeh
   label: BDE-209
   name: bdeh
@@ -1429,8 +1305,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 66
-  groups:
-  - Flame retardants
   id: bdei
   label: BDE-66
   name: bdei
@@ -1444,8 +1318,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 71
-  groups:
-  - Flame retardants
   id: bdej
   label: BDE-71
   name: bdej
@@ -1459,8 +1331,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 75
-  groups:
-  - Flame retardants
   id: bdek
   label: BDE-75
   name: bdek
@@ -1474,8 +1344,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 77
-  groups:
-  - Flame retardants
   id: bdel
   label: BDE-77
   name: bdel
@@ -1489,8 +1357,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 85
-  groups:
-  - Flame retardants
   id: bdem
   label: BDE-85
   name: bdem
@@ -1504,8 +1370,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 119
-  groups:
-  - Flame retardants
   id: bden
   label: BDE-119
   name: bden
@@ -1519,8 +1383,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polybrominated diphenylether 138
-  groups:
-  - Flame retardants
   id: bdeo
   label: BDE-138
   name: bdeo
@@ -1534,8 +1396,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/mL
   description: BDNF
-  groups:
-  - '<TODO: nog aan te vullen effect>'
   id: bdnf
   name: bdnf
   relevant_observable_entity_types:
@@ -1548,8 +1408,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Berylium
-  groups:
-  - Metals
   id: be
   label: Be
   name: be
@@ -1563,8 +1421,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzylparaben
-  groups:
-  - Parabens
   id: benpar
   name: benpar
   relevant_observable_entity_types:
@@ -1577,8 +1433,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzo[g,h,i]perylene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: bghip
   label: BghiP
   name: bghip
@@ -1592,8 +1446,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Beta-hexachlorocyclohexane
-  groups:
-  - Pesticides
   id: bhch
   label: bHCH
   name: bhch
@@ -1607,8 +1459,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bismuth
-  groups:
-  - Metals
   id: bi
   label: Bi
   name: bi
@@ -1622,8 +1472,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Boscalid
-  groups:
-  - Pesticides
   id: boscalid
   label: BOSCALID
   name: boscalid
@@ -1637,8 +1485,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzophenone
-  groups:
-  - UV-filters (benzophenones)
   id: bp
   label: BP
   name: bp
@@ -1652,8 +1498,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol A total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bpa
   label: BPA total
   name: bpa
@@ -1667,8 +1511,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol AF total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bpaf
   label: BPAF total
   name: bpaf
@@ -1682,8 +1524,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol B total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bpb
   label: BPB total
   name: bpb
@@ -1697,8 +1537,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol C total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bpc
   label: BPC total
   name: bpc
@@ -1712,8 +1550,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol F total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bpf
   label: BPF total
   name: bpf
@@ -1727,8 +1563,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzophenone 1
-  groups:
-  - UV-filters (benzophenones)
   id: bpone
   label: BP-1
   name: bpone
@@ -1742,8 +1576,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol S total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bps
   label: BPS total
   name: bps
@@ -1757,8 +1589,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzophenone 7
-  groups:
-  - UV-filters (benzophenones)
   id: bpseven
   label: BP-7
   name: bpseven
@@ -1772,8 +1602,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzophenone 3
-  groups:
-  - UV-filters (benzophenones)
   id: bpthree
   label: BP-3
   name: bpthree
@@ -1787,8 +1615,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Benzophenone 2
-  groups:
-  - UV-filters (benzophenones)
   id: bptwo
   label: BP-2
   name: bptwo
@@ -1802,8 +1628,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol Z total (free+ conjugated)
-  groups:
-  - Bisphenols
   id: bpz
   label: BPZ total
   name: bpz
@@ -1817,8 +1641,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2 bis(2,4,6-tribromophenoxy)ethane
-  groups:
-  - Flame retardants
   id: btbpe
   label: BTBPE
   name: btbpe
@@ -1832,8 +1654,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Butylparaben
-  groups:
-  - Parabens
   id: butpar
   name: butpar
   relevant_observable_entity_types:
@@ -1845,9 +1665,7 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: "\xCE\u2019-zearalanol"
-  groups:
-  - Mycotoxins
+  description: "\xCE\xB2-zearalanol"
   id: bzal
   label: "\xCE\xB2-ZAL"
   name: bzal
@@ -1860,9 +1678,7 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: "\xCE\u2019-zearalenol Free"
-  groups:
-  - Mycotoxins
+  description: "\xCE\xB2-zearalenol Free"
   id: bzel
   label: "\xCE\xB2-ZEL"
   name: bzel
@@ -1876,8 +1692,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Calcium
-  groups:
-  - Metals
   id: ca
   label: Ca
   name: ca
@@ -1891,8 +1705,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Carbofuran-phenol
-  groups:
-  - Pesticides (carbamate)
   id: carphe
   label: carbofuran-phenol
   name: carphe
@@ -1906,8 +1718,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cadmium
-  groups:
-  - Metals
   id: cd
   label: Cd
   name: cd
@@ -1921,8 +1731,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-(2,2-dichlorovinyl)-2,2-dimethylycyclopropane carboxylic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: cdcca
   label: cis-DCCA
   name: cdcca
@@ -1936,8 +1744,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cerium
-  groups:
-  - Metals
   id: ce
   label: Ce
   name: ce
@@ -1951,8 +1757,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chlorpyrifos-methyl
-  groups:
-  - Pesticides
   id: chlormet
   label: chlorpyrifos-methyl
   name: chlormet
@@ -1966,8 +1770,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chlorpyrifos-methyl-oxon
-  groups:
-  - Pesticides
   id: chlormetox
   label: chlorpyrifos-methyl-oxon
   name: chlormetox
@@ -1981,8 +1783,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chlorpyrifos-oxon
-  groups:
-  - Pesticides
   id: chlorox
   label: chlorpyrifos-oxon
   name: chlorox
@@ -1996,8 +1796,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chlorpyrifos
-  groups:
-  - Pesticides
   id: chlorpyr
   label: chlorpyrifos
   name: chlorpyr
@@ -2011,8 +1809,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-(3-Chloro-4-methylphenyl)-1,1-dimethylurea
-  groups:
-  - Herbicides
   id: chltr
   label: Chlortoluron
   name: chltr
@@ -2026,8 +1822,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: Cholesterol
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: chol
   label: CHOL
   name: chol
@@ -2048,8 +1842,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chlorotrifluorovinylcyclo-propane carboxylic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: cifca
   label: CIF3CA
   name: cifca
@@ -2063,8 +1855,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cis-3-(2,2-dibromovinyl)-2,2-dimethylcyclopropane-1-carboxylic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: cisdbca
   label: cis-DBCA
   name: cisdbca
@@ -2078,8 +1868,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Heptachlor exo-epoxide (cis)
-  groups:
-  - Pesticides
   id: cishepexepo
   name: cishepexepo
   relevant_observable_entity_types:
@@ -2092,8 +1880,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cis-nonachlor
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: cisnonac
   name: cisnonac
   relevant_observable_entity_types:
@@ -2106,8 +1892,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Citrinin
-  groups:
-  - Mycotoxins
   id: cit
   label: CIT
   name: cit
@@ -2121,8 +1905,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cobalt
-  groups:
-  - Metals
   id: co
   label: Co
   name: co
@@ -2136,8 +1918,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cotinine
-  groups:
-  - Alkaloid
   id: cot
   name: cot
   relevant_observable_entity_types:
@@ -2148,10 +1928,8 @@ observable_properties:
   unique_name: cot
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: mg/dL
   description: Creatinine
-  groups:
-  - Property of urine
   id: crt
   label: CRT
   name: crt
@@ -2161,12 +1939,17 @@ observable_properties:
   relevant_observation_types:
   - sampling
   unique_name: crt
+  value_metadata:
+  - field:
+      name: min
+    value: 5.0
+  - field:
+      name: max
+    value: 500.0
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chrysene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: cry
   label: CRY
   name: cry
@@ -2180,8 +1963,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cesium
-  groups:
-  - Metals
   id: cs
   label: Cs
   name: cs
@@ -2195,8 +1976,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Copper
-  groups:
-  - Metals
   id: cu
   label: Cu
   name: cu
@@ -2210,8 +1989,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-carboxy-pentyl) phthalate
-  groups:
-  - Phthalates
   id: cxmepp
   label: 5cx-MEPP
   name: cxmepp
@@ -2225,8 +2002,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-mono-(2-ethyl-5-carboxyl-pentyl) benzene-1,4-dicarboxylate
-  groups:
-  - Phthalates
   id: cxmeptp
   label: 5cx-MEPTP
   name: cxmeptp
@@ -2240,8 +2015,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono(2,7-methyl-7-carboxy-heptyl) phthalate
-  groups:
-  - Phthalates
   id: cxmidp
   label: cx-MiDP
   name: cxmidp
@@ -2255,8 +2028,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-mono-(2-carboxyl-methyl-hexyl) benzene-1,4-dicarboxylate
-  groups:
-  - Phthalates
   id: cxmmhtp
   label: 2cx-MMHTP
   name: cxmmhtp
@@ -2270,8 +2041,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-(2-propyl-6-carboxyhexyl) phthalate
-  groups:
-  - Phthalates
   id: cxmphp
   label: cx-MPHP
   name: cxmphp
@@ -2285,8 +2054,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-carboxyl-mono-propyl phthalate
-  groups:
-  - Phthalates
   id: cxmpp
   label: 3cx-MPP
   name: cxmpp
@@ -2300,8 +2067,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cyprodinil-OH (hydroxycyprodinil)
-  groups:
-  - Pesticides
   id: cyprodiniloh
   label: OH-CYPRODINIL
   name: cyprodiniloh
@@ -2315,8 +2080,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,6 diethyl aniline
-  groups:
-  - Herbicides
   id: da26
   name: da26
   relevant_observable_entity_types:
@@ -2329,8 +2092,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dibenzo[a,h]anthracene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: dbaha
   label: DBahA
   name: dbaha
@@ -2344,8 +2105,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-(2,2-dibromovinyl)-2,2-dimethylcyclopropane carboxylic acid
-  groups:
-  - Pesticides
   id: dbca
   label: DBCA
   name: dbca
@@ -2359,8 +2118,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Decabromodiphenylethane
-  groups:
-  - Flame retardants
   id: dbdpe
   label: DBDPE
   name: dbdpe
@@ -2374,8 +2131,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4-Dibromophenol
-  groups:
-  - Flame retardants
   id: dbph
   label: 2,4-DBP
   name: dbph
@@ -2389,8 +2144,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dibutyltin
-  groups:
-  - Pesticides
   id: dbt
   label: DBT
   name: dbt
@@ -2404,8 +2157,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,5-dichlorophenol
-  groups:
-  - Pesticides
   id: dcp
   label: 2,5-DCP
   name: dcp
@@ -2419,8 +2170,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4-dichlorophenol
-  groups:
-  - Pesticides
   id: dcp24
   label: 2,4-DCP
   name: dcp24
@@ -2434,8 +2183,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,6-dichlorophenol
-  groups:
-  - Pesticides
   id: dcp26
   label: 2,6-DCP
   name: dcp26
@@ -2449,8 +2196,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4-dichlorophenoxyacetic acid
-  groups:
-  - Pesticides
   id: dcpa
   name: dcpa
   relevant_observable_entity_types:
@@ -2463,8 +2208,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-Diethylamino-6-hydroxy-4-methylpyrimidine
-  groups:
-  - Pesticides
   id: deampy
   label: DEAMPY
   name: deampy
@@ -2478,8 +2221,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dechlorane 604
-  groups:
-  - Flame retardants
   id: decfour
   label: Dec604
   name: decfour
@@ -2493,8 +2234,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dechlorane 603
-  groups:
-  - Flame retardants
   id: decthree
   label: Dec603
   name: decthree
@@ -2508,8 +2247,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dechlorane 602
-  groups:
-  - Flame retardants
   id: dectwo
   label: Dec602
   name: dectwo
@@ -2523,8 +2260,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Diethyldithiophosphate
-  groups:
-  - Pesticides
   id: dedtp
   label: DEDTP
   name: dedtp
@@ -2538,8 +2273,6 @@ observable_properties:
 - categorical: false
   default_unit: g/L
   description: Urine density of the sample
-  groups:
-  - Property of urine
   id: density
   name: density
   relevant_observable_entity_types:
@@ -2559,8 +2292,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Diethyl phosphate
-  groups:
-  - Pesticides
   id: dep
   label: DEP
   name: dep
@@ -2574,8 +2305,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Desethyl 2-hydroxy atrazine
-  groups:
-  - Herbicides
   id: des2hyat
   name: des2hyat
   relevant_observable_entity_types:
@@ -2588,8 +2317,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Desethyl atrazine
-  groups:
-  - Herbicides
   id: desat
   name: desat
   relevant_observable_entity_types:
@@ -2602,8 +2329,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Desethyl desisopropyl atrazine
-  groups:
-  - Herbicides
   id: desdesisoat
   name: desdesisoat
   relevant_observable_entity_types:
@@ -2616,8 +2341,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Desisopropyl atrazine
-  groups:
-  - Herbicides
   id: desisoat
   name: desisoat
   relevant_observable_entity_types:
@@ -2630,8 +2353,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Diethyl thiophosphate
-  groups:
-  - Pesticides
   id: detp
   label: DETP
   name: detp
@@ -2645,8 +2366,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 8-hydroxy-2'-deoxyguanosine
-  groups:
-  - Genotoxicity
   id: dgua
   label: 8-oxodG
   name: dgua
@@ -2660,8 +2379,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dieldrin
-  groups:
-  - Pesticides
   id: dieldrin
   label: dieldrin
   name: dieldrin
@@ -2675,8 +2392,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2-Dihydrophenanthrene-1,2-diol
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: dihphediol
   label: 1,2-DiPHEdiol
   name: dihphediol
@@ -2690,8 +2405,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: (RS)-2-Chloro-N-(2-ethyl-6-methyl-phenyl)-N-(1-methoxypropan-2-yl)acetamide
-  groups:
-  - Herbicides
   id: dimetachlor
   label: Dimetachlor
   name: dimetachlor
@@ -2705,8 +2418,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-,2-dihydroxynaphthalene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: diohnap
   label: 1,2-NAPH
   name: diohnap
@@ -2720,8 +2431,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-(3,4-dichlorophenyl)-1,1-dimethylurea
-  groups:
-  - Herbicides
   id: diuron
   label: DCMU
   name: diuron
@@ -2735,8 +2444,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dimethylarsinic
-  groups:
-  - Metals
   id: dma
   label: DMA
   name: dma
@@ -2750,8 +2457,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dimethyl dithiophosphate
-  groups:
-  - Pesticides
   id: dmdtp
   label: DMDTP
   name: dmdtp
@@ -2765,8 +2470,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dimethyl phosphate
-  groups:
-  - Pesticides
   id: dmp
   label: DMP
   name: dmp
@@ -2780,8 +2483,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dimethyl thiophosphate
-  groups:
-  - Pesticides
   id: dmtp
   label: DMTP
   name: dmtp
@@ -2795,8 +2496,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Di-n-butyl phosphate
-  groups:
-  - Flame retardants
   id: dnbphr
   label: DnBP
   name: dnbphr
@@ -2808,11 +2507,9 @@ observable_properties:
   unique_name: dnbphr
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Linear 2,2,3-trifluoro-3-[1,1,2,2,3,3-hexafluoro-3-(trifluoromethoxy)propoxy]propanoic
     acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: dona
   label: ADONA
   name: dona
@@ -2826,8 +2523,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Deoxynivalenol-15-glucuronide
-  groups:
-  - Mycotoxins
   id: donfglca
   label: DON-15-GlcA
   name: donfglca
@@ -2841,8 +2536,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Deoxynivalenol-3-glucuronide
-  groups:
-  - Mycotoxins
   id: dontglca
   label: DON-3-GlcA
   name: dontglca
@@ -2856,8 +2549,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dioctyltin
-  groups:
-  - Pesticides
   id: dot
   label: DOT
   name: dot
@@ -2871,8 +2562,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Diphenyl phosphate
-  groups:
-  - Flame retardants
   id: dphpms
   label: DPHP
   name: dphpms
@@ -2886,8 +2575,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Diphenyltin
-  groups:
-  - Pesticides
   id: dpht
   label: DPhT
   name: dpht
@@ -2901,8 +2588,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,3,5-Tribromo-2-(2,3-dibromopropyl)benzene
-  groups:
-  - Flame retardants
   id: dpte
   label: DPTE
   name: dpte
@@ -2916,8 +2601,6 @@ observable_properties:
 - categorical: false
   default_unit: pg/mL
   description: Estradiol
-  groups:
-  - Steroid/Sex hormones
   id: e2
   name: e2
   relevant_observable_entity_types:
@@ -2930,8 +2613,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-ethoxyacetic acid
-  groups:
-  - Glycol ethers
   id: eaa
   label: EAA
   name: eaa
@@ -2945,8 +2626,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Ethoxyethoxyacetic acid
-  groups:
-  - Glycol ethers
   id: eeaa
   label: EEAA
   name: eeaa
@@ -2960,8 +2639,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-ethylhexyl phenyl phosphate
-  groups:
-  - Flame retardants
   id: ehphp
   label: EHPHP
   name: ehphp
@@ -2975,8 +2652,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-ethylhexyl-2,3,4,5-tetrabromobenzoate
-  groups:
-  - Flame retardants
   id: ehtbb
   label: EH-TBB
   name: ehtbb
@@ -2990,8 +2665,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Linear 8:2 polyfluoroalkyl phosphoric acid diesters
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: eightdipap
   label: 8:2 diPAP
   name: eightdipap
@@ -3005,8 +2678,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear 1H,1H,2H,2H-Perfluorodecanesulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: eightfts
   label: 8:2 FTS
   name: eightfts
@@ -3020,8 +2691,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear 8:2 polyfluoroalkyl phosphoric acid monoesters
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: eightmonopap
   label: 8:2 monoPAP
   name: eightmonopap
@@ -3035,8 +2704,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Endrin
-  groups:
-  - Pesticides
   id: endrin
   label: endrin
   name: endrin
@@ -3050,8 +2717,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear N-ethyl-perfluorooctane sulfonamidoacetate
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: etfosaa
   label: EtPFOSAA
   name: etfosaa
@@ -3063,10 +2728,8 @@ observable_properties:
   unique_name: etfosaa
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Linear N-Ethyl-perfluorooctane sulphonamidoethanol
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: etfose
   label: EtPFOSE
   name: etfose
@@ -3080,8 +2743,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Ethylparaben
-  groups:
-  - Parabens
   id: etpar
   label: EtP
   name: etpar
@@ -3095,8 +2756,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Ethylenethiourea
-  groups:
-  - Pesticides (carbamate)
   id: etu
   label: ETU
   name: etu
@@ -3110,8 +2769,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Fumonisin B1
-  groups:
-  - Mycotoxins
   id: fbone
   label: FB1
   name: fbone
@@ -3125,8 +2782,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol A free/unconjugated
-  groups:
-  - Bisphenols
   id: fbpa
   label: BPA free
   name: fbpa
@@ -3140,8 +2795,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol F free/unconjugated
-  groups:
-  - Bisphenols
   id: fbpf
   label: BPF free
   name: fbpf
@@ -3155,8 +2808,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bisphenol S free/unconjugated
-  groups:
-  - Bisphenols
   id: fbps
   label: BPS free
   name: fbps
@@ -3170,8 +2821,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Free Deoxynivalenol
-  groups:
-  - Mycotoxins
   id: fdon
   label: fDON
   name: fdon
@@ -3185,8 +2834,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Iron
-  groups:
-  - Metals
   id: fe
   label: Fe
   name: fe
@@ -3200,8 +2847,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Measured Sum of 1-, 2-, 3-, 4- and 9- hydroxyphenanthrenes
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: fivehphe
   label: Measured 1 + 2 + 3 + 4 + 9-PHEN
   name: fivehphe
@@ -3215,8 +2860,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 5-Methylchrysene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: fivemch
   label: 5-MCH
   name: fivemch
@@ -3230,8 +2873,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 5-OH-thiabendazole
-  groups:
-  - Pesticides
   id: fiveohthiabendazole
   label: 5OH-THIABENDAZOLE
   name: fiveohthiabendazole
@@ -3245,8 +2886,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Fluoranthene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: fla
   label: FLA
   name: fla
@@ -3260,8 +2899,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Fluorene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: fluo
   label: FLUO
   name: fluo
@@ -3275,8 +2912,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluoro-1-octaperfluoro-1-octanesulphonamide
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: fosa
   label: PFOSA
   name: fosa
@@ -3290,8 +2925,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chrysen-4-ol
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: fourcry
   label: 4-CRY
   name: fourcry
@@ -3305,8 +2938,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear 1H,1H,2H,2H-Perfluorohexanesulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: fourfts
   label: 4:2 FTS
   name: fourfts
@@ -3320,8 +2951,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-hydroxy-benzophenone
-  groups:
-  - UV-filters (benzophenones)
   id: fourhbp
   label: 4OH-BP
   name: fourhbp
@@ -3335,8 +2964,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: fourhphe
   label: 4-PHEN
   name: fourhphe
@@ -3350,8 +2977,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-methyl-benzophenone
-  groups:
-  - UV-filters (benzophenones)
   id: fourmbp
   label: 4-MBP
   name: fourmbp
@@ -3365,8 +2990,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-hydroxyphenyl phenyl phosphate
-  groups:
-  - Flame retardants
   id: fourohdphp
   label: 4-HO-DPHP
   name: fourohdphp
@@ -3380,8 +3003,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4'-Hydroxypyrimethanil
-  groups:
-  - Pesticides
   id: fourohpyrimeth
   label: 4OH-PYRIMETHANYL
   name: fourohpyrimeth
@@ -3395,8 +3016,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-fluoro-3-phenoxybenzoic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: fpba
   label: F-3-PBA
   name: fpba
@@ -3410,8 +3029,6 @@ observable_properties:
 - categorical: false
   default_unit: IU/L
   description: Follicle-stimulating hormone
-  groups:
-  - Steroid/Sex hormones
   id: fsh
   label: FSH
   name: fsh
@@ -3425,8 +3042,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/dL
   description: Free triiodothyronine
-  groups:
-  - Thyroid hormones
   id: ft3
   label: FT3
   name: ft3
@@ -3440,8 +3055,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/dL
   description: Free thyroxine
-  groups:
-  - Thyroid hormones
   id: ft4
   label: FT4
   name: ft4
@@ -3455,8 +3068,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Galaxolide
-  groups:
-  - Musks
   id: galax
   name: galax
   relevant_observable_entity_types:
@@ -3469,8 +3080,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: N-Acetyl-S-(2-carbamoyl-2-hydroxyethyl)cysteine
-  groups:
-  - Acrylamide
   id: gama
   label: GAMA
   name: gama
@@ -3484,8 +3093,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Gamma-hexachlorocyclohexane (lindane)
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: ghch
   name: ghch
   relevant_observable_entity_types:
@@ -3498,8 +3105,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: Glucose
-  groups:
-  - Lab markers for cardiometabolic health and metabolic diseases
   id: glucose
   name: glucose
   relevant_observable_entity_types:
@@ -3512,8 +3117,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Glyphosate
-  groups:
-  - Pesticides
   id: glyp
   label: GLY
   name: glyp
@@ -3527,8 +3130,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxy atrazine
-  groups:
-  - Herbicides
   id: ha2
   name: ha2
   relevant_observable_entity_types:
@@ -3541,8 +3142,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxybenz[a]anthracene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: hbaa
   label: 1-BaA
   name: hbaa
@@ -3556,8 +3155,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hexabromobenzene
-  groups:
-  - Flame retardants
   id: hbb
   label: HBB
   name: hbb
@@ -3571,8 +3168,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Total Hexabromocyclododecane
-  groups:
-  - Flame retardants
   id: hbcd
   label: total HBCD
   name: hbcd
@@ -3586,8 +3181,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hexabromocyclododecane alpha
-  groups:
-  - Flame retardants
   id: hbcda
   label: "HBCD\xCE\xB1"
   name: hbcda
@@ -3601,8 +3194,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hexabromocyclododecane beta
-  groups:
-  - Flame retardants
   id: hbcdb
   label: "HBCD\xCE\xB2"
   name: hbcdb
@@ -3616,8 +3207,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hexabromocyclododecane gamma
-  groups:
-  - Flame retardants
   id: hbcdg
   label: "HBCD\xCE\xB3"
   name: hbcdg
@@ -3631,8 +3220,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hexachlorobenzene
-  groups:
-  - Pesticides
   id: hcb
   label: HCB
   name: hcb
@@ -3646,8 +3233,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: HDL cholesterol
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: hdl
   name: hdl
   relevant_observable_entity_types:
@@ -3660,8 +3245,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Heptylparaben
-  groups:
-  - Parabens
   id: hepip
   label: heptylP
   name: hepip
@@ -3675,8 +3258,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Heptachlor
-  groups:
-  - Pesticides
   id: heptachlor
   label: HEPTACHLOR
   name: heptachlor
@@ -3690,8 +3271,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxy-N-ethylsuccinimide
-  groups:
-  - Aprotic solvents
   id: hesi
   label: 2-HESI
   name: hesi
@@ -3705,8 +3284,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hafnium
-  groups:
-  - Metals
   id: hf
   label: Hf
   name: hf
@@ -3720,8 +3297,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Hexafluoropropylene Oxide Dimer Acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: hfpoda
   label: HFPO-DA
   name: hfpoda
@@ -3735,8 +3310,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Mercury
-  groups:
-  - Metals
   id: hg
   label: Hg
   name: hg
@@ -3750,8 +3323,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification AR (Androgen receptor): normalised expression
     compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_ar
   name: hist_ar
   relevant_observable_entity_types:
@@ -3764,8 +3335,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification ESR1 (Estrogen receptor alfa): normalised expression
     compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_esr1
   name: hist_esr1
   relevant_observable_entity_types:
@@ -3778,8 +3347,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification ESR2 (Estrogen receptor beta): normalised expression
     compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_esr2
   name: hist_esr2
   relevant_observable_entity_types:
@@ -3792,8 +3359,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification GR (nuclear receptor subfamily 3 group C member
     1/ glucocorticoid receptor): normalised expression compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_gr
   name: hist_gr
   relevant_observable_entity_types:
@@ -3806,8 +3371,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification OGG1 (8-oxoguanine DNA glycosylase): normalised
     expression compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_ogg1
   name: hist_ogg1
   relevant_observable_entity_types:
@@ -3820,8 +3383,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification PPARa (peroxisome proliferator activated receptor
     alpha): normalised expression compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_ppara
   name: hist_ppara
   relevant_observable_entity_types:
@@ -3834,8 +3395,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification PPARg (peroxisome proliferator activated receptor
     gamma): normalised expression compared to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_pparg
   name: hist_pparg
   relevant_observable_entity_types:
@@ -3848,8 +3407,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification SUV39H1 (SUV39H1 histone lysine methyltransferase):
     normalised expression compared to RPLPO'
-  groups:
-  - Epigenetic markers
   id: hist_suv39h
   name: hist_suv39h
   relevant_observable_entity_types:
@@ -3862,8 +3419,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification TERT (Telomerase): normalised expression compared
     to RPLP0'
-  groups:
-  - Epigenetic markers
   id: hist_tert
   name: hist_tert
   relevant_observable_entity_types:
@@ -3876,8 +3431,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification THRA (Thyroid receptor alfa): normalised expression
     compared to RPLP0'
-  groups:
-  - Thyroid hormones
   id: hist_thra
   name: hist_thra
   relevant_observable_entity_types:
@@ -3890,8 +3443,6 @@ observable_properties:
 - categorical: false
   description: 'HIstone modification THRB (Thyroid receptor beta): normalised expression
     compared to RPLP0'
-  groups:
-  - Thyroid hormones
   id: hist_thrb
   name: hist_thrb
   relevant_observable_entity_types:
@@ -3904,8 +3455,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxy-N-methylsuccinimide
-  groups:
-  - Aprotic solvents
   id: hmsi
   label: 2-HMSI
   name: hmsi
@@ -3919,8 +3468,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 5-hydroxy-N-ethyl-2-pyrrolidone
-  groups:
-  - Aprotic solvents
   id: hnep
   label: 5-HNEP
   name: hnep
@@ -3934,8 +3481,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 5-hydroxy-N-methyl-2-pyrrolidone
-  groups:
-  - Aprotic solvents
   id: hnmp
   label: 5-HNMP
   name: hnmp
@@ -3949,8 +3494,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hydroxylated Polychlorinated biphenyl 107
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: hocb107
   name: hocb107
   relevant_observable_entity_types:
@@ -3963,8 +3506,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hydroxylated Polychlorinated biphenyl 146
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: hocb146
   name: hocb146
   relevant_observable_entity_types:
@@ -3977,8 +3518,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hydroxylated Polychlorinated biphenyl 187
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: hocb187
   name: hocb187
   relevant_observable_entity_types:
@@ -3991,8 +3530,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,4,6,7,8-Heptachlorodibenzo-p-dioxin
-  groups:
-  - Dioxins
   id: hpcdd
   label: 1,2,3,4,6,7,8-HpCDD
   name: hpcdd
@@ -4006,8 +3543,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxy simazine
-  groups:
-  - Herbicides
   id: hs2
   name: hs2
   relevant_observable_entity_types:
@@ -4020,8 +3555,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5LU/mL"
   description: Insulin
-  groups:
-  - Metabolic hormones
   id: insulin
   name: insulin
   relevant_observable_entity_types:
@@ -4034,8 +3567,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Iodium
-  groups:
-  - Halogens
   id: iod
   name: iod
   relevant_observable_entity_types:
@@ -4048,8 +3579,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Indeno[1,2,3-cd]pyrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: ip
   label: IP
   name: ip
@@ -4063,8 +3592,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-Isopropoxyphenol
-  groups:
-  - Pesticides (carbamate)
   id: ipp
   label: IPP
   name: ipp
@@ -4078,8 +3605,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-(4-Isopropylphenyl)-3-methylurea
-  groups:
-  - Herbicides
   id: ippmu
   label: IPPMU
   name: ippmu
@@ -4093,8 +3618,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Isopropylparaben
-  groups:
-  - Parabens
   id: iproppar
   name: iproppar
   relevant_observable_entity_types:
@@ -4107,8 +3630,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Iridium
-  groups:
-  - Metals
   id: ir
   label: Ir
   name: ir
@@ -4122,8 +3643,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Iso-butylparaben
-  groups:
-  - Parabens
   id: isobip
   label: isobutylP
   name: isobip
@@ -4137,8 +3656,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-(4-Isopropylphenyl)-1,1-dimethylurea
-  groups:
-  - Herbicides
   id: isoproturon
   name: isoproturon
   relevant_observable_entity_types:
@@ -4151,8 +3668,6 @@ observable_properties:
 - categorical: false
   default_unit: '%'
   description: Percentage of DNA methylation at KISS CpG1
-  groups:
-  - Reproductive and metabolic health outcomes
   id: kiss_cpg1
   label: (gemeten of berekend?)
   name: kiss_cpg1
@@ -4166,8 +3681,6 @@ observable_properties:
 - categorical: false
   default_unit: '%'
   description: Percentage of DNA methylation at KISS CpG2
-  groups:
-  - Reproductive and metabolic health outcomes
   id: kiss_cpg2
   name: kiss_cpg2
   relevant_observable_entity_types:
@@ -4180,8 +3693,6 @@ observable_properties:
 - categorical: false
   default_unit: '%'
   description: Percentage of DNA methylation at KISS CpG3
-  groups:
-  - Reproductive and metabolic health outcomes
   id: kiss_cpg3
   name: kiss_cpg3
   relevant_observable_entity_types:
@@ -4194,8 +3705,6 @@ observable_properties:
 - categorical: false
   default_unit: '%'
   description: Percentage of DNA methylation at KISS CpG4
-  groups:
-  - Reproductive and metabolic health outcomes
   id: kiss_cpg4
   name: kiss_cpg4
   relevant_observable_entity_types:
@@ -4208,8 +3717,6 @@ observable_properties:
 - categorical: false
   default_unit: pg/mL
   description: Kisspeptine 54
-  groups:
-  - '<TODO: nog aan te vullen effect>'
   id: kiss54
   name: kiss54
   relevant_observable_entity_types:
@@ -4222,8 +3729,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched N-Methylperfluoro-1 octanesulphonamide
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbnmepfosa
   label: L+B MePFOSA
   name: lbnmepfosa
@@ -4237,8 +3742,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorobutane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfbs
   label: L+B PFBS
   name: lbpfbs
@@ -4252,8 +3755,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorodecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfda
   label: L+B PFDA
   name: lbpfda
@@ -4267,8 +3768,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorododecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfdoda
   label: L+B PFDoDA
   name: lbpfdoda
@@ -4282,8 +3781,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorodecane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfds
   label: L+B PFDS
   name: lbpfds
@@ -4297,8 +3794,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluoroheptanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfhpa
   label: L+B PFHpA
   name: lbpfhpa
@@ -4312,8 +3807,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluoroheptane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfhps
   label: L+B PFHpS
   name: lbpfhps
@@ -4327,8 +3820,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorohexanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfhxa
   label: L+B PFHxA
   name: lbpfhxa
@@ -4342,8 +3833,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorohexane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfhxs
   label: L+B PFHxS
   name: lbpfhxs
@@ -4357,8 +3846,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorononanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfna
   label: L+B PFNA
   name: lbpfna
@@ -4372,8 +3859,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorooctanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfoa
   label: L+B PFOA
   name: lbpfoa
@@ -4387,8 +3872,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorooctane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfos
   label: L+B PFOS
   name: lbpfos
@@ -4402,8 +3885,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluoro-1-octaperfluoro-1-octanesulphonamide
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfosa
   label: L+B PFOSA
   name: lbpfosa
@@ -4417,8 +3898,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluoropentanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfpea
   label: L+B PFPeA
   name: lbpfpea
@@ -4432,8 +3911,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorotetradecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfteda
   label: L+B PFTeDA
   name: lbpfteda
@@ -4447,8 +3924,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluorotridecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpftrda
   label: L+B PFTrDA
   name: lbpftrda
@@ -4462,8 +3937,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear + branched Perfluoroundecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: lbpfunda
   label: L+B PFUnDA
   name: lbpfunda
@@ -4477,8 +3950,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: LDL cholesterol
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: ldl
   name: ldl
   relevant_observable_entity_types:
@@ -4491,8 +3962,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/mL
   description: Leptin
-  groups:
-  - Metabolic hormones
   id: leptin
   name: leptin
   relevant_observable_entity_types:
@@ -4505,8 +3974,6 @@ observable_properties:
 - categorical: false
   default_unit: IU/L
   description: Luteinizing hormone
-  groups:
-  - Steroid/Sex hormones
   id: lh
   label: LH
   name: lh
@@ -4520,8 +3987,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Lithium
-  groups:
-  - Metals
   id: li
   label: Li
   name: li
@@ -4535,8 +4000,6 @@ observable_properties:
 - categorical: false
   description: Retroelement LINE L1 copy number variation normalized values to RPLP0
     gene
-  groups:
-  - Epigenetic markers
   id: line1
   name: line1
   relevant_observable_entity_types:
@@ -4549,8 +4012,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: Gravimetric fat
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: lipid
   name: lipid
   relevant_observable_entity_types:
@@ -4570,8 +4031,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: Blood lipid by enzymatic calculation but calculation not specified
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: lipid_enz
   name: lipid_enz
   relevant_observable_entity_types:
@@ -4589,12 +4048,10 @@ observable_properties:
     value: 900.0
   value_type: decimal
 - calculation_design:
-    formula: (1.33 * trigl [mg/dL] ) + (1.12 * chol [mg/dL]) + 148
+    formula: (1 * trigl [mg/dL] ) + (2.27 * chol [mg/dL]) + 62.3
   categorical: false
   default_unit: mg/dL
   description: Blood lipid by enzymatic calculation
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: lipid_enz_harm
   name: lipid_enz_harm
   relevant_observable_entity_types:
@@ -4607,8 +4064,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-methoxyacetic acid
-  groups:
-  - Glycol ethers
   id: maa
   label: MAA
   name: maa
@@ -4622,8 +4077,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Monobutyltin
-  groups:
-  - Pesticides
   id: mbt
   label: MBT
   name: mbt
@@ -4635,10 +4088,8 @@ observable_properties:
   unique_name: mbt
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Mono-benzyl phthalate
-  groups:
-  - Phthalates
   id: mbzp
   label: MBzP
   name: mbzp
@@ -4652,8 +4103,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-cyclo-hexyl phthalate
-  groups:
-  - Phthalates
   id: mchp
   label: MCHP
   name: mchp
@@ -4667,8 +4116,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-(7-carboxy-n-hexyl) phthalate
-  groups:
-  - Phthalates
   id: mchxp
   label: MCHxP
   name: mchxp
@@ -4682,8 +4129,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-carboxymethylhexyl) phthalate
-  groups:
-  - Phthalates
   id: mcmhp
   label: MCMHP
   name: mcmhp
@@ -4697,8 +4142,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Cyclohexane-1,2-dicarboxylate-mono-(7-carboxylate-4-methyl)heptyl ester
-  groups:
-  - DINCH
   id: mcoch
   label: cx-MINCH
   name: mcoch
@@ -4712,8 +4155,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 7-Carboxy-(mono-methyl- heptyl) phthalate
-  groups:
-  - Phthalates
   id: mcop
   label: cx-MiNP
   name: mcop
@@ -4727,8 +4168,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-chlorophenol
-  groups:
-  - Pesticides
   id: mcp4
   label: 4-MCP
   name: mcp4
@@ -4742,8 +4181,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-(5-carboxy-n-pentyl) phthalate
-  groups:
-  - Phthalates
   id: mcpep
   label: MCPeP
   name: mcpep
@@ -4757,8 +4194,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-(2-methoxyethoxy)acetic acid
-  groups:
-  - Glycol ethers
   id: meaa
   label: MEAA
   name: meaa
@@ -4772,8 +4207,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethylhexyl) adipate
-  groups:
-  - Phthalates
   id: meha
   label: MEHA
   name: meha
@@ -4785,10 +4218,8 @@ observable_properties:
   unique_name: meha
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Mono(2-ethylhexyl) phthalate
-  groups:
-  - Phthalates
   id: mehp
   label: MEHP
   name: mehp
@@ -4802,8 +4233,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-mono-(2-ethylhexyl) terephthalate
-  groups:
-  - Phthalates
   id: mehtp
   label: MEHTP
   name: mehtp
@@ -4815,10 +4244,8 @@ observable_properties:
   unique_name: mehtp
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Mono-ethyl phthalate
-  groups:
-  - Phthalates
   id: mep
   label: MEP
   name: mep
@@ -4832,8 +4259,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Methylparaben
-  groups:
-  - Parabens
   id: metpar
   name: metpar
   relevant_observable_entity_types:
@@ -4846,8 +4271,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Magnesium
-  groups:
-  - Metals
   id: mg
   label: Mg
   name: mg
@@ -4861,8 +4284,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Methyl mercury
-  groups:
-  - Metals
   id: mhg
   label: MeHg
   name: mhg
@@ -4876,8 +4297,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-hydroxyheptyl phthalate
-  groups:
-  - Phthalates
   id: mhhpp
   label: MHHpP
   name: mhhpp
@@ -4891,8 +4310,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-(5-hydroxyhexyl) phthalate
-  groups:
-  - Phthalates
   id: mhhxp
   label: MHHxP
   name: mhhxp
@@ -4906,8 +4323,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Cyclohexane-1,2-dicarboxylate-mono-(7-hydroxy-4-methyl)octyl ester
-  groups:
-  - DINCH
   id: mhnch
   label: OH-MINCH
   name: mhnch
@@ -4921,8 +4336,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 7-OH-(Mono-methyl-octyl) phthalate
-  groups:
-  - Phthalates
   id: mhnp
   label: OH-MiNP
   name: mhnp
@@ -4936,8 +4349,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Mono-isobutyl phthalate
-  groups:
-  - Phthalates
   id: mibp
   label: MiBP
   name: mibp
@@ -4951,8 +4362,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Mono-propyl-heptyl phthalate
-  groups:
-  - Phthalates
   id: midp
   label: MiDP
   name: midp
@@ -4966,8 +4375,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cyclohexane-1,2-dicarboxylic acid mono-isononyl ester
-  groups:
-  - DINCH
   id: minch
   label: MINCH
   name: minch
@@ -4981,8 +4388,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-methyl-octyl phthalate
-  groups:
-  - Phthalates
   id: minp
   label: MiNP
   name: minp
@@ -4996,8 +4401,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-isopentyl phthalate
-  groups:
-  - Phthalates
   id: mipep
   label: MiPeP
   name: mipep
@@ -5011,8 +4414,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Perchloropentacyclodecane
-  groups:
-  - Flame retardants
   id: mirex
   label: mirex
   name: mirex
@@ -5026,8 +4427,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Musk ketone
-  groups:
-  - Musks
   id: mk
   label: MK
   name: mk
@@ -5041,8 +4440,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Monomethylarsonic
-  groups:
-  - Metals
   id: mma
   label: MMA
   name: mma
@@ -5056,8 +4453,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Mono-methyl phthalate
-  groups:
-  - Phthalates
   id: mmp
   label: MMP
   name: mmp
@@ -5071,8 +4466,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Manganese
-  groups:
-  - Metals
   id: mn
   label: Mn
   name: mn
@@ -5086,8 +4479,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/g
   description: Mono-n-butyl phthalate
-  groups:
-  - Phthalates
   id: mnbp
   label: MnBP
   name: mnbp
@@ -5101,8 +4492,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-n-heptyl phthalate
-  groups:
-  - Phthalates
   id: mnhpp
   label: MnHpP
   name: mnhpp
@@ -5116,8 +4505,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-n-hexyl phthalate
-  groups:
-  - Phthalates
   id: mnhxp
   label: MnHxP
   name: mnhxp
@@ -5131,8 +4518,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-n-pentyl phthalate
-  groups:
-  - Phthalates
   id: mnpep
   label: MnPeP
   name: mnpep
@@ -5146,8 +4531,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Molybdenum
-  groups:
-  - Metals
   id: mo
   label: Mo
   name: mo
@@ -5161,8 +4544,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Cyclohexane-1,2-dicarboxylate-mono-(7-oxo-4-methyl)octyl ester
-  groups:
-  - DINCH
   id: monch
   label: oxo-MINCH
   name: monch
@@ -5176,8 +4557,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 7-Oxo-(mono-methyl-octyl) phthalate
-  groups:
-  - Phthalates
   id: monp
   label: oxo-MiNP
   name: monp
@@ -5191,8 +4570,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-n-octyl phthalate
-  groups:
-  - Phthalates
   id: mop
   label: MnOP
   name: mop
@@ -5206,8 +4583,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Monooctyltin
-  groups:
-  - Pesticides
   id: mot
   label: MOT
   name: mot
@@ -5221,8 +4596,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Methoxyproprionic acid
-  groups:
-  - Glycol ethers
   id: mpa
   label: MPA
   name: mpa
@@ -5236,8 +4609,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Monophenyltin
-  groups:
-  - Pesticides
   id: mpht
   label: MPhT
   name: mpht
@@ -5251,8 +4622,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono-propyl phthalate
-  groups:
-  - Phthalates
   id: mprp
   label: MnPrP
   name: mprp
@@ -5266,8 +4635,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Musk xylene
-  groups:
-  - Musks
   id: mx
   label: MX
   name: mx
@@ -5281,8 +4648,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: N-acetyl-4-aminophenol
-  groups:
-  - Anilines and MOCA
   id: nafourap
   label: NA4AP
   name: nafourap
@@ -5296,8 +4661,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Naphthalene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: naph
   label: NAPH
   name: naph
@@ -5311,8 +4674,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear N-Ethylperfluoro-1-octanesulphonamide
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: netfosa
   label: EtPFOSA
   name: netfosa
@@ -5326,8 +4687,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Nickel
-  groups:
-  - Metals
   id: ni
   label: Ni
   name: ni
@@ -5341,8 +4700,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 9-hydroxyfluorene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: ninehfluo
   label: 9-FLUO
   name: ninehfluo
@@ -5356,8 +4713,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 9-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: ninehphe
   label: 9-PHEN
   name: ninehphe
@@ -5371,8 +4726,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 4-Nitrophenol
-  groups:
-  - Pesticides
   id: niphen
   label: 4-nitrophenol
   name: niphen
@@ -5386,8 +4739,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Nivalenol
-  groups:
-  - Mycotoxins
   id: niv
   label: NIV
   name: niv
@@ -5401,8 +4752,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear N-Methylperfluoro-1 octanesulphonamide
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: nmefosa
   label: MePFOSA
   name: nmefosa
@@ -5416,8 +4765,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Octabromotrimethylphenylindane
-  groups:
-  - Flame retardants
   id: obind
   label: OBIND
   name: obind
@@ -5431,8 +4778,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Octachlorodibenzodioxin
-  groups:
-  - Dioxins
   id: ocdd
   label: OCDD
   name: ocdd
@@ -5446,8 +4791,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-hydroxybenzo(a)pyrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: ohbap
   label: 3-hydroxyBaP
   name: ohbap
@@ -5461,8 +4804,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-ethyl-5-hydroxyhexyl diphenyl phosphate
-  groups:
-  - Flame retardants
   id: ohehdphp
   label: 5-HO-EHDPHP
   name: ohehdphp
@@ -5476,8 +4817,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-hydroxyhexyl) adipate
-  groups:
-  - Phthalates
   id: ohmeha
   label: OH-MEHA
   name: ohmeha
@@ -5489,10 +4828,8 @@ observable_properties:
   unique_name: ohmeha
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Mono(2-ethyl-5-hydroxy-hexyl) phthalate
-  groups:
-  - Phthalates
   id: ohmehp
   label: 5OH-MEHP
   name: ohmehp
@@ -5506,8 +4843,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-mono-(2-ethyl-5-hydroxy-hexyl) benzene-1,4-dicarboxylate
-  groups:
-  - Phthalates
   id: ohmehtp
   label: 5OH-MEHTP
   name: ohmehtp
@@ -5521,8 +4856,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-OH-Mono-iso-butylphthalate
-  groups:
-  - Phthalates
   id: ohmibp
   label: OH-MiBP
   name: ohmibp
@@ -5537,8 +4870,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: 6-OH-Mono-propyl-heptyl phthalate (LC-MS/MS method, sum of all C10
     metabolites including the DPHP metabolites)
-  groups:
-  - Phthalates
   id: ohmidp
   label: OH-MiDP
   name: ohmidp
@@ -5552,8 +4883,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-OH-Mono-n-butyl phthalate
-  groups:
-  - Phthalates
   id: ohmnbp
   label: OH-MnBP
   name: ohmnbp
@@ -5567,8 +4896,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 6-OH-mono-propyl-heptyl phthalate (GC-HRMS method, only DPHP metabolites)
-  groups:
-  - Phthalates
   id: ohmphp
   label: OH-MPHP
   name: ohmphp
@@ -5582,8 +4909,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxypyrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: ohpyr
   label: 1-PYR
   name: ohpyr
@@ -5597,8 +4922,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Bis(2-butoxyethyl) 3-hydroxy-2-butoxyethyl phosphate
-  groups:
-  - Flame retardants
   id: ohtboep
   label: 3-HO-TBOEP
   name: ohtboep
@@ -5612,8 +4935,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hydroxyphenyl diphenyl phosphate
-  groups:
-  - Flame retardants
   id: ohtphp
   label: HO-TPHP
   name: ohtphp
@@ -5627,8 +4948,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxychrysene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: onehcry
   label: 1-CRY
   name: onehcry
@@ -5642,8 +4961,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: onehphe
   label: 1-PHEN
   name: onehphe
@@ -5657,8 +4974,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxynaphthalene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: oneohnap
   label: 1-NAPH
   name: oneohnap
@@ -5672,8 +4987,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: O,p'-Dichlorodiphenyldichloroethylene
-  groups:
-  - Pesticides
   id: opdde
   label: o,p'-DDE
   name: opdde
@@ -5687,8 +5000,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: O,p'-dichlorodiphenyltrichloroethane
-  groups:
-  - Pesticides
   id: opddt
   label: o,p'-DDT
   name: opddt
@@ -5702,8 +5013,6 @@ observable_properties:
 - categorical: false
   default_unit: Osm/L
   description: Osmotic concentration of urine of the sample
-  groups:
-  - Property of urine
   id: osm
   name: osm
   relevant_observable_entity_types:
@@ -5723,8 +5032,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Ochratoxin A Free
-  groups:
-  - Mycotoxins
   id: ota
   label: OTA
   name: ota
@@ -5738,8 +5045,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Oxychlordane
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: oxc
   label: OXC
   name: oxc
@@ -5753,8 +5058,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-oxohexyl) adipate
-  groups:
-  - Phthalates
   id: oxomeha
   label: oxo-MEHA
   name: oxomeha
@@ -5766,10 +5069,8 @@ observable_properties:
   unique_name: oxomeha
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Mono(2-ethyl-5-oxo-hexyl) phthalate
-  groups:
-  - Phthalates
   id: oxomehp
   label: 5oxo-MEHP
   name: oxomehp
@@ -5783,8 +5084,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-mono-(2-ethyl-5-oxo-hexyl) benzene-1,4-dicarboxylate
-  groups:
-  - Phthalates
   id: oxomehtp
   label: 5oxo-MEHTP
   name: oxomehtp
@@ -5799,8 +5098,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: 6-Oxo-mono-propyl-heptyl phthalate (LC-MS/MS method, sum of all C10
     metabolites including the DPHP metabolites)
-  groups:
-  - Phthalates
   id: oxomidp
   label: oxo-MiDP
   name: oxomidp
@@ -5814,8 +5111,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 6-Oxo-mono-propyl-heptyl phthalate (GC-HRMS method, only DPHP metabolites)
-  groups:
-  - Phthalates
   id: oxomphp
   label: oxo-MPHP
   name: oxomphp
@@ -5829,8 +5124,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-propoxyacetic acid
-  groups:
-  - Glycol ethers
   id: paa
   label: PAA
   name: paa
@@ -5844,8 +5137,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Parathion-ethyl
-  groups:
-  - Pesticides
   id: paret
   name: paret
   relevant_observable_entity_types:
@@ -5858,8 +5149,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Parathion-methyl
-  groups:
-  - Pesticides
   id: parmet
   name: parmet
   relevant_observable_entity_types:
@@ -5872,8 +5161,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Lead
-  groups:
-  - Metals
   id: pb
   label: Pb
   name: pb
@@ -5887,8 +5174,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Hexabromobiphenyl
-  groups:
-  - Flame retardants
   id: pbb153
   label: PBB-153
   name: pbb153
@@ -5902,8 +5187,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Pentabromoethylbenzene
-  groups:
-  - Flame retardants
   id: pbeb
   label: PBEB
   name: pbeb
@@ -5917,8 +5200,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Pentabromophenol
-  groups:
-  - Flame retardants
   id: pbph
   label: PBP
   name: pbph
@@ -5932,8 +5213,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Pentabromotoluene
-  groups:
-  - Flame retardants
   id: pbt
   label: PBT
   name: pbt
@@ -5947,8 +5226,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 101
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb101
   label: PCB 101
   name: pcb101
@@ -5962,8 +5239,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 105
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb105
   label: PCB 105
   name: pcb105
@@ -5977,8 +5252,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 110
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb110
   label: PCB 110
   name: pcb110
@@ -5992,8 +5265,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 114
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb114
   label: PCB 114
   name: pcb114
@@ -6007,8 +5278,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 118
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb118
   label: PCB 118
   name: pcb118
@@ -6022,8 +5291,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 123
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb123
   label: PCB 123
   name: pcb123
@@ -6037,8 +5304,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 126
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb126
   label: PCB 126
   name: pcb126
@@ -6052,8 +5317,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 128
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb128
   label: PCB 128
   name: pcb128
@@ -6067,8 +5330,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 138
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb138
   label: PCB 138
   name: pcb138
@@ -6082,8 +5343,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 146
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb146
   label: PCB 146
   name: pcb146
@@ -6097,8 +5356,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 149
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb149
   label: PCB 149
   name: pcb149
@@ -6112,8 +5369,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 151
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb151
   label: PCB 151
   name: pcb151
@@ -6127,8 +5382,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 153
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb153
   label: PCB 153
   name: pcb153
@@ -6142,8 +5395,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 156
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb156
   label: PCB 156
   name: pcb156
@@ -6157,8 +5408,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 157
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb157
   label: PCB 157
   name: pcb157
@@ -6172,8 +5421,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 158
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb158
   label: PCB 158
   name: pcb158
@@ -6187,8 +5434,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 167
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb167
   label: PCB 167
   name: pcb167
@@ -6202,8 +5447,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 169
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb169
   label: PCB 169
   name: pcb169
@@ -6217,8 +5460,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 170
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb170
   label: PCB 170
   name: pcb170
@@ -6232,8 +5473,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 171
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb171
   label: PCB 171
   name: pcb171
@@ -6247,8 +5486,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 172
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb172
   label: PCB 172
   name: pcb172
@@ -6262,8 +5499,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 174
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb174
   label: PCB 174
   name: pcb174
@@ -6277,8 +5512,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 177
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb177
   label: PCB 177
   name: pcb177
@@ -6292,8 +5525,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 178
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb178
   label: PCB 178
   name: pcb178
@@ -6307,8 +5538,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 18
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb18
   label: PCB 18
   name: pcb18
@@ -6322,8 +5551,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 180
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb180
   label: PCB 180
   name: pcb180
@@ -6337,8 +5564,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 183
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb183
   label: PCB 183
   name: pcb183
@@ -6352,8 +5577,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 187
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb187
   label: PCB 187
   name: pcb187
@@ -6367,8 +5590,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 189
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb189
   label: PCB 189
   name: pcb189
@@ -6382,8 +5603,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 194
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb194
   label: PCB 194
   name: pcb194
@@ -6397,8 +5616,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 195
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb195
   label: PCB 195
   name: pcb195
@@ -6412,8 +5629,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 196
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb196
   label: PCB 196
   name: pcb196
@@ -6426,10 +5641,9 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: Sum of pcb196 and pcb203
-  groups:
-  - Persistent Organic Pollutants (POPs)
+  description: Measured Sum of pcb196 and pcb203
   id: pcb196and203
+  label: 'Measured '
   name: pcb196and203
   relevant_observable_entity_types:
   - person
@@ -6441,8 +5655,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 199
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb199
   label: PCB 199
   name: pcb199
@@ -6456,8 +5668,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 201
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb201
   label: PCB 201
   name: pcb201
@@ -6471,8 +5681,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 203
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb203
   label: PCB 203
   name: pcb203
@@ -6486,8 +5694,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 206
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb206
   label: PCB 206
   name: pcb206
@@ -6501,8 +5707,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 209
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb209
   label: PCB 209
   name: pcb209
@@ -6516,8 +5720,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 28
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb28
   label: PCB 28
   name: pcb28
@@ -6531,8 +5733,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 44
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb44
   label: PCB 44
   name: pcb44
@@ -6546,8 +5746,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 49
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb49
   label: PCB 49
   name: pcb49
@@ -6561,8 +5759,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 52
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb52
   label: PCB 52
   name: pcb52
@@ -6576,8 +5772,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 66
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb66
   label: PCB 66
   name: pcb66
@@ -6591,8 +5785,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 74
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb74
   label: PCB 74
   name: pcb74
@@ -6606,8 +5798,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 77
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb77
   label: PCB 77
   name: pcb77
@@ -6621,8 +5811,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 81
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb81
   label: PCB 81
   name: pcb81
@@ -6636,8 +5824,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 87
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb87
   label: PCB 87
   name: pcb87
@@ -6651,8 +5837,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Polychlorinated biphenyl 99
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: pcb99
   label: PCB 99
   name: pcb99
@@ -6666,8 +5850,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,6,7,8-Hexachlorodibenzo-p-dioxin
-  groups:
-  - Dioxins
   id: pcdd66
   label: 1,2,3,4,7,8-HxCDD
   name: pcdd66
@@ -6681,8 +5863,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,4,7,8-Hexachlorodibenzo-p-dioxin
-  groups:
-  - Dioxins
   id: pcdd67
   label: 1,2,3,6,7,8-HxCDD
   name: pcdd67
@@ -6696,8 +5876,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,7,8,9-Hexachlorodibenzo-p-dioxin
-  groups:
-  - Dioxins
   id: pcdd70
   label: 1,2,3,7,8,9-HxCDD
   name: pcdd70
@@ -6711,8 +5889,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,4,7,8-Pentachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf114
   label: 2,3,4,7,8-PeCDF
   name: pcdf114
@@ -6726,8 +5902,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,4,7,8-Hexatachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf118
   label: 1,2,3,4,7,8-HxCDF
   name: pcdf118
@@ -6741,8 +5915,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,6,7,8-Hexatachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf121
   label: 1,2,3,6,7,8-HxCDF
   name: pcdf121
@@ -6756,8 +5928,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,7,8,9-Hexatachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf124
   label: 1,2,3,7,8,9-HxCDF
   name: pcdf124
@@ -6771,8 +5941,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,4,6,7,8-Hexatachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf130
   label: 2,3,4,6,7,8-HxCDF
   name: pcdf130
@@ -6785,9 +5953,7 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: 1,2,3,4,6,7,8-Heptatachlorodibenzofuran
-  groups:
-  - Furans
+  description: 1,2,3,4,6,7,8-Heptachlorodibenzofuran
   id: pcdf131
   label: 1,2,3,4,6,7,8-HpCDF
   name: pcdf131
@@ -6800,9 +5966,7 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: 1,2,3,4,7,8,9-Heptatachlorodibenzofuran
-  groups:
-  - Furans
+  description: 1,2,3,4,7,8,9-Heptachlorodibenzofuran
   id: pcdf134
   label: 1,2,3,4,7,8,9-HpCDF
   name: pcdf134
@@ -6816,8 +5980,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Octachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf135
   label: OCDF
   name: pcdf135
@@ -6831,8 +5993,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,7,8-Tetrachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf83
   label: 2,3,7,8-TCDF
   name: pcdf83
@@ -6846,8 +6006,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,7,8-Pentachlorodibenzofuran
-  groups:
-  - Furans
   id: pcdf94
   label: 1,2,3,7,8-PeCDF
   name: pcdf94
@@ -6861,8 +6019,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Pentachlorophenol
-  groups:
-  - Pesticides
   id: pcp
   label: PCP
   name: pcp
@@ -6876,8 +6032,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Palladium
-  groups:
-  - Metals
   id: pd
   label: Pd
   name: pd
@@ -6891,8 +6045,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,2,3,7,8-Pentachlorodibenzo-p-dioxin
-  groups:
-  - Dioxins
   id: pecdd
   label: 1,2,3,7,8-PeCDD
   name: pecdd
@@ -6906,8 +6058,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Pentylparaben
-  groups:
-  - Parabens
   id: pentip
   label: pentylP
   name: pentip
@@ -6921,8 +6071,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorobutanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfba
   label: PFBA
   name: pfba
@@ -6936,8 +6084,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorobutane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfbs
   label: PFBS
   name: pfbs
@@ -6951,8 +6097,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorodecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfda
   label: PFDA
   name: pfda
@@ -6966,8 +6110,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorododecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfdoda
   label: PFDoDA
   name: pfdoda
@@ -6981,8 +6123,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorodecylphosphonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfdpa
   label: PFDPA
   name: pfdpa
@@ -6996,8 +6136,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorodecane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfds
   label: PFDS
   name: pfds
@@ -7012,8 +6150,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Linear 2-(6-Chlorododecafluorohexyloxy)-1,1,2,2-tetrafluoroethanesulfonic
     acid potassium salt
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfesa
   label: 6:2 Cl-PFESA
   name: pfesa
@@ -7027,8 +6163,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluoroheptanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfhpa
   label: PFHpA
   name: pfhpa
@@ -7040,10 +6174,8 @@ observable_properties:
   unique_name: pfhpa
   value_type: decimal
 - categorical: false
-  default_unit: ng/g
+  default_unit: "\xC2\xB5g/L"
   description: Linear Perfluoroheptane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfhps
   label: PFHpS
   name: pfhps
@@ -7057,8 +6189,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorohexanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfhxa
   label: PFHxA
   name: pfhxa
@@ -7072,8 +6202,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorohexylphosphonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfhxpa
   label: PFHxPA
   name: pfhxpa
@@ -7085,10 +6213,8 @@ observable_properties:
   unique_name: pfhxpa
   value_type: decimal
 - categorical: false
-  default_unit: ng/g
+  default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorohexane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfhxs
   label: L-PFHxS
   name: pfhxs
@@ -7102,8 +6228,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorononanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfna
   label: PFNA
   name: pfna
@@ -7115,10 +6239,8 @@ observable_properties:
   unique_name: pfna
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Linear Perfluorononanesulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfns
   label: PFNS
   name: pfns
@@ -7132,8 +6254,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorooctanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfoa
   label: L-PFOA
   name: pfoa
@@ -7147,8 +6267,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorooctylphosphonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfopa
   label: PFOPA
   name: pfopa
@@ -7160,10 +6278,8 @@ observable_properties:
   unique_name: pfopa
   value_type: decimal
 - categorical: false
-  default_unit: ng/g
+  default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorooctane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfos
   label: L-PFOS
   name: pfos
@@ -7177,8 +6293,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluoropentanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfpea
   label: PFPeA
   name: pfpea
@@ -7192,8 +6306,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluoropentane sulfonate
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfpes
   label: PFPeS
   name: pfpes
@@ -7207,8 +6319,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorotetradecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfteda
   label: PFTeDA
   name: pfteda
@@ -7222,8 +6332,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorotridecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pftrda
   label: PFTrDA
   name: pftrda
@@ -7237,8 +6345,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluoroundecanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: pfunda
   label: PFUnDA
   name: pfunda
@@ -7252,8 +6358,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-phenoxyacetic acid
-  groups:
-  - Glycol ethers
   id: phaa
   label: PhAA
   name: phaa
@@ -7267,8 +6371,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: P-hydroxybenzoic acid
-  groups:
-  - Parabens
   id: phba
   label: HBA
   name: phba
@@ -7282,8 +6384,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 9,10-Phenanthrenediol
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: phediol
   label: 9,10-PHEdiol
   name: phediol
@@ -7297,8 +6397,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Phenanthrene-1,2,3,4-tetrol
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: phetetrol
   label: PHE-tetrol
   name: phetetrol
@@ -7312,8 +6410,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Propylparaben
-  groups:
-  - Parabens
   id: ppb
   name: ppb
   relevant_observable_entity_types:
@@ -7326,8 +6422,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dichlorodiphenyldichloroethylene
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: ppdde
   label: p,p'-DDE
   name: ppdde
@@ -7341,8 +6435,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Dichlorodiphenyltrichloroethane
-  groups:
-  - Pesticides
   id: ppddt
   label: p,p'-DDT
   name: ppddt
@@ -7356,8 +6448,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Propoxur
-  groups:
-  - Pesticides (carbamate)
   id: propoxur
   label: Propoxur
   name: propoxur
@@ -7371,8 +6461,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Platinum
-  groups:
-  - Metals
   id: pt
   label: Pt
   name: pt
@@ -7386,8 +6474,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Pyrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: pyr
   label: PYR
   name: pyr
@@ -7401,8 +6487,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Antimony
-  groups:
-  - Metals
   id: sb
   label: Sb
   name: sb
@@ -7415,9 +6499,20 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
+  description: Measured Sum (cis-DCCA, trans-DCCA)
+  id: sdcca
+  label: 'Measured '
+  name: sdcca
+  relevant_observable_entity_types:
+  - person
+  - sample
+  relevant_observation_types:
+  - sampling
+  unique_name: sdcca
+  value_type: decimal
+- categorical: false
+  default_unit: "\xC2\xB5g/L"
   description: Syn-dechlorane plus
-  groups:
-  - Flame retardants
   id: sdp
   label: Syn-DP
   name: sdp
@@ -7431,8 +6526,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Selenium
-  groups:
-  - Metals
   id: se
   name: se
   relevant_observable_entity_types:
@@ -7445,8 +6538,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1,1,1,3,3,3-Hexafluoro-2-(fluoromethoxy)propane
-  groups:
-  - Volatile anaesthetics
   id: sevoflurane
   label: Sevoflurane
   name: sevoflurane
@@ -7459,8 +6550,6 @@ observable_properties:
   value_type: decimal
 - categorical: false
   description: Specific gravity
-  groups:
-  - Property of urine
   id: sg
   label: SG
   name: sg
@@ -7481,8 +6570,6 @@ observable_properties:
 - categorical: false
   default_unit: nmol/L
   description: Sex Hormone Binding Globulin
-  groups:
-  - Steroid/Sex hormones
   id: shbg
   label: SHBG
   name: shbg
@@ -7500,8 +6587,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxyphenanthrene + 2-hydroxyphenanthrene + 3-hydroxyphenanthrene
     + 4-hydroxyphenanthrene + 9-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: shphe
   label: 1-PHEN + 2-PHEN + 3-PHEN + 4-PHEN + 9-PHEN
   name: shphe
@@ -7515,8 +6600,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Simazine
-  groups:
-  - Herbicides
   id: simz
   name: simz
   relevant_observable_entity_types:
@@ -7529,8 +6612,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Simazine mercapturate
-  groups:
-  - Herbicides
   id: simzmerc
   name: simzmerc
   relevant_observable_entity_types:
@@ -7543,8 +6624,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear 6:2 polyfluoroalkyl phosphoric acid diesters
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sixdipap
   label: 6:2 diPAP
   name: sixdipap
@@ -7556,10 +6635,8 @@ observable_properties:
   unique_name: sixdipap
   value_type: decimal
 - categorical: false
-  default_unit: "\xC2\xB5g/L"
+  default_unit: ng/g
   description: Linear 6:2/8:2 Fluorotelomer phosphate diester
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sixeightdipap
   label: 6:2/8:2 diPAP
   name: sixeightdipap
@@ -7571,10 +6648,8 @@ observable_properties:
   unique_name: sixeightdipap
   value_type: decimal
 - categorical: false
-  default_unit: ng/g
+  default_unit: "\xC2\xB5g/L"
   description: Linear 3,3,4,4,5,5,6,6,7,7,8,8,8-tridecafluorooctanesulphonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sixfts
   label: 6:2 FTS
   name: sixfts
@@ -7588,8 +6663,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 6-hydroxychrysene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: sixhcry
   label: 6-CRY
   name: sixhcry
@@ -7603,8 +6676,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear 6:2 polyfluoroalkyl phosphoric acid monoesters
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sixmonopap
   label: 6:2 monoPAP
   name: sixmonopap
@@ -7618,8 +6689,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tin
-  groups:
-  - Metals
   id: sn
   label: Sn
   name: sn
@@ -7633,8 +6702,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Sterigmatocystin
-  groups:
-  - Mycotoxins
   id: ster
   label: STER
   name: ster
@@ -7650,8 +6717,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxyphenanthrene + 9-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: stwoninehphe
   label: 2-PHEN + 9-PHEN
   name: stwoninehphe
@@ -7665,8 +6730,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Measured Sum of 2- and 3-hydroxyfluorene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: stwothreehfluo
   label: Measured 2+3-OH-Fluorene
   name: stwothreehfluo
@@ -7682,8 +6745,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxyphenanthrene + 3-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: stwothreehphe
   label: 2-PHEN + 3-PHEN
   name: stwothreehphe
@@ -7699,8 +6760,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Arsenic(III) acid + Arsenic(V) acid + Monomethylarsonic
-  groups:
-  - Metals
   id: sumastfmma
   label: As(III) + As(V) + MMA
   name: sumastfmma
@@ -7715,10 +6774,7 @@ observable_properties:
     formula: "cdcca [\xC2\xB5g/L] + tdcca [\xC2\xB5g/L]"
   categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: 3-(2,2-dichlorovinyl)-2,2-dimethylycyclopropane carboxylic acid + Trans-3-(2,2-dichlorovinyl)-2,2-dimethylcyclopropane-1-carboxylic
-    acid
-  groups:
-  - Pesticides (pyrethroids)
+  description: Sum (cis-DCCA, trans-DCCA)
   id: sumdcca
   label: cis-DCCA + trans-DCCA
   name: sumdcca
@@ -7735,8 +6791,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxynaphthalene + 2-hydroxynaphthalene + 1-,2-dihydroxynaphthalene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: sumdiohnap
   label: 1-NAPH + 2-NAPH + 1,2-NAPH
   name: sumdiohnap
@@ -7752,8 +6806,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Syn-dechlorane plus + Anti-dechlorane plus
-  groups:
-  - Flame retardants
   id: sumdp
   label: Syn-DP + Anti-DP
   name: sumdp
@@ -7774,8 +6826,6 @@ observable_properties:
     phthalate + Mono(2-ethylhexyl) phthalate + Mono(2-ethyl-5-carboxy-pentyl) phthalate
     + Mono-benzyl phthalate + Mono-isobutyl phthalate + Mono-n-butyl phthalate + Mono-ethyl
     phthalate
-  groups:
-  - Phthalates
   id: sumeightphthal
   label: 5oxo-MEHP + 5OH-MEHP + MEHP + 5cx-MEPP + MBzP + MiBP + MnBP + MEP
   name: sumeightphthal
@@ -7793,8 +6843,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorooctanoic acid + Linear Perfluorononanoic acid + Linear
     Perfluorohexane sulfonic acid + Linear Perfluorooctane sulfonic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sumfourpfas
   label: L-PFOA + PFNA + L-PFHxS + L-PFOS
   name: sumfourpfas
@@ -7810,8 +6858,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Glyphosate + Aminomethylyphosphonic acid
-  groups:
-  - Pesticides
   id: sumglyphampa
   label: GLY + AMPA
   name: sumglyphampa
@@ -7828,8 +6874,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxyfluorene + 3-hydroxyfluorene + 9-hydroxyfluorene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: sumhfluo
   label: 2-FLUO + 3-FLUO + 9-FLUO
   name: sumhfluo
@@ -7846,8 +6890,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Calculated sum of metabolites for high molecular weight phthalates
-  groups:
-  - Phthalates
   id: sumhmwphthal
   label: 5oxo-MEHP + 5OH-MEHP + MEHP + 5cx-MEPP + MBzP
   name: sumhmwphthal
@@ -7863,8 +6905,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxyphenanthrene + 2-hydroxyphenanthrene + 4-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: sumhpheone
   label: 1-PHEN + 2-PHEN + 4-PHEN
   name: sumhpheone
@@ -7882,8 +6922,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxyphenanthrene + 2-hydroxyphenanthrene + 3-hydroxyphenanthrene
     + 4-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: sumhphetwo
   label: 1-PHEN + 2-PHEN + 3-PHEN + 4-PHEN
   name: sumhphetwo
@@ -7899,8 +6937,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Calculated sum of metabolites for low molecular weight phthalates
-  groups:
-  - Phthalates
   id: sumlmwphthal
   label: MiBP + MnBP + MEP
   name: sumlmwphthal
@@ -7918,8 +6954,6 @@ observable_properties:
   description: 6-OH-Mono-propyl-heptyl phthalate (LC-MS/MS method, sum of all C10
     metabolites including the DPHP metabolites) + Mono(2,7-methyl-7-carboxy-heptyl)
     phthalate
-  groups:
-  - Phthalates
   id: summidp
   label: OH-MiDP + cx-MiDP
   name: summidp
@@ -7936,8 +6970,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Cyclohexane-1,2-dicarboxylate-mono-(7-carboxylate-4-methyl)heptyl ester
     + Cyclohexane-1,2-dicarboxylate-mono-(7-hydroxy-4-methyl)octyl ester
-  groups:
-  - DINCH
   id: summinch
   label: cx-MINCH + OH-MINCH
   name: summinch
@@ -7954,8 +6986,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: 7-OH-(Mono-methyl-octyl) phthalate + 7-Carboxy-(mono-methyl- heptyl)
     phthalate
-  groups:
-  - Phthalates
   id: summinp
   label: OH-MiNP + cx-MiNP
   name: summinp
@@ -7972,8 +7002,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-hydroxy-hexyl) phthalate + Mono(2-ethyl-5-carboxy-pentyl)
     phthalate
-  groups:
-  - Phthalates
   id: sumohcxmehp
   label: 5OH-MEHP + 5cx-MEPP
   name: sumohcxmehp
@@ -7989,8 +7017,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 1-hydroxynaphthalene + 2-hydroxynaphthalene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: sumohnap
   label: 1-NAPH + 2-NAPH
   name: sumohnap
@@ -8008,8 +7034,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-oxo-hexyl) phthalate + Mono(2-ethyl-5-hydroxy-hexyl)
     phthalate + Mono(2-ethylhexyl) phthalate + Mono(2-ethyl-5-carboxy-pentyl) phthalate
-  groups:
-  - Phthalates
   id: sumohoxocxmehp
   label: 5oxo-MEHP + 5OH-MEHP + MEHP + 5cx-MEPP
   name: sumohoxocxmehp
@@ -8026,8 +7050,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-oxo-hexyl) phthalate + Mono(2-ethyl-5-hydroxy-hexyl)
     phthalate
-  groups:
-  - Phthalates
   id: sumohoxomehp
   label: 5oxo-MEHP + 5OH-MEHP
   name: sumohoxomehp
@@ -8044,8 +7066,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Mono(2-ethyl-5-oxo-hexyl) phthalate + Mono(2-ethyl-5-hydroxy-hexyl)
     phthalate + Mono(2-ethylhexyl) phthalate
-  groups:
-  - Phthalates
   id: sumohoxomehptwo
   label: 5oxo-MEHP + 5OH-MEHP + MEHP
   name: sumohoxomehptwo
@@ -8061,8 +7081,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-phenoxybenzoic acid + 4-fluoro-3-phenoxybenzoic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: sumpba
   label: 3PBA + F-3-PBA
   name: sumpba
@@ -8079,8 +7097,6 @@ observable_properties:
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorohexane sulfonic acid + Linear Perfluorooctane sulfonic
     acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sumpfhxspfos
   label: L-PFHxS + L-PFOS
   name: sumpfhxspfos
@@ -8096,8 +7112,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Linear Perfluorooctanoic acid + Linear Perfluorononanoic acid
-  groups:
-  - Per-/poly-fluorinated compounds (PFASs)
   id: sumpfoapfna
   label: L-PFOA + PFNA
   name: sumpfoapfna
@@ -8114,8 +7128,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Total arsenic Calculated
-  groups:
-  - Metals
   id: sumtas
   label: As total Calculated
   name: sumtas
@@ -8132,8 +7144,6 @@ observable_properties:
   categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Toxic relevant Arsenic
-  groups:
-  - Metals
   id: sumtra
   label: ' Calculated '
   name: sumtra
@@ -8146,11 +7156,9 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: Total arsenic measured
-  groups:
-  - Metals
+  description: Measured Total arsenic
   id: tas
-  label: As total measured
+  label: Measured As total
   name: tas
   relevant_observable_entity_types:
   - person
@@ -8162,8 +7170,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tetrabromobisphenol A
-  groups:
-  - Flame retardants
   id: tbbpa
   label: TBBPA
   name: tbbpa
@@ -8177,8 +7183,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tetrabromobisphenol A bis(2,3-dibromopropyl ether)
-  groups:
-  - Flame retardants
   id: tbbpadbpe
   label: TBBPA-DBPE
   name: tbbpadbpe
@@ -8192,8 +7196,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4,6-Tribromophenol
-  groups:
-  - Flame retardants
   id: tbph
   label: 2,4,6-TBP
   name: tbph
@@ -8207,8 +7209,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tributyltin
-  groups:
-  - Pesticides
   id: tbt
   label: TBT
   name: tbt
@@ -8222,8 +7222,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,7,8-tetrachlorodibenzodioxin
-  groups:
-  - Dioxins
   id: tcbd
   label: 2,3,7,8-TCDD
   name: tcbd
@@ -8237,8 +7235,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tris(chloroethyl) phosphate
-  groups:
-  - Flame retardants
   id: tcep
   label: TCEP
   name: tcep
@@ -8252,8 +7248,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,4-Trichlorophenol
-  groups:
-  - Pesticides
   id: tcp234
   label: 2,3,4-TCP
   name: tcp234
@@ -8267,8 +7261,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4,5-trichlorophenol
-  groups:
-  - Pesticides
   id: tcp245
   label: 2,4,5-TCP
   name: tcp245
@@ -8282,8 +7274,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4,6-trichlorophenol
-  groups:
-  - Pesticides
   id: tcp246
   label: 2,4,6-TCP
   name: tcp246
@@ -8297,8 +7287,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,4,5-trichlorophenoxyacetic acid
-  groups:
-  - Pesticides
   id: tcpa
   name: tcpa
   relevant_observable_entity_types:
@@ -8311,8 +7299,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3,5,6-trichloro-2-pyridinol
-  groups:
-  - Pesticides
   id: tcpy
   label: TCPy
   name: tcpy
@@ -8326,8 +7312,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Total Chromium
-  groups:
-  - Metals
   id: tcr
   label: 'Cr total '
   name: tcr
@@ -8341,8 +7325,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Trans-3-(2,2-dichlorovinyl)-2,2-dimethylcyclopropane-1-carboxylic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: tdcca
   label: trans-DCCA
   name: tdcca
@@ -8356,8 +7338,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Deepoxy-deoxynivalenol Total (free + conjugated)
-  groups:
-  - Mycotoxins
   id: tdomone
   label: tDOM-1
   name: tdomone
@@ -8371,8 +7351,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Total Deoxynivalenol (free + conjugated)
-  groups:
-  - Mycotoxins
   id: tdon
   label: tDON
   name: tdon
@@ -8386,8 +7364,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tebuconazole-OH (hydroxytebuconazole)
-  groups:
-  - Pesticides
   id: tebuconazoleoh
   label: OH-TEBUCONAZOLE
   name: tebuconazoleoh
@@ -8401,8 +7377,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,4,6-Tetrachlorophenol
-  groups:
-  - Pesticides
   id: tecp2346
   label: 2,3,4,6-TeCP
   name: tecp2346
@@ -8416,8 +7390,6 @@ observable_properties:
 - categorical: false
   description: Telomere Length (TEL) copy number variations normalized values to RPLP0
     gene
-  groups:
-  - Cell ageing
   id: telleng
   label: TEL
   name: telleng
@@ -8431,8 +7403,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2,3,4 trihydroxybenzophenone
-  groups:
-  - UV-filters (benzophenones)
   id: thb
   label: THB
   name: thb
@@ -8446,8 +7416,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chrysen-3-ol
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: threecry
   label: 3-CRY
   name: threecry
@@ -8461,8 +7429,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-hydroxyfluorene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: threehfluo
   label: 3-FLUO
   name: threehfluo
@@ -8476,8 +7442,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: threehphe
   label: 3-PHEN
   name: threehphe
@@ -8490,11 +7454,9 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: Sum of 3- and 9- hydroxybenz[a]anthracene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
+  description: Measured Sum of 3- and 9- hydroxybenz[a]anthracene
   id: threeninebaa
-  label: 3-BaA + 9-BaA
+  label: Measured 3-BaA + 9-BaA
   name: threeninebaa
   relevant_observable_entity_types:
   - person
@@ -8506,8 +7468,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: "3-Hydroxyfluoranth\xC3\xA8ne"
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: threeohfa
   label: 3-OHFA
   name: threeohfa
@@ -8521,8 +7481,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 3-phenoxybenzoic acid
-  groups:
-  - Pesticides (pyrethroids)
   id: threepba
   label: 3PBA
   name: threepba
@@ -8536,8 +7494,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Titanium
-  groups:
-  - Metals
   id: ti
   label: Ti
   name: ti
@@ -8551,8 +7507,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Thallium
-  groups:
-  - Metals
   id: tl
   label: Tl
   name: tl
@@ -8566,8 +7520,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Trans-nonachlor
-  groups:
-  - Persistent Organic Pollutants (POPs)
   id: tnona
   name: tnona
   relevant_observable_entity_types:
@@ -8580,8 +7532,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Trioctyltin
-  groups:
-  - Pesticides
   id: tot
   label: TOT
   name: tot
@@ -8595,8 +7545,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Ochratoxin A Total (free + conjugated)
-  groups:
-  - Mycotoxins
   id: tota
   label: tOTA
   name: tota
@@ -8610,8 +7558,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Ethyltriphenyltin
-  groups:
-  - Pesticides
   id: tpht
   label: TPhT
   name: tpht
@@ -8624,11 +7570,9 @@ observable_properties:
   value_type: decimal
 - categorical: false
   default_unit: "\xC2\xB5g/L"
-  description: Measured toxicologically relevant arsenic
-  groups:
-  - Metals
+  description: Measured Measured toxicologically relevant arsenic
   id: tra
-  label: Tox. rel. As
+  label: Measured Tox. rel. As
   name: tra
   relevant_observable_entity_types:
   - person
@@ -8640,8 +7584,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Heptachlor exo-epoxide (trans)
-  groups:
-  - Pesticides
   id: transhepexepo
   name: transhepexepo
   relevant_observable_entity_types:
@@ -8654,8 +7596,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Triclosan
-  groups:
-  - Care products
   id: triclos
   name: triclos
   relevant_observable_entity_types:
@@ -8668,8 +7608,6 @@ observable_properties:
 - categorical: false
   default_unit: mg/dL
   description: Triglycerides
-  groups:
-  - Blood Lipids and lipid transport proteins
   id: trigl
   name: trigl
   relevant_observable_entity_types:
@@ -8689,8 +7627,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5LU/mL"
   description: Thyroid-stimulating hormone
-  groups:
-  - Thyroid hormones
   id: tsh
   label: TSH
   name: tsh
@@ -8704,8 +7640,6 @@ observable_properties:
 - categorical: false
   default_unit: ng/dL
   description: Testosterone
-  groups:
-  - Steroid/Sex hormones
   id: tt
   name: tt
   relevant_observable_entity_types:
@@ -8718,8 +7652,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: T,t-muconic acid
-  groups:
-  - Volatile Organic Compounds (VOCs)
   id: ttmca
   name: ttmca
   relevant_observable_entity_types:
@@ -8732,8 +7664,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: T-2 Toxin
-  groups:
-  - Mycotoxins
   id: ttwo
   label: T-2
   name: ttwo
@@ -8747,8 +7677,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Chrysen-2-ol
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: twocry
   label: 2-CRY
   name: twocry
@@ -8762,8 +7690,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxyfluorene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: twohfluo
   label: 2-FLUO
   name: twohfluo
@@ -8777,8 +7703,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxyphenanthrene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: twohphe
   label: 2-PHEN
   name: twohphe
@@ -8792,8 +7716,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: 2-hydroxynaphthalene
-  groups:
-  - Polycyclic Aromatic Hydrocarbons (PAHs)
   id: twoohnap
   label: 2-NAPH
   name: twoohnap
@@ -8807,8 +7729,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Total (free + conjugated) Zearalenone
-  groups:
-  - Mycotoxins
   id: tzen
   label: tZEN
   name: tzen
@@ -8822,8 +7742,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Uranium
-  groups:
-  - Metals
   id: u
   label: U
   name: u
@@ -8837,8 +7755,6 @@ observable_properties:
 - categorical: false
   default_unit: L
   description: Urine volume
-  groups:
-  - Property of urine
   id: uvolume
   name: uvolume
   relevant_observable_entity_types:
@@ -8851,8 +7767,6 @@ observable_properties:
 - categorical: false
   default_unit: L
   description: Urine void volume per 24h
-  groups:
-  - Property of urine
   id: uvolumeday
   name: uvolumeday
   relevant_observable_entity_types:
@@ -8865,8 +7779,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Vanadium
-  groups:
-  - Metals
   id: v
   label: V
   name: v
@@ -8880,8 +7792,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Tungsten
-  groups:
-  - Metals
   id: w
   label: W
   name: w
@@ -8895,8 +7805,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Trans-chlordane
-  groups:
-  - Pesticides
   id: ychlor
   label: "\xCE\xB3-chlordane"
   name: ychlor
@@ -8910,8 +7818,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Zearalanone
-  groups:
-  - Mycotoxins
   id: zan
   label: ZAN
   name: zan
@@ -8925,8 +7831,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Zearalenone-14-sulphate
-  groups:
-  - Mycotoxins
   id: zensulf
   label: ZEN-14-S
   name: zensulf
@@ -8940,8 +7844,6 @@ observable_properties:
 - categorical: false
   default_unit: "\xC2\xB5g/L"
   description: Zinc
-  groups:
-  - Metals
   id: zn
   label: Zn
   name: zn
