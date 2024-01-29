@@ -164,5 +164,6 @@ ook consumptie van eigen putwater?";Local and/or own food consumption and freque
 10000;Acrylamide;Exposure;Exposure marker;Acrylamide;;Acrylamide;Acrylamide;Blootstellingsmetingen;;;;;
 10001;Mycotoxins;Exposure;Exposure marker;Mycotoxins;;Mycotoxins;Mycotoxins;Blootstellingsmetingen;;;;;
 10002;Alkaloid;Exposure;Exposure marker;Alkaloid;;Alkaloid;Alkaloid;;;;;;
-10003;Care products;Exposure;Exposure marker;Care products;;Care products;Care products;;;;;;
+10003;Organochlorine compounds (OCs);Exposure;Exposure marker;Organochlorine compounds (OCs);;Organochlorine compounds (OCs);;;;;;;
+10004;Care products;Exposure;Exposure marker;Care products;;Care products;Care products;;;;;;
 100000;characteristics of non human samples;Questionnaire and sample information;Sample information;characteristics of non human samples;;The sampletypes in which we measure can also have properties that are not directly markers, but are measured in the lab. This can be ph of soil, and other characteristics that need to be kept in the database;characteristics of non human samples;;;;;;

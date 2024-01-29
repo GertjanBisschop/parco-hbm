@@ -12,8 +12,8 @@ random spot urine;us;10;urine;random spot urine;random spot-urine
 first morning urine;um;11;urine;first morning urine;eerste ochtend-urine
 fasting urine;uf;12;urine;urine fasting;urine nuchter
 urine 24h;ud;13;urine;urine 24 hours;urine 24u
-breast milk;bm;15;breast milk;breast milk;moedermelk
-hair;h;14;hair;hair;haar
+breast milk;bm;14;breast milk;breast milk;moedermelk
+hair;h;15;hair;hair;haar
 nail;n;16;nail;nail;nagel
 All toe nail;atn;17;nail;all toe nails;alle teennagels
 Big toe nail;btn;18;nail;big toe nail;grote teen nagel
@@ -27,8 +27,16 @@ adipose tissue/fat;adi;25;adipose tissue/fat;adipose tissue/fat;vetweefsel/vet
 dermal wipes;dw;26;dermal wipes;dermal wipes;dermale doekjes
 amniotic fluid;af;27;amniotic fluid;amniotic fluid;vruchtwater
 placenta tissue;plt;28;placenta tissue;placenta tissue;placenta weefsel
-house dust;dust;29;air;dust;huisstof
-soil;soil;30;soil;soil;grond
-kitchengarden food;kgfood;31;food;kitchengarden food;moestuin voedsel
-eggs;egg;32;food;chicken egg;kippenei
-water;water;33;water;water;water
+indoor dust;idust;29;air;indoor dust;binnen stof
+outdoor dust;odust;30;air;outdoor dust;outdoor stof
+outdoor air-stationary;oair;31;air;outdoor air;buitenlucht
+indoor air-stationary;iair;32;air;indoor air;binnenlucht
+personal air;pair;33;air;personal air;persoonlijke lucht
+soil;soil;34;soil;soil;grond
+kitchengarden food;kgfood;35;food;kitchengarden food;moestuin voedsel
+eggs;egg;36;food;chicken egg;kippenei
+water;water;37;water;water;water
+volumetric absorptive microsample (VAMS);vams;38;blood;blood-volumetric absorptive microsample;blood volumetrische absorptieve microsample
+dried blood spots;dbs;39;blood;blood-dried blood spot;blood spot gedroogd
+silicone wrist band;swb;40;silicone wrist band;silicone wrist band;siliconen polsbandje
+surface wipe;sw;41;surface wipe;surface wipe;oppervlakteveeg
