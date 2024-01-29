@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-16T09:52:00
+# Generation date: 2024-01-29T17:33:49
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -86,6 +86,10 @@ class ObservablePropertyMetadataFieldId(NamedThingId):
     pass
 
 
+class ContactId(NamedThingId):
+    pass
+
+
 class StakeholderId(NamedThingId):
     pass
 
@@ -107,6 +111,10 @@ class TimepointId(StudyEntityId):
 
 
 class StudyPopulationId(StudyEntityId):
+    pass
+
+
+class SampleCollectionId(StudyEntityId):
     pass
 
 
@@ -241,6 +249,7 @@ class NamedThing(YAMLRoot):
     name: Optional[str] = None
     description: Optional[str] = None
     label: Optional[str] = None
+    remark: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -259,6 +268,9 @@ class NamedThing(YAMLRoot):
 
         if self.label is not None and not isinstance(self.label, str):
             self.label = str(self.label)
+
+        if self.remark is not None and not isinstance(self.remark, str):
+            self.remark = str(self.remark)
 
         super().__post_init__(**kwargs)
 
@@ -957,6 +969,39 @@ class ValidationDesign(YAMLRoot):
 
 
 @dataclass
+class Contact(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Contact"]
+    class_class_curie: ClassVar[str] = "peh:Contact"
+    class_name: ClassVar[str] = "Contact"
+    class_model_uri: ClassVar[URIRef] = PEH.Contact
+
+    id: Union[str, ContactId] = None
+    contact_roles: Optional[Union[Union[str, "ContactRole"], List[Union[str, "ContactRole"]]]] = empty_list()
+    contact_email: Optional[str] = None
+    contact_phone: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ContactId):
+            self.id = ContactId(self.id)
+
+        if not isinstance(self.contact_roles, list):
+            self.contact_roles = [self.contact_roles] if self.contact_roles is not None else []
+        self.contact_roles = [v if isinstance(v, ContactRole) else ContactRole(v) for v in self.contact_roles]
+
+        if self.contact_email is not None and not isinstance(self.contact_email, str):
+            self.contact_email = str(self.contact_email)
+
+        if self.contact_phone is not None and not isinstance(self.contact_phone, str):
+            self.contact_phone = str(self.contact_phone)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Stakeholder(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -997,6 +1042,8 @@ class Project(NamedThing):
     id: Union[str, ProjectId] = None
     default_language: Optional[str] = None
     project_stakeholders: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
+    start_date: Optional[Union[str, XSDDate]] = None
+    end_date: Optional[Union[str, XSDDate]] = None
     study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
     context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
@@ -1013,6 +1060,12 @@ class Project(NamedThing):
         if not isinstance(self.project_stakeholders, list):
             self.project_stakeholders = [self.project_stakeholders] if self.project_stakeholders is not None else []
         self.project_stakeholders = [v if isinstance(v, ProjectStakeholder) else ProjectStakeholder(**as_dict(v)) for v in self.project_stakeholders]
+
+        if self.start_date is not None and not isinstance(self.start_date, XSDDate):
+            self.start_date = XSDDate(self.start_date)
+
+        if self.end_date is not None and not isinstance(self.end_date, XSDDate):
+            self.end_date = XSDDate(self.end_date)
 
         if not isinstance(self.study_id_list, list):
             self.study_id_list = [self.study_id_list] if self.study_id_list is not None else []
@@ -1040,6 +1093,7 @@ class ProjectStakeholder(YAMLRoot):
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
     project_roles: Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1049,6 +1103,10 @@ class ProjectStakeholder(YAMLRoot):
         if not isinstance(self.project_roles, list):
             self.project_roles = [self.project_roles] if self.project_roles is not None else []
         self.project_roles = [v if isinstance(v, ProjectRole) else ProjectRole(v) for v in self.project_roles]
+
+        if not isinstance(self.contacts, list):
+            self.contacts = [self.contacts] if self.contacts is not None else []
+        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
 
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
@@ -1167,6 +1225,7 @@ class StudyStakeholder(YAMLRoot):
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
     study_roles: Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
@@ -1175,6 +1234,10 @@ class StudyStakeholder(YAMLRoot):
         if not isinstance(self.study_roles, list):
             self.study_roles = [self.study_roles] if self.study_roles is not None else []
         self.study_roles = [v if isinstance(v, StudyRole) else StudyRole(v) for v in self.study_roles]
+
+        if not isinstance(self.contacts, list):
+            self.contacts = [self.contacts] if self.contacts is not None else []
+        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
 
         super().__post_init__(**kwargs)
 
@@ -1244,6 +1307,35 @@ class StudyPopulation(StudyEntity):
 
 
 @dataclass
+class SampleCollection(StudyEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["SampleCollection"]
+    class_class_curie: ClassVar[str] = "peh:SampleCollection"
+    class_name: ClassVar[str] = "SampleCollection"
+    class_model_uri: ClassVar[URIRef] = PEH.SampleCollection
+
+    id: Union[str, SampleCollectionId] = None
+    matrix: Optional[Union[str, MatrixId]] = None
+    constraints: Optional[Union[str, List[str]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SampleCollectionId):
+            self.id = SampleCollectionId(self.id)
+
+        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
+            self.matrix = MatrixId(self.matrix)
+
+        if not isinstance(self.constraints, list):
+            self.constraints = [self.constraints] if self.constraints is not None else []
+        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Sample(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1254,6 +1346,8 @@ class Sample(StudyEntity):
 
     id: Union[str, SampleId] = None
     matrix: Optional[Union[str, MatrixId]] = None
+    constraints: Optional[Union[str, List[str]]] = empty_list()
+    sampled_in_project: Optional[Union[str, ProjectId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1263,6 +1357,13 @@ class Sample(StudyEntity):
 
         if self.matrix is not None and not isinstance(self.matrix, MatrixId):
             self.matrix = MatrixId(self.matrix)
+
+        if not isinstance(self.constraints, list):
+            self.constraints = [self.constraints] if self.constraints is not None else []
+        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
+
+        if self.sampled_in_project is not None and not isinstance(self.sampled_in_project, ProjectId):
+            self.sampled_in_project = ProjectId(self.sampled_in_project)
 
         super().__post_init__(**kwargs)
 
@@ -1668,16 +1769,14 @@ class DataRequest(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.DataRequest
 
     id: Union[str, DataRequestId] = None
-    contact_name: Optional[str] = None
-    contact_email: Optional[str] = None
-    contact_phone: Optional[str] = None
+    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
     request_properties: Optional[str] = None
     data_stakeholders: Optional[Union[Union[str, DataStakeholderId], List[Union[str, DataStakeholderId]]]] = empty_list()
     research_objectives: Optional[Union[Union[str, ResearchObjectiveId], List[Union[str, ResearchObjectiveId]]]] = empty_list()
     processing_actions: Optional[Union[Union[str, ProcessingActionId], List[Union[str, ProcessingActionId]]]] = empty_list()
     processing_steps: Optional[Union[Union[str, ProcessingStepId], List[Union[str, ProcessingStepId]]]] = empty_list()
-    remarks_on_content: Optional[Union[str, List[str]]] = empty_list()
-    remarks_on_methodology: Optional[Union[str, List[str]]] = empty_list()
+    remark_on_content: Optional[str] = None
+    remark_on_methodology: Optional[str] = None
     observed_entity_properties: Optional[Union[Union[dict, "ObservedEntityProperty"], List[Union[dict, "ObservedEntityProperty"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1686,14 +1785,9 @@ class DataRequest(NamedThing):
         if not isinstance(self.id, DataRequestId):
             self.id = DataRequestId(self.id)
 
-        if self.contact_name is not None and not isinstance(self.contact_name, str):
-            self.contact_name = str(self.contact_name)
-
-        if self.contact_email is not None and not isinstance(self.contact_email, str):
-            self.contact_email = str(self.contact_email)
-
-        if self.contact_phone is not None and not isinstance(self.contact_phone, str):
-            self.contact_phone = str(self.contact_phone)
+        if not isinstance(self.contacts, list):
+            self.contacts = [self.contacts] if self.contacts is not None else []
+        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
 
         if self.request_properties is not None and not isinstance(self.request_properties, str):
             self.request_properties = str(self.request_properties)
@@ -1714,13 +1808,11 @@ class DataRequest(NamedThing):
             self.processing_steps = [self.processing_steps] if self.processing_steps is not None else []
         self.processing_steps = [v if isinstance(v, ProcessingStepId) else ProcessingStepId(v) for v in self.processing_steps]
 
-        if not isinstance(self.remarks_on_content, list):
-            self.remarks_on_content = [self.remarks_on_content] if self.remarks_on_content is not None else []
-        self.remarks_on_content = [v if isinstance(v, str) else str(v) for v in self.remarks_on_content]
+        if self.remark_on_content is not None and not isinstance(self.remark_on_content, str):
+            self.remark_on_content = str(self.remark_on_content)
 
-        if not isinstance(self.remarks_on_methodology, list):
-            self.remarks_on_methodology = [self.remarks_on_methodology] if self.remarks_on_methodology is not None else []
-        self.remarks_on_methodology = [v if isinstance(v, str) else str(v) for v in self.remarks_on_methodology]
+        if self.remark_on_methodology is not None and not isinstance(self.remark_on_methodology, str):
+            self.remark_on_methodology = str(self.remark_on_methodology)
 
         if not isinstance(self.observed_entity_properties, list):
             self.observed_entity_properties = [self.observed_entity_properties] if self.observed_entity_properties is not None else []
@@ -1763,6 +1855,7 @@ class DataStakeholder(NamedThing):
     id: Union[str, DataStakeholderId] = None
     stakeholder: Optional[Union[str, StakeholderId]] = None
     data_roles: Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
     processing_description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1777,6 +1870,10 @@ class DataStakeholder(NamedThing):
         if not isinstance(self.data_roles, list):
             self.data_roles = [self.data_roles] if self.data_roles is not None else []
         self.data_roles = [v if isinstance(v, DataRole) else DataRole(v) for v in self.data_roles]
+
+        if not isinstance(self.contacts, list):
+            self.contacts = [self.contacts] if self.contacts is not None else []
+        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
 
         if self.processing_description is not None and not isinstance(self.processing_description, str):
             self.processing_description = str(self.processing_description)
@@ -1972,6 +2069,19 @@ class LinkType(EnumDefinitionImpl):
         name="LinkType",
     )
 
+class ContactRole(EnumDefinitionImpl):
+
+    administrative = PermissibleValue(text="administrative")
+    data = PermissibleValue(text="data")
+    general = PermissibleValue(text="general")
+    lead = PermissibleValue(text="lead")
+    legal = PermissibleValue(text="legal")
+    technical = PermissibleValue(text="technical")
+
+    _defn = EnumDefinition(
+        name="ContactRole",
+    )
+
 class ProjectRole(EnumDefinitionImpl):
 
     funding_partner = PermissibleValue(text="funding_partner")
@@ -2045,6 +2155,9 @@ slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEM
 
 slots.label = Slot(uri=RDFS.label, name="label", curie=RDFS.curie('label'),
                    model_uri=PEH.label, domain=None, range=Optional[str])
+
+slots.remark = Slot(uri=PEH.remark, name="remark", curie=PEH.curie('remark'),
+                   model_uri=PEH.remark, domain=None, range=Optional[str])
 
 slots.alias = Slot(uri=PEH.alias, name="alias", curie=PEH.curie('alias'),
                    model_uri=PEH.alias, domain=None, range=Optional[str])
@@ -2286,6 +2399,9 @@ slots.study_entity = Slot(uri=PEH.study_entity, name="study_entity", curie=PEH.c
 slots.recruited_in_project = Slot(uri=PEH.recruited_in_project, name="recruited_in_project", curie=PEH.curie('recruited_in_project'),
                    model_uri=PEH.recruited_in_project, domain=None, range=Optional[Union[str, ProjectId]])
 
+slots.sampled_in_project = Slot(uri=PEH.sampled_in_project, name="sampled_in_project", curie=PEH.curie('sampled_in_project'),
+                   model_uri=PEH.sampled_in_project, domain=None, range=Optional[Union[str, ProjectId]])
+
 slots.location = Slot(uri=PEH.location, name="location", curie=PEH.curie('location'),
                    model_uri=PEH.location, domain=None, range=Optional[str])
 
@@ -2337,8 +2453,11 @@ slots.provenance_info = Slot(uri=PEH.provenance_info, name="provenance_info", cu
 slots.data_roles = Slot(uri=PEH.data_roles, name="data_roles", curie=PEH.curie('data_roles'),
                    model_uri=PEH.data_roles, domain=None, range=Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]])
 
-slots.contact_name = Slot(uri=PEH.contact_name, name="contact_name", curie=PEH.curie('contact_name'),
-                   model_uri=PEH.contact_name, domain=None, range=Optional[str])
+slots.contacts = Slot(uri=PEH.contacts, name="contacts", curie=PEH.curie('contacts'),
+                   model_uri=PEH.contacts, domain=None, range=Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]])
+
+slots.contact_roles = Slot(uri=PEH.contact_roles, name="contact_roles", curie=PEH.curie('contact_roles'),
+                   model_uri=PEH.contact_roles, domain=None, range=Optional[Union[Union[str, "ContactRole"], List[Union[str, "ContactRole"]]]])
 
 slots.contact_email = Slot(uri=PEH.contact_email, name="contact_email", curie=PEH.curie('contact_email'),
                    model_uri=PEH.contact_email, domain=None, range=Optional[str])
@@ -2361,11 +2480,11 @@ slots.processing_actions = Slot(uri=PEH.processing_actions, name="processing_act
 slots.processing_steps = Slot(uri=PEH.processing_steps, name="processing_steps", curie=PEH.curie('processing_steps'),
                    model_uri=PEH.processing_steps, domain=None, range=Optional[Union[Union[str, ProcessingStepId], List[Union[str, ProcessingStepId]]]])
 
-slots.remarks_on_content = Slot(uri=PEH.remarks_on_content, name="remarks_on_content", curie=PEH.curie('remarks_on_content'),
-                   model_uri=PEH.remarks_on_content, domain=None, range=Optional[Union[str, List[str]]])
+slots.remark_on_content = Slot(uri=PEH.remark_on_content, name="remark_on_content", curie=PEH.curie('remark_on_content'),
+                   model_uri=PEH.remark_on_content, domain=None, range=Optional[str])
 
-slots.remarks_on_methodology = Slot(uri=PEH.remarks_on_methodology, name="remarks_on_methodology", curie=PEH.curie('remarks_on_methodology'),
-                   model_uri=PEH.remarks_on_methodology, domain=None, range=Optional[Union[str, List[str]]])
+slots.remark_on_methodology = Slot(uri=PEH.remark_on_methodology, name="remark_on_methodology", curie=PEH.curie('remark_on_methodology'),
+                   model_uri=PEH.remark_on_methodology, domain=None, range=Optional[str])
 
 slots.observed_entity_properties = Slot(uri=PEH.observed_entity_properties, name="observed_entity_properties", curie=PEH.curie('observed_entity_properties'),
                    model_uri=PEH.observed_entity_properties, domain=None, range=Optional[Union[Union[dict, ObservedEntityProperty], List[Union[dict, ObservedEntityProperty]]]])

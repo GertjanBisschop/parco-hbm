@@ -134,6 +134,23 @@ class LinkType(str, Enum):
     
     
 
+class ContactRole(str, Enum):
+    
+    
+    administrative = "administrative"
+    
+    data = "data"
+    
+    general = "general"
+    
+    lead = "lead"
+    
+    legal = "legal"
+    
+    technical = "technical"
+    
+    
+
 class ProjectRole(str, Enum):
     
     
@@ -220,6 +237,7 @@ class NamedThing(ConfiguredBaseModel):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -283,6 +301,7 @@ class Unit(HasTranslations, HasContextAliases, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -295,6 +314,7 @@ class BioChemGrouping(HasTranslations, HasContextAliases, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -314,6 +334,7 @@ class BioChemEntity(HasTranslations, HasContextAliases, HasAliases, HasValidatio
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -334,6 +355,7 @@ class BioChemIdentifierSchema(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -349,6 +371,7 @@ class Matrix(HasTranslations, HasContextAliases, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -367,6 +390,7 @@ class Indicator(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -388,6 +412,7 @@ class ObservablePropertyGroup(HasTranslations, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -414,6 +439,7 @@ class ObservableProperty(HasTranslations, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -441,6 +467,7 @@ class ObservablePropertyMetadataField(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -457,6 +484,20 @@ class ValidationDesign(ConfiguredBaseModel):
     
         
 
+class Contact(NamedThing):
+    
+    contact_roles: Optional[List[ContactRole]] = Field(default_factory=list)
+    contact_email: Optional[str] = Field(None)
+    contact_phone: Optional[str] = Field(None)
+    id: str = Field(...)
+    unique_name: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
+    
+        
+
 class Stakeholder(HasTranslations, NamedThing):
     
     geographic_scope: Optional[str] = Field(None)
@@ -466,6 +507,7 @@ class Stakeholder(HasTranslations, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -473,6 +515,8 @@ class Project(HasTranslations, HasContextAliases, NamedThing):
     
     default_language: Optional[str] = Field(None)
     project_stakeholders: Optional[List[ProjectStakeholder]] = Field(default_factory=list)
+    start_date: Optional[date] = Field(None)
+    end_date: Optional[date] = Field(None)
     study_id_list: Optional[List[str]] = Field(default_factory=list)
     translations: Optional[List[Translation]] = Field(default_factory=list)
     context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
@@ -481,6 +525,7 @@ class Project(HasTranslations, HasContextAliases, NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -488,6 +533,7 @@ class ProjectStakeholder(HasTranslations):
     
     stakeholder: Optional[str] = Field(None)
     project_roles: Optional[List[ProjectRole]] = Field(default_factory=list)
+    contacts: Optional[List[str]] = Field(default_factory=list)
     translations: Optional[List[Translation]] = Field(default_factory=list)
     
         
@@ -500,6 +546,7 @@ class StudyEntity(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -526,6 +573,7 @@ class Study(StudyEntity, HasTranslations):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -533,6 +581,7 @@ class StudyStakeholder(ConfiguredBaseModel):
     
     stakeholder: Optional[str] = Field(None)
     study_roles: Optional[List[StudyRole]] = Field(default_factory=list)
+    contacts: Optional[List[str]] = Field(default_factory=list)
     
         
 
@@ -548,6 +597,7 @@ class Timepoint(StudyEntity):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -561,18 +611,36 @@ class StudyPopulation(StudyEntity, HasContextAliases):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
-class Sample(StudyEntity):
+class SampleCollection(StudyEntity):
     
     matrix: Optional[str] = Field(None)
+    constraints: Optional[List[str]] = Field(default_factory=list)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
+    
+        
+
+class Sample(StudyEntity):
+    
+    matrix: Optional[str] = Field(None)
+    constraints: Optional[List[str]] = Field(default_factory=list)
+    sampled_in_project: Optional[str] = Field(None)
+    study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    id: str = Field(...)
+    unique_name: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -584,6 +652,7 @@ class StudySubject(StudyEntity):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -596,6 +665,7 @@ class Person(StudyEntity):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -607,6 +677,7 @@ class PersonGroup(StudyEntity):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -619,6 +690,7 @@ class Geolocation(StudyEntity):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -630,6 +702,7 @@ class Environment(StudyEntity):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -643,6 +716,7 @@ class Observation(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -656,6 +730,7 @@ class MetadataObservation(Observation):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -669,6 +744,7 @@ class QuestionnaireObservation(Observation):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -682,6 +758,7 @@ class SamplingObservation(Observation):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -695,6 +772,7 @@ class GeospatialObservation(Observation):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -779,22 +857,21 @@ class ObservedValue(ConfiguredBaseModel):
 
 class DataRequest(NamedThing):
     
-    contact_name: Optional[str] = Field(None)
-    contact_email: Optional[str] = Field(None)
-    contact_phone: Optional[str] = Field(None)
+    contacts: Optional[List[str]] = Field(default_factory=list)
     request_properties: Optional[str] = Field(None)
     data_stakeholders: Optional[List[str]] = Field(default_factory=list)
     research_objectives: Optional[List[str]] = Field(default_factory=list)
     processing_actions: Optional[List[str]] = Field(default_factory=list)
     processing_steps: Optional[List[str]] = Field(default_factory=list)
-    remarks_on_content: Optional[List[str]] = Field(default_factory=list)
-    remarks_on_methodology: Optional[List[str]] = Field(default_factory=list)
+    remark_on_content: Optional[str] = Field(None)
+    remark_on_methodology: Optional[str] = Field(None)
     observed_entity_properties: Optional[List[ObservedEntityProperty]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -809,12 +886,14 @@ class DataStakeholder(NamedThing):
     
     stakeholder: Optional[str] = Field(None)
     data_roles: Optional[List[DataRole]] = Field(default_factory=list)
+    contacts: Optional[List[str]] = Field(default_factory=list)
     processing_description: Optional[str] = Field(None)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -827,6 +906,7 @@ class ResearchObjective(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -837,6 +917,7 @@ class ProcessingAction(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -849,6 +930,7 @@ class ProcessingStep(NamedThing):
     name: Optional[str] = Field(None)
     description: Optional[str] = Field(None)
     label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
     
         
 
@@ -885,6 +967,7 @@ ObservablePropertyMetadataElement.model_rebuild()
 ObservablePropertyMetadataField.model_rebuild()
 CalculationDesign.model_rebuild()
 ValidationDesign.model_rebuild()
+Contact.model_rebuild()
 Stakeholder.model_rebuild()
 Project.model_rebuild()
 ProjectStakeholder.model_rebuild()
@@ -894,6 +977,7 @@ Study.model_rebuild()
 StudyStakeholder.model_rebuild()
 Timepoint.model_rebuild()
 StudyPopulation.model_rebuild()
+SampleCollection.model_rebuild()
 Sample.model_rebuild()
 StudySubject.model_rebuild()
 Person.model_rebuild()

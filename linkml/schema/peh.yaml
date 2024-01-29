@@ -54,6 +54,7 @@ classes:
       - name
       - description
       - label
+      - remark
     close_mappings:
      - schema:Thing
 
@@ -207,6 +208,12 @@ classes:
     slots:
       - conditional
 
+  Contact:
+    is_a: NamedThing
+    slots:
+      - contact_roles
+      - contact_email
+      - contact_phone
   Stakeholder:
     is_a: NamedThing
     mixins:
@@ -228,6 +235,7 @@ classes:
     slots:
       - stakeholder
       - project_roles
+      - contacts
     mixins:
       - HasTranslations
   StudyEntity:
@@ -255,6 +263,7 @@ classes:
     slots:
       - stakeholder
       - study_roles
+      - contacts
   Timepoint:
     is_a: StudyEntity
     slots:
@@ -273,13 +282,12 @@ classes:
     slots:
       - matrix
       - constraints
-      - remarks
   Sample:
     is_a: StudyEntity
     slots:
       - matrix
       - constraints
-      - remarks
+      - sampled_in_project
   StudySubject:
     is_a: StudyEntity
   Person:
@@ -348,16 +356,14 @@ classes:
   DataRequest:
     is_a: NamedThing
     slots:
-      - contact_name
-      - contact_email
-      - contact_phone
+      - contacts
       - request_properties
       - data_stakeholders
       - research_objectives
       - processing_actions
       - processing_steps
-      - remarks_on_content
-      - remarks_on_methodology
+      - remark_on_content
+      - remark_on_methodology
       - observed_entity_properties
   ObservedEntityProperty:
     slots:
@@ -368,6 +374,7 @@ classes:
     slots:
       - stakeholder
       - data_roles
+      - contacts
       - processing_description
   ResearchObjective:
     is_a: NamedThing
@@ -396,6 +403,7 @@ slots:
     slot_uri: schema:description
   label:
     slot_uri: rdfs:label
+  remark:
 
   alias:
   aliases:
@@ -475,8 +483,6 @@ slots:
     range: Matrix
   matrix:
     range: Matrix
-  remarks:
-    multivalued: true
   constraints:
     multivalued: true
   relevant_observable_entity_types:
@@ -606,6 +612,9 @@ slots:
   recruited_in_project:
     range: Project
     inlined: false
+  sampled_in_project:
+    range: Project
+    inlined: false
   location:
   observation_type:
     range: ObservationType
@@ -648,7 +657,12 @@ slots:
   data_roles:
     multivalued: true
     range: DataRole
-  contact_name:
+  contacts:
+    multivalued: true
+    range: Contact
+  contact_roles:
+    multivalued: true
+    range: ContactRole
   contact_email:
   contact_phone:
   request_properties:
@@ -664,10 +678,8 @@ slots:
   processing_steps:
     multivalued: true
     range: ProcessingStep
-  remarks_on_content:
-    multivalued: true
-  remarks_on_methodology:
-    multivalued: true
+  remark_on_content:
+  remark_on_methodology:
   observed_entity_properties:
     multivalued: true
     range: ObservedEntityProperty
@@ -737,6 +749,14 @@ enums:
       is_part_of:
       is_located_at:
   # Roles
+  ContactRole:
+    permissible_values:
+      administrative:
+      data:
+      general:
+      lead:
+      legal:
+      technical:
   ProjectRole:
     permissible_values:
       funding_partner:
