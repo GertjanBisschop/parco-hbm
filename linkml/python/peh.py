@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-30T09:06:22
+# Generation date: 2024-01-30T12:14:31
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1355,6 +1355,8 @@ class Sample(StudyEntity):
     matrix: Optional[Union[str, MatrixId]] = None
     constraints: Optional[Union[str, List[str]]] = empty_list()
     sampled_in_project: Optional[Union[str, ProjectId]] = None
+    physical_label: Optional[str] = None
+    collection_date: Optional[Union[str, XSDDate]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1371,6 +1373,12 @@ class Sample(StudyEntity):
 
         if self.sampled_in_project is not None and not isinstance(self.sampled_in_project, ProjectId):
             self.sampled_in_project = ProjectId(self.sampled_in_project)
+
+        if self.physical_label is not None and not isinstance(self.physical_label, str):
+            self.physical_label = str(self.physical_label)
+
+        if self.collection_date is not None and not isinstance(self.collection_date, XSDDate):
+            self.collection_date = XSDDate(self.collection_date)
 
         super().__post_init__(**kwargs)
 
@@ -1599,12 +1607,12 @@ class ObservationDesign(YAMLRoot):
     class_name: ClassVar[str] = "ObservationDesign"
     class_model_uri: ClassVar[URIRef] = PEH.ObservationDesign
 
-    observation_sets: Optional[Union[Union[dict, "ObservationSet"], List[Union[dict, "ObservationSet"]]]] = empty_list()
+    observable_entity_property_sets: Optional[Union[Union[dict, "ObservableEntityPropertySet"], List[Union[dict, "ObservableEntityPropertySet"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.observation_sets, list):
-            self.observation_sets = [self.observation_sets] if self.observation_sets is not None else []
-        self.observation_sets = [v if isinstance(v, ObservationSet) else ObservationSet(**as_dict(v)) for v in self.observation_sets]
+        if not isinstance(self.observable_entity_property_sets, list):
+            self.observable_entity_property_sets = [self.observable_entity_property_sets] if self.observable_entity_property_sets is not None else []
+        self.observable_entity_property_sets = [v if isinstance(v, ObservableEntityPropertySet) else ObservableEntityPropertySet(**as_dict(v)) for v in self.observable_entity_property_sets]
 
         super().__post_init__(**kwargs)
 
@@ -1646,13 +1654,13 @@ class GeospatialDesign(ObservationDesign):
 
 
 @dataclass
-class ObservationSet(YAMLRoot):
+class ObservableEntityPropertySet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEH["ObservationSet"]
-    class_class_curie: ClassVar[str] = "peh:ObservationSet"
-    class_name: ClassVar[str] = "ObservationSet"
-    class_model_uri: ClassVar[URIRef] = PEH.ObservationSet
+    class_class_uri: ClassVar[URIRef] = PEH["ObservableEntityPropertySet"]
+    class_class_curie: ClassVar[str] = "peh:ObservableEntityPropertySet"
+    class_name: ClassVar[str] = "ObservableEntityPropertySet"
+    class_model_uri: ClassVar[URIRef] = PEH.ObservableEntityPropertySet
 
     observable_entity_type: Optional[Union[str, "ObservableEntityType"]] = None
     observable_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
@@ -1741,8 +1749,8 @@ class ObservedValue(YAMLRoot):
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
     value: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
-    quality_or_confidence_info: Optional[str] = None
-    provenance_info: Optional[str] = None
+    quality_data: Optional[Union[Union[dict, "QualityData"], List[Union[dict, "QualityData"]]]] = empty_list()
+    provenance_data: Optional[Union[Union[dict, "ProvenanceData"], List[Union[dict, "ProvenanceData"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.observable_entity is not None and not isinstance(self.observable_entity, StudyEntityId):
@@ -1757,11 +1765,57 @@ class ObservedValue(YAMLRoot):
         if self.unit is not None and not isinstance(self.unit, UnitId):
             self.unit = UnitId(self.unit)
 
-        if self.quality_or_confidence_info is not None and not isinstance(self.quality_or_confidence_info, str):
-            self.quality_or_confidence_info = str(self.quality_or_confidence_info)
+        if not isinstance(self.quality_data, list):
+            self.quality_data = [self.quality_data] if self.quality_data is not None else []
+        self.quality_data = [v if isinstance(v, QualityData) else QualityData(**as_dict(v)) for v in self.quality_data]
 
-        if self.provenance_info is not None and not isinstance(self.provenance_info, str):
-            self.provenance_info = str(self.provenance_info)
+        if not isinstance(self.provenance_data, list):
+            self.provenance_data = [self.provenance_data] if self.provenance_data is not None else []
+        self.provenance_data = [v if isinstance(v, ProvenanceData) else ProvenanceData(**as_dict(v)) for v in self.provenance_data]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class QualityData(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["QualityData"]
+    class_class_curie: ClassVar[str] = "peh:QualityData"
+    class_name: ClassVar[str] = "QualityData"
+    class_model_uri: ClassVar[URIRef] = PEH.QualityData
+
+    quality_context_key: Optional[str] = None
+    quality_value: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.quality_context_key is not None and not isinstance(self.quality_context_key, str):
+            self.quality_context_key = str(self.quality_context_key)
+
+        if self.quality_value is not None and not isinstance(self.quality_value, str):
+            self.quality_value = str(self.quality_value)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ProvenanceData(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["ProvenanceData"]
+    class_class_curie: ClassVar[str] = "peh:ProvenanceData"
+    class_name: ClassVar[str] = "ProvenanceData"
+    class_model_uri: ClassVar[URIRef] = PEH.ProvenanceData
+
+    provenance_context_key: Optional[str] = None
+    provenance_value: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.provenance_context_key is not None and not isinstance(self.provenance_context_key, str):
+            self.provenance_context_key = str(self.provenance_context_key)
+
+        if self.provenance_value is not None and not isinstance(self.provenance_value, str):
+            self.provenance_value = str(self.provenance_value)
 
         super().__post_init__(**kwargs)
 
@@ -2070,6 +2124,7 @@ class ObjectiveType(EnumDefinitionImpl):
 
 class LinkType(EnumDefinitionImpl):
 
+    is_about = PermissibleValue(text="is_about")
     is_same_as = PermissibleValue(text="is_same_as")
     is_part_of = PermissibleValue(text="is_part_of")
     is_located_at = PermissibleValue(text="is_located_at")
@@ -2419,6 +2474,9 @@ slots.recruited_in_project = Slot(uri=PEH.recruited_in_project, name="recruited_
 slots.sampled_in_project = Slot(uri=PEH.sampled_in_project, name="sampled_in_project", curie=PEH.curie('sampled_in_project'),
                    model_uri=PEH.sampled_in_project, domain=None, range=Optional[Union[str, ProjectId]])
 
+slots.physical_label = Slot(uri=PEH.physical_label, name="physical_label", curie=PEH.curie('physical_label'),
+                   model_uri=PEH.physical_label, domain=None, range=Optional[str])
+
 slots.location = Slot(uri=PEH.location, name="location", curie=PEH.curie('location'),
                    model_uri=PEH.location, domain=None, range=Optional[str])
 
@@ -2428,8 +2486,8 @@ slots.observation_type = Slot(uri=PEH.observation_type, name="observation_type",
 slots.observation_design = Slot(uri=PEH.observation_design, name="observation_design", curie=PEH.curie('observation_design'),
                    model_uri=PEH.observation_design, domain=None, range=Optional[Union[dict, ObservationDesign]])
 
-slots.observation_sets = Slot(uri=PEH.observation_sets, name="observation_sets", curie=PEH.curie('observation_sets'),
-                   model_uri=PEH.observation_sets, domain=None, range=Optional[Union[Union[dict, ObservationSet], List[Union[dict, ObservationSet]]]])
+slots.observable_entity_property_sets = Slot(uri=PEH.observable_entity_property_sets, name="observable_entity_property_sets", curie=PEH.curie('observable_entity_property_sets'),
+                   model_uri=PEH.observable_entity_property_sets, domain=None, range=Optional[Union[Union[dict, ObservableEntityPropertySet], List[Union[dict, ObservableEntityPropertySet]]]])
 
 slots.observation_result = Slot(uri=PEH.observation_result, name="observation_result", curie=PEH.curie('observation_result'),
                    model_uri=PEH.observation_result, domain=None, range=Optional[Union[dict, ObservationResult]])
@@ -2461,11 +2519,23 @@ slots.observed_values = Slot(uri=PEH.observed_values, name="observed_values", cu
 slots.unit = Slot(uri=PEH.unit, name="unit", curie=PEH.curie('unit'),
                    model_uri=PEH.unit, domain=None, range=Optional[Union[str, UnitId]])
 
-slots.quality_or_confidence_info = Slot(uri=PEH.quality_or_confidence_info, name="quality_or_confidence_info", curie=PEH.curie('quality_or_confidence_info'),
-                   model_uri=PEH.quality_or_confidence_info, domain=None, range=Optional[str])
+slots.quality_data = Slot(uri=PEH.quality_data, name="quality_data", curie=PEH.curie('quality_data'),
+                   model_uri=PEH.quality_data, domain=None, range=Optional[Union[Union[dict, QualityData], List[Union[dict, QualityData]]]])
 
-slots.provenance_info = Slot(uri=PEH.provenance_info, name="provenance_info", curie=PEH.curie('provenance_info'),
-                   model_uri=PEH.provenance_info, domain=None, range=Optional[str])
+slots.quality_context_key = Slot(uri=PEH.quality_context_key, name="quality_context_key", curie=PEH.curie('quality_context_key'),
+                   model_uri=PEH.quality_context_key, domain=None, range=Optional[str])
+
+slots.quality_value = Slot(uri=PEH.quality_value, name="quality_value", curie=PEH.curie('quality_value'),
+                   model_uri=PEH.quality_value, domain=None, range=Optional[str])
+
+slots.provenance_data = Slot(uri=PEH.provenance_data, name="provenance_data", curie=PEH.curie('provenance_data'),
+                   model_uri=PEH.provenance_data, domain=None, range=Optional[Union[Union[dict, ProvenanceData], List[Union[dict, ProvenanceData]]]])
+
+slots.provenance_context_key = Slot(uri=PEH.provenance_context_key, name="provenance_context_key", curie=PEH.curie('provenance_context_key'),
+                   model_uri=PEH.provenance_context_key, domain=None, range=Optional[str])
+
+slots.provenance_value = Slot(uri=PEH.provenance_value, name="provenance_value", curie=PEH.curie('provenance_value'),
+                   model_uri=PEH.provenance_value, domain=None, range=Optional[str])
 
 slots.data_roles = Slot(uri=PEH.data_roles, name="data_roles", curie=PEH.curie('data_roles'),
                    model_uri=PEH.data_roles, domain=None, range=Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]])
@@ -2523,3 +2593,6 @@ slots.end_date = Slot(uri=PEH.end_date, name="end_date", curie=PEH.curie('end_da
 
 slots.delivery_date = Slot(uri=PEH.delivery_date, name="delivery_date", curie=PEH.curie('delivery_date'),
                    model_uri=PEH.delivery_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.collection_date = Slot(uri=PEH.collection_date, name="collection_date", curie=PEH.curie('collection_date'),
+                   model_uri=PEH.collection_date, domain=None, range=Optional[Union[str, XSDDate]])

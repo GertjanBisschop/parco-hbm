@@ -356,8 +356,16 @@ classes:
       - observable_property
       - value
       - unit
-      - quality_or_confidence_info
-      - provenance_info
+      - quality_data
+      - provenance_data
+  QualityData:
+    slots:
+      - quality_context_key
+      - quality_value
+  ProvenanceData:
+    slots:
+      - provenance_context_key
+      - provenance_value
 
   DataRequest:
     is_a: NamedThing
@@ -629,9 +637,9 @@ slots:
     range: ObservationType
   observation_design:
     range: ObservationDesign
-  observation_sets:
+  observable_entity_property_sets:
     multivalued: true
-    range: ObservationSet
+    range: ObservableEntityPropertySet
   observation_result:
     range: ObservationResult
   observable_entity_type:
@@ -660,8 +668,18 @@ slots:
     range: ObservedValue
   unit:
     range: Unit
-  quality_or_confidence_info:
-  provenance_info:
+  quality_data:
+    multivalued: true
+    inlined_as_list: true
+    range: QualityData
+  quality_context_key:
+  quality_value:
+  provenance_data:
+    multivalued: true
+    inlined_as_list: true
+    range: ProvenanceData
+  provenance_context_key:
+  provenance_value:
 
   data_roles:
     multivalued: true

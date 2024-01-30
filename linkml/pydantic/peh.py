@@ -1,8 +1,8 @@
 from __future__ import annotations
 from datetime import datetime, date
 from enum import Enum
-from typing import List, Dict, Optional, Any, Union
 from decimal import Decimal
+from typing import List, Dict, Optional, Any, Union
 from pydantic import BaseModel as BaseModel, ConfigDict,  Field, field_validator
 import re
 import sys
@@ -129,6 +129,8 @@ class ObjectiveType(str, Enum):
 
 class LinkType(str, Enum):
     
+    
+    is_about = "is_about"
     
     is_same_as = "is_same_as"
     
@@ -645,6 +647,8 @@ class Sample(StudyEntity):
     matrix: Optional[str] = Field(None)
     constraints: Optional[List[str]] = Field(default_factory=list)
     sampled_in_project: Optional[str] = Field(None)
+    physical_label: Optional[str] = Field(None)
+    collection_date: Optional[date] = Field(None)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
     context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
@@ -795,35 +799,35 @@ class GeospatialObservation(Observation):
 
 class ObservationDesign(ConfiguredBaseModel):
     
-    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default_factory=list)
     
         
 
 class MetadataDesign(ObservationDesign):
     
-    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default_factory=list)
     
         
 
 class QuestionnaireDesign(ObservationDesign):
     
-    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default_factory=list)
     
         
 
 class SamplingDesign(ObservationDesign):
     
-    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default_factory=list)
     
         
 
 class GeospatialDesign(ObservationDesign):
     
-    observation_sets: Optional[List[ObservationSet]] = Field(default_factory=list)
+    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default_factory=list)
     
         
 
-class ObservationSet(ConfiguredBaseModel):
+class ObservableEntityPropertySet(ConfiguredBaseModel):
     
     observable_entity_type: Optional[ObservableEntityType] = Field(None)
     observable_entity_id_list: Optional[List[str]] = Field(default_factory=list)
@@ -867,8 +871,22 @@ class ObservedValue(ConfiguredBaseModel):
     observable_property: Optional[str] = Field(None)
     value: Optional[str] = Field(None)
     unit: Optional[str] = Field(None)
-    quality_or_confidence_info: Optional[str] = Field(None)
-    provenance_info: Optional[str] = Field(None)
+    quality_data: Optional[List[QualityData]] = Field(default_factory=list)
+    provenance_data: Optional[List[ProvenanceData]] = Field(default_factory=list)
+    
+        
+
+class QualityData(ConfiguredBaseModel):
+    
+    quality_context_key: Optional[str] = Field(None)
+    quality_value: Optional[str] = Field(None)
+    
+        
+
+class ProvenanceData(ConfiguredBaseModel):
+    
+    provenance_context_key: Optional[str] = Field(None)
+    provenance_value: Optional[str] = Field(None)
     
         
 
@@ -1011,13 +1029,15 @@ MetadataDesign.model_rebuild()
 QuestionnaireDesign.model_rebuild()
 SamplingDesign.model_rebuild()
 GeospatialDesign.model_rebuild()
-ObservationSet.model_rebuild()
+ObservableEntityPropertySet.model_rebuild()
 ObservationResult.model_rebuild()
 MetadataResult.model_rebuild()
 QuestionnaireResult.model_rebuild()
 SamplingResult.model_rebuild()
 GeospatialResult.model_rebuild()
 ObservedValue.model_rebuild()
+QualityData.model_rebuild()
+ProvenanceData.model_rebuild()
 DataRequest.model_rebuild()
 ObservedEntityProperty.model_rebuild()
 DataStakeholder.model_rebuild()
