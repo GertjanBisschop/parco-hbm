@@ -292,6 +292,8 @@ classes:
       - matrix
       - constraints
       - sampled_in_project
+      - physical_label
+      - collection_date
   StudySubject:
     is_a: StudyEntity
   Person:
@@ -323,7 +325,7 @@ classes:
     is_a: Observation
   ObservationDesign:
     slots:
-      - observation_sets
+      - observable_entity_property_sets
   MetadataDesign:
     is_a: ObservationDesign
   QuestionnaireDesign:
@@ -332,7 +334,7 @@ classes:
     is_a: ObservationDesign
   GeospatialDesign:
     is_a: ObservationDesign
-  ObservationSet:
+  ObservableEntityPropertySet:
     slots:
       - observable_entity_type
       - observable_entity_id_list
@@ -621,6 +623,7 @@ slots:
   sampled_in_project:
     range: Project
     inlined: false
+  physical_label:
   location:
   observation_type:
     range: ObservationType
@@ -700,6 +703,8 @@ slots:
   end_date:
     range: date
   delivery_date:
+    range: date
+  collection_date:
     range: date
 
 enums:
