@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-29T17:33:49
+# Generation date: 2024-01-30T09:06:22
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -86,19 +86,15 @@ class ObservablePropertyMetadataFieldId(NamedThingId):
     pass
 
 
-class ContactId(NamedThingId):
-    pass
-
-
 class StakeholderId(NamedThingId):
     pass
 
 
-class ProjectId(NamedThingId):
+class StudyEntityId(NamedThingId):
     pass
 
 
-class StudyEntityId(NamedThingId):
+class ProjectId(StudyEntityId):
     pass
 
 
@@ -969,7 +965,7 @@ class ValidationDesign(YAMLRoot):
 
 
 @dataclass
-class Contact(NamedThing):
+class Contact(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEH["Contact"]
@@ -977,16 +973,19 @@ class Contact(NamedThing):
     class_name: ClassVar[str] = "Contact"
     class_model_uri: ClassVar[URIRef] = PEH.Contact
 
-    id: Union[str, ContactId] = None
+    name: Optional[str] = None
+    orcid: Optional[str] = None
     contact_roles: Optional[Union[Union[str, "ContactRole"], List[Union[str, "ContactRole"]]]] = empty_list()
     contact_email: Optional[str] = None
     contact_phone: Optional[str] = None
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ContactId):
-            self.id = ContactId(self.id)
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.orcid is not None and not isinstance(self.orcid, str):
+            self.orcid = str(self.orcid)
 
         if not isinstance(self.contact_roles, list):
             self.contact_roles = [self.contact_roles] if self.contact_roles is not None else []
@@ -997,6 +996,10 @@ class Contact(NamedThing):
 
         if self.contact_phone is not None and not isinstance(self.contact_phone, str):
             self.contact_phone = str(self.contact_phone)
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -1011,6 +1014,7 @@ class Stakeholder(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Stakeholder
 
     id: Union[str, StakeholderId] = None
+    rorid: Optional[str] = None
     geographic_scope: Optional[str] = None
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
@@ -1019,6 +1023,9 @@ class Stakeholder(NamedThing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StakeholderId):
             self.id = StakeholderId(self.id)
+
+        if self.rorid is not None and not isinstance(self.rorid, str):
+            self.rorid = str(self.rorid)
 
         if self.geographic_scope is not None and not isinstance(self.geographic_scope, str):
             self.geographic_scope = str(self.geographic_scope)
@@ -1031,7 +1038,65 @@ class Stakeholder(NamedThing):
 
 
 @dataclass
-class Project(NamedThing):
+class ProjectStakeholder(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["ProjectStakeholder"]
+    class_class_curie: ClassVar[str] = "peh:ProjectStakeholder"
+    class_name: ClassVar[str] = "ProjectStakeholder"
+    class_model_uri: ClassVar[URIRef] = PEH.ProjectStakeholder
+
+    stakeholder: Optional[Union[str, StakeholderId]] = None
+    project_roles: Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
+            self.stakeholder = StakeholderId(self.stakeholder)
+
+        if not isinstance(self.project_roles, list):
+            self.project_roles = [self.project_roles] if self.project_roles is not None else []
+        self.project_roles = [v if isinstance(v, ProjectRole) else ProjectRole(v) for v in self.project_roles]
+
+        if not isinstance(self.contacts, list):
+            self.contacts = [self.contacts] if self.contacts is not None else []
+        self.contacts = [v if isinstance(v, Contact) else Contact(**as_dict(v)) for v in self.contacts]
+
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class StudyEntity(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["StudyEntity"]
+    class_class_curie: ClassVar[str] = "peh:StudyEntity"
+    class_name: ClassVar[str] = "StudyEntity"
+    class_model_uri: ClassVar[URIRef] = PEH.StudyEntity
+
+    id: Union[str, StudyEntityId] = None
+    study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.study_entity_links, list):
+            self.study_entity_links = [self.study_entity_links] if self.study_entity_links is not None else []
+        self.study_entity_links = [v if isinstance(v, StudyEntityLink) else StudyEntityLink(**as_dict(v)) for v in self.study_entity_links]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Project(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEH["Project"]
@@ -1040,19 +1105,23 @@ class Project(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.Project
 
     id: Union[str, ProjectId] = None
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
     default_language: Optional[str] = None
     project_stakeholders: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
     study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProjectId):
             self.id = ProjectId(self.id)
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         if self.default_language is not None and not isinstance(self.default_language, str):
             self.default_language = str(self.default_language)
@@ -1074,63 +1143,6 @@ class Project(NamedThing):
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
         self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
-
-        if not isinstance(self.context_aliases, list):
-            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
-        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ProjectStakeholder(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["ProjectStakeholder"]
-    class_class_curie: ClassVar[str] = "peh:ProjectStakeholder"
-    class_name: ClassVar[str] = "ProjectStakeholder"
-    class_model_uri: ClassVar[URIRef] = PEH.ProjectStakeholder
-
-    stakeholder: Optional[Union[str, StakeholderId]] = None
-    project_roles: Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]] = empty_list()
-    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
-            self.stakeholder = StakeholderId(self.stakeholder)
-
-        if not isinstance(self.project_roles, list):
-            self.project_roles = [self.project_roles] if self.project_roles is not None else []
-        self.project_roles = [v if isinstance(v, ProjectRole) else ProjectRole(v) for v in self.project_roles]
-
-        if not isinstance(self.contacts, list):
-            self.contacts = [self.contacts] if self.contacts is not None else []
-        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
-
-        if not isinstance(self.translations, list):
-            self.translations = [self.translations] if self.translations is not None else []
-        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class StudyEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["StudyEntity"]
-    class_class_curie: ClassVar[str] = "peh:StudyEntity"
-    class_name: ClassVar[str] = "StudyEntity"
-    class_model_uri: ClassVar[URIRef] = PEH.StudyEntity
-
-    id: Union[str, StudyEntityId] = None
-    study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.study_entity_links, list):
-            self.study_entity_links = [self.study_entity_links] if self.study_entity_links is not None else []
-        self.study_entity_links = [v if isinstance(v, StudyEntityLink) else StudyEntityLink(**as_dict(v)) for v in self.study_entity_links]
 
         super().__post_init__(**kwargs)
 
@@ -1225,7 +1237,7 @@ class StudyStakeholder(YAMLRoot):
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
     study_roles: Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]] = empty_list()
-    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
@@ -1237,7 +1249,7 @@ class StudyStakeholder(YAMLRoot):
 
         if not isinstance(self.contacts, list):
             self.contacts = [self.contacts] if self.contacts is not None else []
-        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
+        self.contacts = [v if isinstance(v, Contact) else Contact(**as_dict(v)) for v in self.contacts]
 
         super().__post_init__(**kwargs)
 
@@ -1288,7 +1300,6 @@ class StudyPopulation(StudyEntity):
 
     id: Union[str, StudyPopulationId] = None
     research_population_type: Optional[Union[str, "ResearchPopulationType"]] = None
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1298,10 +1309,6 @@ class StudyPopulation(StudyEntity):
 
         if self.research_population_type is not None and not isinstance(self.research_population_type, ResearchPopulationType):
             self.research_population_type = ResearchPopulationType(self.research_population_type)
-
-        if not isinstance(self.context_aliases, list):
-            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
-        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -1769,7 +1776,7 @@ class DataRequest(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.DataRequest
 
     id: Union[str, DataRequestId] = None
-    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
     request_properties: Optional[str] = None
     data_stakeholders: Optional[Union[Union[str, DataStakeholderId], List[Union[str, DataStakeholderId]]]] = empty_list()
     research_objectives: Optional[Union[Union[str, ResearchObjectiveId], List[Union[str, ResearchObjectiveId]]]] = empty_list()
@@ -1787,7 +1794,7 @@ class DataRequest(NamedThing):
 
         if not isinstance(self.contacts, list):
             self.contacts = [self.contacts] if self.contacts is not None else []
-        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
+        self.contacts = [v if isinstance(v, Contact) else Contact(**as_dict(v)) for v in self.contacts]
 
         if self.request_properties is not None and not isinstance(self.request_properties, str):
             self.request_properties = str(self.request_properties)
@@ -1855,7 +1862,7 @@ class DataStakeholder(NamedThing):
     id: Union[str, DataStakeholderId] = None
     stakeholder: Optional[Union[str, StakeholderId]] = None
     data_roles: Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]] = empty_list()
-    contacts: Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
     processing_description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1873,7 +1880,7 @@ class DataStakeholder(NamedThing):
 
         if not isinstance(self.contacts, list):
             self.contacts = [self.contacts] if self.contacts is not None else []
-        self.contacts = [v if isinstance(v, ContactId) else ContactId(v) for v in self.contacts]
+        self.contacts = [v if isinstance(v, Contact) else Contact(**as_dict(v)) for v in self.contacts]
 
         if self.processing_description is not None and not isinstance(self.processing_description, str):
             self.processing_description = str(self.processing_description)
@@ -2013,6 +2020,8 @@ class BioChemEntityLinkType(EnumDefinitionImpl):
 
 class ResearchPopulationType(EnumDefinitionImpl):
 
+    general_population = PermissibleValue(text="general_population")
+    person = PermissibleValue(text="person")
     newborn = PermissibleValue(text="newborn")
     adolescent = PermissibleValue(text="adolescent")
     mother = PermissibleValue(text="mother")
@@ -2084,6 +2093,8 @@ class ContactRole(EnumDefinitionImpl):
 
 class ProjectRole(EnumDefinitionImpl):
 
+    member = PermissibleValue(text="member")
+    partner = PermissibleValue(text="partner")
     funding_partner = PermissibleValue(text="funding_partner")
     principal_investigator = PermissibleValue(text="principal_investigator")
     data_governance = PermissibleValue(text="data_governance")
@@ -2158,6 +2169,12 @@ slots.label = Slot(uri=RDFS.label, name="label", curie=RDFS.curie('label'),
 
 slots.remark = Slot(uri=PEH.remark, name="remark", curie=PEH.curie('remark'),
                    model_uri=PEH.remark, domain=None, range=Optional[str])
+
+slots.orcid = Slot(uri=PEH.orcid, name="orcid", curie=PEH.curie('orcid'),
+                   model_uri=PEH.orcid, domain=None, range=Optional[str])
+
+slots.rorid = Slot(uri=PEH.rorid, name="rorid", curie=PEH.curie('rorid'),
+                   model_uri=PEH.rorid, domain=None, range=Optional[str])
 
 slots.alias = Slot(uri=PEH.alias, name="alias", curie=PEH.curie('alias'),
                    model_uri=PEH.alias, domain=None, range=Optional[str])
@@ -2454,7 +2471,7 @@ slots.data_roles = Slot(uri=PEH.data_roles, name="data_roles", curie=PEH.curie('
                    model_uri=PEH.data_roles, domain=None, range=Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]])
 
 slots.contacts = Slot(uri=PEH.contacts, name="contacts", curie=PEH.curie('contacts'),
-                   model_uri=PEH.contacts, domain=None, range=Optional[Union[Union[str, ContactId], List[Union[str, ContactId]]]])
+                   model_uri=PEH.contacts, domain=None, range=Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]])
 
 slots.contact_roles = Slot(uri=PEH.contact_roles, name="contact_roles", curie=PEH.curie('contact_roles'),
                    model_uri=PEH.contact_roles, domain=None, range=Optional[Union[Union[str, "ContactRole"], List[Union[str, "ContactRole"]]]])

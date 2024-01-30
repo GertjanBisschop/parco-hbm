@@ -66,6 +66,10 @@ class BioChemEntityLinkType(str, Enum):
 class ResearchPopulationType(str, Enum):
     
     
+    general_population = "general_population"
+    
+    person = "person"
+    
     newborn = "newborn"
     
     adolescent = "adolescent"
@@ -153,6 +157,10 @@ class ContactRole(str, Enum):
 
 class ProjectRole(str, Enum):
     
+    
+    member = "member"
+    
+    partner = "partner"
     
     funding_partner = "funding_partner"
     
@@ -484,42 +492,22 @@ class ValidationDesign(ConfiguredBaseModel):
     
         
 
-class Contact(NamedThing):
+class Contact(HasContextAliases):
     
+    name: Optional[str] = Field(None)
+    orcid: Optional[str] = Field(None)
     contact_roles: Optional[List[ContactRole]] = Field(default_factory=list)
     contact_email: Optional[str] = Field(None)
     contact_phone: Optional[str] = Field(None)
-    id: str = Field(...)
-    unique_name: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    description: Optional[str] = Field(None)
-    label: Optional[str] = Field(None)
-    remark: Optional[str] = Field(None)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     
         
 
 class Stakeholder(HasTranslations, NamedThing):
     
+    rorid: Optional[str] = Field(None)
     geographic_scope: Optional[str] = Field(None)
     translations: Optional[List[Translation]] = Field(default_factory=list)
-    id: str = Field(...)
-    unique_name: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    description: Optional[str] = Field(None)
-    label: Optional[str] = Field(None)
-    remark: Optional[str] = Field(None)
-    
-        
-
-class Project(HasTranslations, HasContextAliases, NamedThing):
-    
-    default_language: Optional[str] = Field(None)
-    project_stakeholders: Optional[List[ProjectStakeholder]] = Field(default_factory=list)
-    start_date: Optional[date] = Field(None)
-    end_date: Optional[date] = Field(None)
-    study_id_list: Optional[List[str]] = Field(default_factory=list)
-    translations: Optional[List[Translation]] = Field(default_factory=list)
-    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -533,13 +521,33 @@ class ProjectStakeholder(HasTranslations):
     
     stakeholder: Optional[str] = Field(None)
     project_roles: Optional[List[ProjectRole]] = Field(default_factory=list)
-    contacts: Optional[List[str]] = Field(default_factory=list)
+    contacts: Optional[List[Contact]] = Field(default_factory=list)
     translations: Optional[List[Translation]] = Field(default_factory=list)
     
         
 
-class StudyEntity(NamedThing):
+class StudyEntity(HasContextAliases, NamedThing):
     
+    study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
+    id: str = Field(...)
+    unique_name: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    label: Optional[str] = Field(None)
+    remark: Optional[str] = Field(None)
+    
+        
+
+class Project(StudyEntity, HasTranslations, HasContextAliases):
+    
+    default_language: Optional[str] = Field(None)
+    project_stakeholders: Optional[List[ProjectStakeholder]] = Field(default_factory=list)
+    start_date: Optional[date] = Field(None)
+    end_date: Optional[date] = Field(None)
+    study_id_list: Optional[List[str]] = Field(default_factory=list)
+    translations: Optional[List[Translation]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
@@ -568,6 +576,7 @@ class Study(StudyEntity, HasTranslations):
     project_id_list: Optional[List[str]] = Field(default_factory=list)
     translations: Optional[List[Translation]] = Field(default_factory=list)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -581,7 +590,7 @@ class StudyStakeholder(ConfiguredBaseModel):
     
     stakeholder: Optional[str] = Field(None)
     study_roles: Optional[List[StudyRole]] = Field(default_factory=list)
-    contacts: Optional[List[str]] = Field(default_factory=list)
+    contacts: Optional[List[Contact]] = Field(default_factory=list)
     
         
 
@@ -592,6 +601,7 @@ class Timepoint(StudyEntity):
     end_date: Optional[date] = Field(None)
     observations: Optional[List[Observation]] = Field(default_factory=list)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -601,11 +611,11 @@ class Timepoint(StudyEntity):
     
         
 
-class StudyPopulation(StudyEntity, HasContextAliases):
+class StudyPopulation(StudyEntity):
     
     research_population_type: Optional[ResearchPopulationType] = Field(None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -620,6 +630,7 @@ class SampleCollection(StudyEntity):
     matrix: Optional[str] = Field(None)
     constraints: Optional[List[str]] = Field(default_factory=list)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -635,6 +646,7 @@ class Sample(StudyEntity):
     constraints: Optional[List[str]] = Field(default_factory=list)
     sampled_in_project: Optional[str] = Field(None)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -647,6 +659,7 @@ class Sample(StudyEntity):
 class StudySubject(StudyEntity):
     
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -660,6 +673,7 @@ class Person(StudyEntity):
     
     recruited_in_project: Optional[str] = Field(None)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -672,6 +686,7 @@ class Person(StudyEntity):
 class PersonGroup(StudyEntity):
     
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -685,6 +700,7 @@ class Geolocation(StudyEntity):
     
     location: Optional[str] = Field(None)
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -697,6 +713,7 @@ class Geolocation(StudyEntity):
 class Environment(StudyEntity):
     
     study_entity_links: Optional[List[StudyEntityLink]] = Field(default_factory=list)
+    context_aliases: Optional[List[ContextAlias]] = Field(default_factory=list)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
     name: Optional[str] = Field(None)
@@ -857,7 +874,7 @@ class ObservedValue(ConfiguredBaseModel):
 
 class DataRequest(NamedThing):
     
-    contacts: Optional[List[str]] = Field(default_factory=list)
+    contacts: Optional[List[Contact]] = Field(default_factory=list)
     request_properties: Optional[str] = Field(None)
     data_stakeholders: Optional[List[str]] = Field(default_factory=list)
     research_objectives: Optional[List[str]] = Field(default_factory=list)
@@ -886,7 +903,7 @@ class DataStakeholder(NamedThing):
     
     stakeholder: Optional[str] = Field(None)
     data_roles: Optional[List[DataRole]] = Field(default_factory=list)
-    contacts: Optional[List[str]] = Field(default_factory=list)
+    contacts: Optional[List[Contact]] = Field(default_factory=list)
     processing_description: Optional[str] = Field(None)
     id: str = Field(...)
     unique_name: Optional[str] = Field(None)
@@ -969,9 +986,9 @@ CalculationDesign.model_rebuild()
 ValidationDesign.model_rebuild()
 Contact.model_rebuild()
 Stakeholder.model_rebuild()
-Project.model_rebuild()
 ProjectStakeholder.model_rebuild()
 StudyEntity.model_rebuild()
+Project.model_rebuild()
 StudyEntityLink.model_rebuild()
 Study.model_rebuild()
 StudyStakeholder.model_rebuild()

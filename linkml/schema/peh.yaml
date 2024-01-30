@@ -209,8 +209,11 @@ classes:
       - conditional
 
   Contact:
-    is_a: NamedThing
+    mixins:
+      - HasContextAliases
     slots:
+      - name
+      - orcid
       - contact_roles
       - contact_email
       - contact_phone
@@ -219,9 +222,10 @@ classes:
     mixins:
       - HasTranslations
     slots:
+      - rorid
       - geographic_scope
   Project:
-    is_a: NamedThing
+    is_a: StudyEntity
     mixins:
       - HasTranslations
       - HasContextAliases
@@ -241,6 +245,8 @@ classes:
   StudyEntity:
     abstract: true
     is_a: NamedThing
+    mixins:
+      - HasContextAliases
     slots:
       - study_entity_links
   StudyEntityLink:
@@ -273,8 +279,6 @@ classes:
       - observations
   StudyPopulation:
     is_a: StudyEntity
-    mixins:
-      - HasContextAliases
     slots:
       - research_population_type
   SampleCollection:
@@ -405,6 +409,8 @@ slots:
     slot_uri: rdfs:label
   remark:
 
+  orcid:
+  rorid:
   alias:
   aliases:
     multivalued: true
@@ -659,6 +665,7 @@ slots:
     range: DataRole
   contacts:
     multivalued: true
+    inlined_as_list: true
     range: Contact
   contact_roles:
     multivalued: true
@@ -717,6 +724,8 @@ enums:
       group_contains:
   ResearchPopulationType:
     permissible_values:
+      general_population:
+      person:
       newborn:
       adolescent:
       mother:
@@ -759,6 +768,8 @@ enums:
       technical:
   ProjectRole:
     permissible_values:
+      member:
+      partner:
       funding_partner:
       principal_investigator:
       data_governance:
