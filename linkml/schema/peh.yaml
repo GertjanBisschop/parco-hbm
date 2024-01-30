@@ -754,6 +754,7 @@ enums:
       publication:
   LinkType:
     permissible_values:
+      is_about:
       is_same_as:
       is_part_of:
       is_located_at:
