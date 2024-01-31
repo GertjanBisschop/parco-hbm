@@ -1,0 +1,318 @@
+erDiagram
+EntityList {
+
+}
+Timepoint {
+    decimal sort_order  
+    date start_date  
+    date end_date  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ContextAlias {
+    string alias  
+}
+NamedThing {
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+StudyEntityLink {
+    LinkType linktype  
+}
+StudyEntity {
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+Observation {
+    ObservationType observation_type  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ObservationResult {
+
+}
+ObservedValue {
+    string value  
+}
+ProvenanceData {
+    string provenance_context_key  
+    string provenance_value  
+}
+QualityData {
+    string quality_context_key  
+    string quality_value  
+}
+Unit {
+    QudtUnit same_unit_as  
+    QudtQuantityKind quantity_kind  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+Translation {
+    string property_name  
+    string language  
+    string translated_value  
+}
+ObservableProperty {
+    string value_type  
+    boolean categorical  
+    boolean multivalued  
+    QudtQuantityKind quantity_kind  
+    string default_unit  
+    integer default_significantdecimals  
+    boolean default_immutable  
+    ObservableEntityTypeList relevant_observable_entity_types  
+    ObservationTypeList relevant_observation_types  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ValidationDesign {
+    string conditional  
+}
+CalculationDesign {
+    string formula  
+}
+Indicator {
+    IndicatorType indicator_type  
+    QudtQuantityKind quantity_kind  
+    stringList constraints  
+    ObservableEntityTypeList relevant_observable_entity_types  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+BioChemEntityLink {
+    BioChemEntityLinkType biochementity_linktype  
+}
+BioChemEntity {
+    string grouping  
+    stringList aliases  
+    ValidationStatus current_validation_status  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ValidationHistoryRecord {
+    datetime validation_datetime  
+    ValidationStatus validation_status  
+    string validation_actor  
+    string validation_remark  
+}
+BioChemIdentifier {
+    string identifier_code  
+    ValidationStatus current_validation_status  
+}
+BioChemIdentifierSchema {
+    string web_uri  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+Matrix {
+    decimal sort_order  
+    boolean aggregation_target  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ObservablePropertyGroup {
+    decimal sort_order  
+    boolean is_abstract  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ObservablePropertyMetadataElement {
+    string value  
+}
+ObservablePropertyMetadataField {
+    string value_type  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ObservablePropertyValueOption {
+    string key  
+    string value  
+    string label  
+}
+ObservationDesign {
+
+}
+ObservableEntityPropertySet {
+    ObservableEntityType observable_entity_type  
+}
+Study {
+    string default_language  
+    date start_date  
+    date end_date  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+Project {
+    string default_language  
+    date start_date  
+    date end_date  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+ProjectStakeholder {
+    ProjectRoleList project_roles  
+}
+Contact {
+    string name  
+    string orcid  
+    ContactRoleList contact_roles  
+    string contact_email  
+    string contact_phone  
+}
+Stakeholder {
+    string rorid  
+    string geographic_scope  
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+StudyStakeholder {
+    StudyRoleList study_roles  
+}
+BioChemGrouping {
+    string id  
+    string unique_name  
+    string name  
+    string description  
+    string label  
+    string remark  
+}
+
+EntityList ||--}o Matrix : "matrices"
+EntityList ||--}o ObservablePropertyMetadataField : "metadata_fields"
+EntityList ||--}o BioChemEntity : "biochementities"
+EntityList ||--}o BioChemGrouping : "biochemgroupings"
+EntityList ||--}o Indicator : "indicators"
+EntityList ||--}o Unit : "units"
+EntityList ||--}o ObservablePropertyGroup : "observable_property_groups"
+EntityList ||--}o ObservableProperty : "observable_properties"
+EntityList ||--}o Stakeholder : "stakeholders"
+EntityList ||--}o Project : "projects"
+EntityList ||--}o Study : "studies"
+EntityList ||--}o Timepoint : "timepoints"
+Timepoint ||--}o Observation : "observations"
+Timepoint ||--}o StudyEntityLink : "study_entity_links"
+Timepoint ||--}o ContextAlias : "context_aliases"
+ContextAlias ||--|o NamedThing : "context"
+StudyEntityLink ||--|o StudyEntity : "study_entity"
+StudyEntity ||--}o StudyEntityLink : "study_entity_links"
+StudyEntity ||--}o ContextAlias : "context_aliases"
+Observation ||--|o ObservationDesign : "observation_design"
+Observation ||--|o ObservationResult : "observation_result"
+ObservationResult ||--}o ObservedValue : "observed_values"
+ObservedValue ||--|o StudyEntity : "observable_entity"
+ObservedValue ||--|o ObservableProperty : "observable_property"
+ObservedValue ||--|o Unit : "unit"
+ObservedValue ||--}o QualityData : "quality_data"
+ObservedValue ||--}o ProvenanceData : "provenance_data"
+Unit ||--}o ContextAlias : "context_aliases"
+Unit ||--}o Translation : "translations"
+ObservableProperty ||--}o ObservablePropertyValueOption : "value_options"
+ObservableProperty ||--}o ObservablePropertyMetadataElement : "value_metadata"
+ObservableProperty ||--}o ObservablePropertyGroup : "groups"
+ObservableProperty ||--|o Indicator : "indicator"
+ObservableProperty ||--|o CalculationDesign : "calculation_design"
+ObservableProperty ||--|o ValidationDesign : "validation_design"
+ObservableProperty ||--}o Translation : "translations"
+CalculationDesign ||--|o Unit : "unit"
+Indicator ||--|o Matrix : "matrix"
+Indicator ||--}o BioChemEntityLink : "biochementity_links"
+BioChemEntityLink ||--|o BioChemEntity : "biochementity"
+BioChemEntity ||--}o BioChemIdentifier : "biochemidentifiers"
+BioChemEntity ||--}o ContextAlias : "context_aliases"
+BioChemEntity ||--}o Translation : "translations"
+BioChemEntity ||--}o ValidationHistoryRecord : "validation_history"
+BioChemIdentifier ||--|o BioChemIdentifierSchema : "identifier_schema"
+BioChemIdentifier ||--}o ValidationHistoryRecord : "validation_history"
+Matrix ||--|o Matrix : "parent_matrix"
+Matrix ||--}o ContextAlias : "context_aliases"
+Matrix ||--}o Translation : "translations"
+ObservablePropertyGroup ||--}o ObservablePropertyGroup : "parent_groups"
+ObservablePropertyGroup ||--}o Translation : "translations"
+ObservablePropertyMetadataElement ||--|o ObservablePropertyMetadataField : "field"
+ObservablePropertyValueOption ||--}o ContextAlias : "context_aliases"
+ObservationDesign ||--}o ObservableEntityPropertySet : "observable_entity_property_sets"
+ObservableEntityPropertySet ||--}o StudyEntity : "observable_entity_id_list"
+ObservableEntityPropertySet ||--}o ObservableProperty : "observable_property_id_list"
+Study ||--}o StudyStakeholder : "study_stakeholders"
+Study ||--}o Timepoint : "timepoint_id_list"
+Study ||--}o StudyEntity : "study_entities"
+Study ||--}o Project : "project_id_list"
+Study ||--}o Translation : "translations"
+Study ||--}o StudyEntityLink : "study_entity_links"
+Study ||--}o ContextAlias : "context_aliases"
+Project ||--}o ProjectStakeholder : "project_stakeholders"
+Project ||--}o Study : "study_id_list"
+Project ||--}o Translation : "translations"
+Project ||--}o ContextAlias : "context_aliases"
+Project ||--}o StudyEntityLink : "study_entity_links"
+ProjectStakeholder ||--|o Stakeholder : "stakeholder"
+ProjectStakeholder ||--}o Contact : "contacts"
+ProjectStakeholder ||--}o Translation : "translations"
+Contact ||--}o ContextAlias : "context_aliases"
+Stakeholder ||--}o Translation : "translations"
+StudyStakeholder ||--|o Stakeholder : "stakeholder"
+StudyStakeholder ||--}o Contact : "contacts"
+BioChemGrouping ||--}o ContextAlias : "context_aliases"
+BioChemGrouping ||--}o Translation : "translations"
+
