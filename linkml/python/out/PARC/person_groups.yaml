@@ -1,0 +1,1712 @@
+- id: '1'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '1'
+- id: '2'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '2'
+- id: '3'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '3'
+- id: '4'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '4'
+- id: '5'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '5'
+- id: '6'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '6'
+- id: '7'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '7'
+- id: '8'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '8'
+- id: '9'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '9'
+- id: '10'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '10'
+- id: '11'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '11'
+- id: '12'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '12'
+- id: '13'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '13'
+- id: '14'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '14'
+- id: '15'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '15'
+- id: '16'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '16'
+- id: '17'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '17'
+- id: '18'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '18'
+- id: '19'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '19'
+- id: '20'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '20'
+- id: '21'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '21'
+- id: '22'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '22'
+- id: '23'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '23'
+- id: '24'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '24'
+- id: '25'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '25'
+- id: '26'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '26'
+- id: '27'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '27'
+- id: '28'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '28'
+- id: '29'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '29'
+- id: '30'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '30'
+- id: '31'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '31'
+- id: '32'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '32'
+- id: '33'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '33'
+- id: '34'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '34'
+- id: '35'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '35'
+- id: '36'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '36'
+- id: '37'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '37'
+- id: '38'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '38'
+- id: '39'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '39'
+- id: '40'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '40'
+- id: '41'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '41'
+- id: '42'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '42'
+- id: '43'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '43'
+- id: '44'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '44'
+- id: '45'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '45'
+- id: '46'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '46'
+- id: '47'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '47'
+- id: '48'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '48'
+- id: '49'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '49'
+- id: '50'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '50'
+- id: '51'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '51'
+- id: '52'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '52'
+- id: '53'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '53'
+- id: '54'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '54'
+- id: '55'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '55'
+- id: '56'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '56'
+- id: '57'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '57'
+- id: '58'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '58'
+- id: '59'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '59'
+- id: '60'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '60'
+- id: '61'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '61'
+- id: '62'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '62'
+- id: '63'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '63'
+- id: '64'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '64'
+- id: '65'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '65'
+- id: '66'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '66'
+- id: '67'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '67'
+- id: '68'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '68'
+- id: '69'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '69'
+- id: '70'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '70'
+- id: '71'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '71'
+- id: '72'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '72'
+- id: '73'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '73'
+- id: '74'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '74'
+- id: '75'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '75'
+- id: '76'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '76'
+- id: '77'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '77'
+- id: '78'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '78'
+- id: '79'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '79'
+- id: '80'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '80'
+- id: '81'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '81'
+- id: '82'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '82'
+- id: '83'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '83'
+- id: '84'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '84'
+- id: '85'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '85'
+- id: '86'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '86'
+- id: '87'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '87'
+- id: '88'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '88'
+- id: '89'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '89'
+- id: '90'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '90'
+- id: '91'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '91'
+- id: '92'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '92'
+- id: '93'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '93'
+- id: '94'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '94'
+- id: '95'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '95'
+- id: '96'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '96'
+- id: '97'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '97'
+- id: '98'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '98'
+- id: '99'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '99'
+- id: '100'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '100'
+- id: '101'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '101'
+- id: '102'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '102'
+- id: '103'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '103'
+- id: '104'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '104'
+- id: '105'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '105'
+- id: '106'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '106'
+- id: '107'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '107'
+- id: '108'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '108'
+- id: '109'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '109'
+- id: '110'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '110'
+- id: '111'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '111'
+- id: '112'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '112'
+- id: '113'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '113'
+- id: '114'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '114'
+- id: '115'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '115'
+- id: '116'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '116'
+- id: '117'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '117'
+- id: '118'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '118'
+- id: '119'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '119'
+- id: '120'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '120'
+- id: '121'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '121'
+- id: '122'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '122'
+- id: '123'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '123'
+- id: '124'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '124'
+- id: '125'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '125'
+- id: '126'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '126'
+- id: '127'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '127'
+- id: '128'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '128'
+- id: '129'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '129'
+- id: '130'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '130'
+- id: '131'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '131'
+- id: '132'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '132'
+- id: '133'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '133'
+- id: '134'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '134'
+- id: '135'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '135'
+- id: '136'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '136'
+- id: '137'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '137'
+- id: '138'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '138'
+- id: '139'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '139'
+- id: '140'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '140'
+- id: '141'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '141'
+- id: '142'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '142'
+- id: '143'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '143'
+- id: '144'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '144'
+- id: '145'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '145'
+- id: '146'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '146'
+- id: '147'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '147'
+- id: '148'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '148'
+- id: '149'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '149'
+- id: '150'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '150'
+- id: '151'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '151'
+- id: '152'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '152'
+- id: '153'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '153'
+- id: '154'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '154'
+- id: '155'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '155'
+- id: '156'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '156'
+- id: '157'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '157'
+- id: '158'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '158'
+- id: '159'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '159'
+- id: '160'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '160'
+- id: '161'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '161'
+- id: '162'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '162'
+- id: '163'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '163'
+- id: '164'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '164'
+- id: '165'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '165'
+- id: '166'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '166'
+- id: '167'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '167'
+- id: '168'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '168'
+- id: '169'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '169'
+- id: '170'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '170'
+- id: '171'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '171'
+- id: '172'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '172'
+- id: '173'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '173'
+- id: '174'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '174'
+- id: '175'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '175'
+- id: '176'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '176'
+- id: '177'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '177'
+- id: '178'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '178'
+- id: '179'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '179'
+- id: '180'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '180'
+- id: '181'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '181'
+- id: '182'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '182'
+- id: '183'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '183'
+- id: '184'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '184'
+- id: '185'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '185'
+- id: '186'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '186'
+- id: '187'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '187'
+- id: '188'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '188'
+- id: '189'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '189'
+- id: '190'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '190'
+- id: '191'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '191'
+- id: '192'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '192'
+- id: '193'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '193'
+- id: '194'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '194'
+- id: '195'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '195'
+- id: '196'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '196'
+- id: '197'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '197'
+- id: '198'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '198'
+- id: '199'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '199'
+- id: '200'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '200'
+- id: '201'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '201'
+- id: '202'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '202'
+- id: '203'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '203'
+- id: '204'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '204'
+- id: '205'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '205'
+- id: '206'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '206'
+- id: '207'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '207'
+- id: '208'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '208'
+- id: '209'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '209'
+- id: '210'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '210'
+- id: '211'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '211'
+- id: '212'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '212'
+- id: '213'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '213'
+- id: '214'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '214'
+- id: '215'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '215'
+- id: '216'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '216'
+- id: '217'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '217'
+- id: '218'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '218'
+- id: '219'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '219'
+- id: '220'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '220'
+- id: '221'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '221'
+- id: '222'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '222'
+- id: '223'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '223'
+- id: '224'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '224'
+- id: '225'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '225'
+- id: '226'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '226'
+- id: '227'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '227'
+- id: '228'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '228'
+- id: '229'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '229'
+- id: '230'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '230'
+- id: '231'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '231'
+- id: '232'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '232'
+- id: '233'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '233'
+- id: '234'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '234'
+- id: '235'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '235'
+- id: '236'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '236'
+- id: '237'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '237'
+- id: '238'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '238'
+- id: '239'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '239'
+- id: '240'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '240'
+- id: '241'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '241'
+- id: '242'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '242'
+- id: '243'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '243'
+- id: '244'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '244'
+- id: '245'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '245'
+- id: '246'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '246'
+- id: '247'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '247'
+- id: '248'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '248'
+- id: '249'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '249'
+- id: '250'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '250'
+- id: '251'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '251'
+- id: '252'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '252'
+- id: '253'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '253'
+- id: '254'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '254'
+- id: '255'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '255'
+- id: '256'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '256'
+- id: '257'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '257'
+- id: '258'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '258'
+- id: '259'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '259'
+- id: '260'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '260'
+- id: '261'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '261'
+- id: '262'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '262'
+- id: '263'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '263'
+- id: '264'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '264'
+- id: '265'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '265'
+- id: '266'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '266'
+- id: '267'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '267'
+- id: '268'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '268'
+- id: '269'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '269'
+- id: '270'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '270'
+- id: '271'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '271'
+- id: '272'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '272'
+- id: '273'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '273'
+- id: '274'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '274'
+- id: '275'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '275'
+- id: '276'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '276'
+- id: '277'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '277'
+- id: '278'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '278'
+- id: '279'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '279'
+- id: '280'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '280'
+- id: '281'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '281'
+- id: '282'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '282'
+- id: '283'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '283'
+- id: '284'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '284'
+- id: '285'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '285'
+- id: '286'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '286'
+- id: '287'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '287'
+- id: '288'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '288'
+- id: '289'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '289'
+- id: '290'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '290'
+- id: '291'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '291'
+- id: '292'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '292'
+- id: '293'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '293'
+- id: '294'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '294'
+- id: '295'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '295'
+- id: '296'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '296'
+- id: '297'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '297'
+- id: '298'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '298'
+- id: '299'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '299'
+- id: '300'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '300'
+- id: '301'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '301'
+- id: '302'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '302'
+- id: '303'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '303'
+- id: '304'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '304'
+- id: '305'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '305'
+- id: '306'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '306'
+- id: '307'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '307'
+- id: '308'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '308'
+- id: '309'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '309'
+- id: '310'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '310'
+- id: '311'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '311'
+- id: '312'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '312'
+- id: '313'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '313'
+- id: '314'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '314'
+- id: '315'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '315'
+- id: '316'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '316'
+- id: '317'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '317'
+- id: '318'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '318'
+- id: '319'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '319'
+- id: '320'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '320'
+- id: '321'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '321'
+- id: '322'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '322'
+- id: '323'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '323'
+- id: '324'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '324'
+- id: '325'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '325'
+- id: '326'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '326'
+- id: '327'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '327'
+- id: '328'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '328'
+- id: '329'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '329'
+- id: '330'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '330'
+- id: '331'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '331'
+- id: '332'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '332'
+- id: '333'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '333'
+- id: '334'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '334'
+- id: '335'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '335'
+- id: '336'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '336'
+- id: '337'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '337'
+- id: '338'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '338'
+- id: '339'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '339'
+- id: '340'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '340'
+- id: '341'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '341'
+- id: '342'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '342'
+- id: '343'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '343'
+- id: '344'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '344'
+- id: '345'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '345'
+- id: '346'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '346'
+- id: '347'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '347'
+- id: '348'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '348'
+- id: '349'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '349'
+- id: '350'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '350'
+- id: '351'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '351'
+- id: '352'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '352'
+- id: '353'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '353'
+- id: '354'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '354'
+- id: '355'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '355'
+- id: '356'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '356'
+- id: '357'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '357'
+- id: '358'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '358'
+- id: '359'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '359'
+- id: '360'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '360'
+- id: '361'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '361'
+- id: '362'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '362'
+- id: '363'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '363'
+- id: '364'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '364'
+- id: '365'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '365'
+- id: '366'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '366'
+- id: '367'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '367'
+- id: '368'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '368'
+- id: '369'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '369'
+- id: '370'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '370'
+- id: '371'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '371'
+- id: '372'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '372'
+- id: '373'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '373'
+- id: '374'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '374'
+- id: '375'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '375'
+- id: '376'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '376'
+- id: '377'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '377'
+- id: '378'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '378'
+- id: '379'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '379'
+- id: '380'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '380'
+- id: '381'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '381'
+- id: '382'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '382'
+- id: '383'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '383'
+- id: '384'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '384'
+- id: '385'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '385'
+- id: '386'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '386'
+- id: '387'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '387'
+- id: '388'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '388'
+- id: '389'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '389'
+- id: '390'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '390'
+- id: '391'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '391'
+- id: '392'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '392'
+- id: '393'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '393'
+- id: '394'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '394'
+- id: '395'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '395'
+- id: '396'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '396'
+- id: '397'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '397'
+- id: '398'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '398'
+- id: '399'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '399'
+- id: '400'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '400'
+- id: '401'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '401'
+- id: '402'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '402'
+- id: '403'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '403'
+- id: '404'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '404'
+- id: '405'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '405'
+- id: '406'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '406'
+- id: '407'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '407'
+- id: '408'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '408'
+- id: '409'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '409'
+- id: '410'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '410'
+- id: '411'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '411'
+- id: '412'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '412'
+- id: '413'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '413'
+- id: '414'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '414'
+- id: '415'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '415'
+- id: '416'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '416'
+- id: '417'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '417'
+- id: '418'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '418'
+- id: '419'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '419'
+- id: '420'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '420'
+- id: '421'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '421'
+- id: '422'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '422'
+- id: '423'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '423'
+- id: '424'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '424'
+- id: '425'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '425'
+- id: '426'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '426'
+- id: '427'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '427'
+- id: '428'
+  study_entity_links:
+  - linktype: is_part_of
+    study_entity: '428'
