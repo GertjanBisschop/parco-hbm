@@ -346,11 +346,9 @@ observable_properties:
   - questionnaire
   unique_name: height
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 30.0
-  - field:
-      name: max
+  - field: max
     value: 250.0
   value_type: decimal
 - categorical: false
@@ -368,11 +366,9 @@ observable_properties:
   - questionnaire
   unique_name: weight
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 1.0
-  - field:
-      name: max
+  - field: max
     value: 250.0
   value_type: decimal
 - calculation_design:
@@ -392,11 +388,9 @@ observable_properties:
   - questionnaire
   unique_name: bmi
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 12.0
-  - field:
-      name: max
+  - field: max
     value: 50.0
   value_type: decimal
 - categorical: false
@@ -415,11 +409,9 @@ observable_properties:
   validation_design:
     conditional: IF ageweeks IS > 1 THEN agedays IS empty
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 1.0
-  - field:
-      name: max
+  - field: max
     value: 7.0
   value_type: integer
 - categorical: false
@@ -438,8 +430,7 @@ observable_properties:
   validation_design:
     conditional: IF ageyears IS >= 20 THEN agemonths IS empty
   value_metadata:
-  - field:
-      name: max
+  - field: max
     value: 228.0
   value_type: integer
 - categorical: false
@@ -458,8 +449,7 @@ observable_properties:
   validation_design:
     conditional: IF ageyears IS >= 1 THEN ageweeks IS empty
   value_metadata:
-  - field:
-      name: max
+  - field: max
     value: 52.0
   value_type: integer
 - categorical: false
@@ -478,11 +468,9 @@ observable_properties:
   validation_design:
     conditional: IF any(ageyears) IS < 20 THEN age_birth_m IS not empty
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 15.0
-  - field:
-      name: max
+  - field: max
     value: 60.0
   value_type: integer
 - categorical: false
@@ -499,8 +487,7 @@ observable_properties:
   - questionnaire
   unique_name: ageyears
   value_metadata:
-  - field:
-      name: max
+  - field: max
     value: 150.0
   value_type: integer
 - categorical: false
@@ -1832,11 +1819,9 @@ observable_properties:
   - sampling
   unique_name: chol
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 50.0
-  - field:
-      name: max
+  - field: max
     value: 250.0
   value_type: decimal
 - categorical: false
@@ -1940,11 +1925,9 @@ observable_properties:
   - sampling
   unique_name: crt
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 5.0
-  - field:
-      name: max
+  - field: max
     value: 500.0
   value_type: decimal
 - categorical: false
@@ -2282,11 +2265,9 @@ observable_properties:
   - sampling
   unique_name: density
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 1000.0
-  - field:
-      name: max
+  - field: max
     value: 1050.0
   value_type: decimal
 - categorical: false
@@ -4021,11 +4002,9 @@ observable_properties:
   - sampling
   unique_name: lipid
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 680.0
-  - field:
-      name: max
+  - field: max
     value: 14660.0
   value_type: decimal
 - categorical: false
@@ -4040,11 +4019,9 @@ observable_properties:
   - sampling
   unique_name: lipid_enz
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 150.0
-  - field:
-      name: max
+  - field: max
     value: 900.0
   value_type: decimal
 - calculation_design:
@@ -5022,11 +4999,9 @@ observable_properties:
   - sampling
   unique_name: osm
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 0.1
-  - field:
-      name: max
+  - field: max
     value: 1.5
   value_type: decimal
 - categorical: false
@@ -6560,11 +6535,9 @@ observable_properties:
   - sampling
   unique_name: sg
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 1.0
-  - field:
-      name: max
+  - field: max
     value: 1.05
   value_type: decimal
 - categorical: false
@@ -7617,11 +7590,9 @@ observable_properties:
   - sampling
   unique_name: trigl
   value_metadata:
-  - field:
-      name: min
+  - field: min
     value: 10.0
-  - field:
-      name: max
+  - field: max
     value: 450.0
   value_type: decimal
 - categorical: false

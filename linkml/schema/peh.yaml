@@ -556,6 +556,7 @@ slots:
   conditional:
   field:
     range: ObservablePropertyMetadataField
+    inlined: false
   key:
   value:
   metadata_fields:
