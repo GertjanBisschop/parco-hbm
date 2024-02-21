@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-13T17:07:58
+# Generation date: 2024-02-20T17:46:09
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -306,6 +306,7 @@ class ValidationHistoryRecord(YAMLRoot):
     validation_datetime: Optional[Union[str, XSDDateTime]] = None
     validation_status: Optional[Union[str, "ValidationStatus"]] = None
     validation_actor: Optional[str] = None
+    validation_institute: Optional[str] = None
     validation_remark: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -317,6 +318,9 @@ class ValidationHistoryRecord(YAMLRoot):
 
         if self.validation_actor is not None and not isinstance(self.validation_actor, str):
             self.validation_actor = str(self.validation_actor)
+
+        if self.validation_institute is not None and not isinstance(self.validation_institute, str):
+            self.validation_institute = str(self.validation_institute)
 
         if self.validation_remark is not None and not isinstance(self.validation_remark, str):
             self.validation_remark = str(self.validation_remark)
@@ -509,6 +513,7 @@ class BioChemEntity(NamedThing):
     id: Union[str, BioChemEntityId] = None
     grouping: Optional[str] = None
     biochemidentifiers: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
+    biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
     aliases: Optional[Union[str, List[str]]] = empty_list()
     context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
@@ -527,6 +532,10 @@ class BioChemEntity(NamedThing):
         if not isinstance(self.biochemidentifiers, list):
             self.biochemidentifiers = [self.biochemidentifiers] if self.biochemidentifiers is not None else []
         self.biochemidentifiers = [v if isinstance(v, BioChemIdentifier) else BioChemIdentifier(**as_dict(v)) for v in self.biochemidentifiers]
+
+        if not isinstance(self.biochementity_links, list):
+            self.biochementity_links = [self.biochementity_links] if self.biochementity_links is not None else []
+        self.biochementity_links = [v if isinstance(v, BioChemEntityLink) else BioChemEntityLink(**as_dict(v)) for v in self.biochementity_links]
 
         if not isinstance(self.aliases, list):
             self.aliases = [self.aliases] if self.aliases is not None else []
@@ -2067,6 +2076,8 @@ class BioChemEntityLinkType(EnumDefinitionImpl):
     broader = PermissibleValue(text="broader")
     part_of = PermissibleValue(text="part_of")
     group_contains = PermissibleValue(text="group_contains")
+    has_parent_compound = PermissibleValue(text="has_parent_compound")
+    branched_version_of = PermissibleValue(text="branched_version_of")
 
     _defn = EnumDefinition(
         name="BioChemEntityLinkType",
@@ -2302,6 +2313,9 @@ slots.validation_status = Slot(uri=PEH.validation_status, name="validation_statu
 
 slots.validation_actor = Slot(uri=PEH.validation_actor, name="validation_actor", curie=PEH.curie('validation_actor'),
                    model_uri=PEH.validation_actor, domain=None, range=Optional[str])
+
+slots.validation_institute = Slot(uri=PEH.validation_institute, name="validation_institute", curie=PEH.curie('validation_institute'),
+                   model_uri=PEH.validation_institute, domain=None, range=Optional[str])
 
 slots.validation_remark = Slot(uri=PEH.validation_remark, name="validation_remark", curie=PEH.curie('validation_remark'),
                    model_uri=PEH.validation_remark, domain=None, range=Optional[str])

@@ -68,6 +68,7 @@ classes:
       - validation_datetime
       - validation_status
       - validation_actor
+      - validation_institute
       - validation_remark
 
   HasAliases:
@@ -484,6 +485,7 @@ slots:
   validation_status:
     range: ValidationStatus
   validation_actor:
+  validation_institute:
   validation_remark:
 
   sort_order:
