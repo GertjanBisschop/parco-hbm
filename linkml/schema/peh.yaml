@@ -120,6 +120,7 @@ classes:
     slots:
       - grouping
       - biochemidentifiers
+      - biochementity_links
   BioChemIdentifier:
     mixins:
       - HasValidationStatus
@@ -512,6 +513,7 @@ slots:
     range: BioChemEntityLinkType
   biochementity:
     range: BioChemEntity
+    inlined: false
 
   observable_property_groups:
     multivalued: true
@@ -746,6 +748,8 @@ enums:
       broader:
       part_of:
       group_contains:
+      has_parent_compound:
+      branched_version_of:
   ResearchPopulationType:
     permissible_values:
       general_population:
