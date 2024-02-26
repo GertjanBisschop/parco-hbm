@@ -1,4 +1,4 @@
-observablepropertygroups:
+groupings:
 - id: Identifier and demographics
   unique_name: Identifier and demographics
   name: Identifier and demographics

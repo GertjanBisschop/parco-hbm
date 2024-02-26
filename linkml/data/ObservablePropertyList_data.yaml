@@ -2,7 +2,7 @@ observable_properties:
 - categorical: true
   default_immutable: 1
   description: Relation id_subject vs id_participant (main subject of the study)
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: relation
   name: relation
@@ -24,7 +24,7 @@ observable_properties:
 - categorical: true
   default_immutable: 1
   description: Sex of the subject
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: sex
   label: sex
@@ -43,7 +43,7 @@ observable_properties:
 - categorical: true
   description: If participant does not belong to the general population, please fill
     in the appropiate population group to which he/she belongs
-  groups:
+  grouping_id_list:
   - Study design
   id: subpopulation
   name: subpopulation
@@ -69,7 +69,7 @@ observable_properties:
 - categorical: true
   default_immutable: 1
   description: Smoking status of the mother of the subject during pregnancy
-  groups:
+  grouping_id_list:
   - Smoking
   id: smoking_m
   name: smoking_m
@@ -90,7 +90,7 @@ observable_properties:
   default_immutable: 1
   description: If this is a case-control study, indicate whether the subject belongs
     to the control or the case group
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: case_control
   name: case_control
@@ -107,7 +107,7 @@ observable_properties:
   value_type: string
 - categorical: true
   description: Does the participant belong to the general population?
-  groups:
+  grouping_id_list:
   - Study design
   id: population
   name: population
@@ -124,7 +124,7 @@ observable_properties:
   value_type: string
 - categorical: true
   description: Education level of the subject  (ISCED scale)
-  groups:
+  grouping_id_list:
   - Education and degree
   id: isced
   name: isced
@@ -145,7 +145,7 @@ observable_properties:
   value_type: string
 - categorical: true
   description: Education level of mother of the subject (ISCED scale)
-  groups:
+  grouping_id_list:
   - Education and degree
   id: isced_m
   name: isced_m
@@ -166,7 +166,7 @@ observable_properties:
   value_type: string
 - categorical: true
   description: Education level of father of the subject (ISCED scale)
-  groups:
+  grouping_id_list:
   - Education and degree
   id: isced_f
   name: isced_f
@@ -187,7 +187,7 @@ observable_properties:
   value_type: string
 - categorical: true
   description: Degree of urbanization of residence of the subject.
-  groups:
+  grouping_id_list:
   - Regional characteristics
   id: degurba
   name: degurba
@@ -206,7 +206,7 @@ observable_properties:
   value_type: string
 - categorical: true
   description: Smoking status of the subject
-  groups:
+  grouping_id_list:
   - Smoking
   id: smoking
   label: smoking status
@@ -228,7 +228,7 @@ observable_properties:
     formula: max(isced_m, isced_f)
   categorical: true
   description: Highest education level of the household of the  subject (ISCED scale)
-  groups:
+  grouping_id_list:
   - Education and degree
   id: isced_hh
   name: isced_hh
@@ -251,7 +251,7 @@ observable_properties:
   description: If participant does not belong to the general population, please fill
     in the appropiate population group to which he/she belongs - other subpopulation
     group
-  groups:
+  grouping_id_list:
   - Study design
   id: subpopulation_other
   name: subpopulation_other
@@ -265,7 +265,7 @@ observable_properties:
   value_type: string
 - categorical: false
   description: Country of residence of the subject according to ISO 3166-1 alpha-2
-  groups:
+  grouping_id_list:
   - Regional characteristics
   id: country
   label: country of residence
@@ -279,7 +279,7 @@ observable_properties:
 - categorical: false
   description: 'NUTS Level 2 of residence of the subject: (Nomenclature of Territorial
     Units for Statistics), by regional level, version 2021 (NUTS 2021)'
-  groups:
+  grouping_id_list:
   - Regional characteristics
   id: nuts2
   label: NUTS Level 2 of residence
@@ -293,7 +293,7 @@ observable_properties:
 - categorical: false
   description: 'NUTS Level 3 of residence of the subject: (Nomenclature of Territorial
     Units for Statistics), by regional level, version 2021 (NUTS 2021)'
-  groups:
+  grouping_id_list:
   - Regional characteristics
   id: nuts3
   label: NUTS Level 3 of residence
@@ -307,7 +307,7 @@ observable_properties:
 - categorical: false
   description: Subdivision of country of residence of the subject according to ISO
     3166-2
-  groups:
+  grouping_id_list:
   - Regional characteristics
   id: subdivision
   name: subdivision
@@ -320,7 +320,7 @@ observable_properties:
 - categorical: false
   description: 'NUTS Level 1 of residence of the subject: (Nomenclature of Territorial
     Units for Statistics), by regional level, version 2021 (NUTS 2021)'
-  groups:
+  grouping_id_list:
   - Regional characteristics
   id: nuts1
   label: NUTS Level 1 of residence
@@ -335,7 +335,7 @@ observable_properties:
   default_significantdecimals: 1.0
   default_unit: cm
   description: Height of the subject
-  groups:
+  grouping_id_list:
   - Cardiometabolic health and metabolic diseases
   id: height
   label: height
@@ -355,7 +355,7 @@ observable_properties:
   default_significantdecimals: 3.0
   default_unit: kg
   description: Weight of the subject
-  groups:
+  grouping_id_list:
   - Cardiometabolic health and metabolic diseases
   id: weight
   label: weight
@@ -377,7 +377,7 @@ observable_properties:
   default_significantdecimals: 2.0
   default_unit: "kg/m\xB2"
   description: Body mass index of the subject
-  groups:
+  grouping_id_list:
   - Cardiometabolic health and metabolic diseases
   id: bmi
   label: BMI
@@ -396,7 +396,7 @@ observable_properties:
 - categorical: false
   default_unit: days
   description: Age in days of the subject
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: agedays
   label: age in days
@@ -417,7 +417,7 @@ observable_properties:
 - categorical: false
   default_unit: months
   description: Age in months of the subject
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: agemonths
   label: age in months
@@ -436,7 +436,7 @@ observable_properties:
 - categorical: false
   default_unit: weeks
   description: Age in weeks of the subject
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: ageweeks
   label: age in weeks
@@ -456,7 +456,7 @@ observable_properties:
   default_immutable: 1
   default_unit: years
   description: Age of the mother of the subject at delivery
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: age_birth_m
   name: age_birth_m
@@ -476,7 +476,7 @@ observable_properties:
 - categorical: false
   default_unit: years
   description: Age in years of the subject
-  groups:
+  grouping_id_list:
   - Personal parameters
   id: ageyears
   label: age in years

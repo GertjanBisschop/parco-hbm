@@ -34,10 +34,9 @@ classes:
       - matrices
       - metadata_fields
       - biochementities
-      - biochemgroupings
+      - groupings
       - indicators
       - units
-      - observable_property_groups
       - observable_properties
       - stakeholders
       - projects
@@ -57,6 +56,16 @@ classes:
       - remark
     close_mappings:
      - schema:Thing
+
+  Grouping:
+    is_a: NamedThing
+    mixins:
+      - HasContextAliases
+      - HasTranslations
+    slots:
+      - sort_order
+      - is_abstract
+      - parent_grouping_id_list
 
   HasValidationStatus:
     mixin: true
@@ -102,11 +111,6 @@ classes:
       - same_unit_as
       - quantity_kind
   
-  BioChemGrouping:
-    is_a: NamedThing
-    mixins:
-      - HasContextAliases
-      - HasTranslations
   BioChemEntity:
     class_uri:
       schema:BioChemEntity
@@ -159,14 +163,6 @@ classes:
       - biochementity_linktype
       - biochementity
 
-  ObservablePropertyGroup:
-    is_a: NamedThing
-    mixins:
-      - HasTranslations
-    slots:
-      - sort_order
-      - is_abstract
-      - parent_groups
   ObservableProperty:
     is_a: NamedThing
     mixins:
@@ -181,7 +177,7 @@ classes:
       - default_unit
       - default_significantdecimals
       - default_immutable
-      - groups
+      - grouping_id_list
       - relevant_observable_entity_types
       - relevant_observation_types
       - indicator
@@ -456,10 +452,19 @@ slots:
   quantity_kind:
     range: QudtQuantityKind
 
-  biochemgroupings:
+  grouping:
+    range: Grouping
+    inlined: false
+  groupings:
     multivalued: true
     inlined_as_list: true
-    range: BioChemGrouping
+    range: Grouping
+  grouping_id_list:
+    multivalued: true
+    range: Grouping
+  parent_grouping_id_list:
+    multivalued: true
+    range: Grouping
   biochemidentifiers:
     multivalued: true
     inlined_as_list: true
@@ -473,7 +478,6 @@ slots:
     inlined_as_list: true
     range: Indicator
 
-  grouping: BioChemGrouping
   web_uri:
   identifier_schema:
     range: BioChemIdentifierSchema
@@ -517,19 +521,12 @@ slots:
     range: BioChemEntity
     inlined: false
 
-  observable_property_groups:
-    multivalued: true
-    inlined_as_list: true
-    range: ObservablePropertyGroup
   categorical:
     range: boolean
   multivalued:
     range: boolean
   is_abstract:
     range: boolean
-  parent_groups:
-    multivalued: true
-    range: ObservablePropertyGroup
   value_type:
   value_metadata:
     multivalued: true
@@ -544,9 +541,6 @@ slots:
   default_significantdecimals:
     range: integer
   default_unit:
-  groups:
-    multivalued: true
-    range: ObservablePropertyGroup
   relevant_observation_types:
     multivalued: true
     range: ObservationType

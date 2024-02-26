@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-20T17:46:09
+# Generation date: 2024-02-26T15:49:09
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -31,7 +31,6 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-BIOCHEMGROUPING = CurieNamespace('BioChemGrouping', 'http://example.org/UNKNOWN/BioChemGrouping/')
 IOP = CurieNamespace('iop', 'http://example.org/UNKNOWN/iop/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 PEH = CurieNamespace('peh', 'https://w3id.org/peh/peh-model')
@@ -50,11 +49,11 @@ class NamedThingId(extended_str):
     pass
 
 
-class UnitId(NamedThingId):
+class GroupingId(NamedThingId):
     pass
 
 
-class BioChemGroupingId(NamedThingId):
+class UnitId(NamedThingId):
     pass
 
 
@@ -71,10 +70,6 @@ class MatrixId(NamedThingId):
 
 
 class IndicatorId(NamedThingId):
-    pass
-
-
-class ObservablePropertyGroupId(NamedThingId):
     pass
 
 
@@ -190,10 +185,9 @@ class EntityList(YAMLRoot):
     matrices: Optional[Union[Dict[Union[str, MatrixId], Union[dict, "Matrix"]], List[Union[dict, "Matrix"]]]] = empty_dict()
     metadata_fields: Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, "ObservablePropertyMetadataField"]], List[Union[dict, "ObservablePropertyMetadataField"]]]] = empty_dict()
     biochementities: Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, "BioChemEntity"]], List[Union[dict, "BioChemEntity"]]]] = empty_dict()
-    biochemgroupings: Optional[Union[Dict[Union[str, BioChemGroupingId], Union[dict, "BioChemGrouping"]], List[Union[dict, "BioChemGrouping"]]]] = empty_dict()
+    groupings: Optional[Union[Dict[Union[str, GroupingId], Union[dict, "Grouping"]], List[Union[dict, "Grouping"]]]] = empty_dict()
     indicators: Optional[Union[Dict[Union[str, IndicatorId], Union[dict, "Indicator"]], List[Union[dict, "Indicator"]]]] = empty_dict()
     units: Optional[Union[Dict[Union[str, UnitId], Union[dict, "Unit"]], List[Union[dict, "Unit"]]]] = empty_dict()
-    observable_property_groups: Optional[Union[Dict[Union[str, ObservablePropertyGroupId], Union[dict, "ObservablePropertyGroup"]], List[Union[dict, "ObservablePropertyGroup"]]]] = empty_dict()
     observable_properties: Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, "ObservableProperty"]], List[Union[dict, "ObservableProperty"]]]] = empty_dict()
     stakeholders: Optional[Union[Dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], List[Union[dict, "Stakeholder"]]]] = empty_dict()
     projects: Optional[Union[Dict[Union[str, ProjectId], Union[dict, "Project"]], List[Union[dict, "Project"]]]] = empty_dict()
@@ -207,13 +201,11 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(slot_name="biochementities", slot_type=BioChemEntity, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="biochemgroupings", slot_type=BioChemGrouping, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="groupings", slot_type=Grouping, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="indicators", slot_type=Indicator, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="units", slot_type=Unit, key_name="id", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="observable_property_groups", slot_type=ObservablePropertyGroup, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="observable_properties", slot_type=ObservableProperty, key_name="id", keyed=True)
 
@@ -267,6 +259,49 @@ class NamedThing(YAMLRoot):
 
         if self.remark is not None and not isinstance(self.remark, str):
             self.remark = str(self.remark)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Grouping(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Grouping"]
+    class_class_curie: ClassVar[str] = "peh:Grouping"
+    class_name: ClassVar[str] = "Grouping"
+    class_model_uri: ClassVar[URIRef] = PEH.Grouping
+
+    id: Union[str, GroupingId] = None
+    sort_order: Optional[Decimal] = None
+    is_abstract: Optional[Union[bool, Bool]] = None
+    parent_grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, "ContextAlias"], List[Union[dict, "ContextAlias"]]]] = empty_list()
+    translations: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GroupingId):
+            self.id = GroupingId(self.id)
+
+        if self.sort_order is not None and not isinstance(self.sort_order, Decimal):
+            self.sort_order = Decimal(self.sort_order)
+
+        if self.is_abstract is not None and not isinstance(self.is_abstract, Bool):
+            self.is_abstract = Bool(self.is_abstract)
+
+        if not isinstance(self.parent_grouping_id_list, list):
+            self.parent_grouping_id_list = [self.parent_grouping_id_list] if self.parent_grouping_id_list is not None else []
+        self.parent_grouping_id_list = [v if isinstance(v, GroupingId) else GroupingId(v) for v in self.parent_grouping_id_list]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
+
+        if not isinstance(self.translations, list):
+            self.translations = [self.translations] if self.translations is not None else []
+        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
 
         super().__post_init__(**kwargs)
 
@@ -469,36 +504,6 @@ class Unit(NamedThing):
 
 
 @dataclass
-class BioChemGrouping(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["BioChemGrouping"]
-    class_class_curie: ClassVar[str] = "peh:BioChemGrouping"
-    class_name: ClassVar[str] = "BioChemGrouping"
-    class_model_uri: ClassVar[URIRef] = PEH.BioChemGrouping
-
-    id: Union[str, BioChemGroupingId] = None
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, BioChemGroupingId):
-            self.id = BioChemGroupingId(self.id)
-
-        if not isinstance(self.context_aliases, list):
-            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
-        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
-
-        if not isinstance(self.translations, list):
-            self.translations = [self.translations] if self.translations is not None else []
-        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class BioChemEntity(NamedThing):
     """
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
@@ -511,7 +516,7 @@ class BioChemEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.BioChemEntity
 
     id: Union[str, BioChemEntityId] = None
-    grouping: Optional[str] = None
+    grouping: Optional[Union[str, GroupingId]] = None
     biochemidentifiers: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
     biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
     aliases: Optional[Union[str, List[str]]] = empty_list()
@@ -526,8 +531,8 @@ class BioChemEntity(NamedThing):
         if not isinstance(self.id, BioChemEntityId):
             self.id = BioChemEntityId(self.id)
 
-        if self.grouping is not None and not isinstance(self.grouping, str):
-            self.grouping = str(self.grouping)
+        if self.grouping is not None and not isinstance(self.grouping, GroupingId):
+            self.grouping = GroupingId(self.grouping)
 
         if not isinstance(self.biochemidentifiers, list):
             self.biochemidentifiers = [self.biochemidentifiers] if self.biochemidentifiers is not None else []
@@ -729,44 +734,6 @@ class BioChemEntityLink(YAMLRoot):
 
 
 @dataclass
-class ObservablePropertyGroup(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["ObservablePropertyGroup"]
-    class_class_curie: ClassVar[str] = "peh:ObservablePropertyGroup"
-    class_name: ClassVar[str] = "ObservablePropertyGroup"
-    class_model_uri: ClassVar[URIRef] = PEH.ObservablePropertyGroup
-
-    id: Union[str, ObservablePropertyGroupId] = None
-    sort_order: Optional[Decimal] = None
-    is_abstract: Optional[Union[bool, Bool]] = None
-    parent_groups: Optional[Union[Union[str, ObservablePropertyGroupId], List[Union[str, ObservablePropertyGroupId]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ObservablePropertyGroupId):
-            self.id = ObservablePropertyGroupId(self.id)
-
-        if self.sort_order is not None and not isinstance(self.sort_order, Decimal):
-            self.sort_order = Decimal(self.sort_order)
-
-        if self.is_abstract is not None and not isinstance(self.is_abstract, Bool):
-            self.is_abstract = Bool(self.is_abstract)
-
-        if not isinstance(self.parent_groups, list):
-            self.parent_groups = [self.parent_groups] if self.parent_groups is not None else []
-        self.parent_groups = [v if isinstance(v, ObservablePropertyGroupId) else ObservablePropertyGroupId(v) for v in self.parent_groups]
-
-        if not isinstance(self.translations, list):
-            self.translations = [self.translations] if self.translations is not None else []
-        self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class ObservableProperty(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -785,7 +752,7 @@ class ObservableProperty(NamedThing):
     default_unit: Optional[str] = None
     default_significantdecimals: Optional[int] = None
     default_immutable: Optional[Union[bool, Bool]] = None
-    groups: Optional[Union[Union[str, ObservablePropertyGroupId], List[Union[str, ObservablePropertyGroupId]]]] = empty_list()
+    grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
     relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
     relevant_observation_types: Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]] = empty_list()
     indicator: Optional[Union[str, IndicatorId]] = None
@@ -828,9 +795,9 @@ class ObservableProperty(NamedThing):
         if self.default_immutable is not None and not isinstance(self.default_immutable, Bool):
             self.default_immutable = Bool(self.default_immutable)
 
-        if not isinstance(self.groups, list):
-            self.groups = [self.groups] if self.groups is not None else []
-        self.groups = [v if isinstance(v, ObservablePropertyGroupId) else ObservablePropertyGroupId(v) for v in self.groups]
+        if not isinstance(self.grouping_id_list, list):
+            self.grouping_id_list = [self.grouping_id_list] if self.grouping_id_list is not None else []
+        self.grouping_id_list = [v if isinstance(v, GroupingId) else GroupingId(v) for v in self.grouping_id_list]
 
         if not isinstance(self.relevant_observable_entity_types, list):
             self.relevant_observable_entity_types = [self.relevant_observable_entity_types] if self.relevant_observable_entity_types is not None else []
@@ -2278,8 +2245,17 @@ slots.same_unit_as = Slot(uri=PEH.same_unit_as, name="same_unit_as", curie=PEH.c
 slots.quantity_kind = Slot(uri=PEH.quantity_kind, name="quantity_kind", curie=PEH.curie('quantity_kind'),
                    model_uri=PEH.quantity_kind, domain=None, range=Optional[Union[str, "QudtQuantityKind"]])
 
-slots.biochemgroupings = Slot(uri=PEH.biochemgroupings, name="biochemgroupings", curie=PEH.curie('biochemgroupings'),
-                   model_uri=PEH.biochemgroupings, domain=None, range=Optional[Union[Dict[Union[str, BioChemGroupingId], Union[dict, BioChemGrouping]], List[Union[dict, BioChemGrouping]]]])
+slots.grouping = Slot(uri=PEH.grouping, name="grouping", curie=PEH.curie('grouping'),
+                   model_uri=PEH.grouping, domain=None, range=Optional[Union[str, GroupingId]])
+
+slots.groupings = Slot(uri=PEH.groupings, name="groupings", curie=PEH.curie('groupings'),
+                   model_uri=PEH.groupings, domain=None, range=Optional[Union[Dict[Union[str, GroupingId], Union[dict, Grouping]], List[Union[dict, Grouping]]]])
+
+slots.grouping_id_list = Slot(uri=PEH.grouping_id_list, name="grouping_id_list", curie=PEH.curie('grouping_id_list'),
+                   model_uri=PEH.grouping_id_list, domain=None, range=Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]])
+
+slots.parent_grouping_id_list = Slot(uri=PEH.parent_grouping_id_list, name="parent_grouping_id_list", curie=PEH.curie('parent_grouping_id_list'),
+                   model_uri=PEH.parent_grouping_id_list, domain=None, range=Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]])
 
 slots.biochemidentifiers = Slot(uri=PEH.biochemidentifiers, name="biochemidentifiers", curie=PEH.curie('biochemidentifiers'),
                    model_uri=PEH.biochemidentifiers, domain=None, range=Optional[Union[Union[dict, BioChemIdentifier], List[Union[dict, BioChemIdentifier]]]])
@@ -2289,9 +2265,6 @@ slots.biochementities = Slot(uri=PEH.biochementities, name="biochementities", cu
 
 slots.indicators = Slot(uri=PEH.indicators, name="indicators", curie=PEH.curie('indicators'),
                    model_uri=PEH.indicators, domain=None, range=Optional[Union[Dict[Union[str, IndicatorId], Union[dict, Indicator]], List[Union[dict, Indicator]]]])
-
-slots.grouping = Slot(uri=PEH.grouping, name="grouping", curie=PEH.curie('grouping'),
-                   model_uri=PEH.grouping, domain=None, range=Optional[str])
 
 slots.web_uri = Slot(uri=PEH.web_uri, name="web_uri", curie=PEH.curie('web_uri'),
                    model_uri=PEH.web_uri, domain=None, range=Optional[str])
@@ -2353,9 +2326,6 @@ slots.biochementity_linktype = Slot(uri=PEH.biochementity_linktype, name="bioche
 slots.biochementity = Slot(uri=PEH.biochementity, name="biochementity", curie=PEH.curie('biochementity'),
                    model_uri=PEH.biochementity, domain=None, range=Optional[Union[str, BioChemEntityId]])
 
-slots.observable_property_groups = Slot(uri=PEH.observable_property_groups, name="observable_property_groups", curie=PEH.curie('observable_property_groups'),
-                   model_uri=PEH.observable_property_groups, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyGroupId], Union[dict, ObservablePropertyGroup]], List[Union[dict, ObservablePropertyGroup]]]])
-
 slots.categorical = Slot(uri=PEH.categorical, name="categorical", curie=PEH.curie('categorical'),
                    model_uri=PEH.categorical, domain=None, range=Optional[Union[bool, Bool]])
 
@@ -2364,9 +2334,6 @@ slots.multivalued = Slot(uri=PEH.multivalued, name="multivalued", curie=PEH.curi
 
 slots.is_abstract = Slot(uri=PEH.is_abstract, name="is_abstract", curie=PEH.curie('is_abstract'),
                    model_uri=PEH.is_abstract, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.parent_groups = Slot(uri=PEH.parent_groups, name="parent_groups", curie=PEH.curie('parent_groups'),
-                   model_uri=PEH.parent_groups, domain=None, range=Optional[Union[Union[str, ObservablePropertyGroupId], List[Union[str, ObservablePropertyGroupId]]]])
 
 slots.value_type = Slot(uri=PEH.value_type, name="value_type", curie=PEH.curie('value_type'),
                    model_uri=PEH.value_type, domain=None, range=Optional[str])
@@ -2385,9 +2352,6 @@ slots.default_significantdecimals = Slot(uri=PEH.default_significantdecimals, na
 
 slots.default_unit = Slot(uri=PEH.default_unit, name="default_unit", curie=PEH.curie('default_unit'),
                    model_uri=PEH.default_unit, domain=None, range=Optional[str])
-
-slots.groups = Slot(uri=PEH.groups, name="groups", curie=PEH.curie('groups'),
-                   model_uri=PEH.groups, domain=None, range=Optional[Union[Union[str, ObservablePropertyGroupId], List[Union[str, ObservablePropertyGroupId]]]])
 
 slots.relevant_observation_types = Slot(uri=PEH.relevant_observation_types, name="relevant_observation_types", curie=PEH.curie('relevant_observation_types'),
                    model_uri=PEH.relevant_observation_types, domain=None, range=Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]])

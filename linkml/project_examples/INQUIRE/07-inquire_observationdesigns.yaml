@@ -3,7 +3,7 @@ questionnairedesigns:
     sections:
     - prompt: "PART 1: QUESTIONS ABOUT YOU AND YOUR FAMILY"
       sort_order: 1
-      relevant_observablepropertygroups:
+      relevant_groupings:
       - demographics
       items:
       - question_item_type: label

@@ -1,23 +1,23 @@
-observable_property_groups:
+groupings:
 - description: tijdelijk
   id: '<TODO: nog aan te vullen effect>'
   is_abstract: false
   name: '<TODO: nog aan te vullen effect>'
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2005.0
 - description: tijdelijk
   id: '<TODO: nog aan te vullen exposure>'
   is_abstract: false
   name: '<TODO: nog aan te vullen exposure>'
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 3004.0
 - description: Acrylamide
   id: Acrylamide
   is_abstract: false
   name: Acrylamide
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 10000.0
 - description: This category contains all questions related to alcohol use and own
@@ -25,35 +25,35 @@ observable_property_groups:
   id: Alcohol and drugs
   is_abstract: false
   name: Alcohol and drugs
-  parent_groups:
+  parent_grouping_id_list:
   - Personal behavior
   sort_order: 4.0
 - description: Alkaloid
   id: Alkaloid
   is_abstract: false
   name: Alkaloid
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 10002.0
 - description: Anilines and MOCA
   id: Anilines and MOCA
   is_abstract: false
   name: Anilines and MOCA
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1007.0
 - description: 1st level group for Animals information
   id: Animals
   is_abstract: false
   name: Animals
-  parent_groups:
+  parent_grouping_id_list:
   - Residence
   sort_order: 0.2
 - description: Aprotic solvents
   id: Aprotic solvents
   is_abstract: false
   name: Aprotic solvents
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1010.0
 - description: "This category contains all questions related to problems with breathing,\
@@ -62,7 +62,7 @@ observable_property_groups:
   id: Asthma and allergy
   is_abstract: false
   name: Asthma and allergy
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 451.0
 - description: 'This category contains all questions related to baby feeding because
@@ -71,7 +71,7 @@ observable_property_groups:
   id: Baby feeding
   is_abstract: false
   name: Baby feeding
-  parent_groups:
+  parent_grouping_id_list:
   - Nutricion and diet
   sort_order: 47.0
 - description: This category contains all questions related to bathing and showering.
@@ -79,7 +79,7 @@ observable_property_groups:
   id: Bathing and showering
   is_abstract: false
   name: Bathing and showering
-  parent_groups:
+  parent_grouping_id_list:
   - Personal care and hygiene
   sort_order: 55.0
 - description: This category contains all questions related to non-local bio-food
@@ -87,14 +87,14 @@ observable_property_groups:
   id: Biological food
   is_abstract: false
   name: Biological food
-  parent_groups:
+  parent_grouping_id_list:
   - Nutricion and diet
   sort_order: 45.0
 - description: Bisphenols
   id: Bisphenols
   is_abstract: false
   name: Bisphenols
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1005.0
 - description: This category contains all measurements of blood lipids and lipid transport
@@ -102,7 +102,7 @@ observable_property_groups:
   id: Blood Lipids and lipid transport proteins
   is_abstract: false
   name: Blood Lipids and lipid transport proteins
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2006.0
 - description: This category contains all measurements of vitamins in human biological
@@ -110,7 +110,7 @@ observable_property_groups:
   id: Blood and blood composition
   is_abstract: false
   name: Blood and blood composition
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2007.0
 - description: This category contains all info on the outer shell of the house like
@@ -120,7 +120,7 @@ observable_property_groups:
   id: Building characteristics
   is_abstract: false
   name: Building characteristics
-  parent_groups:
+  parent_grouping_id_list:
   - Housing
   sort_order: 21.0
 - description: This category contains all measured health outcome in the group of
@@ -129,14 +129,14 @@ observable_property_groups:
   id: Cardiometabolic health and metabolic diseases
   is_abstract: false
   name: Cardiometabolic health and metabolic diseases
-  parent_groups:
+  parent_grouping_id_list:
   - Health outcome
   sort_order: 420.0
 - description: Care products
   id: Care products
   is_abstract: false
   name: Care products
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 10004.0
 - description: 'This category contains all measurements related to cell aging in human
@@ -144,7 +144,7 @@ observable_property_groups:
   id: Cell ageing
   is_abstract: false
   name: Cell ageing
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2016.0
 - description: 'This category contains all measurements of cell growth and cancermarkers
@@ -152,7 +152,7 @@ observable_property_groups:
   id: Cell growth and cancer markers
   is_abstract: false
   name: Cell growth and cancer markers
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2015.0
 - description: This category contains all questions related to chicken. It can be
@@ -161,7 +161,7 @@ observable_property_groups:
   id: Chicken
   is_abstract: false
   name: Chicken
-  parent_groups:
+  parent_grouping_id_list:
   - Animals
   sort_order: 32.0
 - description: This category contains all questions related to puberty that are questioned
@@ -169,7 +169,7 @@ observable_property_groups:
   id: Child CLB data
   is_abstract: false
   name: Child CLB data
-  parent_groups:
+  parent_grouping_id_list:
   - Puberty
   sort_order: 609.0
 - description: This category contains all birth questions that relate to a specific
@@ -179,14 +179,14 @@ observable_property_groups:
   id: 'Child at birth '
   is_abstract: false
   name: 'Child at birth '
-  parent_groups:
+  parent_grouping_id_list:
   - Child development
   sort_order: 600.0
 - description: 1st level group for Child development information
   id: Child development
   is_abstract: true
   name: Child development
-  parent_groups:
+  parent_grouping_id_list:
   - Health
   sort_order: 0.1
 - description: 'This category contains questions such as: does the child go to before
@@ -195,7 +195,7 @@ observable_property_groups:
   id: Child exposure
   is_abstract: false
   name: Child exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 61.0
 - description: This category contains all questions on puberty that are not related
@@ -203,7 +203,7 @@ observable_property_groups:
   id: Child puberty
   is_abstract: false
   name: Child puberty
-  parent_groups:
+  parent_grouping_id_list:
   - Child development
   sort_order: 608.0
 - description: This category contains all questions related to the means of transport
@@ -211,7 +211,7 @@ observable_property_groups:
   id: Commuting
   is_abstract: false
   name: Commuting
-  parent_groups:
+  parent_grouping_id_list:
   - General physical activity
   sort_order: 51.0
 - description: 'This category contains all kinds of info that can be used in order
@@ -222,28 +222,28 @@ observable_property_groups:
   id: Contact information
   is_abstract: false
   name: Contact information
-  parent_groups:
+  parent_grouping_id_list:
   - Personal information
   sort_order: 3.0
 - description: DINCH
   id: DINCH
   is_abstract: false
   name: DINCH
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1002.0
 - description: Diisocyanates
   id: Diisocyanates
   is_abstract: false
   name: Diisocyanates
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1011.0
 - description: Dioxins
   id: Dioxins
   is_abstract: false
   name: Dioxins
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 3002.0
 - description: This category contains all questions related to domestic animals like
@@ -252,7 +252,7 @@ observable_property_groups:
   id: Domestic animals
   is_abstract: false
   name: Domestic animals
-  parent_groups:
+  parent_grouping_id_list:
   - Animals
   sort_order: 31.0
 - description: 'This category contains questions such as: does the child go to daycare,
@@ -260,7 +260,7 @@ observable_property_groups:
   id: 'Early life exposure '
   is_abstract: false
   name: 'Early life exposure '
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 60.0
 - description: This category contains eductional info (current or in the past) and
@@ -268,7 +268,7 @@ observable_property_groups:
   id: Education and degree
   is_abstract: false
   name: Education and degree
-  parent_groups:
+  parent_grouping_id_list:
   - Socio-economic status
   sort_order: 12.0
 - description: Top-level group for Effect information
@@ -280,7 +280,7 @@ observable_property_groups:
   id: Effect marker
   is_abstract: true
   name: Effect marker
-  parent_groups:
+  parent_grouping_id_list:
   - Health
   - Effect
   sort_order: 0.1
@@ -288,14 +288,14 @@ observable_property_groups:
   id: Environmental exposure
   is_abstract: true
   name: Environmental exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: 'This category contains information on yellow area : agriculture'
   id: Environmental exposure due to agriculture
   is_abstract: false
   name: Environmental exposure due to agriculture
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 203.0
 - description: This category contains information on environmental exposure due to
@@ -304,7 +304,7 @@ observable_property_groups:
   id: 'Environmental exposure due to air pollution, noise pollution, odor nuisance '
   is_abstract: false
   name: 'Environmental exposure due to air pollution, noise pollution, odor nuisance '
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 206.0
 - description: 'This category contains exposure info on grey area : build environment.
@@ -312,7 +312,7 @@ observable_property_groups:
   id: 'Environmental exposure due to build environment '
   is_abstract: false
   name: 'Environmental exposure due to build environment '
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 205.0
 - description: This category contains climate and weather data. For the moment, it
@@ -320,21 +320,21 @@ observable_property_groups:
   id: Environmental exposure due to climate and changing climate
   is_abstract: false
   name: Environmental exposure due to climate and changing climate
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 208.0
 - description: This category contains information on exposure to green area
   id: Environmental exposure due to green area
   is_abstract: false
   name: Environmental exposure due to green area
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 207.0
 - description: 'This category contains exposure info on grey area : industry'
   id: Environmental exposure due to industry
   is_abstract: false
   name: Environmental exposure due to industry
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 204.0
 - description: This category contains information on environmental exposure due to
@@ -347,21 +347,21 @@ observable_property_groups:
   id: 'Environmental exposure due to traffic and combustion '
   is_abstract: false
   name: 'Environmental exposure due to traffic and combustion '
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 202.0
 - description: ??????Residence
   id: Environmental indoor exposure
   is_abstract: false
   name: Environmental indoor exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Environmental exposure
   sort_order: 201.0
 - description: This category contains all measurements related to epigenetic markers
   id: Epigenetic markers
   is_abstract: false
   name: Epigenetic markers
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2019.0
 - description: This category contains all measurements of essential elements  in human
@@ -369,7 +369,7 @@ observable_property_groups:
   id: Essential elements
   is_abstract: false
   name: Essential elements
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2002.0
 - description: Top-level group for Exposure information
@@ -382,14 +382,14 @@ observable_property_groups:
   id: Exposure during pregnancy
   is_abstract: false
   name: Exposure during pregnancy
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 59.0
 - description: 1st level group for Exposure marker information
   id: Exposure marker
   is_abstract: true
   name: Exposure marker
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: 'This category contains the marital status and family composition:
@@ -397,14 +397,14 @@ observable_property_groups:
   id: Family composition
   is_abstract: false
   name: Family composition
-  parent_groups:
+  parent_grouping_id_list:
   - Socio-economic status
   sort_order: 11.0
 - description: This category contains all questions about family history of disease
   id: Family history of disease
   is_abstract: false
   name: Family history of disease
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 458.0
 - description: This category contains all questions related to fertility, incl. infertility
@@ -412,14 +412,14 @@ observable_property_groups:
   id: Fertility
   is_abstract: false
   name: Fertility
-  parent_groups:
+  parent_grouping_id_list:
   - Reproductive health
   sort_order: 502.0
 - description: Flame retardants
   id: Flame retardants
   is_abstract: false
   name: Flame retardants
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1004.0
 - description: This category contains food supplements (and thus no medication). This
@@ -427,21 +427,21 @@ observable_property_groups:
   id: Food supplements
   is_abstract: false
   name: Food supplements
-  parent_groups:
+  parent_grouping_id_list:
   - Nutricion and diet
   sort_order: 46.0
 - description: This category contains info on food supplements during pregnancy
   id: Food supplements during pregnancy
   is_abstract: false
   name: Food supplements during pregnancy
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 472.0
 - description: Furans
   id: Furans
   is_abstract: false
   name: Furans
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 3000.0
 - description: This category contains all questions on general child behaviour. Things
@@ -450,14 +450,14 @@ observable_property_groups:
   id: 'General child behavior '
   is_abstract: false
   name: 'General child behavior '
-  parent_groups:
+  parent_grouping_id_list:
   - Child development
   sort_order: 601.0
 - description: 1st level group for General food information
   id: General food
   is_abstract: false
   name: General food
-  parent_groups:
+  parent_grouping_id_list:
   - Nutricion and diet
   sort_order: 0.2
 - description: "This category contains all questions on general food consumption like\
@@ -469,7 +469,7 @@ observable_property_groups:
   id: General food consumption
   is_abstract: false
   name: General food consumption
-  parent_groups:
+  parent_grouping_id_list:
   - General food
   sort_order: 40.0
 - description: This category contains questions that indicate how much somebody eats
@@ -478,7 +478,7 @@ observable_property_groups:
   id: General food frequency
   is_abstract: false
   name: General food frequency
-  parent_groups:
+  parent_grouping_id_list:
   - General food
   sort_order: 41.0
 - description: This category contains all indoor housing characteristics that can
@@ -490,7 +490,7 @@ observable_property_groups:
   id: General indoor environment
   is_abstract: false
   name: General indoor environment
-  parent_groups:
+  parent_grouping_id_list:
   - Residence
   sort_order: 24.0
 - description: This category contains all questions related to medication and vaccination.
@@ -499,7 +499,7 @@ observable_property_groups:
   id: General medication and vaccination
   is_abstract: false
   name: General medication and vaccination
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 455.0
 - description: This category contains questions on mental health oa feeling score,
@@ -509,7 +509,7 @@ observable_property_groups:
   id: General mental health
   is_abstract: false
   name: General mental health
-  parent_groups:
+  parent_grouping_id_list:
   - Mental health
   sort_order: 480.0
 - description: This category contains questions on general environmental exposure
@@ -517,14 +517,14 @@ observable_property_groups:
   id: General perception on exposure
   is_abstract: false
   name: General perception on exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 298.0
 - description: 1st level group for General physical activity information
   id: General physical activity
   is_abstract: false
   name: General physical activity
-  parent_groups:
+  parent_grouping_id_list:
   - Personal behavior
   sort_order: 0.2
 - description: This category contains all questions on walking, working in the garden,
@@ -533,7 +533,7 @@ observable_property_groups:
   id: 'General physical activity '
   is_abstract: false
   name: 'General physical activity '
-  parent_groups:
+  parent_grouping_id_list:
   - Personal behavior
   sort_order: 50.0
 - description: This category contains all questions on general health like sore throat,
@@ -543,14 +543,14 @@ observable_property_groups:
   id: General physical health
   is_abstract: false
   name: General physical health
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 450.0
 - description: 1st level group for General property information
   id: General property
   is_abstract: true
   name: General property
-  parent_groups:
+  parent_grouping_id_list:
   - Property
   sort_order: 0.1
 - description: This category contains all data relevant to the sampling and quality
@@ -559,7 +559,7 @@ observable_property_groups:
   id: General sample information
   is_abstract: false
   name: General sample information
-  parent_groups:
+  parent_grouping_id_list:
   - Questionnaire and sample information
   sort_order: 801.0
 - description: This category contains all measurements of genotoxicity in human biological
@@ -567,14 +567,14 @@ observable_property_groups:
   id: Genotoxicity
   is_abstract: false
   name: Genotoxicity
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2013.0
 - description: Glycol ethers
   id: Glycol ethers
   is_abstract: false
   name: Glycol ethers
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 3003.0
 - description: This category contains all questions on ground and well water and the
@@ -582,7 +582,7 @@ observable_property_groups:
   id: Ground and well water
   is_abstract: false
   name: Ground and well water
-  parent_groups:
+  parent_grouping_id_list:
   - Outdoor environment
   sort_order: 30.0
 - description: 'This category contains all questions related to hair care: how often
@@ -590,14 +590,14 @@ observable_property_groups:
   id: Hair care
   is_abstract: false
   name: Hair care
-  parent_groups:
+  parent_grouping_id_list:
   - Personal care and hygiene
   sort_order: 57.0
 - description: Halogens
   id: Halogens
   is_abstract: false
   name: Halogens
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1022.0
 - description: Top-level group for Health information
@@ -609,28 +609,28 @@ observable_property_groups:
   id: Health data
   is_abstract: true
   name: Health data
-  parent_groups:
+  parent_grouping_id_list:
   - Health
   sort_order: 0.1
 - description: 1st level group for Health outcome information
   id: Health outcome
   is_abstract: true
   name: Health outcome
-  parent_groups:
+  parent_grouping_id_list:
   - Health
   sort_order: 0.1
 - description: Herbicides
   id: Herbicides
   is_abstract: false
   name: Herbicides
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 3001.0
 - description: Hexamoll DINCH
   id: Hexamoll DINCH
   is_abstract: false
   name: Hexamoll DINCH
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1016.0
 - description: This category contains questions on historical and prevalent chronic
@@ -638,7 +638,7 @@ observable_property_groups:
   id: Historical and prevalent chronic diseases or conditions
   is_abstract: false
   name: Historical and prevalent chronic diseases or conditions
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 457.0
 - description: This category contains all questions on hormone use, incl. oral contraceptives,
@@ -646,14 +646,14 @@ observable_property_groups:
   id: Hormone use
   is_abstract: false
   name: Hormone use
-  parent_groups:
+  parent_grouping_id_list:
   - Reproductive health
   sort_order: 501.0
 - description: 1st level group for Housing information
   id: Housing
   is_abstract: false
   name: Housing
-  parent_groups:
+  parent_grouping_id_list:
   - Residence
   sort_order: 0.2
 - description: 'This category contains all kinds of questions related to problems
@@ -662,7 +662,7 @@ observable_property_groups:
   id: Housing problems
   is_abstract: false
   name: Housing problems
-  parent_groups:
+  parent_grouping_id_list:
   - Housing
   sort_order: 23.0
 - description: This category contains everything linked to EPC level of house, heating
@@ -671,7 +671,7 @@ observable_property_groups:
   id: Indoor Energy, combustion behaviour and engines
   is_abstract: false
   name: Indoor Energy, combustion behaviour and engines
-  parent_groups:
+  parent_grouping_id_list:
   - Indoor environment
   sort_order: 27.0
 - description: This category contains all questions related to cleaning habits and
@@ -680,21 +680,21 @@ observable_property_groups:
   id: Indoor cleaning habits and products
   is_abstract: false
   name: Indoor cleaning habits and products
-  parent_groups:
+  parent_grouping_id_list:
   - Indoor environment
   sort_order: 26.0
 - description: 1st level group for Indoor environment information
   id: Indoor environment
   is_abstract: false
   name: Indoor environment
-  parent_groups:
+  parent_grouping_id_list:
   - Residence
   sort_order: 0.2
 - description: identiek aan' Housing - Ventilation systems' ???
   id: Indoor ventilation
   is_abstract: false
   name: Indoor ventilation
-  parent_groups:
+  parent_grouping_id_list:
   - Indoor environment
   sort_order: 25.0
 - description: 'This category contains all measured inflammation and immune parameters
@@ -702,7 +702,7 @@ observable_property_groups:
   id: Inflammation and immunity
   is_abstract: false
   name: Inflammation and immunity
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 422.0
 - description: 'This category contains all questions on hospitalisations, surgery,
@@ -710,7 +710,7 @@ observable_property_groups:
   id: Injury, hospitalisation and surgery
   is_abstract: false
   name: Injury, hospitalisation and surgery
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 456.0
 - description: This category contains all measurements of MOLECULAR AND CLINICAL kidney
@@ -718,7 +718,7 @@ observable_property_groups:
   id: Kidney function
   is_abstract: false
   name: Kidney function
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2008.0
 - description: This category contains all measured health outcome at birth (from the
@@ -726,7 +726,7 @@ observable_property_groups:
   id: Kindfiche
   is_abstract: false
   name: Kindfiche
-  parent_groups:
+  parent_grouping_id_list:
   - Health outcome
   sort_order: 423.0
 - description: This category contains all questions related to kitchen garden. It
@@ -738,7 +738,7 @@ observable_property_groups:
   id: Kitchen garden
   is_abstract: false
   name: Kitchen garden
-  parent_groups:
+  parent_grouping_id_list:
   - Outdoor environment
   sort_order: 29.0
 - description: This category contains all measured health outcome in the group of
@@ -747,14 +747,14 @@ observable_property_groups:
   id: Lab markers for cardiometabolic health and metabolic diseases
   is_abstract: false
   name: Lab markers for cardiometabolic health and metabolic diseases
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 421.0
 - description: This category contains all measurements of liver function
   id: Liver function
   is_abstract: false
   name: Liver function
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2003.0
 - description: This category contains all questions on egg consumption from local
@@ -763,7 +763,7 @@ observable_property_groups:
   id: Local and/or own chicken eggs
   is_abstract: false
   name: Local and/or own chicken eggs
-  parent_groups:
+  parent_grouping_id_list:
   - Local food
   sort_order: 44.0
 - description: "This category contains all questions on local food consumption and\
@@ -776,7 +776,7 @@ observable_property_groups:
   id: 'Local and/or own food consumption and frequency '
   is_abstract: false
   name: 'Local and/or own food consumption and frequency '
-  parent_groups:
+  parent_grouping_id_list:
   - Nutricion and diet
   sort_order: 42.0
 - description: This category contains all questions on own grown food consumption.
@@ -784,35 +784,35 @@ observable_property_groups:
   id: Local and/or own kitchen garden food
   is_abstract: false
   name: Local and/or own kitchen garden food
-  parent_groups:
+  parent_grouping_id_list:
   - Local food
   sort_order: 43.0
 - description: 1st level group for Local food information
   id: Local food
   is_abstract: false
   name: Local food
-  parent_groups:
+  parent_grouping_id_list:
   - Nutricion and diet
   sort_order: 0.2
 - description: This category contains info on medication during pregnancy
   id: Medication during pregnancy
   is_abstract: false
   name: Medication during pregnancy
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 471.0
 - description: This category contains all general questions related to menstruation
   id: Menstruation
   is_abstract: false
   name: Menstruation
-  parent_groups:
+  parent_grouping_id_list:
   - Reproductive health
   sort_order: 500.0
 - description: 1st level group for Mental health information
   id: Mental health
   is_abstract: false
   name: Mental health
-  parent_groups:
+  parent_grouping_id_list:
   - Health data
   sort_order: 0.2
 - description: This category contains all measurements of metabolic hormones in human
@@ -820,35 +820,35 @@ observable_property_groups:
   id: Metabolic hormones
   is_abstract: false
   name: Metabolic hormones
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2011.0
 - description: Metals
   id: Metals
   is_abstract: false
   name: Metals
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1013.0
 - description: Musks
   id: Musks
   is_abstract: false
   name: Musks
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1018.0
 - description: Mycotoxins
   id: Mycotoxins
   is_abstract: false
   name: Mycotoxins
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 10001.0
 - description: This category contains all questions related to nail care
   id: Nail care
   is_abstract: false
   name: Nail care
-  parent_groups:
+  parent_grouping_id_list:
   - Personal care and hygiene
   sort_order: 58.0
 - description: This category contains all info related to country of birth, nationality
@@ -856,7 +856,7 @@ observable_property_groups:
   id: Nationality, origin and language
   is_abstract: false
   name: Nationality, origin and language
-  parent_groups:
+  parent_grouping_id_list:
   - Socio-economic status
   sort_order: 10.0
 - description: This category contains all computer test to asses neurocognition eg
@@ -864,7 +864,7 @@ observable_property_groups:
   id: Neuro Computer tests
   is_abstract: false
   name: Neuro Computer tests
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro-cognition
   sort_order: 491.0
 - description: This category was created for 3xG because neuro was questionned in
@@ -873,7 +873,7 @@ observable_property_groups:
   id: Neuro child communication
   is_abstract: false
   name: Neuro child communication
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro development
   sort_order: 603.0
 - description: This category was created for 3xG because neuro was questionned in
@@ -882,7 +882,7 @@ observable_property_groups:
   id: Neuro child fine motor skills
   is_abstract: false
   name: Neuro child fine motor skills
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro development
   sort_order: 605.0
 - description: This category was created for 3xG because neuro was questionned in
@@ -891,7 +891,7 @@ observable_property_groups:
   id: Neuro child general
   is_abstract: false
   name: Neuro child general
-  parent_groups:
+  parent_grouping_id_list:
   - Child development
   sort_order: 602.0
 - description: This category was created for 3xG because neuro was questionned in
@@ -900,7 +900,7 @@ observable_property_groups:
   id: Neuro child gross motor skills
   is_abstract: false
   name: Neuro child gross motor skills
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro development
   sort_order: 604.0
 - description: This category was created for 3xG because neuro was questionned in
@@ -909,7 +909,7 @@ observable_property_groups:
   id: Neuro child personal-social
   is_abstract: false
   name: Neuro child personal-social
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro development
   sort_order: 607.0
 - description: This category was created for 3xG because neuro was questionned in
@@ -918,49 +918,49 @@ observable_property_groups:
   id: Neuro child problem solving
   is_abstract: false
   name: Neuro child problem solving
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro development
   sort_order: 606.0
 - description: 1st level group for Neuro development information
   id: Neuro development
   is_abstract: false
   name: Neuro development
-  parent_groups:
+  parent_grouping_id_list:
   - Child development
   sort_order: 0.2
 - description: This category contains all questions related to problems with neuro-cognition
   id: Neuro general
   is_abstract: false
   name: Neuro general
-  parent_groups:
+  parent_grouping_id_list:
   - Neuro-cognition
   sort_order: 490.0
 - description: 1st level group for Neuro-cognition information
   id: Neuro-cognition
   is_abstract: false
   name: Neuro-cognition
-  parent_groups:
+  parent_grouping_id_list:
   - Health data
   sort_order: 0.2
 - description: This category contains all measurements related to nicotine
   id: Nicotine
   is_abstract: false
   name: Nicotine
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2017.0
 - description: 1st level group for Nutricion and diet information
   id: Nutricion and diet
   is_abstract: true
   name: Nutricion and diet
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: This category contains all variables related to occupation and income
   id: Occupation and income
   is_abstract: false
   name: Occupation and income
-  parent_groups:
+  parent_grouping_id_list:
   - Socio-economic status
   sort_order: 13.0
 - description: This category is there for questions that are related only to occupational
@@ -970,21 +970,21 @@ observable_property_groups:
   id: 'Occupational exposure '
   is_abstract: false
   name: 'Occupational exposure '
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 64.0
 - description: Organochlorine compounds (OCs)
   id: Organochlorine compounds (OCs)
   is_abstract: false
   name: Organochlorine compounds (OCs)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 10003.0
 - description: 1st level group for Outdoor environment information
   id: Outdoor environment
   is_abstract: false
   name: Outdoor environment
-  parent_groups:
+  parent_grouping_id_list:
   - Residence
   sort_order: 0.2
 - description: This category contains all questions related to terrace and garden
@@ -995,14 +995,14 @@ observable_property_groups:
   id: Outdoor general
   is_abstract: false
   name: Outdoor general
-  parent_groups:
+  parent_grouping_id_list:
   - Outdoor environment
   sort_order: 28.0
 - description: Parabens
   id: Parabens
   is_abstract: false
   name: Parabens
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1017.0
 - description: This category contains all questions related to passive smoking or
@@ -1010,28 +1010,28 @@ observable_property_groups:
   id: Passive smoking
   is_abstract: false
   name: Passive smoking
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure to smoking
   sort_order: 62.0
 - description: Per-/poly-fluorinated compounds (PFASs)
   id: Per-/poly-fluorinated compounds (PFASs)
   is_abstract: false
   name: Per-/poly-fluorinated compounds (PFASs)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1003.0
 - description: 1st level group for Perception on exposure information
   id: Perception on exposure
   is_abstract: true
   name: Perception on exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: This category contains questions related to climate and changing climate
   id: Perception on exposure due to climate and changing climate
   is_abstract: false
   name: Perception on exposure due to climate and changing climate
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 299.0
 - description: 'This category contains questions on perception, concerns and opinions
@@ -1040,7 +1040,7 @@ observable_property_groups:
   id: 'Perception on exposure due to food '
   is_abstract: false
   name: 'Perception on exposure due to food '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 300.0
 - description: 'This category contains questions perception, concerns and opinions
@@ -1049,7 +1049,7 @@ observable_property_groups:
   id: 'Perception on exposure due to indoor environment '
   is_abstract: false
   name: 'Perception on exposure due to indoor environment '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 301.0
 - description: This category is about your perception, concerns and opinions about
@@ -1057,7 +1057,7 @@ observable_property_groups:
   id: 'Perception on exposure exposure due to agriculture '
   is_abstract: false
   name: 'Perception on exposure exposure due to agriculture '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 303.0
 - description: 'This category is about your perception, concerns and opinions about
@@ -1067,7 +1067,7 @@ observable_property_groups:
   is_abstract: false
   name: 'Perception on exposure exposure due to air pollution, noise pollution, odor
     nuisance '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 306.0
 - description: This category is about your perception, concerns and opinions about
@@ -1075,7 +1075,7 @@ observable_property_groups:
   id: 'Perception on exposure exposure due to build environment '
   is_abstract: false
   name: 'Perception on exposure exposure due to build environment '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 305.0
 - description: This category is about questions on your perception of how important
@@ -1086,7 +1086,7 @@ observable_property_groups:
   id: 'Perception on exposure exposure due to green area '
   is_abstract: false
   name: 'Perception on exposure exposure due to green area '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 307.0
 - description: This category is about your perception, concerns and opinions about
@@ -1095,7 +1095,7 @@ observable_property_groups:
   id: 'Perception on exposure exposure due to industry '
   is_abstract: false
   name: 'Perception on exposure exposure due to industry '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 304.0
 - description: This category is about your perception, concerns and opinions about
@@ -1103,14 +1103,14 @@ observable_property_groups:
   id: 'Perception on exposure exposure due to traffic and combustion '
   is_abstract: false
   name: 'Perception on exposure exposure due to traffic and combustion '
-  parent_groups:
+  parent_grouping_id_list:
   - Perception on exposure
   sort_order: 302.0
 - description: Persistent Organic Pollutants (POPs)
   id: Persistent Organic Pollutants (POPs)
   is_abstract: false
   name: Persistent Organic Pollutants (POPs)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1014.0
 - description: Top-level group for Personal information
@@ -1122,21 +1122,21 @@ observable_property_groups:
   id: Personal behavior
   is_abstract: true
   name: Personal behavior
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: 1st level group for Personal care and hygiene information
   id: Personal care and hygiene
   is_abstract: false
   name: Personal care and hygiene
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 0.2
 - description: 1st level group for Personal exposure information
   id: Personal exposure
   is_abstract: true
   name: Personal exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: This category is specific for products specific for the person (also
@@ -1148,21 +1148,21 @@ observable_property_groups:
   id: 'Personal exposure to products '
   is_abstract: false
   name: 'Personal exposure to products '
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 63.0
 - description: 1st level group for Personal exposure to smoking information
   id: Personal exposure to smoking
   is_abstract: false
   name: Personal exposure to smoking
-  parent_groups:
+  parent_grouping_id_list:
   - Personal exposure
   sort_order: 0.2
 - description: 1st level group for Personal information information
   id: Personal information
   is_abstract: true
   name: Personal information
-  parent_groups:
+  parent_grouping_id_list:
   - Personal
   sort_order: 0.1
 - description: 'This category contains all kinds of personal info that can be relevant
@@ -1172,28 +1172,28 @@ observable_property_groups:
   id: Personal parameters
   is_abstract: false
   name: Personal parameters
-  parent_groups:
+  parent_grouping_id_list:
   - Personal information
   sort_order: 2.0
 - description: Pesticides
   id: Pesticides
   is_abstract: false
   name: Pesticides
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1008.0
 - description: Pesticides (carbamate)
   id: Pesticides (carbamate)
   is_abstract: false
   name: Pesticides (carbamate)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1009.5
 - description: Pesticides and pyrethroids
   id: Pesticides (pyrethroids)
   is_abstract: false
   name: Pesticides (pyrethroids)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1009.0
 - description: Phthalates  This category contains measurements of phtalates in different
@@ -1201,14 +1201,14 @@ observable_property_groups:
   id: Phthalates
   is_abstract: false
   name: Phthalates
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1001.0
 - description: 1st level group for Physical health information
   id: Physical health
   is_abstract: false
   name: Physical health
-  parent_groups:
+  parent_grouping_id_list:
   - Health data
   sort_order: 0.2
 - description: This category contains special questions on health that are only posed
@@ -1216,7 +1216,7 @@ observable_property_groups:
   id: Physical health during birth
   is_abstract: false
   name: Physical health during birth
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 473.0
 - description: This category contains special questions on health related to health
@@ -1224,7 +1224,7 @@ observable_property_groups:
   id: Physical health during breast feeding
   is_abstract: false
   name: Physical health during breast feeding
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 474.0
 - description: This category contains special questions on health that are only posed
@@ -1232,14 +1232,14 @@ observable_property_groups:
   id: Physical health during pregnancy
   is_abstract: false
   name: Physical health during pregnancy
-  parent_groups:
+  parent_grouping_id_list:
   - Physical health
   sort_order: 470.0
 - description: Polycyclic Aromatic Hydrocarbons (PAHs)
   id: Polycyclic Aromatic Hydrocarbons (PAHs)
   is_abstract: false
   name: Polycyclic Aromatic Hydrocarbons (PAHs)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1006.0
 - description: Top-level group for Practical information
@@ -1252,7 +1252,7 @@ observable_property_groups:
   id: Pregnancy
   is_abstract: false
   name: Pregnancy
-  parent_groups:
+  parent_grouping_id_list:
   - Reproductive health
   sort_order: 503.0
 - description: This category contains all questions related to care products, make-up,
@@ -1261,7 +1261,7 @@ observable_property_groups:
   id: Products on skin
   is_abstract: false
   name: Products on skin
-  parent_groups:
+  parent_grouping_id_list:
   - Personal care and hygiene
   sort_order: 54.0
 - description: Top-level group for Property information
@@ -1273,35 +1273,35 @@ observable_property_groups:
   id: Property of blood
   is_abstract: false
   name: Property of blood
-  parent_groups:
+  parent_grouping_id_list:
   - General property
   sort_order: 4001.0
 - description: Property of soil
   id: Property of soil
   is_abstract: false
   name: Property of soil
-  parent_groups:
+  parent_grouping_id_list:
   - General property
   sort_order: 4000.0
 - description: Property of urine
   id: Property of urine
   is_abstract: false
   name: Property of urine
-  parent_groups:
+  parent_grouping_id_list:
   - General property
   sort_order: 4002.0
 - description: 1st level group for Puberty information
   id: Puberty
   is_abstract: false
   name: Puberty
-  parent_groups:
+  parent_grouping_id_list:
   - Child development
   sort_order: 0.2
 - description: 1st level group for Questionnaire and sample information information
   id: Questionnaire and sample information
   is_abstract: true
   name: Questionnaire and sample information
-  parent_groups:
+  parent_grouping_id_list:
   - Practical
   sort_order: 0.1
 - description: This category contains variables like the date of questionnaire sending,
@@ -1310,7 +1310,7 @@ observable_property_groups:
   id: Questionnaire information
   is_abstract: false
   name: Questionnaire information
-  parent_groups:
+  parent_grouping_id_list:
   - Questionnaire and sample information
   sort_order: 800.0
 - description: This category contains recent illness or medication information relevant
@@ -1318,7 +1318,7 @@ observable_property_groups:
   id: Recent illness or medication information
   is_abstract: false
   name: Recent illness or medication information
-  parent_groups:
+  parent_grouping_id_list:
   - Recent personal exposure
   sort_order: 401.0
 - description: This category contains recent nutrition information relevant for recent
@@ -1326,14 +1326,14 @@ observable_property_groups:
   id: Recent nutricion information
   is_abstract: false
   name: Recent nutricion information
-  parent_groups:
+  parent_grouping_id_list:
   - Recent personal exposure
   sort_order: 402.0
 - description: 1st level group for Recent personal exposure information
   id: Recent personal exposure
   is_abstract: true
   name: Recent personal exposure
-  parent_groups:
+  parent_grouping_id_list:
   - Recent personal exposure
   - Exposure
   sort_order: 0.1
@@ -1344,7 +1344,7 @@ observable_property_groups:
   id: Regional characteristics
   is_abstract: false
   name: Regional characteristics
-  parent_groups:
+  parent_grouping_id_list:
   - Residence
   sort_order: 20.0
 - description: This category contains all measurements related to reproductive and
@@ -1352,7 +1352,7 @@ observable_property_groups:
   id: Reproductive and metabolic health outcomes
   is_abstract: false
   name: Reproductive and metabolic health outcomes
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2020.0
 - description: This category contains all general questions on breast feeding not
@@ -1360,28 +1360,28 @@ observable_property_groups:
   id: Reproductive breast feeding
   is_abstract: false
   name: Reproductive breast feeding
-  parent_groups:
+  parent_grouping_id_list:
   - Reproductive health
   sort_order: 504.0
 - description: 1st level group for Reproductive health information
   id: Reproductive health
   is_abstract: false
   name: Reproductive health
-  parent_groups:
+  parent_grouping_id_list:
   - Health data
   sort_order: 0.2
 - description: 1st level group for Residence information
   id: Residence
   is_abstract: true
   name: Residence
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: 1st level group for Sample information information
   id: Sample information
   is_abstract: false
   name: Sample information
-  parent_groups:
+  parent_grouping_id_list:
   - Questionnaire and sample information
   sort_order: 0.2
 - description: This category contains all data relevant to the blood sampling collection,
@@ -1389,7 +1389,7 @@ observable_property_groups:
   id: Sample information on blood sampling
   is_abstract: false
   name: Sample information on blood sampling
-  parent_groups:
+  parent_grouping_id_list:
   - Sample information
   sort_order: 802.0
 - description: This category contains all data relevant to the cordblood  collection,
@@ -1397,7 +1397,7 @@ observable_property_groups:
   id: Sample information on cordblood collection
   is_abstract: false
   name: Sample information on cordblood collection
-  parent_groups:
+  parent_grouping_id_list:
   - Sample information
   sort_order: 803.0
 - description: This category contains all sampling information relevant to the quality
@@ -1405,14 +1405,14 @@ observable_property_groups:
   id: Sample information on hair collection
   is_abstract: false
   name: Sample information on hair collection
-  parent_groups:
+  parent_grouping_id_list:
   - Sample information
   sort_order: 805.0
 - description: This category contains all sampling information on mother milk collection
   id: Sample information on mother milk collection
   is_abstract: false
   name: Sample information on mother milk collection
-  parent_groups:
+  parent_grouping_id_list:
   - Sample information
   sort_order: 804.0
 - description: This category contains all sampling information related to the urine
@@ -1421,21 +1421,21 @@ observable_property_groups:
   id: Sample information on urine collection
   is_abstract: false
   name: Sample information on urine collection
-  parent_groups:
+  parent_grouping_id_list:
   - Sample information
   sort_order: 806.0
 - description: Sedentary behaviour
   id: Sedentary behaviour
   is_abstract: false
   name: Sedentary behaviour
-  parent_groups:
+  parent_grouping_id_list:
   - General physical activity
   sort_order: 52.0
 - description: This category contains questions on sleeping habits and problems
   id: Sleeping habits and problems
   is_abstract: false
   name: Sleeping habits and problems
-  parent_groups:
+  parent_grouping_id_list:
   - Mental health
   sort_order: 483.0
 - description: This category contains all questions related to active smoking now
@@ -1443,14 +1443,14 @@ observable_property_groups:
   id: Smoking
   is_abstract: false
   name: Smoking
-  parent_groups:
+  parent_grouping_id_list:
   - Personal behavior
   sort_order: 53.0
 - description: 1st level group for Socio-economic status information
   id: Socio-economic status
   is_abstract: true
   name: Socio-economic status
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure
   sort_order: 0.1
 - description: This category contains all measurements of steroids/sex hormones in
@@ -1458,7 +1458,7 @@ observable_property_groups:
   id: Steroid/Sex hormones
   is_abstract: false
   name: Steroid/Sex hormones
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2009.0
 - description: This category contains all measurements of stress hormones in human
@@ -1466,35 +1466,35 @@ observable_property_groups:
   id: Stress hormones
   is_abstract: false
   name: Stress hormones
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2012.0
 - description: This category contains questions on stress
   id: Stress perception
   is_abstract: false
   name: Stress perception
-  parent_groups:
+  parent_grouping_id_list:
   - Mental health
   sort_order: 481.0
 - description: This category contains questions on stress during pregnancy
   id: Stress perception during pregnancy
   is_abstract: false
   name: Stress perception during pregnancy
-  parent_groups:
+  parent_grouping_id_list:
   - Mental health
   sort_order: 482.0
 - description: This category contains info on study agreement
   id: Study agreement
   is_abstract: false
   name: Study agreement
-  parent_groups:
+  parent_grouping_id_list:
   - Study information
   sort_order: 1.0
 - description: 1st level group for Study design information
   id: Study design
   is_abstract: true
   name: Study design
-  parent_groups:
+  parent_grouping_id_list:
   - Practical
   - Study design
   sort_order: 0.1
@@ -1502,7 +1502,7 @@ observable_property_groups:
   id: Study information
   is_abstract: true
   name: Study information
-  parent_groups:
+  parent_grouping_id_list:
   - Practical
   sort_order: 0.1
 - description: This category contains all measurements of thyroid hormones in human
@@ -1510,7 +1510,7 @@ observable_property_groups:
   id: Thyroid hormones
   is_abstract: false
   name: Thyroid hormones
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2010.0
 - description: This category contains all questions related to tooth care, dental
@@ -1518,28 +1518,28 @@ observable_property_groups:
   id: Tooth care
   is_abstract: false
   name: Tooth care
-  parent_groups:
+  parent_grouping_id_list:
   - Personal care and hygiene
   sort_order: 56.0
 - description: Triclosan
   id: Triclosan
   is_abstract: false
   name: Triclosan
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1019.0
 - description: UV-filters (benzophenones)
   id: UV-filters (benzophenones)
   is_abstract: false
   name: UV-filters (benzophenones)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1012.0
 - description: UV-screens
   id: UV-screens
   is_abstract: false
   name: UV-screens
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1021.0
 - description: This category contains all measurements of urinary dilution eg creatinine,
@@ -1547,7 +1547,7 @@ observable_property_groups:
   id: Urinary dilution
   is_abstract: false
   name: Urinary dilution
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2004.0
 - description: This category contains all questions related to ventilation systems
@@ -1555,7 +1555,7 @@ observable_property_groups:
   id: Ventilation systems
   is_abstract: false
   name: Ventilation systems
-  parent_groups:
+  parent_grouping_id_list:
   - Housing
   sort_order: 22.0
 - description: This category contains all measurements of vitamins in human biological
@@ -1563,21 +1563,21 @@ observable_property_groups:
   id: Vitamins
   is_abstract: false
   name: Vitamins
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2001.0
 - description: Volatile Organic Compounds (VOCs)
   id: Volatile Organic Compounds (VOCs)
   is_abstract: false
   name: Volatile Organic Compounds (VOCs)
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1015.0
 - description: Volatile anaesthetics
   id: Volatile anaesthetics
   is_abstract: false
   name: Volatile anaesthetics
-  parent_groups:
+  parent_grouping_id_list:
   - Exposure marker
   sort_order: 1023.0
 - description: The sampletypes in which we measure can also have properties that are
@@ -1586,13 +1586,13 @@ observable_property_groups:
   id: characteristics of non human samples
   is_abstract: false
   name: characteristics of non human samples
-  parent_groups:
+  parent_grouping_id_list:
   - Sample information
   sort_order: 100000.0
 - description: This category contains all measurements related to cytokines
   id: cytokines
   is_abstract: false
   name: cytokines
-  parent_groups:
+  parent_grouping_id_list:
   - Effect marker
   sort_order: 2018.0
