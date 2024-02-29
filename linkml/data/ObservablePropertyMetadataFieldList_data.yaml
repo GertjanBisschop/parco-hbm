@@ -8,6 +8,12 @@ metadata_fields:
   - id: max
     name: max
     value_type: decimal
+  - id: p50
+    name: p50
+    value_type: decimal
+  - id: p90
+    name: p90
+    value_type: decimal
   - id: length
     name: length
     value_type: integer

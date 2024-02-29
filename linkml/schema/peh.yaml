@@ -171,6 +171,7 @@ classes:
       - value_type
       - categorical
       - multivalued
+      - required
       - value_options
       - value_metadata
       - quantity_kind
