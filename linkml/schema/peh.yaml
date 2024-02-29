@@ -124,6 +124,7 @@ classes:
       - HasValidationStatus
     slots:
       - grouping
+      - molweight_grampermol
       - biochemidentifiers
       - biochementity_links
   BioChemIdentifier:
@@ -513,6 +514,8 @@ slots:
   relevant_observable_entity_types:
     multivalued: true
     range: ObservableEntityType
+  molweight_grampermol:
+    range: decimal
   biochementity_links:
     multivalued: true
     inlined_as_list: true
