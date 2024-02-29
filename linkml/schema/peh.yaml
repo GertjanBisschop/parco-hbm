@@ -180,6 +180,7 @@ classes:
       - default_significantdecimals
       - default_immutable
       - grouping_id_list
+      - default_observation_result_type
       - relevant_observable_entity_types
       - relevant_observation_types
       - indicator
@@ -336,7 +337,7 @@ classes:
     is_a: ObservationDesign
   ObservableEntityPropertySet:
     slots:
-      - observation_role
+      - observation_result_type
       - observable_entity_type
       - observable_entity_id_list
       - observable_property_id_list
@@ -511,6 +512,8 @@ slots:
     range: Matrix
   constraints:
     multivalued: true
+  default_observation_result_type:
+    range: ObservationResultType
   relevant_observable_entity_types:
     multivalued: true
     range: ObservableEntityType
@@ -644,8 +647,8 @@ slots:
   observable_entity_property_sets:
     multivalued: true
     range: ObservableEntityPropertySet
-  observation_role:
-    range: ObservationRole
+  observation_result_type:
+    range: ObservationResultType
   observation_result:
     range: ObservationResult
   observable_entity_type:
@@ -778,6 +781,12 @@ enums:
       questionnaire:
       geospatial:
       metadata:
+  ObservationResultType:
+    permissible_values:
+      measurement:
+      control:
+      calculation:
+      simulation:
   ObjectiveType:
     permissible_values:
       research_objective:
@@ -821,10 +830,6 @@ enums:
       supplying_data_controller:
       receiving_data_controller:
       external_data_controller:
-  ObservationRole:
-    permissible_values:
-      measurement:
-      control:
   # Ontology Based
   QudtUnit:
     reachable_from:
