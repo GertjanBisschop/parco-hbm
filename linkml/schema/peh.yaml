@@ -335,6 +335,7 @@ classes:
     is_a: ObservationDesign
   ObservableEntityPropertySet:
     slots:
+      - observation_role
       - observable_entity_type
       - observable_entity_id_list
       - observable_property_id_list
@@ -640,6 +641,8 @@ slots:
   observable_entity_property_sets:
     multivalued: true
     range: ObservableEntityPropertySet
+  observation_role:
+    range: ObservationRole
   observation_result:
     range: ObservationResult
   observable_entity_type:
@@ -815,6 +818,10 @@ enums:
       supplying_data_controller:
       receiving_data_controller:
       external_data_controller:
+  ObservationRole:
+    permissible_values:
+      measurement:
+      control:
   # Ontology Based
   QudtUnit:
     reachable_from:
