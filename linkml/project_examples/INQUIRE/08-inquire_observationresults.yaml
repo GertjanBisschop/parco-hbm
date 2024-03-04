@@ -1,16 +1,24 @@
 questionnaireresults:
   - observation: INQ_HOME_Q1
     observedvalues:
-    - observableproperty:
-      observedentity:
+    - observable_property:
+      observable_entity:
       unit:
+      value:
       value_as_string:
+      value_raw:
+      value_imputed:
       quality:
+        lab_cutoff_recommendation:
         lod:
         loq:
       provenance:
-    - observableproperty:
-      observedentity:
+        imputation:
+          source_data:
+          formula:
+          result:
+    - observable_property:
+      observable_entity:
       unit:
       value_as_string:
 samplingresults:
