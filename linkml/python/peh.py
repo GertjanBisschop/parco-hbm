@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-26T15:49:09
+# Generation date: 2024-03-02T19:28:24
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -516,7 +516,8 @@ class BioChemEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.BioChemEntity
 
     id: Union[str, BioChemEntityId] = None
-    grouping: Optional[Union[str, GroupingId]] = None
+    grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
+    molweight_grampermol: Optional[Decimal] = None
     biochemidentifiers: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
     biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
     aliases: Optional[Union[str, List[str]]] = empty_list()
@@ -531,8 +532,12 @@ class BioChemEntity(NamedThing):
         if not isinstance(self.id, BioChemEntityId):
             self.id = BioChemEntityId(self.id)
 
-        if self.grouping is not None and not isinstance(self.grouping, GroupingId):
-            self.grouping = GroupingId(self.grouping)
+        if not isinstance(self.grouping_id_list, list):
+            self.grouping_id_list = [self.grouping_id_list] if self.grouping_id_list is not None else []
+        self.grouping_id_list = [v if isinstance(v, GroupingId) else GroupingId(v) for v in self.grouping_id_list]
+
+        if self.molweight_grampermol is not None and not isinstance(self.molweight_grampermol, Decimal):
+            self.molweight_grampermol = Decimal(self.molweight_grampermol)
 
         if not isinstance(self.biochemidentifiers, list):
             self.biochemidentifiers = [self.biochemidentifiers] if self.biochemidentifiers is not None else []
@@ -754,6 +759,7 @@ class ObservableProperty(NamedThing):
     default_significantdecimals: Optional[int] = None
     default_immutable: Optional[Union[bool, Bool]] = None
     grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
+    default_observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
     relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
     relevant_observation_types: Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]] = empty_list()
     indicator: Optional[Union[str, IndicatorId]] = None
@@ -802,6 +808,9 @@ class ObservableProperty(NamedThing):
         if not isinstance(self.grouping_id_list, list):
             self.grouping_id_list = [self.grouping_id_list] if self.grouping_id_list is not None else []
         self.grouping_id_list = [v if isinstance(v, GroupingId) else GroupingId(v) for v in self.grouping_id_list]
+
+        if self.default_observation_result_type is not None and not isinstance(self.default_observation_result_type, ObservationResultType):
+            self.default_observation_result_type = ObservationResultType(self.default_observation_result_type)
 
         if not isinstance(self.relevant_observable_entity_types, list):
             self.relevant_observable_entity_types = [self.relevant_observable_entity_types] if self.relevant_observable_entity_types is not None else []
@@ -1642,11 +1651,15 @@ class ObservableEntityPropertySet(YAMLRoot):
     class_name: ClassVar[str] = "ObservableEntityPropertySet"
     class_model_uri: ClassVar[URIRef] = PEH.ObservableEntityPropertySet
 
+    observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
     observable_entity_type: Optional[Union[str, "ObservableEntityType"]] = None
     observable_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
     observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.observation_result_type is not None and not isinstance(self.observation_result_type, ObservationResultType):
+            self.observation_result_type = ObservationResultType(self.observation_result_type)
+
         if self.observable_entity_type is not None and not isinstance(self.observable_entity_type, ObservableEntityType):
             self.observable_entity_type = ObservableEntityType(self.observable_entity_type)
 
@@ -2094,6 +2107,17 @@ class ObservationType(EnumDefinitionImpl):
         name="ObservationType",
     )
 
+class ObservationResultType(EnumDefinitionImpl):
+
+    measurement = PermissibleValue(text="measurement")
+    control = PermissibleValue(text="control")
+    calculation = PermissibleValue(text="calculation")
+    simulation = PermissibleValue(text="simulation")
+
+    _defn = EnumDefinition(
+        name="ObservationResultType",
+    )
+
 class ObjectiveType(EnumDefinitionImpl):
 
     research_objective = PermissibleValue(text="research_objective")
@@ -2249,9 +2273,6 @@ slots.same_unit_as = Slot(uri=PEH.same_unit_as, name="same_unit_as", curie=PEH.c
 slots.quantity_kind = Slot(uri=PEH.quantity_kind, name="quantity_kind", curie=PEH.curie('quantity_kind'),
                    model_uri=PEH.quantity_kind, domain=None, range=Optional[Union[str, "QudtQuantityKind"]])
 
-slots.grouping = Slot(uri=PEH.grouping, name="grouping", curie=PEH.curie('grouping'),
-                   model_uri=PEH.grouping, domain=None, range=Optional[Union[str, GroupingId]])
-
 slots.groupings = Slot(uri=PEH.groupings, name="groupings", curie=PEH.curie('groupings'),
                    model_uri=PEH.groupings, domain=None, range=Optional[Union[Dict[Union[str, GroupingId], Union[dict, Grouping]], List[Union[dict, Grouping]]]])
 
@@ -2318,8 +2339,14 @@ slots.matrix = Slot(uri=PEH.matrix, name="matrix", curie=PEH.curie('matrix'),
 slots.constraints = Slot(uri=PEH.constraints, name="constraints", curie=PEH.curie('constraints'),
                    model_uri=PEH.constraints, domain=None, range=Optional[Union[str, List[str]]])
 
+slots.default_observation_result_type = Slot(uri=PEH.default_observation_result_type, name="default_observation_result_type", curie=PEH.curie('default_observation_result_type'),
+                   model_uri=PEH.default_observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
+
 slots.relevant_observable_entity_types = Slot(uri=PEH.relevant_observable_entity_types, name="relevant_observable_entity_types", curie=PEH.curie('relevant_observable_entity_types'),
                    model_uri=PEH.relevant_observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]])
+
+slots.molweight_grampermol = Slot(uri=PEH.molweight_grampermol, name="molweight_grampermol", curie=PEH.curie('molweight_grampermol'),
+                   model_uri=PEH.molweight_grampermol, domain=None, range=Optional[Decimal])
 
 slots.biochementity_links = Slot(uri=PEH.biochementity_links, name="biochementity_links", curie=PEH.curie('biochementity_links'),
                    model_uri=PEH.biochementity_links, domain=None, range=Optional[Union[Union[dict, BioChemEntityLink], List[Union[dict, BioChemEntityLink]]]])
@@ -2473,6 +2500,9 @@ slots.observation_design = Slot(uri=PEH.observation_design, name="observation_de
 
 slots.observable_entity_property_sets = Slot(uri=PEH.observable_entity_property_sets, name="observable_entity_property_sets", curie=PEH.curie('observable_entity_property_sets'),
                    model_uri=PEH.observable_entity_property_sets, domain=None, range=Optional[Union[Union[dict, ObservableEntityPropertySet], List[Union[dict, ObservableEntityPropertySet]]]])
+
+slots.observation_result_type = Slot(uri=PEH.observation_result_type, name="observation_result_type", curie=PEH.curie('observation_result_type'),
+                   model_uri=PEH.observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
 
 slots.observation_result = Slot(uri=PEH.observation_result, name="observation_result", curie=PEH.curie('observation_result'),
                    model_uri=PEH.observation_result, domain=None, range=Optional[Union[dict, ObservationResult]])

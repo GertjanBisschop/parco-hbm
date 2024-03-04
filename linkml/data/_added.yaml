@@ -1,0 +1,41 @@
+groupings:
+  - description: Top-level group for BioChemical information
+    id: BioChemical
+    abstract: true
+    name: BioChemical
+    sort_order: 0
+  - description: 1st level group for BioChemical Entity information
+    id: BioChemical Entity
+    abstract: true
+    name: BioChemical Entity
+    parent_grouping_id_list:
+    - BioChemical
+    sort_order: 0.1
+  - description: Standard BioChemical Compound
+    id: BioChemical Compound
+    abstract: false
+    name: BioChemical Compound
+    parent_grouping_id_list:
+    - BioChemical Entity
+    sort_order: 0.1
+  - description: Metabolite
+    id: Metabolite
+    abstract: false
+    name: Metabolite
+    parent_grouping_id_list:
+    - BioChemical Compound
+    sort_order: 0.1
+  - description: Group or summation of BioChemical Compounds
+    id: BioChemical Compound Group
+    abstract: false
+    name: BioChemical Compound Group
+    parent_grouping_id_list:
+    - BioChemical Entity
+    sort_order: 0.2
+metadata_fields:
+  - id: p50
+    name: p50
+    value_type: decimal
+  - id: p90
+    name: p90
+    value_type: decimal

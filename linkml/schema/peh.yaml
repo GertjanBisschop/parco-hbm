@@ -123,7 +123,7 @@ classes:
       - HasTranslations
       - HasValidationStatus
     slots:
-      - grouping
+      - grouping_id_list
       - molweight_grampermol
       - biochemidentifiers
       - biochementity_links
@@ -456,9 +456,6 @@ slots:
   quantity_kind:
     range: QudtQuantityKind
 
-  grouping:
-    range: Grouping
-    inlined: false
   groupings:
     multivalued: true
     inlined_as_list: true
