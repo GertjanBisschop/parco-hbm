@@ -274,7 +274,7 @@ class Grouping(NamedThing):
 
     id: Union[str, GroupingId] = None
     sort_order: Optional[Decimal] = None
-    is_abstract: Optional[Union[bool, Bool]] = None
+    abstract: Optional[Union[bool, Bool]] = None
     parent_grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
     context_aliases: Optional[Union[Union[dict, "ContextAlias"], List[Union[dict, "ContextAlias"]]]] = empty_list()
     translations: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
@@ -288,8 +288,8 @@ class Grouping(NamedThing):
         if self.sort_order is not None and not isinstance(self.sort_order, Decimal):
             self.sort_order = Decimal(self.sort_order)
 
-        if self.is_abstract is not None and not isinstance(self.is_abstract, Bool):
-            self.is_abstract = Bool(self.is_abstract)
+        if self.abstract is not None and not isinstance(self.abstract, Bool):
+            self.abstract = Bool(self.abstract)
 
         if not isinstance(self.parent_grouping_id_list, list):
             self.parent_grouping_id_list = [self.parent_grouping_id_list] if self.parent_grouping_id_list is not None else []
@@ -746,6 +746,7 @@ class ObservableProperty(NamedThing):
     value_type: Optional[str] = None
     categorical: Optional[Union[bool, Bool]] = None
     multivalued: Optional[Union[bool, Bool]] = None
+    required: Optional[Union[bool, Bool]] = None
     value_options: Optional[Union[Union[dict, "ObservablePropertyValueOption"], List[Union[dict, "ObservablePropertyValueOption"]]]] = empty_list()
     value_metadata: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], List[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
@@ -774,6 +775,9 @@ class ObservableProperty(NamedThing):
 
         if self.multivalued is not None and not isinstance(self.multivalued, Bool):
             self.multivalued = Bool(self.multivalued)
+
+        if self.required is not None and not isinstance(self.required, Bool):
+            self.required = Bool(self.required)
 
         if not isinstance(self.value_options, list):
             self.value_options = [self.value_options] if self.value_options is not None else []
@@ -2332,8 +2336,11 @@ slots.categorical = Slot(uri=PEH.categorical, name="categorical", curie=PEH.curi
 slots.multivalued = Slot(uri=PEH.multivalued, name="multivalued", curie=PEH.curie('multivalued'),
                    model_uri=PEH.multivalued, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.is_abstract = Slot(uri=PEH.is_abstract, name="is_abstract", curie=PEH.curie('is_abstract'),
-                   model_uri=PEH.is_abstract, domain=None, range=Optional[Union[bool, Bool]])
+slots.required = Slot(uri=PEH.required, name="required", curie=PEH.curie('required'),
+                   model_uri=PEH.required, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.abstract = Slot(uri=PEH.abstract, name="abstract", curie=PEH.curie('abstract'),
+                   model_uri=PEH.abstract, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.value_type = Slot(uri=PEH.value_type, name="value_type", curie=PEH.curie('value_type'),
                    model_uri=PEH.value_type, domain=None, range=Optional[str])

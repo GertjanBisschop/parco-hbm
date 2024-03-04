@@ -64,7 +64,7 @@ classes:
       - HasTranslations
     slots:
       - sort_order
-      - is_abstract
+      - abstract
       - parent_grouping_id_list
 
   HasValidationStatus:
@@ -533,7 +533,9 @@ slots:
     range: boolean
   multivalued:
     range: boolean
-  is_abstract:
+  required:
+    range: boolean
+  abstract:
     range: boolean
   value_type:
   value_metadata:

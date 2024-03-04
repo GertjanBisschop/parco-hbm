@@ -3,42 +3,42 @@ groupings:
   unique_name: Identifier and demographics
   name: Identifier and demographics
   sort_order: 1
-  is_abstract: false
+  abstract: false
 - id: Perceived indoor air quality
   unique_name: Perceived indoor air quality
   name: Perceived indoor air quality
   sort_order: 3
-  is_abstract: false
+  abstract: false
 - id: Recent behaviour
   unique_name: Recent behaviour
   name: Recent behaviour
   sort_order: 4
-  is_abstract: false
+  abstract: false
 - id: Child recent behaviour
   unique_name: Child recent behaviour
   name: Child recent behaviour
   sort_order: 6
-  is_abstract: false
+  abstract: false
 - id: Reasons to improve indoor air quality
   unique_name: Reasons to improve indoor air quality
   name: Reasons to improve indoor air quality
   sort_order: 8
-  is_abstract: false
+  abstract: false
 - id: Medical history
   unique_name: Medical history
   name: Medical history
   sort_order: 2
-  is_abstract: false
+  abstract: false
 - id: Observation on air quality
   unique_name: Observation on air quality
   name: Observation on air quality
   sort_order: 7
-  is_abstract: false
+  abstract: false
 - id: Child demography and health
   unique_name: Child demography and health
   name: Child demography and health
   sort_order: 5
-  is_abstract: false
+  abstract: false
 metadata_fields:
 - id: min
   name: min

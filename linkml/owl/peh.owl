@@ -1532,8 +1532,8 @@ peh:indicator_type a owl:ObjectProperty ;
     rdfs:range peh:IndicatorType ;
     skos:inScheme peh: .
 
-peh:is_abstract a owl:DatatypeProperty ;
-    rdfs:label "is_abstract" ;
+peh:abstract a owl:DatatypeProperty ;
+    rdfs:label "abstract" ;
     rdfs:range xsd:boolean ;
     skos:inScheme peh: .
 
@@ -2001,7 +2001,7 @@ peh:ObservablePropertyGroup a owl:Class ;
     rdfs:label "ObservablePropertyGroup" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:is_abstract ],
+            owl:onProperty peh:abstract ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:sort_order ],
@@ -2010,10 +2010,10 @@ peh:ObservablePropertyGroup a owl:Class ;
             owl:onProperty peh:sort_order ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:is_abstract ],
+            owl:onProperty peh:abstract ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
-            owl:onProperty peh:is_abstract ],
+            owl:onProperty peh:abstract ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservablePropertyGroup ;
             owl:onProperty peh:parent_groups ],

@@ -135,7 +135,7 @@
       "indicators": {
          "@type": "@id"
       },
-      "is_abstract": {
+      "abstract": {
          "@type": "xsd:boolean"
       },
       "label": {

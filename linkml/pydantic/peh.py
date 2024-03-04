@@ -414,7 +414,7 @@ class BioChemEntityLink(ConfiguredBaseModel):
 class ObservablePropertyGroup(HasTranslations, NamedThing):
     
     sort_order: Optional[Decimal] = Field(None)
-    is_abstract: Optional[bool] = Field(None)
+    abstract: Optional[bool] = Field(None)
     parent_groups: Optional[List[str]] = Field(default_factory=list)
     translations: Optional[List[Translation]] = Field(default_factory=list)
     id: str = Field(...)

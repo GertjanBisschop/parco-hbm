@@ -1,7 +1,7 @@
 observablepropertygrouping_id_list:
 - description: tijdelijk
   id: '<TODO: nog aan te vullen effect>'
-  is_abstract: false
+  abstract: false
   name: '<TODO: nog aan te vullen effect>'
   parent_grouping_id_list:
   - Effect marker
