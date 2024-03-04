@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-02T19:28:24
+# Generation date: 2024-03-04T13:41:36
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -680,9 +680,11 @@ class Indicator(NamedThing):
 
     id: Union[str, IndicatorId] = None
     indicator_type: Optional[Union[str, "IndicatorType"]] = None
+    property: Optional[str] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     matrix: Optional[Union[str, MatrixId]] = None
     constraints: Optional[Union[str, List[str]]] = empty_list()
+    grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
     relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
     biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
 
@@ -695,6 +697,9 @@ class Indicator(NamedThing):
         if self.indicator_type is not None and not isinstance(self.indicator_type, IndicatorType):
             self.indicator_type = IndicatorType(self.indicator_type)
 
+        if self.property is not None and not isinstance(self.property, str):
+            self.property = str(self.property)
+
         if self.quantity_kind is not None and not isinstance(self.quantity_kind, QudtQuantityKind):
             self.quantity_kind = QudtQuantityKind(self.quantity_kind)
 
@@ -704,6 +709,10 @@ class Indicator(NamedThing):
         if not isinstance(self.constraints, list):
             self.constraints = [self.constraints] if self.constraints is not None else []
         self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
+
+        if not isinstance(self.grouping_id_list, list):
+            self.grouping_id_list = [self.grouping_id_list] if self.grouping_id_list is not None else []
+        self.grouping_id_list = [v if isinstance(v, GroupingId) else GroupingId(v) for v in self.grouping_id_list]
 
         if not isinstance(self.relevant_observable_entity_types, list):
             self.relevant_observable_entity_types = [self.relevant_observable_entity_types] if self.relevant_observable_entity_types is not None else []
@@ -2329,6 +2338,9 @@ slots.parent_matrix = Slot(uri=PEH.parent_matrix, name="parent_matrix", curie=PE
 
 slots.indicator_type = Slot(uri=PEH.indicator_type, name="indicator_type", curie=PEH.curie('indicator_type'),
                    model_uri=PEH.indicator_type, domain=None, range=Optional[Union[str, "IndicatorType"]])
+
+slots.property = Slot(uri=PEH.property, name="property", curie=PEH.curie('property'),
+                   model_uri=PEH.property, domain=None, range=Optional[str])
 
 slots.matrices = Slot(uri=PEH.matrices, name="matrices", curie=PEH.curie('matrices'),
                    model_uri=PEH.matrices, domain=None, range=Optional[Union[Dict[Union[str, MatrixId], Union[dict, Matrix]], List[Union[dict, Matrix]]]])

@@ -154,9 +154,11 @@ classes:
     is_a: NamedThing
     slots:
       - indicator_type
+      - property
       - quantity_kind
       - matrix
       - constraints
+      - grouping_id_list
       - relevant_observable_entity_types
       - biochementity_links
   BioChemEntityLink:
@@ -501,6 +503,7 @@ slots:
     range: Matrix
   indicator_type:
     range: IndicatorType
+  property:
   matrices:
     multivalued: true
     inlined_as_list: true
