@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-04T13:41:36
+# Generation date: 2024-03-05T08:11:08
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -760,11 +760,12 @@ class ObservableProperty(NamedThing):
     value_type: Optional[str] = None
     categorical: Optional[Union[bool, Bool]] = None
     multivalued: Optional[Union[bool, Bool]] = None
-    required: Optional[Union[bool, Bool]] = None
     value_options: Optional[Union[Union[dict, "ObservablePropertyValueOption"], List[Union[dict, "ObservablePropertyValueOption"]]]] = empty_list()
     value_metadata: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], List[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     default_unit: Optional[str] = None
+    default_required: Optional[Union[bool, Bool]] = None
+    default_zeroallowed: Optional[Union[bool, Bool]] = None
     default_significantdecimals: Optional[int] = None
     default_immutable: Optional[Union[bool, Bool]] = None
     grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
@@ -791,9 +792,6 @@ class ObservableProperty(NamedThing):
         if self.multivalued is not None and not isinstance(self.multivalued, Bool):
             self.multivalued = Bool(self.multivalued)
 
-        if self.required is not None and not isinstance(self.required, Bool):
-            self.required = Bool(self.required)
-
         if not isinstance(self.value_options, list):
             self.value_options = [self.value_options] if self.value_options is not None else []
         self.value_options = [v if isinstance(v, ObservablePropertyValueOption) else ObservablePropertyValueOption(**as_dict(v)) for v in self.value_options]
@@ -807,6 +805,12 @@ class ObservableProperty(NamedThing):
 
         if self.default_unit is not None and not isinstance(self.default_unit, str):
             self.default_unit = str(self.default_unit)
+
+        if self.default_required is not None and not isinstance(self.default_required, Bool):
+            self.default_required = Bool(self.default_required)
+
+        if self.default_zeroallowed is not None and not isinstance(self.default_zeroallowed, Bool):
+            self.default_zeroallowed = Bool(self.default_zeroallowed)
 
         if self.default_significantdecimals is not None and not isinstance(self.default_significantdecimals, int):
             self.default_significantdecimals = int(self.default_significantdecimals)
@@ -2375,9 +2379,6 @@ slots.categorical = Slot(uri=PEH.categorical, name="categorical", curie=PEH.curi
 slots.multivalued = Slot(uri=PEH.multivalued, name="multivalued", curie=PEH.curie('multivalued'),
                    model_uri=PEH.multivalued, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.required = Slot(uri=PEH.required, name="required", curie=PEH.curie('required'),
-                   model_uri=PEH.required, domain=None, range=Optional[Union[bool, Bool]])
-
 slots.abstract = Slot(uri=PEH.abstract, name="abstract", curie=PEH.curie('abstract'),
                    model_uri=PEH.abstract, domain=None, range=Optional[Union[bool, Bool]])
 
@@ -2390,14 +2391,20 @@ slots.value_metadata = Slot(uri=PEH.value_metadata, name="value_metadata", curie
 slots.value_options = Slot(uri=PEH.value_options, name="value_options", curie=PEH.curie('value_options'),
                    model_uri=PEH.value_options, domain=None, range=Optional[Union[Union[dict, ObservablePropertyValueOption], List[Union[dict, ObservablePropertyValueOption]]]])
 
-slots.default_immutable = Slot(uri=PEH.default_immutable, name="default_immutable", curie=PEH.curie('default_immutable'),
-                   model_uri=PEH.default_immutable, domain=None, range=Optional[Union[bool, Bool]])
+slots.default_required = Slot(uri=PEH.default_required, name="default_required", curie=PEH.curie('default_required'),
+                   model_uri=PEH.default_required, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.default_zeroallowed = Slot(uri=PEH.default_zeroallowed, name="default_zeroallowed", curie=PEH.curie('default_zeroallowed'),
+                   model_uri=PEH.default_zeroallowed, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.default_significantdecimals = Slot(uri=PEH.default_significantdecimals, name="default_significantdecimals", curie=PEH.curie('default_significantdecimals'),
                    model_uri=PEH.default_significantdecimals, domain=None, range=Optional[int])
 
 slots.default_unit = Slot(uri=PEH.default_unit, name="default_unit", curie=PEH.curie('default_unit'),
                    model_uri=PEH.default_unit, domain=None, range=Optional[str])
+
+slots.default_immutable = Slot(uri=PEH.default_immutable, name="default_immutable", curie=PEH.curie('default_immutable'),
+                   model_uri=PEH.default_immutable, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.relevant_observation_types = Slot(uri=PEH.relevant_observation_types, name="relevant_observation_types", curie=PEH.curie('relevant_observation_types'),
                    model_uri=PEH.relevant_observation_types, domain=None, range=Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]])

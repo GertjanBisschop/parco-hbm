@@ -174,11 +174,12 @@ classes:
       - value_type
       - categorical
       - multivalued
-      - required
       - value_options
       - value_metadata
       - quantity_kind
       - default_unit
+      - default_required
+      - default_zeroallowed
       - default_significantdecimals
       - default_immutable
       - grouping_id_list
@@ -533,8 +534,6 @@ slots:
     range: boolean
   multivalued:
     range: boolean
-  required:
-    range: boolean
   abstract:
     range: boolean
   value_type:
@@ -546,11 +545,15 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: ObservablePropertyValueOption
-  default_immutable:
+  default_required:
+    range: boolean
+  default_zeroallowed:
     range: boolean
   default_significantdecimals:
     range: integer
   default_unit:
+  default_immutable:
+    range: boolean
   relevant_observation_types:
     multivalued: true
     range: ObservationType
