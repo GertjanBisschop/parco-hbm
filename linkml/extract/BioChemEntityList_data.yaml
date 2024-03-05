@@ -105,7 +105,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: N-Acetyl-S-(2-carbamoyl-2-hydroxyethyl)cysteÃ¯ne
+    translated_value: N-Acetyl-S-(2-carbamoyl-2-hydroxyethyl)cysteïne
   - property_name: label
     language: nl-be
     translated_value: GAMA
@@ -857,7 +857,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Ortho-toluÃ¯dine
+    translated_value: Ortho-toluïdine
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -981,7 +981,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Para-toluÃ¯dine
+    translated_value: Para-toluïdine
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -2793,7 +2793,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: 'HIstone-modificatie ESR2 (oestrogeenreceptor bÃ¨ta): genormaliseerde
+    translated_value: 'HIstone-modificatie ESR2 (oestrogeenreceptor bèta): genormaliseerde
       expressie in vergelijking met RPLP0'
   - property_name: label
     language: nl-be
@@ -2814,7 +2814,7 @@ biochementities:
   - property_name: name
     language: nl-be
     translated_value: 'HIstone modificatie GR (nucleaire receptor subfamilie 3 groep
-      C lid 1/glucocorticoÃ¯de receptor): genormaliseerde expressie in vergelijking
+      C lid 1/glucocorticoïde receptor): genormaliseerde expressie in vergelijking
       met RPLP0'
   - property_name: label
     language: nl-be
@@ -3072,7 +3072,7 @@ biochementities:
   label: BCIPHIPP
   biochemidentifiers:
   - identifier_schema: INCHIKEY
-    identifier_code: AUUWEOBTRZWTTC-UHFFFAOYSA-NÂ Â 
+    identifier_code: AUUWEOBTRZWTTC-UHFFFAOYSA-N  
     validation_history:
     - validation_status: validated
       validation_actor: liese.gilles@vito.be
@@ -3198,7 +3198,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: 2,3,4,5-tetrabroombenzoÃ«zuur
+    translated_value: 2,3,4,5-tetrabroombenzoëzuur
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -3952,7 +3952,7 @@ biochementities:
 - id: Hexabromocyclododecane alpha
   unique_name: Hexabromocyclododecane alpha
   name: Hexabromocyclododecane alpha
-  label: HBCDÎ±
+  label: HBCDα
   molweight_grampermol: 641.7
   biochemidentifiers:
   - identifier_schema: INCHIKEY
@@ -3984,7 +3984,7 @@ biochementities:
 - id: Hexabromocyclododecane beta
   unique_name: Hexabromocyclododecane beta
   name: Hexabromocyclododecane beta
-  label: HBCDÎ²
+  label: HBCDβ
   biochemidentifiers:
   - identifier_schema: INCHIKEY
     identifier_code: DEIGXXQKDWULML-UFVWWTPHSA-N
@@ -4015,7 +4015,7 @@ biochementities:
 - id: Hexabromocyclododecane gamma
   unique_name: Hexabromocyclododecane gamma
   name: Hexabromocyclododecane gamma
-  label: HBCDÎ³
+  label: HBCDγ
   molweight_grampermol: 641.7
   biochemidentifiers:
   - identifier_schema: INCHIKEY
@@ -5530,7 +5530,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Aantal micronuclei (ÂµN) per 1000 BNC (Binucleated cells)
+    translated_value: Aantal micronuclei (µN) per 1000 BNC (Binucleated cells)
   - property_name: label
     language: nl-be
     translated_value: MN_AANTAL
@@ -5547,7 +5547,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Aantal cellen met ÂµN per 1000 binucleaire cellen (BNC) Aantal
+    translated_value: Aantal cellen met µN per 1000 binucleaire cellen (BNC) Aantal
       gescoorde cellen bij de micronucleustest
   - property_name: label
     language: nl-be
@@ -6801,7 +6801,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Medium-chain Acyl-CoA dehydrogenase deficiÃ«ntie
+    translated_value: Medium-chain Acyl-CoA dehydrogenase deficiëntie
   - property_name: label
     language: nl-be
     translated_value: MCAD
@@ -6818,7 +6818,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Multiple Acyl-CoA dehydrogenase deficiÃ«ntie
+    translated_value: Multiple Acyl-CoA dehydrogenase deficiëntie
   - property_name: label
     language: nl-be
     translated_value: MADD
@@ -7134,7 +7134,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: ArsenobetaÃ¯ne
+    translated_value: Arsenobetaïne
   - property_name: label
     language: nl-be
     translated_value: AsB
@@ -9255,7 +9255,7 @@ biochementities:
 - id: Ochratoxin-alpha
   unique_name: Ochratoxin-alpha
   name: Ochratoxin-alpha
-  label: OTÎ±
+  label: OTα
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:192527
@@ -9571,10 +9571,10 @@ biochementities:
     text: in_progress
   validation_history:
   - validation_status: in_progress
-- id: Î‘-zearalanol
-  unique_name: Î‘-zearalanol
-  name: Î±-zearalanol
-  label: Î±-ZAL
+- id: Α-zearalanol
+  unique_name: Α-zearalanol
+  name: α-zearalanol
+  label: α-ZAL
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:35064
@@ -9592,7 +9592,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Î±-zearalanol
+    translated_value: α-zearalanol
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -9602,10 +9602,10 @@ biochementities:
     validation_actor: caio.mescouto@vito.be
     validation_institute: VITO
     validation_remark: API_PubChem
-- id: Î‘-zearalenol
-  unique_name: Î‘-zearalenol
-  name: Î±-zearalenol
-  label: Î±-ZEL
+- id: Α-zearalenol
+  unique_name: Α-zearalenol
+  name: α-zearalenol
+  label: α-ZEL
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:35065
@@ -9623,7 +9623,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Î±-zearalenol
+    translated_value: α-zearalenol
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -9633,10 +9633,10 @@ biochementities:
     validation_actor: caio.mescouto@vito.be
     validation_institute: VITO
     validation_remark: API_PubChem
-- id: Î‘-zearalenol-glucuronide
-  unique_name: Î‘-zearalenol-glucuronide
-  name: Î±-zearalenol-glucuronide
-  label: Î±-ZEL-Glc
+- id: Α-zearalenol-glucuronide
+  unique_name: Α-zearalenol-glucuronide
+  name: α-zearalenol-glucuronide
+  label: α-ZEL-Glc
   biochementity_links:
   - biochementity_linktype: has_parent_compound
     biochementity: Zearalenone
@@ -9646,17 +9646,17 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Î±-zearalenol-glucuronide
+    translated_value: α-zearalenol-glucuronide
   - property_name: label
     language: nl-be
   current_validation_status:
     text: in_progress
   validation_history:
   - validation_status: in_progress
-- id: Î’-zearalanol
-  unique_name: Î’-zearalanol
-  name: Î²-zearalanol
-  label: Î²-ZAL
+- id: Β-zearalanol
+  unique_name: Β-zearalanol
+  name: β-zearalanol
+  label: β-ZAL
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:35071
@@ -9674,7 +9674,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Î²-zearalanol
+    translated_value: β-zearalanol
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -9684,10 +9684,10 @@ biochementities:
     validation_actor: caio.mescouto@vito.be
     validation_institute: VITO
     validation_remark: API_PubChem
-- id: Î’-zearalenol
-  unique_name: Î’-zearalenol
-  name: Î²-zearalenol
-  label: Î²-ZEL
+- id: Β-zearalenol
+  unique_name: Β-zearalenol
+  name: β-zearalenol
+  label: β-ZEL
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:35072
@@ -9705,7 +9705,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Î²-zearalenol
+    translated_value: β-zearalenol
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -9715,10 +9715,10 @@ biochementities:
     validation_actor: caio.mescouto@vito.be
     validation_institute: VITO
     validation_remark: API_PubChem
-- id: Î’-zearalenol-glucuronide
-  unique_name: Î’-zearalenol-glucuronide
-  name: Î²-zearalenol-glucuronide
-  label: Î²-ZEL-Glc
+- id: Β-zearalenol-glucuronide
+  unique_name: Β-zearalenol-glucuronide
+  name: β-zearalenol-glucuronide
+  label: β-ZEL-Glc
   biochementity_links:
   - biochementity_linktype: has_parent_compound
     biochementity: Zearalenone
@@ -9728,7 +9728,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Î²-zearalenolglucuronide
+    translated_value: β-zearalenolglucuronide
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -9981,7 +9981,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: P-hydroxybenzoÃ«zuur
+    translated_value: P-hydroxybenzoëzuur
   - property_name: label
     language: nl-be
     translated_value: HBA
@@ -14650,7 +14650,7 @@ biochementities:
 - id: Alpha-hexachlorocyclohexane
   unique_name: Alpha-hexachlorocyclohexane
   name: Alpha-hexachlorocyclohexane
-  label: Î±-HCH
+  label: α-HCH
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:39096
@@ -14856,7 +14856,7 @@ biochementities:
 - id: Cis-chlordane
   unique_name: Cis-chlordane
   name: Cis-chlordane
-  label: Î±-chlordane
+  label: α-chlordane
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:39068
@@ -15719,7 +15719,7 @@ biochementities:
 - id: Trans-chlordane
   unique_name: Trans-chlordane
   name: Trans-chlordane
-  label: Î³-chlordane
+  label: γ-chlordane
   biochemidentifiers:
   - identifier_schema: CHEBI
     identifier_code: CHEBI:39069
@@ -16998,7 +16998,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: FenoxybenzoÃ«zuur
+    translated_value: Fenoxybenzoëzuur
   - property_name: label
     language: nl-be
     translated_value: 3PBA
@@ -17053,7 +17053,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: 4-fluor-3-fenoxybenzoÃ«zuur
+    translated_value: 4-fluor-3-fenoxybenzoëzuur
   - property_name: label
     language: nl-be
     translated_value: F-3-PBA
@@ -19448,9 +19448,9 @@ biochementities:
     validation_actor: caio.mescouto@vito.be
     validation_institute: VITO
     validation_remark: API_PubChem
-- id: 3-HydroxyfluoranthÃ¨ne
-  unique_name: 3-HydroxyfluoranthÃ¨ne
-  name: 3-HydroxyfluoranthÃ¨ne
+- id: 3-Hydroxyfluoranthène
+  unique_name: 3-Hydroxyfluoranthène
+  name: 3-Hydroxyfluoranthène
   label: 3-OHFA
   molweight_grampermol: 194.23
   biochemidentifiers:
@@ -20697,16 +20697,16 @@ biochementities:
     text: unvalidated
   validation_history:
   - validation_status: unvalidated
-- id: Lutum content (fraction <2Âµm)
-  unique_name: Lutum content (fraction <2Âµm)
-  name: Lutum content (fraction <2Âµm)
+- id: Lutum content (fraction <2µm)
+  unique_name: Lutum content (fraction <2µm)
+  name: Lutum content (fraction <2µm)
   context_aliases:
   - context: HBM4EU sampleobsbase_id
     alias: '32881'
   translations:
   - property_name: name
     language: nl-be
-    translated_value: Lutum gehalte (fraktie <2Âµm)
+    translated_value: Lutum gehalte (fraktie <2µm)
   - property_name: label
     language: nl-be
   current_validation_status:
@@ -21168,7 +21168,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: LuteÃ¯niserend hormoon
+    translated_value: Luteïniserend hormoon
   - property_name: label
     language: nl-be
     translated_value: LH
@@ -21365,7 +21365,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: ThyroÃ¯d stimulerend hormoon
+    translated_value: Thyroïd stimulerend hormoon
   - property_name: label
     language: nl-be
     translated_value: TSH
@@ -22148,7 +22148,7 @@ biochementities:
   translations:
   - property_name: name
     language: nl-be
-    translated_value: T,tâ€™-muconzuur
+    translated_value: T,t’-muconzuur
   - property_name: label
     language: nl-be
   current_validation_status:

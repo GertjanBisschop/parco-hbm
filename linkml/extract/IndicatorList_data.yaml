@@ -2576,8 +2576,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -2658,8 +2658,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -2691,8 +2691,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -2724,8 +2724,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -4980,8 +4980,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: urine
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -5179,7 +5179,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: ohmnbp|urine
   unique_name: ohmnbp|urine
   name: ohmnbp concentration in urine
@@ -10482,8 +10482,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Inflammation and immunity
   - Steroid/Sex hormones
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14746,8 +14746,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14775,8 +14775,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14790,8 +14790,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14805,8 +14805,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14820,8 +14820,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14835,8 +14835,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -14850,8 +14850,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -26844,7 +26844,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Lutum content (fraction <2Âµm)
+    biochementity: Lutum content (fraction <2µm)
 - id: bpt|blood
   unique_name: bpt|blood
   name: bpt concentration in blood
@@ -29613,8 +29613,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -33806,8 +33806,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Inflammation and immunity
   - Cytokines
+  - Inflammation and immunity
   relevant_observable_entity_types:
   - person
   - sample
@@ -34538,7 +34538,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|breast milk
   unique_name: bzal|breast milk
   name: bzal concentration in breast milk
@@ -34554,7 +34554,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|urine
   unique_name: bzal|urine
   name: bzal concentration in urine
@@ -34570,7 +34570,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzel|breast milk
   unique_name: bzel|breast milk
   name: bzel concentration in breast milk
@@ -34586,7 +34586,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|blood
   unique_name: bzel|blood
   name: bzel concentration in blood
@@ -34602,7 +34602,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|urine
   unique_name: bzel|urine
   name: bzel concentration in urine
@@ -34618,7 +34618,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|urine
   unique_name: tbzel|urine
   name: tbzel concentration in urine
@@ -34634,7 +34634,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|breast milk
   unique_name: tbzel|breast milk
   name: tbzel concentration in breast milk
@@ -34650,7 +34650,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|blood
   unique_name: tbzel|blood
   name: tbzel concentration in blood
@@ -34666,7 +34666,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzelglca|blood
   unique_name: bzelglca|blood
   name: bzelglca concentration in blood
@@ -34682,7 +34682,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|breast milk
   unique_name: bzelglca|breast milk
   name: bzelglca concentration in breast milk
@@ -34698,7 +34698,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|urine
   unique_name: bzelglca|urine
   name: bzelglca concentration in urine
@@ -34714,7 +34714,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: zan|blood
   unique_name: zan|blood
   name: zan concentration in blood
@@ -35434,7 +35434,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|urine
   unique_name: azel|urine
   name: azel concentration in urine
@@ -35450,7 +35450,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|blood
   unique_name: azel|blood
   name: azel concentration in blood
@@ -35466,7 +35466,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azelglca|urine
   unique_name: azelglca|urine
   name: azelglca concentration in urine
@@ -35482,7 +35482,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|blood
   unique_name: azelglca|blood
   name: azelglca concentration in blood
@@ -35498,7 +35498,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|breast milk
   unique_name: azelglca|breast milk
   name: azelglca concentration in breast milk
@@ -35514,7 +35514,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: vitb12|blood
   unique_name: vitb12|blood
   name: vitb12 concentration in blood
@@ -35547,7 +35547,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|blood
   unique_name: azal|blood
   name: azal concentration in blood
@@ -35563,7 +35563,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|breast milk
   unique_name: azal|breast milk
   name: azal concentration in breast milk
@@ -35579,7 +35579,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: zensulf|urine
   unique_name: zensulf|urine
   name: zensulf concentration in urine
@@ -35707,7 +35707,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|breast milk
   unique_name: tazel|breast milk
   name: tazel concentration in breast milk
@@ -35723,7 +35723,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|urine
   unique_name: tazel|urine
   name: tazel concentration in urine
@@ -35739,7 +35739,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: cd4plus|blood
   unique_name: cd4plus|blood
   name: cd4plus concentration in blood
@@ -45666,8 +45666,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: urine
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45683,8 +45683,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: breast milk
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45700,8 +45700,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: nail
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45717,8 +45717,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: amniotic fluid
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45734,8 +45734,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: cord blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45751,8 +45751,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: saliva/sputum
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45768,8 +45768,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45785,8 +45785,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: placenta tissue
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -45802,8 +45802,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: bloodcells
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46404,8 +46404,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: urine
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46421,8 +46421,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: breast milk
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46438,8 +46438,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: nail
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46455,8 +46455,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: amniotic fluid
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46472,8 +46472,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: cord blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46489,8 +46489,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: saliva/sputum
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46506,8 +46506,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46523,8 +46523,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: placenta tissue
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46540,8 +46540,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: bloodcells
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46701,8 +46701,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: urine
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46718,8 +46718,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: breast milk
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46735,8 +46735,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: nail
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46752,8 +46752,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: amniotic fluid
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46769,8 +46769,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: cord blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46786,8 +46786,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: saliva/sputum
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46803,8 +46803,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46820,8 +46820,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: placenta tissue
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46837,8 +46837,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: bloodcells
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -46998,8 +46998,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: urine
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47015,8 +47015,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: breast milk
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47032,8 +47032,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: nail
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47049,8 +47049,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: amniotic fluid
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47066,8 +47066,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: cord blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47083,8 +47083,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: saliva/sputum
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47100,8 +47100,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47117,8 +47117,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: placenta tissue
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -47134,8 +47134,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: bloodcells
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -58778,8 +58778,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: blood
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58795,8 +58795,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: breast milk
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58812,8 +58812,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: nail
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58829,8 +58829,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: amniotic fluid
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58846,8 +58846,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: cord blood
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58863,8 +58863,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: saliva/sputum
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58880,8 +58880,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58897,8 +58897,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: placenta tissue
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -58914,8 +58914,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: bloodcells
   grouping_id_list:
-  - Pesticides
   - Anilines and MOCA
+  - Pesticides
   relevant_observable_entity_types:
   - person
   - sample
@@ -60041,7 +60041,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|breast milk
   unique_name: threeohfa|breast milk
   name: threeohfa concentration in breast milk
@@ -60057,7 +60057,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|nail
   unique_name: threeohfa|nail
   name: threeohfa concentration in nail
@@ -60073,7 +60073,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|amniotic fluid
   unique_name: threeohfa|amniotic fluid
   name: threeohfa concentration in amniotic fluid
@@ -60089,7 +60089,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|cord blood
   unique_name: threeohfa|cord blood
   name: threeohfa concentration in cord blood
@@ -60105,7 +60105,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|saliva/sputum
   unique_name: threeohfa|saliva/sputum
   name: threeohfa concentration in saliva/sputum
@@ -60121,7 +60121,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|hair
   unique_name: threeohfa|hair
   name: threeohfa concentration in hair
@@ -60137,7 +60137,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|placenta tissue
   unique_name: threeohfa|placenta tissue
   name: threeohfa concentration in placenta tissue
@@ -60153,7 +60153,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: threeohfa|bloodcells
   unique_name: threeohfa|bloodcells
   name: threeohfa concentration in bloodcells
@@ -60169,7 +60169,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: 3-HydroxyfluoranthÃ¨ne
+    biochementity: 3-Hydroxyfluoranthène
 - id: ohmnbp|blood
   unique_name: ohmnbp|blood
   name: ohmnbp concentration in blood
@@ -110078,8 +110078,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: urine
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110095,8 +110095,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: breast milk
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110112,8 +110112,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: nail
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110129,8 +110129,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: amniotic fluid
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110146,8 +110146,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: cord blood
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110163,8 +110163,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: saliva/sputum
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110180,8 +110180,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: hair
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110197,8 +110197,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: placenta tissue
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -110214,8 +110214,8 @@ indicators:
   quantity_kind: MassConcentration
   matrix: bloodcells
   grouping_id_list:
-  - Dioxins
   - Organochlorine compounds (OCs)
+  - Dioxins
   relevant_observable_entity_types:
   - person
   - sample
@@ -125269,7 +125269,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|amniotic fluid
   unique_name: bzal|amniotic fluid
   name: bzal concentration in amniotic fluid
@@ -125285,7 +125285,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|cord blood
   unique_name: bzal|cord blood
   name: bzal concentration in cord blood
@@ -125301,7 +125301,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|saliva/sputum
   unique_name: bzal|saliva/sputum
   name: bzal concentration in saliva/sputum
@@ -125317,7 +125317,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|hair
   unique_name: bzal|hair
   name: bzal concentration in hair
@@ -125333,7 +125333,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|placenta tissue
   unique_name: bzal|placenta tissue
   name: bzal concentration in placenta tissue
@@ -125349,7 +125349,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzal|bloodcells
   unique_name: bzal|bloodcells
   name: bzal concentration in bloodcells
@@ -125365,7 +125365,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalanol
+    biochementity: Β-zearalanol
 - id: bzel|nail
   unique_name: bzel|nail
   name: bzel concentration in nail
@@ -125381,7 +125381,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|amniotic fluid
   unique_name: bzel|amniotic fluid
   name: bzel concentration in amniotic fluid
@@ -125397,7 +125397,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|cord blood
   unique_name: bzel|cord blood
   name: bzel concentration in cord blood
@@ -125413,7 +125413,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|saliva/sputum
   unique_name: bzel|saliva/sputum
   name: bzel concentration in saliva/sputum
@@ -125429,7 +125429,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|hair
   unique_name: bzel|hair
   name: bzel concentration in hair
@@ -125445,7 +125445,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|placenta tissue
   unique_name: bzel|placenta tissue
   name: bzel concentration in placenta tissue
@@ -125461,7 +125461,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzel|bloodcells
   unique_name: bzel|bloodcells
   name: bzel concentration in bloodcells
@@ -125477,7 +125477,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|nail
   unique_name: tbzel|nail
   name: tbzel concentration in nail
@@ -125493,7 +125493,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|amniotic fluid
   unique_name: tbzel|amniotic fluid
   name: tbzel concentration in amniotic fluid
@@ -125509,7 +125509,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|cord blood
   unique_name: tbzel|cord blood
   name: tbzel concentration in cord blood
@@ -125525,7 +125525,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|saliva/sputum
   unique_name: tbzel|saliva/sputum
   name: tbzel concentration in saliva/sputum
@@ -125541,7 +125541,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|hair
   unique_name: tbzel|hair
   name: tbzel concentration in hair
@@ -125557,7 +125557,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|placenta tissue
   unique_name: tbzel|placenta tissue
   name: tbzel concentration in placenta tissue
@@ -125573,7 +125573,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: tbzel|bloodcells
   unique_name: tbzel|bloodcells
   name: tbzel concentration in bloodcells
@@ -125589,7 +125589,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î’-zearalenol
+    biochementity: Β-zearalenol
 - id: bzelglca|nail
   unique_name: bzelglca|nail
   name: bzelglca concentration in nail
@@ -125605,7 +125605,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|amniotic fluid
   unique_name: bzelglca|amniotic fluid
   name: bzelglca concentration in amniotic fluid
@@ -125621,7 +125621,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|cord blood
   unique_name: bzelglca|cord blood
   name: bzelglca concentration in cord blood
@@ -125637,7 +125637,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|saliva/sputum
   unique_name: bzelglca|saliva/sputum
   name: bzelglca concentration in saliva/sputum
@@ -125653,7 +125653,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|hair
   unique_name: bzelglca|hair
   name: bzelglca concentration in hair
@@ -125669,7 +125669,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|placenta tissue
   unique_name: bzelglca|placenta tissue
   name: bzelglca concentration in placenta tissue
@@ -125685,7 +125685,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: bzelglca|bloodcells
   unique_name: bzelglca|bloodcells
   name: bzelglca concentration in bloodcells
@@ -125701,7 +125701,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î’-zearalenol-glucuronide
+    biochementity: Β-zearalenol-glucuronide
 - id: zan|nail
   unique_name: zan|nail
   name: zan concentration in nail
@@ -127117,7 +127117,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|amniotic fluid
   unique_name: azel|amniotic fluid
   name: azel concentration in amniotic fluid
@@ -127133,7 +127133,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|cord blood
   unique_name: azel|cord blood
   name: azel concentration in cord blood
@@ -127149,7 +127149,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|saliva/sputum
   unique_name: azel|saliva/sputum
   name: azel concentration in saliva/sputum
@@ -127165,7 +127165,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|hair
   unique_name: azel|hair
   name: azel concentration in hair
@@ -127181,7 +127181,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|placenta tissue
   unique_name: azel|placenta tissue
   name: azel concentration in placenta tissue
@@ -127197,7 +127197,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azel|bloodcells
   unique_name: azel|bloodcells
   name: azel concentration in bloodcells
@@ -127213,7 +127213,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: azelglca|nail
   unique_name: azelglca|nail
   name: azelglca concentration in nail
@@ -127229,7 +127229,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|amniotic fluid
   unique_name: azelglca|amniotic fluid
   name: azelglca concentration in amniotic fluid
@@ -127245,7 +127245,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|cord blood
   unique_name: azelglca|cord blood
   name: azelglca concentration in cord blood
@@ -127261,7 +127261,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|saliva/sputum
   unique_name: azelglca|saliva/sputum
   name: azelglca concentration in saliva/sputum
@@ -127277,7 +127277,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|hair
   unique_name: azelglca|hair
   name: azelglca concentration in hair
@@ -127293,7 +127293,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|placenta tissue
   unique_name: azelglca|placenta tissue
   name: azelglca concentration in placenta tissue
@@ -127309,7 +127309,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azelglca|bloodcells
   unique_name: azelglca|bloodcells
   name: azelglca concentration in bloodcells
@@ -127325,7 +127325,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalenol-glucuronide
+    biochementity: Α-zearalenol-glucuronide
 - id: azal|nail
   unique_name: azal|nail
   name: azal concentration in nail
@@ -127341,7 +127341,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|amniotic fluid
   unique_name: azal|amniotic fluid
   name: azal concentration in amniotic fluid
@@ -127357,7 +127357,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|cord blood
   unique_name: azal|cord blood
   name: azal concentration in cord blood
@@ -127373,7 +127373,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|saliva/sputum
   unique_name: azal|saliva/sputum
   name: azal concentration in saliva/sputum
@@ -127389,7 +127389,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|hair
   unique_name: azal|hair
   name: azal concentration in hair
@@ -127405,7 +127405,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|placenta tissue
   unique_name: azal|placenta tissue
   name: azal concentration in placenta tissue
@@ -127421,7 +127421,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: azal|bloodcells
   unique_name: azal|bloodcells
   name: azal concentration in bloodcells
@@ -127437,7 +127437,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: exact_match
-    biochementity: Î‘-zearalanol
+    biochementity: Α-zearalanol
 - id: zensulf|nail
   unique_name: zensulf|nail
   name: zensulf concentration in nail
@@ -127661,7 +127661,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|amniotic fluid
   unique_name: tazel|amniotic fluid
   name: tazel concentration in amniotic fluid
@@ -127677,7 +127677,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|cord blood
   unique_name: tazel|cord blood
   name: tazel concentration in cord blood
@@ -127693,7 +127693,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|saliva/sputum
   unique_name: tazel|saliva/sputum
   name: tazel concentration in saliva/sputum
@@ -127709,7 +127709,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|hair
   unique_name: tazel|hair
   name: tazel concentration in hair
@@ -127725,7 +127725,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|placenta tissue
   unique_name: tazel|placenta tissue
   name: tazel concentration in placenta tissue
@@ -127741,7 +127741,7 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
 - id: tazel|bloodcells
   unique_name: tazel|bloodcells
   name: tazel concentration in bloodcells
@@ -127757,4 +127757,4 @@ indicators:
   - sample
   biochementity_links:
   - biochementity_linktype: close_match
-    biochementity: Î‘-zearalenol
+    biochementity: Α-zearalenol
