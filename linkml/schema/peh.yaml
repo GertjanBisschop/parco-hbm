@@ -359,8 +359,16 @@ classes:
     slots:
       - observable_entity
       - observable_property
+      - default_unit
+      - raw_value
+      - raw_unit
+      - imputed_value
+      - imputed_unit
+      - corrected_value
+      - corrected_unit
       - value
       - unit
+      - value_as_string
       - quality_data
       - provenance_data
   QualityData:
@@ -682,6 +690,13 @@ slots:
     range: ObservedValue
   unit:
     range: Unit
+  raw_value:
+  raw_unit:
+  imputed_value:
+  imputed_unit:
+  corrected_value:
+  corrected_unit:
+  value_as_string:
   quality_data:
     multivalued: true
     inlined_as_list: true

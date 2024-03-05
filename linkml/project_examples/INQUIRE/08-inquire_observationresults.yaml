@@ -3,24 +3,26 @@ questionnaireresults:
     observedvalues:
     - observable_property:
       observable_entity:
-      unit:
+      default_unit:
+      raw_value:
+      raw_unit:
+      imputed_value:
+      imputed_unit:
+      corrected_value:
+      corrected_unit:
       value:
-      value_as_string:
-      value_raw:
-      value_imputed:
-      quality:
-        lab_cutoff_recommendation:
-        lod:
-        loq:
-      provenance:
-        imputation:
-          source_data:
-          formula:
-          result:
-    - observable_property:
-      observable_entity:
       unit:
       value_as_string:
+      quality_data:
+        - quality_context_key: lab_cutoff_recommendation
+          quality_value: lod
+        - quality_context_key: lod
+          quality_value: 0.15
+        - quality_context_key: loq
+          quality_value: 0.3
+      provenance_data:
+        - provenance_context_key: imputation_formula
+          provenance_value: medium bound
 samplingresults:
   - observation: INQ_HOME_L1
   - observation: INQ_PEOPLE_L1_ISS
