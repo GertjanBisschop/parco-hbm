@@ -5,7 +5,20 @@ observablepropertygrouping_id_list:
   name: '<TODO: nog aan te vullen effect>'
   parent_grouping_id_list:
   - Effect marker
-  sort_order: 2005.0
+  calculation_designs:
+  - unit:
+    calculation_name: imputation_medium_bound
+    calculation_implementation:
+    calculation_arguments:
+    - mapping_name: raw
+      value_type: decimal
+      unit:
+      source_path: raw_value
+    calculation_results:
+    - mapping_name: *
+      value_type: decimal
+      unit:
+      destination_path: imputed_value
 metadata_fields:
   - id: default_serialized
     name: default_serialized

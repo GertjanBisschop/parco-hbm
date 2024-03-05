@@ -187,8 +187,8 @@ classes:
       - relevant_observable_entity_types
       - relevant_observation_types
       - indicator
-      - calculation_design
-      - validation_design
+      - calculation_designs
+      - validation_designs
   ObservablePropertyValueOption:
     mixins:
       - HasContextAliases
@@ -206,8 +206,23 @@ classes:
       - value_type
   CalculationDesign:
     slots:
+      - calculation_name
+      - calculation_implementation
+      - calculation_arguments
+      - calculation_results
+      - conditional
+  CalculationArgument:
+    slots:
+      - mapping_name
+      - value_type
       - unit
-      - formula
+      - source_path
+  CalculationResult:
+    slots:
+      - mapping_name
+      - value_type
+      - unit
+      - destination_path
   ValidationDesign:
     slots:
       - conditional
@@ -567,11 +582,27 @@ slots:
     range: ObservationType
   indicator:
     range: Indicator
-  calculation_design:
+  calculation_designs:
+    multivalued: true
+    inlined_as_list: true
     range: CalculationDesign
-  validation_design:
+  calculation_name:
+  calculation_implementation:
+  calculation_arguments:
+    multivalued: true
+    inlined_as_list: true
+    range: CalculationArgument
+  calculation_results:
+    multivalued: true
+    inlined_as_list: true
+    range: CalculationResult
+  mapping_name:
+  source_path:
+  destination_path:
+  validation_designs:
+    multivalued: true
+    inlined_as_list: true
     range: ValidationDesign
-  formula:
   conditional:
   field:
     range: ObservablePropertyMetadataField
