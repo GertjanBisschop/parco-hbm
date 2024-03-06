@@ -166,6 +166,43 @@ classes:
       - biochementity_linktype
       - biochementity
 
+  PhysicalEntity:
+    abstract: true
+    is_a: NamedThing
+    slots:
+      - physical_entity_links
+  PhysicalEntityLink:
+    slots:
+      - linktype
+      - physical_entity
+  Sample:
+    is_a: PhysicalEntity
+    slots:
+      - matrix
+      - constraints
+      - sampled_in_project
+      - physical_label
+      - collection_date
+  SampleCollection:
+    is_a: PhysicalEntity
+    slots:
+      - matrix
+      - constraints
+  Person:
+    is_a: PhysicalEntity
+    slots:
+      - recruited_in_project
+  Geolocation:
+    is_a: PhysicalEntity
+    slots:
+      - location
+  Environment:
+    is_a: PhysicalEntity
+  HomeEnvironment:
+    is_a: Environment
+  WorkEnvironment:
+    is_a: Environment
+
   ObservableProperty:
     is_a: NamedThing
     mixins:
@@ -267,6 +304,7 @@ classes:
     mixins:
       - HasContextAliases
     slots:
+      - physical_entity
       - study_entity_links
   StudyEntityLink:
     slots:
@@ -300,32 +338,9 @@ classes:
     is_a: StudyEntity
     slots:
       - research_population_type
-  SampleCollection:
-    is_a: StudyEntity
-    slots:
-      - matrix
-      - constraints
-  Sample:
-    is_a: StudyEntity
-    slots:
-      - matrix
-      - constraints
-      - sampled_in_project
-      - physical_label
-      - collection_date
   StudySubject:
     is_a: StudyEntity
-  Person:
-    is_a: StudyEntity
-    slots:
-      - recruited_in_project
-  PersonGroup:
-    is_a: StudyEntity
-  Geolocation:
-    is_a: StudyEntity
-    slots:
-      - location
-  Environment:
+  StudySubjectGroup:
     is_a: StudyEntity
   Observation:
     abstract: true
@@ -668,11 +683,17 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: Observation
+  linktype:
+    range: LinkType
+  physical_entity_links:
+    multivalued: true
+    range: PhysicalEntityLink
+  physical_entity:
+    range: PhysicalEntity
+    inlined: false
   study_entity_links:
     multivalued: true
     range: StudyEntityLink
-  linktype:
-    range: LinkType
   study_entity:
     range: StudyEntity
     inlined: false

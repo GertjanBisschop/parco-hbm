@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-06T09:52:13
+# Generation date: 2024-03-06T17:21:12
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -73,6 +73,38 @@ class IndicatorId(NamedThingId):
     pass
 
 
+class PhysicalEntityId(NamedThingId):
+    pass
+
+
+class SampleId(PhysicalEntityId):
+    pass
+
+
+class SampleCollectionId(PhysicalEntityId):
+    pass
+
+
+class PersonId(PhysicalEntityId):
+    pass
+
+
+class GeolocationId(PhysicalEntityId):
+    pass
+
+
+class EnvironmentId(PhysicalEntityId):
+    pass
+
+
+class HomeEnvironmentId(EnvironmentId):
+    pass
+
+
+class WorkEnvironmentId(EnvironmentId):
+    pass
+
+
 class ObservablePropertyId(NamedThingId):
     pass
 
@@ -105,31 +137,11 @@ class StudyPopulationId(StudyEntityId):
     pass
 
 
-class SampleCollectionId(StudyEntityId):
-    pass
-
-
-class SampleId(StudyEntityId):
-    pass
-
-
 class StudySubjectId(StudyEntityId):
     pass
 
 
-class PersonId(StudyEntityId):
-    pass
-
-
-class PersonGroupId(StudyEntityId):
-    pass
-
-
-class GeolocationId(StudyEntityId):
-    pass
-
-
-class EnvironmentId(StudyEntityId):
+class StudySubjectGroupId(StudyEntityId):
     pass
 
 
@@ -748,6 +760,226 @@ class BioChemEntityLink(YAMLRoot):
 
 
 @dataclass
+class PhysicalEntity(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["PhysicalEntity"]
+    class_class_curie: ClassVar[str] = "peh:PhysicalEntity"
+    class_name: ClassVar[str] = "PhysicalEntity"
+    class_model_uri: ClassVar[URIRef] = PEH.PhysicalEntity
+
+    id: Union[str, PhysicalEntityId] = None
+    physical_entity_links: Optional[Union[Union[dict, "PhysicalEntityLink"], List[Union[dict, "PhysicalEntityLink"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.physical_entity_links, list):
+            self.physical_entity_links = [self.physical_entity_links] if self.physical_entity_links is not None else []
+        self.physical_entity_links = [v if isinstance(v, PhysicalEntityLink) else PhysicalEntityLink(**as_dict(v)) for v in self.physical_entity_links]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PhysicalEntityLink(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["PhysicalEntityLink"]
+    class_class_curie: ClassVar[str] = "peh:PhysicalEntityLink"
+    class_name: ClassVar[str] = "PhysicalEntityLink"
+    class_model_uri: ClassVar[URIRef] = PEH.PhysicalEntityLink
+
+    linktype: Optional[Union[str, "LinkType"]] = None
+    physical_entity: Optional[Union[str, PhysicalEntityId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.linktype is not None and not isinstance(self.linktype, LinkType):
+            self.linktype = LinkType(self.linktype)
+
+        if self.physical_entity is not None and not isinstance(self.physical_entity, PhysicalEntityId):
+            self.physical_entity = PhysicalEntityId(self.physical_entity)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Sample(PhysicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Sample"]
+    class_class_curie: ClassVar[str] = "peh:Sample"
+    class_name: ClassVar[str] = "Sample"
+    class_model_uri: ClassVar[URIRef] = PEH.Sample
+
+    id: Union[str, SampleId] = None
+    matrix: Optional[Union[str, MatrixId]] = None
+    constraints: Optional[Union[str, List[str]]] = empty_list()
+    sampled_in_project: Optional[Union[str, ProjectId]] = None
+    physical_label: Optional[str] = None
+    collection_date: Optional[Union[str, XSDDate]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SampleId):
+            self.id = SampleId(self.id)
+
+        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
+            self.matrix = MatrixId(self.matrix)
+
+        if not isinstance(self.constraints, list):
+            self.constraints = [self.constraints] if self.constraints is not None else []
+        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
+
+        if self.sampled_in_project is not None and not isinstance(self.sampled_in_project, ProjectId):
+            self.sampled_in_project = ProjectId(self.sampled_in_project)
+
+        if self.physical_label is not None and not isinstance(self.physical_label, str):
+            self.physical_label = str(self.physical_label)
+
+        if self.collection_date is not None and not isinstance(self.collection_date, XSDDate):
+            self.collection_date = XSDDate(self.collection_date)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SampleCollection(PhysicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["SampleCollection"]
+    class_class_curie: ClassVar[str] = "peh:SampleCollection"
+    class_name: ClassVar[str] = "SampleCollection"
+    class_model_uri: ClassVar[URIRef] = PEH.SampleCollection
+
+    id: Union[str, SampleCollectionId] = None
+    matrix: Optional[Union[str, MatrixId]] = None
+    constraints: Optional[Union[str, List[str]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SampleCollectionId):
+            self.id = SampleCollectionId(self.id)
+
+        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
+            self.matrix = MatrixId(self.matrix)
+
+        if not isinstance(self.constraints, list):
+            self.constraints = [self.constraints] if self.constraints is not None else []
+        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Person(PhysicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Person"]
+    class_class_curie: ClassVar[str] = "peh:Person"
+    class_name: ClassVar[str] = "Person"
+    class_model_uri: ClassVar[URIRef] = PEH.Person
+
+    id: Union[str, PersonId] = None
+    recruited_in_project: Optional[Union[str, ProjectId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PersonId):
+            self.id = PersonId(self.id)
+
+        if self.recruited_in_project is not None and not isinstance(self.recruited_in_project, ProjectId):
+            self.recruited_in_project = ProjectId(self.recruited_in_project)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Geolocation(PhysicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Geolocation"]
+    class_class_curie: ClassVar[str] = "peh:Geolocation"
+    class_name: ClassVar[str] = "Geolocation"
+    class_model_uri: ClassVar[URIRef] = PEH.Geolocation
+
+    id: Union[str, GeolocationId] = None
+    location: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeolocationId):
+            self.id = GeolocationId(self.id)
+
+        if self.location is not None and not isinstance(self.location, str):
+            self.location = str(self.location)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Environment(PhysicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["Environment"]
+    class_class_curie: ClassVar[str] = "peh:Environment"
+    class_name: ClassVar[str] = "Environment"
+    class_model_uri: ClassVar[URIRef] = PEH.Environment
+
+    id: Union[str, EnvironmentId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, EnvironmentId):
+            self.id = EnvironmentId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class HomeEnvironment(Environment):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["HomeEnvironment"]
+    class_class_curie: ClassVar[str] = "peh:HomeEnvironment"
+    class_name: ClassVar[str] = "HomeEnvironment"
+    class_model_uri: ClassVar[URIRef] = PEH.HomeEnvironment
+
+    id: Union[str, HomeEnvironmentId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, HomeEnvironmentId):
+            self.id = HomeEnvironmentId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class WorkEnvironment(Environment):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["WorkEnvironment"]
+    class_class_curie: ClassVar[str] = "peh:WorkEnvironment"
+    class_name: ClassVar[str] = "WorkEnvironment"
+    class_model_uri: ClassVar[URIRef] = PEH.WorkEnvironment
+
+    id: Union[str, WorkEnvironmentId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, WorkEnvironmentId):
+            self.id = WorkEnvironmentId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class ObservableProperty(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1158,10 +1390,14 @@ class StudyEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.StudyEntity
 
     id: Union[str, StudyEntityId] = None
+    physical_entity: Optional[Union[str, PhysicalEntityId]] = None
     study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
     context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.physical_entity is not None and not isinstance(self.physical_entity, PhysicalEntityId):
+            self.physical_entity = PhysicalEntityId(self.physical_entity)
+
         if not isinstance(self.study_entity_links, list):
             self.study_entity_links = [self.study_entity_links] if self.study_entity_links is not None else []
         self.study_entity_links = [v if isinstance(v, StudyEntityLink) else StudyEntityLink(**as_dict(v)) for v in self.study_entity_links]
@@ -1392,76 +1628,6 @@ class StudyPopulation(StudyEntity):
 
 
 @dataclass
-class SampleCollection(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["SampleCollection"]
-    class_class_curie: ClassVar[str] = "peh:SampleCollection"
-    class_name: ClassVar[str] = "SampleCollection"
-    class_model_uri: ClassVar[URIRef] = PEH.SampleCollection
-
-    id: Union[str, SampleCollectionId] = None
-    matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, List[str]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, SampleCollectionId):
-            self.id = SampleCollectionId(self.id)
-
-        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
-            self.matrix = MatrixId(self.matrix)
-
-        if not isinstance(self.constraints, list):
-            self.constraints = [self.constraints] if self.constraints is not None else []
-        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Sample(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["Sample"]
-    class_class_curie: ClassVar[str] = "peh:Sample"
-    class_name: ClassVar[str] = "Sample"
-    class_model_uri: ClassVar[URIRef] = PEH.Sample
-
-    id: Union[str, SampleId] = None
-    matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, List[str]]] = empty_list()
-    sampled_in_project: Optional[Union[str, ProjectId]] = None
-    physical_label: Optional[str] = None
-    collection_date: Optional[Union[str, XSDDate]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, SampleId):
-            self.id = SampleId(self.id)
-
-        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
-            self.matrix = MatrixId(self.matrix)
-
-        if not isinstance(self.constraints, list):
-            self.constraints = [self.constraints] if self.constraints is not None else []
-        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
-
-        if self.sampled_in_project is not None and not isinstance(self.sampled_in_project, ProjectId):
-            self.sampled_in_project = ProjectId(self.sampled_in_project)
-
-        if self.physical_label is not None and not isinstance(self.physical_label, str):
-            self.physical_label = str(self.physical_label)
-
-        if self.collection_date is not None and not isinstance(self.collection_date, XSDDate):
-            self.collection_date = XSDDate(self.collection_date)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class StudySubject(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1482,89 +1648,21 @@ class StudySubject(StudyEntity):
 
 
 @dataclass
-class Person(StudyEntity):
+class StudySubjectGroup(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEH["Person"]
-    class_class_curie: ClassVar[str] = "peh:Person"
-    class_name: ClassVar[str] = "Person"
-    class_model_uri: ClassVar[URIRef] = PEH.Person
+    class_class_uri: ClassVar[URIRef] = PEH["StudySubjectGroup"]
+    class_class_curie: ClassVar[str] = "peh:StudySubjectGroup"
+    class_name: ClassVar[str] = "StudySubjectGroup"
+    class_model_uri: ClassVar[URIRef] = PEH.StudySubjectGroup
 
-    id: Union[str, PersonId] = None
-    recruited_in_project: Optional[Union[str, ProjectId]] = None
+    id: Union[str, StudySubjectGroupId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, PersonId):
-            self.id = PersonId(self.id)
-
-        if self.recruited_in_project is not None and not isinstance(self.recruited_in_project, ProjectId):
-            self.recruited_in_project = ProjectId(self.recruited_in_project)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PersonGroup(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["PersonGroup"]
-    class_class_curie: ClassVar[str] = "peh:PersonGroup"
-    class_name: ClassVar[str] = "PersonGroup"
-    class_model_uri: ClassVar[URIRef] = PEH.PersonGroup
-
-    id: Union[str, PersonGroupId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PersonGroupId):
-            self.id = PersonGroupId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Geolocation(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["Geolocation"]
-    class_class_curie: ClassVar[str] = "peh:Geolocation"
-    class_name: ClassVar[str] = "Geolocation"
-    class_model_uri: ClassVar[URIRef] = PEH.Geolocation
-
-    id: Union[str, GeolocationId] = None
-    location: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GeolocationId):
-            self.id = GeolocationId(self.id)
-
-        if self.location is not None and not isinstance(self.location, str):
-            self.location = str(self.location)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Environment(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["Environment"]
-    class_class_curie: ClassVar[str] = "peh:Environment"
-    class_name: ClassVar[str] = "Environment"
-    class_model_uri: ClassVar[URIRef] = PEH.Environment
-
-    id: Union[str, EnvironmentId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, EnvironmentId):
-            self.id = EnvironmentId(self.id)
+        if not isinstance(self.id, StudySubjectGroupId):
+            self.id = StudySubjectGroupId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -2616,11 +2714,17 @@ slots.study_entities = Slot(uri=PEH.study_entities, name="study_entities", curie
 slots.observations = Slot(uri=PEH.observations, name="observations", curie=PEH.curie('observations'),
                    model_uri=PEH.observations, domain=None, range=Optional[Union[Dict[Union[str, ObservationId], Union[dict, Observation]], List[Union[dict, Observation]]]])
 
-slots.study_entity_links = Slot(uri=PEH.study_entity_links, name="study_entity_links", curie=PEH.curie('study_entity_links'),
-                   model_uri=PEH.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], List[Union[dict, StudyEntityLink]]]])
-
 slots.linktype = Slot(uri=PEH.linktype, name="linktype", curie=PEH.curie('linktype'),
                    model_uri=PEH.linktype, domain=None, range=Optional[Union[str, "LinkType"]])
+
+slots.physical_entity_links = Slot(uri=PEH.physical_entity_links, name="physical_entity_links", curie=PEH.curie('physical_entity_links'),
+                   model_uri=PEH.physical_entity_links, domain=None, range=Optional[Union[Union[dict, PhysicalEntityLink], List[Union[dict, PhysicalEntityLink]]]])
+
+slots.physical_entity = Slot(uri=PEH.physical_entity, name="physical_entity", curie=PEH.curie('physical_entity'),
+                   model_uri=PEH.physical_entity, domain=None, range=Optional[Union[str, PhysicalEntityId]])
+
+slots.study_entity_links = Slot(uri=PEH.study_entity_links, name="study_entity_links", curie=PEH.curie('study_entity_links'),
+                   model_uri=PEH.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], List[Union[dict, StudyEntityLink]]]])
 
 slots.study_entity = Slot(uri=PEH.study_entity, name="study_entity", curie=PEH.curie('study_entity'),
                    model_uri=PEH.study_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
