@@ -154,6 +154,7 @@ classes:
     is_a: NamedThing
     slots:
       - indicator_type
+      - varname
       - property
       - quantity_kind
       - matrix
@@ -543,6 +544,7 @@ slots:
     range: Matrix
   indicator_type:
     range: IndicatorType
+  varname:
   property:
   matrices:
     multivalued: true
@@ -915,10 +917,26 @@ enums:
         - rdfs:subClassOf
   QudtQuantityKind:
     permissible_values:
+      AmountOfSubstanceConcentration:
+        meaning: qudtqk:AmountOfSubstanceConcentration
+      AmountOfSubstancePerUnitMass:
+        meaning: qudtqk:AmountOfSubstancePerUnitMass
+      Dimensionless:
+        meaning: qudtqk:Dimensionless
+      DimensionlessRatio:
+        meaning: qudtqk:DimensionlessRatio
+      Mass:
+        meaning: qudtqk:Mass
       MassConcentration:
         meaning: qudtqk:MassConcentration
+      NumberDensity:
+        meaning: qudtqk:NumberDensity
       Period:
         meaning: qudtqk:Period
+      SerumOrPlasmaLevel:
+        meaning: qudtqk:SerumOrPlasmaLevel
+      Volume:
+        meaning: qudtqk:Volume
     include:
     - reachable_from:
         source_ontology: qudtqk

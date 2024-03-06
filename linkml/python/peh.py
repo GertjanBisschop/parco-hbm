@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-06T20:39:01
+# Generation date: 2024-03-06T23:51:03
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -692,6 +692,7 @@ class Indicator(NamedThing):
 
     id: Union[str, IndicatorId] = None
     indicator_type: Optional[Union[str, "IndicatorType"]] = None
+    varname: Optional[str] = None
     property: Optional[str] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     matrix: Optional[Union[str, MatrixId]] = None
@@ -708,6 +709,9 @@ class Indicator(NamedThing):
 
         if self.indicator_type is not None and not isinstance(self.indicator_type, IndicatorType):
             self.indicator_type = IndicatorType(self.indicator_type)
+
+        if self.varname is not None and not isinstance(self.varname, str):
+            self.varname = str(self.varname)
 
         if self.property is not None and not isinstance(self.property, str):
             self.property = str(self.property)
@@ -2421,12 +2425,36 @@ class QudtUnit(EnumDefinitionImpl):
 
 class QudtQuantityKind(EnumDefinitionImpl):
 
+    AmountOfSubstanceConcentration = PermissibleValue(
+        text="AmountOfSubstanceConcentration",
+        meaning=QUDTQK["AmountOfSubstanceConcentration"])
+    AmountOfSubstancePerUnitMass = PermissibleValue(
+        text="AmountOfSubstancePerUnitMass",
+        meaning=QUDTQK["AmountOfSubstancePerUnitMass"])
+    Dimensionless = PermissibleValue(
+        text="Dimensionless",
+        meaning=QUDTQK["Dimensionless"])
+    DimensionlessRatio = PermissibleValue(
+        text="DimensionlessRatio",
+        meaning=QUDTQK["DimensionlessRatio"])
+    Mass = PermissibleValue(
+        text="Mass",
+        meaning=QUDTQK["Mass"])
     MassConcentration = PermissibleValue(
         text="MassConcentration",
         meaning=QUDTQK["MassConcentration"])
+    NumberDensity = PermissibleValue(
+        text="NumberDensity",
+        meaning=QUDTQK["NumberDensity"])
     Period = PermissibleValue(
         text="Period",
         meaning=QUDTQK["Period"])
+    SerumOrPlasmaLevel = PermissibleValue(
+        text="SerumOrPlasmaLevel",
+        meaning=QUDTQK["SerumOrPlasmaLevel"])
+    Volume = PermissibleValue(
+        text="Volume",
+        meaning=QUDTQK["Volume"])
 
     _defn = EnumDefinition(
         name="QudtQuantityKind",
@@ -2552,6 +2580,9 @@ slots.parent_matrix = Slot(uri=PEH.parent_matrix, name="parent_matrix", curie=PE
 
 slots.indicator_type = Slot(uri=PEH.indicator_type, name="indicator_type", curie=PEH.curie('indicator_type'),
                    model_uri=PEH.indicator_type, domain=None, range=Optional[Union[str, "IndicatorType"]])
+
+slots.varname = Slot(uri=PEH.varname, name="varname", curie=PEH.curie('varname'),
+                   model_uri=PEH.varname, domain=None, range=Optional[str])
 
 slots.property = Slot(uri=PEH.property, name="property", curie=PEH.curie('property'),
                    model_uri=PEH.property, domain=None, range=Optional[str])
