@@ -245,6 +245,7 @@ classes:
     slots:
       - calculation_name
       - calculation_implementation
+      - calculation_implementation_as_string
       - calculation_arguments
       - calculation_results
       - conditional
@@ -603,6 +604,7 @@ slots:
     range: CalculationDesign
   calculation_name:
   calculation_implementation:
+  calculation_implementation_as_string:
   calculation_arguments:
     multivalued: true
     inlined_as_list: true

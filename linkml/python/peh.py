@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-06T17:21:12
+# Generation date: 2024-03-06T20:39:01
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1171,6 +1171,7 @@ class CalculationDesign(YAMLRoot):
 
     calculation_name: Optional[str] = None
     calculation_implementation: Optional[str] = None
+    calculation_implementation_as_string: Optional[str] = None
     calculation_arguments: Optional[Union[Union[dict, "CalculationArgument"], List[Union[dict, "CalculationArgument"]]]] = empty_list()
     calculation_results: Optional[Union[Union[dict, "CalculationResult"], List[Union[dict, "CalculationResult"]]]] = empty_list()
     conditional: Optional[str] = None
@@ -1181,6 +1182,9 @@ class CalculationDesign(YAMLRoot):
 
         if self.calculation_implementation is not None and not isinstance(self.calculation_implementation, str):
             self.calculation_implementation = str(self.calculation_implementation)
+
+        if self.calculation_implementation_as_string is not None and not isinstance(self.calculation_implementation_as_string, str):
+            self.calculation_implementation_as_string = str(self.calculation_implementation_as_string)
 
         if not isinstance(self.calculation_arguments, list):
             self.calculation_arguments = [self.calculation_arguments] if self.calculation_arguments is not None else []
@@ -2626,6 +2630,9 @@ slots.calculation_name = Slot(uri=PEH.calculation_name, name="calculation_name",
 
 slots.calculation_implementation = Slot(uri=PEH.calculation_implementation, name="calculation_implementation", curie=PEH.curie('calculation_implementation'),
                    model_uri=PEH.calculation_implementation, domain=None, range=Optional[str])
+
+slots.calculation_implementation_as_string = Slot(uri=PEH.calculation_implementation_as_string, name="calculation_implementation_as_string", curie=PEH.curie('calculation_implementation_as_string'),
+                   model_uri=PEH.calculation_implementation_as_string, domain=None, range=Optional[str])
 
 slots.calculation_arguments = Slot(uri=PEH.calculation_arguments, name="calculation_arguments", curie=PEH.curie('calculation_arguments'),
                    model_uri=PEH.calculation_arguments, domain=None, range=Optional[Union[Union[dict, CalculationArgument], List[Union[dict, CalculationArgument]]]])
