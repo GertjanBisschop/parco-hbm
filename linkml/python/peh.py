@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-05T10:24:29
+# Generation date: 2024-03-06T09:52:13
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1834,8 +1834,8 @@ class ObservedValue(YAMLRoot):
     raw_unit: Optional[str] = None
     imputed_value: Optional[str] = None
     imputed_unit: Optional[str] = None
-    corrected_value: Optional[str] = None
-    corrected_unit: Optional[str] = None
+    normalised_value: Optional[str] = None
+    normalised_unit: Optional[str] = None
     value: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
     value_as_string: Optional[str] = None
@@ -1864,11 +1864,11 @@ class ObservedValue(YAMLRoot):
         if self.imputed_unit is not None and not isinstance(self.imputed_unit, str):
             self.imputed_unit = str(self.imputed_unit)
 
-        if self.corrected_value is not None and not isinstance(self.corrected_value, str):
-            self.corrected_value = str(self.corrected_value)
+        if self.normalised_value is not None and not isinstance(self.normalised_value, str):
+            self.normalised_value = str(self.normalised_value)
 
-        if self.corrected_unit is not None and not isinstance(self.corrected_unit, str):
-            self.corrected_unit = str(self.corrected_unit)
+        if self.normalised_unit is not None and not isinstance(self.normalised_unit, str):
+            self.normalised_unit = str(self.normalised_unit)
 
         if self.value is not None and not isinstance(self.value, str):
             self.value = str(self.value)
@@ -2691,11 +2691,11 @@ slots.imputed_value = Slot(uri=PEH.imputed_value, name="imputed_value", curie=PE
 slots.imputed_unit = Slot(uri=PEH.imputed_unit, name="imputed_unit", curie=PEH.curie('imputed_unit'),
                    model_uri=PEH.imputed_unit, domain=None, range=Optional[str])
 
-slots.corrected_value = Slot(uri=PEH.corrected_value, name="corrected_value", curie=PEH.curie('corrected_value'),
-                   model_uri=PEH.corrected_value, domain=None, range=Optional[str])
+slots.normalised_value = Slot(uri=PEH.normalised_value, name="normalised_value", curie=PEH.curie('normalised_value'),
+                   model_uri=PEH.normalised_value, domain=None, range=Optional[str])
 
-slots.corrected_unit = Slot(uri=PEH.corrected_unit, name="corrected_unit", curie=PEH.curie('corrected_unit'),
-                   model_uri=PEH.corrected_unit, domain=None, range=Optional[str])
+slots.normalised_unit = Slot(uri=PEH.normalised_unit, name="normalised_unit", curie=PEH.curie('normalised_unit'),
+                   model_uri=PEH.normalised_unit, domain=None, range=Optional[str])
 
 slots.value_as_string = Slot(uri=PEH.value_as_string, name="value_as_string", curie=PEH.curie('value_as_string'),
                    model_uri=PEH.value_as_string, domain=None, range=Optional[str])

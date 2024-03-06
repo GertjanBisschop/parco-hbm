@@ -379,8 +379,8 @@ classes:
       - raw_unit
       - imputed_value
       - imputed_unit
-      - corrected_value
-      - corrected_unit
+      - normalised_value
+      - normalised_unit
       - value
       - unit
       - value_as_string
@@ -725,8 +725,8 @@ slots:
   raw_unit:
   imputed_value:
   imputed_unit:
-  corrected_value:
-  corrected_unit:
+  normalised_value:
+  normalised_unit:
   value_as_string:
   quality_data:
     multivalued: true
