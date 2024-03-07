@@ -184,11 +184,6 @@ classes:
       - sampled_in_project
       - physical_label
       - collection_date
-  SampleCollection:
-    is_a: PhysicalEntity
-    slots:
-      - matrix
-      - constraints
   Person:
     is_a: PhysicalEntity
     slots:

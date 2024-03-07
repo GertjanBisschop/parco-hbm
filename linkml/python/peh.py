@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-06T23:51:03
+# Generation date: 2024-03-07T16:11:46
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -78,10 +78,6 @@ class PhysicalEntityId(NamedThingId):
 
 
 class SampleId(PhysicalEntityId):
-    pass
-
-
-class SampleCollectionId(PhysicalEntityId):
     pass
 
 
@@ -842,35 +838,6 @@ class Sample(PhysicalEntity):
 
         if self.collection_date is not None and not isinstance(self.collection_date, XSDDate):
             self.collection_date = XSDDate(self.collection_date)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SampleCollection(PhysicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["SampleCollection"]
-    class_class_curie: ClassVar[str] = "peh:SampleCollection"
-    class_name: ClassVar[str] = "SampleCollection"
-    class_model_uri: ClassVar[URIRef] = PEH.SampleCollection
-
-    id: Union[str, SampleCollectionId] = None
-    matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, List[str]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, SampleCollectionId):
-            self.id = SampleCollectionId(self.id)
-
-        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
-            self.matrix = MatrixId(self.matrix)
-
-        if not isinstance(self.constraints, list):
-            self.constraints = [self.constraints] if self.constraints is not None else []
-        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
 
         super().__post_init__(**kwargs)
 
