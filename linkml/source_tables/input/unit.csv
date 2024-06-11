@@ -1,4 +1,10 @@
 lingo;unit_key;unit_initials;unit_name
+en;mitochondrial/nuclear DNA;;mitochondrial/nuclear DNA
+nl;mitochondrial/nuclear DNA;;mitochondriaal/nucleair DNA
+en;number of cells;;number of cells
+nl;number of cells;;aantal cellen
+en;pg/mg;;pg/mg
+nl;pg/mg;;pg/mg
 en;pg/mL;;pg/mL
 nl;pg/mL;;pg/mL
 en;ng/mL;;ng/mL
@@ -25,12 +31,12 @@ en;%;;%
 nl;%;;%
 en;IU/L;;IU/L
 nl;IU/L;;IU/L
-en;mIU/L;;mIU/L
-nl;mIU/L;;mIU/L
 en;mmol/mol;;mmol/mol
 nl;mmol/mol;;mmol/mol
 en;ng/g;;ng/g
 nl;ng/g;;ng/g
+en;µIU/mL;;µIU/mL
+nl;µIU/mL;;µIU/mL
 en;µLU/mL;;µLU/mL
 nl;µLU/mL;;µLU/mL
 en;nmol/L;;nmol/L
@@ -43,6 +49,10 @@ en;kg/m²;;kg/m²
 nl;kg/m²;;kg/m²
 en;kg/m³;;kg/m³
 nl;kg/m³;;kg/m³
+en;ng/m²;;ng/m²
+nl;ng/m²;;ng/m²
+en;ng/m³;;ng/m³
+nl;ng/m³;;ng/m³
 en;amount/µL;;amount/µL
 nl;amount/µL;;aantal/µL
 en;kU/L;;kU/L
@@ -59,8 +69,8 @@ en;ppb;;ppb
 nl;ppb;;ppb
 en;fL;;fL
 nl;fL;;fL
-en;mLU/L;;mLU/L
-nl;mLU/L;;mLU/L
+en;mIU/L;;mIU/L
+nl;mIU/L;;mIU/L
 en;Osm/L;;Osm/L
 nl;Osm/L;;Osm/L
 en;g/mol;;g/mol
@@ -73,6 +83,8 @@ en;% dm;;% dm
 nl;% dm;;% ds
 en;µg/kg ww;;µg/kg ww
 nl;µg/kg ww;;µg/kg ng
+en;mg/kg;;mg/kg
+nl;mg/kg;;mg/kg
 en;pmol/g globin;;pmol/g globin
 nl;pmol/g globin;;pmol/g globin
 en;ng/filter;;ng/filter

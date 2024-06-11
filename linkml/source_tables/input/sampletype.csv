@@ -1,42 +1,49 @@
-sampletype_key;sampletype_initials;sampletype_sort;samplegroup_key;sampletype_name_en;sampletype_name_nl
-blood-whole blood;bwb;1;blood;blood-whole blood;bloed-volbloed
-blood serum;bs;2;blood;blood serum;bloed-serum
-blood plasma;bp;3;blood;blood plasma;bloed-plasma
-blood-blood cells;bbc;4;bloodcells;blood-blood cells;bloed-bloedcellen
-blood - red blood cells;rbc;5;bloodcells;blood-red blood cells;bloed-rode bloedcellen
-cord blood-whole blood;cbwb;6;cord blood;umbilical cord blood-whole blood;navelstrengbloed-volbloed
-cord blood-serum;cbs;7;cord blood;umbilical cord blood-serum;navelstrengbloed-serum
-cord blood-plasma;cbp;8;cord blood;umbilical cord blood-plasma;navelstrengbloed-plasma
-cord blood-cells;cbbc;9;cord blood-cells;umbilical cord blood-cells;navelstrengbloed-bloed cellen
-random spot urine;us;10;urine;random spot urine;random spot-urine
-first morning urine;um;11;urine;first morning urine;eerste ochtend-urine
-fasting urine;uf;12;urine;urine fasting;urine nuchter
-urine 24h;ud;13;urine;urine 24 hours;urine 24u
-breast milk;bm;14;breast milk;breast milk;moedermelk
-hair;h;15;hair;hair;haar
-nail;n;16;nail;nail;nagel
-All toe nail;atn;17;nail;all toe nails;alle teennagels
-Big toe nail;btn;18;nail;big toe nail;grote teen nagel
-nasal mucus;nm;19;nasal mucus;nasal mucus;neusslijm
-saliva/sputum;sa;20;saliva/sputum;saliva;speeksel
-stool;st;21;stool;stool;stoelgang
-semen;sem;22;semen;semen;zaad
-exhaled breath condensate;ebc;23;exhaled breath condensate;exhaled air condensate;uitgeademde lucht condensaat
-umbilical cord tissue;cbt;24;umbilical cord tissue;tissue of umbilical cord;weefsel van navelstreng
-adipose tissue/fat;adi;25;adipose tissue/fat;adipose tissue/fat;vetweefsel/vet
-dermal wipes;dw;26;dermal wipes;dermal wipes;dermale doekjes
-amniotic fluid;af;27;amniotic fluid;amniotic fluid;vruchtwater
-placenta tissue;plt;28;placenta tissue;placenta tissue;placenta weefsel
-indoor dust;idust;29;air;indoor dust;binnen stof
-outdoor dust;odust;30;air;outdoor dust;outdoor stof
-outdoor air-stationary;oair;31;air;outdoor air;buitenlucht
-indoor air-stationary;iair;32;air;indoor air;binnenlucht
-personal air;pair;33;air;personal air;persoonlijke lucht
-soil;soil;34;soil;soil;grond
-kitchengarden food;kgfood;35;food;kitchengarden food;moestuin voedsel
-eggs;egg;36;food;chicken egg;kippenei
-water;water;37;water;water;water
-volumetric absorptive microsample (VAMS);vams;38;blood;blood-volumetric absorptive microsample;blood volumetrische absorptieve microsample
-dried blood spots;dbs;39;blood;blood-dried blood spot;blood spot gedroogd
-silicone wrist band;swb;40;silicone wrist band;silicone wrist band;siliconen polsbandje
-surface wipe;sw;41;surface wipe;surface wipe;oppervlakteveeg
+sampletype_key;sampletype_initials;sampletype_sort;samplegroup_key;sampletype_name_en;sampletype_name_nl;validation_status;validation_date;validated_by
+blood-whole blood;bwb;1;blood;blood-whole blood;bloed-volbloed;;;
+blood serum;bs;2;blood;blood serum;bloed-serum;;;
+blood plasma;bp;3;blood;blood plasma;bloed-plasma;;;
+dried whole blood;dwb;4;blood;dried whole blood;opgedroogde bloeddruppels;;;
+volumetric absorptive microsample (VAMS);vams;5;blood;volumetric absorptive microsample (VAMS);volumetrisch absorberend micromonster (VAMS);;;
+blood-blood cells;bbc;6;bloodcells;blood-blood cells;bloed-bloedcellen;;;
+blood - red blood cells;rbc;7;bloodcells;blood-red blood cells;bloed-rode bloedcellen;;;
+cord blood-whole blood;cbwb;8;cord blood;umbilical cord blood-whole blood;navelstrengbloed-volbloed;;;
+cord blood-serum;cbs;9;cord blood;umbilical cord blood-serum;navelstrengbloed-serum;;;
+cord blood-plasma;cbp;10;cord blood;umbilical cord blood-plasma;navelstrengbloed-plasma;;;
+cord blood-cells;cbbc;11;cord blood-cells;umbilical cord blood-cells;navelstrengbloed-bloed cellen;;;
+random spot urine;us;12;urine;random spot urine;random spot-urine;;;
+first morning urine;um;13;urine;first morning urine;eerste ochtend-urine;;;
+fasting urine;uf;14;urine;urine fasting;urine nuchter;;;
+urine 24h;ud;15;urine;urine 24 hours;urine 24u;;;
+breast milk;bm;16;breast milk;breast milk;moedermelk;;;
+hair;h;17;hair;hair;haar;;;
+nail;n;18;nail;nail;nagel;;;
+toe nail;tn;19;nail;toe nail;teennagel;;;
+finger nail;fn;20;nail;finger nail;vinger nagel;;;
+nails toe big;btn;21;nail;nails toe big;grote teennagel;obsolete;1/6/2024;Liese Gills
+all too nails;atn;22;nail;all too nails;alle teennagels;obsolete;1/6/2024;Liese Gills
+nasal mucus;nm;23;nasal mucus;nasal mucus;neusslijm;;;
+saliva;sa;24;saliva;saliva;speeksel;;;
+sputum;spt;25;sputum;sputum;sputum;;;
+saliva;sa;26;saliva;saliva/sputum;;obsolete;1/6/2024;Liese Gills
+buccal cells;buc;27;buccal cells;buccal cells;buccal cells;;;
+stool;st;28;stool;stool;stoelgang;;;
+semen;sem;29;semen;semen;zaad;;;
+exhaled breath;eb;30;exhaled breath;exhaled breath;uitgeademde lucht;;;
+exhaled breath condensate;ebc;31;exhaled breath condensate;exhaled air condensate;uitgeademde lucht condensaat;;;
+umbilical cord tissue;cbt;32;umbilical cord tissue;tissue of umbilical cord;weefsel van navelstreng;;;
+adipose tissue/fat;adi;33;adipose tissue/fat;adipose tissue/fat;vetweefsel/vet;;;
+surface wipe;sw;34;surface wipe;surface wipe;oppervlakteveeg;;;
+dermal wipes;dw;35;dermal wipes;dermal wipes;dermale doekjes;;;
+amniotic fluid;af;36;amniotic fluid;amniotic fluid;vruchtwater;;;
+placenta tissue;plt;37;placenta tissue;placenta tissue;placenta weefsel;;;
+silicone wrist band;swb;38;silicone wrist band;silicone wrist band;siliconen polsbandje;;;
+indoor dust;idust;39;air;indoor dust;binnen stof;;;
+outdoor dust;odust;40;air;outdoor dust;outdoor stof;;;
+outdoor air-stationary;oair;41;air;outdoor air;buitenlucht;;;
+indoor air-stationary;iair;42;air;indoor air;binnenlucht;;;
+pm10 in ambiant air;pm10air;43;air;pm10 in ambient air;pm10 in omgevingslucht;;;
+personal air;pair;44;air;personal air;persoonlijke lucht;;;
+soil;soil;45;soil;soil;grond;;;
+kitchengarden food;kgfood;46;food;kitchengarden food;moestuin voedsel;;;
+eggs;egg;47;food;chicken egg;kippenei;;;
+water;water;48;water;water;water;;;
