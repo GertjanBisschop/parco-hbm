@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-06-06T22:56:10
+# Generation date: 2024-06-16T15:42:59
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1145,32 +1145,55 @@ class CalculationDesign(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEH.CalculationDesign
 
     calculation_name: Optional[str] = None
-    calculation_implementation: Optional[str] = None
-    calculation_implementation_as_string: Optional[str] = None
-    calculation_arguments: Optional[Union[Union[dict, "CalculationArgument"], List[Union[dict, "CalculationArgument"]]]] = empty_list()
-    calculation_results: Optional[Union[Union[dict, "CalculationResult"], List[Union[dict, "CalculationResult"]]]] = empty_list()
+    calculation_implementation_as_json: Optional[str] = None
+    calculation_implementation: Optional[Union[dict, "CalculationImplementation"]] = None
     conditional: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.calculation_name is not None and not isinstance(self.calculation_name, str):
             self.calculation_name = str(self.calculation_name)
 
-        if self.calculation_implementation is not None and not isinstance(self.calculation_implementation, str):
-            self.calculation_implementation = str(self.calculation_implementation)
+        if self.calculation_implementation_as_json is not None and not isinstance(self.calculation_implementation_as_json, str):
+            self.calculation_implementation_as_json = str(self.calculation_implementation_as_json)
 
-        if self.calculation_implementation_as_string is not None and not isinstance(self.calculation_implementation_as_string, str):
-            self.calculation_implementation_as_string = str(self.calculation_implementation_as_string)
-
-        if not isinstance(self.calculation_arguments, list):
-            self.calculation_arguments = [self.calculation_arguments] if self.calculation_arguments is not None else []
-        self.calculation_arguments = [v if isinstance(v, CalculationArgument) else CalculationArgument(**as_dict(v)) for v in self.calculation_arguments]
-
-        if not isinstance(self.calculation_results, list):
-            self.calculation_results = [self.calculation_results] if self.calculation_results is not None else []
-        self.calculation_results = [v if isinstance(v, CalculationResult) else CalculationResult(**as_dict(v)) for v in self.calculation_results]
+        if self.calculation_implementation is not None and not isinstance(self.calculation_implementation, CalculationImplementation):
+            self.calculation_implementation = CalculationImplementation(**as_dict(self.calculation_implementation))
 
         if self.conditional is not None and not isinstance(self.conditional, str):
             self.conditional = str(self.conditional)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CalculationImplementation(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["CalculationImplementation"]
+    class_class_curie: ClassVar[str] = "peh:CalculationImplementation"
+    class_name: ClassVar[str] = "CalculationImplementation"
+    class_model_uri: ClassVar[URIRef] = PEH.CalculationImplementation
+
+    function_name: Optional[str] = None
+    function_args: Optional[Union[Union[dict, "CalculationArgument"], List[Union[dict, "CalculationArgument"]]]] = empty_list()
+    function_kwargs: Optional[Union[Union[dict, "CalculationKeywordArgument"], List[Union[dict, "CalculationKeywordArgument"]]]] = empty_list()
+    function_results: Optional[Union[Union[dict, "CalculationResult"], List[Union[dict, "CalculationResult"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.function_name is not None and not isinstance(self.function_name, str):
+            self.function_name = str(self.function_name)
+
+        if not isinstance(self.function_args, list):
+            self.function_args = [self.function_args] if self.function_args is not None else []
+        self.function_args = [v if isinstance(v, CalculationArgument) else CalculationArgument(**as_dict(v)) for v in self.function_args]
+
+        if not isinstance(self.function_kwargs, list):
+            self.function_kwargs = [self.function_kwargs] if self.function_kwargs is not None else []
+        self.function_kwargs = [v if isinstance(v, CalculationKeywordArgument) else CalculationKeywordArgument(**as_dict(v)) for v in self.function_kwargs]
+
+        if not isinstance(self.function_results, list):
+            self.function_results = [self.function_results] if self.function_results is not None else []
+        self.function_results = [v if isinstance(v, CalculationResult) else CalculationResult(**as_dict(v)) for v in self.function_results]
 
         super().__post_init__(**kwargs)
 
@@ -1184,14 +1207,21 @@ class CalculationArgument(YAMLRoot):
     class_name: ClassVar[str] = "CalculationArgument"
     class_model_uri: ClassVar[URIRef] = PEH.CalculationArgument
 
-    mapping_name: Optional[str] = None
+    source_path: Optional[str] = None
+    varname: Optional[str] = None
+    process_state: Optional[str] = None
     value_type: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
-    source_path: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.mapping_name is not None and not isinstance(self.mapping_name, str):
-            self.mapping_name = str(self.mapping_name)
+        if self.source_path is not None and not isinstance(self.source_path, str):
+            self.source_path = str(self.source_path)
+
+        if self.varname is not None and not isinstance(self.varname, str):
+            self.varname = str(self.varname)
+
+        if self.process_state is not None and not isinstance(self.process_state, str):
+            self.process_state = str(self.process_state)
 
         if self.value_type is not None and not isinstance(self.value_type, str):
             self.value_type = str(self.value_type)
@@ -1199,8 +1229,43 @@ class CalculationArgument(YAMLRoot):
         if self.unit is not None and not isinstance(self.unit, UnitId):
             self.unit = UnitId(self.unit)
 
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CalculationKeywordArgument(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["CalculationKeywordArgument"]
+    class_class_curie: ClassVar[str] = "peh:CalculationKeywordArgument"
+    class_name: ClassVar[str] = "CalculationKeywordArgument"
+    class_model_uri: ClassVar[URIRef] = PEH.CalculationKeywordArgument
+
+    mapping_name: Optional[str] = None
+    source_path: Optional[str] = None
+    varname: Optional[str] = None
+    process_state: Optional[str] = None
+    value_type: Optional[str] = None
+    unit: Optional[Union[str, UnitId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.mapping_name is not None and not isinstance(self.mapping_name, str):
+            self.mapping_name = str(self.mapping_name)
+
         if self.source_path is not None and not isinstance(self.source_path, str):
             self.source_path = str(self.source_path)
+
+        if self.varname is not None and not isinstance(self.varname, str):
+            self.varname = str(self.varname)
+
+        if self.process_state is not None and not isinstance(self.process_state, str):
+            self.process_state = str(self.process_state)
+
+        if self.value_type is not None and not isinstance(self.value_type, str):
+            self.value_type = str(self.value_type)
+
+        if self.unit is not None and not isinstance(self.unit, UnitId):
+            self.unit = UnitId(self.unit)
 
         super().__post_init__(**kwargs)
 
@@ -1217,6 +1282,8 @@ class CalculationResult(YAMLRoot):
     mapping_name: Optional[str] = None
     value_type: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
+    round_decimals: Optional[int] = None
+    scale_factor: Optional[Decimal] = None
     destination_path: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1228,6 +1295,12 @@ class CalculationResult(YAMLRoot):
 
         if self.unit is not None and not isinstance(self.unit, UnitId):
             self.unit = UnitId(self.unit)
+
+        if self.round_decimals is not None and not isinstance(self.round_decimals, int):
+            self.round_decimals = int(self.round_decimals)
+
+        if self.scale_factor is not None and not isinstance(self.scale_factor, Decimal):
+            self.scale_factor = Decimal(self.scale_factor)
 
         if self.destination_path is not None and not isinstance(self.destination_path, str):
             self.destination_path = str(self.destination_path)
@@ -2441,6 +2514,9 @@ class QudtQuantityKind(EnumDefinitionImpl):
     Mass = PermissibleValue(
         text="Mass",
         meaning=QUDTQK["Mass"])
+    MassPerArea = PermissibleValue(
+        text="MassPerArea",
+        meaning=QUDTQK["MassPerArea"])
     MassConcentration = PermissibleValue(
         text="MassConcentration",
         meaning=QUDTQK["MassConcentration"])
@@ -2660,17 +2736,26 @@ slots.calculation_designs = Slot(uri=PEH.calculation_designs, name="calculation_
 slots.calculation_name = Slot(uri=PEH.calculation_name, name="calculation_name", curie=PEH.curie('calculation_name'),
                    model_uri=PEH.calculation_name, domain=None, range=Optional[str])
 
+slots.calculation_implementation_as_json = Slot(uri=PEH.calculation_implementation_as_json, name="calculation_implementation_as_json", curie=PEH.curie('calculation_implementation_as_json'),
+                   model_uri=PEH.calculation_implementation_as_json, domain=None, range=Optional[str])
+
 slots.calculation_implementation = Slot(uri=PEH.calculation_implementation, name="calculation_implementation", curie=PEH.curie('calculation_implementation'),
-                   model_uri=PEH.calculation_implementation, domain=None, range=Optional[str])
+                   model_uri=PEH.calculation_implementation, domain=None, range=Optional[Union[dict, CalculationImplementation]])
 
-slots.calculation_implementation_as_string = Slot(uri=PEH.calculation_implementation_as_string, name="calculation_implementation_as_string", curie=PEH.curie('calculation_implementation_as_string'),
-                   model_uri=PEH.calculation_implementation_as_string, domain=None, range=Optional[str])
+slots.function_name = Slot(uri=PEH.function_name, name="function_name", curie=PEH.curie('function_name'),
+                   model_uri=PEH.function_name, domain=None, range=Optional[str])
 
-slots.calculation_arguments = Slot(uri=PEH.calculation_arguments, name="calculation_arguments", curie=PEH.curie('calculation_arguments'),
-                   model_uri=PEH.calculation_arguments, domain=None, range=Optional[Union[Union[dict, CalculationArgument], List[Union[dict, CalculationArgument]]]])
+slots.function_args = Slot(uri=PEH.function_args, name="function_args", curie=PEH.curie('function_args'),
+                   model_uri=PEH.function_args, domain=None, range=Optional[Union[Union[dict, CalculationArgument], List[Union[dict, CalculationArgument]]]])
 
-slots.calculation_results = Slot(uri=PEH.calculation_results, name="calculation_results", curie=PEH.curie('calculation_results'),
-                   model_uri=PEH.calculation_results, domain=None, range=Optional[Union[Union[dict, CalculationResult], List[Union[dict, CalculationResult]]]])
+slots.function_kwargs = Slot(uri=PEH.function_kwargs, name="function_kwargs", curie=PEH.curie('function_kwargs'),
+                   model_uri=PEH.function_kwargs, domain=None, range=Optional[Union[Union[dict, CalculationKeywordArgument], List[Union[dict, CalculationKeywordArgument]]]])
+
+slots.function_results = Slot(uri=PEH.function_results, name="function_results", curie=PEH.curie('function_results'),
+                   model_uri=PEH.function_results, domain=None, range=Optional[Union[Union[dict, CalculationResult], List[Union[dict, CalculationResult]]]])
+
+slots.process_state = Slot(uri=PEH.process_state, name="process_state", curie=PEH.curie('process_state'),
+                   model_uri=PEH.process_state, domain=None, range=Optional[str])
 
 slots.mapping_name = Slot(uri=PEH.mapping_name, name="mapping_name", curie=PEH.curie('mapping_name'),
                    model_uri=PEH.mapping_name, domain=None, range=Optional[str])
@@ -2680,6 +2765,12 @@ slots.source_path = Slot(uri=PEH.source_path, name="source_path", curie=PEH.curi
 
 slots.destination_path = Slot(uri=PEH.destination_path, name="destination_path", curie=PEH.curie('destination_path'),
                    model_uri=PEH.destination_path, domain=None, range=Optional[str])
+
+slots.round_decimals = Slot(uri=PEH.round_decimals, name="round_decimals", curie=PEH.curie('round_decimals'),
+                   model_uri=PEH.round_decimals, domain=None, range=Optional[int])
+
+slots.scale_factor = Slot(uri=PEH.scale_factor, name="scale_factor", curie=PEH.curie('scale_factor'),
+                   model_uri=PEH.scale_factor, domain=None, range=Optional[Decimal])
 
 slots.validation_designs = Slot(uri=PEH.validation_designs, name="validation_designs", curie=PEH.curie('validation_designs'),
                    model_uri=PEH.validation_designs, domain=None, range=Optional[Union[Union[dict, ValidationDesign], List[Union[dict, ValidationDesign]]]])

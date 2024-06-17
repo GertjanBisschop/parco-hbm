@@ -241,22 +241,37 @@ classes:
   CalculationDesign:
     slots:
       - calculation_name
+      - calculation_implementation_as_json
       - calculation_implementation
-      - calculation_implementation_as_string
-      - calculation_arguments
-      - calculation_results
       - conditional
+  CalculationImplementation:
+    slots:
+      - function_name
+      - function_args
+      - function_kwargs
+      - function_results
   CalculationArgument:
     slots:
-      - mapping_name
+      - source_path
+      - varname
+      - process_state
       - value_type
       - unit
+  CalculationKeywordArgument:
+    slots:
+      - mapping_name
       - source_path
+      - varname
+      - process_state
+      - value_type
+      - unit
   CalculationResult:
     slots:
       - mapping_name
       - value_type
       - unit
+      - round_decimals
+      - scale_factor
       - destination_path
   ValidationDesign:
     slots:
@@ -608,19 +623,30 @@ slots:
     inlined_as_list: true
     range: CalculationDesign
   calculation_name:
+  calculation_implementation_as_json:
   calculation_implementation:
-  calculation_implementation_as_string:
-  calculation_arguments:
+    range: CalculationImplementation
+  function_name:
+  function_args:
     multivalued: true
     inlined_as_list: true
     range: CalculationArgument
-  calculation_results:
+  function_kwargs:
+    multivalued: true
+    inlined_as_list: true
+    range: CalculationKeywordArgument
+  function_results:
     multivalued: true
     inlined_as_list: true
     range: CalculationResult
+  process_state:
   mapping_name:
   source_path:
   destination_path:
+  round_decimals:
+    range: integer
+  scale_factor:
+    range: decimal
   validation_designs:
     multivalued: true
     inlined_as_list: true
