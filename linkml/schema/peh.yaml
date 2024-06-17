@@ -939,6 +939,8 @@ enums:
         meaning: qudtqk:DimensionlessRatio
       Mass:
         meaning: qudtqk:Mass
+      MassPerArea:
+        meaning: qudtqk:MassPerArea
       MassConcentration:
         meaning: qudtqk:MassConcentration
       NumberDensity:
