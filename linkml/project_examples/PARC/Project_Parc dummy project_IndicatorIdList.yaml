@@ -1,0 +1,168 @@
+indicators:
+- id: mass concentration of fourhphe in urine
+- id: mass concentration of dma in blood
+- id: mass concentration of lipid_enz in cord blood
+- id: mass concentration of sumdcca in urine
+- id: mass concentration of sumglyphampa in urine
+- id: mass concentration of sumeightphthal in urine
+- id: mass concentration of mibp in urine
+- id: mass concentration of hbcdg in blood
+- id: mass concentration of ninehphe in urine
+- id: mass concentration of asb in cord blood
+- id: mass ratio of mep in nail
+- id: mass concentration of sumdiohnap in urine
+- id: mass ratio of sumhmwphthal in nail
+- id: mass concentration of sumohoxomehptwo in urine
+- id: mass concentration of sumtas in cord blood
+- id: mass concentration of pfos in blood
+- id: mass concentration of mehp in urine
+- id: mass concentration of cdcca in urine
+- id: mass concentration of sumoneninehphe in urine
+- id: mass concentration of threepba in urine
+- id: mass concentration of adp in breast milk
+- id: mass concentration of asb in breast milk
+- id: mass concentration of asfive in blood
+- id: mass concentration of tdcca in blood
+- id: mass ratio of mbzp in nail
+- id: mass concentration of sumdcca in blood
+- id: mass ratio of sdehtm in nail
+- id: mass concentration of sumhpheone in urine
+- id: mass concentration of mma in urine
+- id: mass concentration of sumpfoapfna in urine
+- id: mass concentration of threehfluo in urine
+- id: mass concentration of twohfluo in urine
+- id: mass concentration of chol in breast milk
+- id: mass concentration of pfna in cord blood
+- id: mass concentration of dma in urine
+- id: mass concentration of ninehfluo in urine
+- id: mass concentration of stwothreehphe in urine
+- id: mass concentration of mma in breast milk
+- id: mass concentration of tdcca in urine
+- id: mass concentration of sdp in urine
+- id: mass concentration of sumhbcdag in breast milk
+- id: mass concentration of sumlmwphthal in urine
+- id: mass concentration of diohnap in urine
+- id: mass ratio of summidp in nail
+- id: mass concentration of sumdp in blood
+- id: mass concentration of shphe in urine
+- id: mass concentration of hbcdg in breast milk
+- id: mass ratio of cxmepp in nail
+- id: mass concentration of sdp in blood
+- id: mass ratio of mnbp in nail
+- id: mass concentration of sumohnap in urine
+- id: mass concentration of asfive in breast milk
+- id: mass concentration of pfos in cord blood
+- id: mass concentration of asb in blood
+- id: mass concentration of ias in blood
+- id: mass concentration of sumfourpfas in blood
+- id: mass concentration of sumpfhxspfos in blood
+- id: mass concentration of glyp in urine
+- id: mass concentration of twohphe in urine
+- id: mass concentration of sumastfmma in urine
+- id: mass concentration of ohmehp in urine
+- id: mass concentration of sumpfhxspfos in urine
+- id: mass concentration of twoohnap in urine
+- id: mass concentration of ias in breast milk
+- id: mass concentration of sumohcxmehp in urine
+- id: mass concentration of mcoch in urine
+- id: mass concentration of twofourdehtm in urine
+- id: mass concentration of sumohoxocxmehp in urine
+- id: mass concentration of asthree in urine
+- id: mass concentration of ias in urine
+- id: mass concentration of pfoa in cord blood
+- id: mass concentration of asfive in cord blood
+- id: mass concentration of sumdp in breast milk
+- id: mass concentration of pfoa in urine
+- id: mass concentration of oxomehp in urine
+- id: mass concentration of cdcca in blood
+- id: mass ratio of summinp in nail
+- id: mass concentration of sumpfhxspfos in cord blood
+- id: mass concentration of asthree in cord blood
+- id: mass concentration of sumastfmma in blood
+- id: mass concentration of cxmepp in urine
+- id: mass concentration of sumtra in breast milk
+- id: mass concentration of sumastfmma in cord blood
+- id: mass concentration of pfhxs in urine
+- id: mass concentration of fpba in blood
+- id: mass concentration of sumfourpfas in urine
+- id: mass concentration of fpba in urine
+- id: mass concentration of oneohnap in urine
+- id: mass concentration of lipid_enz in breast milk
+- id: mass concentration of sumhbcdag in blood
+- id: mass concentration of sumdp in urine
+- id: mass concentration of mhnch in urine
+- id: mass concentration of ias in cord blood
+- id: mass concentration of sdp in breast milk
+- id: mass concentration of onefourdehtm in urine
+- id: mass ratio of sumohoxomehp in nail
+- id: mass concentration of dma in breast milk
+- id: mass concentration of sumtra in cord blood
+- id: mass concentration of onehphe in urine
+- id: mass concentration of summidp in urine
+- id: mass concentration of sumtas in urine
+- id: mass concentration of sumpba in blood
+- id: mass concentration of ohmidp in urine
+- id: mass concentration of stwoninehphe in urine
+- id: mass concentration of asthree in breast milk
+- id: mass concentration of mbzp in urine
+- id: mass ratio of mcop in nail
+- id: mass concentration of pfhxs in blood
+- id: mass concentration of sumtas in blood
+- id: mass ratio of sumohoxomehptwo in nail
+- id: mass concentration of sumastfmma in breast milk
+- id: mass ratio of cxmidp in nail
+- id: mass concentration of sumhmwphthal in urine
+- id: mass concentration of trigl in breast milk
+- id: mass concentration of hbcda in urine
+- id: mass concentration of lipid in cord blood
+- id: mass ratio of oxomehp in nail
+- id: mass concentration of pfna in blood
+- id: mass concentration of ampa in urine
+- id: mass concentration of mep in urine
+- id: mass concentration of sumfourpfas in cord blood
+- id: mass ratio of ohmidp in nail
+- id: mass ratio of ohmehp in nail
+- id: mass concentration of sumhbcdag in urine
+- id: mass concentration of asb in urine
+- id: mass concentration of sumhfluo in urine
+- id: mass concentration of pfos in urine
+- id: mass concentration of sumohoxomehp in urine
+- id: mass ratio of mibp in nail
+- id: mass concentration of hbcdg in urine
+- id: mass ratio of onefourdehtm in nail
+- id: mass concentration of sumpfoapfna in cord blood
+- id: mass concentration of mma in blood
+- id: mass ratio of mhnp in nail
+- id: mass concentration of mcop in urine
+- id: mass concentration of adp in blood
+- id: mass ratio of sumeightphthal in nail
+- id: mass ratio of sumohcxmehp in nail
+- id: mass concentration of sumtra in blood
+- id: mass ratio of sumlmwphthal in nail
+- id: mass concentration of mma in cord blood
+- id: mass concentration of hbcda in breast milk
+- id: mass concentration of sdehtm in urine
+- id: mass concentration of sumhphetwo in urine
+- id: mass ratio of twofourdehtm in nail
+- id: mass concentration of pfhxs in cord blood
+- id: mass concentration of adp in urine
+- id: mass concentration of mnbp in urine
+- id: mass ratio of sumohoxocxmehp in nail
+- id: mass concentration of sumtwothreehfluo in urine
+- id: mass concentration of hbcda in blood
+- id: mass concentration of threehphe in urine
+- id: mass concentration of threepba in blood
+- id: mass concentration of sumpfoapfna in blood
+- id: mass concentration of sumpba in urine
+- id: mass concentration of cxmidp in urine
+- id: mass concentration of asthree in blood
+- id: mass concentration of sumtas in breast milk
+- id: mass concentration of sumtra in urine
+- id: mass concentration of summinch in urine
+- id: mass concentration of summinp in urine
+- id: mass concentration of pfoa in blood
+- id: mass concentration of asfive in urine
+- id: mass concentration of pfna in urine
+- id: mass concentration of dma in cord blood
+- id: mass ratio of mehp in nail
+- id: mass concentration of mhnp in urine

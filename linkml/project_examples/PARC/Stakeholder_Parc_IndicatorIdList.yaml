@@ -1,0 +1,913 @@
+indicators:
+- id: mass concentration of pfhxa in cord blood
+- id: mass concentration of mn in cord blood
+- id: mass concentration of tbph in breast milk
+- id: mass concentration of lipid_enz in cord blood
+- id: mass concentration of pfda in breast milk
+- id: mass concentration of pfhxa in breast milk
+- id: mass concentration of sumdcca in urine
+- id: observation of hist_pparg in blood
+- id: mass concentration of hbaa in urine
+- id: mass concentration of pfda in blood
+- id: mass concentration of pfhxa in urine
+- id: mass concentration of endrin in blood
+- id: mass concentration of clothdes in urine
+- id: mass concentration of eightmonopap in blood
+- id: mass concentration of desat in urine
+- id: mass ratio of sumhmwphthal in nail
+- id: mass concentration of sixfts in blood
+- id: mass concentration of sumohoxomehptwo in urine
+- id: mass concentration of dmp in urine
+- id: mass concentration of sixhcry in urine
+- id: mass concentration of ace in urine
+- id: percentage of kiss_cpg3 in blood
+- id: mass concentration of tcr in cord blood
+- id: mass concentration of bdec in urine
+- id: mass concentration of pcb118 in blood
+- id: mass concentration of tcr in breast milk
+- id: mass concentration of minp in urine
+- id: mass concentration of ti in blood
+- id: mass concentration of pfhxa in blood
+- id: mass concentration of sumpfoapfna in urine
+- id: mass concentration of threehfluo in urine
+- id: mass concentration of chol in blood
+- id: mass concentration of twohfluo in urine
+- id: mass concentration of pfna in cord blood
+- id: mass concentration of bpf in urine
+- id: mass concentration of mma in breast milk
+- id: mass concentration of pfesa in cord blood
+- id: mass ratio of cd in hair
+- id: mass concentration of sumhbcdag in breast milk
+- id: mass concentration of sn in urine
+- id: mass concentration of cu in blood
+- id: mass concentration of mirex in blood
+- id: mass concentration of hocb146 in blood
+- id: mass concentration of pcb196and203 in cord blood
+- id: mass concentration of pfteda in cord blood
+- id: mass concentration of alchlor in urine
+- id: mass concentration of pftrda in breast milk
+- id: mass concentration of sumlmwphthal in urine
+- id: mass concentration of sixfts in cord blood
+- id: mass ratio of etfose in placenta tissue
+- id: mass concentration of isobip in urine
+- id: mass ratio of cxmepp in nail
+- id: mass concentration of chlorpyr in urine
+- id: mass concentration of sdcca in urine
+- id: mass concentration of asfive in breast milk
+- id: mass concentration of ppb in urine
+- id: mass concentration of an in urine
+- id: mass concentration of sumfourpfas in blood
+- id: mass concentration of bdel in blood
+- id: mass concentration of cisdbca in urine
+- id: mass concentration of hf in urine
+- id: mass concentration of ce in blood
+- id: mass concentration of sumastfmma in urine
+- id: mass concentration of ohmehp in urine
+- id: mass concentration of sumpfhxspfos in urine
+- id: mass concentration of ti in urine
+- id: mass concentration of cyprodiniloh in urine
+- id: mass ratio of pfns in placenta tissue
+- id: mass concentration of tas in urine
+- id: mass ratio of mcoch in nail
+- id: mass concentration of bcippms in urine
+- id: mass concentration of mhg in cord blood
+- id: mass concentration of afbgua in urine
+- id: mass concentration of dihphediol in urine
+- id: volume of uvolumeday in urine
+- id: mass ratio of pfpes in placenta tissue
+- id: mass concentration of almer in urine
+- id: mass concentration of bdem in blood
+- id: mass concentration of phetetrol in urine
+- id: mass concentration of fbone in urine
+- id: mass concentration of cdcca in blood
+- id: mass concentration of fourhbp in blood
+- id: mass concentration of pcb138 in blood
+- id: mass concentration of sumastfmma in blood
+- id: mass concentration of cxmepp in urine
+- id: mass concentration of fbpf in urine
+- id: mass concentration of sumastfmma in cord blood
+- id: mass concentration of hnep in urine
+- id: mass concentration of pcb118 in cord blood
+- id: mass concentration of oxomidp in urine
+- id: mass concentration of pfhpa in urine
+- id: mass concentration of pcb105 in blood
+- id: mass concentration of pfhxs in urine
+- id: mass concentration of bdeh in cord blood
+- id: mass ratio of mhnch in nail
+- id: mass concentration of se in urine
+- id: mass concentration of cd in saliva
+- id: mass concentration of bpone in amniotic fluid
+- id: volume of uvolume in urine
+- id: mass concentration of bpseven in blood
+- id: mass concentration of pcdd70 in blood
+- id: mass concentration of lbpfoa in blood
+- id: mass concentration of dontglca in urine
+- id: mass concentration of lipid_enz in breast milk
+- id: mass concentration of bciphipp in urine
+- id: mass concentration of sumdp in urine
+- id: observation of hist_gr in blood
+- id: mass concentration of bptwo in blood
+- id: mass concentration of bpz in urine
+- id: mass concentration of behp in urine
+- id: mass concentration of netfosa in breast milk
+- id: mass concentration of fosa in blood
+- id: mass concentration of bhch in blood
+- id: mass concentration of ias in cord blood
+- id: mass concentration of mo in blood
+- id: mass concentration of apoa2 in blood
+- id: percentage of kiss_cpg4 in blood
+- id: mass concentration of pcb52 in blood
+- id: mass concentration of sdp in breast milk
+- id: mass ratio of pfna in placenta tissue
+- id: mass concentration of hbcdb in breast milk
+- id: mass ratio of sumohoxomehp in nail
+- id: mass concentration of hcb in blood
+- id: mass concentration of pcb203 in blood
+- id: mass concentration of pfhps in urine
+- id: mass concentration of tzen in urine
+- id: mass concentration of summidp in urine
+- id: mass concentration of pyrimiphosmetdes in urine
+- id: mass concentration of bp in amniotic fluid
+- id: mass concentration of sumpba in blood
+- id: mass concentration of pcb157 in blood
+- id: mass concentration of stwoninehphe in urine
+- id: mass concentration of sumtas in blood
+- id: mass concentration of hs2 in urine
+- id: mass ratio of cxmidp in nail
+- id: mass concentration of ldl in blood
+- id: mass concentration of atmer in urine
+- id: mass concentration of baa in urine
+- id: mass concentration of eeaa in urine
+- id: mass ratio of mhg in hair
+- id: mass concentration of pftrda in cord blood
+- id: mass concentration of tl in cord blood
+- id: mass concentration of dpte in blood
+- id: mass concentration of spirotetramatenol in urine
+- id: mass concentration of pfpea in breast milk
+- id: mass concentration of bde17 in blood
+- id: observation of hist_thrb in blood
+- id: mass concentration of fourhbp in urine
+- id: mass concentration of pt in blood
+- id: mass concentration of mpa in urine
+- id: mass concentration of bpa in urine
+- id: mass concentration of mpht in urine
+- id: mass concentration of pcb128 in cord blood
+- id: mass concentration of sumfourpfas in cord blood
+- id: mass concentration of myclobutaniloh in urine
+- id: mass concentration of threeninebaa in urine
+- id: mass ratio of ohmidp in nail
+- id: mass concentration of lbpfhxs in blood
+- id: mass concentration of afgtwo in urine
+- id: mass concentration of pcb196 in blood
+- id: mass concentration of ohbap in urine
+- id: mass concentration of fluazifop in urine
+- id: mass concentration of sumohoxomehp in urine
+- id: mass concentration of pfba in urine
+- id: mass concentration of pcdf121 in blood
+- id: mass concentration of pcb74 in blood
+- id: mass concentration of sixdipap in cord blood
+- id: mass concentration of pfpea in urine
+- id: mass concentration of dbph in breast milk
+- id: mass concentration of ni in breast milk
+- id: mass concentration of pfbs in breast milk
+- id: mass ratio of onefourdehtm in nail
+- id: mass concentration of sumpfoapfna in cord blood
+- id: mass concentration of e2 in blood
+- id: mass concentration of afbtwo in urine
+- id: mass concentration of desnitroimidacloprid in urine
+- id: mass concentration of meaa in urine
+- id: mass concentration of phba in urine
+- id: mass ratio of sixeightdipap in placenta tissue
+- id: mass concentration of dcp26 in urine
+- id: mass ratio of pfesa in placenta tissue
+- id: mass concentration of naph in urine
+- id: mass concentration of tbbpa in breast milk
+- id: mass ratio of eightfts in placenta tissue
+- id: mass concentration of bde25 in blood
+- id: mass concentration of bden in blood
+- id: mass concentration of lbpfos in blood
+- id: mass concentration of pcb170 in breast milk
+- id: mass concentration of tt in blood
+- id: mass concentration of dbdpe in urine
+- id: mass concentration of sumtra in blood
+- id: mass concentration of tcr in blood
+- id: mass concentration of pfopa in blood
+- id: mass concentration of hbcda in breast milk
+- id: mass concentration of bcippms in blood
+- id: mass concentration of lbpfna in blood
+- id: mass concentration of sdehtm in urine
+- id: mass concentration of lbpfds in blood
+- id: mass ratio of sumlmwphthal in nail
+- id: mass concentration of pfunda in blood
+- id: mass concentration of clothianidin in urine
+- id: mass concentration of netfosa in blood
+- id: mass concentration of mnbp in urine
+- id: mass concentration of tas in cord blood
+- id: mass concentration of obind in blood
+- id: mass concentration of lbpfosa in blood
+- id: mass concentration of pcb146 in blood
+- id: mass concentration of monp in urine
+- id: mass concentration of propamocarb in urine
+- id: mass concentration of lbpfhxa in blood
+- id: mass concentration of hbcda in blood
+- id: mass concentration of threehphe in urine
+- id: mass concentration of threepba in blood
+- id: mass concentration of ehphp in urine
+- id: mass concentration of pfbs in cord blood
+- id: mass concentration of sumpfoapfna in blood
+- id: mass concentration of sumpba in urine
+- id: mass concentration of pfds in breast milk
+- id: mass concentration of dcpa in urine
+- id: mass concentration of pcb138 in cord blood
+- id: mass concentration of bpthree in blood
+- id: mass concentration of aama in urine
+- id: mass concentration of mchp in urine
+- id: mass concentration of bdee in blood
+- id: mass concentration of co in urine
+- id: mass concentration of afgone in urine
+- id: mass concentration of pcb81 in blood
+- id: mass concentration of bpaf in urine
+- id: mass ratio of netfosa in placenta tissue
+- id: mass concentration of hg in urine
+- id: mass concentration of asfive in urine
+- id: mass concentration of hmsi in urine
+- id: mass ratio of pfoa in placenta tissue
+- id: mass concentration of hnmp in urine
+- id: mass concentration of lipid_enz_harm in blood
+- id: mass concentration of mhnp in urine
+- id: mass concentration of pcb158 in blood
+- id: mass concentration of fourhphe in urine
+- id: mass concentration of pcb169 in blood
+- id: mass concentration of dma in blood
+- id: mass concentration of zn in cord blood
+- id: mass concentration of btbpe in blood
+- id: mass concentration of pcb174 in blood
+- id: mass concentration of adipon in blood
+- id: mass concentration of tbph in blood
+- id: mass concentration of apob100 in blood
+- id: mass concentration of triclos in urine
+- id: mass concentration of hg in breast milk
+- id: mass concentration of density in urine
+- id: mass concentration of tpht in urine
+- id: mass ratio of mep in nail
+- id: mass concentration of oxomeha in urine
+- id: mass concentration of lbpfbs in blood
+- id: mass ratio of pfunda in placenta tissue
+- id: mass concentration of cot in urine
+- id: mass concentration of ohmeha in urine
+- id: mass concentration of ghch in blood
+- id: mass concentration of hcb in cord blood
+- id: mass concentration of metpar in urine
+- id: mass concentration of sumtas in cord blood
+- id: mass concentration of minch in urine
+- id: mass concentration of pfos in blood
+- id: mass concentration of pb in blood
+- id: mass concentration of pt in urine
+- id: mass ratio of mmp in nail
+- id: mass concentration of asb in breast milk
+- id: mass concentration of asfive in blood
+- id: mass concentration of dona in blood
+- id: mass concentration of tcep in urine
+- id: mass concentration of pfpes in blood
+- id: mass concentration of paa in urine
+- id: mass concentration of pcb101 in blood
+- id: mass concentration of tdcca in blood
+- id: mass concentration of bdea in cord blood
+- id: mass concentration of bpb in urine
+- id: mass concentration of sumhpheone in urine
+- id: mass concentration of mma in urine
+- id: mass concentration of chol in breast milk
+- id: mass concentration of lbpfteda in blood
+- id: mass concentration of gama in urine
+- id: mass concentration of bap in urine
+- id: mass concentration of bde197 in blood
+- id: mass concentration of bromoxynil in urine
+- id: mass concentration of ninehfluo in urine
+- id: mass concentration of li in urine
+- id: mass concentration of pfhpa in blood
+- id: percentage of kiss_cpg2 in blood
+- id: mass concentration of tra in urine
+- id: mass concentration of ocdd in blood
+- id: mass concentration of pcdf135 in blood
+- id: mass concentration of imidaclopridolefin in urine
+- id: mass concentration of bpthree in amniotic fluid
+- id: mass concentration of leptin in blood
+- id: mass concentration of pfhxpa in blood
+- id: mass concentration of fosa in breast milk
+- id: mass concentration of al in urine
+- id: mass concentration of ohtboep in urine
+- id: mass concentration of sumohnap in urine
+- id: mass concentration of bdef in blood
+- id: mass concentration of ehtbb in blood
+- id: mass concentration of pfos in cord blood
+- id: mass concentration of pd in urine
+- id: mass concentration of pcb195 in blood
+- id: mass concentration of glucose in blood
+- id: mass concentration of ahch in blood
+- id: mass concentration of asb in blood
+- id: observation of line1 in blood
+- id: mass ratio of pfhpa in placenta tissue
+- id: mass concentration of bdeg in cord blood
+- id: mass ratio of hg in hair
+- id: mass concentration of tota in urine
+- id: mass concentration of cit in urine
+- id: mass concentration of ahtn in blood
+- id: mass concentration of hbcdb in blood
+- id: mass concentration of pcb153 in cord blood
+- id: mass concentration of bi in blood
+- id: mass concentration of aoh in urine
+- id: mass concentration of ias in breast milk
+- id: mass concentration of pcb171 in cord blood
+- id: mass concentration of fourohpyrimeth in urine
+- id: mass concentration of mchxp in urine
+- id: mass concentration of thiamethdesnitro in urine
+- id: mass concentration of bdeh in breast milk
+- id: mass concentration of cisnonac in blood
+- id: mass concentration of pfhxs in breast milk
+- id: mass concentration of pcb156 in cord blood
+- id: mass concentration of ce in urine
+- id: mass concentration of pcb183 in cord blood
+- id: mass concentration of pcb66 in blood
+- id: mass concentration of pfoa in cord blood
+- id: mass concentration of hbcd in cord blood
+- id: mass concentration of bdcippms in blood
+- id: mass concentration of chlormet in urine
+- id: mass concentration of dgua in urine
+- id: mass concentration of aldrin in blood
+- id: mass concentration of cd in breast milk
+- id: mass concentration of sumdp in breast milk
+- id: mass concentration of eightdipap in blood
+- id: mass concentration of ba in urine
+- id: mass concentration of mcp4 in urine
+- id: mass concentration of bde196 in blood
+- id: mass concentration of pfoa in urine
+- id: mass concentration of pcb209 in cord blood
+- id: mass ratio of summinp in nail
+- id: mass concentration of heptachlor in blood
+- id: mass concentration of pcb199 in blood
+- id: mass concentration of pfdoda in cord blood
+- id: observation of hist_ar in blood
+- id: mass concentration of cd in blood
+- id: mass concentration of zan in urine
+- id: mass concentration of bdef in cord blood
+- id: mass concentration of boscalid in urine
+- id: mass concentration of fpba in urine
+- id: mass concentration of pcb194 in cord blood
+- id: mass concentration of oneohnap in urine
+- id: mass concentration of cishepexepo in blood
+- id: mass concentration of fosa in cord blood
+- id: mass concentration of mhnch in urine
+- id: mass concentration of pfds in urine
+- id: mass concentration of cxmeptp in urine
+- id: mass concentration of simzmerc in urine
+- id: mass concentration of pb in breast milk
+- id: mass concentration of pcb77 in blood
+- id: mass ratio of pfba in placenta tissue
+- id: mass concentration of pecdd in blood
+- id: mass concentration of onefourdehtm in urine
+- id: mass concentration of ppdde in cord blood
+- id: mass concentration of ychlor in blood
+- id: mass concentration of ft4 in blood
+- id: mass concentration of fivemch in urine
+- id: mass concentration of ba in blood
+- id: mass concentration of pcb110 in blood
+- id: mass concentration of cisnonac in cord blood
+- id: mass concentration of ppddt in cord blood
+- id: mass concentration of bp in urine
+- id: mass concentration of pcb156 in blood
+- id: mass concentration of chlormetox in urine
+- id: mass concentration of diuron in urine
+- id: mass concentration of monch in urine
+- id: mass concentration of ohmidp in urine
+- id: mass concentration of transhepexepo in blood
+- id: mass concentration of cifca in urine
+- id: mass ratio of pfpea in placenta tissue
+- id: mass concentration of li in blood
+- id: mass concentration of bde203 in blood
+- id: mass concentration of asthree in breast milk
+- id: mass concentration of lbnmepfosa in blood
+- id: mass concentration of pfns in cord blood
+- id: mass ratio of pfhps in placenta tissue
+- id: mass concentration of pfda in cord blood
+- id: mass concentration of lbpfpea in blood
+- id: mass concentration of sumhmwphthal in urine
+- id: mass concentration of afbone in urine
+- id: mass concentration of oxomehtp in urine
+- id: mass concentration of trigl in breast milk
+- id: mass ratio of oxomehp in nail
+- id: mass ratio of fosa in placenta tissue
+- id: mass concentration of pfna in blood
+- id: mass concentration of pcb178 in blood
+- id: mass concentration of maa in urine
+- id: mass concentration of pcb177 in blood
+- id: mass ratio of ohmehp in nail
+- id: mass concentration of dbph in urine
+- id: mass concentration of pfoa in breast milk
+- id: mass concentration of tcp246 in urine
+- id: mass ratio of mibp in nail
+- id: mass ratio of etfosaa in placenta tissue
+- id: mass concentration of ohmibp in urine
+- id: mass concentration of mhhpp in urine
+- id: mass concentration of pfdoda in urine
+- id: mass concentration of fipronil in urine
+- id: mass ratio of midp in nail
+- id: mass concentration of tot in urine
+- id: mass concentration of trigl in blood
+- id: mass concentration of mop in urine
+- id: mass concentration of fourohdphp in urine
+- id: mass concentration of bded in cord blood
+- id: mass concentration of adp in blood
+- id: mass concentration of mo in urine
+- id: mass concentration of pcdd66 in blood
+- id: mass concentration of pcb151 in blood
+- id: mass concentration of mot in urine
+- id: mass ratio of sumeightphthal in nail
+- id: mass concentration of pfdoda in breast milk
+- id: mass concentration of pcdf83 in blood
+- id: mass concentration of bpseven in urine
+- id: mass concentration of mhhxp in urine
+- id: mass concentration of nafourap in urine
+- id: mass concentration of pfteda in breast milk
+- id: mass concentration of fluroxypyr in urine
+- id: mass ratio of sixfts in placenta tissue
+- id: mass concentration of detp in urine
+- id: mass concentration of bdeg in urine
+- id: mass concentration of dieldrin in blood
+- id: mass concentration of pcdf114 in blood
+- id: mass concentration of tl in urine
+- id: mass concentration of pcdf94 in blood
+- id: mass concentration of dpht in urine
+- id: mass concentration of pfhxs in cord blood
+- id: mass concentration of simz in urine
+- id: mass concentration of dectwo in blood
+- id: observation of hist_thra in blood
+- id: mass concentration of pfos in breast milk
+- id: mass concentration of sumtwothreehfluo in urine
+- id: mass concentration of pcb177 in cord blood
+- id: mass concentration of mbt in urine
+- id: mass concentration of pcb196and203 in blood
+- id: mass concentration of tbt in urine
+- id: mass concentration of tas in breast milk
+- id: mass concentration of lbpfda in blood
+- id: mass concentration of bdef in urine
+- id: mass concentration of ame in urine
+- id: mass concentration of pfhpa in breast milk
+- id: mass concentration of pcb126 in blood
+- id: mass concentration of fiveohthiabendazole in urine
+- id: mass concentration of ttmca in urine
+- id: mass concentration of opdde in blood
+- id: mass concentration of fla in urine
+- id: mass concentration of tcbd in blood
+- id: mass concentration of mcmhp in urine
+- id: mass concentration of hocb187 in cord blood
+- id: mass concentration of dphpms in urine
+- id: mass concentration of pfunda in cord blood
+- id: mass concentration of crt in urine
+- id: mass concentration of pfoa in blood
+- id: mass concentration of pfns in blood
+- id: mass concentration of dbdpe in breast milk
+- id: mass concentration of dma in cord blood
+- id: mass concentration of bdeo in blood
+- id: mass concentration of iproppar in urine
+- id: mass concentration of pcb170 in cord blood
+- id: observation of hist_esr2 in blood
+- id: mass concentration of tl in blood
+- id: mass concentration of flonicamid in urine
+- id: mass concentration of chlor4oh in urine
+- id: mass concentration of cu in cord blood
+- id: mass concentration of sumeightphthal in urine
+- id: mass concentration of bded in blood
+- id: mass concentration of dcp24 in urine
+- id: mass concentration of hbcdg in blood
+- id: mass concentration of fluopyramben in urine
+- id: mass concentration of mibp in urine
+- id: mass concentration of bdeb in cord blood
+- id: mass concentration of co in blood
+- id: mass concentration of sixdipap in blood
+- id: mass concentration of asb in cord blood
+- id: mass concentration of bdeh in blood
+- id: mass concentration of ppddt in blood
+- id: mass concentration of v in urine
+- id: mass concentration of pb in cord blood
+- id: mass concentration of mehp in urine
+- id: mass concentration of threepba in urine
+- id: mass concentration of lbpfunda in blood
+- id: mass concentration of sumoneninehphe in urine
+- id: mass ratio of dona in placenta tissue
+- id: mass ratio of mbzp in nail
+- id: mass concentration of mcpep in urine
+- id: mass concentration of sumdcca in blood
+- id: mass concentration of tbbpa in blood
+- id: mass concentration of trifloxystrobincga in urine
+- id: mass concentration of pcb170 in blood
+- id: mass ratio of sdehtm in nail
+- id: mass concentration of ft3 in blood
+- id: mass concentration of hbb in blood
+- id: mass concentration of bdej in blood
+- id: observation of sg in urine
+- id: mass concentration of aamasulf in urine
+- id: mass concentration of mipep in urine
+- id: mass concentration of dma in urine
+- id: mass concentration of stwothreehphe in urine
+- id: mass concentration of thiamethoxam in urine
+- id: mass concentration of bdnf in urine
+- id: mass concentration of pcb199 in cord blood
+- id: mass concentration of bps in urine
+- id: mass concentration of tdcca in urine
+- id: mass concentration of ohehdphp in urine
+- id: mass concentration of bdea in urine
+- id: mass concentration of bdcippms in urine
+- id: mass concentration of etpar in urine
+- id: mass concentration of pcb153 in blood
+- id: mass concentration of pcb209 in blood
+- id: mass concentration of ppdde in blood
+- id: mass concentration of fourhbp in amniotic fluid
+- id: mass concentration of bdek in blood
+- id: mass concentration of ohmehtp in urine
+- id: mass concentration of threeohfa in urine
+- id: mass concentration of pfesa in blood
+- id: mass concentration of bdec in cord blood
+- id: mass concentration of diohnap in urine
+- id: mass concentration of hesi in urine
+- id: mass concentration of tebuconazoleoh in urine
+- id: mass concentration of shphe in urine
+- id: mass concentration of hbcdg in breast milk
+- id: mass concentration of sdp in blood
+- id: mass concentration of pcb187 in blood
+- id: mass concentration of tnona in blood
+- id: mass ratio of mnbp in nail
+- id: mass concentration of pfdoda in blood
+- id: mass concentration of m650f01 in urine
+- id: substance concentration of shbg in blood
+- id: mass concentration of bdeb in breast milk
+- id: mass concentration of ias in blood
+- id: mass concentration of ghch in cord blood
+- id: mass concentration of twohphe in urine
+- id: mass concentration of hocb107 in cord blood
+- id: mass concentration of ohmphp in urine
+- id: observation of hist_ppara in blood
+- id: mass concentration of twoohnap in urine
+- id: mass concentration of pcp in blood
+- id: mass concentration of bdeb in urine
+- id: mass ratio of pfhxa in placenta tissue
+- id: mass concentration of mcpa in urine
+- id: mass concentration of bboehep in urine
+- id: mass concentration of bdeh in urine
+- id: mass concentration of dphpms in blood
+- id: mass concentration of fivehphe in urine
+- id: mass concentration of sumohoxocxmehp in urine
+- id: mass concentration of eightfts in blood
+- id: mass concentration of tcp234 in urine
+- id: mass concentration of ias in urine
+- id: mass concentration of lbpfhpa in blood
+- id: mass ratio of pfbs in placenta tissue
+- id: mass concentration of pcb123 in blood
+- id: mass concentration of pcdf130 in blood
+- id: mass concentration of mnpep in urine
+- id: mass ratio of hfpoda in placenta tissue
+- id: mass concentration of u in blood
+- id: mass concentration of pcb28 in blood
+- id: mass concentration of sumpfhxspfos in cord blood
+- id: mass concentration of sumtra in breast milk
+- id: mass concentration of fpba in blood
+- id: mass concentration of pcb180 in cord blood
+- id: mass concentration of nmefosa in breast milk
+- id: mass concentration of chlormetdes in urine
+- id: mass concentration of hbcd in blood
+- id: mass concentration of acy in urine
+- id: mass concentration of ip in urine
+- id: mass concentration of tcpy in urine
+- id: mass concentration of bptwo in amniotic fluid
+- id: mass concentration of lipid in breast milk
+- id: mass concentration of fluo in urine
+- id: mass concentration of hocb187 in blood
+- id: mass concentration of sumhbcdag in blood
+- id: mass concentration of ipp in urine
+- id: mass concentration of difenoconazolecga in urine
+- id: mass concentration of tbbpa in cord blood
+- id: mass concentration of sixeightdipap in blood
+- id: mass ratio of pftrda in placenta tissue
+- id: percentage of kiss_cpg1 in blood
+- id: mass concentration of chltr in urine
+- id: mass concentration of hocb146 in cord blood
+- id: mass concentration of ha2 in urine
+- id: mass concentration of fe in blood
+- id: mass concentration of pentip in urine
+- id: mass concentration of zn in urine
+- id: mass concentration of bdeg in blood
+- id: mass concentration of azal in urine
+- id: mass concentration of mg in blood
+- id: mass concentration of mn in breast milk
+- id: mass concentration of pcdf124 in blood
+- id: mass concentration of bdee in cord blood
+- id: mass concentration of sumtas in urine
+- id: mass concentration of tl in breast milk
+- id: mass concentration of pcb172 in blood
+- id: mass concentration of mbzp in urine
+- id: mass concentration of pcb44 in blood
+- id: mass concentration of pfhxs in blood
+- id: mass concentration of hfpoda in cord blood
+- id: mass concentration of tcp245 in urine
+- id: mass concentration of twocry in urine
+- id: mass concentration of sumastfmma in breast milk
+- id: mass concentration of pcb114 in blood
+- id: mass ratio of mcop in nail
+- id: mass concentration of pcb187 in cord blood
+- id: mass concentration of pcp in urine
+- id: mass concentration of pb in urine
+- id: mass concentration of hbcda in urine
+- id: mass concentration of lipid in cord blood
+- id: mass concentration of dcp in urine
+- id: mass concentration of ippmu in urine
+- id: mass concentration of lbpftrda in blood
+- id: mass concentration of ca in blood
+- id: mass concentration of enilconazole in urine
+- id: mass concentration of mep in urine
+- id: amount per volume of fsh in blood
+- id: mass concentration of tbph in urine
+- id: mass concentration of tbbpa in urine
+- id: mass concentration of fourmbp in blood
+- id: mass concentration of pbeb in blood
+- id: mass concentration of tnona in cord blood
+- id: mass concentration of mx in blood
+- id: mass concentration of ag in urine
+- id: mass concentration of asb in urine
+- id: mass concentration of fourfts in blood
+- id: mass concentration of pfos in urine
+- id: mass concentration of sumhbcdag in urine
+- id: mass concentration of sumhfluo in urine
+- id: mass ratio of pfdoda in placenta tissue
+- id: mass concentration of zn in blood
+- id: observation of telleng in blood
+- id: mass concentration of dmdtp in urine
+- id: mass concentration of ni in cord blood
+- id: mass concentration of pcb189 in blood
+- id: mass concentration of acetamipridndes in urine
+- id: mass concentration of hbcdg in urine
+- id: mass concentration of pfba in breast milk
+- id: mass concentration of bde15 in blood
+- id: mass concentration of bpone in blood
+- id: mass concentration of meha in urine
+- id: mass concentration of apoa1 in blood
+- id: mass concentration of dep in urine
+- id: mass concentration of pcb174 in cord blood
+- id: mass concentration of cxmpp in urine
+- id: mass concentration of ir in urine
+- id: mass concentration of dbdpe in blood
+- id: mass concentration of nmefosa in cord blood
+- id: mass concentration of bdeb in blood
+- id: mass ratio of sumohcxmehp in nail
+- id: mass concentration of pcb167 in blood
+- id: mass concentration of eightfts in cord blood
+- id: mass concentration of pfunda in breast milk
+- id: mass concentration of sumhphetwo in urine
+- id: mass concentration of pfhps in blood
+- id: mass concentration of mk in blood
+- id: mass concentration of w in blood
+- id: mass concentration of pyr in urine
+- id: mass concentration of bdei in blood
+- id: mass concentration of mn in blood
+- id: osmotic concentration of osm in urine
+- id: mass concentration of atrz in urine
+- id: mass concentration of midp in urine
+- id: mass concentration of pcb128 in blood
+- id: mass concentration of pcdf118 in blood
+- id: mass concentration of mnhxp in urine
+- id: mass concentration of oxomphp in urine
+- id: mass concentration of carphe in urine
+- id: mass concentration of pfda in urine
+- id: mass concentration of pfpea in blood
+- id: mass concentration of etfosaa in cord blood
+- id: mass ratio of pfda in placenta tissue
+- id: mass concentration of hg in blood
+- id: mass ratio of sixdipap in placenta tissue
+- id: mass concentration of dbaha in urine
+- id: mass concentration of sumtas in breast milk
+- id: mass concentration of tdomone in urine
+- id: mass concentration of summinch in urine
+- id: mass concentration of pfunda in urine
+- id: mass concentration of lbpfhps in blood
+- id: mass concentration of bpseven in amniotic fluid
+- id: observation of hist_tert in blood
+- id: mass concentration of bpc in urine
+- id: mass concentration of cu in urine
+- id: mass concentration of phaa in urine
+- id: mass concentration of dedtp in urine
+- id: mass concentration of desisoat in urine
+- id: mass concentration of pfhps in cord blood
+- id: mass concentration of bdee in urine
+- id: mass concentration of onehcry in urine
+- id: mass concentration of bdec in breast milk
+- id: mass concentration of sb in breast milk
+- id: observation of hist_ogg1 in blood
+- id: mass ratio of mehp in nail
+- id: mass concentration of fourmbp in amniotic fluid
+- id: mass concentration of fe in cord blood
+- id: mass concentration of azel in urine
+- id: mass concentration of ster in urine
+- id: mass concentration of sumglyphampa in urine
+- id: mass concentration of se in blood
+- id: mass concentration of fourcry in urine
+- id: mass concentration of ninehphe in urine
+- id: mass concentration of etfose in blood
+- id: mass concentration of afbone in blood
+- id: mass concentration of difenoconcga in urine
+- id: mass concentration of butpar in urine
+- id: mass concentration of pfbs in blood
+- id: mass concentration of sumdiohnap in urine
+- id: mass concentration of pfpes in urine
+- id: mass concentration of b in urine
+- id: mass concentration of au in urine
+- id: mass concentration of bptwo in urine
+- id: mass concentration of chlorox in urine
+- id: mass concentration of sixmonopap in blood
+- id: mass concentration of ni in urine
+- id: mass concentration of ohmnbp in urine
+- id: mass concentration of cdcca in urine
+- id: mass concentration of adp in breast milk
+- id: mass concentration of pcdd67 in blood
+- id: mass concentration of pfns in urine
+- id: mass concentration of w in urine
+- id: mass concentration of decthree in blood
+- id: mass concentration of dona in cord blood
+- id: mass concentration of pcb180 in blood
+- id: mass concentration of pcb206 in cord blood
+- id: mass concentration of etu in urine
+- id: mass concentration of v in blood
+- id: mass concentration of etfosaa in blood
+- id: mass concentration of tbbpadbpe in blood
+- id: mass concentration of mehtp in urine
+- id: mass concentration of ota in urine
+- id: mass concentration of bdec in blood
+- id: mass concentration of dmtp in urine
+- id: mass concentration of dot in urine
+- id: mass concentration of sdp in urine
+- id: mass concentration of amcc in urine
+- id: mass concentration of fbpa in urine
+- id: mass concentration of lbpfdoda in blood
+- id: mass concentration of paret in urine
+- id: mass ratio of summidp in nail
+- id: mass concentration of pcb105 in cord blood
+- id: mass concentration of sumdp in blood
+- id: mass concentration of galax in blood
+- id: mass concentration of flupyradifurone in urine
+- id: mass concentration of pfhpa in cord blood
+- id: mass concentration of hg in cord blood
+- id: mass concentration of bde33 in blood
+- id: mass concentration of bzal in urine
+- id: mass concentration of bded in urine
+- id: mass concentration of propoxur in urine
+- id: mass concentration of bdea in blood
+- id: mass concentration of fourhsa in urine
+- id: mass concentration of oxc in cord blood
+- id: mass concentration of stwothreehfluo in urine
+- id: mass concentration of dbt in urine
+- id: mass concentration of haloxyfop in urine
+- id: mass concentration of sumpfhxspfos in blood
+- id: mass concentration of u in urine
+- id: mass concentration of glyp in urine
+- id: mass concentration of acetamiprid in urine
+- id: mass concentration of baac in urine
+- id: mass concentration of sevoflurane in urine
+- id: mass concentration of fipsul in urine
+- id: mass concentration of sb in blood
+- id: mass concentration of nmefosa in blood
+- id: mass concentration of bzel in urine
+- id: mass concentration of ohpyr in urine
+- id: mass concentration of ca in urine
+- id: mass concentration of mcoch in urine
+- id: mass concentration of niphen in urine
+- id: mass concentration of des2hyat in urine
+- id: mass concentration of hpcdd in blood
+- id: mass concentration of sumohcxmehp in urine
+- id: mass concentration of pcb99 in cord blood
+- id: mass concentration of dnbphr in urine
+- id: mass concentration of twofourdehtm in urine
+- id: mass concentration of fourfts in cord blood
+- id: mass concentration of pcb87 in blood
+- id: mass ratio of pfhxs in placenta tissue
+- id: mass concentration of pbb153 in blood
+- id: mass concentration of al in blood
+- id: mass concentration of asthree in urine
+- id: mass concentration of dbca in urine
+- id: mass concentration of hocb107 in blood
+- id: mass concentration of isoproturon in urine
+- id: mass concentration of pbph in breast milk
+- id: mass concentration of cd in urine
+- id: mass concentration of asfive in cord blood
+- id: mass concentration of pbt in blood
+- id: mass concentration of pcb206 in blood
+- id: mass ratio of pfds in placenta tissue
+- id: mass concentration of imidacloprid in urine
+- id: mass concentration of pfna in breast milk
+- id: mass concentration of oxomehp in urine
+- id: mass concentration of pcb171 in blood
+- id: mass concentration of asthree in cord blood
+- id: mass concentration of pcb149 in blood
+- id: mass concentration of pcb146 in cord blood
+- id: mass concentration of benpar in urine
+- id: mass concentration of cxmmhtp in urine
+- id: mass concentration of pcb18 in blood
+- id: mass concentration of cxmphp in urine
+- id: mass concentration of fourmbp in urine
+- id: mass concentration of tcpa in urine
+- id: mass concentration of phediol in urine
+- id: mass concentration of pfpea in cord blood
+- id: mass concentration of niv in urine
+- id: mass concentration of sumfourpfas in urine
+- id: mass concentration of pfba in cord blood
+- id: mass concentration of netfosa in cord blood
+- id: mass concentration of pcb201 in blood
+- id: mass concentration of pcdf131 in blood
+- id: mass concentration of cd in cord blood
+- id: mass concentration of ohtphp in urine
+- id: mass concentration of hfpoda in blood
+- id: mass concentration of pfba in blood
+- id: mass concentration of mmp in urine
+- id: mass concentration of tcr in urine
+- id: mass concentration of pfpes in cord blood
+- id: mass concentration of sb in urine
+- id: mass concentration of bdnf in blood
+- id: mass concentration of pcb183 in blood
+- id: mass concentration of pcb194 in blood
+- id: mass concentration of pfds in blood
+- id: mass concentration of kiss54 in blood
+- id: mass concentration of dma in breast milk
+- id: mass ratio of fourfts in placenta tissue
+- id: mass concentration of sumtra in cord blood
+- id: mass concentration of be in urine
+- id: mass concentration of ag in blood
+- id: mass concentration of onehphe in urine
+- id: mass concentration of pcdf134 in blood
+- id: mass concentration of bboephr in urine
+- id: mass concentration of ppdde in breast milk
+- id: mass concentration of mprp in urine
+- id: mass concentration of opddt in blood
+- id: mass concentration of mnhpp in urine
+- id: mass ratio of sumohoxomehptwo in nail
+- id: mass concentration of fbps in urine
+- id: mass concentration of oxc in blood
+- id: mass concentration of bpone in urine
+- id: mass concentration of achlor in blood
+- id: mass ratio of pfos in placenta tissue
+- id: mass concentration of ampa in urine
+- id: mass concentration of deampy in urine
+- id: mass concentration of pftrda in blood
+- id: mass concentration of desdesisoat in urine
+- id: mass concentration of pfds in cord blood
+- id: mass concentration of ttwo in urine
+- id: mass concentration of hcb in breast milk
+- id: mass concentration of imidacloprid5oh in urine
+- id: mass ratio of pfteda in placenta tissue
+- id: mass concentration of etfose in cord blood
+- id: mass concentration of mma in blood
+- id: mass ratio of mhnp in nail
+- id: mass concentration of mcop in urine
+- id: mass concentration of thb in urine
+- id: amount per volume of tsh in blood
+- id: amount per volume of lh in blood
+- id: mass concentration of parmet in urine
+- id: observation of hist_esr1 in blood
+- id: observation of hist_suv39h in blood
+- id: mass concentration of pfteda in blood
+- id: mass concentration of afm in urine
+- id: mass concentration of eaa in urine
+- id: mass concentration of decfour in blood
+- id: mass concentration of ni in blood
+- id: mass concentration of bcepms in urine
+- id: mass concentration of hdl in blood
+- id: mass concentration of mma in cord blood
+- id: mass concentration of lipid_enz in blood
+- id: mass concentration of sb in cord blood
+- id: mass concentration of bi in urine
+- id: mass concentration of boscalid5oh in urine
+- id: mass concentration of dimetachlor in urine
+- id: mass concentration of donfglca in urine
+- id: mass ratio of twofourdehtm in nail
+- id: mass concentration of zensulf in urine
+- id: mass ratio of eightdipap in placenta tissue
+- id: mass concentration of tecp2346 in urine
+- id: mass concentration of da26 in urine
+- id: mass concentration of adp in urine
+- id: mass concentration of pfdpa in blood
+- id: mass concentration of tas in blood
+- id: mass ratio of sumohoxocxmehp in nail
+- id: mass concentration of cry in urine
+- id: mass concentration of bpthree in urine
+- id: mass concentration of fdon in urine
+- id: mass concentration of iod in urine
+- id: mass concentration of tdon in urine
+- id: mass concentration of threecry in urine
+- id: mass concentration of cxmidp in urine
+- id: mass concentration of bghip in urine
+- id: mass concentration of asthree in blood
+- id: mass concentration of sumtra in urine
+- id: mass concentration of pcb49 in blood
+- id: mass concentration of hepip in urine
+- id: mass concentration of summinp in urine
+- id: mass concentration of bhch in cord blood
+- id: mass concentration of pfna in urine
+- id: mass concentration of mn in urine
+- id: amount per volume of insulin in blood
+- id: mass concentration of pcb99 in blood
+- id: mass concentration of cs in urine

@@ -1,0 +1,202 @@
+indicators:
+- id: mass ratio wet weight of dona in food
+- id: mass ratio wet weight of mepfosaa in food
+- id: mass ratio dry matter of hfpoda in soil
+- id: mass ratio dry matter of lbpfhxs in soil
+- id: mass per filter unit of pfdoda in air
+- id: mass ratio wet weight of pfhpa in food
+- id: mass concentration of pfda in blood
+- id: mass ratio wet weight of pfna in food
+- id: mass per filter unit of pfns in air
+- id: mass ratio wet weight of pfns in food
+- id: mass per filter unit of lbetpfosaa in air
+- id: mass ratio dry matter of pfna in soil
+- id: mass concentration of pfbs in blood
+- id: mass ratio wet weight of tenfts in food
+- id: mass ratio wet weight of netfosa in food
+- id: mass concentration of eightfts in water
+- id: mass ratio wet weight of pfteda in food
+- id: mass per filter unit of pfpea in air
+- id: mass per filter unit of pfoa in air
+- id: mass concentration of pfna in water
+- id: mass per filter unit of pfhxda in air
+- id: mass ratio wet weight of pfechs in food
+- id: mass concentration of pfos in blood
+- id: mass ratio dry matter of fosa in soil
+- id: mass ratio wet weight of pfhxs in food
+- id: mass ratio wet weight of hfpoda in food
+- id: mass concentration of hfpoda in water
+- id: mass ratio dry matter of netfosa in soil
+- id: mass ratio dry matter of pfda in soil
+- id: mass ratio wet weight of fosa in food
+- id: mass ratio wet weight of lbpfosa in food
+- id: mass ratio wet weight of nmefosa in food
+- id: mass concentration of pfhxa in blood
+- id: mass concentration of sixdipap in water
+- id: mass concentration of pfda in water
+- id: mass ratio dry matter of pfouds in soil
+- id: mass ratio dry matter of lbetpfosaa in soil
+- id: mass ratio dry matter of pfpes in soil
+- id: mass concentration of fosa in water
+- id: mass concentration of pfdods in water
+- id: mass per filter unit of netfosa in air
+- id: mass ratio wet weight of pfos in food
+- id: mass ratio dry matter of sixdipap in soil
+- id: mass ratio dry matter of nmefosa in soil
+- id: mass concentration of lbpfos in water
+- id: mass ratio wet weight of lbpfoa in food
+- id: mass concentration of pfhpa in blood
+- id: mass concentration of sixfts in water
+- id: mass concentration of pftrda in water
+- id: mass concentration of netfosa in water
+- id: mass ratio dry matter of etfosaa in soil
+- id: mass ratio wet weight of etfosaa in food
+- id: mass ratio wet weight of nfdha in food
+- id: mass per filter unit of pfda in air
+- id: mass ratio dry matter of pfns in soil
+- id: mass concentration of pfdoda in water
+- id: mass per filter unit of sixdipap in air
+- id: mass ratio wet weight of pfpes in food
+- id: mass concentration of pfdoda in blood
+- id: mass ratio wet weight of pfoda in food
+- id: mass concentration of pfoda in water
+- id: mass per filter unit of lbpfos in air
+- id: mass per filter unit of pfna in air
+- id: mass concentration of pfteda in water
+- id: mass ratio wet weight of sixfts in food
+- id: mass concentration of dona in water
+- id: mass ratio wet weight of pfmba in food
+- id: mass ratio dry matter of pfhxs in soil
+- id: mass per filter unit of pfba in air
+- id: mass per filter unit of pfhxa in air
+- id: mass ratio wet weight of pfda in food
+- id: mass ratio dry matter of lbpfos in soil
+- id: mass ratio dry matter of dona in soil
+- id: mass ratio dry matter of pfteda in soil
+- id: mass concentration of pfpes in water
+- id: mass per filter unit of pfoda in air
+- id: mass ratio dry matter of pfhpa in soil
+- id: mass concentration of mepfosaa in water
+- id: mass concentration of eightmonopap in water
+- id: mass ratio dry matter of pfbs in soil
+- id: mass ratio dry matter of lbnmepfosaa in soil
+- id: mass concentration of fourfts in water
+- id: mass ratio dry matter of pfhxa in soil
+- id: mass per filter unit of hfpoda in air
+- id: mass ratio dry matter of pfoa in soil
+- id: mass per filter unit of pfos in air
+- id: mass per filter unit of pfunda in air
+- id: mass ratio wet weight of lbetpfosaa in food
+- id: mass ratio dry matter of pfons in soil
+- id: mass ratio wet weight of lbnmepfosa in food
+- id: mass ratio wet weight of pfba in food
+- id: mass concentration of pfbs in water
+- id: mass per filter unit of pfons in air
+- id: mass concentration of pfosaa in water
+- id: mass ratio wet weight of fourfts in food
+- id: mass per filter unit of lbnmepfosaa in air
+- id: mass concentration of pfhxs in water
+- id: mass concentration of lbpfoa in blood
+- id: mass concentration of pfba in blood
+- id: mass concentration of pfhps in water
+- id: mass ratio wet weight of pfbs in food
+- id: mass per filter unit of eightdipap in air
+- id: mass ratio dry matter of lbnmepfosa in soil
+- id: mass per filter unit of pfhxs in air
+- id: mass concentration of pfba in water
+- id: mass ratio wet weight of pfunda in food
+- id: mass per filter unit of fosa in air
+- id: mass ratio dry matter of pftrda in soil
+- id: mass concentration of pfouds in water
+- id: mass ratio dry matter of sixeightdipap in soil
+- id: mass ratio dry matter of mepfosaa in soil
+- id: mass ratio wet weight of eightfts in food
+- id: mass per filter unit of pfechs in air
+- id: mass ratio dry matter of lbnetpfosa in soil
+- id: mass ratio dry matter of pfba in soil
+- id: mass ratio dry matter of pfos in soil
+- id: mass ratio wet weight of lbpfhxs in food
+- id: mass per filter unit of lbnetpfosa in air
+- id: mass per filter unit of pfouds in air
+- id: mass ratio wet weight of sixdipap in food
+- id: mass concentration of sixmonopap in water
+- id: mass concentration of pfhxs in blood
+- id: mass concentration of sixeightdipap in water
+- id: mass ratio dry matter of sixfts in soil
+- id: mass ratio dry matter of tenfts in soil
+- id: mass ratio wet weight of lbnmepfosaa in food
+- id: mass per filter unit of pfds in air
+- id: mass ratio wet weight of pfmpa in food
+- id: mass concentration of pfds in water
+- id: mass per filter unit of dona in air
+- id: mass ratio wet weight of pfeesa in food
+- id: mass ratio wet weight of pfouds in food
+- id: mass ratio dry matter of pfechs in soil
+- id: mass concentration of pfna in blood
+- id: mass per filter unit of pfhps in air
+- id: mass concentration of pfpea in water
+- id: mass ratio dry matter of lbpfoa in soil
+- id: mass concentration of pfunda in water
+- id: mass per filter unit of pfhpa in air
+- id: mass concentration of etfosaa in water
+- id: mass concentration of lbpfhxs in blood
+- id: mass ratio dry matter of pfdoda in soil
+- id: mass per filter unit of fourfts in air
+- id: mass per filter unit of lbnmepfosa in air
+- id: mass per filter unit of pftrda in air
+- id: mass ratio dry matter of eightdipap in soil
+- id: mass concentration of lbpfhxs in water
+- id: mass ratio dry matter of pfoda in soil
+- id: mass per filter unit of pfdods in air
+- id: mass ratio dry matter of pfhps in soil
+- id: mass ratio wet weight of pfdoda in food
+- id: mass concentration of pfhpa in water
+- id: mass concentration of nmefosa in water
+- id: mass concentration of lbpfos in blood
+- id: mass per filter unit of tenfts in air
+- id: mass ratio wet weight of pfoa in food
+- id: mass per filter unit of pfpes in air
+- id: mass per filter unit of eightfts in air
+- id: mass concentration of eightdipap in water
+- id: mass per filter unit of nmefosa in air
+- id: mass ratio dry matter of pfds in soil
+- id: mass concentration of pfos in water
+- id: mass ratio dry matter of lbpfosa in soil
+- id: mass ratio wet weight of pfhxa in food
+- id: mass concentration of pfhps in blood
+- id: mass concentration of pfunda in blood
+- id: mass concentration of pfns in water
+- id: mass concentration of tenfts in water
+- id: mass ratio dry matter of fourfts in soil
+- id: mass ratio dry matter of eightfts in soil
+- id: mass ratio dry matter of pfdods in soil
+- id: mass ratio dry matter of pfpea in soil
+- id: mass per filter unit of lbpfosa in air
+- id: mass ratio wet weight of pfds in food
+- id: mass ratio dry matter of pfunda in soil
+- id: mass concentration of lbpfoa in water
+- id: mass ratio wet weight of lbpfos in food
+- id: mass per filter unit of pfbs in air
+- id: mass ratio wet weight of pftrda in food
+- id: mass ratio wet weight of pfhps in food
+- id: mass concentration of pfhxa in water
+- id: mass ratio wet weight of pfdods in food
+- id: mass concentration of pfons in water
+- id: mass concentration of pfhxda in water
+- id: mass concentration of pfpea in blood
+- id: mass concentration of pfechs in water
+- id: mass ratio dry matter of pfhxda in soil
+- id: mass ratio wet weight of pfons in food
+- id: mass per filter unit of lbpfoa in air
+- id: mass ratio wet weight of eightdipap in food
+- id: mass ratio wet weight of lbnetpfosa in food
+- id: mass ratio wet weight of pfpea in food
+- id: mass per filter unit of etfosaa in air
+- id: mass per filter unit of pfteda in air
+- id: mass concentration of pfoa in blood
+- id: mass ratio wet weight of pfhxda in food
+- id: mass per filter unit of sixfts in air
+- id: mass concentration of pfoa in water
+- id: mass per filter unit of sixeightdipap in air
+- id: mass per filter unit of lbpfhxs in air
+- id: mass ratio wet weight of sixeightdipap in food

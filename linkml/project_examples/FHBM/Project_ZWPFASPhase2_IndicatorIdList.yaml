@@ -1,0 +1,231 @@
+indicators:
+- id: mass ratio wet weight of mepfosaa in food
+- id: mass concentration of mga1 in urine
+- id: mass ratio dry matter of lbpfhxs in soil
+- id: mass ratio dry matter of lbpfoa in air
+- id: percentage of eosino_perc in blood
+- id: amount of substance ratio of hba1c in blood
+- id: mass ratio wet weight of pfhpa in food
+- id: mass concentration of pfda in blood
+- id: mass concentration of pfouds in blood
+- id: mass ratio wet weight of pfna in food
+- id: mass concentration of sixdipap in blood
+- id: mass concentration of pfdsa in blood
+- id: mass concentration of tenfts in blood
+- id: mass ratio dry matter of pfna in soil
+- id: mass concentration of pfbsa in blood
+- id: mass concentration of pfbs in blood
+- id: mass concentration of cyst in blood
+- id: mass concentration of pftrds in blood
+- id: mass concentration of sixfts in blood
+- id: mass ratio dry matter of lbpfhxs in air
+- id: mass concentration of bioatt in blood
+- id: mass ratio wet weight of pfteda in food
+- id: mass concentration of pfna in water
+- id: mass concentration of lbnmepfosaa in blood
+- id: mass concentration of pfos in blood
+- id: amount per volume of leuko in blood
+- id: mass ratio wet weight of pfhxs in food
+- id: mass concentration of hb in blood
+- id: mass concentration of dona in blood
+- id: mass percentage of drym_perc in soil
+- id: observation of rationeutlymp in blood
+- id: mass concentration of pfechs in blood
+- id: mass ratio dry matter of pfda in soil
+- id: percentage of monocy_perc in blood
+- id: mass concentration of lbetpfosaa in blood
+- id: mass concentration of pfpes in blood
+- id: mass concentration of pfhxa in blood
+- id: mass concentration of sixdipap in water
+- id: mass concentration of mma in urine
+- id: mass ratio dry matter of pftrda in air
+- id: mass concentration of pfda in water
+- id: mass concentration of chol in blood
+- id: mass ratio dry matter of lbetpfosaa in soil
+- id: percentage of cd8plus_perc in blood
+- id: mass concentration of ft3 in blood
+- id: observation of sg in urine
+- id: percentage of cd3plus_perc in blood
+- id: mass concentration of dma in urine
+- id: mass concentration of etfosaa in blood
+- id: mass ratio dry matter of sixfts in air
+- id: mass ratio dry matter of pfhps in air
+- id: mass ratio wet weight of pfos in food
+- id: mass ratio dry matter of sixdipap in soil
+- id: mass concentration of lbpfos in water
+- id: mass ratio dry matter of pfhxda in air
+- id: mass ratio wet weight of lbpfoa in food
+- id: mass concentration of pfhpa in blood
+- id: mass ratio dry matter of pfbsa in soil
+- id: mass concentration of sixfts in water
+- id: mass concentration of pftrda in water
+- id: mass ratio dry matter of etfosaa in soil
+- id: mass concentration of mepfosaa in blood
+- id: mass ratio dry matter of pfda in air
+- id: percentage dry matter of totorgccarb_perc in soil
+- id: mass ratio wet weight of etfosaa in food
+- id: mass concentration of pfdoda in water
+- id: volume of mcv in blood
+- id: mass ratio wet weight of pfbsa in food
+- id: mass concentration of pfdoda in blood
+- id: observation of ratioft3ft4 in blood
+- id: mass ratio dry matter of pfpea in air
+- id: substance concentration of shbg in blood
+- id: mass concentration of pfteda in water
+- id: mass ratio wet weight of sixfts in food
+- id: mass concentration of nmefosa in blood
+- id: mass ratio dry matter of pfhxs in soil
+- id: percentage of hct_perc in blood
+- id: mass ratio dry matter of lbnmepfosaa in air
+- id: mass ratio dry matter of lbpfos in soil
+- id: mass ratio wet weight of pfda in food
+- id: mass concentration of il6 in blood
+- id: mass ratio dry matter of pfoa in air
+- id: mass ratio dry matter of pfteda in soil
+- id: mass concentration of eightfts in blood
+- id: index percentage of freettindx in blood
+- id: mass concentration of asthree in urine
+- id: mass ratio dry matter of pfhpa in soil
+- id: mass concentration of mepfosaa in water
+- id: mass ratio dry matter of pfbs in soil
+- id: mass ratio dry matter of lbnmepfosaa in soil
+- id: mass ratio dry matter of pfhxa in soil
+- id: mass concentration of dgua in urine
+- id: mass ratio dry matter of lbetpfosaa in air
+- id: mass ratio dry matter of pfoa in soil
+- id: amount per volume of monocy in blood
+- id: percentage dry matter of organicm_perc in soil
+- id: mass concentration of eightdipap in blood
+- id: mass ratio dry matter of pfba in air
+- id: mass ratio dry matter of pfteda in air
+- id: mass ratio dry matter of pfunda in air
+- id: mass ratio wet weight of lbetpfosaa in food
+- id: mass concentration of pfdods in blood
+- id: mass concentration of pfbsa in water
+- id: percentage of neutro_perc in blood
+- id: mass ratio wet weight of pfba in food
+- id: mass concentration of pfbs in water
+- id: mass concentration of pfoda in blood
+- id: mass concentration of pfunds in blood
+- id: amount per volume of ige in blood
+- id: mass concentration of iga in blood
+- id: percentage of cd4plus_perc in blood
+- id: mass concentration of pfhxs in water
+- id: mass concentration of hfpoda in blood
+- id: mass concentration of lbpfoa in blood
+- id: mass concentration of pfba in blood
+- id: mass concentration of pfhxda in blood
+- id: mass ratio wet weight of pfbs in food
+- id: mass concentration of lbnmepfosaa in water
+- id: mass concentration of pfhps in water
+- id: mass concentration of pfba in water
+- id: mass concentration of fosa in blood
+- id: mass ratio wet weight of pfunda in food
+- id: mass concentration of tnfa in blood
+- id: mass ratio dry matter of pftrda in soil
+- id: amount per volume of eosino in blood
+- id: mass ratio dry matter of pfbs in air
+- id: mass concentration of sixeightdipap in blood
+- id: mass ratio dry matter of pfbsa in air
+- id: mass ratio dry matter of mepfosaa in soil
+- id: mass concentration of pfds in blood
+- id: mass concentration of ifng in blood
+- id: mass concentration of ft4 in blood
+- id: mass ratio dry matter of pfba in soil
+- id: amount per volume of lympho in blood
+- id: mass concentration of proges in blood
+- id: amount per volume of gpt in blood
+- id: amount per volume of gammagt in blood
+- id: mass ratio dry matter of pfos in soil
+- id: mass ratio wet weight of lbpfhxs in food
+- id: mass ratio dry matter of pfhxs in air
+- id: mass concentration of igm in blood
+- id: mass ratio wet weight of sixdipap in food
+- id: amount per volume of got in blood
+- id: mass concentration of pfhxs in blood
+- id: amount per volume of thrombo in blood
+- id: mass concentration of lbnmepfosa in blood
+- id: mass concentration of pfons in blood
+- id: mass ratio dry matter of sixfts in soil
+- id: mass ratio wet weight of lbnmepfosaa in food
+- id: mass concentration of ldl in blood
+- id: mass ratio dry matter of etfosaa in air
+- id: mass ratio dry matter of pfna in air
+- id: mass concentration of il8 in blood
+- id: mass ratio dry matter of mepfosaa in air
+- id: mass concentration of pfna in blood
+- id: percentage of rdw_perc in blood
+- id: mass concentration of pfpea in water
+- id: amount per volume of fsh in blood
+- id: mass ratio dry matter of lbpfoa in soil
+- id: mass concentration of pfunda in water
+- id: mass concentration of etfosaa in water
+- id: mass concentration of crpus in blood
+- id: mass concentration of pftrda in blood
+- id: mass concentration of lbpfhxs in blood
+- id: mass ratio dry matter of pfdoda in soil
+- id: mass concentration of lbpfhxs in water
+- id: mass concentration of mchc in blood
+- id: mass concentration of fourfts in blood
+- id: mass concentration of asb in urine
+- id: percentage of nepnkcel_perc in blood
+- id: mass ratio dry matter of pfhps in soil
+- id: amount per volume of neutro in blood
+- id: mass concentration of e2 in blood
+- id: mass concentration of pfhpa in water
+- id: mass concentration of lbnetpfosa in blood
+- id: mass concentration of trigl in blood
+- id: amount per volume of tsh in blood
+- id: amount per volume of lh in blood
+- id: mass concentration of lbpfos in blood
+- id: mass ratio wet weight of pfoa in food
+- id: mass concentration of pfteda in blood
+- id: mass concentration of tt in blood
+- id: percentage of lympho_perc in blood
+- id: mass concentration of hdl in blood
+- id: mass concentration of pfos in water
+- id: mass ratio wet weight of pfhxa in food
+- id: mass concentration of pfhps in blood
+- id: mass ratio dry matter of pfhpa in air
+- id: mass concentration of pfunda in blood
+- id: amount per volume of eryth in blood
+- id: mass ratio dry matter of pfos in air
+- id: mass concentration of netfosa in blood
+- id: percentage of baso_perc in blood
+- id: percentage dry matter of lutumc_perc in soil
+- id: mass concentration of inhibb in blood
+- id: mass ratio dry matter of pfpea in soil
+- id: mass concentration of lbetpfosaa in water
+- id: mass concentration of lbpfosa in blood
+- id: mass ratio dry matter of pfhxa in air
+- id: mass ratio dry matter of pfunda in soil
+- id: mass ratio dry matter of pfdoda in air
+- id: mass concentration of lbpfoa in water
+- id: mass ratio wet weight of lbpfos in food
+- id: mass ratio wet weight of pftrda in food
+- id: mass of mch in blood
+- id: mass ratio wet weight of pfhps in food
+- id: mass concentration of pfhxa in water
+- id: observation of ph in soil
+- id: mass concentration of pfhxda in water
+- id: mass concentration of pfpea in blood
+- id: mass concentration of pfhxsa in blood
+- id: amount per volume of af in blood
+- id: mass ratio dry matter of pfhxda in soil
+- id: mass concentration of sumtra in urine
+- id: mass concentration of fer in blood
+- id: percentage of nepbcells_perc in blood
+- id: mass ratio wet weight of pfpea in food
+- id: mass ratio dry matter of lbpfos in air
+- id: amount per volume of baso in blood
+- id: mass concentration of crt in urine
+- id: mass concentration of mepfbsaa in blood
+- id: mass concentration of pfoa in blood
+- id: mass concentration of pfns in blood
+- id: mass concentration of asfive in urine
+- id: mass ratio wet weight of pfhxda in food
+- id: mass concentration of pfoa in water
+- id: mass ratio wet weight of pfdoda in food
+- id: percentage of hba1c_perc in blood
+- id: mass concentration of mepfbsa in blood
+- id: mass concentration of freett in blood

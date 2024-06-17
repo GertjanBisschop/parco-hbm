@@ -1,0 +1,161 @@
+indicators:
+- id: mass concentration of fourhphe in urine
+- id: observation of hist_esr2 in blood
+- id: mass concentration of adipon in blood
+- id: mass concentration of sumdcca in urine
+- id: mass concentration of sumglyphampa in urine
+- id: mass concentration of tbph in blood
+- id: mass concentration of apob100 in blood
+- id: mass concentration of density in urine
+- id: observation of hist_pparg in blood
+- id: mass concentration of mibp in urine
+- id: mass concentration of hbcdg in blood
+- id: mass concentration of ninehphe in urine
+- id: mass concentration of sumeightphthal in urine
+- id: mass concentration of pfda in blood
+- id: mass concentration of pfbs in blood
+- id: mass concentration of bdeh in blood
+- id: mass concentration of sumdiohnap in urine
+- id: mass concentration of bptwo in urine
+- id: mass concentration of sumohoxomehptwo in urine
+- id: mass concentration of pfos in blood
+- id: percentage of kiss_cpg3 in blood
+- id: mass concentration of mehp in urine
+- id: mass concentration of cdcca in urine
+- id: mass concentration of threepba in urine
+- id: mass concentration of pfhxa in blood
+- id: mass concentration of tbbpa in blood
+- id: mass concentration of sumhpheone in urine
+- id: mass concentration of mma in urine
+- id: mass concentration of threehfluo in urine
+- id: mass concentration of chol in blood
+- id: mass concentration of twohfluo in urine
+- id: mass concentration of ft3 in blood
+- id: mass concentration of gama in urine
+- id: observation of sg in urine
+- id: mass concentration of bpf in urine
+- id: mass concentration of dma in urine
+- id: mass concentration of ninehfluo in urine
+- id: mass concentration of bdnf in urine
+- id: mass concentration of bps in urine
+- id: mass concentration of tdcca in urine
+- id: mass concentration of pfhpa in blood
+- id: percentage of kiss_cpg2 in blood
+- id: mass concentration of tra in urine
+- id: mass concentration of bdcippms in urine
+- id: mass concentration of leptin in blood
+- id: mass concentration of fbpa in urine
+- id: mass concentration of sumlmwphthal in urine
+- id: mass concentration of diohnap in urine
+- id: mass concentration of sumdp in blood
+- id: mass concentration of shphe in urine
+- id: mass concentration of sdp in blood
+- id: mass concentration of pfdoda in blood
+- id: mass concentration of sumohnap in urine
+- id: substance concentration of shbg in blood
+- id: mass concentration of glucose in blood
+- id: mass concentration of stwothreehfluo in urine
+- id: observation of line1 in blood
+- id: mass concentration of sumfourpfas in blood
+- id: mass concentration of sumpfhxspfos in blood
+- id: mass concentration of cisdbca in urine
+- id: mass concentration of glyp in urine
+- id: mass concentration of twohphe in urine
+- id: mass concentration of sumastfmma in urine
+- id: mass concentration of ohmehp in urine
+- id: mass concentration of ohpyr in urine
+- id: observation of hist_ppara in blood
+- id: mass concentration of twoohnap in urine
+- id: mass concentration of sumohcxmehp in urine
+- id: mass concentration of mcoch in urine
+- id: mass concentration of sumohoxocxmehp in urine
+- id: mass concentration of tas in urine
+- id: mass concentration of bcippms in urine
+- id: mass concentration of asthree in urine
+- id: volume of uvolumeday in urine
+- id: mass concentration of cd in urine
+- id: mass concentration of dgua in urine
+- id: mass concentration of mnpep in urine
+- id: mass concentration of oxomehp in urine
+- id: mass concentration of cxmepp in urine
+- id: mass concentration of fbpf in urine
+- id: observation of hist_ar in blood
+- id: volume of uvolume in urine
+- id: mass concentration of fpba in urine
+- id: mass concentration of tcpy in urine
+- id: mass concentration of oneohnap in urine
+- id: observation of hist_gr in blood
+- id: mass concentration of mhnch in urine
+- id: mass concentration of bdnf in blood
+- id: mass concentration of apoa2 in blood
+- id: percentage of kiss_cpg4 in blood
+- id: mass concentration of kiss54 in blood
+- id: percentage of kiss_cpg1 in blood
+- id: mass concentration of ft4 in blood
+- id: mass concentration of onehphe in urine
+- id: mass concentration of summidp in urine
+- id: mass concentration of sumtas in urine
+- id: mass concentration of ohmidp in urine
+- id: mass concentration of cifca in urine
+- id: mass concentration of mbzp in urine
+- id: mass concentration of pfhxs in blood
+- id: mass concentration of fbps in urine
+- id: mass concentration of ldl in blood
+- id: mass concentration of sumhmwphthal in urine
+- id: mass concentration of bpone in urine
+- id: mass concentration of pfna in blood
+- id: mass concentration of ampa in urine
+- id: observation of hist_thrb in blood
+- id: mass concentration of mep in urine
+- id: amount per volume of fsh in blood
+- id: mass concentration of bpa in urine
+- id: mass concentration of ohbap in urine
+- id: mass concentration of asb in urine
+- id: mass concentration of sumhfluo in urine
+- id: mass concentration of sumohoxomehp in urine
+- id: observation of telleng in blood
+- id: mass concentration of e2 in blood
+- id: mass concentration of mcop in urine
+- id: mass concentration of apoa1 in blood
+- id: mass concentration of trigl in blood
+- id: mass concentration of mop in urine
+- id: amount per volume of tsh in blood
+- id: amount per volume of lh in blood
+- id: mass concentration of adp in blood
+- id: mass concentration of dbdpe in blood
+- id: observation of hist_esr1 in blood
+- id: observation of hist_suv39h in blood
+- id: mass concentration of bdeb in blood
+- id: mass concentration of tt in blood
+- id: mass concentration of bcepms in urine
+- id: mass concentration of hdl in blood
+- id: mass concentration of lipid_enz in blood
+- id: mass concentration of bpseven in urine
+- id: mass concentration of sumhphetwo in urine
+- id: mass concentration of pfhps in blood
+- id: mass concentration of pfunda in blood
+- id: mass concentration of mnbp in urine
+- id: observation of hist_thra in blood
+- id: mass concentration of bpthree in urine
+- id: osmotic concentration of osm in urine
+- id: mass concentration of tdon in urine
+- id: mass concentration of hbcda in blood
+- id: mass concentration of threehphe in urine
+- id: mass concentration of sumpfoapfna in blood
+- id: mass concentration of sumpba in urine
+- id: mass concentration of cxmidp in urine
+- id: mass concentration of pfpea in blood
+- id: mass concentration of aama in urine
+- id: mass concentration of mchp in urine
+- id: mass concentration of bdee in blood
+- id: mass concentration of sumtra in urine
+- id: mass concentration of summinch in urine
+- id: mass concentration of dphpms in urine
+- id: mass concentration of summinp in urine
+- id: observation of hist_tert in blood
+- id: mass concentration of pfoa in blood
+- id: mass concentration of asfive in urine
+- id: amount per volume of insulin in blood
+- id: mass concentration of lipid_enz_harm in blood
+- id: observation of hist_ogg1 in blood
+- id: mass concentration of mhnp in urine

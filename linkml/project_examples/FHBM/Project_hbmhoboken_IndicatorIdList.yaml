@@ -1,0 +1,11 @@
+indicators:
+- id: mass concentration of cd in air
+- id: mass concentration of as in air
+- id: mass ratio of cd in food
+- id: parts per billion of eno in exhaled breath condensate
+- id: mass ratio of pb in food
+- id: mass per area of as in air
+- id: mass ratio of as in food
+- id: mass concentration of pb in air
+- id: mass per area of pb in air
+- id: mass per area of cd in air
