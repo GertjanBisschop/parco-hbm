@@ -1,28 +1,45 @@
-samplegroup_key;samplegroup_name_en;samplegroup_name_nl
-blood;blood;bloed
-bloodcells;blood cells;bloedcellen
-cord blood;cord blood;navelstrengbloed
-cord blood-cells;cord blood-cells;navelstrengbloedcellen
-urine;urine;urine
-breast milk;breast milk;moedermelk
-hair;hair;haar
-nail;nail;nagel
-nasal mucus;nasal mucus;neusslijm
-saliva;saliva;speeksel
-sputum;sputum;sputum
-stool;stool;stoelgang
-buccal cells;buccal cells;buccal cells
-exhaled breath;exhaled breath;uitgeademde lucht
-silicone wrist band;silicone wrist band;siliconen armband
-surface wipe;surface wipe;surface wipe
-semen;semen;sperma
-exhaled breath condensate;exhaled breath condensate;uitgeademde adem condensaat
-umbilical cord tissue;umbilical cord tissue;navelstrengweefsel
-adipose tissue/fat;adipose tissue/fat;vetweefsel/vet
-dermal wipes;dermal wipes;dermale doekjes
-amniotic fluid;amniotic fluid;vruchtwater
-placenta tissue;placenta tissue;weefsel van navelstreng
-air;air;lucht
-soil;soil;grond
-food;food;voedsel
-water;water;water
+"samplegroup_key";"lingo";"samplegroup_name"
+"adipose tissue/fat";"nl";"vetweefsel/vet"
+"adipose tissue/fat";"en";"adipose tissue/fat"
+"air";"nl";"lucht"
+"air";"en";"air"
+"amniotic fluid";"nl";"vruchtwater"
+"amniotic fluid";"en";"amniotic fluid"
+"blood";"en";"blood"
+"blood";"nl";"bloed"
+"bloodcells";"nl";"bloedcellen"
+"bloodcells";"en";"blood cells"
+"breast milk";"nl";"moedermelk"
+"breast milk";"en";"breast milk"
+"cord blood";"nl";"navelstrengbloed"
+"cord blood";"en";"cord blood"
+"cord blood-cells";"nl";"navelstrengbloedcellen"
+"cord blood-cells";"en";"cord blood-cells"
+"dermal wipes";"nl";"dermale doekjes"
+"dermal wipes";"en";"dermal wipes"
+"exhaled breath condensate";"nl";"uitgeademde adem condensaat"
+"exhaled breath condensate";"en";"exhaled breath condensate"
+"food";"nl";"voedsel"
+"food";"en";"food"
+"hair";"nl";"haar"
+"hair";"en";"hair"
+"nail";"nl";"nagel"
+"nail";"en";"nail"
+"nasal mucus";"en";"nasal mucus"
+"nasal mucus";"nl";"neusslijm"
+"placenta tissue";"en";"placenta tissue"
+"placenta tissue";"nl";"weefsel van navelstreng"
+"saliva/sputum";"nl";"speeksel"
+"saliva/sputum";"en";"saliva/sputum"
+"semen";"nl";"sperma"
+"semen";"en";"semen"
+"soil";"nl";"grond"
+"soil";"en";"soil"
+"stool";"nl";"stoelgang"
+"stool";"en";"stool"
+"umbilical cord tissue";"en";"umbilical cord tissue"
+"umbilical cord tissue";"nl";"navelstrengweefsel"
+"urine";"en";"urine"
+"urine";"nl";"urine"
+"water";"en";"water"
+"water";"nl";"water"

@@ -1,5 +1,5 @@
-vartype_key;lingo;vartype_name
-measured;en;measured variable
-measured;nl;gemeten variabele
-derived;en;derived variable
-derived;nl;afgeleide variabele
+"vartype_key";"lingo";"vartype_name"
+"derived";"en";"derived variable"
+"derived";"nl";"afgeleide variabele"
+"measured";"en";"measured variable"
+"measured";"nl";"gemeten variabele"

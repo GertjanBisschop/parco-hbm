@@ -1,49 +1,79 @@
-sampletype_key;sampletype_initials;sampletype_sort;samplegroup_key;sampletype_name_en;sampletype_name_nl;validation_status;validation_date;validated_by
-blood-whole blood;bwb;1;blood;blood-whole blood;bloed-volbloed;;;
-blood serum;bs;2;blood;blood serum;bloed-serum;;;
-blood plasma;bp;3;blood;blood plasma;bloed-plasma;;;
-dried whole blood;dwb;4;blood;dried whole blood;opgedroogde bloeddruppels;;;
-volumetric absorptive microsample (VAMS);vams;5;blood;volumetric absorptive microsample (VAMS);volumetrisch absorberend micromonster (VAMS);;;
-blood-blood cells;bbc;6;bloodcells;blood-blood cells;bloed-bloedcellen;;;
-blood - red blood cells;rbc;7;bloodcells;blood-red blood cells;bloed-rode bloedcellen;;;
-cord blood-whole blood;cbwb;8;cord blood;umbilical cord blood-whole blood;navelstrengbloed-volbloed;;;
-cord blood-serum;cbs;9;cord blood;umbilical cord blood-serum;navelstrengbloed-serum;;;
-cord blood-plasma;cbp;10;cord blood;umbilical cord blood-plasma;navelstrengbloed-plasma;;;
-cord blood-cells;cbbc;11;cord blood-cells;umbilical cord blood-cells;navelstrengbloed-bloed cellen;;;
-random spot urine;us;12;urine;random spot urine;random spot-urine;;;
-first morning urine;um;13;urine;first morning urine;eerste ochtend-urine;;;
-fasting urine;uf;14;urine;urine fasting;urine nuchter;;;
-urine 24h;ud;15;urine;urine 24 hours;urine 24u;;;
-breast milk;bm;16;breast milk;breast milk;moedermelk;;;
-hair;h;17;hair;hair;haar;;;
-nail;n;18;nail;nail;nagel;;;
-toe nail;tn;19;nail;toe nail;teennagel;;;
-finger nail;fn;20;nail;finger nail;vinger nagel;;;
-nails toe big;btn;21;nail;nails toe big;grote teennagel;obsolete;1/6/2024;Liese Gills
-all too nails;atn;22;nail;all too nails;alle teennagels;obsolete;1/6/2024;Liese Gills
-nasal mucus;nm;23;nasal mucus;nasal mucus;neusslijm;;;
-saliva;sa;24;saliva;saliva;speeksel;;;
-sputum;spt;25;sputum;sputum;sputum;;;
-saliva;sa;26;saliva;saliva/sputum;;obsolete;1/6/2024;Liese Gills
-buccal cells;buc;27;buccal cells;buccal cells;buccal cells;;;
-stool;st;28;stool;stool;stoelgang;;;
-semen;sem;29;semen;semen;zaad;;;
-exhaled breath;eb;30;exhaled breath;exhaled breath;uitgeademde lucht;;;
-exhaled breath condensate;ebc;31;exhaled breath condensate;exhaled air condensate;uitgeademde lucht condensaat;;;
-umbilical cord tissue;cbt;32;umbilical cord tissue;tissue of umbilical cord;weefsel van navelstreng;;;
-adipose tissue/fat;adi;33;adipose tissue/fat;adipose tissue/fat;vetweefsel/vet;;;
-surface wipe;sw;34;surface wipe;surface wipe;oppervlakteveeg;;;
-dermal wipes;dw;35;dermal wipes;dermal wipes;dermale doekjes;;;
-amniotic fluid;af;36;amniotic fluid;amniotic fluid;vruchtwater;;;
-placenta tissue;plt;37;placenta tissue;placenta tissue;placenta weefsel;;;
-silicone wrist band;swb;38;silicone wrist band;silicone wrist band;siliconen polsbandje;;;
-indoor dust;idust;39;air;indoor dust;binnen stof;;;
-outdoor dust;odust;40;air;outdoor dust;outdoor stof;;;
-outdoor air-stationary;oair;41;air;outdoor air;buitenlucht;;;
-indoor air-stationary;iair;42;air;indoor air;binnenlucht;;;
-pm10 in ambiant air;pm10air;43;air;pm10 in ambient air;pm10 in omgevingslucht;;;
-personal air;pair;44;air;personal air;persoonlijke lucht;;;
-soil;soil;45;soil;soil;grond;;;
-kitchengarden food;kgfood;46;food;kitchengarden food;moestuin voedsel;;;
-eggs;egg;47;food;chicken egg;kippenei;;;
-water;water;48;water;water;water;;;
+"sampletype_key";"sampletype_initials";"sampletype_sort";"lingo";"sampletype_name"
+"adipose tissue/fat";"adi";25;"nl";"vetweefsel/vet"
+"adipose tissue/fat";"adi";25;"en";"adipose tissue/fat"
+"All toe nail";"atn";17;"en";"all toe nails"
+"All toe nail";"atn";17;"nl";"alle teennagels"
+"amniotic fluid";"af";27;"en";"amniotic fluid"
+"amniotic fluid";"af";27;"nl";"vruchtwater"
+"Big toe nail";"btn";18;"nl";"grote teen nagel"
+"Big toe nail";"btn";18;"en";"big toe nail"
+"blood-blood cells";"bbc";4;"en";"blood-blood cells"
+"blood-blood cells";"bbc";4;"nl";"bloed-bloedcellen"
+"blood-whole blood";"bwb";1;"nl";"bloed-volbloed"
+"blood-whole blood";"bwb";1;"en";"blood-whole blood"
+"blood - red blood cells";"rbc";5;"nl";"bloed-rode bloedcellen"
+"blood - red blood cells";"rbc";5;"en";"blood-red blood cells"
+"blood plasma";"bp";3;"en";"blood plasma"
+"blood plasma";"bp";3;"nl";"bloed-plasma"
+"blood serum";"bs";2;"nl";"bloed-serum"
+"blood serum";"bs";2;"en";"blood serum"
+"breast milk";"bm";14;"en";"breast milk"
+"breast milk";"bm";14;"nl";"moedermelk"
+"cord blood-cells";"cbbc";9;"nl";"navelstrengbloed-bloed cellen"
+"cord blood-cells";"cbbc";9;"en";"umbilical cord blood-cells"
+"cord blood-plasma";"cbp";8;"nl";"navelstrengbloed-plasma"
+"cord blood-plasma";"cbp";8;"en";"umbilical cord blood-plasma"
+"cord blood-serum";"cbs";7;"nl";"navelstrengbloed-serum"
+"cord blood-serum";"cbs";7;"en";"umbilical cord blood-serum"
+"cord blood-whole blood";"cbwb";6;"nl";"navelstrengbloed-volbloed"
+"cord blood-whole blood";"cbwb";6;"en";"umbilical cord blood-whole blood"
+"dermal wipes";"dw";26;"nl";"dermale doekjes"
+"dermal wipes";"dw";26;"en";"dermal wipes"
+"dried blood spots";"dbs";39;"nl";"blood spot gedroogd"
+"dried blood spots";"dbs";39;"en";"blood-dried blood spot"
+"eggs";"egg";36;"nl";"kippenei"
+"eggs";"egg";36;"en";"chicken egg"
+"exhaled breath condensate";"ebc";23;"en";"exhaled air condensate"
+"exhaled breath condensate";"ebc";23;"nl";"uitgeademde lucht condensaat"
+"fasting urine";"uf";12;"en";"urine fasting"
+"fasting urine";"uf";12;"nl";"urine nuchter"
+"first morning urine";"um";11;"nl";"eerste ochtend-urine"
+"first morning urine";"um";11;"en";"first morning urine"
+"hair";"h";15;"en";"hair"
+"hair";"h";15;"nl";"haar"
+"indoor air-stationary";"iair";32;"en";"indoor air"
+"indoor air-stationary";"iair";32;"nl";"binnenlucht"
+"indoor dust";"idust";29;"nl";"binnen stof"
+"indoor dust";"idust";29;"en";"indoor dust"
+"kitchengarden food";"kgfood";35;"nl";"moestuin voedsel"
+"kitchengarden food";"kgfood";35;"en";"kitchengarden food"
+"nail";"n";16;"nl";"nagel"
+"nail";"n";16;"en";"nail"
+"nasal mucus";"nm";19;"nl";"neusslijm"
+"nasal mucus";"nm";19;"en";"nasal mucus"
+"outdoor air-stationary";"oair";31;"nl";"buitenlucht"
+"outdoor air-stationary";"oair";31;"en";"outdoor air"
+"outdoor dust";"odust";30;"en";"outdoor dust"
+"outdoor dust";"odust";30;"nl";"outdoor stof"
+"personal air";"pair";33;"nl";"persoonlijke lucht"
+"personal air";"pair";33;"en";"personal air"
+"placenta tissue";"plt";28;"en";"placenta tissue"
+"placenta tissue";"plt";28;"nl";"placenta weefsel"
+"random spot urine";"us";10;"nl";"random spot-urine"
+"random spot urine";"us";10;"en";"random spot urine"
+"saliva/sputum";"sa";20;"en";"saliva"
+"saliva/sputum";"sa";20;"nl";"speeksel"
+"semen";"sem";22;"nl";"zaad"
+"semen";"sem";22;"en";"semen"
+"soil";"soil";34;"en";"soil"
+"soil";"soil";34;"nl";"grond"
+"stool";"st";21;"en";"stool"
+"stool";"st";21;"nl";"stoelgang"
+"umbilical cord tissue";"cbt";24;"nl";"weefsel van navelstreng"
+"umbilical cord tissue";"cbt";24;"en";"tissue of umbilical cord"
+"urine 24h";"ud";13;"nl";"urine 24u"
+"urine 24h";"ud";13;"en";"urine 24 hours"
+"volumetric absorptive microsample (VAMS)";"vams";38;"en";"blood-volumetric absorptive microsample"
+"volumetric absorptive microsample (VAMS)";"vams";38;"nl";"blood volumetrische absorptieve microsample"
+"water";"water";37;"en";"water"
+"water";"water";37;"nl";"water"

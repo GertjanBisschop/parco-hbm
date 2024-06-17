@@ -1,5 +1,5 @@
-lingo;stakeholder_key;stakeholder_name
-en;FHBM;Flemish HBM
-en;Parc;Parc
-nl;FHBM;Vlaamse HBM
-nl;Parc;Parc
+"stakeholder_key";"lingo";"stakeholder_name"
+"FHBM";"en";"Flemish HBM"
+"FHBM";"nl";"Vlaamse HBM"
+"Parc";"en";"Parc"
+"Parc";"nl";"Parc"

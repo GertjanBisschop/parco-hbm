@@ -1,137 +1,125 @@
-lingo;unit_key;unit_initials;unit_name
-en;mitochondrial/nuclear DNA;;mitochondrial/nuclear DNA
-nl;mitochondrial/nuclear DNA;;mitochondriaal/nucleair DNA
-en;number of cells;;number of cells
-nl;number of cells;;aantal cellen
-en;pg/mg;;pg/mg
-nl;pg/mg;;pg/mg
-en;pg/mL;;pg/mL
-nl;pg/mL;;pg/mL
-en;ng/mL;;ng/mL
-nl;ng/mL;;ng/mL
-en;ng/dL;;ng/dL
-nl;ng/dL;;ng/dL
-en;ng/L;;ng/L
-nl;ng/L;;ng/L
-en;µg/L;;µg/L
-nl;µg/L;;µg/L
-en;µg/mL;;µg/mL
-nl;µg/mL;;µg/mL
-en;mg/L;;mg/L
-nl;mg/L;;mg/L
-en;mg/dL;;mg/dL
-nl;mg/dL;;mg/dL
-en;g/dL;;g/dL
-nl;g/dL;;g/dL
-en;g/L;;g/L
-nl;g/L;;g/L
-en;-;;
-nl;-;;
-en;%;;%
-nl;%;;%
-en;IU/L;;IU/L
-nl;IU/L;;IU/L
-en;mmol/mol;;mmol/mol
-nl;mmol/mol;;mmol/mol
-en;ng/g;;ng/g
-nl;ng/g;;ng/g
-en;µIU/mL;;µIU/mL
-nl;µIU/mL;;µIU/mL
-en;µLU/mL;;µLU/mL
-nl;µLU/mL;;µLU/mL
-en;nmol/L;;nmol/L
-nl;nmol/L;;nmol/L
-en;µmol/L;;µmol/L
-nl;µmol/L;;µmol/L
-en;L;;L
-nl;L;;L
-en;kg/m²;;kg/m²
-nl;kg/m²;;kg/m²
-en;kg/m³;;kg/m³
-nl;kg/m³;;kg/m³
-en;ng/m²;;ng/m²
-nl;ng/m²;;ng/m²
-en;ng/m³;;ng/m³
-nl;ng/m³;;ng/m³
-en;amount/µL;;amount/µL
-nl;amount/µL;;aantal/µL
-en;kU/L;;kU/L
-nl;kU/L;;kU/L
-en;pg BEQ/g;;pg BEQ/g
-nl;pg BEQ/g;;pg BEQ/g
-en;milj/µL;;milj/µL
-nl;milj/µL;;milj/µL
-en;index %;;index %
-nl;index %;;index %
-en;pg;;pg
-nl;pg;;pg
-en;ppb;;ppb
-nl;ppb;;ppb
-en;fL;;fL
-nl;fL;;fL
-en;mIU/L;;mIU/L
-nl;mIU/L;;mIU/L
-en;Osm/L;;Osm/L
-nl;Osm/L;;Osm/L
-en;g/mol;;g/mol
-nl;g/mol;;g/mol
-en;µg/kg dm;;µg/kg dm
-nl;µg/kg dm;;µg/kg ds
-en;% (g/100g);;% (g/100g)
-nl;% (g/100g);;% (g/100g)
-en;% dm;;% dm
-nl;% dm;;% ds
-en;µg/kg ww;;µg/kg ww
-nl;µg/kg ww;;µg/kg ng
-en;mg/kg;;mg/kg
-nl;mg/kg;;mg/kg
-en;pmol/g globin;;pmol/g globin
-nl;pmol/g globin;;pmol/g globin
-en;ng/filter;;ng/filter
-nl;ng/filter;;ng/filter
-en;number per week;;number per week
-nl;number per week;;aantal per week
-en;number;;number
-nl;number;;aantal
-en;number per day;;number per day
-nl;number per day;;aantal per dag
-en;months;;months
-nl;months;;maanden
-en;month;;month
-nl;month;;maand
-en;years;;years
-nl;years;;jaren
-en;year;;year
-nl;year;;jaar
-en;yearindication;;yearindication
-nl;yearindication;;jaartal
-en;weeks;;weeks
-nl;weeks;;weken
-en;days;;days
-nl;days;;dagen
-en;hours per week;;hours per week
-nl;hours per week;;uren per week
-en;times per week;;times per week
-nl;times per week;;keer per week
-en;times per day;;times per day
-nl;times per day;;keer per dag
-en;age;;age
-nl;age;;leeftijd
-en;hour;;hour
-nl;hour;;uur
-en;hours;;hours
-nl;hours;;uren
-en;cm;;cm
-nl;cm;;cm
-en;kg;;kg
-nl;kg;;kg
-en;gram;;gram
-nl;gram;;gram
-en;score;;score
-nl;score;;score
-en;children;;children
-nl;children;;kinderen
-en;adults;;adults
-nl;adults;;volwassenen
-en;pregnancies;;pregnancies
-nl;pregnancies;;zwangerschappen
+"unit_key";"lingo";"unit_initials";"unit_name"
+"-";"en";;""
+"-";"nl";;""
+"%";"en";;"%"
+"%";"nl";;"%"
+"% (g/100g)";"en";;"% (g/100g)"
+"% (g/100g)";"nl";;"% (g/100g)"
+"% dm";"en";;"% dm"
+"% dm";"nl";;"% ds"
+"µg/kg dm";"en";;"µg/kg dm"
+"µg/kg dm";"nl";;"µg/kg ds"
+"µg/kg ww";"en";;"µg/kg ww"
+"µg/kg ww";"nl";;"µg/kg ng"
+"µg/L";"en";;"µg/L"
+"µg/L";"nl";;"µg/L"
+"µg/mL";"en";;"µg/mL"
+"µg/mL";"nl";;"µg/mL"
+"µLU/mL";"en";;"µLU/mL"
+"µLU/mL";"nl";;"µLU/mL"
+"µmol/L";"en";;"µmol/L"
+"µmol/L";"nl";;"µmol/L"
+"adults";"en";;"adults"
+"adults";"nl";;"volwassenen"
+"age";"en";;"age"
+"age";"nl";;"leeftijd"
+"amount/µL";"en";;"amount/µL"
+"amount/µL";"nl";;"aantal/µL"
+"children";"en";;"children"
+"children";"nl";;"kinderen"
+"cm";"en";;"cm"
+"cm";"nl";;"cm"
+"days";"en";;"days"
+"days";"nl";;"dagen"
+"fL";"en";;"fL"
+"fL";"nl";;"fL"
+"g/dL";"en";;"g/dL"
+"g/dL";"nl";;"g/dL"
+"g/L";"en";;"g/L"
+"g/L";"nl";;"g/L"
+"g/mol";"en";;"g/mol"
+"g/mol";"nl";;"g/mol"
+"gram";"en";;"gram"
+"gram";"nl";;"gram"
+"hour";"en";;"hour"
+"hour";"nl";;"uur"
+"hours";"en";;"hours"
+"hours";"nl";;"uren"
+"hours per week";"en";;"hours per week"
+"hours per week";"nl";;"uren per week"
+"index %";"en";;"index %"
+"index %";"nl";;"index %"
+"IU/L";"en";;"IU/L"
+"IU/L";"nl";;"IU/L"
+"kg";"en";;"kg"
+"kg";"nl";;"kg"
+"kg/m²";"en";;"kg/m²"
+"kg/m²";"nl";;"kg/m²"
+"kg/m³";"en";;"kg/m³"
+"kg/m³";"nl";;"kg/m³"
+"kU/L";"en";;"kU/L"
+"kU/L";"nl";;"kU/L"
+"L";"en";;"L"
+"L";"nl";;"L"
+"mg/dL";"en";;"mg/dL"
+"mg/dL";"nl";;"mg/dL"
+"mg/L";"en";;"mg/L"
+"mg/L";"nl";;"mg/L"
+"milj/µL";"en";;"milj/µL"
+"milj/µL";"nl";;"milj/µL"
+"mIU/L";"en";;"mIU/L"
+"mIU/L";"nl";;"mIU/L"
+"mLU/L";"en";;"mLU/L"
+"mLU/L";"nl";;"mLU/L"
+"mmol/mol";"en";;"mmol/mol"
+"mmol/mol";"nl";;"mmol/mol"
+"month";"en";;"month"
+"month";"nl";;"maand"
+"months";"en";;"months"
+"months";"nl";;"maanden"
+"ng/dL";"en";;"ng/dL"
+"ng/dL";"nl";;"ng/dL"
+"ng/filter";"en";;"ng/filter"
+"ng/filter";"nl";;"ng/filter"
+"ng/g";"en";;"ng/g"
+"ng/g";"nl";;"ng/g"
+"ng/L";"en";;"ng/L"
+"ng/L";"nl";;"ng/L"
+"ng/mL";"en";;"ng/mL"
+"ng/mL";"nl";;"ng/mL"
+"nmol/L";"en";;"nmol/L"
+"nmol/L";"nl";;"nmol/L"
+"number";"en";;"number"
+"number";"nl";;"aantal"
+"number per day";"en";;"number per day"
+"number per day";"nl";;"aantal per dag"
+"number per week";"en";;"number per week"
+"number per week";"nl";;"aantal per week"
+"Osm/L";"en";;"Osm/L"
+"Osm/L";"nl";;"Osm/L"
+"pg";"en";;"pg"
+"pg";"nl";;"pg"
+"pg BEQ/g";"en";;"pg BEQ/g"
+"pg BEQ/g";"nl";;"pg BEQ/g"
+"pg/mL";"en";;"pg/mL"
+"pg/mL";"nl";;"pg/mL"
+"pmol/g globin";"en";;"pmol/g globin"
+"pmol/g globin";"nl";;"pmol/g globin"
+"ppb";"en";;"ppb"
+"ppb";"nl";;"ppb"
+"pregnancies";"en";;"pregnancies"
+"pregnancies";"nl";;"zwangerschappen"
+"score";"en";;"score"
+"score";"nl";;"score"
+"times per day";"en";;"times per day"
+"times per day";"nl";;"keer per dag"
+"times per week";"en";;"times per week"
+"times per week";"nl";;"keer per week"
+"weeks";"en";;"weeks"
+"weeks";"nl";;"weken"
+"year";"en";;"year"
+"year";"nl";;"jaar"
+"yearindication";"en";;"yearindication"
+"yearindication";"nl";;"jaartal"
+"years";"en";;"years"
+"years";"nl";;"jaren"
