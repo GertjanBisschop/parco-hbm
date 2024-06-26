@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-06-16T15:42:59
+# Generation date: 2024-06-26T13:44:29
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -125,11 +125,15 @@ class StudyId(StudyEntityId):
     pass
 
 
-class TimepointId(StudyEntityId):
+class ObservationGroupId(StudyEntityId):
     pass
 
 
 class StudyPopulationId(StudyEntityId):
+    pass
+
+
+class SampleCollectionId(StudyEntityId):
     pass
 
 
@@ -200,7 +204,8 @@ class EntityList(YAMLRoot):
     stakeholders: Optional[Union[Dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], List[Union[dict, "Stakeholder"]]]] = empty_dict()
     projects: Optional[Union[Dict[Union[str, ProjectId], Union[dict, "Project"]], List[Union[dict, "Project"]]]] = empty_dict()
     studies: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
-    timepoints: Optional[Union[Dict[Union[str, TimepointId], Union[dict, "Timepoint"]], List[Union[dict, "Timepoint"]]]] = empty_dict()
+    observation_groups: Optional[Union[Dict[Union[str, ObservationGroupId], Union[dict, "ObservationGroup"]], List[Union[dict, "ObservationGroup"]]]] = empty_dict()
+    observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_list(slot_name="matrices", slot_type=Matrix, key_name="id", keyed=True)
@@ -223,7 +228,9 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(slot_name="studies", slot_type=Study, key_name="id", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="timepoints", slot_type=Timepoint, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="observation_groups", slot_type=ObservationGroup, key_name="id", keyed=True)
+
+        self._normalize_inlined_as_list(slot_name="observations", slot_type=Observation, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -1549,7 +1556,7 @@ class Study(StudyEntity):
     study_stakeholders: Optional[Union[Union[dict, "StudyStakeholder"], List[Union[dict, "StudyStakeholder"]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
-    timepoint_id_list: Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]] = empty_list()
+    observation_group_id_list: Optional[Union[Union[str, ObservationGroupId], List[Union[str, ObservationGroupId]]]] = empty_list()
     study_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
     project_id_list: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
@@ -1573,9 +1580,9 @@ class Study(StudyEntity):
         if self.end_date is not None and not isinstance(self.end_date, XSDDate):
             self.end_date = XSDDate(self.end_date)
 
-        if not isinstance(self.timepoint_id_list, list):
-            self.timepoint_id_list = [self.timepoint_id_list] if self.timepoint_id_list is not None else []
-        self.timepoint_id_list = [v if isinstance(v, TimepointId) else TimepointId(v) for v in self.timepoint_id_list]
+        if not isinstance(self.observation_group_id_list, list):
+            self.observation_group_id_list = [self.observation_group_id_list] if self.observation_group_id_list is not None else []
+        self.observation_group_id_list = [v if isinstance(v, ObservationGroupId) else ObservationGroupId(v) for v in self.observation_group_id_list]
 
         if not isinstance(self.study_entities, list):
             self.study_entities = [self.study_entities] if self.study_entities is not None else []
@@ -1621,25 +1628,25 @@ class StudyStakeholder(YAMLRoot):
 
 
 @dataclass
-class Timepoint(StudyEntity):
+class ObservationGroup(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEH["Timepoint"]
-    class_class_curie: ClassVar[str] = "peh:Timepoint"
-    class_name: ClassVar[str] = "Timepoint"
-    class_model_uri: ClassVar[URIRef] = PEH.Timepoint
+    class_class_uri: ClassVar[URIRef] = PEH["ObservationGroup"]
+    class_class_curie: ClassVar[str] = "peh:ObservationGroup"
+    class_name: ClassVar[str] = "ObservationGroup"
+    class_model_uri: ClassVar[URIRef] = PEH.ObservationGroup
 
-    id: Union[str, TimepointId] = None
+    id: Union[str, ObservationGroupId] = None
     sort_order: Optional[Decimal] = None
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
-    observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
+    observation_id_list: Optional[Union[Union[str, ObservationId], List[Union[str, ObservationId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, TimepointId):
-            self.id = TimepointId(self.id)
+        if not isinstance(self.id, ObservationGroupId):
+            self.id = ObservationGroupId(self.id)
 
         if self.sort_order is not None and not isinstance(self.sort_order, Decimal):
             self.sort_order = Decimal(self.sort_order)
@@ -1650,7 +1657,9 @@ class Timepoint(StudyEntity):
         if self.end_date is not None and not isinstance(self.end_date, XSDDate):
             self.end_date = XSDDate(self.end_date)
 
-        self._normalize_inlined_as_list(slot_name="observations", slot_type=Observation, key_name="id", keyed=True)
+        if not isinstance(self.observation_id_list, list):
+            self.observation_id_list = [self.observation_id_list] if self.observation_id_list is not None else []
+        self.observation_id_list = [v if isinstance(v, ObservationId) else ObservationId(v) for v in self.observation_id_list]
 
         super().__post_init__(**kwargs)
 
@@ -1666,6 +1675,7 @@ class StudyPopulation(StudyEntity):
 
     id: Union[str, StudyPopulationId] = None
     research_population_type: Optional[Union[str, "ResearchPopulationType"]] = None
+    subject_id_list: Optional[Union[Union[str, StudySubjectId], List[Union[str, StudySubjectId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1675,6 +1685,44 @@ class StudyPopulation(StudyEntity):
 
         if self.research_population_type is not None and not isinstance(self.research_population_type, ResearchPopulationType):
             self.research_population_type = ResearchPopulationType(self.research_population_type)
+
+        if not isinstance(self.subject_id_list, list):
+            self.subject_id_list = [self.subject_id_list] if self.subject_id_list is not None else []
+        self.subject_id_list = [v if isinstance(v, StudySubjectId) else StudySubjectId(v) for v in self.subject_id_list]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SampleCollection(StudyEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["SampleCollection"]
+    class_class_curie: ClassVar[str] = "peh:SampleCollection"
+    class_name: ClassVar[str] = "SampleCollection"
+    class_model_uri: ClassVar[URIRef] = PEH.SampleCollection
+
+    id: Union[str, SampleCollectionId] = None
+    matrix: Optional[Union[str, MatrixId]] = None
+    constraints: Optional[Union[str, List[str]]] = empty_list()
+    sample_id_list: Optional[Union[Union[str, SampleId], List[Union[str, SampleId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SampleCollectionId):
+            self.id = SampleCollectionId(self.id)
+
+        if self.matrix is not None and not isinstance(self.matrix, MatrixId):
+            self.matrix = MatrixId(self.matrix)
+
+        if not isinstance(self.constraints, list):
+            self.constraints = [self.constraints] if self.constraints is not None else []
+        self.constraints = [v if isinstance(v, str) else str(v) for v in self.constraints]
+
+        if not isinstance(self.sample_id_list, list):
+            self.sample_id_list = [self.sample_id_list] if self.sample_id_list is not None else []
+        self.sample_id_list = [v if isinstance(v, SampleId) else SampleId(v) for v in self.sample_id_list]
 
         super().__post_init__(**kwargs)
 
@@ -2796,6 +2844,21 @@ slots.stakeholders = Slot(uri=PEH.stakeholders, name="stakeholders", curie=PEH.c
 slots.project_id_list = Slot(uri=PEH.project_id_list, name="project_id_list", curie=PEH.curie('project_id_list'),
                    model_uri=PEH.project_id_list, domain=None, range=Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]])
 
+slots.study_id_list = Slot(uri=PEH.study_id_list, name="study_id_list", curie=PEH.curie('study_id_list'),
+                   model_uri=PEH.study_id_list, domain=None, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
+
+slots.observation_group_id_list = Slot(uri=PEH.observation_group_id_list, name="observation_group_id_list", curie=PEH.curie('observation_group_id_list'),
+                   model_uri=PEH.observation_group_id_list, domain=None, range=Optional[Union[Union[str, ObservationGroupId], List[Union[str, ObservationGroupId]]]])
+
+slots.observation_id_list = Slot(uri=PEH.observation_id_list, name="observation_id_list", curie=PEH.curie('observation_id_list'),
+                   model_uri=PEH.observation_id_list, domain=None, range=Optional[Union[Union[str, ObservationId], List[Union[str, ObservationId]]]])
+
+slots.subject_id_list = Slot(uri=PEH.subject_id_list, name="subject_id_list", curie=PEH.curie('subject_id_list'),
+                   model_uri=PEH.subject_id_list, domain=None, range=Optional[Union[Union[str, StudySubjectId], List[Union[str, StudySubjectId]]]])
+
+slots.sample_id_list = Slot(uri=PEH.sample_id_list, name="sample_id_list", curie=PEH.curie('sample_id_list'),
+                   model_uri=PEH.sample_id_list, domain=None, range=Optional[Union[Union[str, SampleId], List[Union[str, SampleId]]]])
+
 slots.projects = Slot(uri=PEH.projects, name="projects", curie=PEH.curie('projects'),
                    model_uri=PEH.projects, domain=None, range=Optional[Union[Dict[Union[str, ProjectId], Union[dict, Project]], List[Union[dict, Project]]]])
 
@@ -2814,9 +2877,6 @@ slots.stakeholder = Slot(uri=PEH.stakeholder, name="stakeholder", curie=PEH.curi
 slots.project_stakeholders = Slot(uri=PEH.project_stakeholders, name="project_stakeholders", curie=PEH.curie('project_stakeholders'),
                    model_uri=PEH.project_stakeholders, domain=None, range=Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]])
 
-slots.study_id_list = Slot(uri=PEH.study_id_list, name="study_id_list", curie=PEH.curie('study_id_list'),
-                   model_uri=PEH.study_id_list, domain=None, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
-
 slots.studies = Slot(uri=PEH.studies, name="studies", curie=PEH.curie('studies'),
                    model_uri=PEH.studies, domain=None, range=Optional[Union[Dict[Union[str, StudyId], Union[dict, Study]], List[Union[dict, Study]]]])
 
@@ -2832,14 +2892,8 @@ slots.research_population_type = Slot(uri=PEH.research_population_type, name="re
 slots.study_roles = Slot(uri=PEH.study_roles, name="study_roles", curie=PEH.curie('study_roles'),
                    model_uri=PEH.study_roles, domain=None, range=Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]])
 
-slots.timepoint_id_list = Slot(uri=PEH.timepoint_id_list, name="timepoint_id_list", curie=PEH.curie('timepoint_id_list'),
-                   model_uri=PEH.timepoint_id_list, domain=None, range=Optional[Union[Union[str, TimepointId], List[Union[str, TimepointId]]]])
-
-slots.timepoints = Slot(uri=PEH.timepoints, name="timepoints", curie=PEH.curie('timepoints'),
-                   model_uri=PEH.timepoints, domain=None, range=Optional[Union[Dict[Union[str, TimepointId], Union[dict, Timepoint]], List[Union[dict, Timepoint]]]])
-
-slots.study_entities = Slot(uri=PEH.study_entities, name="study_entities", curie=PEH.curie('study_entities'),
-                   model_uri=PEH.study_entities, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+slots.observation_groups = Slot(uri=PEH.observation_groups, name="observation_groups", curie=PEH.curie('observation_groups'),
+                   model_uri=PEH.observation_groups, domain=None, range=Optional[Union[Dict[Union[str, ObservationGroupId], Union[dict, ObservationGroup]], List[Union[dict, ObservationGroup]]]])
 
 slots.observations = Slot(uri=PEH.observations, name="observations", curie=PEH.curie('observations'),
                    model_uri=PEH.observations, domain=None, range=Optional[Union[Dict[Union[str, ObservationId], Union[dict, Observation]], List[Union[dict, Observation]]]])
@@ -2852,6 +2906,9 @@ slots.physical_entity_links = Slot(uri=PEH.physical_entity_links, name="physical
 
 slots.physical_entity = Slot(uri=PEH.physical_entity, name="physical_entity", curie=PEH.curie('physical_entity'),
                    model_uri=PEH.physical_entity, domain=None, range=Optional[Union[str, PhysicalEntityId]])
+
+slots.study_entities = Slot(uri=PEH.study_entities, name="study_entities", curie=PEH.curie('study_entities'),
+                   model_uri=PEH.study_entities, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
 
 slots.study_entity_links = Slot(uri=PEH.study_entity_links, name="study_entity_links", curie=PEH.curie('study_entity_links'),
                    model_uri=PEH.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], List[Union[dict, StudyEntityLink]]]])

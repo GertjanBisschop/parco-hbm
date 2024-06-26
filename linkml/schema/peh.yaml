@@ -41,7 +41,8 @@ classes:
       - stakeholders
       - projects
       - studies
-      - timepoints
+      - observation_groups
+      - observations
 
   NamedThing:
     abstract: true
@@ -332,7 +333,7 @@ classes:
       - study_stakeholders
       - start_date
       - end_date
-      - timepoint_id_list
+      - observation_group_id_list
       - study_entities
       - project_id_list
   StudyStakeholder:
@@ -340,17 +341,24 @@ classes:
       - stakeholder
       - study_roles
       - contacts
-  Timepoint:
+  ObservationGroup:
     is_a: StudyEntity
     slots:
       - sort_order
       - start_date
       - end_date
-      - observations
+      - observation_id_list
   StudyPopulation:
     is_a: StudyEntity
     slots:
       - research_population_type
+      - subject_id_list
+  SampleCollection:
+    is_a: StudyEntity
+    slots:
+      - matrix
+      - constraints
+      - sample_id_list
   StudySubject:
     is_a: StudyEntity
   StudySubjectGroup:
