@@ -669,6 +669,21 @@ slots:
   project_id_list:
     multivalued: true
     range: Project
+  study_id_list:
+    multivalued: true
+    range: Study
+  observation_group_id_list:
+    multivalued: true
+    range: ObservationGroup
+  observation_id_list:
+    multivalued: true
+    range: Observation
+  subject_id_list:
+    multivalued: true
+    range: StudySubject
+  sample_id_list:
+    multivalued: true
+    range: Sample
   projects:
     multivalued: true
     inlined_as_list: true
@@ -683,9 +698,6 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: ProjectStakeholder
-  study_id_list:
-    multivalued: true
-    range: Study
   studies:
     multivalued: true
     inlined_as_list: true
@@ -702,16 +714,10 @@ slots:
   study_roles:
     multivalued: true
     range: StudyRole
-  timepoint_id_list:
-    multivalued: true
-    range: Timepoint
-  timepoints:
+  observation_groups:
     multivalued: true
     inlined_as_list: true
-    range: Timepoint
-  study_entities:
-    multivalued: true
-    range: StudyEntity
+    range: ObservationGroup
   observations:
     multivalued: true
     inlined_as_list: true
@@ -724,6 +730,9 @@ slots:
   physical_entity:
     range: PhysicalEntity
     inlined: false
+  study_entities:
+    multivalued: true
+    range: StudyEntity
   study_entity_links:
     multivalued: true
     range: StudyEntityLink
