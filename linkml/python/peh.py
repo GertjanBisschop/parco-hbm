@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-06-26T13:44:29
+# Generation date: 2024-06-30T17:43:53
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -162,6 +162,26 @@ class SamplingObservationId(ObservationId):
 
 
 class GeospatialObservationId(ObservationId):
+    pass
+
+
+class ObservationResultId(NamedThingId):
+    pass
+
+
+class MetadataResultId(ObservationResultId):
+    pass
+
+
+class QuestionnaireResultId(ObservationResultId):
+    pass
+
+
+class SamplingResultId(ObservationResultId):
+    pass
+
+
+class GeospatialResultId(ObservationResultId):
     pass
 
 
@@ -1675,7 +1695,7 @@ class StudyPopulation(StudyEntity):
 
     id: Union[str, StudyPopulationId] = None
     research_population_type: Optional[Union[str, "ResearchPopulationType"]] = None
-    subject_id_list: Optional[Union[Union[str, StudySubjectId], List[Union[str, StudySubjectId]]]] = empty_list()
+    member_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1686,9 +1706,9 @@ class StudyPopulation(StudyEntity):
         if self.research_population_type is not None and not isinstance(self.research_population_type, ResearchPopulationType):
             self.research_population_type = ResearchPopulationType(self.research_population_type)
 
-        if not isinstance(self.subject_id_list, list):
-            self.subject_id_list = [self.subject_id_list] if self.subject_id_list is not None else []
-        self.subject_id_list = [v if isinstance(v, StudySubjectId) else StudySubjectId(v) for v in self.subject_id_list]
+        if not isinstance(self.member_id_list, list):
+            self.member_id_list = [self.member_id_list] if self.member_id_list is not None else []
+        self.member_id_list = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.member_id_list]
 
         super().__post_init__(**kwargs)
 
@@ -1779,7 +1799,7 @@ class Observation(NamedThing):
     id: Union[str, ObservationId] = None
     observation_type: Optional[Union[str, "ObservationType"]] = None
     observation_design: Optional[Union[dict, "ObservationDesign"]] = None
-    observation_result: Optional[Union[dict, "ObservationResult"]] = None
+    observation_result: Optional[Union[str, ObservationResultId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.observation_type is not None and not isinstance(self.observation_type, ObservationType):
@@ -1788,8 +1808,8 @@ class Observation(NamedThing):
         if self.observation_design is not None and not isinstance(self.observation_design, ObservationDesign):
             self.observation_design = ObservationDesign(**as_dict(self.observation_design))
 
-        if self.observation_result is not None and not isinstance(self.observation_result, ObservationResult):
-            self.observation_result = ObservationResult(**as_dict(self.observation_result))
+        if self.observation_result is not None and not isinstance(self.observation_result, ObservationResultId):
+            self.observation_result = ObservationResultId(self.observation_result)
 
         super().__post_init__(**kwargs)
 
@@ -1962,7 +1982,7 @@ class ObservableEntityPropertySet(YAMLRoot):
 
 
 @dataclass
-class ObservationResult(YAMLRoot):
+class ObservationResult(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEH["ObservationResult"]
@@ -1970,12 +1990,17 @@ class ObservationResult(YAMLRoot):
     class_name: ClassVar[str] = "ObservationResult"
     class_model_uri: ClassVar[URIRef] = PEH.ObservationResult
 
-    observation_date: Optional[Union[str, XSDDate]] = None
+    id: Union[str, ObservationResultId] = None
+    observation_start_date: Optional[Union[str, XSDDate]] = None
+    observation_end_date: Optional[Union[str, XSDDate]] = None
     observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.observation_date is not None and not isinstance(self.observation_date, XSDDate):
-            self.observation_date = XSDDate(self.observation_date)
+        if self.observation_start_date is not None and not isinstance(self.observation_start_date, XSDDate):
+            self.observation_start_date = XSDDate(self.observation_start_date)
+
+        if self.observation_end_date is not None and not isinstance(self.observation_end_date, XSDDate):
+            self.observation_end_date = XSDDate(self.observation_end_date)
 
         if not isinstance(self.observed_values, list):
             self.observed_values = [self.observed_values] if self.observed_values is not None else []
@@ -1984,6 +2009,7 @@ class ObservationResult(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+@dataclass
 class MetadataResult(ObservationResult):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1991,6 +2017,16 @@ class MetadataResult(ObservationResult):
     class_class_curie: ClassVar[str] = "peh:MetadataResult"
     class_name: ClassVar[str] = "MetadataResult"
     class_model_uri: ClassVar[URIRef] = PEH.MetadataResult
+
+    id: Union[str, MetadataResultId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MetadataResultId):
+            self.id = MetadataResultId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -2002,11 +2038,21 @@ class QuestionnaireResult(ObservationResult):
     class_name: ClassVar[str] = "QuestionnaireResult"
     class_model_uri: ClassVar[URIRef] = PEH.QuestionnaireResult
 
-    registration_date: Optional[Union[str, XSDDate]] = None
+    id: Union[str, QuestionnaireResultId] = None
+    registration_start_date: Optional[Union[str, XSDDate]] = None
+    registration_end_date: Optional[Union[str, XSDDate]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.registration_date is not None and not isinstance(self.registration_date, XSDDate):
-            self.registration_date = XSDDate(self.registration_date)
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, QuestionnaireResultId):
+            self.id = QuestionnaireResultId(self.id)
+
+        if self.registration_start_date is not None and not isinstance(self.registration_start_date, XSDDate):
+            self.registration_start_date = XSDDate(self.registration_start_date)
+
+        if self.registration_end_date is not None and not isinstance(self.registration_end_date, XSDDate):
+            self.registration_end_date = XSDDate(self.registration_end_date)
 
         super().__post_init__(**kwargs)
 
@@ -2020,16 +2066,30 @@ class SamplingResult(ObservationResult):
     class_name: ClassVar[str] = "SamplingResult"
     class_model_uri: ClassVar[URIRef] = PEH.SamplingResult
 
-    collection_date: Optional[Union[str, XSDDate]] = None
-    analysis_date: Optional[Union[str, XSDDate]] = None
+    id: Union[str, SamplingResultId] = None
+    collection_start_date: Optional[Union[str, XSDDate]] = None
+    collection_end_date: Optional[Union[str, XSDDate]] = None
+    analysis_start_date: Optional[Union[str, XSDDate]] = None
+    analysis_end_date: Optional[Union[str, XSDDate]] = None
     analysis_lab: Optional[Union[str, StakeholderId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.collection_date is not None and not isinstance(self.collection_date, XSDDate):
-            self.collection_date = XSDDate(self.collection_date)
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SamplingResultId):
+            self.id = SamplingResultId(self.id)
 
-        if self.analysis_date is not None and not isinstance(self.analysis_date, XSDDate):
-            self.analysis_date = XSDDate(self.analysis_date)
+        if self.collection_start_date is not None and not isinstance(self.collection_start_date, XSDDate):
+            self.collection_start_date = XSDDate(self.collection_start_date)
+
+        if self.collection_end_date is not None and not isinstance(self.collection_end_date, XSDDate):
+            self.collection_end_date = XSDDate(self.collection_end_date)
+
+        if self.analysis_start_date is not None and not isinstance(self.analysis_start_date, XSDDate):
+            self.analysis_start_date = XSDDate(self.analysis_start_date)
+
+        if self.analysis_end_date is not None and not isinstance(self.analysis_end_date, XSDDate):
+            self.analysis_end_date = XSDDate(self.analysis_end_date)
 
         if self.analysis_lab is not None and not isinstance(self.analysis_lab, StakeholderId):
             self.analysis_lab = StakeholderId(self.analysis_lab)
@@ -2037,6 +2097,7 @@ class SamplingResult(ObservationResult):
         super().__post_init__(**kwargs)
 
 
+@dataclass
 class GeospatialResult(ObservationResult):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2044,6 +2105,16 @@ class GeospatialResult(ObservationResult):
     class_class_curie: ClassVar[str] = "peh:GeospatialResult"
     class_name: ClassVar[str] = "GeospatialResult"
     class_model_uri: ClassVar[URIRef] = PEH.GeospatialResult
+
+    id: Union[str, GeospatialResultId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeospatialResultId):
+            self.id = GeospatialResultId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -2853,8 +2924,8 @@ slots.observation_group_id_list = Slot(uri=PEH.observation_group_id_list, name="
 slots.observation_id_list = Slot(uri=PEH.observation_id_list, name="observation_id_list", curie=PEH.curie('observation_id_list'),
                    model_uri=PEH.observation_id_list, domain=None, range=Optional[Union[Union[str, ObservationId], List[Union[str, ObservationId]]]])
 
-slots.subject_id_list = Slot(uri=PEH.subject_id_list, name="subject_id_list", curie=PEH.curie('subject_id_list'),
-                   model_uri=PEH.subject_id_list, domain=None, range=Optional[Union[Union[str, StudySubjectId], List[Union[str, StudySubjectId]]]])
+slots.member_id_list = Slot(uri=PEH.member_id_list, name="member_id_list", curie=PEH.curie('member_id_list'),
+                   model_uri=PEH.member_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
 
 slots.sample_id_list = Slot(uri=PEH.sample_id_list, name="sample_id_list", curie=PEH.curie('sample_id_list'),
                    model_uri=PEH.sample_id_list, domain=None, range=Optional[Union[Union[str, SampleId], List[Union[str, SampleId]]]])
@@ -2941,7 +3012,7 @@ slots.observation_result_type = Slot(uri=PEH.observation_result_type, name="obse
                    model_uri=PEH.observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
 
 slots.observation_result = Slot(uri=PEH.observation_result, name="observation_result", curie=PEH.curie('observation_result'),
-                   model_uri=PEH.observation_result, domain=None, range=Optional[Union[dict, ObservationResult]])
+                   model_uri=PEH.observation_result, domain=None, range=Optional[Union[str, ObservationResultId]])
 
 slots.observable_entity_type = Slot(uri=PEH.observable_entity_type, name="observable_entity_type", curie=PEH.curie('observable_entity_type'),
                    model_uri=PEH.observable_entity_type, domain=None, range=Optional[Union[str, "ObservableEntityType"]])
@@ -3066,17 +3137,32 @@ slots.end_date = Slot(uri=PEH.end_date, name="end_date", curie=PEH.curie('end_da
 slots.delivery_date = Slot(uri=PEH.delivery_date, name="delivery_date", curie=PEH.curie('delivery_date'),
                    model_uri=PEH.delivery_date, domain=None, range=Optional[Union[str, XSDDate]])
 
-slots.observation_date = Slot(uri=PEH.observation_date, name="observation_date", curie=PEH.curie('observation_date'),
-                   model_uri=PEH.observation_date, domain=None, range=Optional[Union[str, XSDDate]])
+slots.observation_start_date = Slot(uri=PEH.observation_start_date, name="observation_start_date", curie=PEH.curie('observation_start_date'),
+                   model_uri=PEH.observation_start_date, domain=None, range=Optional[Union[str, XSDDate]])
 
-slots.registration_date = Slot(uri=PEH.registration_date, name="registration_date", curie=PEH.curie('registration_date'),
-                   model_uri=PEH.registration_date, domain=None, range=Optional[Union[str, XSDDate]])
+slots.observation_end_date = Slot(uri=PEH.observation_end_date, name="observation_end_date", curie=PEH.curie('observation_end_date'),
+                   model_uri=PEH.observation_end_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.registration_start_date = Slot(uri=PEH.registration_start_date, name="registration_start_date", curie=PEH.curie('registration_start_date'),
+                   model_uri=PEH.registration_start_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.registration_end_date = Slot(uri=PEH.registration_end_date, name="registration_end_date", curie=PEH.curie('registration_end_date'),
+                   model_uri=PEH.registration_end_date, domain=None, range=Optional[Union[str, XSDDate]])
 
 slots.collection_date = Slot(uri=PEH.collection_date, name="collection_date", curie=PEH.curie('collection_date'),
                    model_uri=PEH.collection_date, domain=None, range=Optional[Union[str, XSDDate]])
 
-slots.analysis_date = Slot(uri=PEH.analysis_date, name="analysis_date", curie=PEH.curie('analysis_date'),
-                   model_uri=PEH.analysis_date, domain=None, range=Optional[Union[str, XSDDate]])
+slots.collection_start_date = Slot(uri=PEH.collection_start_date, name="collection_start_date", curie=PEH.curie('collection_start_date'),
+                   model_uri=PEH.collection_start_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.collection_end_date = Slot(uri=PEH.collection_end_date, name="collection_end_date", curie=PEH.curie('collection_end_date'),
+                   model_uri=PEH.collection_end_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.analysis_start_date = Slot(uri=PEH.analysis_start_date, name="analysis_start_date", curie=PEH.curie('analysis_start_date'),
+                   model_uri=PEH.analysis_start_date, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.analysis_end_date = Slot(uri=PEH.analysis_end_date, name="analysis_end_date", curie=PEH.curie('analysis_end_date'),
+                   model_uri=PEH.analysis_end_date, domain=None, range=Optional[Union[str, XSDDate]])
 
 slots.analysis_lab = Slot(uri=PEH.analysis_lab, name="analysis_lab", curie=PEH.curie('analysis_lab'),
                    model_uri=PEH.analysis_lab, domain=None, range=Optional[Union[str, StakeholderId]])

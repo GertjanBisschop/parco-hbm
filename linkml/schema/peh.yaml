@@ -352,7 +352,7 @@ classes:
     is_a: StudyEntity
     slots:
       - research_population_type
-      - subject_id_list
+      - member_id_list
   SampleCollection:
     is_a: StudyEntity
     slots:
@@ -396,20 +396,26 @@ classes:
       - observable_entity_id_list
       - observable_property_id_list
   ObservationResult:
+    abstract: true
+    is_a: NamedThing
     slots:
-      - observation_date
+      - observation_start_date
+      - observation_end_date
       - observed_values
   MetadataResult:
     is_a: ObservationResult
   QuestionnaireResult:
     is_a: ObservationResult
     slots:
-      - registration_date
+      - registration_start_date
+      - registration_end_date
   SamplingResult:
     is_a: ObservationResult
     slots:
-      - collection_date
-      - analysis_date
+      - collection_start_date
+      - collection_end_date
+      - analysis_start_date
+      - analysis_end_date
       - analysis_lab
   GeospatialResult:
     is_a: ObservationResult
@@ -686,9 +692,9 @@ slots:
   observation_id_list:
     multivalued: true
     range: Observation
-  subject_id_list:
+  member_id_list:
     multivalued: true
-    range: StudySubject
+    range: StudyEntity
   sample_id_list:
     multivalued: true
     range: Sample
@@ -766,6 +772,7 @@ slots:
     range: ObservationResultType
   observation_result:
     range: ObservationResult
+    inlined: false
   observable_entity_type:
     range: ObservableEntityType
   observable_entity_id_list:
@@ -853,13 +860,23 @@ slots:
     range: date
   delivery_date:
     range: date
-  observation_date:
+  observation_start_date:
     range: date
-  registration_date:
+  observation_end_date:
+    range: date
+  registration_start_date:
+    range: date
+  registration_end_date:
     range: date
   collection_date:
     range: date
-  analysis_date:
+  collection_start_date:
+    range: date
+  collection_end_date:
+    range: date
+  analysis_start_date:
+    range: date
+  analysis_end_date:
     range: date
   analysis_lab:
     range: Stakeholder
