@@ -369,7 +369,7 @@ classes:
     slots:
       - observation_type
       - observation_design
-      - observation_result
+      - observation_results
   MetadataObservation:
     is_a: Observation
   QuestionnaireObservation:
@@ -399,6 +399,7 @@ classes:
     abstract: true
     is_a: NamedThing
     slots:
+      - observation_result_type
       - observation_start_date
       - observation_end_date
       - observed_values
@@ -770,9 +771,9 @@ slots:
     range: ObservableEntityPropertySet
   observation_result_type:
     range: ObservationResultType
-  observation_result:
+  observation_results:
     range: ObservationResult
-    inlined: false
+    multivalued: true
   observable_entity_type:
     range: ObservableEntityType
   observable_entity_id_list:
