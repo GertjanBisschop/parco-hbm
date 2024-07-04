@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-06-30T17:43:53
+# Generation date: 2024-07-04T15:54:39
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1799,7 +1799,7 @@ class Observation(NamedThing):
     id: Union[str, ObservationId] = None
     observation_type: Optional[Union[str, "ObservationType"]] = None
     observation_design: Optional[Union[dict, "ObservationDesign"]] = None
-    observation_result: Optional[Union[str, ObservationResultId]] = None
+    observation_results: Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.observation_type is not None and not isinstance(self.observation_type, ObservationType):
@@ -1808,8 +1808,9 @@ class Observation(NamedThing):
         if self.observation_design is not None and not isinstance(self.observation_design, ObservationDesign):
             self.observation_design = ObservationDesign(**as_dict(self.observation_design))
 
-        if self.observation_result is not None and not isinstance(self.observation_result, ObservationResultId):
-            self.observation_result = ObservationResultId(self.observation_result)
+        if not isinstance(self.observation_results, list):
+            self.observation_results = [self.observation_results] if self.observation_results is not None else []
+        self.observation_results = [v if isinstance(v, ObservationResultId) else ObservationResultId(v) for v in self.observation_results]
 
         super().__post_init__(**kwargs)
 
@@ -1991,11 +1992,15 @@ class ObservationResult(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.ObservationResult
 
     id: Union[str, ObservationResultId] = None
+    observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
     observation_start_date: Optional[Union[str, XSDDate]] = None
     observation_end_date: Optional[Union[str, XSDDate]] = None
     observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.observation_result_type is not None and not isinstance(self.observation_result_type, ObservationResultType):
+            self.observation_result_type = ObservationResultType(self.observation_result_type)
+
         if self.observation_start_date is not None and not isinstance(self.observation_start_date, XSDDate):
             self.observation_start_date = XSDDate(self.observation_start_date)
 
@@ -3011,8 +3016,8 @@ slots.observable_entity_property_sets = Slot(uri=PEH.observable_entity_property_
 slots.observation_result_type = Slot(uri=PEH.observation_result_type, name="observation_result_type", curie=PEH.curie('observation_result_type'),
                    model_uri=PEH.observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
 
-slots.observation_result = Slot(uri=PEH.observation_result, name="observation_result", curie=PEH.curie('observation_result'),
-                   model_uri=PEH.observation_result, domain=None, range=Optional[Union[str, ObservationResultId]])
+slots.observation_results = Slot(uri=PEH.observation_results, name="observation_results", curie=PEH.curie('observation_results'),
+                   model_uri=PEH.observation_results, domain=None, range=Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]])
 
 slots.observable_entity_type = Slot(uri=PEH.observable_entity_type, name="observable_entity_type", curie=PEH.curie('observable_entity_type'),
                    model_uri=PEH.observable_entity_type, domain=None, range=Optional[Union[str, "ObservableEntityType"]])
