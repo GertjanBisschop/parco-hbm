@@ -998,6 +998,12 @@ enums:
         meaning: qudtqk:Dimensionless
       DimensionlessRatio:
         meaning: qudtqk:DimensionlessRatio
+      Time:
+        meaning: qudtqk:Time
+      Frequency:
+        meaning: qudtqk:Frequency
+      Length:
+        meaning: qudtqk:Length
       Mass:
         meaning: qudtqk:Mass
       MassPerArea:
@@ -1006,8 +1012,6 @@ enums:
         meaning: qudtqk:MassConcentration
       NumberDensity:
         meaning: qudtqk:NumberDensity
-      Period:
-        meaning: qudtqk:Period
       SerumOrPlasmaLevel:
         meaning: qudtqk:SerumOrPlasmaLevel
       Volume:
