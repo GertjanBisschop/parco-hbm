@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-07-04T15:54:39
+# Generation date: 2024-07-12T15:20:45
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -2635,6 +2635,15 @@ class QudtQuantityKind(EnumDefinitionImpl):
     DimensionlessRatio = PermissibleValue(
         text="DimensionlessRatio",
         meaning=QUDTQK["DimensionlessRatio"])
+    Time = PermissibleValue(
+        text="Time",
+        meaning=QUDTQK["Time"])
+    Frequency = PermissibleValue(
+        text="Frequency",
+        meaning=QUDTQK["Frequency"])
+    Length = PermissibleValue(
+        text="Length",
+        meaning=QUDTQK["Length"])
     Mass = PermissibleValue(
         text="Mass",
         meaning=QUDTQK["Mass"])
@@ -2647,9 +2656,6 @@ class QudtQuantityKind(EnumDefinitionImpl):
     NumberDensity = PermissibleValue(
         text="NumberDensity",
         meaning=QUDTQK["NumberDensity"])
-    Period = PermissibleValue(
-        text="Period",
-        meaning=QUDTQK["Period"])
     SerumOrPlasmaLevel = PermissibleValue(
         text="SerumOrPlasmaLevel",
         meaning=QUDTQK["SerumOrPlasmaLevel"])
