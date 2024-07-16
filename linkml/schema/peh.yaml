@@ -966,6 +966,7 @@ enums:
       data_controller:
       data_processor:
       data_user:
+      lab:
   StudyRole:
     permissible_values:
       funding_partner:
@@ -973,6 +974,7 @@ enums:
       data_controller:
       data_processor:
       data_user:
+      lab:
   DataRole:
     permissible_values:
       main_stakeholder:

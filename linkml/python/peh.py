@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-07-12T15:20:45
+# Generation date: 2024-07-16T09:29:05
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -2587,6 +2587,7 @@ class ProjectRole(EnumDefinitionImpl):
     data_controller = PermissibleValue(text="data_controller")
     data_processor = PermissibleValue(text="data_processor")
     data_user = PermissibleValue(text="data_user")
+    lab = PermissibleValue(text="lab")
 
     _defn = EnumDefinition(
         name="ProjectRole",
@@ -2599,6 +2600,7 @@ class StudyRole(EnumDefinitionImpl):
     data_controller = PermissibleValue(text="data_controller")
     data_processor = PermissibleValue(text="data_processor")
     data_user = PermissibleValue(text="data_user")
+    lab = PermissibleValue(text="lab")
 
     _defn = EnumDefinition(
         name="StudyRole",
