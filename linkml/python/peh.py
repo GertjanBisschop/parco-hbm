@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-07-16T09:29:05
+# Generation date: 2024-09-24T09:04:23
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -998,6 +998,7 @@ class ObservableProperty(NamedThing):
     value_metadata: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], List[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     default_unit: Optional[str] = None
+    default_unit_label: Optional[str] = None
     default_required: Optional[Union[bool, Bool]] = None
     default_zeroallowed: Optional[Union[bool, Bool]] = None
     default_significantdecimals: Optional[int] = None
@@ -1039,6 +1040,9 @@ class ObservableProperty(NamedThing):
 
         if self.default_unit is not None and not isinstance(self.default_unit, str):
             self.default_unit = str(self.default_unit)
+
+        if self.default_unit_label is not None and not isinstance(self.default_unit_label, str):
+            self.default_unit_label = str(self.default_unit_label)
 
         if self.default_required is not None and not isinstance(self.default_required, Bool):
             self.default_required = Bool(self.default_required)
@@ -2852,6 +2856,9 @@ slots.default_significantdecimals = Slot(uri=PEH.default_significantdecimals, na
 
 slots.default_unit = Slot(uri=PEH.default_unit, name="default_unit", curie=PEH.curie('default_unit'),
                    model_uri=PEH.default_unit, domain=None, range=Optional[str])
+
+slots.default_unit_label = Slot(uri=PEH.default_unit_label, name="default_unit_label", curie=PEH.curie('default_unit_label'),
+                   model_uri=PEH.default_unit_label, domain=None, range=Optional[str])
 
 slots.default_immutable = Slot(uri=PEH.default_immutable, name="default_immutable", curie=PEH.curie('default_immutable'),
                    model_uri=PEH.default_immutable, domain=None, range=Optional[Union[bool, Bool]])

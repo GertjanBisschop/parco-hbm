@@ -213,6 +213,7 @@ classes:
       - value_metadata
       - quantity_kind
       - default_unit
+      - default_unit_label
       - default_required
       - default_zeroallowed
       - default_significantdecimals
@@ -626,6 +627,7 @@ slots:
   default_significantdecimals:
     range: integer
   default_unit:
+  default_unit_label:
   default_immutable:
     range: boolean
   relevant_observation_types:
