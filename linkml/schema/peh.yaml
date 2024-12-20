@@ -45,6 +45,7 @@ classes:
       - physical_entities
       - observation_groups
       - observations
+      - layouts
 
   NamedThing:
     abstract: true
@@ -448,6 +449,33 @@ classes:
       - provenance_context_key
       - provenance_value
 
+  DataLayout:
+    is_a: NamedThing
+    slots:
+      - sections
+  DataLayoutSection:
+    is_a: NamedThing
+    slots:
+      - observable_entity_grouping_id_list
+      - elements
+  DataLayoutElement:
+    is_a: NamedThing
+    slots:
+      - element_type
+  DataLayoutElementSpacer:
+    is_a: DataLayoutElement
+  DataLayoutElementText:
+    is_a: DataLayoutElement
+    slots:
+      - element_style
+  DataLayoutElementDataField:
+    is_a: DataLayoutElement
+    slots:
+      - varname
+      - observable_property
+      - is_observable_entity_key
+      - is_foreign_key
+
   DataRequest:
     is_a: NamedThing
     slots:
@@ -833,6 +861,30 @@ slots:
     range: ProvenanceData
   provenance_context_key:
   provenance_value:
+  
+  layouts:
+    multivalued: true
+    inlined_as_list: true
+    range: DataLayout
+  sections:
+    multivalued: true
+    inlined_as_list: true
+    range: DataLayoutSection
+  observable_entity_grouping_id_list:
+    multivalued: true
+    range: StudyEntity
+  elements:
+    multivalued: true
+    inlined_as_list: true
+    range: DataLayoutElement
+  element_type:
+    range: DataLayoutElementType
+  element_style:
+    range: DataLayoutElementStyle
+  is_observable_entity_key:
+    range: boolean
+  is_foreign_key:
+    range: boolean
 
   data_roles:
     multivalued: true
@@ -950,6 +1002,20 @@ enums:
       control:
       calculation:
       simulation:
+  DataLayoutElementType:
+    permissible_values:
+      text:
+      spacer:
+      data_field:
+  DataLayoutElementStyle:
+    permissible_values:
+      standard:
+      main_title:
+      section_title:
+      sub_title:
+      comment:
+      warning:
+      alert:
   ObjectiveType:
     permissible_values:
       research_objective:

@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-24T09:04:23
+# Generation date: 2024-12-20T12:26:01
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -11,6 +11,7 @@ import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
+from datetime import date, datetime, time
 from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 
 from linkml_runtime.utils.slot import Slot
@@ -185,6 +186,30 @@ class GeospatialResultId(ObservationResultId):
     pass
 
 
+class DataLayoutId(NamedThingId):
+    pass
+
+
+class DataLayoutSectionId(NamedThingId):
+    pass
+
+
+class DataLayoutElementId(NamedThingId):
+    pass
+
+
+class DataLayoutElementSpacerId(DataLayoutElementId):
+    pass
+
+
+class DataLayoutElementTextId(DataLayoutElementId):
+    pass
+
+
+class DataLayoutElementDataFieldId(DataLayoutElementId):
+    pass
+
+
 class DataRequestId(NamedThingId):
     pass
 
@@ -205,7 +230,7 @@ class ProcessingStepId(NamedThingId):
     pass
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityList(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -224,8 +249,11 @@ class EntityList(YAMLRoot):
     stakeholders: Optional[Union[Dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], List[Union[dict, "Stakeholder"]]]] = empty_dict()
     projects: Optional[Union[Dict[Union[str, ProjectId], Union[dict, "Project"]], List[Union[dict, "Project"]]]] = empty_dict()
     studies: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
+    study_entities: Optional[Union[Dict[Union[str, StudyEntityId], Union[dict, "StudyEntity"]], List[Union[dict, "StudyEntity"]]]] = empty_dict()
+    physical_entities: Optional[Union[Dict[Union[str, PhysicalEntityId], Union[dict, "PhysicalEntity"]], List[Union[dict, "PhysicalEntity"]]]] = empty_dict()
     observation_groups: Optional[Union[Dict[Union[str, ObservationGroupId], Union[dict, "ObservationGroup"]], List[Union[dict, "ObservationGroup"]]]] = empty_dict()
     observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
+    layouts: Optional[Union[Dict[Union[str, DataLayoutId], Union[dict, "DataLayout"]], List[Union[dict, "DataLayout"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_list(slot_name="matrices", slot_type=Matrix, key_name="id", keyed=True)
@@ -248,14 +276,20 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(slot_name="studies", slot_type=Study, key_name="id", keyed=True)
 
+        self._normalize_inlined_as_list(slot_name="study_entities", slot_type=StudyEntity, key_name="id", keyed=True)
+
+        self._normalize_inlined_as_list(slot_name="physical_entities", slot_type=PhysicalEntity, key_name="id", keyed=True)
+
         self._normalize_inlined_as_list(slot_name="observation_groups", slot_type=ObservationGroup, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="observations", slot_type=Observation, key_name="id", keyed=True)
 
+        self._normalize_inlined_as_list(slot_name="layouts", slot_type=DataLayout, key_name="id", keyed=True)
+
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class NamedThing(YAMLRoot):
     """
     A generic grouping for any identifiable entity
@@ -298,7 +332,7 @@ class NamedThing(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Grouping(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -341,7 +375,7 @@ class Grouping(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HasValidationStatus(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -364,7 +398,7 @@ class HasValidationStatus(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ValidationHistoryRecord(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -398,7 +432,7 @@ class ValidationHistoryRecord(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HasAliases(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -417,7 +451,7 @@ class HasAliases(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HasContextAliases(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -436,7 +470,7 @@ class HasContextAliases(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ContextAlias(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -462,7 +496,7 @@ class ContextAlias(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HasTranslations(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -481,7 +515,7 @@ class HasTranslations(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Translation(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -507,7 +541,7 @@ class Translation(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Unit(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -542,7 +576,7 @@ class Unit(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BioChemEntity(NamedThing):
     """
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
@@ -608,7 +642,7 @@ class BioChemEntity(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BioChemIdentifier(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -639,7 +673,7 @@ class BioChemIdentifier(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BioChemIdentifierSchema(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -663,7 +697,7 @@ class BioChemIdentifierSchema(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Matrix(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -705,7 +739,7 @@ class Matrix(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Indicator(NamedThing):
     """
     A measurable indicator that is relevant to the Personal Exposure and Health domain
@@ -768,7 +802,7 @@ class Indicator(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BioChemEntityLink(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -790,7 +824,7 @@ class BioChemEntityLink(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PhysicalEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -810,7 +844,7 @@ class PhysicalEntity(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PhysicalEntityLink(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -832,7 +866,7 @@ class PhysicalEntityLink(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Sample(PhysicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -873,7 +907,7 @@ class Sample(PhysicalEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Person(PhysicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -897,7 +931,7 @@ class Person(PhysicalEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Geolocation(PhysicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -921,7 +955,7 @@ class Geolocation(PhysicalEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Environment(PhysicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -941,7 +975,7 @@ class Environment(PhysicalEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HomeEnvironment(Environment):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -961,7 +995,7 @@ class HomeEnvironment(Environment):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class WorkEnvironment(Environment):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -981,7 +1015,7 @@ class WorkEnvironment(Environment):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservableProperty(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1089,7 +1123,7 @@ class ObservableProperty(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservablePropertyValueOption(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1120,7 +1154,7 @@ class ObservablePropertyValueOption(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservablePropertyMetadataElement(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1142,7 +1176,7 @@ class ObservablePropertyMetadataElement(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservablePropertyMetadataField(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1166,7 +1200,7 @@ class ObservablePropertyMetadataField(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CalculationDesign(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1196,7 +1230,7 @@ class CalculationDesign(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CalculationImplementation(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1229,7 +1263,7 @@ class CalculationImplementation(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CalculationArgument(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1263,7 +1297,7 @@ class CalculationArgument(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CalculationKeywordArgument(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1301,7 +1335,7 @@ class CalculationKeywordArgument(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CalculationResult(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1339,7 +1373,7 @@ class CalculationResult(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ValidationDesign(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1357,7 +1391,7 @@ class ValidationDesign(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Contact(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1397,7 +1431,7 @@ class Contact(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Stakeholder(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1430,7 +1464,7 @@ class Stakeholder(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ProjectStakeholder(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1463,7 +1497,7 @@ class ProjectStakeholder(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1492,7 +1526,7 @@ class StudyEntity(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Project(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1504,7 +1538,7 @@ class Project(StudyEntity):
     id: Union[str, ProjectId] = None
     context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
     default_language: Optional[str] = None
-    project_stakeholders: Optional[Union[Union[dict, "ProjectStakeholder"], List[Union[dict, "ProjectStakeholder"]]]] = empty_list()
+    project_stakeholders: Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
     study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
@@ -1544,7 +1578,7 @@ class Project(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyEntityLink(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1566,7 +1600,7 @@ class StudyEntityLink(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Study(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1581,7 +1615,7 @@ class Study(StudyEntity):
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
     observation_group_id_list: Optional[Union[Union[str, ObservationGroupId], List[Union[str, ObservationGroupId]]]] = empty_list()
-    study_entities: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
+    study_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
     project_id_list: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
@@ -1608,9 +1642,9 @@ class Study(StudyEntity):
             self.observation_group_id_list = [self.observation_group_id_list] if self.observation_group_id_list is not None else []
         self.observation_group_id_list = [v if isinstance(v, ObservationGroupId) else ObservationGroupId(v) for v in self.observation_group_id_list]
 
-        if not isinstance(self.study_entities, list):
-            self.study_entities = [self.study_entities] if self.study_entities is not None else []
-        self.study_entities = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.study_entities]
+        if not isinstance(self.study_entity_id_list, list):
+            self.study_entity_id_list = [self.study_entity_id_list] if self.study_entity_id_list is not None else []
+        self.study_entity_id_list = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.study_entity_id_list]
 
         if not isinstance(self.project_id_list, list):
             self.project_id_list = [self.project_id_list] if self.project_id_list is not None else []
@@ -1623,7 +1657,7 @@ class Study(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyStakeholder(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1651,7 +1685,7 @@ class StudyStakeholder(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservationGroup(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1688,7 +1722,7 @@ class ObservationGroup(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyPopulation(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1717,7 +1751,7 @@ class StudyPopulation(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SampleCollection(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1751,7 +1785,7 @@ class SampleCollection(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class StudySubject(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1771,7 +1805,7 @@ class StudySubject(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class StudySubjectGroup(StudyEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1791,7 +1825,7 @@ class StudySubjectGroup(StudyEntity):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Observation(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1819,7 +1853,7 @@ class Observation(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class MetadataObservation(Observation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1839,7 +1873,7 @@ class MetadataObservation(Observation):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class QuestionnaireObservation(Observation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1859,7 +1893,7 @@ class QuestionnaireObservation(Observation):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SamplingObservation(Observation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1879,7 +1913,7 @@ class SamplingObservation(Observation):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GeospatialObservation(Observation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1899,7 +1933,7 @@ class GeospatialObservation(Observation):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservationDesign(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1954,7 +1988,7 @@ class GeospatialDesign(ObservationDesign):
     class_model_uri: ClassVar[URIRef] = PEH.GeospatialDesign
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservableEntityPropertySet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1986,7 +2020,7 @@ class ObservableEntityPropertySet(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservationResult(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2018,7 +2052,7 @@ class ObservationResult(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class MetadataResult(ObservationResult):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2038,7 +2072,7 @@ class MetadataResult(ObservationResult):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class QuestionnaireResult(ObservationResult):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2066,7 +2100,7 @@ class QuestionnaireResult(ObservationResult):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SamplingResult(ObservationResult):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2106,7 +2140,7 @@ class SamplingResult(ObservationResult):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GeospatialResult(ObservationResult):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2126,7 +2160,7 @@ class GeospatialResult(ObservationResult):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservedValue(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2198,7 +2232,7 @@ class ObservedValue(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class QualityData(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2220,7 +2254,7 @@ class QualityData(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ProvenanceData(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2242,7 +2276,162 @@ class ProvenanceData(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
+class DataLayout(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["DataLayout"]
+    class_class_curie: ClassVar[str] = "peh:DataLayout"
+    class_name: ClassVar[str] = "DataLayout"
+    class_model_uri: ClassVar[URIRef] = PEH.DataLayout
+
+    id: Union[str, DataLayoutId] = None
+    sections: Optional[Union[Dict[Union[str, DataLayoutSectionId], Union[dict, "DataLayoutSection"]], List[Union[dict, "DataLayoutSection"]]]] = empty_dict()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataLayoutId):
+            self.id = DataLayoutId(self.id)
+
+        self._normalize_inlined_as_list(slot_name="sections", slot_type=DataLayoutSection, key_name="id", keyed=True)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataLayoutSection(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutSection"]
+    class_class_curie: ClassVar[str] = "peh:DataLayoutSection"
+    class_name: ClassVar[str] = "DataLayoutSection"
+    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutSection
+
+    id: Union[str, DataLayoutSectionId] = None
+    observable_entity_grouping_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
+    elements: Optional[Union[Dict[Union[str, DataLayoutElementId], Union[dict, "DataLayoutElement"]], List[Union[dict, "DataLayoutElement"]]]] = empty_dict()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataLayoutSectionId):
+            self.id = DataLayoutSectionId(self.id)
+
+        if not isinstance(self.observable_entity_grouping_id_list, list):
+            self.observable_entity_grouping_id_list = [self.observable_entity_grouping_id_list] if self.observable_entity_grouping_id_list is not None else []
+        self.observable_entity_grouping_id_list = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.observable_entity_grouping_id_list]
+
+        self._normalize_inlined_as_list(slot_name="elements", slot_type=DataLayoutElement, key_name="id", keyed=True)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataLayoutElement(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElement"]
+    class_class_curie: ClassVar[str] = "peh:DataLayoutElement"
+    class_name: ClassVar[str] = "DataLayoutElement"
+    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElement
+
+    id: Union[str, DataLayoutElementId] = None
+    element_type: Optional[Union[str, "DataLayoutElementType"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataLayoutElementId):
+            self.id = DataLayoutElementId(self.id)
+
+        if self.element_type is not None and not isinstance(self.element_type, DataLayoutElementType):
+            self.element_type = DataLayoutElementType(self.element_type)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataLayoutElementSpacer(DataLayoutElement):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElementSpacer"]
+    class_class_curie: ClassVar[str] = "peh:DataLayoutElementSpacer"
+    class_name: ClassVar[str] = "DataLayoutElementSpacer"
+    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElementSpacer
+
+    id: Union[str, DataLayoutElementSpacerId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataLayoutElementSpacerId):
+            self.id = DataLayoutElementSpacerId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataLayoutElementText(DataLayoutElement):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElementText"]
+    class_class_curie: ClassVar[str] = "peh:DataLayoutElementText"
+    class_name: ClassVar[str] = "DataLayoutElementText"
+    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElementText
+
+    id: Union[str, DataLayoutElementTextId] = None
+    element_style: Optional[Union[str, "DataLayoutElementStyle"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataLayoutElementTextId):
+            self.id = DataLayoutElementTextId(self.id)
+
+        if self.element_style is not None and not isinstance(self.element_style, DataLayoutElementStyle):
+            self.element_style = DataLayoutElementStyle(self.element_style)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataLayoutElementDataField(DataLayoutElement):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElementDataField"]
+    class_class_curie: ClassVar[str] = "peh:DataLayoutElementDataField"
+    class_name: ClassVar[str] = "DataLayoutElementDataField"
+    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElementDataField
+
+    id: Union[str, DataLayoutElementDataFieldId] = None
+    varname: Optional[str] = None
+    observable_property: Optional[Union[str, ObservablePropertyId]] = None
+    is_observable_entity_key: Optional[Union[bool, Bool]] = None
+    is_foreign_key: Optional[Union[bool, Bool]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataLayoutElementDataFieldId):
+            self.id = DataLayoutElementDataFieldId(self.id)
+
+        if self.varname is not None and not isinstance(self.varname, str):
+            self.varname = str(self.varname)
+
+        if self.observable_property is not None and not isinstance(self.observable_property, ObservablePropertyId):
+            self.observable_property = ObservablePropertyId(self.observable_property)
+
+        if self.is_observable_entity_key is not None and not isinstance(self.is_observable_entity_key, Bool):
+            self.is_observable_entity_key = Bool(self.is_observable_entity_key)
+
+        if self.is_foreign_key is not None and not isinstance(self.is_foreign_key, Bool):
+            self.is_foreign_key = Bool(self.is_foreign_key)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class DataRequest(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2304,7 +2493,7 @@ class DataRequest(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservedEntityProperty(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2326,7 +2515,7 @@ class ObservedEntityProperty(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class DataStakeholder(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2364,7 +2553,7 @@ class DataStakeholder(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ResearchObjective(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2393,7 +2582,7 @@ class ResearchObjective(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ProcessingAction(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2413,7 +2602,7 @@ class ProcessingAction(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ProcessingStep(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2441,7 +2630,7 @@ class ProcessingStep(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class DataExtract(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2545,6 +2734,30 @@ class ObservationResultType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ObservationResultType",
+    )
+
+class DataLayoutElementType(EnumDefinitionImpl):
+
+    text = PermissibleValue(text="text")
+    spacer = PermissibleValue(text="spacer")
+    data_field = PermissibleValue(text="data_field")
+
+    _defn = EnumDefinition(
+        name="DataLayoutElementType",
+    )
+
+class DataLayoutElementStyle(EnumDefinitionImpl):
+
+    standard = PermissibleValue(text="standard")
+    main_title = PermissibleValue(text="main_title")
+    section_title = PermissibleValue(text="section_title")
+    sub_title = PermissibleValue(text="sub_title")
+    comment = PermissibleValue(text="comment")
+    warning = PermissibleValue(text="warning")
+    alert = PermissibleValue(text="alert")
+
+    _defn = EnumDefinition(
+        name="DataLayoutElementStyle",
     )
 
 class ObjectiveType(EnumDefinitionImpl):
@@ -2992,6 +3205,9 @@ slots.observations = Slot(uri=PEH.observations, name="observations", curie=PEH.c
 slots.linktype = Slot(uri=PEH.linktype, name="linktype", curie=PEH.curie('linktype'),
                    model_uri=PEH.linktype, domain=None, range=Optional[Union[str, "LinkType"]])
 
+slots.physical_entities = Slot(uri=PEH.physical_entities, name="physical_entities", curie=PEH.curie('physical_entities'),
+                   model_uri=PEH.physical_entities, domain=None, range=Optional[Union[Dict[Union[str, PhysicalEntityId], Union[dict, PhysicalEntity]], List[Union[dict, PhysicalEntity]]]])
+
 slots.physical_entity_links = Slot(uri=PEH.physical_entity_links, name="physical_entity_links", curie=PEH.curie('physical_entity_links'),
                    model_uri=PEH.physical_entity_links, domain=None, range=Optional[Union[Union[dict, PhysicalEntityLink], List[Union[dict, PhysicalEntityLink]]]])
 
@@ -2999,7 +3215,10 @@ slots.physical_entity = Slot(uri=PEH.physical_entity, name="physical_entity", cu
                    model_uri=PEH.physical_entity, domain=None, range=Optional[Union[str, PhysicalEntityId]])
 
 slots.study_entities = Slot(uri=PEH.study_entities, name="study_entities", curie=PEH.curie('study_entities'),
-                   model_uri=PEH.study_entities, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+                   model_uri=PEH.study_entities, domain=None, range=Optional[Union[Dict[Union[str, StudyEntityId], Union[dict, StudyEntity]], List[Union[dict, StudyEntity]]]])
+
+slots.study_entity_id_list = Slot(uri=PEH.study_entity_id_list, name="study_entity_id_list", curie=PEH.curie('study_entity_id_list'),
+                   model_uri=PEH.study_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
 
 slots.study_entity_links = Slot(uri=PEH.study_entity_links, name="study_entity_links", curie=PEH.curie('study_entity_links'),
                    model_uri=PEH.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], List[Union[dict, StudyEntityLink]]]])
@@ -3099,6 +3318,30 @@ slots.provenance_context_key = Slot(uri=PEH.provenance_context_key, name="proven
 
 slots.provenance_value = Slot(uri=PEH.provenance_value, name="provenance_value", curie=PEH.curie('provenance_value'),
                    model_uri=PEH.provenance_value, domain=None, range=Optional[str])
+
+slots.layouts = Slot(uri=PEH.layouts, name="layouts", curie=PEH.curie('layouts'),
+                   model_uri=PEH.layouts, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutId], Union[dict, DataLayout]], List[Union[dict, DataLayout]]]])
+
+slots.sections = Slot(uri=PEH.sections, name="sections", curie=PEH.curie('sections'),
+                   model_uri=PEH.sections, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutSectionId], Union[dict, DataLayoutSection]], List[Union[dict, DataLayoutSection]]]])
+
+slots.observable_entity_grouping_id_list = Slot(uri=PEH.observable_entity_grouping_id_list, name="observable_entity_grouping_id_list", curie=PEH.curie('observable_entity_grouping_id_list'),
+                   model_uri=PEH.observable_entity_grouping_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+
+slots.elements = Slot(uri=PEH.elements, name="elements", curie=PEH.curie('elements'),
+                   model_uri=PEH.elements, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutElementId], Union[dict, DataLayoutElement]], List[Union[dict, DataLayoutElement]]]])
+
+slots.element_type = Slot(uri=PEH.element_type, name="element_type", curie=PEH.curie('element_type'),
+                   model_uri=PEH.element_type, domain=None, range=Optional[Union[str, "DataLayoutElementType"]])
+
+slots.element_style = Slot(uri=PEH.element_style, name="element_style", curie=PEH.curie('element_style'),
+                   model_uri=PEH.element_style, domain=None, range=Optional[Union[str, "DataLayoutElementStyle"]])
+
+slots.is_observable_entity_key = Slot(uri=PEH.is_observable_entity_key, name="is_observable_entity_key", curie=PEH.curie('is_observable_entity_key'),
+                   model_uri=PEH.is_observable_entity_key, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.is_foreign_key = Slot(uri=PEH.is_foreign_key, name="is_foreign_key", curie=PEH.curie('is_foreign_key'),
+                   model_uri=PEH.is_foreign_key, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.data_roles = Slot(uri=PEH.data_roles, name="data_roles", curie=PEH.curie('data_roles'),
                    model_uri=PEH.data_roles, domain=None, range=Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]])
