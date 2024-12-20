@@ -41,6 +41,8 @@ classes:
       - stakeholders
       - projects
       - studies
+      - study_entities
+      - physical_entities
       - observation_groups
       - observations
 
@@ -335,7 +337,7 @@ classes:
       - start_date
       - end_date
       - observation_group_id_list
-      - study_entities
+      - study_entity_id_list
       - project_id_list
   StudyStakeholder:
     slots:
@@ -741,17 +743,27 @@ slots:
     range: Observation
   linktype:
     range: LinkType
+  physical_entities:
+    multivalued: true
+    inlined_as_list: true
+    range: PhysicalEntity
   physical_entity_links:
     multivalued: true
+    inlined_as_list: true
     range: PhysicalEntityLink
   physical_entity:
     range: PhysicalEntity
     inlined: false
   study_entities:
     multivalued: true
+    inlined_as_list: true
+    range: StudyEntity
+  study_entity_id_list:
+    multivalued: true
     range: StudyEntity
   study_entity_links:
     multivalued: true
+    inlined_as_list: true
     range: StudyEntityLink
   study_entity:
     range: StudyEntity
