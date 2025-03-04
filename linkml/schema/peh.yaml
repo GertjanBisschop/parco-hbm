@@ -226,6 +226,7 @@ classes:
       - relevant_observable_entity_types
       - relevant_observation_types
       - indicator
+      - varname
       - calculation_designs
       - validation_designs
   ObservablePropertyValueOption:
