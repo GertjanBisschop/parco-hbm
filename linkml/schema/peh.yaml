@@ -264,6 +264,7 @@ classes:
       - source_path
       - varname
       - process_state
+      - imputation_state
       - value_type
       - unit
   CalculationKeywordArgument:
@@ -272,6 +273,7 @@ classes:
       - source_path
       - varname
       - process_state
+      - imputation_state
       - value_type
       - unit
   CalculationResult:
@@ -686,6 +688,7 @@ slots:
     inlined_as_list: true
     range: CalculationResult
   process_state:
+  imputation_state:
   mapping_name:
   source_path:
   destination_path:

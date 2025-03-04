@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-17T10:15:30
+# Generation date: 2025-03-04T08:40:53
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1274,6 +1274,7 @@ class CalculationArgument(YAMLRoot):
     source_path: Optional[str] = None
     varname: Optional[str] = None
     process_state: Optional[str] = None
+    imputation_state: Optional[str] = None
     value_type: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
 
@@ -1286,6 +1287,9 @@ class CalculationArgument(YAMLRoot):
 
         if self.process_state is not None and not isinstance(self.process_state, str):
             self.process_state = str(self.process_state)
+
+        if self.imputation_state is not None and not isinstance(self.imputation_state, str):
+            self.imputation_state = str(self.imputation_state)
 
         if self.value_type is not None and not isinstance(self.value_type, str):
             self.value_type = str(self.value_type)
@@ -1309,6 +1313,7 @@ class CalculationKeywordArgument(YAMLRoot):
     source_path: Optional[str] = None
     varname: Optional[str] = None
     process_state: Optional[str] = None
+    imputation_state: Optional[str] = None
     value_type: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
 
@@ -1324,6 +1329,9 @@ class CalculationKeywordArgument(YAMLRoot):
 
         if self.process_state is not None and not isinstance(self.process_state, str):
             self.process_state = str(self.process_state)
+
+        if self.imputation_state is not None and not isinstance(self.imputation_state, str):
+            self.imputation_state = str(self.imputation_state)
 
         if self.value_type is not None and not isinstance(self.value_type, str):
             self.value_type = str(self.value_type)
@@ -3071,6 +3079,9 @@ slots.function_results = Slot(uri=PEH.function_results, name="function_results",
 
 slots.process_state = Slot(uri=PEH.process_state, name="process_state", curie=PEH.curie('process_state'),
                    model_uri=PEH.process_state, domain=None, range=Optional[str])
+
+slots.imputation_state = Slot(uri=PEH.imputation_state, name="imputation_state", curie=PEH.curie('imputation_state'),
+                   model_uri=PEH.imputation_state, domain=None, range=Optional[str])
 
 slots.mapping_name = Slot(uri=PEH.mapping_name, name="mapping_name", curie=PEH.curie('mapping_name'),
                    model_uri=PEH.mapping_name, domain=None, range=Optional[str])
