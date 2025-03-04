@@ -45,6 +45,7 @@ classes:
       - physical_entities
       - observation_groups
       - observations
+      - observation_results
       - layouts
 
   NamedThing:
@@ -374,7 +375,7 @@ classes:
     slots:
       - observation_type
       - observation_design
-      - observation_results
+      - observation_result_id_list
   MetadataObservation:
     is_a: Observation
   QuestionnaireObservation:
@@ -809,9 +810,16 @@ slots:
   observation_result_type:
     range: ObservationResultType
   observation_results:
-    range: ObservationResult
     multivalued: true
+    inlined_as_list: true
+    range: ObservationResult
+  observation_result_id_list:
+    multivalued: true
+    range: ObservationResult
   observable_entity_type:
+    range: ObservableEntityType
+  observable_entity_types:
+    multivalued: true
     range: ObservableEntityType
   observable_entity_id_list:
     multivalued: true
