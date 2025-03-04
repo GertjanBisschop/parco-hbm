@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-20T12:26:01
+# Generation date: 2025-02-17T10:15:30
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -194,22 +194,6 @@ class DataLayoutSectionId(NamedThingId):
     pass
 
 
-class DataLayoutElementId(NamedThingId):
-    pass
-
-
-class DataLayoutElementSpacerId(DataLayoutElementId):
-    pass
-
-
-class DataLayoutElementTextId(DataLayoutElementId):
-    pass
-
-
-class DataLayoutElementDataFieldId(DataLayoutElementId):
-    pass
-
-
 class DataRequestId(NamedThingId):
     pass
 
@@ -253,7 +237,10 @@ class EntityList(YAMLRoot):
     physical_entities: Optional[Union[Dict[Union[str, PhysicalEntityId], Union[dict, "PhysicalEntity"]], List[Union[dict, "PhysicalEntity"]]]] = empty_dict()
     observation_groups: Optional[Union[Dict[Union[str, ObservationGroupId], Union[dict, "ObservationGroup"]], List[Union[dict, "ObservationGroup"]]]] = empty_dict()
     observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
+    observation_results: Optional[Union[Dict[Union[str, ObservationResultId], Union[dict, "ObservationResult"]], List[Union[dict, "ObservationResult"]]]] = empty_dict()
+    observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
     layouts: Optional[Union[Dict[Union[str, DataLayoutId], Union[dict, "DataLayout"]], List[Union[dict, "DataLayout"]]]] = empty_dict()
+    data_requests: Optional[Union[Dict[Union[str, DataRequestId], Union[dict, "DataRequest"]], List[Union[dict, "DataRequest"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_list(slot_name="matrices", slot_type=Matrix, key_name="id", keyed=True)
@@ -284,7 +271,15 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(slot_name="observations", slot_type=Observation, key_name="id", keyed=True)
 
+        self._normalize_inlined_as_list(slot_name="observation_results", slot_type=ObservationResult, key_name="id", keyed=True)
+
+        if not isinstance(self.observed_values, list):
+            self.observed_values = [self.observed_values] if self.observed_values is not None else []
+        self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
+
         self._normalize_inlined_as_list(slot_name="layouts", slot_type=DataLayout, key_name="id", keyed=True)
+
+        self._normalize_inlined_as_list(slot_name="data_requests", slot_type=DataRequest, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -1042,6 +1037,7 @@ class ObservableProperty(NamedThing):
     relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
     relevant_observation_types: Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]] = empty_list()
     indicator: Optional[Union[str, IndicatorId]] = None
+    varname: Optional[str] = None
     calculation_designs: Optional[Union[Union[dict, "CalculationDesign"], List[Union[dict, "CalculationDesign"]]]] = empty_list()
     validation_designs: Optional[Union[Union[dict, "ValidationDesign"], List[Union[dict, "ValidationDesign"]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
@@ -1107,6 +1103,9 @@ class ObservableProperty(NamedThing):
 
         if self.indicator is not None and not isinstance(self.indicator, IndicatorId):
             self.indicator = IndicatorId(self.indicator)
+
+        if self.varname is not None and not isinstance(self.varname, str):
+            self.varname = str(self.varname)
 
         if not isinstance(self.calculation_designs, list):
             self.calculation_designs = [self.calculation_designs] if self.calculation_designs is not None else []
@@ -1837,7 +1836,7 @@ class Observation(NamedThing):
     id: Union[str, ObservationId] = None
     observation_type: Optional[Union[str, "ObservationType"]] = None
     observation_design: Optional[Union[dict, "ObservationDesign"]] = None
-    observation_results: Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]] = empty_list()
+    observation_result_id_list: Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.observation_type is not None and not isinstance(self.observation_type, ObservationType):
@@ -1846,9 +1845,9 @@ class Observation(NamedThing):
         if self.observation_design is not None and not isinstance(self.observation_design, ObservationDesign):
             self.observation_design = ObservationDesign(**as_dict(self.observation_design))
 
-        if not isinstance(self.observation_results, list):
-            self.observation_results = [self.observation_results] if self.observation_results is not None else []
-        self.observation_results = [v if isinstance(v, ObservationResultId) else ObservationResultId(v) for v in self.observation_results]
+        if not isinstance(self.observation_result_id_list, list):
+            self.observation_result_id_list = [self.observation_result_id_list] if self.observation_result_id_list is not None else []
+        self.observation_result_id_list = [v if isinstance(v, ObservationResultId) else ObservationResultId(v) for v in self.observation_result_id_list]
 
         super().__post_init__(**kwargs)
 
@@ -2309,8 +2308,10 @@ class DataLayoutSection(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEH.DataLayoutSection
 
     id: Union[str, DataLayoutSectionId] = None
+    section_type: Optional[Union[str, "DataLayoutSectionType"]] = None
+    observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
     observable_entity_grouping_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
-    elements: Optional[Union[Dict[Union[str, DataLayoutElementId], Union[dict, "DataLayoutElement"]], List[Union[dict, "DataLayoutElement"]]]] = empty_dict()
+    elements: Optional[Union[Union[dict, "DataLayoutElement"], List[Union[dict, "DataLayoutElement"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2318,17 +2319,26 @@ class DataLayoutSection(NamedThing):
         if not isinstance(self.id, DataLayoutSectionId):
             self.id = DataLayoutSectionId(self.id)
 
+        if self.section_type is not None and not isinstance(self.section_type, DataLayoutSectionType):
+            self.section_type = DataLayoutSectionType(self.section_type)
+
+        if not isinstance(self.observable_entity_types, list):
+            self.observable_entity_types = [self.observable_entity_types] if self.observable_entity_types is not None else []
+        self.observable_entity_types = [v if isinstance(v, ObservableEntityType) else ObservableEntityType(v) for v in self.observable_entity_types]
+
         if not isinstance(self.observable_entity_grouping_id_list, list):
             self.observable_entity_grouping_id_list = [self.observable_entity_grouping_id_list] if self.observable_entity_grouping_id_list is not None else []
         self.observable_entity_grouping_id_list = [v if isinstance(v, StudyEntityId) else StudyEntityId(v) for v in self.observable_entity_grouping_id_list]
 
-        self._normalize_inlined_as_list(slot_name="elements", slot_type=DataLayoutElement, key_name="id", keyed=True)
+        if not isinstance(self.elements, list):
+            self.elements = [self.elements] if self.elements is not None else []
+        self.elements = [v if isinstance(v, DataLayoutElement) else DataLayoutElement(**as_dict(v)) for v in self.elements]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class DataLayoutElement(NamedThing):
+class DataLayoutElement(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElement"]
@@ -2336,85 +2346,23 @@ class DataLayoutElement(NamedThing):
     class_name: ClassVar[str] = "DataLayoutElement"
     class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElement
 
-    id: Union[str, DataLayoutElementId] = None
+    label: Optional[str] = None
     element_type: Optional[Union[str, "DataLayoutElementType"]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DataLayoutElementId):
-            self.id = DataLayoutElementId(self.id)
-
-        if self.element_type is not None and not isinstance(self.element_type, DataLayoutElementType):
-            self.element_type = DataLayoutElementType(self.element_type)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class DataLayoutElementSpacer(DataLayoutElement):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElementSpacer"]
-    class_class_curie: ClassVar[str] = "peh:DataLayoutElementSpacer"
-    class_name: ClassVar[str] = "DataLayoutElementSpacer"
-    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElementSpacer
-
-    id: Union[str, DataLayoutElementSpacerId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DataLayoutElementSpacerId):
-            self.id = DataLayoutElementSpacerId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class DataLayoutElementText(DataLayoutElement):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElementText"]
-    class_class_curie: ClassVar[str] = "peh:DataLayoutElementText"
-    class_name: ClassVar[str] = "DataLayoutElementText"
-    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElementText
-
-    id: Union[str, DataLayoutElementTextId] = None
     element_style: Optional[Union[str, "DataLayoutElementStyle"]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DataLayoutElementTextId):
-            self.id = DataLayoutElementTextId(self.id)
-
-        if self.element_style is not None and not isinstance(self.element_style, DataLayoutElementStyle):
-            self.element_style = DataLayoutElementStyle(self.element_style)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class DataLayoutElementDataField(DataLayoutElement):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PEH["DataLayoutElementDataField"]
-    class_class_curie: ClassVar[str] = "peh:DataLayoutElementDataField"
-    class_name: ClassVar[str] = "DataLayoutElementDataField"
-    class_model_uri: ClassVar[URIRef] = PEH.DataLayoutElementDataField
-
-    id: Union[str, DataLayoutElementDataFieldId] = None
     varname: Optional[str] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
     is_observable_entity_key: Optional[Union[bool, Bool]] = None
     is_foreign_key: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DataLayoutElementDataFieldId):
-            self.id = DataLayoutElementDataFieldId(self.id)
+        if self.label is not None and not isinstance(self.label, str):
+            self.label = str(self.label)
+
+        if self.element_type is not None and not isinstance(self.element_type, DataLayoutElementType):
+            self.element_type = DataLayoutElementType(self.element_type)
+
+        if self.element_style is not None and not isinstance(self.element_style, DataLayoutElementStyle):
+            self.element_style = DataLayoutElementStyle(self.element_style)
 
         if self.varname is not None and not isinstance(self.varname, str):
             self.varname = str(self.varname)
@@ -2450,6 +2398,7 @@ class DataRequest(NamedThing):
     remark_on_content: Optional[str] = None
     remark_on_methodology: Optional[str] = None
     observed_entity_properties: Optional[Union[Union[dict, "ObservedEntityProperty"], List[Union[dict, "ObservedEntityProperty"]]]] = empty_list()
+    observable_entity_property_sets: Optional[Union[Union[dict, ObservableEntityPropertySet], List[Union[dict, ObservableEntityPropertySet]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2489,6 +2438,10 @@ class DataRequest(NamedThing):
         if not isinstance(self.observed_entity_properties, list):
             self.observed_entity_properties = [self.observed_entity_properties] if self.observed_entity_properties is not None else []
         self.observed_entity_properties = [v if isinstance(v, ObservedEntityProperty) else ObservedEntityProperty(**as_dict(v)) for v in self.observed_entity_properties]
+
+        if not isinstance(self.observable_entity_property_sets, list):
+            self.observable_entity_property_sets = [self.observable_entity_property_sets] if self.observable_entity_property_sets is not None else []
+        self.observable_entity_property_sets = [v if isinstance(v, ObservableEntityPropertySet) else ObservableEntityPropertySet(**as_dict(v)) for v in self.observable_entity_property_sets]
 
         super().__post_init__(**kwargs)
 
@@ -2734,6 +2687,16 @@ class ObservationResultType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ObservationResultType",
+    )
+
+class DataLayoutSectionType(EnumDefinitionImpl):
+
+    data_form = PermissibleValue(text="data_form")
+    data_table = PermissibleValue(text="data_table")
+    property_table = PermissibleValue(text="property_table")
+
+    _defn = EnumDefinition(
+        name="DataLayoutSectionType",
     )
 
 class DataLayoutElementType(EnumDefinitionImpl):
@@ -3251,10 +3214,16 @@ slots.observation_result_type = Slot(uri=PEH.observation_result_type, name="obse
                    model_uri=PEH.observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
 
 slots.observation_results = Slot(uri=PEH.observation_results, name="observation_results", curie=PEH.curie('observation_results'),
-                   model_uri=PEH.observation_results, domain=None, range=Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]])
+                   model_uri=PEH.observation_results, domain=None, range=Optional[Union[Dict[Union[str, ObservationResultId], Union[dict, ObservationResult]], List[Union[dict, ObservationResult]]]])
+
+slots.observation_result_id_list = Slot(uri=PEH.observation_result_id_list, name="observation_result_id_list", curie=PEH.curie('observation_result_id_list'),
+                   model_uri=PEH.observation_result_id_list, domain=None, range=Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]])
 
 slots.observable_entity_type = Slot(uri=PEH.observable_entity_type, name="observable_entity_type", curie=PEH.curie('observable_entity_type'),
                    model_uri=PEH.observable_entity_type, domain=None, range=Optional[Union[str, "ObservableEntityType"]])
+
+slots.observable_entity_types = Slot(uri=PEH.observable_entity_types, name="observable_entity_types", curie=PEH.curie('observable_entity_types'),
+                   model_uri=PEH.observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]])
 
 slots.observable_entity_id_list = Slot(uri=PEH.observable_entity_id_list, name="observable_entity_id_list", curie=PEH.curie('observable_entity_id_list'),
                    model_uri=PEH.observable_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
@@ -3319,17 +3288,23 @@ slots.provenance_context_key = Slot(uri=PEH.provenance_context_key, name="proven
 slots.provenance_value = Slot(uri=PEH.provenance_value, name="provenance_value", curie=PEH.curie('provenance_value'),
                    model_uri=PEH.provenance_value, domain=None, range=Optional[str])
 
+slots.data_requests = Slot(uri=PEH.data_requests, name="data_requests", curie=PEH.curie('data_requests'),
+                   model_uri=PEH.data_requests, domain=None, range=Optional[Union[Dict[Union[str, DataRequestId], Union[dict, DataRequest]], List[Union[dict, DataRequest]]]])
+
 slots.layouts = Slot(uri=PEH.layouts, name="layouts", curie=PEH.curie('layouts'),
                    model_uri=PEH.layouts, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutId], Union[dict, DataLayout]], List[Union[dict, DataLayout]]]])
 
 slots.sections = Slot(uri=PEH.sections, name="sections", curie=PEH.curie('sections'),
                    model_uri=PEH.sections, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutSectionId], Union[dict, DataLayoutSection]], List[Union[dict, DataLayoutSection]]]])
 
+slots.section_type = Slot(uri=PEH.section_type, name="section_type", curie=PEH.curie('section_type'),
+                   model_uri=PEH.section_type, domain=None, range=Optional[Union[str, "DataLayoutSectionType"]])
+
 slots.observable_entity_grouping_id_list = Slot(uri=PEH.observable_entity_grouping_id_list, name="observable_entity_grouping_id_list", curie=PEH.curie('observable_entity_grouping_id_list'),
                    model_uri=PEH.observable_entity_grouping_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
 
 slots.elements = Slot(uri=PEH.elements, name="elements", curie=PEH.curie('elements'),
-                   model_uri=PEH.elements, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutElementId], Union[dict, DataLayoutElement]], List[Union[dict, DataLayoutElement]]]])
+                   model_uri=PEH.elements, domain=None, range=Optional[Union[Union[dict, DataLayoutElement], List[Union[dict, DataLayoutElement]]]])
 
 slots.element_type = Slot(uri=PEH.element_type, name="element_type", curie=PEH.curie('element_type'),
                    model_uri=PEH.element_type, domain=None, range=Optional[Union[str, "DataLayoutElementType"]])
