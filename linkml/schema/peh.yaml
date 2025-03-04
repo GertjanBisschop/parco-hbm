@@ -46,6 +46,7 @@ classes:
       - observation_groups
       - observations
       - observation_results
+      - observed_values
       - layouts
       - data_requests
 
