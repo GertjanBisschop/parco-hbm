@@ -47,6 +47,7 @@ classes:
       - observations
       - observation_results
       - layouts
+      - data_requests
 
   NamedThing:
     abstract: true
@@ -484,6 +485,7 @@ classes:
       - remark_on_content
       - remark_on_methodology
       - observed_entity_properties
+      - observable_entity_property_sets
   ObservedEntityProperty:
     slots:
       - observable_entity
@@ -865,6 +867,10 @@ slots:
   provenance_context_key:
   provenance_value:
   
+  data_requests:
+    multivalued: true
+    inlined_as_list: true
+    range: DataRequest
   layouts:
     multivalued: true
     inlined_as_list: true
