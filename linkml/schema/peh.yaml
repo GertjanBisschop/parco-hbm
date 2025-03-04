@@ -456,21 +456,15 @@ classes:
   DataLayoutSection:
     is_a: NamedThing
     slots:
+      - section_type
+      - observable_entity_types
       - observable_entity_grouping_id_list
       - elements
   DataLayoutElement:
-    is_a: NamedThing
     slots:
+      - label
       - element_type
-  DataLayoutElementSpacer:
-    is_a: DataLayoutElement
-  DataLayoutElementText:
-    is_a: DataLayoutElement
-    slots:
       - element_style
-  DataLayoutElementDataField:
-    is_a: DataLayoutElement
-    slots:
       - varname
       - observable_property
       - is_observable_entity_key
@@ -870,6 +864,8 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: DataLayoutSection
+  section_type:
+    range: DataLayoutSectionType
   observable_entity_grouping_id_list:
     multivalued: true
     range: StudyEntity
@@ -1002,6 +998,11 @@ enums:
       control:
       calculation:
       simulation:
+  DataLayoutSectionType:
+    permissible_values:
+      data_form:
+      data_table:
+      property_table:
   DataLayoutElementType:
     permissible_values:
       text:
