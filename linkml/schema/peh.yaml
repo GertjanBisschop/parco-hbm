@@ -325,8 +325,6 @@ classes:
   StudyEntity:
     abstract: true
     is_a: NamedThing
-    mixins:
-      - HasContextAliases
     slots:
       - physical_entity
       - study_entity_links
@@ -338,6 +336,7 @@ classes:
     is_a: StudyEntity
     mixins:
       - HasTranslations
+      - HasContextAliases
     slots:
       - default_language
       - study_stakeholders

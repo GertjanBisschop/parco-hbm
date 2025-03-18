@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-04T08:40:53
+# Generation date: 2025-03-18T08:45:18
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1516,7 +1516,6 @@ class StudyEntity(NamedThing):
     id: Union[str, StudyEntityId] = None
     physical_entity: Optional[Union[str, PhysicalEntityId]] = None
     study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.physical_entity is not None and not isinstance(self.physical_entity, PhysicalEntityId):
@@ -1525,10 +1524,6 @@ class StudyEntity(NamedThing):
         if not isinstance(self.study_entity_links, list):
             self.study_entity_links = [self.study_entity_links] if self.study_entity_links is not None else []
         self.study_entity_links = [v if isinstance(v, StudyEntityLink) else StudyEntityLink(**as_dict(v)) for v in self.study_entity_links]
-
-        if not isinstance(self.context_aliases, list):
-            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
-        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -1543,23 +1538,19 @@ class Project(StudyEntity):
     class_model_uri: ClassVar[URIRef] = PEH.Project
 
     id: Union[str, ProjectId] = None
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
     default_language: Optional[str] = None
     project_stakeholders: Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
     study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProjectId):
             self.id = ProjectId(self.id)
-
-        if not isinstance(self.context_aliases, list):
-            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
-        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         if self.default_language is not None and not isinstance(self.default_language, str):
             self.default_language = str(self.default_language)
@@ -1581,6 +1572,10 @@ class Project(StudyEntity):
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
         self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
@@ -1625,6 +1620,7 @@ class Study(StudyEntity):
     study_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
     project_id_list: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1660,6 +1656,10 @@ class Study(StudyEntity):
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
         self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
+        self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
 
         super().__post_init__(**kwargs)
 
