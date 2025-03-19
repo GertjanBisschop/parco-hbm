@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-18T08:45:18
+# Generation date: 2025-03-19T10:34:54
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -705,6 +705,7 @@ class Matrix(NamedThing):
     sort_order: Optional[Decimal] = None
     aggregation_target: Optional[Union[bool, Bool]] = None
     parent_matrix: Optional[Union[str, MatrixId]] = None
+    secondary_parent_matrix_id_list: Optional[Union[Union[str, MatrixId], List[Union[str, MatrixId]]]] = empty_list()
     context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
 
@@ -722,6 +723,10 @@ class Matrix(NamedThing):
 
         if self.parent_matrix is not None and not isinstance(self.parent_matrix, MatrixId):
             self.parent_matrix = MatrixId(self.parent_matrix)
+
+        if not isinstance(self.secondary_parent_matrix_id_list, list):
+            self.secondary_parent_matrix_id_list = [self.secondary_parent_matrix_id_list] if self.secondary_parent_matrix_id_list is not None else []
+        self.secondary_parent_matrix_id_list = [v if isinstance(v, MatrixId) else MatrixId(v) for v in self.secondary_parent_matrix_id_list]
 
         if not isinstance(self.context_aliases, list):
             self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
@@ -2974,6 +2979,9 @@ slots.aggregation_target = Slot(uri=PEH.aggregation_target, name="aggregation_ta
 
 slots.parent_matrix = Slot(uri=PEH.parent_matrix, name="parent_matrix", curie=PEH.curie('parent_matrix'),
                    model_uri=PEH.parent_matrix, domain=None, range=Optional[Union[str, MatrixId]])
+
+slots.secondary_parent_matrix_id_list = Slot(uri=PEH.secondary_parent_matrix_id_list, name="secondary_parent_matrix_id_list", curie=PEH.curie('secondary_parent_matrix_id_list'),
+                   model_uri=PEH.secondary_parent_matrix_id_list, domain=None, range=Optional[Union[Union[str, MatrixId], List[Union[str, MatrixId]]]])
 
 slots.indicator_type = Slot(uri=PEH.indicator_type, name="indicator_type", curie=PEH.curie('indicator_type'),
                    model_uri=PEH.indicator_type, domain=None, range=Optional[Union[str, "IndicatorType"]])

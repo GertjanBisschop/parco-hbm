@@ -154,6 +154,7 @@ classes:
       - sort_order
       - aggregation_target
       - parent_matrix
+      - secondary_parent_matrix_id_list
   Indicator:
     description: >-
       A measurable indicator that is relevant to the Personal Exposure and Health domain
@@ -605,6 +606,9 @@ slots:
   aggregation_target:
     range: boolean
   parent_matrix:
+    range: Matrix
+  secondary_parent_matrix_id_list:
+    multivalued: true
     range: Matrix
   indicator_type:
     range: IndicatorType
