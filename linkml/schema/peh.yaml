@@ -3,14 +3,19 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
+imports:
+  - linkml:types
+
 prefixes:
   peh: https://w3id.org/peh/peh-model
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
   prov: http://www.w3.org/ns/prov#
   qudt: http://qudt.org/2.1/schema/qudt
-  qudtqk:   http://qudt.org/2.1/vocab/quantitykind
+  qudtqk: http://qudt.org/2.1/vocab/quantitykind
+  iop: https://w3id.org/iadopt/ont/
   # DATA PREFIXES
   # P: http://example.org/P/
   # ROR: http://example.org/ror/
@@ -19,13 +24,6 @@ prefixes:
 
 default_prefix: peh
 default_range: string
-
-default_curi_maps:
-  - obo_context
-  - semweb_context
-
-imports:
-  - linkml:types
 
 classes:
   EntityList:
@@ -521,16 +519,31 @@ slots:
     identifier: true
     slot_uri: schema:identifier
   unique_name:
+    slot_uri: schema:alternateName
+    close_mappings:
+    - skos:altLabel
+    - schema:identifier
   name:
     slot_uri: schema:name
+    exact_mappings:
+    - skos:altLabel
   description:
     slot_uri: schema:description
+    close_mappings:
+    - skos:definition
   label:
-    slot_uri: rdfs:label
+    slot_uri: skos:prefLabel
+    close_mappings:
+    - schema:alternateName
   remark:
+    slot_uri: schema:comment
+    close_mappings:
+    - skos:note
 
   orcid:
+    slot_uri: schema:identifier
   rorid:
+    slot_uri: schema:identifier
   alias:
   aliases:
     multivalued: true
@@ -547,6 +560,7 @@ slots:
     inlined_as_list: true
     range: Translation
   property_name:
+    slot_uri: schema:identifier
   language:
   translated_value:
 
