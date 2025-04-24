@@ -285,8 +285,19 @@ classes:
       - destination_path
   ValidationDesign:
     slots:
+      - validation_name
+      - validation_condition_expression
+      - validation_result_expression
+      - validation_error_level
+      - validation_error_message_template
       - conditional
-
+  ValidationExpression:
+    slots:
+      - validation_subject_source_paths
+      - validation_command
+      - validation_arg_values
+      - validation_arg_source_paths
+      - validation_arg_expressions
   Contact:
     mixins:
       - HasContextAliases
@@ -684,11 +695,13 @@ slots:
     range: ObservationType
   indicator:
     range: Indicator
+  
   calculation_designs:
     multivalued: true
     inlined_as_list: true
     range: CalculationDesign
   calculation_name:
+  conditional:
   calculation_implementation_as_json:
   calculation_implementation:
     range: CalculationImplementation
@@ -705,6 +718,32 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: CalculationResult
+  
+  validation_designs:
+    multivalued: true
+    inlined_as_list: true
+    range: ValidationDesign
+  validation_name:
+  validation_condition_expression:
+    range: ValidationExpression
+  validation_result_expression:
+    range: ValidationExpression
+  validation_error_level:
+    range: ValidationErrorLevel
+  validation_error_message_template:
+  validation_subject_source_paths:
+    multivalued: true
+  validation_command:
+    range: ValidationCommand
+  validation_arg_values:
+    multivalued: true
+  validation_arg_source_paths:
+    multivalued: true
+  validation_arg_expressions:
+    multivalued: true
+    inlined_as_list: true
+    range: ValidationExpression
+
   process_state:
   imputation_state:
   mapping_name:
@@ -714,11 +753,6 @@ slots:
     range: integer
   scale_factor:
     range: decimal
-  validation_designs:
-    multivalued: true
-    inlined_as_list: true
-    range: ValidationDesign
-  conditional:
   field:
     range: ObservablePropertyMetadataField
     inlined: false
@@ -988,6 +1022,38 @@ enums:
       unvalidated:
       in_progress:
       validated:
+  ValidationCommand:
+    permissible_values:
+      is_equal_to:
+      is_equal_to_or_both_missing:
+      is_greater_than_or_equal_to:
+      is_greater_than:
+      is_less_than_or_equal_to:
+      is_less_than:
+      is_not_equal_to:
+      is_not_equal_to_and_not_both_missing:
+      is_unique:
+      is_duplicated:
+      is_in:
+      is_null:
+      is_not_null:
+      and:
+      or:
+  ValidationErrorLevel:
+    permissible_values:
+      info:
+      warning:
+      error:
+      fatal:
+  DataLayoutElementStyle:
+    permissible_values:
+      standard:
+      main_title:
+      section_title:
+      sub_title:
+      comment:
+      warning:
+      alert:
   # Types
   IndicatorType:
     permissible_values:
@@ -1045,15 +1111,6 @@ enums:
       text:
       spacer:
       data_field:
-  DataLayoutElementStyle:
-    permissible_values:
-      standard:
-      main_title:
-      section_title:
-      sub_title:
-      comment:
-      warning:
-      alert:
   ObjectiveType:
     permissible_values:
       research_objective:
