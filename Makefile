@@ -19,7 +19,7 @@ PYMODEL = $(SRC)/python
 # ================================
 # Phony targets
 # ================================
-.PHONY: help install setup clean lint lint-fix test-schema gen-project check-config
+.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize
 
 # ================================
 # Help
@@ -28,9 +28,11 @@ help: check-config
 	@echo ""
 	@echo "make install      -- create venv and install dependencies"
 	@echo "make setup        -- full project generation and setup"
+	@echo "make make-dirs    -- create necessary directories"
 	@echo "make test-schema  -- regenerate models and check schema"
 	@echo "make lint         -- lint the schema"
-	@echo "make lint-fix     -- lint the schema and fix issues"
+	@echo "make lint-fix     -- lint-fix the schema and fix issues"
+	@echo "make serialize    -- serialize data examples"
 	@echo "make clean        -- clean generated files"
 	@echo ""
 
@@ -44,7 +46,7 @@ check-config:
 # ================================
 # Setup
 # ================================
-setup: install gen-project
+setup: instal gen-project
 
 # ================================
 # Install dependencies
@@ -57,7 +59,7 @@ install:
 # ================================
 # Generate project files
 # ================================
-gen-project: $(PYMODEL)
+gen-project: make-dirs
 	
 	gen-project \
 		--exclude excel \
@@ -69,21 +71,25 @@ gen-project: $(PYMODEL)
 		--exclude shacl \
 		--exclude shex \
 		--exclude sqlddl \
-		--exclude jsonldcontext \
+		--include jsonldcontext \
 		--exclude jsonschema \
 		--exclude owl \
 		--include python \
 		--include rdf \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH)
 # MAKE OWL
-	gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions $(SOURCE_SCHEMA_PATH) > $(SOURCE)/owl/$(SCHEMA_NAME).owl
+	gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions $(SOURCE_SCHEMA_PATH) > $(SRC)/owl/$(SCHEMA_NAME).owl
+# MAKE RDF
+	gen-rdf $(SOURCE_SCHEMA_PATH) > $(DEST)/peh.ttl
 # MAKE PYDANTIC
 	gen-pydantic --meta None $(SOURCE_SCHEMA_PATH) > $(PYMODEL)/pydanticmodel_v2.py
 # MOVE OUTPUT TO CORRECT FOLDER
-	mv peh.jdsonld $(SRC)/jsonld/.
-	mv peh.owl $(SRC)/owl/.
-	mv peh.py $(PYMODEL)/.
-	mv peh.ttl	$(SRC)/ttl/.		
+	mv $(DEST)/jsonld/*.jsonld $(SRC)/jsonld/.
+	mv $(DEST)/peh.py $(PYMODEL)/.
+	mv $(DEST)/peh.ttl	$(SRC)/rdf/.
+# RUN BLACK
+# skip black as linkml pydantic schema is not conform requirements	
+#black $(PYMODEL)		
 
 # ================================
 # Linting
@@ -99,18 +105,27 @@ lint-fix:
 	linkml-lint --fix $(SCHEMA_NAME).yaml
 
 # ================================
+# Serialize test data
+# ================================
+# NOTE serializing to RDF will cause an error, this is a linkml issue
+serialize:
+	linkml-convert -f yaml -t json --target-class EntityList --index-slot biochementities -s $(SOURCE_SCHEMA_PATH) $(SRC)/data/BioChemEntityList_data.yaml
+
+# ================================
 # Test schema
 # ================================
-test-schema: lint gen-project
+test-schema: lint gen-project serialize
 
 # ================================
 # Create directories
 # ================================
-$(PYMODEL):
-	mkdir -p $@
+make-dirs:
+	@echo "Creating necessary directories..."
+	mkdir -p $(DEST)
+	mkdir -p $(SRC)/python
 	mkdir -p $(SRC)/jsonld
 	mkdir -p $(SRC)/owl
-	mkdir -p $(SRC)/ttl
+	mkdir -p $(SRC)/rdf
 
 # ================================
 # Cleaning
