@@ -3,11 +3,14 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
+version: 0.0.1a
+
 imports:
   - linkml:types
 
 prefixes:
-  peh: https://w3id.org/peh/peh-model
+  pehterms: https://w3id.org/peh/terms/
+  peh: https://w3id.org/peh/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
@@ -22,7 +25,7 @@ prefixes:
   # CODE: http://example.org/code/
   # GEO: http://example.org/geoloc/
 
-default_prefix: peh
+default_prefix: pehterms
 default_range: string
 
 classes:
@@ -600,6 +603,7 @@ slots:
   parent_grouping_id_list:
     multivalued: true
     range: Grouping
+    slot_uri: skos:broader
   biochemidentifiers:
     multivalued: true
     inlined_as_list: true
@@ -633,6 +637,7 @@ slots:
     range: boolean
   parent_matrix:
     range: Matrix
+    slot_uri: skos:broader
   secondary_parent_matrix_id_list:
     multivalued: true
     range: Matrix
