@@ -389,25 +389,9 @@ classes:
       - observation_type
       - observation_design
       - observation_result_id_list
-  MetadataObservation:
-    is_a: Observation
-  QuestionnaireObservation:
-    is_a: Observation
-  SamplingObservation:
-    is_a: Observation
-  GeospatialObservation:
-    is_a: Observation
   ObservationDesign:
     slots:
       - observable_entity_property_sets
-  MetadataDesign:
-    is_a: ObservationDesign
-  QuestionnaireDesign:
-    is_a: ObservationDesign
-  SamplingDesign:
-    is_a: ObservationDesign
-  GeospatialDesign:
-    is_a: ObservationDesign
   ObservableEntityPropertySet:
     slots:
       - observation_result_type
@@ -424,23 +408,6 @@ classes:
       - observation_start_date
       - observation_end_date
       - observed_values
-  MetadataResult:
-    is_a: ObservationResult
-  QuestionnaireResult:
-    is_a: ObservationResult
-    slots:
-      - registration_start_date
-      - registration_end_date
-  SamplingResult:
-    is_a: ObservationResult
-    slots:
-      - collection_start_date
-      - collection_end_date
-      - analysis_start_date
-      - analysis_end_date
-      - analysis_lab
-  GeospatialResult:
-    is_a: ObservationResult
   ObservedValue:
     slots:
       - observable_entity
@@ -1006,23 +973,8 @@ slots:
     range: date
   observation_end_date:
     range: date
-  registration_start_date:
-    range: date
-  registration_end_date:
-    range: date
   collection_date:
     range: date
-  collection_start_date:
-    range: date
-  collection_end_date:
-    range: date
-  analysis_start_date:
-    range: date
-  analysis_end_date:
-    range: date
-  analysis_lab:
-    range: Stakeholder
-    inlined: false
 
 enums:
   ValidationStatus:
