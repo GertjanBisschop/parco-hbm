@@ -413,7 +413,9 @@ classes:
       - observation_result_type
       - observable_entity_type
       - observable_entity_id_list
-      - observable_property_id_list
+      - identifying_observable_property_id_list
+      - required_observable_property_id_list
+      - optional_observable_property_id_list
   ObservationResult:
     abstract: true
     is_a: NamedThing
@@ -888,7 +890,13 @@ slots:
     range: StudyEntity
   observable_entity:
     range: StudyEntity
-  observable_property_id_list:
+  identifying_observable_property_id_list:
+    multivalued: true
+    range: ObservableProperty
+  required_observable_property_id_list:
+    multivalued: true
+    range: ObservableProperty
+  optional_observable_property_id_list:
     multivalued: true
     range: ObservableProperty
   observable_properties:
