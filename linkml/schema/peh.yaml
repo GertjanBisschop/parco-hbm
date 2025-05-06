@@ -113,6 +113,7 @@ classes:
     mixins:
       - HasContextAliases
       - HasTranslations
+      - HasValidationStatus
     slots:
       - same_unit_as
       - quantity_kind
@@ -982,6 +983,7 @@ enums:
       unvalidated:
       in_progress:
       validated:
+      deprecated:
   ValidationCommand:
     permissible_values:
       is_equal_to:

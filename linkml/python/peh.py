@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-06T09:10:29
+# Generation date: 2025-05-06T14:04:37
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -550,6 +550,8 @@ class Unit(NamedThing):
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
     translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
+    current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
+    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], list[Union[dict, ValidationHistoryRecord]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -567,6 +569,13 @@ class Unit(NamedThing):
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
         self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
+
+        if self.current_validation_status is not None and not isinstance(self.current_validation_status, ValidationStatus):
+            self.current_validation_status = ValidationStatus(self.current_validation_status)
+
+        if not isinstance(self.validation_history, list):
+            self.validation_history = [self.validation_history] if self.validation_history is not None else []
+        self.validation_history = [v if isinstance(v, ValidationHistoryRecord) else ValidationHistoryRecord(**as_dict(v)) for v in self.validation_history]
 
         super().__post_init__(**kwargs)
 
@@ -2465,6 +2474,7 @@ class ValidationStatus(EnumDefinitionImpl):
     unvalidated = PermissibleValue(text="unvalidated")
     in_progress = PermissibleValue(text="in_progress")
     validated = PermissibleValue(text="validated")
+    deprecated = PermissibleValue(text="deprecated")
 
     _defn = EnumDefinition(
         name="ValidationStatus",
