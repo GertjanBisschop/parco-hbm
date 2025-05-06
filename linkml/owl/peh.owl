@@ -27,70 +27,76 @@ peh:EntityList a owl:Class ;
     rdfs:label "EntityList" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observed_values ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:study_entities ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:layouts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:ObservablePropertyMetadataField ;
             owl:onProperty peh:metadata_fields ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Study ;
-            owl:onProperty peh:studies ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Observation ;
-            owl:onProperty peh:observations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Indicator ;
-            owl:onProperty peh:indicators ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:DataRequest ;
-            owl:onProperty peh:data_requests ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Grouping ;
-            owl:onProperty peh:groupings ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:observable_properties ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:DataLayout ;
-            owl:onProperty peh:layouts ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationGroup ;
-            owl:onProperty peh:observation_groups ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:StudyEntity ;
-            owl:onProperty peh:study_entities ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:projects ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:stakeholders ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:data_requests ],
+            owl:onProperty peh:studies ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:groupings ],
+            owl:onProperty peh:layouts ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observations ],
+            owl:onProperty peh:units ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Unit ;
+            owl:onProperty peh:units ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Stakeholder ;
+            owl:onProperty peh:stakeholders ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observed_values ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Project ;
             owl:onProperty peh:projects ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservedValue ;
-            owl:onProperty peh:observed_values ],
+            owl:allValuesFrom peh:Indicator ;
+            owl:onProperty peh:indicators ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observation_results ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:biochementities ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:DataLayout ;
+            owl:onProperty peh:layouts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:indicators ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservableProperty ;
+            owl:onProperty peh:observable_properties ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:DataRequest ;
+            owl:onProperty peh:data_requests ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Study ;
+            owl:onProperty peh:studies ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservationGroup ;
+            owl:onProperty peh:observation_groups ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:PhysicalEntity ;
             owl:onProperty peh:physical_entities ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationResult ;
-            owl:onProperty peh:observation_results ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:units ],
+            owl:onProperty peh:data_requests ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:observation_groups ],
@@ -99,52 +105,46 @@ peh:EntityList a owl:Class ;
             owl:onProperty peh:matrices ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:biochementities ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:BioChemEntity ;
-            owl:onProperty peh:biochementities ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableProperty ;
-            owl:onProperty peh:observable_properties ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:physical_entities ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:projects ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observation_results ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:studies ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Stakeholder ;
-            owl:onProperty peh:stakeholders ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservablePropertyMetadataField ;
             owl:onProperty peh:metadata_fields ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:matrices ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:indicators ],
+            owl:allValuesFrom peh:BioChemEntity ;
+            owl:onProperty peh:biochementities ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:Unit ;
-            owl:onProperty peh:units ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:groupings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Grouping ;
+            owl:onProperty peh:groupings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:StudyEntity ;
+            owl:onProperty peh:study_entities ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservationResult ;
+            owl:onProperty peh:observation_results ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Observation ;
+            owl:onProperty peh:observations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservedValue ;
+            owl:onProperty peh:observed_values ] ;
     skos:inScheme peh: .
 
 peh:Geolocation a owl:Class ;
     rdfs:label "Geolocation" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:location ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:location ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:location ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:location ],
         peh:PhysicalEntity ;
     skos:inScheme peh: .
@@ -157,13 +157,13 @@ peh:HomeEnvironment a owl:Class ;
 peh:Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:recruited_in_project ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:recruited_in_project ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Project ;
+            owl:onProperty peh:recruited_in_project ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:recruited_in_project ],
         peh:PhysicalEntity ;
     skos:inScheme peh: .
@@ -174,43 +174,43 @@ peh:SampleCollection a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:constraints ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:sample_id_list ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:matrix ],
+            owl:allValuesFrom peh:Sample ;
+            owl:onProperty peh:sample_id_list ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Matrix ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:sample_id_list ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:constraints ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:Sample ;
-            owl:onProperty peh:sample_id_list ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:constraints ],
         peh:StudyEntity ;
     skos:inScheme peh: .
 
 peh:StudyPopulation a owl:Class ;
     rdfs:label "StudyPopulation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:ResearchPopulationType ;
-            owl:onProperty peh:research_population_type ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:research_population_type ],
         [ a owl:Restriction ;
+            owl:allValuesFrom peh:ResearchPopulationType ;
+            owl:onProperty peh:research_population_type ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:member_id_list ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:StudyEntity ;
             owl:onProperty peh:member_id_list ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:research_population_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:StudyEntity ;
-            owl:onProperty peh:member_id_list ],
         peh:StudyEntity ;
     skos:inScheme peh: .
 
@@ -241,10 +241,10 @@ peh:project a owl:DatatypeProperty ;
 peh:HasAliases a owl:Class ;
     rdfs:label "HasAliases" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:aliases ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:aliases ] ;
     skos:inScheme peh: .
 
@@ -252,8 +252,12 @@ qudtqk:AmountOfSubstanceConcentration a owl:Class ;
     rdfs:label "AmountOfSubstanceConcentration" ;
     rdfs:subClassOf peh:QudtQuantityKind .
 
-qudtqk:AmountOfSubstancePerUnitMass a owl:Class ;
-    rdfs:label "AmountOfSubstancePerUnitMass" ;
+qudtqk:AmountOfSubstancePerMass a owl:Class ;
+    rdfs:label "AmountOfSubstancePerMass" ;
+    rdfs:subClassOf peh:QudtQuantityKind .
+
+qudtqk:Count a owl:Class ;
+    rdfs:label "Count" ;
     rdfs:subClassOf peh:QudtQuantityKind .
 
 qudtqk:Dimensionless a owl:Class ;
@@ -284,12 +288,20 @@ qudtqk:MassPerArea a owl:Class ;
     rdfs:label "MassPerArea" ;
     rdfs:subClassOf peh:QudtQuantityKind .
 
-qudtqk:NumberDensity a owl:Class ;
-    rdfs:label "NumberDensity" ;
+qudtqk:MassRatio a owl:Class ;
+    rdfs:label "MassRatio" ;
     rdfs:subClassOf peh:QudtQuantityKind .
 
-qudtqk:SerumOrPlasmaLevel a owl:Class ;
-    rdfs:label "SerumOrPlasmaLevel" ;
+qudtqk:MolarMass a owl:Class ;
+    rdfs:label "MolarMass" ;
+    rdfs:subClassOf peh:QudtQuantityKind .
+
+qudtqk:MolarRatio a owl:Class ;
+    rdfs:label "MolarRatio" ;
+    rdfs:subClassOf peh:QudtQuantityKind .
+
+qudtqk:NumberDensity a owl:Class ;
+    rdfs:label "NumberDensity" ;
     rdfs:subClassOf peh:QudtQuantityKind .
 
 qudtqk:Time a owl:Class ;
@@ -334,30 +346,30 @@ peh:BioChemIdentifier a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:identifier_schema ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:identifier_code ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:BioChemIdentifierSchema ;
-            owl:onProperty peh:identifier_schema ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:identifier_schema ],
+            owl:onProperty peh:identifier_code ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:identifier_code ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:identifier_code ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:identifier_schema ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:BioChemIdentifierSchema ;
+            owl:onProperty peh:identifier_schema ],
         peh:HasValidationStatus ;
     skos:inScheme peh: .
 
 peh:BioChemIdentifierSchema a owl:Class ;
     rdfs:label "BioChemIdentifierSchema" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:web_uri ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:web_uri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -371,145 +383,172 @@ peh:CalculationArgument a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:process_state ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:process_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:varname ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:process_state ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:source_path ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:imputation_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:imputation_state ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:imputation_state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:source_path ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:source_path ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Unit ;
-            owl:onProperty peh:unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:imputation_state ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:imputation_state ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:source_path ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:value_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:source_path ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:process_state ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:imputation_state ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:source_path ] ;
+            owl:onProperty peh:unit ] ;
     skos:inScheme peh: .
 
 peh:CalculationDesign a owl:Class ;
     rdfs:label "CalculationDesign" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:conditional ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:calculation_implementation_as_json ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:calculation_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:calculation_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:calculation_implementation_as_json ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:calculation_implementation ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:conditional ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:CalculationImplementation ;
             owl:onProperty peh:calculation_implementation ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:calculation_implementation_as_json ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:calculation_implementation_as_json ],
+            owl:onProperty peh:calculation_name ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:calculation_implementation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:calculation_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:calculation_implementation_as_json ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:calculation_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:conditional ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:conditional ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:calculation_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:calculation_implementation ] ;
+            owl:onProperty peh:conditional ] ;
     skos:inScheme peh: .
 
 peh:CalculationImplementation a owl:Class ;
     rdfs:label "CalculationImplementation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:function_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:CalculationKeywordArgument ;
-            owl:onProperty peh:function_kwargs ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:function_name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:function_kwargs ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:CalculationArgument ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:function_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:function_args ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:function_results ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:function_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:CalculationArgument ;
+            owl:onProperty peh:function_args ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:CalculationResult ;
             owl:onProperty peh:function_results ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:function_args ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:function_name ] ;
+            owl:allValuesFrom peh:CalculationKeywordArgument ;
+            owl:onProperty peh:function_kwargs ] ;
     skos:inScheme peh: .
 
 peh:CalculationKeywordArgument a owl:Class ;
     rdfs:label "CalculationKeywordArgument" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:process_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:mapping_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:source_path ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:source_path ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:Unit ;
             owl:onProperty peh:unit ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:process_state ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:imputation_state ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:unit ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -518,105 +557,78 @@ peh:CalculationKeywordArgument a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:mapping_name ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:process_state ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:process_state ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:mapping_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:process_state ],
+            owl:onProperty peh:source_path ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:mapping_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:source_path ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:source_path ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:imputation_state ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:source_path ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:value_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:value_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:imputation_state ] ;
     skos:inScheme peh: .
 
 peh:CalculationResult a owl:Class ;
     rdfs:label "CalculationResult" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:value_type ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:round_decimals ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:scale_factor ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:scale_factor ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:mapping_name ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty peh:round_decimals ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Unit ;
-            owl:onProperty peh:unit ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:scale_factor ],
+            owl:onProperty peh:mapping_name ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:destination_path ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:scale_factor ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:round_decimals ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:unit ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:mapping_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:destination_path ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:destination_path ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:round_decimals ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:decimal ;
             owl:onProperty peh:scale_factor ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:mapping_name ],
+            owl:allValuesFrom peh:Unit ;
+            owl:onProperty peh:unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty peh:round_decimals ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:destination_path ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:mapping_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:value_type ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:value_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:round_decimals ] ;
+            owl:onProperty peh:unit ] ;
     skos:inScheme peh: .
 
 <https://w3id.org/peh/peh-modelContactRole#administrative> a owl:Class ;
@@ -649,28 +661,28 @@ peh:ContextAlias a owl:Class ;
             owl:allValuesFrom peh:NamedThing ;
             owl:onProperty peh:context ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:property_name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:context ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:alias ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:property_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:property_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:alias ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:context ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:property_name ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:alias ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:alias ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:property_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:alias ] ;
     skos:inScheme peh: .
 
@@ -692,63 +704,63 @@ peh:DataLayoutElement a owl:Class ;
             owl:onProperty peh:label ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:element_style ],
+            owl:onProperty peh:element_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:varname ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:DataLayoutElementType ;
             owl:onProperty peh:element_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:element_style ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:is_observable_entity_key ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty peh:is_foreign_key ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:is_observable_entity_key ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:element_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:varname ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:label ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:element_style ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:element_type ],
+            owl:onProperty peh:element_style ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:label ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:observable_property ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:is_foreign_key ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:DataLayoutElementStyle ;
-            owl:onProperty peh:element_style ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:is_foreign_key ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observable_property ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:is_observable_entity_key ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:element_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:varname ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservableProperty ;
+            owl:onProperty peh:observable_property ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty peh:is_observable_entity_key ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:is_observable_entity_key ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:is_foreign_key ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:DataLayoutElementStyle ;
+            owl:onProperty peh:element_style ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:observable_property ] ;
     skos:inScheme peh: .
 
@@ -795,32 +807,32 @@ peh:DataLayoutElement a owl:Class ;
 peh:DataLayoutSection a owl:Class ;
     rdfs:label "DataLayoutSection" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom peh:DataLayoutSectionType ;
+            owl:onProperty peh:section_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:elements ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:DataLayoutElement ;
             owl:onProperty peh:elements ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:section_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:DataLayoutSectionType ;
-            owl:onProperty peh:section_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableEntityType ;
-            owl:onProperty peh:observable_entity_types ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observable_entity_grouping_id_list ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:section_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observable_entity_types ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:StudyEntity ;
             owl:onProperty peh:observable_entity_grouping_id_list ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observable_entity_grouping_id_list ],
+            owl:onProperty peh:observable_entity_types ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:elements ],
+            owl:allValuesFrom peh:ObservableEntityType ;
+            owl:onProperty peh:observable_entity_types ],
         peh:NamedThing ;
     skos:inScheme peh: .
 
@@ -839,65 +851,14 @@ peh:DataLayoutSection a owl:Class ;
 peh:DataRequest a owl:Class ;
     rdfs:label "DataRequest" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observable_entity_property_sets ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:data_stakeholders ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observed_entity_properties ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:research_objectives ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:contacts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:processing_actions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservedEntityProperty ;
-            owl:onProperty peh:observed_entity_properties ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:remark_on_methodology ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:ResearchObjective ;
             owl:onProperty peh:research_objectives ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ProcessingAction ;
-            owl:onProperty peh:processing_actions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableEntityPropertySet ;
-            owl:onProperty peh:observable_entity_property_sets ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:remark_on_methodology ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observed_entity_properties ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:request_properties ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Contact ;
-            owl:onProperty peh:contacts ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:remark_on_content ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:DataStakeholder ;
-            owl:onProperty peh:data_stakeholders ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:request_properties ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:processing_steps ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:request_properties ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:remark_on_methodology ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:remark_on_content ],
@@ -905,8 +866,59 @@ peh:DataRequest a owl:Class ;
             owl:allValuesFrom peh:ProcessingStep ;
             owl:onProperty peh:processing_steps ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:data_stakeholders ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:research_objectives ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observable_entity_property_sets ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Contact ;
+            owl:onProperty peh:contacts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:processing_actions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:request_properties ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:DataStakeholder ;
+            owl:onProperty peh:data_stakeholders ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:remark_on_content ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:remark_on_methodology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:contacts ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:remark_on_content ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:processing_steps ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:request_properties ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:remark_on_methodology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:remark_on_methodology ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservableEntityPropertySet ;
+            owl:onProperty peh:observable_entity_property_sets ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservedEntityProperty ;
+            owl:onProperty peh:observed_entity_properties ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ProcessingAction ;
+            owl:onProperty peh:processing_actions ],
         peh:NamedThing ;
     skos:inScheme peh: .
 
@@ -929,34 +941,34 @@ peh:DataRequest a owl:Class ;
 peh:DataStakeholder a owl:Class ;
     rdfs:label "DataStakeholder" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:Contact ;
-            owl:onProperty peh:contacts ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:stakeholder ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:stakeholder ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:processing_description ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:DataRole ;
             owl:onProperty peh:data_roles ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:processing_description ],
+            owl:allValuesFrom peh:Contact ;
+            owl:onProperty peh:contacts ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:stakeholder ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:data_roles ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:contacts ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:DataRole ;
-            owl:onProperty peh:data_roles ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:processing_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Stakeholder ;
             owl:onProperty peh:stakeholder ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:processing_description ],
         peh:NamedThing ;
     skos:inScheme peh: .
@@ -1041,54 +1053,54 @@ peh:Environment a owl:Class ;
 peh:ObservablePropertyMetadataElement a owl:Class ;
     rdfs:label "ObservablePropertyMetadataElement" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservablePropertyMetadataField ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:field ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservablePropertyMetadataField ;
             owl:onProperty peh:field ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:field ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:value ] ;
+            owl:onProperty peh:field ] ;
     skos:inScheme peh: .
 
 peh:ObservablePropertyValueOption a owl:Class ;
     rdfs:label "ObservablePropertyValueOption" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:label ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:key ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:key ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:label ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:key ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:key ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:label ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:value ],
+            owl:onProperty peh:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:key ],
         peh:HasContextAliases ;
     skos:inScheme peh: .
 
@@ -1137,13 +1149,7 @@ peh:ObservationDesign a owl:Class ;
 peh:ObservedEntityProperty a owl:Class ;
     rdfs:label "ObservedEntityProperty" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observable_property ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:StudyEntity ;
-            owl:onProperty peh:observable_entity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty peh:observable_entity ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservableProperty ;
@@ -1153,25 +1159,31 @@ peh:ObservedEntityProperty a owl:Class ;
             owl:onProperty peh:observable_entity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:observable_entity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observable_property ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:observable_property ] ;
     skos:inScheme peh: .
 
 peh:PhysicalEntityLink a owl:Class ;
     rdfs:label "PhysicalEntityLink" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:PhysicalEntity ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:physical_entity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:linktype ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:physical_entity ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:LinkType ;
             owl:onProperty peh:linktype ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:linktype ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:physical_entity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom peh:PhysicalEntity ;
             owl:onProperty peh:physical_entity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -1186,6 +1198,12 @@ peh:ProcessingAction a owl:Class ;
 peh:ProcessingStep a owl:Class ;
     rdfs:label "ProcessingStep" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:delivery_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:start_date ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty peh:start_date ],
         [ a owl:Restriction ;
@@ -1193,16 +1211,10 @@ peh:ProcessingStep a owl:Class ;
             owl:onProperty peh:delivery_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:start_date ],
+            owl:onProperty peh:delivery_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:delivery_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:delivery_date ],
+            owl:onProperty peh:start_date ],
         peh:NamedThing ;
     skos:inScheme peh: .
 
@@ -1245,17 +1257,11 @@ peh:ProcessingStep a owl:Class ;
 peh:ProjectStakeholder a owl:Class ;
     rdfs:label "ProjectStakeholder" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:Stakeholder ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:stakeholder ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:project_roles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Contact ;
             owl:onProperty peh:contacts ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:stakeholder ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ProjectRole ;
             owl:onProperty peh:project_roles ],
@@ -1264,6 +1270,12 @@ peh:ProjectStakeholder a owl:Class ;
             owl:onProperty peh:stakeholder ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:project_roles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Stakeholder ;
+            owl:onProperty peh:stakeholder ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Contact ;
             owl:onProperty peh:contacts ],
         peh:HasTranslations ;
     skos:inScheme peh: .
@@ -1271,29 +1283,29 @@ peh:ProjectStakeholder a owl:Class ;
 peh:ProvenanceData a owl:Class ;
     rdfs:label "ProvenanceData" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:provenance_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:provenance_context_key ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:provenance_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:provenance_value ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:provenance_context_key ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:provenance_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:provenance_context_key ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:provenance_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:provenance_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:provenance_context_key ] ;
     skos:inScheme peh: .
 
 peh:QualityData a owl:Class ;
     rdfs:label "QualityData" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:quality_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -1302,14 +1314,14 @@ peh:QualityData a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:quality_value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:quality_context_key ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:quality_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:quality_context_key ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:quality_value ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:quality_context_key ] ;
     skos:inScheme peh: .
 
 peh:QudtUnit a owl:Class .
@@ -1317,20 +1329,20 @@ peh:QudtUnit a owl:Class .
 peh:ResearchObjective a owl:Class ;
     rdfs:label "ResearchObjective" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:authors ],
+            owl:allValuesFrom peh:ObjectiveType ;
+            owl:onProperty peh:objective_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:objective_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:authors ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObjectiveType ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:objective_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:objective_type ],
+            owl:onProperty peh:authors ],
         peh:NamedThing ;
     skos:inScheme peh: .
 
@@ -1369,13 +1381,7 @@ peh:ResearchObjective a owl:Class ;
 peh:Sample a owl:Class ;
     rdfs:label "Sample" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty peh:collection_date ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Project ;
-            owl:onProperty peh:sampled_in_project ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:collection_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -1384,31 +1390,37 @@ peh:Sample a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:physical_label ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:constraints ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:sampled_in_project ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:sampled_in_project ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty peh:collection_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Matrix ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:sampled_in_project ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:physical_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:collection_date ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:physical_label ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:constraints ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:physical_label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:Project ;
             owl:onProperty peh:sampled_in_project ],
         peh:PhysicalEntity ;
     skos:inScheme peh: .
@@ -1416,23 +1428,23 @@ peh:Sample a owl:Class ;
 peh:StudyEntityLink a owl:Class ;
     rdfs:label "StudyEntityLink" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:linktype ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:LinkType ;
             owl:onProperty peh:linktype ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:study_entity ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:linktype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:study_entity ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:StudyEntity ;
             owl:onProperty peh:study_entity ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:study_entity ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:linktype ] ;
+            owl:onProperty peh:study_entity ] ;
     skos:inScheme peh: .
 
 <https://w3id.org/peh/peh-modelStudyRole#data_controller> a owl:Class ;
@@ -1462,39 +1474,39 @@ peh:StudyEntityLink a owl:Class ;
 peh:StudyStakeholder a owl:Class ;
     rdfs:label "StudyStakeholder" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:stakeholder ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:study_roles ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:stakeholder ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:StudyRole ;
-            owl:onProperty peh:study_roles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Stakeholder ;
-            owl:onProperty peh:stakeholder ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:contacts ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Contact ;
-            owl:onProperty peh:contacts ] ;
+            owl:onProperty peh:contacts ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:StudyRole ;
+            owl:onProperty peh:study_roles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:stakeholder ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:stakeholder ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:study_roles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Stakeholder ;
+            owl:onProperty peh:stakeholder ] ;
     skos:inScheme peh: .
 
 peh:Translation a owl:Class ;
     rdfs:label "Translation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:translated_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:language ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:language ],
+            owl:onProperty peh:property_name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:property_name ],
@@ -1505,11 +1517,11 @@ peh:Translation a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:translated_value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:property_name ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:translated_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:translated_value ],
+            owl:onProperty peh:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:property_name ] ;
@@ -1578,9 +1590,39 @@ peh:Translation a owl:Class ;
 peh:ValidationDesign a owl:Class ;
     rdfs:label "ValidationDesign" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_error_message_template ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_result_expression ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:validation_error_message_template ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_condition_expression ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_error_level ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:ValidationErrorLevel ;
             owl:onProperty peh:validation_error_level ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_error_message_template ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:conditional ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_result_expression ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ValidationExpression ;
+            owl:onProperty peh:validation_result_expression ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:conditional ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:ValidationExpression ;
             owl:onProperty peh:validation_condition_expression ],
         [ a owl:Restriction ;
@@ -1588,48 +1630,18 @@ peh:ValidationDesign a owl:Class ;
             owl:onProperty peh:validation_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:conditional ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_condition_expression ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_error_level ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:validation_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:validation_error_message_template ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:conditional ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_result_expression ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_error_message_template ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:conditional ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_error_level ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_error_level ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:conditional ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_condition_expression ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ValidationExpression ;
-            owl:onProperty peh:validation_result_expression ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_error_message_template ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_result_expression ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_condition_expression ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty peh:validation_name ] ;
     skos:inScheme peh: .
 
@@ -1652,17 +1664,29 @@ peh:ValidationDesign a owl:Class ;
 peh:ValidationHistoryRecord a owl:Class ;
     rdfs:label "ValidationHistoryRecord" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:validation_remark ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_datetime ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_institute ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:validation_actor ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:validation_institute ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:validation_institute ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_actor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty peh:validation_datetime ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_status ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:validation_remark ],
@@ -1670,32 +1694,20 @@ peh:ValidationHistoryRecord a owl:Class ;
             owl:allValuesFrom peh:ValidationStatus ;
             owl:onProperty peh:validation_status ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_actor ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_status ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_remark ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:validation_institute ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty peh:validation_datetime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_datetime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_actor ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_status ],
+            owl:onProperty peh:validation_remark ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:validation_datetime ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_remark ] ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:validation_actor ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_institute ] ;
     skos:inScheme peh: .
 
 <https://w3id.org/peh/peh-modelValidationStatus#deprecated> a owl:Class ;
@@ -2052,19 +2064,19 @@ peh:value_options a owl:ObjectProperty ;
 peh:BioChemEntityLink a owl:Class ;
     rdfs:label "BioChemEntityLink" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:biochementity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:biochementity_linktype ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:BioChemEntity ;
             owl:onProperty peh:biochementity ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:biochementity ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:biochementity ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:biochementity_linktype ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:biochementity_linktype ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:BioChemEntityLinkType ;
@@ -2074,66 +2086,66 @@ peh:BioChemEntityLink a owl:Class ;
 peh:HasValidationStatus a owl:Class ;
     rdfs:label "HasValidationStatus" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom peh:ValidationHistoryRecord ;
+            owl:onProperty peh:validation_history ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:ValidationStatus ;
             owl:onProperty peh:current_validation_status ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:validation_history ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:current_validation_status ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ValidationHistoryRecord ;
-            owl:onProperty peh:validation_history ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:current_validation_status ] ;
     skos:inScheme peh: .
 
 peh:ObservableEntityPropertySet a owl:Class ;
     rdfs:label "ObservableEntityPropertySet" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableEntityType ;
-            owl:onProperty peh:observable_entity_type ],
+            owl:allValuesFrom peh:ObservableProperty ;
+            owl:onProperty peh:optional_observable_property_id_list ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observation_result_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:observation_result_type ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:identifying_observable_property_id_list ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservableProperty ;
             owl:onProperty peh:required_observable_property_id_list ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:optional_observable_property_id_list ],
+            owl:allValuesFrom peh:ObservableProperty ;
+            owl:onProperty peh:identifying_observable_property_id_list ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:observable_entity_id_list ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observable_entity_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableProperty ;
             owl:onProperty peh:optional_observable_property_id_list ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:identifying_observable_property_id_list ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:required_observable_property_id_list ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observation_result_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:StudyEntity ;
             owl:onProperty peh:observable_entity_id_list ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:required_observable_property_id_list ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:observable_entity_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableProperty ;
-            owl:onProperty peh:identifying_observable_property_id_list ],
+            owl:allValuesFrom peh:ObservableEntityType ;
+            owl:onProperty peh:observable_entity_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservationResultType ;
-            owl:onProperty peh:observation_result_type ] ;
+            owl:onProperty peh:observation_result_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:observable_entity_type ] ;
     skos:inScheme peh: .
 
 peh:abstract a owl:DatatypeProperty ;
@@ -2545,20 +2557,8 @@ peh:web_uri a owl:DatatypeProperty ;
 peh:BioChemEntity a owl:Class ;
     rdfs:label "BioChemEntity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:grouping_id_list ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:Grouping ;
             owl:onProperty peh:grouping_id_list ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:decimal ;
-            owl:onProperty peh:molweight_grampermol ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:biochemidentifiers ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:molweight_grampermol ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:BioChemEntityLink ;
             owl:onProperty peh:biochementity_links ],
@@ -2567,10 +2567,22 @@ peh:BioChemEntity a owl:Class ;
             owl:onProperty peh:biochemidentifiers ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:biochementity_links ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:biochemidentifiers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:molweight_grampermol ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty peh:molweight_grampermol ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:molweight_grampermol ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:biochementity_links ],
+            owl:onProperty peh:grouping_id_list ],
         peh:HasAliases,
         peh:HasContextAliases,
         peh:HasTranslations,
@@ -2583,38 +2595,8 @@ peh:BioChemEntity a owl:Class ;
 peh:Indicator a owl:Class ;
     rdfs:label "Indicator" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:IndicatorType ;
-            owl:onProperty peh:indicator_type ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:BioChemEntityLink ;
             owl:onProperty peh:biochementity_links ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:grouping_id_list ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:quantity_kind ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:varname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:property ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:indicator_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:QudtQuantityKind ;
-            owl:onProperty peh:quantity_kind ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:constraints ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:quantity_kind ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:property ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:varname ],
@@ -2622,17 +2604,26 @@ peh:Indicator a owl:Class ;
             owl:allValuesFrom peh:Matrix ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
+            owl:allValuesFrom peh:IndicatorType ;
+            owl:onProperty peh:indicator_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:indicator_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:Grouping ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:grouping_id_list ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:constraints ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:property ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:relevant_observable_entity_types ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:matrix ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:QudtQuantityKind ;
+            owl:onProperty peh:quantity_kind ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:property ],
@@ -2640,17 +2631,38 @@ peh:Indicator a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:matrix ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:varname ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:biochementity_links ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:constraints ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:quantity_kind ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:relevant_observable_entity_types ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Grouping ;
+            owl:onProperty peh:grouping_id_list ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservableEntityType ;
             owl:onProperty peh:relevant_observable_entity_types ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:matrix ],
+            owl:onProperty peh:indicator_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:constraints ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:biochementity_links ],
+            owl:onProperty peh:quantity_kind ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:property ],
         peh:NamedThing ;
     skos:closeMatch iop:Variable ;
     skos:definition "A measurable indicator that is relevant to the Personal Exposure and Health domain" ;
@@ -2662,10 +2674,10 @@ peh:ObservablePropertyMetadataField a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:value_type ],
         peh:NamedThing ;
     skos:inScheme peh: .
@@ -2676,25 +2688,25 @@ peh:Observation a owl:Class ;
             owl:allValuesFrom peh:ObservationType ;
             owl:onProperty peh:observation_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observation_result_id_list ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:observation_design ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationResult ;
-            owl:onProperty peh:observation_result_id_list ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservationDesign ;
             owl:onProperty peh:observation_design ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observation_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty peh:observation_design ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observation_result_id_list ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservationResult ;
+            owl:onProperty peh:observation_result_id_list ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:observation_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:observation_type ],
         peh:NamedThing ;
     skos:inScheme peh: .
@@ -2705,177 +2717,111 @@ peh:ObservationGroup a owl:Class ;
             owl:allValuesFrom peh:Observation ;
             owl:onProperty peh:observation_id_list ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty peh:end_date ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:sort_order ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:end_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:decimal ;
             owl:onProperty peh:sort_order ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:sort_order ],
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty peh:start_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:end_date ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:observation_id_list ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:end_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:start_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:sort_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty peh:end_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:sort_order ],
         peh:StudyEntity ;
     skos:inScheme peh: .
 
 peh:ObservationResult a owl:Class ;
     rdfs:label "ObservationResult" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observation_end_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:observation_result_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty peh:observation_start_date ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observation_end_date ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:observation_end_date ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observation_start_date ],
+            owl:allValuesFrom peh:ObservationResultType ;
+            owl:onProperty peh:observation_result_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty peh:observation_end_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observed_values ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:observation_start_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ObservedValue ;
             owl:onProperty peh:observed_values ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observed_values ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:observation_start_date ],
+            owl:onProperty peh:observation_result_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observation_result_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationResultType ;
-            owl:onProperty peh:observation_result_type ],
+            owl:onProperty peh:observation_start_date ],
         peh:NamedThing ;
     skos:inScheme peh: .
 
 peh:ObservedValue a owl:Class ;
     rdfs:label "ObservedValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:QualityData ;
-            owl:onProperty peh:quality_data ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:imputed_unit ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:default_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:raw_unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:StudyEntity ;
-            owl:onProperty peh:observable_entity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:value_as_string ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:raw_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:observable_property ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:normalised_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:imputed_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableProperty ;
-            owl:onProperty peh:observable_property ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:observable_property ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:imputed_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:raw_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:default_unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:normalised_unit ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observable_entity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:imputed_unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty peh:value_as_string ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:imputed_unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Unit ;
             owl:onProperty peh:unit ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:quality_data ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:raw_unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:value_as_string ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:normalised_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:observable_entity ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:provenance_data ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:default_unit ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:normalised_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Unit ;
             owl:onProperty peh:unit ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:normalised_unit ],
+            owl:allValuesFrom peh:QualityData ;
+            owl:onProperty peh:quality_data ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:normalised_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:quality_data ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:imputed_value ],
@@ -2883,57 +2829,132 @@ peh:ObservedValue a owl:Class ;
             owl:allValuesFrom peh:ProvenanceData ;
             owl:onProperty peh:provenance_data ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:normalised_value ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:normalised_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:imputed_unit ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:default_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservableProperty ;
+            owl:onProperty peh:observable_property ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observable_entity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observable_property ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:observable_entity ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:raw_value ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:default_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:imputed_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:value_as_string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:value_as_string ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:normalised_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:normalised_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:default_unit ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:raw_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:unit ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:raw_value ] ;
+            owl:onProperty peh:raw_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:imputed_unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:StudyEntity ;
+            owl:onProperty peh:observable_entity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:observable_property ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:imputed_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:raw_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:raw_unit ] ;
     skos:inScheme peh: .
 
 peh:Study a owl:Class ;
     rdfs:label "Study" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationGroup ;
-            owl:onProperty peh:observation_group_id_list ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty peh:end_date ],
+            owl:onProperty peh:default_language ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:study_entity_id_list ],
         [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservationGroup ;
+            owl:onProperty peh:observation_group_id_list ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:end_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty peh:start_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty peh:end_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:start_date ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:StudyStakeholder ;
             owl:onProperty peh:study_stakeholders ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:end_date ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:default_language ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:observation_group_id_list ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:default_language ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:observation_group_id_list ],
+            owl:onProperty peh:project_id_list ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:start_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:default_language ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Project ;
             owl:onProperty peh:project_id_list ],
@@ -2941,17 +2962,8 @@ peh:Study a owl:Class ;
             owl:allValuesFrom peh:StudyEntity ;
             owl:onProperty peh:study_entity_id_list ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:StudyStakeholder ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:study_stakeholders ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:default_language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:project_id_list ],
         peh:HasContextAliases,
         peh:HasTranslations,
         peh:StudyEntity ;
@@ -2976,33 +2988,9 @@ peh:Contact a owl:Class ;
     rdfs:label "Contact" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:contact_email ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:contact_email ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:contact_phone ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:contact_email ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:contact_phone ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:contact_roles ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty peh:orcid ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:orcid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -3012,10 +3000,34 @@ peh:Contact a owl:Class ;
             owl:onProperty peh:contact_roles ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty peh:contact_email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:orcid ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:contact_phone ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:contact_phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:contact_email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:contact_roles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:contact_phone ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:contact_email ],
         peh:HasContextAliases ;
     skos:inScheme peh: .
 
@@ -3054,11 +3066,8 @@ peh:IndicatorType a owl:Class ;
 peh:Stakeholder a owl:Class ;
     rdfs:label "Stakeholder" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:rorid ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:geographic_scope ],
+            owl:onProperty peh:rorid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:geographic_scope ],
@@ -3066,10 +3075,13 @@ peh:Stakeholder a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:rorid ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:geographic_scope ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:geographic_scope ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:rorid ],
         peh:HasTranslations,
         peh:NamedThing ;
@@ -3085,23 +3097,29 @@ peh:ValidationErrorLevel a owl:Class ;
 peh:ValidationExpression a owl:Class ;
     rdfs:label "ValidationExpression" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:validation_command ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:validation_subject_source_paths ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_command ],
+            owl:onProperty peh:validation_arg_source_paths ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ValidationExpression ;
             owl:onProperty peh:validation_arg_expressions ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:validation_subject_source_paths ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:validation_command ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:validation_arg_source_paths ],
+            owl:onProperty peh:validation_arg_values ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:validation_arg_values ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_arg_source_paths ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:validation_command ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:validation_subject_source_paths ],
@@ -3109,14 +3127,8 @@ peh:ValidationExpression a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:validation_arg_expressions ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:validation_arg_values ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:ValidationCommand ;
-            owl:onProperty peh:validation_command ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:validation_arg_source_paths ] ;
+            owl:onProperty peh:validation_command ] ;
     skos:inScheme peh: .
 
 peh:conditional a owl:DatatypeProperty ;
@@ -3200,23 +3212,23 @@ peh:LinkType a owl:Class ;
 peh:Unit a owl:Class ;
     rdfs:label "Unit" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom peh:QudtUnit ;
+            owl:onProperty peh:same_unit_as ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:QudtQuantityKind ;
             owl:onProperty peh:quantity_kind ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:quantity_kind ],
+            owl:onProperty peh:same_unit_as ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:QudtUnit ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:same_unit_as ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:quantity_kind ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:same_unit_as ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:same_unit_as ],
+            owl:onProperty peh:quantity_kind ],
         peh:HasContextAliases,
         peh:HasTranslations,
         peh:HasValidationStatus,
@@ -3235,29 +3247,29 @@ peh:ContactRole a owl:Class ;
 peh:Grouping a owl:Class ;
     rdfs:label "Grouping" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:abstract ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:parent_grouping_id_list ],
-        [ a owl:Restriction ;
             owl:allValuesFrom peh:Grouping ;
             owl:onProperty peh:parent_grouping_id_list ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:abstract ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty peh:sort_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:abstract ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:sort_order ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:abstract ],
+            owl:onProperty peh:sort_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:parent_grouping_id_list ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty peh:abstract ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:sort_order ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:decimal ;
-            owl:onProperty peh:sort_order ],
         peh:HasContextAliases,
         peh:HasTranslations,
         peh:NamedThing ;
@@ -3266,10 +3278,10 @@ peh:Grouping a owl:Class ;
 peh:HasContextAliases a owl:Class ;
     rdfs:label "HasContextAliases" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:ContextAlias ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:context_aliases ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:ContextAlias ;
             owl:onProperty peh:context_aliases ] ;
     skos:inScheme peh: .
 
@@ -3283,44 +3295,44 @@ peh:ObservationType a owl:Class ;
 peh:Project a owl:Class ;
     rdfs:label "Project" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty peh:end_date ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:default_language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:project_stakeholders ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:start_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty peh:start_date ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:Study ;
-            owl:onProperty peh:study_id_list ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:study_id_list ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:end_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:start_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:ProjectStakeholder ;
             owl:onProperty peh:project_stakeholders ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:start_date ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:default_language ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:end_date ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:default_language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Study ;
+            owl:onProperty peh:study_id_list ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:end_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:start_date ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:default_language ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:project_stakeholders ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:default_language ],
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty peh:end_date ],
         peh:HasContextAliases,
         peh:HasTranslations,
         peh:StudyEntity ;
@@ -3370,10 +3382,10 @@ peh:DataLayoutElementStyle a owl:Class ;
 peh:HasTranslations a owl:Class ;
     rdfs:label "HasTranslations" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:Translation ;
             owl:onProperty peh:translations ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:Translation ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:translations ] ;
     skos:inScheme peh: .
 
@@ -3387,10 +3399,10 @@ peh:ObservationResultType a owl:Class ;
 peh:PhysicalEntity a owl:Class ;
     rdfs:label "PhysicalEntity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:PhysicalEntityLink ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:physical_entity_links ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom peh:PhysicalEntityLink ;
             owl:onProperty peh:physical_entity_links ],
         peh:NamedThing ;
     skos:inScheme peh: .
@@ -3438,31 +3450,31 @@ peh:Matrix a owl:Class ;
     rdfs:label "Matrix" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:aggregation_target ],
+            owl:onProperty peh:sort_order ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:secondary_parent_matrix_id_list ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:parent_matrix ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:parent_matrix ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:decimal ;
-            owl:onProperty peh:sort_order ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty peh:aggregation_target ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:sort_order ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:sort_order ],
+            owl:onProperty peh:aggregation_target ],
         [ a owl:Restriction ;
             owl:allValuesFrom peh:Matrix ;
             owl:onProperty peh:parent_matrix ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:parent_matrix ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:sort_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty peh:sort_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:secondary_parent_matrix_id_list ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:aggregation_target ],
@@ -3500,38 +3512,56 @@ peh:ProjectRole a owl:Class ;
 peh:ObservableProperty a owl:Class ;
     rdfs:label "ObservableProperty" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom peh:Indicator ;
-            owl:onProperty peh:indicator ],
+            owl:minCardinality 0 ;
+            owl:onProperty peh:categorical ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:quantity_kind ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:default_unit_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:default_unit_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:default_significantdecimals ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:default_required ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:default_immutable ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty peh:default_required ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:value_options ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationType ;
-            owl:onProperty peh:relevant_observation_types ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:value_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:default_observation_result_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:relevant_observation_types ],
+            owl:onProperty peh:varname ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:value_metadata ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:categorical ],
+            owl:onProperty peh:varname ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:default_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:default_zeroallowed ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservableEntityType ;
+            owl:onProperty peh:relevant_observable_entity_types ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty peh:default_zeroallowed ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:relevant_observable_entity_types ],
+            owl:onProperty peh:relevant_observation_types ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:default_immutable ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:multivalued ],
@@ -3539,44 +3569,41 @@ peh:ObservableProperty a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty peh:default_zeroallowed ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:default_observation_result_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:multivalued ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:ValidationDesign ;
             owl:onProperty peh:validation_designs ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:QudtQuantityKind ;
-            owl:onProperty peh:quantity_kind ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:default_unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservablePropertyValueOption ;
-            owl:onProperty peh:value_options ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:indicator ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty peh:default_immutable ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:default_unit_label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty peh:categorical ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservationResultType ;
-            owl:onProperty peh:default_observation_result_type ],
+            owl:allValuesFrom peh:QudtQuantityKind ;
+            owl:onProperty peh:quantity_kind ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:calculation_designs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:varname ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:default_required ],
+            owl:allValuesFrom peh:ObservationType ;
+            owl:onProperty peh:relevant_observation_types ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:default_immutable ],
+            owl:onProperty peh:value_options ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty peh:multivalued ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:default_observation_result_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:default_unit ],
@@ -3585,79 +3612,64 @@ peh:ObservableProperty a owl:Class ;
             owl:onProperty peh:value_metadata ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:default_unit_label ],
+            owl:onProperty peh:default_unit ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:calculation_designs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:categorical ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:CalculationDesign ;
-            owl:onProperty peh:calculation_designs ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:multivalued ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:boolean ;
             owl:onProperty peh:default_required ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:default_zeroallowed ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:ObservableEntityType ;
-            owl:onProperty peh:relevant_observable_entity_types ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:varname ],
+            owl:onProperty peh:indicator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty peh:categorical ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservationResultType ;
+            owl:onProperty peh:default_observation_result_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Grouping ;
+            owl:onProperty peh:grouping_id_list ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:validation_designs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:default_observation_result_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty peh:default_significantdecimals ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
-            owl:onProperty peh:multivalued ],
+            owl:onProperty peh:default_immutable ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:Indicator ;
+            owl:onProperty peh:indicator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:ObservablePropertyValueOption ;
+            owl:onProperty peh:value_options ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:default_significantdecimals ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom peh:Grouping ;
-            owl:onProperty peh:grouping_id_list ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:quantity_kind ],
+            owl:onProperty peh:relevant_observable_entity_types ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:default_unit_label ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty peh:default_required ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:quantity_kind ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom peh:CalculationDesign ;
+            owl:onProperty peh:calculation_designs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:default_significantdecimals ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:default_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty peh:value_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty peh:default_zeroallowed ],
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:categorical ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:grouping_id_list ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:quantity_kind ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:indicator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:varname ],
         peh:HasTranslations,
         peh:NamedThing ;
     skos:inScheme peh: .
@@ -3690,22 +3702,6 @@ peh:varname a owl:DatatypeProperty ;
     rdfs:label "varname" ;
     skos:inScheme peh: .
 
-peh:QudtQuantityKind a owl:Class ;
-    owl:unionOf ( qudtqk:AmountOfSubstanceConcentration qudtqk:AmountOfSubstancePerUnitMass qudtqk:Dimensionless qudtqk:DimensionlessRatio qudtqk:Time qudtqk:Frequency qudtqk:Length qudtqk:Mass qudtqk:MassPerArea qudtqk:MassConcentration qudtqk:NumberDensity qudtqk:SerumOrPlasmaLevel qudtqk:Volume ) ;
-    linkml:permissible_values qudtqk:AmountOfSubstanceConcentration,
-        qudtqk:AmountOfSubstancePerUnitMass,
-        qudtqk:Dimensionless,
-        qudtqk:DimensionlessRatio,
-        qudtqk:Frequency,
-        qudtqk:Length,
-        qudtqk:Mass,
-        qudtqk:MassConcentration,
-        qudtqk:MassPerArea,
-        qudtqk:NumberDensity,
-        qudtqk:SerumOrPlasmaLevel,
-        qudtqk:Time,
-        qudtqk:Volume .
-
 peh:ValidationCommand a owl:Class ;
     owl:unionOf ( <https://w3id.org/peh/peh-modelValidationCommand#is_equal_to> <https://w3id.org/peh/peh-modelValidationCommand#is_equal_to_or_both_missing> <https://w3id.org/peh/peh-modelValidationCommand#is_greater_than_or_equal_to> <https://w3id.org/peh/peh-modelValidationCommand#is_greater_than> <https://w3id.org/peh/peh-modelValidationCommand#is_less_than_or_equal_to> <https://w3id.org/peh/peh-modelValidationCommand#is_less_than> <https://w3id.org/peh/peh-modelValidationCommand#is_not_equal_to> <https://w3id.org/peh/peh-modelValidationCommand#is_not_equal_to_and_not_both_missing> <https://w3id.org/peh/peh-modelValidationCommand#is_unique> <https://w3id.org/peh/peh-modelValidationCommand#is_duplicated> <https://w3id.org/peh/peh-modelValidationCommand#is_in> <https://w3id.org/peh/peh-modelValidationCommand#is_null> <https://w3id.org/peh/peh-modelValidationCommand#is_not_null> <https://w3id.org/peh/peh-modelValidationCommand#and> <https://w3id.org/peh/peh-modelValidationCommand#or> ) ;
     linkml:permissible_values <https://w3id.org/peh/peh-modelValidationCommand#and>,
@@ -3724,62 +3720,81 @@ peh:ValidationCommand a owl:Class ;
         <https://w3id.org/peh/peh-modelValidationCommand#is_unique>,
         <https://w3id.org/peh/peh-modelValidationCommand#or> .
 
+peh:QudtQuantityKind a owl:Class ;
+    owl:unionOf ( qudtqk:AmountOfSubstanceConcentration qudtqk:AmountOfSubstancePerMass qudtqk:Count qudtqk:Dimensionless qudtqk:DimensionlessRatio qudtqk:Time qudtqk:Frequency qudtqk:Length qudtqk:Mass qudtqk:MassPerArea qudtqk:MassConcentration qudtqk:MassRatio qudtqk:MolarMass qudtqk:MolarRatio qudtqk:NumberDensity qudtqk:Volume ) ;
+    linkml:permissible_values qudtqk:AmountOfSubstanceConcentration,
+        qudtqk:AmountOfSubstancePerMass,
+        qudtqk:Count,
+        qudtqk:Dimensionless,
+        qudtqk:DimensionlessRatio,
+        qudtqk:Frequency,
+        qudtqk:Length,
+        qudtqk:Mass,
+        qudtqk:MassConcentration,
+        qudtqk:MassPerArea,
+        qudtqk:MassRatio,
+        qudtqk:MolarMass,
+        qudtqk:MolarRatio,
+        qudtqk:NumberDensity,
+        qudtqk:Time,
+        qudtqk:Volume .
+
 peh:NamedThing a owl:Class ;
     rdfs:label "NamedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:remark ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty peh:label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:unique_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:remark ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:unique_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty peh:label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty peh:label ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty peh:remark ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty peh:id ],
+            owl:onProperty peh:unique_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:remark ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:unique_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty peh:label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:remark ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty peh:name ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty peh:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:unique_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty peh:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty peh:id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty peh:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty peh:unique_name ] ;
+            owl:onProperty peh:id ] ;
     skos:closeMatch schema1:Thing ;
     skos:definition "A generic grouping for any identifiable entity" ;
     skos:inScheme peh: .
@@ -3787,19 +3802,19 @@ peh:NamedThing a owl:Class ;
 peh:StudyEntity a owl:Class ;
     rdfs:label "StudyEntity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom peh:StudyEntityLink ;
+            owl:onProperty peh:study_entity_links ],
+        [ a owl:Restriction ;
             owl:allValuesFrom peh:PhysicalEntity ;
             owl:onProperty peh:physical_entity ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty peh:study_entity_links ],
         [ a owl:Restriction ;
-            owl:allValuesFrom peh:StudyEntityLink ;
-            owl:onProperty peh:study_entity_links ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty peh:physical_entity ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty peh:physical_entity ],
         peh:NamedThing ;
     skos:inScheme peh: .

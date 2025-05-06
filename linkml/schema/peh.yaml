@@ -1131,8 +1131,10 @@ enums:
     permissible_values:
       AmountOfSubstanceConcentration:
         meaning: qudtqk:AmountOfSubstanceConcentration
-      AmountOfSubstancePerUnitMass:
-        meaning: qudtqk:AmountOfSubstancePerUnitMass
+      AmountOfSubstancePerMass:
+        meaning: qudtqk:AmountOfSubstancePerMass
+      Count:
+        meaning: qudtqk:Count
       Dimensionless:
         meaning: qudtqk:Dimensionless
       DimensionlessRatio:
@@ -1149,10 +1151,14 @@ enums:
         meaning: qudtqk:MassPerArea
       MassConcentration:
         meaning: qudtqk:MassConcentration
+      MassRatio:
+        meaning: qudtqk:MassRatio
+      MolarMass:
+        meaning: qudtqk:MolarMass
+      MolarRatio:
+        meaning: qudtqk:MolarRatio
       NumberDensity:
         meaning: qudtqk:NumberDensity
-      SerumOrPlasmaLevel:
-        meaning: qudtqk:SerumOrPlasmaLevel
       Volume:
         meaning: qudtqk:Volume
     include:

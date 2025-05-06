@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-06T14:04:37
+# Generation date: 2025-05-06T17:13:57
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -2713,9 +2713,12 @@ class QudtQuantityKind(EnumDefinitionImpl):
     AmountOfSubstanceConcentration = PermissibleValue(
         text="AmountOfSubstanceConcentration",
         meaning=QUDTQK["AmountOfSubstanceConcentration"])
-    AmountOfSubstancePerUnitMass = PermissibleValue(
-        text="AmountOfSubstancePerUnitMass",
-        meaning=QUDTQK["AmountOfSubstancePerUnitMass"])
+    AmountOfSubstancePerMass = PermissibleValue(
+        text="AmountOfSubstancePerMass",
+        meaning=QUDTQK["AmountOfSubstancePerMass"])
+    Count = PermissibleValue(
+        text="Count",
+        meaning=QUDTQK["Count"])
     Dimensionless = PermissibleValue(
         text="Dimensionless",
         meaning=QUDTQK["Dimensionless"])
@@ -2740,12 +2743,18 @@ class QudtQuantityKind(EnumDefinitionImpl):
     MassConcentration = PermissibleValue(
         text="MassConcentration",
         meaning=QUDTQK["MassConcentration"])
+    MassRatio = PermissibleValue(
+        text="MassRatio",
+        meaning=QUDTQK["MassRatio"])
+    MolarMass = PermissibleValue(
+        text="MolarMass",
+        meaning=QUDTQK["MolarMass"])
+    MolarRatio = PermissibleValue(
+        text="MolarRatio",
+        meaning=QUDTQK["MolarRatio"])
     NumberDensity = PermissibleValue(
         text="NumberDensity",
         meaning=QUDTQK["NumberDensity"])
-    SerumOrPlasmaLevel = PermissibleValue(
-        text="SerumOrPlasmaLevel",
-        meaning=QUDTQK["SerumOrPlasmaLevel"])
     Volume = PermissibleValue(
         text="Volume",
         meaning=QUDTQK["Volume"])
