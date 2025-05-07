@@ -3,17 +3,21 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
+version: 0.0.1a
+
 imports:
   - linkml:types
 
 prefixes:
-  peh: https://w3id.org/peh/peh-model
+  pehterms: https://w3id.org/peh/terms/
+  peh: https://w3id.org/peh/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
   prov: http://www.w3.org/ns/prov#
   qudt: http://qudt.org/2.1/schema/qudt
+  qudtunit: https://qudt.org/vocab/unit/
   qudtqk: http://qudt.org/2.1/vocab/quantitykind
   iop: https://w3id.org/iadopt/ont/
   # DATA PREFIXES
@@ -22,7 +26,7 @@ prefixes:
   # CODE: http://example.org/code/
   # GEO: http://example.org/geoloc/
 
-default_prefix: peh
+default_prefix: pehterms
 default_range: string
 
 classes:
@@ -570,6 +574,7 @@ slots:
   parent_grouping_id_list:
     multivalued: true
     range: Grouping
+    slot_uri: skos:broader
   biochemidentifiers:
     multivalued: true
     inlined_as_list: true
@@ -603,6 +608,7 @@ slots:
     range: boolean
   parent_matrix:
     range: Matrix
+    slot_uri: skos:broader
   secondary_parent_matrix_id_list:
     multivalued: true
     range: Matrix
@@ -1120,13 +1126,103 @@ enums:
       external_data_controller:
   # Ontology Based
   QudtUnit:
-    reachable_from:
-      source_ontology: qudt
-      source_nodes:
-        - qudt:Unit
-      include_self: false
-      relationship_types:
-        - rdfs:subClassOf
+    permissible_values:
+      PERCENT:
+        meaning: 
+      KiloGM-PER-M3:
+        meaning: qudtunit:KiloGM-PER-M3
+      DAY:
+        meaning: qudtunit:DAY
+      NanoGM:
+        meaning: qudtunit:NanoGM
+      GM:
+        meaning: qudtunit:GM
+      MilliGM-PER-KiloGM:
+        meaning: qudtunit:MilliGM-PER-KiloGM
+      MilliMOL-PER-MOL:
+        meaning: qudtunit:MilliMOL-PER-MOL
+      MicroGM-PER-MilliL:
+        meaning: qudtunit:MicroGM-PER-MilliL
+      MO:
+        meaning: qudtunit:MO
+      UNITLESS:
+        meaning: qudtunit:UNITLESS
+      NanoMOL-PER-L:
+        meaning: qudtunit:NanoMOL-PER-L
+      MIN:
+        meaning: qudtunit:MIN
+      NanoGM-PER-M3:
+        meaning: qudtunit:NanoGM-PER-M3
+      GM-PER-DeciL:
+        meaning: qudtunit:GM-PER-DeciL
+      GM-PER-L:
+        meaning: qudtunit:GM-PER-L
+      MilliL:
+        meaning: qudtunit:MilliL
+      HR:
+        meaning: qudtunit:HR
+      PicoGM:
+        meaning: qudtunit:PicoGM
+      FemtoMOL-PER-KiloGM:
+        meaning: qudtunit:FemtoMOL-PER-KiloGM
+      NUM:
+        meaning: qudtunit:NUM
+      NanoGM-PER-MilliL:
+        meaning: qudtunit:NanoGM-PER-MilliL
+      MicroGM-PER-KiloGM:
+        meaning: qudtunit:MicroGM-PER-KiloGM
+      KiloGM:
+        meaning: qudtunit:KiloGM
+      NanoGM-PER-L:
+        meaning: qudtunit:NanoGM-PER-L
+      MicroMOL-PER-L:
+        meaning: qudtunit:MicroMOL-PER-L
+      CentiM:
+        meaning: qudtunit:CentiM
+      MicroGM-PER-GM:
+        meaning: qudtunit:MicroGM-PER-GM
+      WK:
+        meaning: qudtunit:WK
+      NanoGM-PER-DeciL:
+        meaning: qudtunit:NanoGM-PER-DeciL
+      MilliGM-PER-L:
+        meaning: qudtunit:MilliGM-PER-L
+      PicoGM-PER-GM:
+        meaning: qudtunit:PicoGM-PER-GM
+      L:
+        meaning: qudtunit:L
+      NanoGM-PER-M2:
+        meaning: qudtunit:NanoGM-PER-M2
+      IU-PER-L:
+        meaning: qudtunit:IU-PER-L
+      NUM-PER-MilliL:
+        meaning: qudtunit:NUM-PER-MilliL
+      GM-PER-MOL:
+        meaning: qudtunit:GM-PER-MOL
+      PER-WK:
+        meaning: qudtunit:PER-WK
+      PicoGM-PER-MilliL:
+        meaning: qudtunit:PicoGM-PER-MilliL
+      YR:
+        meaning: qudtunit:YR
+      PER-DAY:
+        meaning: qudtunit:PER-DAY
+      PicoGM-PER-MilliGM:
+        meaning: qudtunit:PicoGM-PER-MilliGM
+      MicroGM-PER-L:
+        meaning: qudtunit:MicroGM-PER-L
+      KiloGM-PER-M2:
+        meaning: qudtunit:KiloGM-PER-M2
+      MilliGM-PER-DeciL:
+        meaning: qudtunit:MilliGM-PER-DeciL
+    include:
+    - reachable_from:
+        source_ontology: qudt
+        source_nodes:
+          - qudt:Unit
+        include_self: false
+        relationship_types:
+          - rdfs:subClassOf
   QudtQuantityKind:
     permissible_values:
       AmountOfSubstanceConcentration:
