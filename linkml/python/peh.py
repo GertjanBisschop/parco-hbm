@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-07T15:00:14
+# Generation date: 2025-05-09T13:19:25
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -33,7 +33,6 @@ from linkml_runtime.linkml_model.meta import (
     PvFormulaOptions
 )
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from linkml_runtime.utils.formatutils import (
     camelcase,
@@ -62,9 +61,6 @@ from linkml_runtime.utils.metamodelcore import Bool, Decimal, XSDDate, XSDDateTi
 
 metamodel_version = "1.7.0"
 version = "0.0.1a"
-
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 IOP = CurieNamespace('iop', 'https://w3id.org/iadopt/ont/')
@@ -222,33 +218,36 @@ class ProcessingStepId(NamedThingId):
 
 @dataclass(repr=False)
 class EntityList(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A generic top level object for collecting named entities under one root entity
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["EntityList"]
     class_class_curie: ClassVar[str] = "pehterms:EntityList"
     class_name: ClassVar[str] = "EntityList"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.EntityList
 
-    matrices: Optional[Union[Dict[Union[str, MatrixId], Union[dict, "Matrix"]], List[Union[dict, "Matrix"]]]] = empty_dict()
-    metadata_fields: Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, "ObservablePropertyMetadataField"]], List[Union[dict, "ObservablePropertyMetadataField"]]]] = empty_dict()
-    biochementities: Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, "BioChemEntity"]], List[Union[dict, "BioChemEntity"]]]] = empty_dict()
-    groupings: Optional[Union[Dict[Union[str, GroupingId], Union[dict, "Grouping"]], List[Union[dict, "Grouping"]]]] = empty_dict()
-    indicators: Optional[Union[Dict[Union[str, IndicatorId], Union[dict, "Indicator"]], List[Union[dict, "Indicator"]]]] = empty_dict()
-    units: Optional[Union[Dict[Union[str, UnitId], Union[dict, "Unit"]], List[Union[dict, "Unit"]]]] = empty_dict()
-    observable_properties: Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, "ObservableProperty"]], List[Union[dict, "ObservableProperty"]]]] = empty_dict()
-    stakeholders: Optional[Union[Dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], List[Union[dict, "Stakeholder"]]]] = empty_dict()
-    projects: Optional[Union[Dict[Union[str, ProjectId], Union[dict, "Project"]], List[Union[dict, "Project"]]]] = empty_dict()
-    studies: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
-    study_entities: Optional[Union[Dict[Union[str, StudyEntityId], Union[dict, "StudyEntity"]], List[Union[dict, "StudyEntity"]]]] = empty_dict()
-    physical_entities: Optional[Union[Dict[Union[str, PhysicalEntityId], Union[dict, "PhysicalEntity"]], List[Union[dict, "PhysicalEntity"]]]] = empty_dict()
-    observation_groups: Optional[Union[Dict[Union[str, ObservationGroupId], Union[dict, "ObservationGroup"]], List[Union[dict, "ObservationGroup"]]]] = empty_dict()
-    observations: Optional[Union[Dict[Union[str, ObservationId], Union[dict, "Observation"]], List[Union[dict, "Observation"]]]] = empty_dict()
-    observation_results: Optional[Union[Dict[Union[str, ObservationResultId], Union[dict, "ObservationResult"]], List[Union[dict, "ObservationResult"]]]] = empty_dict()
-    observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
-    layouts: Optional[Union[Dict[Union[str, DataLayoutId], Union[dict, "DataLayout"]], List[Union[dict, "DataLayout"]]]] = empty_dict()
-    data_requests: Optional[Union[Dict[Union[str, DataRequestId], Union[dict, "DataRequest"]], List[Union[dict, "DataRequest"]]]] = empty_dict()
+    matrices: Optional[Union[dict[Union[str, MatrixId], Union[dict, "Matrix"]], list[Union[dict, "Matrix"]]]] = empty_dict()
+    metadata_fields: Optional[Union[dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, "ObservablePropertyMetadataField"]], list[Union[dict, "ObservablePropertyMetadataField"]]]] = empty_dict()
+    biochementities: Optional[Union[dict[Union[str, BioChemEntityId], Union[dict, "BioChemEntity"]], list[Union[dict, "BioChemEntity"]]]] = empty_dict()
+    groupings: Optional[Union[dict[Union[str, GroupingId], Union[dict, "Grouping"]], list[Union[dict, "Grouping"]]]] = empty_dict()
+    indicators: Optional[Union[dict[Union[str, IndicatorId], Union[dict, "Indicator"]], list[Union[dict, "Indicator"]]]] = empty_dict()
+    units: Optional[Union[dict[Union[str, UnitId], Union[dict, "Unit"]], list[Union[dict, "Unit"]]]] = empty_dict()
+    observable_properties: Optional[Union[dict[Union[str, ObservablePropertyId], Union[dict, "ObservableProperty"]], list[Union[dict, "ObservableProperty"]]]] = empty_dict()
+    stakeholders: Optional[Union[dict[Union[str, StakeholderId], Union[dict, "Stakeholder"]], list[Union[dict, "Stakeholder"]]]] = empty_dict()
+    projects: Optional[Union[dict[Union[str, ProjectId], Union[dict, "Project"]], list[Union[dict, "Project"]]]] = empty_dict()
+    studies: Optional[Union[dict[Union[str, StudyId], Union[dict, "Study"]], list[Union[dict, "Study"]]]] = empty_dict()
+    study_entities: Optional[Union[dict[Union[str, StudyEntityId], Union[dict, "StudyEntity"]], list[Union[dict, "StudyEntity"]]]] = empty_dict()
+    physical_entities: Optional[Union[dict[Union[str, PhysicalEntityId], Union[dict, "PhysicalEntity"]], list[Union[dict, "PhysicalEntity"]]]] = empty_dict()
+    observation_groups: Optional[Union[dict[Union[str, ObservationGroupId], Union[dict, "ObservationGroup"]], list[Union[dict, "ObservationGroup"]]]] = empty_dict()
+    observations: Optional[Union[dict[Union[str, ObservationId], Union[dict, "Observation"]], list[Union[dict, "Observation"]]]] = empty_dict()
+    observation_results: Optional[Union[dict[Union[str, ObservationResultId], Union[dict, "ObservationResult"]], list[Union[dict, "ObservationResult"]]]] = empty_dict()
+    observed_values: Optional[Union[Union[dict, "ObservedValue"], list[Union[dict, "ObservedValue"]]]] = empty_list()
+    layouts: Optional[Union[dict[Union[str, DataLayoutId], Union[dict, "DataLayout"]], list[Union[dict, "DataLayout"]]]] = empty_dict()
+    data_requests: Optional[Union[dict[Union[str, DataRequestId], Union[dict, "DataRequest"]], list[Union[dict, "DataRequest"]]]] = empty_dict()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         self._normalize_inlined_as_list(slot_name="matrices", slot_type=Matrix, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="metadata_fields", slot_type=ObservablePropertyMetadataField, key_name="id", keyed=True)
@@ -293,9 +292,9 @@ class EntityList(YAMLRoot):
 @dataclass(repr=False)
 class NamedThing(YAMLRoot):
     """
-    A generic grouping for any identifiable entity
+    An abstract model for any of the identifiable entities
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["NamedThing"]
     class_class_curie: ClassVar[str] = "pehterms:NamedThing"
@@ -309,7 +308,7 @@ class NamedThing(YAMLRoot):
     label: Optional[str] = None
     remark: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingId):
@@ -335,7 +334,10 @@ class NamedThing(YAMLRoot):
 
 @dataclass(repr=False)
 class Grouping(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A generic grouping entity that allows categorising entities in a hierarchical structure
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Grouping"]
     class_class_curie: ClassVar[str] = "pehterms:Grouping"
@@ -345,11 +347,11 @@ class Grouping(NamedThing):
     id: Union[str, GroupingId] = None
     sort_order: Optional[Decimal] = None
     abstract: Optional[Union[bool, Bool]] = None
-    parent_grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, "ContextAlias"], List[Union[dict, "ContextAlias"]]]] = empty_list()
-    translations: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
+    parent_grouping_id_list: Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, "ContextAlias"], list[Union[dict, "ContextAlias"]]]] = empty_list()
+    translations: Optional[Union[Union[dict, "Translation"], list[Union[dict, "Translation"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GroupingId):
@@ -378,7 +380,10 @@ class Grouping(NamedThing):
 
 @dataclass(repr=False)
 class HasValidationStatus(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The capacity of including both a current validation status and a history of validation records
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["HasValidationStatus"]
     class_class_curie: ClassVar[str] = "pehterms:HasValidationStatus"
@@ -386,9 +391,9 @@ class HasValidationStatus(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.HasValidationStatus
 
     current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
-    validation_history: Optional[Union[Union[dict, "ValidationHistoryRecord"], List[Union[dict, "ValidationHistoryRecord"]]]] = empty_list()
+    validation_history: Optional[Union[Union[dict, "ValidationHistoryRecord"], list[Union[dict, "ValidationHistoryRecord"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.current_validation_status is not None and not isinstance(self.current_validation_status, ValidationStatus):
             self.current_validation_status = ValidationStatus(self.current_validation_status)
 
@@ -401,7 +406,10 @@ class HasValidationStatus(YAMLRoot):
 
 @dataclass(repr=False)
 class ValidationHistoryRecord(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A list of events representing a historical record on the entity validation status
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ValidationHistoryRecord"]
     class_class_curie: ClassVar[str] = "pehterms:ValidationHistoryRecord"
@@ -414,7 +422,7 @@ class ValidationHistoryRecord(YAMLRoot):
     validation_institute: Optional[str] = None
     validation_remark: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.validation_datetime is not None and not isinstance(self.validation_datetime, XSDDateTime):
             self.validation_datetime = XSDDateTime(self.validation_datetime)
 
@@ -435,16 +443,19 @@ class ValidationHistoryRecord(YAMLRoot):
 
 @dataclass(repr=False)
 class HasAliases(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The capacity of including one or more alternative naming terms (without qualifying the usage context)
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["HasAliases"]
     class_class_curie: ClassVar[str] = "pehterms:HasAliases"
     class_name: ClassVar[str] = "HasAliases"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.HasAliases
 
-    aliases: Optional[Union[str, List[str]]] = empty_list()
+    aliases: Optional[Union[str, list[str]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.aliases, list):
             self.aliases = [self.aliases] if self.aliases is not None else []
         self.aliases = [v if isinstance(v, str) else str(v) for v in self.aliases]
@@ -454,16 +465,19 @@ class HasAliases(YAMLRoot):
 
 @dataclass(repr=False)
 class HasContextAliases(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The capacity of including a list of terms being used in known scopes or contexts
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["HasContextAliases"]
     class_class_curie: ClassVar[str] = "pehterms:HasContextAliases"
     class_name: ClassVar[str] = "HasContextAliases"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.HasContextAliases
 
-    context_aliases: Optional[Union[Union[dict, "ContextAlias"], List[Union[dict, "ContextAlias"]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, "ContextAlias"], list[Union[dict, "ContextAlias"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.context_aliases, list):
             self.context_aliases = [self.context_aliases] if self.context_aliases is not None else []
         self.context_aliases = [v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v)) for v in self.context_aliases]
@@ -473,7 +487,11 @@ class HasContextAliases(YAMLRoot):
 
 @dataclass(repr=False)
 class ContextAlias(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    An alternative term as it is used in a known scope or context (e.g. a community, project or study) for any of the
+    entities and its properties
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ContextAlias"]
     class_class_curie: ClassVar[str] = "pehterms:ContextAlias"
@@ -484,7 +502,7 @@ class ContextAlias(YAMLRoot):
     context: Optional[Union[str, NamedThingId]] = None
     alias: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.property_name is not None and not isinstance(self.property_name, str):
             self.property_name = str(self.property_name)
 
@@ -499,16 +517,19 @@ class ContextAlias(YAMLRoot):
 
 @dataclass(repr=False)
 class HasTranslations(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The capacity of including a list of translated terms for one or more entity properties and languages
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["HasTranslations"]
     class_class_curie: ClassVar[str] = "pehterms:HasTranslations"
     class_name: ClassVar[str] = "HasTranslations"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.HasTranslations
 
-    translations: Optional[Union[Union[dict, "Translation"], List[Union[dict, "Translation"]]]] = empty_list()
+    translations: Optional[Union[Union[dict, "Translation"], list[Union[dict, "Translation"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.translations, list):
             self.translations = [self.translations] if self.translations is not None else []
         self.translations = [v if isinstance(v, Translation) else Translation(**as_dict(v)) for v in self.translations]
@@ -518,7 +539,10 @@ class HasTranslations(YAMLRoot):
 
 @dataclass(repr=False)
 class Translation(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A translation for any of the entity properties, defining the property, the language and the translated term
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Translation"]
     class_class_curie: ClassVar[str] = "pehterms:Translation"
@@ -529,7 +553,7 @@ class Translation(YAMLRoot):
     language: Optional[str] = None
     translated_value: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.property_name is not None and not isinstance(self.property_name, str):
             self.property_name = str(self.property_name)
 
@@ -544,7 +568,10 @@ class Translation(YAMLRoot):
 
 @dataclass(repr=False)
 class Unit(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A unit of measurement, a quantity chosen as a standard in terms of which other quantities may be expressed
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Unit"]
     class_class_curie: ClassVar[str] = "pehterms:Unit"
@@ -554,12 +581,12 @@ class Unit(NamedThing):
     id: Union[str, UnitId] = None
     same_unit_as: Optional[Union[str, "QudtUnit"]] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
     current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
-    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]] = empty_list()
+    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], list[Union[dict, ValidationHistoryRecord]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, UnitId):
@@ -594,7 +621,7 @@ class BioChemEntity(NamedThing):
     """
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA["BioChemEntity"]
     class_class_curie: ClassVar[str] = "schema:BioChemEntity"
@@ -602,17 +629,17 @@ class BioChemEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.BioChemEntity
 
     id: Union[str, BioChemEntityId] = None
-    grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
+    grouping_id_list: Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]] = empty_list()
     molweight_grampermol: Optional[Decimal] = None
-    biochemidentifiers: Optional[Union[Union[dict, "BioChemIdentifier"], List[Union[dict, "BioChemIdentifier"]]]] = empty_list()
-    biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
-    aliases: Optional[Union[str, List[str]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    biochemidentifiers: Optional[Union[Union[dict, "BioChemIdentifier"], list[Union[dict, "BioChemIdentifier"]]]] = empty_list()
+    biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], list[Union[dict, "BioChemEntityLink"]]]] = empty_list()
+    aliases: Optional[Union[str, list[str]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
     current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
-    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]] = empty_list()
+    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], list[Union[dict, ValidationHistoryRecord]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BioChemEntityId):
@@ -657,7 +684,11 @@ class BioChemEntity(NamedThing):
 
 @dataclass(repr=False)
 class BioChemIdentifier(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    An identifier by which a biochemical entity is known in a schema (the BioChemIdentifierSchema) used by a certain
+    community or system
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["BioChemIdentifier"]
     class_class_curie: ClassVar[str] = "pehterms:BioChemIdentifier"
@@ -667,9 +698,9 @@ class BioChemIdentifier(YAMLRoot):
     identifier_schema: Optional[Union[str, BioChemIdentifierSchemaId]] = None
     identifier_code: Optional[str] = None
     current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
-    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]] = empty_list()
+    validation_history: Optional[Union[Union[dict, ValidationHistoryRecord], list[Union[dict, ValidationHistoryRecord]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.identifier_schema is not None and not isinstance(self.identifier_schema, BioChemIdentifierSchemaId):
             self.identifier_schema = BioChemIdentifierSchemaId(self.identifier_schema)
 
@@ -688,7 +719,11 @@ class BioChemIdentifier(YAMLRoot):
 
 @dataclass(repr=False)
 class BioChemIdentifierSchema(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A well-defined schema used by a certain community or system, listing biochemical entities with individual
+    identifiers
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["BioChemIdentifierSchema"]
     class_class_curie: ClassVar[str] = "pehterms:BioChemIdentifierSchema"
@@ -698,7 +733,7 @@ class BioChemIdentifierSchema(NamedThing):
     id: Union[str, BioChemIdentifierSchemaId] = None
     web_uri: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BioChemIdentifierSchemaId):
@@ -712,7 +747,11 @@ class BioChemIdentifierSchema(NamedThing):
 
 @dataclass(repr=False)
 class Matrix(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The physical medium or biological substrate from which a biomarker, or other analyte is quantified in
+    observational studies
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Matrix"]
     class_class_curie: ClassVar[str] = "pehterms:Matrix"
@@ -723,11 +762,11 @@ class Matrix(NamedThing):
     sort_order: Optional[Decimal] = None
     aggregation_target: Optional[Union[bool, Bool]] = None
     parent_matrix: Optional[Union[str, MatrixId]] = None
-    secondary_parent_matrix_id_list: Optional[Union[Union[str, MatrixId], List[Union[str, MatrixId]]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    secondary_parent_matrix_id_list: Optional[Union[Union[str, MatrixId], list[Union[str, MatrixId]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MatrixId):
@@ -760,9 +799,9 @@ class Matrix(NamedThing):
 @dataclass(repr=False)
 class Indicator(NamedThing):
     """
-    A measurable indicator that is relevant to the Personal Exposure and Health domain
+    Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Indicator"]
     class_class_curie: ClassVar[str] = "pehterms:Indicator"
@@ -775,12 +814,12 @@ class Indicator(NamedThing):
     property: Optional[str] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, List[str]]] = empty_list()
-    grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
-    relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
-    biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], List[Union[dict, "BioChemEntityLink"]]]] = empty_list()
+    constraints: Optional[Union[str, list[str]]] = empty_list()
+    grouping_id_list: Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]] = empty_list()
+    relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]]] = empty_list()
+    biochementity_links: Optional[Union[Union[dict, "BioChemEntityLink"], list[Union[dict, "BioChemEntityLink"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, IndicatorId):
@@ -822,7 +861,10 @@ class Indicator(NamedThing):
 
 @dataclass(repr=False)
 class BioChemEntityLink(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A relational property that allows creating qualified links to biochemical entities
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["BioChemEntityLink"]
     class_class_curie: ClassVar[str] = "pehterms:BioChemEntityLink"
@@ -832,7 +874,7 @@ class BioChemEntityLink(YAMLRoot):
     biochementity_linktype: Optional[Union[str, "BioChemEntityLinkType"]] = None
     biochementity: Optional[Union[str, BioChemEntityId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.biochementity_linktype is not None and not isinstance(self.biochementity_linktype, BioChemEntityLinkType):
             self.biochementity_linktype = BioChemEntityLinkType(self.biochementity_linktype)
 
@@ -844,7 +886,10 @@ class BioChemEntityLink(YAMLRoot):
 
 @dataclass(repr=False)
 class PhysicalEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A digital placeholder for a physical entity as it exists in the real world,
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["PhysicalEntity"]
     class_class_curie: ClassVar[str] = "pehterms:PhysicalEntity"
@@ -852,9 +897,9 @@ class PhysicalEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.PhysicalEntity
 
     id: Union[str, PhysicalEntityId] = None
-    physical_entity_links: Optional[Union[Union[dict, "PhysicalEntityLink"], List[Union[dict, "PhysicalEntityLink"]]]] = empty_list()
+    physical_entity_links: Optional[Union[Union[dict, "PhysicalEntityLink"], list[Union[dict, "PhysicalEntityLink"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.physical_entity_links, list):
             self.physical_entity_links = [self.physical_entity_links] if self.physical_entity_links is not None else []
         self.physical_entity_links = [v if isinstance(v, PhysicalEntityLink) else PhysicalEntityLink(**as_dict(v)) for v in self.physical_entity_links]
@@ -864,7 +909,10 @@ class PhysicalEntity(NamedThing):
 
 @dataclass(repr=False)
 class PhysicalEntityLink(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A relational property that allows creating qualified links to physical entities
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["PhysicalEntityLink"]
     class_class_curie: ClassVar[str] = "pehterms:PhysicalEntityLink"
@@ -874,7 +922,7 @@ class PhysicalEntityLink(YAMLRoot):
     linktype: Optional[Union[str, "LinkType"]] = None
     physical_entity: Optional[Union[str, PhysicalEntityId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.linktype is not None and not isinstance(self.linktype, LinkType):
             self.linktype = LinkType(self.linktype)
 
@@ -886,7 +934,10 @@ class PhysicalEntityLink(YAMLRoot):
 
 @dataclass(repr=False)
 class Sample(PhysicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A portion of a measurement matrix collected from a subject or environment for the purpose of lab analysis
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Sample"]
     class_class_curie: ClassVar[str] = "pehterms:Sample"
@@ -895,12 +946,12 @@ class Sample(PhysicalEntity):
 
     id: Union[str, SampleId] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, List[str]]] = empty_list()
+    constraints: Optional[Union[str, list[str]]] = empty_list()
     sampled_in_project: Optional[Union[str, ProjectId]] = None
     physical_label: Optional[str] = None
     collection_date: Optional[Union[str, XSDDate]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SampleId):
@@ -927,7 +978,10 @@ class Sample(PhysicalEntity):
 
 @dataclass(repr=False)
 class Person(PhysicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A human subject or stakeholder in Personal Exposure and Health research
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Person"]
     class_class_curie: ClassVar[str] = "pehterms:Person"
@@ -937,7 +991,7 @@ class Person(PhysicalEntity):
     id: Union[str, PersonId] = None
     recruited_in_project: Optional[Union[str, ProjectId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PersonId):
@@ -951,7 +1005,10 @@ class Person(PhysicalEntity):
 
 @dataclass(repr=False)
 class Geolocation(PhysicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A geographic location relevant to the Personal Exposure and Health projects or studies
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Geolocation"]
     class_class_curie: ClassVar[str] = "pehterms:Geolocation"
@@ -961,7 +1018,7 @@ class Geolocation(PhysicalEntity):
     id: Union[str, GeolocationId] = None
     location: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeolocationId):
@@ -975,7 +1032,10 @@ class Geolocation(PhysicalEntity):
 
 @dataclass(repr=False)
 class Environment(PhysicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    An environment relevant to the research, typically related to the exposure of a person
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Environment"]
     class_class_curie: ClassVar[str] = "pehterms:Environment"
@@ -984,7 +1044,7 @@ class Environment(PhysicalEntity):
 
     id: Union[str, EnvironmentId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EnvironmentId):
@@ -995,7 +1055,10 @@ class Environment(PhysicalEntity):
 
 @dataclass(repr=False)
 class HomeEnvironment(Environment):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A home environment relevant to the research, typically related to the at-home exposure of a person
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["HomeEnvironment"]
     class_class_curie: ClassVar[str] = "pehterms:HomeEnvironment"
@@ -1004,7 +1067,7 @@ class HomeEnvironment(Environment):
 
     id: Union[str, HomeEnvironmentId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, HomeEnvironmentId):
@@ -1015,7 +1078,10 @@ class HomeEnvironment(Environment):
 
 @dataclass(repr=False)
 class WorkEnvironment(Environment):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A work environment relevant to the research, typically related to the at-work or commute exposure of a person
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["WorkEnvironment"]
     class_class_curie: ClassVar[str] = "pehterms:WorkEnvironment"
@@ -1024,7 +1090,7 @@ class WorkEnvironment(Environment):
 
     id: Union[str, WorkEnvironmentId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, WorkEnvironmentId):
@@ -1035,7 +1101,11 @@ class WorkEnvironment(Environment):
 
 @dataclass(repr=False)
 class ObservableProperty(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A fully defined variable that allows registering an observation about any of the entities relevant to Personal
+    Exposure and Health research
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservableProperty"]
     class_class_curie: ClassVar[str] = "pehterms:ObservableProperty"
@@ -1046,8 +1116,8 @@ class ObservableProperty(NamedThing):
     value_type: Optional[str] = None
     categorical: Optional[Union[bool, Bool]] = None
     multivalued: Optional[Union[bool, Bool]] = None
-    value_options: Optional[Union[Union[dict, "ObservablePropertyValueOption"], List[Union[dict, "ObservablePropertyValueOption"]]]] = empty_list()
-    value_metadata: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], List[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
+    value_options: Optional[Union[Union[dict, "ObservablePropertyValueOption"], list[Union[dict, "ObservablePropertyValueOption"]]]] = empty_list()
+    value_metadata: Optional[Union[Union[dict, "ObservablePropertyMetadataElement"], list[Union[dict, "ObservablePropertyMetadataElement"]]]] = empty_list()
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
     default_unit: Optional[str] = None
     default_unit_label: Optional[str] = None
@@ -1055,17 +1125,17 @@ class ObservableProperty(NamedThing):
     default_zeroallowed: Optional[Union[bool, Bool]] = None
     default_significantdecimals: Optional[int] = None
     default_immutable: Optional[Union[bool, Bool]] = None
-    grouping_id_list: Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]] = empty_list()
+    grouping_id_list: Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]] = empty_list()
     default_observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
-    relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
-    relevant_observation_types: Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]] = empty_list()
+    relevant_observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]]] = empty_list()
+    relevant_observation_types: Optional[Union[Union[str, "ObservationType"], list[Union[str, "ObservationType"]]]] = empty_list()
     indicator: Optional[Union[str, IndicatorId]] = None
     varname: Optional[str] = None
-    calculation_designs: Optional[Union[Union[dict, "CalculationDesign"], List[Union[dict, "CalculationDesign"]]]] = empty_list()
-    validation_designs: Optional[Union[Union[dict, "ValidationDesign"], List[Union[dict, "ValidationDesign"]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    calculation_designs: Optional[Union[Union[dict, "CalculationDesign"], list[Union[dict, "CalculationDesign"]]]] = empty_list()
+    validation_designs: Optional[Union[Union[dict, "ValidationDesign"], list[Union[dict, "ValidationDesign"]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ObservablePropertyId):
@@ -1147,7 +1217,10 @@ class ObservableProperty(NamedThing):
 
 @dataclass(repr=False)
 class ObservablePropertyValueOption(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Potential selection choices for Observable Properties that are categorical variables
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservablePropertyValueOption"]
     class_class_curie: ClassVar[str] = "pehterms:ObservablePropertyValueOption"
@@ -1157,9 +1230,9 @@ class ObservablePropertyValueOption(YAMLRoot):
     key: Optional[str] = None
     value: Optional[str] = None
     label: Optional[str] = None
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.key is not None and not isinstance(self.key, str):
             self.key = str(self.key)
 
@@ -1178,7 +1251,10 @@ class ObservablePropertyValueOption(YAMLRoot):
 
 @dataclass(repr=False)
 class ObservablePropertyMetadataElement(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Key-value element that adds contextual metadata to an Observable Property instance
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservablePropertyMetadataElement"]
     class_class_curie: ClassVar[str] = "pehterms:ObservablePropertyMetadataElement"
@@ -1188,7 +1264,7 @@ class ObservablePropertyMetadataElement(YAMLRoot):
     field: Optional[Union[str, ObservablePropertyMetadataFieldId]] = None
     value: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.field is not None and not isinstance(self.field, ObservablePropertyMetadataFieldId):
             self.field = ObservablePropertyMetadataFieldId(self.field)
 
@@ -1200,7 +1276,10 @@ class ObservablePropertyMetadataElement(YAMLRoot):
 
 @dataclass(repr=False)
 class ObservablePropertyMetadataField(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Predefined contextual qualifier for Observable Property metadata
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservablePropertyMetadataField"]
     class_class_curie: ClassVar[str] = "pehterms:ObservablePropertyMetadataField"
@@ -1210,7 +1289,7 @@ class ObservablePropertyMetadataField(NamedThing):
     id: Union[str, ObservablePropertyMetadataFieldId] = None
     value_type: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ObservablePropertyMetadataFieldId):
@@ -1224,7 +1303,10 @@ class ObservablePropertyMetadataField(NamedThing):
 
 @dataclass(repr=False)
 class CalculationDesign(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Definition of a calculation method for deriving an observational value from other variables and/or contexts
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["CalculationDesign"]
     class_class_curie: ClassVar[str] = "pehterms:CalculationDesign"
@@ -1236,7 +1318,7 @@ class CalculationDesign(YAMLRoot):
     calculation_implementation: Optional[Union[dict, "CalculationImplementation"]] = None
     conditional: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.calculation_name is not None and not isinstance(self.calculation_name, str):
             self.calculation_name = str(self.calculation_name)
 
@@ -1254,7 +1336,10 @@ class CalculationDesign(YAMLRoot):
 
 @dataclass(repr=False)
 class CalculationImplementation(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Reference and parameters mapping to the implementation that can perform the intended calculation
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["CalculationImplementation"]
     class_class_curie: ClassVar[str] = "pehterms:CalculationImplementation"
@@ -1262,11 +1347,11 @@ class CalculationImplementation(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.CalculationImplementation
 
     function_name: Optional[str] = None
-    function_args: Optional[Union[Union[dict, "CalculationArgument"], List[Union[dict, "CalculationArgument"]]]] = empty_list()
-    function_kwargs: Optional[Union[Union[dict, "CalculationKeywordArgument"], List[Union[dict, "CalculationKeywordArgument"]]]] = empty_list()
-    function_results: Optional[Union[Union[dict, "CalculationResult"], List[Union[dict, "CalculationResult"]]]] = empty_list()
+    function_args: Optional[Union[Union[dict, "CalculationArgument"], list[Union[dict, "CalculationArgument"]]]] = empty_list()
+    function_kwargs: Optional[Union[Union[dict, "CalculationKeywordArgument"], list[Union[dict, "CalculationKeywordArgument"]]]] = empty_list()
+    function_results: Optional[Union[Union[dict, "CalculationResult"], list[Union[dict, "CalculationResult"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.function_name is not None and not isinstance(self.function_name, str):
             self.function_name = str(self.function_name)
 
@@ -1287,7 +1372,11 @@ class CalculationImplementation(YAMLRoot):
 
 @dataclass(repr=False)
 class CalculationArgument(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The definition of a positional argument used in the calculation, including the information needed to pick it from
+    the project or study data structure
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["CalculationArgument"]
     class_class_curie: ClassVar[str] = "pehterms:CalculationArgument"
@@ -1301,7 +1390,7 @@ class CalculationArgument(YAMLRoot):
     value_type: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.source_path is not None and not isinstance(self.source_path, str):
             self.source_path = str(self.source_path)
 
@@ -1325,7 +1414,11 @@ class CalculationArgument(YAMLRoot):
 
 @dataclass(repr=False)
 class CalculationKeywordArgument(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The definition of a named argument used in the calculation, including the information needed to pick it from the
+    project or study data structure
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["CalculationKeywordArgument"]
     class_class_curie: ClassVar[str] = "pehterms:CalculationKeywordArgument"
@@ -1340,7 +1433,7 @@ class CalculationKeywordArgument(YAMLRoot):
     value_type: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.mapping_name is not None and not isinstance(self.mapping_name, str):
             self.mapping_name = str(self.mapping_name)
 
@@ -1367,7 +1460,10 @@ class CalculationKeywordArgument(YAMLRoot):
 
 @dataclass(repr=False)
 class CalculationResult(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The definition for the output the calculation, optionally including mapping information
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["CalculationResult"]
     class_class_curie: ClassVar[str] = "pehterms:CalculationResult"
@@ -1381,7 +1477,7 @@ class CalculationResult(YAMLRoot):
     scale_factor: Optional[Decimal] = None
     destination_path: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.mapping_name is not None and not isinstance(self.mapping_name, str):
             self.mapping_name = str(self.mapping_name)
 
@@ -1405,7 +1501,10 @@ class CalculationResult(YAMLRoot):
 
 @dataclass(repr=False)
 class ValidationDesign(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Definition of a validation rule for automatically imposing business logic constraints
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ValidationDesign"]
     class_class_curie: ClassVar[str] = "pehterms:ValidationDesign"
@@ -1419,7 +1518,7 @@ class ValidationDesign(YAMLRoot):
     validation_error_message_template: Optional[str] = None
     conditional: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.validation_name is not None and not isinstance(self.validation_name, str):
             self.validation_name = str(self.validation_name)
 
@@ -1443,20 +1542,23 @@ class ValidationDesign(YAMLRoot):
 
 @dataclass(repr=False)
 class ValidationExpression(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A logical expression, allowing for combining arguments into more complex validation rules
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ValidationExpression"]
     class_class_curie: ClassVar[str] = "pehterms:ValidationExpression"
     class_name: ClassVar[str] = "ValidationExpression"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.ValidationExpression
 
-    validation_subject_source_paths: Optional[Union[str, List[str]]] = empty_list()
+    validation_subject_source_paths: Optional[Union[str, list[str]]] = empty_list()
     validation_command: Optional[Union[str, "ValidationCommand"]] = None
-    validation_arg_values: Optional[Union[str, List[str]]] = empty_list()
-    validation_arg_source_paths: Optional[Union[str, List[str]]] = empty_list()
-    validation_arg_expressions: Optional[Union[Union[dict, "ValidationExpression"], List[Union[dict, "ValidationExpression"]]]] = empty_list()
+    validation_arg_values: Optional[Union[str, list[str]]] = empty_list()
+    validation_arg_source_paths: Optional[Union[str, list[str]]] = empty_list()
+    validation_arg_expressions: Optional[Union[Union[dict, "ValidationExpression"], list[Union[dict, "ValidationExpression"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.validation_subject_source_paths, list):
             self.validation_subject_source_paths = [self.validation_subject_source_paths] if self.validation_subject_source_paths is not None else []
         self.validation_subject_source_paths = [v if isinstance(v, str) else str(v) for v in self.validation_subject_source_paths]
@@ -1481,7 +1583,10 @@ class ValidationExpression(YAMLRoot):
 
 @dataclass(repr=False)
 class Contact(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A stakeholder having a contact role in the research process
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Contact"]
     class_class_curie: ClassVar[str] = "pehterms:Contact"
@@ -1490,12 +1595,12 @@ class Contact(YAMLRoot):
 
     name: Optional[str] = None
     orcid: Optional[str] = None
-    contact_roles: Optional[Union[Union[str, "ContactRole"], List[Union[str, "ContactRole"]]]] = empty_list()
+    contact_roles: Optional[Union[Union[str, "ContactRole"], list[Union[str, "ContactRole"]]]] = empty_list()
     contact_email: Optional[str] = None
     contact_phone: Optional[str] = None
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
@@ -1521,7 +1626,10 @@ class Contact(YAMLRoot):
 
 @dataclass(repr=False)
 class Stakeholder(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Any organisation involved in the research process
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Stakeholder"]
     class_class_curie: ClassVar[str] = "pehterms:Stakeholder"
@@ -1531,9 +1639,9 @@ class Stakeholder(NamedThing):
     id: Union[str, StakeholderId] = None
     rorid: Optional[str] = None
     geographic_scope: Optional[str] = None
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StakeholderId):
@@ -1554,7 +1662,10 @@ class Stakeholder(NamedThing):
 
 @dataclass(repr=False)
 class ProjectStakeholder(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    An organisation collaborating in a Personal Exposure and Health research project
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ProjectStakeholder"]
     class_class_curie: ClassVar[str] = "pehterms:ProjectStakeholder"
@@ -1562,11 +1673,11 @@ class ProjectStakeholder(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.ProjectStakeholder
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
-    project_roles: Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]] = empty_list()
-    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
+    project_roles: Optional[Union[Union[str, "ProjectRole"], list[Union[str, "ProjectRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], list[Union[dict, Contact]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
             self.stakeholder = StakeholderId(self.stakeholder)
 
@@ -1587,7 +1698,10 @@ class ProjectStakeholder(YAMLRoot):
 
 @dataclass(repr=False)
 class StudyEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Any entity carrying data or context relevant to a Personal Exposure and Health research project or study
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["StudyEntity"]
     class_class_curie: ClassVar[str] = "pehterms:StudyEntity"
@@ -1596,9 +1710,9 @@ class StudyEntity(NamedThing):
 
     id: Union[str, StudyEntityId] = None
     physical_entity: Optional[Union[str, PhysicalEntityId]] = None
-    study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], List[Union[dict, "StudyEntityLink"]]]] = empty_list()
+    study_entity_links: Optional[Union[Union[dict, "StudyEntityLink"], list[Union[dict, "StudyEntityLink"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.physical_entity is not None and not isinstance(self.physical_entity, PhysicalEntityId):
             self.physical_entity = PhysicalEntityId(self.physical_entity)
 
@@ -1611,7 +1725,10 @@ class StudyEntity(NamedThing):
 
 @dataclass(repr=False)
 class Project(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A collaborative effort in the Personal Exposure and Health research domain
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Project"]
     class_class_curie: ClassVar[str] = "pehterms:Project"
@@ -1620,14 +1737,14 @@ class Project(StudyEntity):
 
     id: Union[str, ProjectId] = None
     default_language: Optional[str] = None
-    project_stakeholders: Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]] = empty_list()
+    project_stakeholders: Optional[Union[Union[dict, ProjectStakeholder], list[Union[dict, ProjectStakeholder]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
-    study_id_list: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    study_id_list: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProjectId):
@@ -1663,7 +1780,10 @@ class Project(StudyEntity):
 
 @dataclass(repr=False)
 class StudyEntityLink(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A relational property that allows creating qualified links to study entities
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["StudyEntityLink"]
     class_class_curie: ClassVar[str] = "pehterms:StudyEntityLink"
@@ -1673,7 +1793,7 @@ class StudyEntityLink(YAMLRoot):
     linktype: Optional[Union[str, "LinkType"]] = None
     study_entity: Optional[Union[str, StudyEntityId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.linktype is not None and not isinstance(self.linktype, LinkType):
             self.linktype = LinkType(self.linktype)
 
@@ -1685,7 +1805,11 @@ class StudyEntityLink(YAMLRoot):
 
 @dataclass(repr=False)
 class Study(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A structured, goal-directed observational investigation designed to collect and analyze data on human subjects and
+    their environments
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Study"]
     class_class_curie: ClassVar[str] = "pehterms:Study"
@@ -1694,16 +1818,16 @@ class Study(StudyEntity):
 
     id: Union[str, StudyId] = None
     default_language: Optional[str] = None
-    study_stakeholders: Optional[Union[Union[dict, "StudyStakeholder"], List[Union[dict, "StudyStakeholder"]]]] = empty_list()
+    study_stakeholders: Optional[Union[Union[dict, "StudyStakeholder"], list[Union[dict, "StudyStakeholder"]]]] = empty_list()
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
-    observation_group_id_list: Optional[Union[Union[str, ObservationGroupId], List[Union[str, ObservationGroupId]]]] = empty_list()
-    study_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
-    project_id_list: Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]] = empty_list()
-    translations: Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]] = empty_list()
-    context_aliases: Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]] = empty_list()
+    observation_group_id_list: Optional[Union[Union[str, ObservationGroupId], list[Union[str, ObservationGroupId]]]] = empty_list()
+    study_entity_id_list: Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]] = empty_list()
+    project_id_list: Optional[Union[Union[str, ProjectId], list[Union[str, ProjectId]]]] = empty_list()
+    translations: Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]] = empty_list()
+    context_aliases: Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyId):
@@ -1747,7 +1871,10 @@ class Study(StudyEntity):
 
 @dataclass(repr=False)
 class StudyStakeholder(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    An organisation collaborating in a Personal Exposure and Health research study
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["StudyStakeholder"]
     class_class_curie: ClassVar[str] = "pehterms:StudyStakeholder"
@@ -1755,10 +1882,10 @@ class StudyStakeholder(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.StudyStakeholder
 
     stakeholder: Optional[Union[str, StakeholderId]] = None
-    study_roles: Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]] = empty_list()
-    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
+    study_roles: Optional[Union[Union[str, "StudyRole"], list[Union[str, "StudyRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], list[Union[dict, Contact]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.stakeholder is not None and not isinstance(self.stakeholder, StakeholderId):
             self.stakeholder = StakeholderId(self.stakeholder)
 
@@ -1775,7 +1902,11 @@ class StudyStakeholder(YAMLRoot):
 
 @dataclass(repr=False)
 class ObservationGroup(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A grouped collection of observations, intended and/or executed, as part of a Personal Exposure and Health research
+    study
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationGroup"]
     class_class_curie: ClassVar[str] = "pehterms:ObservationGroup"
@@ -1786,9 +1917,9 @@ class ObservationGroup(StudyEntity):
     sort_order: Optional[Decimal] = None
     start_date: Optional[Union[str, XSDDate]] = None
     end_date: Optional[Union[str, XSDDate]] = None
-    observation_id_list: Optional[Union[Union[str, ObservationId], List[Union[str, ObservationId]]]] = empty_list()
+    observation_id_list: Optional[Union[Union[str, ObservationId], list[Union[str, ObservationId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ObservationGroupId):
@@ -1812,7 +1943,10 @@ class ObservationGroup(StudyEntity):
 
 @dataclass(repr=False)
 class StudyPopulation(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A group of study entities that is itself also a study entity that observations can be recorded for
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["StudyPopulation"]
     class_class_curie: ClassVar[str] = "pehterms:StudyPopulation"
@@ -1821,9 +1955,9 @@ class StudyPopulation(StudyEntity):
 
     id: Union[str, StudyPopulationId] = None
     research_population_type: Optional[Union[str, "ResearchPopulationType"]] = None
-    member_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
+    member_id_list: Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyPopulationId):
@@ -1841,7 +1975,10 @@ class StudyPopulation(StudyEntity):
 
 @dataclass(repr=False)
 class SampleCollection(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A collection of samples that is itself also a study entity that observations can be recorded for
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["SampleCollection"]
     class_class_curie: ClassVar[str] = "pehterms:SampleCollection"
@@ -1850,10 +1987,10 @@ class SampleCollection(StudyEntity):
 
     id: Union[str, SampleCollectionId] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, List[str]]] = empty_list()
-    sample_id_list: Optional[Union[Union[str, SampleId], List[Union[str, SampleId]]]] = empty_list()
+    constraints: Optional[Union[str, list[str]]] = empty_list()
+    sample_id_list: Optional[Union[Union[str, SampleId], list[Union[str, SampleId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SampleCollectionId):
@@ -1875,7 +2012,10 @@ class SampleCollection(StudyEntity):
 
 @dataclass(repr=False)
 class StudySubject(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A study entity that is a main subject for the study
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["StudySubject"]
     class_class_curie: ClassVar[str] = "pehterms:StudySubject"
@@ -1884,7 +2024,7 @@ class StudySubject(StudyEntity):
 
     id: Union[str, StudySubjectId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudySubjectId):
@@ -1895,7 +2035,10 @@ class StudySubject(StudyEntity):
 
 @dataclass(repr=False)
 class StudySubjectGroup(StudyEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A group of study subjects that is itself also a study entity that observations can be recorded for
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["StudySubjectGroup"]
     class_class_curie: ClassVar[str] = "pehterms:StudySubjectGroup"
@@ -1904,7 +2047,7 @@ class StudySubjectGroup(StudyEntity):
 
     id: Union[str, StudySubjectGroupId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudySubjectGroupId):
@@ -1915,7 +2058,10 @@ class StudySubjectGroup(StudyEntity):
 
 @dataclass(repr=False)
 class Observation(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The registration of the intent to perform a set of observations as well as the resulting observed values
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["Observation"]
     class_class_curie: ClassVar[str] = "pehterms:Observation"
@@ -1925,9 +2071,9 @@ class Observation(NamedThing):
     id: Union[str, ObservationId] = None
     observation_type: Optional[Union[str, "ObservationType"]] = None
     observation_design: Optional[Union[dict, "ObservationDesign"]] = None
-    observation_result_id_list: Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]] = empty_list()
+    observation_result_id_list: Optional[Union[Union[str, ObservationResultId], list[Union[str, ObservationResultId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.observation_type is not None and not isinstance(self.observation_type, ObservationType):
             self.observation_type = ObservationType(self.observation_type)
 
@@ -1943,16 +2089,19 @@ class Observation(NamedThing):
 
 @dataclass(repr=False)
 class ObservationDesign(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The registration of the intent to perform a number of observations
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationDesign"]
     class_class_curie: ClassVar[str] = "pehterms:ObservationDesign"
     class_name: ClassVar[str] = "ObservationDesign"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservationDesign
 
-    observable_entity_property_sets: Optional[Union[Union[dict, "ObservableEntityPropertySet"], List[Union[dict, "ObservableEntityPropertySet"]]]] = empty_list()
+    observable_entity_property_sets: Optional[Union[Union[dict, "ObservableEntityPropertySet"], list[Union[dict, "ObservableEntityPropertySet"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.observable_entity_property_sets, list):
             self.observable_entity_property_sets = [self.observable_entity_property_sets] if self.observable_entity_property_sets is not None else []
         self.observable_entity_property_sets = [v if isinstance(v, ObservableEntityPropertySet) else ObservableEntityPropertySet(**as_dict(v)) for v in self.observable_entity_property_sets]
@@ -1962,7 +2111,11 @@ class ObservationDesign(YAMLRoot):
 
 @dataclass(repr=False)
 class ObservableEntityPropertySet(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The list of properties being observed and the study entities they will be observed for (or, alternatively, the
+    entity type all observed entities belong to)
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservableEntityPropertySet"]
     class_class_curie: ClassVar[str] = "pehterms:ObservableEntityPropertySet"
@@ -1971,12 +2124,12 @@ class ObservableEntityPropertySet(YAMLRoot):
 
     observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
     observable_entity_type: Optional[Union[str, "ObservableEntityType"]] = None
-    observable_entity_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
-    identifying_observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
-    required_observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
-    optional_observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]] = empty_list()
+    observable_entity_id_list: Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]] = empty_list()
+    identifying_observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]] = empty_list()
+    required_observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]] = empty_list()
+    optional_observable_property_id_list: Optional[Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.observation_result_type is not None and not isinstance(self.observation_result_type, ObservationResultType):
             self.observation_result_type = ObservationResultType(self.observation_result_type)
 
@@ -2004,7 +2157,10 @@ class ObservableEntityPropertySet(YAMLRoot):
 
 @dataclass(repr=False)
 class ObservationResult(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    The result of an observational effort in Personal Exposure and Health research
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationResult"]
     class_class_curie: ClassVar[str] = "pehterms:ObservationResult"
@@ -2015,9 +2171,9 @@ class ObservationResult(NamedThing):
     observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
     observation_start_date: Optional[Union[str, XSDDate]] = None
     observation_end_date: Optional[Union[str, XSDDate]] = None
-    observed_values: Optional[Union[Union[dict, "ObservedValue"], List[Union[dict, "ObservedValue"]]]] = empty_list()
+    observed_values: Optional[Union[Union[dict, "ObservedValue"], list[Union[dict, "ObservedValue"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.observation_result_type is not None and not isinstance(self.observation_result_type, ObservationResultType):
             self.observation_result_type = ObservationResultType(self.observation_result_type)
 
@@ -2036,7 +2192,10 @@ class ObservationResult(NamedThing):
 
 @dataclass(repr=False)
 class ObservedValue(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A single observational result value registering a specific property for a specific entity at a specific moment
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservedValue"]
     class_class_curie: ClassVar[str] = "pehterms:ObservedValue"
@@ -2055,10 +2214,10 @@ class ObservedValue(YAMLRoot):
     value: Optional[str] = None
     unit: Optional[Union[str, UnitId]] = None
     value_as_string: Optional[str] = None
-    quality_data: Optional[Union[Union[dict, "QualityData"], List[Union[dict, "QualityData"]]]] = empty_list()
-    provenance_data: Optional[Union[Union[dict, "ProvenanceData"], List[Union[dict, "ProvenanceData"]]]] = empty_list()
+    quality_data: Optional[Union[Union[dict, "QualityData"], list[Union[dict, "QualityData"]]]] = empty_list()
+    provenance_data: Optional[Union[Union[dict, "ProvenanceData"], list[Union[dict, "ProvenanceData"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.observable_entity is not None and not isinstance(self.observable_entity, StudyEntityId):
             self.observable_entity = StudyEntityId(self.observable_entity)
 
@@ -2108,7 +2267,10 @@ class ObservedValue(YAMLRoot):
 
 @dataclass(repr=False)
 class QualityData(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Quality metadata, adding context to an Observed Value
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["QualityData"]
     class_class_curie: ClassVar[str] = "pehterms:QualityData"
@@ -2118,7 +2280,7 @@ class QualityData(YAMLRoot):
     quality_context_key: Optional[str] = None
     quality_value: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.quality_context_key is not None and not isinstance(self.quality_context_key, str):
             self.quality_context_key = str(self.quality_context_key)
 
@@ -2130,7 +2292,10 @@ class QualityData(YAMLRoot):
 
 @dataclass(repr=False)
 class ProvenanceData(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Provenance metadata, adding context to an Observed Value
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ProvenanceData"]
     class_class_curie: ClassVar[str] = "pehterms:ProvenanceData"
@@ -2140,7 +2305,7 @@ class ProvenanceData(YAMLRoot):
     provenance_context_key: Optional[str] = None
     provenance_value: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.provenance_context_key is not None and not isinstance(self.provenance_context_key, str):
             self.provenance_context_key = str(self.provenance_context_key)
 
@@ -2152,7 +2317,10 @@ class ProvenanceData(YAMLRoot):
 
 @dataclass(repr=False)
 class DataLayout(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Layout, allowing the definition of templating sections for combining layout and data elements
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["DataLayout"]
     class_class_curie: ClassVar[str] = "pehterms:DataLayout"
@@ -2160,9 +2328,9 @@ class DataLayout(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.DataLayout
 
     id: Union[str, DataLayoutId] = None
-    sections: Optional[Union[Dict[Union[str, DataLayoutSectionId], Union[dict, "DataLayoutSection"]], List[Union[dict, "DataLayoutSection"]]]] = empty_dict()
+    sections: Optional[Union[dict[Union[str, DataLayoutSectionId], Union[dict, "DataLayoutSection"]], list[Union[dict, "DataLayoutSection"]]]] = empty_dict()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DataLayoutId):
@@ -2175,7 +2343,10 @@ class DataLayout(NamedThing):
 
 @dataclass(repr=False)
 class DataLayoutSection(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Definition for an individual layout or data section, as part of a full layout
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["DataLayoutSection"]
     class_class_curie: ClassVar[str] = "pehterms:DataLayoutSection"
@@ -2184,11 +2355,11 @@ class DataLayoutSection(NamedThing):
 
     id: Union[str, DataLayoutSectionId] = None
     section_type: Optional[Union[str, "DataLayoutSectionType"]] = None
-    observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]] = empty_list()
-    observable_entity_grouping_id_list: Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]] = empty_list()
-    elements: Optional[Union[Union[dict, "DataLayoutElement"], List[Union[dict, "DataLayoutElement"]]]] = empty_list()
+    observable_entity_types: Optional[Union[Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]]] = empty_list()
+    observable_entity_grouping_id_list: Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]] = empty_list()
+    elements: Optional[Union[Union[dict, "DataLayoutElement"], list[Union[dict, "DataLayoutElement"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DataLayoutSectionId):
@@ -2214,7 +2385,10 @@ class DataLayoutSection(NamedThing):
 
 @dataclass(repr=False)
 class DataLayoutElement(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Definition for an individual layout or data element, as part of a layout section
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["DataLayoutElement"]
     class_class_curie: ClassVar[str] = "pehterms:DataLayoutElement"
@@ -2229,7 +2403,7 @@ class DataLayoutElement(YAMLRoot):
     is_observable_entity_key: Optional[Union[bool, Bool]] = None
     is_foreign_key: Optional[Union[bool, Bool]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.label is not None and not isinstance(self.label, str):
             self.label = str(self.label)
 
@@ -2256,7 +2430,10 @@ class DataLayoutElement(YAMLRoot):
 
 @dataclass(repr=False)
 class DataRequest(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Registration of a request for data by a data user
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["DataRequest"]
     class_class_curie: ClassVar[str] = "pehterms:DataRequest"
@@ -2264,18 +2441,18 @@ class DataRequest(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.DataRequest
 
     id: Union[str, DataRequestId] = None
-    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], list[Union[dict, Contact]]]] = empty_list()
     request_properties: Optional[str] = None
-    data_stakeholders: Optional[Union[Union[str, DataStakeholderId], List[Union[str, DataStakeholderId]]]] = empty_list()
-    research_objectives: Optional[Union[Union[str, ResearchObjectiveId], List[Union[str, ResearchObjectiveId]]]] = empty_list()
-    processing_actions: Optional[Union[Union[str, ProcessingActionId], List[Union[str, ProcessingActionId]]]] = empty_list()
-    processing_steps: Optional[Union[Union[str, ProcessingStepId], List[Union[str, ProcessingStepId]]]] = empty_list()
+    data_stakeholders: Optional[Union[Union[str, DataStakeholderId], list[Union[str, DataStakeholderId]]]] = empty_list()
+    research_objectives: Optional[Union[Union[str, ResearchObjectiveId], list[Union[str, ResearchObjectiveId]]]] = empty_list()
+    processing_actions: Optional[Union[Union[str, ProcessingActionId], list[Union[str, ProcessingActionId]]]] = empty_list()
+    processing_steps: Optional[Union[Union[str, ProcessingStepId], list[Union[str, ProcessingStepId]]]] = empty_list()
     remark_on_content: Optional[str] = None
     remark_on_methodology: Optional[str] = None
-    observed_entity_properties: Optional[Union[Union[dict, "ObservedEntityProperty"], List[Union[dict, "ObservedEntityProperty"]]]] = empty_list()
-    observable_entity_property_sets: Optional[Union[Union[dict, ObservableEntityPropertySet], List[Union[dict, ObservableEntityPropertySet]]]] = empty_list()
+    observed_entity_properties: Optional[Union[Union[dict, "ObservedEntityProperty"], list[Union[dict, "ObservedEntityProperty"]]]] = empty_list()
+    observable_entity_property_sets: Optional[Union[Union[dict, ObservableEntityPropertySet], list[Union[dict, ObservableEntityPropertySet]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DataRequestId):
@@ -2323,7 +2500,10 @@ class DataRequest(NamedThing):
 
 @dataclass(repr=False)
 class ObservedEntityProperty(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    Conceptual definition of the observation of a certain property for a certain entity in a study
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservedEntityProperty"]
     class_class_curie: ClassVar[str] = "pehterms:ObservedEntityProperty"
@@ -2333,7 +2513,7 @@ class ObservedEntityProperty(YAMLRoot):
     observable_entity: Optional[Union[str, StudyEntityId]] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.observable_entity is not None and not isinstance(self.observable_entity, StudyEntityId):
             self.observable_entity = StudyEntityId(self.observable_entity)
 
@@ -2345,7 +2525,10 @@ class ObservedEntityProperty(YAMLRoot):
 
 @dataclass(repr=False)
 class DataStakeholder(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    An organisation participating in a data process in Personal Exposure and Health research
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["DataStakeholder"]
     class_class_curie: ClassVar[str] = "pehterms:DataStakeholder"
@@ -2354,11 +2537,11 @@ class DataStakeholder(NamedThing):
 
     id: Union[str, DataStakeholderId] = None
     stakeholder: Optional[Union[str, StakeholderId]] = None
-    data_roles: Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]] = empty_list()
-    contacts: Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]] = empty_list()
+    data_roles: Optional[Union[Union[str, "DataRole"], list[Union[str, "DataRole"]]]] = empty_list()
+    contacts: Optional[Union[Union[dict, Contact], list[Union[dict, Contact]]]] = empty_list()
     processing_description: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DataStakeholderId):
@@ -2383,7 +2566,10 @@ class DataStakeholder(NamedThing):
 
 @dataclass(repr=False)
 class ResearchObjective(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A research objective communicated in the request and used to evaluate if the request is valid and appropriate
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ResearchObjective"]
     class_class_curie: ClassVar[str] = "pehterms:ResearchObjective"
@@ -2392,9 +2578,9 @@ class ResearchObjective(NamedThing):
 
     id: Union[str, ResearchObjectiveId] = None
     objective_type: Optional[Union[str, "ObjectiveType"]] = None
-    authors: Optional[Union[str, List[str]]] = empty_list()
+    authors: Optional[Union[str, list[str]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ResearchObjectiveId):
@@ -2412,7 +2598,10 @@ class ResearchObjective(NamedThing):
 
 @dataclass(repr=False)
 class ProcessingAction(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    One action in the data request and processing flow
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ProcessingAction"]
     class_class_curie: ClassVar[str] = "pehterms:ProcessingAction"
@@ -2421,7 +2610,7 @@ class ProcessingAction(NamedThing):
 
     id: Union[str, ProcessingActionId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProcessingActionId):
@@ -2432,7 +2621,10 @@ class ProcessingAction(NamedThing):
 
 @dataclass(repr=False)
 class ProcessingStep(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    One step in the data request and processing flow
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["ProcessingStep"]
     class_class_curie: ClassVar[str] = "pehterms:ProcessingStep"
@@ -2443,7 +2635,7 @@ class ProcessingStep(NamedThing):
     start_date: Optional[Union[str, XSDDate]] = None
     delivery_date: Optional[Union[str, XSDDate]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProcessingStepId):
@@ -2460,16 +2652,19 @@ class ProcessingStep(NamedThing):
 
 @dataclass(repr=False)
 class DataExtract(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    """
+    A set of Observed Values, combined into a data extract
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = PEHTERMS["DataExtract"]
     class_class_curie: ClassVar[str] = "pehterms:DataExtract"
     class_name: ClassVar[str] = "DataExtract"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.DataExtract
 
-    observed_values: Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]] = empty_list()
+    observed_values: Optional[Union[Union[dict, ObservedValue], list[Union[dict, ObservedValue]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.observed_values, list):
             self.observed_values = [self.observed_values] if self.observed_values is not None else []
         self.observed_values = [v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v)) for v in self.observed_values]
@@ -2966,16 +3161,16 @@ slots.alias = Slot(uri=PEHTERMS.alias, name="alias", curie=PEHTERMS.curie('alias
                    model_uri=PEHTERMS.alias, domain=None, range=Optional[str])
 
 slots.aliases = Slot(uri=PEHTERMS.aliases, name="aliases", curie=PEHTERMS.curie('aliases'),
-                   model_uri=PEHTERMS.aliases, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=PEHTERMS.aliases, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.context_aliases = Slot(uri=PEHTERMS.context_aliases, name="context_aliases", curie=PEHTERMS.curie('context_aliases'),
-                   model_uri=PEHTERMS.context_aliases, domain=None, range=Optional[Union[Union[dict, ContextAlias], List[Union[dict, ContextAlias]]]])
+                   model_uri=PEHTERMS.context_aliases, domain=None, range=Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]])
 
 slots.context = Slot(uri=PEHTERMS.context, name="context", curie=PEHTERMS.curie('context'),
                    model_uri=PEHTERMS.context, domain=None, range=Optional[Union[str, NamedThingId]])
 
 slots.translations = Slot(uri=PEHTERMS.translations, name="translations", curie=PEHTERMS.curie('translations'),
-                   model_uri=PEHTERMS.translations, domain=None, range=Optional[Union[Union[dict, Translation], List[Union[dict, Translation]]]])
+                   model_uri=PEHTERMS.translations, domain=None, range=Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]])
 
 slots.property_name = Slot(uri=SCHEMA.identifier, name="property_name", curie=SCHEMA.curie('identifier'),
                    model_uri=PEHTERMS.property_name, domain=None, range=Optional[str])
@@ -2987,10 +3182,10 @@ slots.translated_value = Slot(uri=PEHTERMS.translated_value, name="translated_va
                    model_uri=PEHTERMS.translated_value, domain=None, range=Optional[str])
 
 slots.validation_history = Slot(uri=PEHTERMS.validation_history, name="validation_history", curie=PEHTERMS.curie('validation_history'),
-                   model_uri=PEHTERMS.validation_history, domain=None, range=Optional[Union[Union[dict, ValidationHistoryRecord], List[Union[dict, ValidationHistoryRecord]]]])
+                   model_uri=PEHTERMS.validation_history, domain=None, range=Optional[Union[Union[dict, ValidationHistoryRecord], list[Union[dict, ValidationHistoryRecord]]]])
 
 slots.units = Slot(uri=PEHTERMS.units, name="units", curie=PEHTERMS.curie('units'),
-                   model_uri=PEHTERMS.units, domain=None, range=Optional[Union[Dict[Union[str, UnitId], Union[dict, Unit]], List[Union[dict, Unit]]]])
+                   model_uri=PEHTERMS.units, domain=None, range=Optional[Union[dict[Union[str, UnitId], Union[dict, Unit]], list[Union[dict, Unit]]]])
 
 slots.same_unit_as = Slot(uri=PEHTERMS.same_unit_as, name="same_unit_as", curie=PEHTERMS.curie('same_unit_as'),
                    model_uri=PEHTERMS.same_unit_as, domain=None, range=Optional[Union[str, "QudtUnit"]])
@@ -2999,22 +3194,22 @@ slots.quantity_kind = Slot(uri=PEHTERMS.quantity_kind, name="quantity_kind", cur
                    model_uri=PEHTERMS.quantity_kind, domain=None, range=Optional[Union[str, "QudtQuantityKind"]])
 
 slots.groupings = Slot(uri=PEHTERMS.groupings, name="groupings", curie=PEHTERMS.curie('groupings'),
-                   model_uri=PEHTERMS.groupings, domain=None, range=Optional[Union[Dict[Union[str, GroupingId], Union[dict, Grouping]], List[Union[dict, Grouping]]]])
+                   model_uri=PEHTERMS.groupings, domain=None, range=Optional[Union[dict[Union[str, GroupingId], Union[dict, Grouping]], list[Union[dict, Grouping]]]])
 
 slots.grouping_id_list = Slot(uri=PEHTERMS.grouping_id_list, name="grouping_id_list", curie=PEHTERMS.curie('grouping_id_list'),
-                   model_uri=PEHTERMS.grouping_id_list, domain=None, range=Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]])
+                   model_uri=PEHTERMS.grouping_id_list, domain=None, range=Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]])
 
 slots.parent_grouping_id_list = Slot(uri=SKOS.broader, name="parent_grouping_id_list", curie=SKOS.curie('broader'),
-                   model_uri=PEHTERMS.parent_grouping_id_list, domain=None, range=Optional[Union[Union[str, GroupingId], List[Union[str, GroupingId]]]])
+                   model_uri=PEHTERMS.parent_grouping_id_list, domain=None, range=Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]])
 
 slots.biochemidentifiers = Slot(uri=PEHTERMS.biochemidentifiers, name="biochemidentifiers", curie=PEHTERMS.curie('biochemidentifiers'),
-                   model_uri=PEHTERMS.biochemidentifiers, domain=None, range=Optional[Union[Union[dict, BioChemIdentifier], List[Union[dict, BioChemIdentifier]]]])
+                   model_uri=PEHTERMS.biochemidentifiers, domain=None, range=Optional[Union[Union[dict, BioChemIdentifier], list[Union[dict, BioChemIdentifier]]]])
 
 slots.biochementities = Slot(uri=PEHTERMS.biochementities, name="biochementities", curie=PEHTERMS.curie('biochementities'),
-                   model_uri=PEHTERMS.biochementities, domain=None, range=Optional[Union[Dict[Union[str, BioChemEntityId], Union[dict, BioChemEntity]], List[Union[dict, BioChemEntity]]]])
+                   model_uri=PEHTERMS.biochementities, domain=None, range=Optional[Union[dict[Union[str, BioChemEntityId], Union[dict, BioChemEntity]], list[Union[dict, BioChemEntity]]]])
 
 slots.indicators = Slot(uri=PEHTERMS.indicators, name="indicators", curie=PEHTERMS.curie('indicators'),
-                   model_uri=PEHTERMS.indicators, domain=None, range=Optional[Union[Dict[Union[str, IndicatorId], Union[dict, Indicator]], List[Union[dict, Indicator]]]])
+                   model_uri=PEHTERMS.indicators, domain=None, range=Optional[Union[dict[Union[str, IndicatorId], Union[dict, Indicator]], list[Union[dict, Indicator]]]])
 
 slots.web_uri = Slot(uri=PEHTERMS.web_uri, name="web_uri", curie=PEHTERMS.curie('web_uri'),
                    model_uri=PEHTERMS.web_uri, domain=None, range=Optional[str])
@@ -3053,7 +3248,7 @@ slots.parent_matrix = Slot(uri=SKOS.broader, name="parent_matrix", curie=SKOS.cu
                    model_uri=PEHTERMS.parent_matrix, domain=None, range=Optional[Union[str, MatrixId]])
 
 slots.secondary_parent_matrix_id_list = Slot(uri=PEHTERMS.secondary_parent_matrix_id_list, name="secondary_parent_matrix_id_list", curie=PEHTERMS.curie('secondary_parent_matrix_id_list'),
-                   model_uri=PEHTERMS.secondary_parent_matrix_id_list, domain=None, range=Optional[Union[Union[str, MatrixId], List[Union[str, MatrixId]]]])
+                   model_uri=PEHTERMS.secondary_parent_matrix_id_list, domain=None, range=Optional[Union[Union[str, MatrixId], list[Union[str, MatrixId]]]])
 
 slots.indicator_type = Slot(uri=PEHTERMS.indicator_type, name="indicator_type", curie=PEHTERMS.curie('indicator_type'),
                    model_uri=PEHTERMS.indicator_type, domain=None, range=Optional[Union[str, "IndicatorType"]])
@@ -3065,25 +3260,25 @@ slots.property = Slot(uri=PEHTERMS.property, name="property", curie=PEHTERMS.cur
                    model_uri=PEHTERMS.property, domain=None, range=Optional[str])
 
 slots.matrices = Slot(uri=PEHTERMS.matrices, name="matrices", curie=PEHTERMS.curie('matrices'),
-                   model_uri=PEHTERMS.matrices, domain=None, range=Optional[Union[Dict[Union[str, MatrixId], Union[dict, Matrix]], List[Union[dict, Matrix]]]])
+                   model_uri=PEHTERMS.matrices, domain=None, range=Optional[Union[dict[Union[str, MatrixId], Union[dict, Matrix]], list[Union[dict, Matrix]]]])
 
 slots.matrix = Slot(uri=PEHTERMS.matrix, name="matrix", curie=PEHTERMS.curie('matrix'),
                    model_uri=PEHTERMS.matrix, domain=None, range=Optional[Union[str, MatrixId]])
 
 slots.constraints = Slot(uri=PEHTERMS.constraints, name="constraints", curie=PEHTERMS.curie('constraints'),
-                   model_uri=PEHTERMS.constraints, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=PEHTERMS.constraints, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.default_observation_result_type = Slot(uri=PEHTERMS.default_observation_result_type, name="default_observation_result_type", curie=PEHTERMS.curie('default_observation_result_type'),
                    model_uri=PEHTERMS.default_observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
 
 slots.relevant_observable_entity_types = Slot(uri=PEHTERMS.relevant_observable_entity_types, name="relevant_observable_entity_types", curie=PEHTERMS.curie('relevant_observable_entity_types'),
-                   model_uri=PEHTERMS.relevant_observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]])
+                   model_uri=PEHTERMS.relevant_observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]]])
 
 slots.molweight_grampermol = Slot(uri=PEHTERMS.molweight_grampermol, name="molweight_grampermol", curie=PEHTERMS.curie('molweight_grampermol'),
                    model_uri=PEHTERMS.molweight_grampermol, domain=None, range=Optional[Decimal])
 
 slots.biochementity_links = Slot(uri=PEHTERMS.biochementity_links, name="biochementity_links", curie=PEHTERMS.curie('biochementity_links'),
-                   model_uri=PEHTERMS.biochementity_links, domain=None, range=Optional[Union[Union[dict, BioChemEntityLink], List[Union[dict, BioChemEntityLink]]]])
+                   model_uri=PEHTERMS.biochementity_links, domain=None, range=Optional[Union[Union[dict, BioChemEntityLink], list[Union[dict, BioChemEntityLink]]]])
 
 slots.biochementity_linktype = Slot(uri=PEHTERMS.biochementity_linktype, name="biochementity_linktype", curie=PEHTERMS.curie('biochementity_linktype'),
                    model_uri=PEHTERMS.biochementity_linktype, domain=None, range=Optional[Union[str, "BioChemEntityLinkType"]])
@@ -3104,10 +3299,10 @@ slots.value_type = Slot(uri=PEHTERMS.value_type, name="value_type", curie=PEHTER
                    model_uri=PEHTERMS.value_type, domain=None, range=Optional[str])
 
 slots.value_metadata = Slot(uri=PEHTERMS.value_metadata, name="value_metadata", curie=PEHTERMS.curie('value_metadata'),
-                   model_uri=PEHTERMS.value_metadata, domain=None, range=Optional[Union[Union[dict, ObservablePropertyMetadataElement], List[Union[dict, ObservablePropertyMetadataElement]]]])
+                   model_uri=PEHTERMS.value_metadata, domain=None, range=Optional[Union[Union[dict, ObservablePropertyMetadataElement], list[Union[dict, ObservablePropertyMetadataElement]]]])
 
 slots.value_options = Slot(uri=PEHTERMS.value_options, name="value_options", curie=PEHTERMS.curie('value_options'),
-                   model_uri=PEHTERMS.value_options, domain=None, range=Optional[Union[Union[dict, ObservablePropertyValueOption], List[Union[dict, ObservablePropertyValueOption]]]])
+                   model_uri=PEHTERMS.value_options, domain=None, range=Optional[Union[Union[dict, ObservablePropertyValueOption], list[Union[dict, ObservablePropertyValueOption]]]])
 
 slots.default_required = Slot(uri=PEHTERMS.default_required, name="default_required", curie=PEHTERMS.curie('default_required'),
                    model_uri=PEHTERMS.default_required, domain=None, range=Optional[Union[bool, Bool]])
@@ -3128,13 +3323,13 @@ slots.default_immutable = Slot(uri=PEHTERMS.default_immutable, name="default_imm
                    model_uri=PEHTERMS.default_immutable, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.relevant_observation_types = Slot(uri=PEHTERMS.relevant_observation_types, name="relevant_observation_types", curie=PEHTERMS.curie('relevant_observation_types'),
-                   model_uri=PEHTERMS.relevant_observation_types, domain=None, range=Optional[Union[Union[str, "ObservationType"], List[Union[str, "ObservationType"]]]])
+                   model_uri=PEHTERMS.relevant_observation_types, domain=None, range=Optional[Union[Union[str, "ObservationType"], list[Union[str, "ObservationType"]]]])
 
 slots.indicator = Slot(uri=PEHTERMS.indicator, name="indicator", curie=PEHTERMS.curie('indicator'),
                    model_uri=PEHTERMS.indicator, domain=None, range=Optional[Union[str, IndicatorId]])
 
 slots.calculation_designs = Slot(uri=PEHTERMS.calculation_designs, name="calculation_designs", curie=PEHTERMS.curie('calculation_designs'),
-                   model_uri=PEHTERMS.calculation_designs, domain=None, range=Optional[Union[Union[dict, CalculationDesign], List[Union[dict, CalculationDesign]]]])
+                   model_uri=PEHTERMS.calculation_designs, domain=None, range=Optional[Union[Union[dict, CalculationDesign], list[Union[dict, CalculationDesign]]]])
 
 slots.calculation_name = Slot(uri=PEHTERMS.calculation_name, name="calculation_name", curie=PEHTERMS.curie('calculation_name'),
                    model_uri=PEHTERMS.calculation_name, domain=None, range=Optional[str])
@@ -3152,16 +3347,16 @@ slots.function_name = Slot(uri=PEHTERMS.function_name, name="function_name", cur
                    model_uri=PEHTERMS.function_name, domain=None, range=Optional[str])
 
 slots.function_args = Slot(uri=PEHTERMS.function_args, name="function_args", curie=PEHTERMS.curie('function_args'),
-                   model_uri=PEHTERMS.function_args, domain=None, range=Optional[Union[Union[dict, CalculationArgument], List[Union[dict, CalculationArgument]]]])
+                   model_uri=PEHTERMS.function_args, domain=None, range=Optional[Union[Union[dict, CalculationArgument], list[Union[dict, CalculationArgument]]]])
 
 slots.function_kwargs = Slot(uri=PEHTERMS.function_kwargs, name="function_kwargs", curie=PEHTERMS.curie('function_kwargs'),
-                   model_uri=PEHTERMS.function_kwargs, domain=None, range=Optional[Union[Union[dict, CalculationKeywordArgument], List[Union[dict, CalculationKeywordArgument]]]])
+                   model_uri=PEHTERMS.function_kwargs, domain=None, range=Optional[Union[Union[dict, CalculationKeywordArgument], list[Union[dict, CalculationKeywordArgument]]]])
 
 slots.function_results = Slot(uri=PEHTERMS.function_results, name="function_results", curie=PEHTERMS.curie('function_results'),
-                   model_uri=PEHTERMS.function_results, domain=None, range=Optional[Union[Union[dict, CalculationResult], List[Union[dict, CalculationResult]]]])
+                   model_uri=PEHTERMS.function_results, domain=None, range=Optional[Union[Union[dict, CalculationResult], list[Union[dict, CalculationResult]]]])
 
 slots.validation_designs = Slot(uri=PEHTERMS.validation_designs, name="validation_designs", curie=PEHTERMS.curie('validation_designs'),
-                   model_uri=PEHTERMS.validation_designs, domain=None, range=Optional[Union[Union[dict, ValidationDesign], List[Union[dict, ValidationDesign]]]])
+                   model_uri=PEHTERMS.validation_designs, domain=None, range=Optional[Union[Union[dict, ValidationDesign], list[Union[dict, ValidationDesign]]]])
 
 slots.validation_name = Slot(uri=PEHTERMS.validation_name, name="validation_name", curie=PEHTERMS.curie('validation_name'),
                    model_uri=PEHTERMS.validation_name, domain=None, range=Optional[str])
@@ -3179,19 +3374,19 @@ slots.validation_error_message_template = Slot(uri=PEHTERMS.validation_error_mes
                    model_uri=PEHTERMS.validation_error_message_template, domain=None, range=Optional[str])
 
 slots.validation_subject_source_paths = Slot(uri=PEHTERMS.validation_subject_source_paths, name="validation_subject_source_paths", curie=PEHTERMS.curie('validation_subject_source_paths'),
-                   model_uri=PEHTERMS.validation_subject_source_paths, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=PEHTERMS.validation_subject_source_paths, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.validation_command = Slot(uri=PEHTERMS.validation_command, name="validation_command", curie=PEHTERMS.curie('validation_command'),
                    model_uri=PEHTERMS.validation_command, domain=None, range=Optional[Union[str, "ValidationCommand"]])
 
 slots.validation_arg_values = Slot(uri=PEHTERMS.validation_arg_values, name="validation_arg_values", curie=PEHTERMS.curie('validation_arg_values'),
-                   model_uri=PEHTERMS.validation_arg_values, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=PEHTERMS.validation_arg_values, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.validation_arg_source_paths = Slot(uri=PEHTERMS.validation_arg_source_paths, name="validation_arg_source_paths", curie=PEHTERMS.curie('validation_arg_source_paths'),
-                   model_uri=PEHTERMS.validation_arg_source_paths, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=PEHTERMS.validation_arg_source_paths, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.validation_arg_expressions = Slot(uri=PEHTERMS.validation_arg_expressions, name="validation_arg_expressions", curie=PEHTERMS.curie('validation_arg_expressions'),
-                   model_uri=PEHTERMS.validation_arg_expressions, domain=None, range=Optional[Union[Union[dict, ValidationExpression], List[Union[dict, ValidationExpression]]]])
+                   model_uri=PEHTERMS.validation_arg_expressions, domain=None, range=Optional[Union[Union[dict, ValidationExpression], list[Union[dict, ValidationExpression]]]])
 
 slots.process_state = Slot(uri=PEHTERMS.process_state, name="process_state", curie=PEHTERMS.curie('process_state'),
                    model_uri=PEHTERMS.process_state, domain=None, range=Optional[str])
@@ -3224,31 +3419,31 @@ slots.value = Slot(uri=PEHTERMS.value, name="value", curie=PEHTERMS.curie('value
                    model_uri=PEHTERMS.value, domain=None, range=Optional[str])
 
 slots.metadata_fields = Slot(uri=PEHTERMS.metadata_fields, name="metadata_fields", curie=PEHTERMS.curie('metadata_fields'),
-                   model_uri=PEHTERMS.metadata_fields, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, ObservablePropertyMetadataField]], List[Union[dict, ObservablePropertyMetadataField]]]])
+                   model_uri=PEHTERMS.metadata_fields, domain=None, range=Optional[Union[dict[Union[str, ObservablePropertyMetadataFieldId], Union[dict, ObservablePropertyMetadataField]], list[Union[dict, ObservablePropertyMetadataField]]]])
 
 slots.stakeholders = Slot(uri=PEHTERMS.stakeholders, name="stakeholders", curie=PEHTERMS.curie('stakeholders'),
-                   model_uri=PEHTERMS.stakeholders, domain=None, range=Optional[Union[Dict[Union[str, StakeholderId], Union[dict, Stakeholder]], List[Union[dict, Stakeholder]]]])
+                   model_uri=PEHTERMS.stakeholders, domain=None, range=Optional[Union[dict[Union[str, StakeholderId], Union[dict, Stakeholder]], list[Union[dict, Stakeholder]]]])
 
 slots.project_id_list = Slot(uri=PEHTERMS.project_id_list, name="project_id_list", curie=PEHTERMS.curie('project_id_list'),
-                   model_uri=PEHTERMS.project_id_list, domain=None, range=Optional[Union[Union[str, ProjectId], List[Union[str, ProjectId]]]])
+                   model_uri=PEHTERMS.project_id_list, domain=None, range=Optional[Union[Union[str, ProjectId], list[Union[str, ProjectId]]]])
 
 slots.study_id_list = Slot(uri=PEHTERMS.study_id_list, name="study_id_list", curie=PEHTERMS.curie('study_id_list'),
-                   model_uri=PEHTERMS.study_id_list, domain=None, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
+                   model_uri=PEHTERMS.study_id_list, domain=None, range=Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]])
 
 slots.observation_group_id_list = Slot(uri=PEHTERMS.observation_group_id_list, name="observation_group_id_list", curie=PEHTERMS.curie('observation_group_id_list'),
-                   model_uri=PEHTERMS.observation_group_id_list, domain=None, range=Optional[Union[Union[str, ObservationGroupId], List[Union[str, ObservationGroupId]]]])
+                   model_uri=PEHTERMS.observation_group_id_list, domain=None, range=Optional[Union[Union[str, ObservationGroupId], list[Union[str, ObservationGroupId]]]])
 
 slots.observation_id_list = Slot(uri=PEHTERMS.observation_id_list, name="observation_id_list", curie=PEHTERMS.curie('observation_id_list'),
-                   model_uri=PEHTERMS.observation_id_list, domain=None, range=Optional[Union[Union[str, ObservationId], List[Union[str, ObservationId]]]])
+                   model_uri=PEHTERMS.observation_id_list, domain=None, range=Optional[Union[Union[str, ObservationId], list[Union[str, ObservationId]]]])
 
 slots.member_id_list = Slot(uri=PEHTERMS.member_id_list, name="member_id_list", curie=PEHTERMS.curie('member_id_list'),
-                   model_uri=PEHTERMS.member_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+                   model_uri=PEHTERMS.member_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]])
 
 slots.sample_id_list = Slot(uri=PEHTERMS.sample_id_list, name="sample_id_list", curie=PEHTERMS.curie('sample_id_list'),
-                   model_uri=PEHTERMS.sample_id_list, domain=None, range=Optional[Union[Union[str, SampleId], List[Union[str, SampleId]]]])
+                   model_uri=PEHTERMS.sample_id_list, domain=None, range=Optional[Union[Union[str, SampleId], list[Union[str, SampleId]]]])
 
 slots.projects = Slot(uri=PEHTERMS.projects, name="projects", curie=PEHTERMS.curie('projects'),
-                   model_uri=PEHTERMS.projects, domain=None, range=Optional[Union[Dict[Union[str, ProjectId], Union[dict, Project]], List[Union[dict, Project]]]])
+                   model_uri=PEHTERMS.projects, domain=None, range=Optional[Union[dict[Union[str, ProjectId], Union[dict, Project]], list[Union[dict, Project]]]])
 
 slots.geographic_scope = Slot(uri=PEHTERMS.geographic_scope, name="geographic_scope", curie=PEHTERMS.curie('geographic_scope'),
                    model_uri=PEHTERMS.geographic_scope, domain=None, range=Optional[str])
@@ -3263,49 +3458,49 @@ slots.stakeholder = Slot(uri=PEHTERMS.stakeholder, name="stakeholder", curie=PEH
                    model_uri=PEHTERMS.stakeholder, domain=None, range=Optional[Union[str, StakeholderId]])
 
 slots.project_stakeholders = Slot(uri=PEHTERMS.project_stakeholders, name="project_stakeholders", curie=PEHTERMS.curie('project_stakeholders'),
-                   model_uri=PEHTERMS.project_stakeholders, domain=None, range=Optional[Union[Union[dict, ProjectStakeholder], List[Union[dict, ProjectStakeholder]]]])
+                   model_uri=PEHTERMS.project_stakeholders, domain=None, range=Optional[Union[Union[dict, ProjectStakeholder], list[Union[dict, ProjectStakeholder]]]])
 
 slots.studies = Slot(uri=PEHTERMS.studies, name="studies", curie=PEHTERMS.curie('studies'),
-                   model_uri=PEHTERMS.studies, domain=None, range=Optional[Union[Dict[Union[str, StudyId], Union[dict, Study]], List[Union[dict, Study]]]])
+                   model_uri=PEHTERMS.studies, domain=None, range=Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]])
 
 slots.project_roles = Slot(uri=PEHTERMS.project_roles, name="project_roles", curie=PEHTERMS.curie('project_roles'),
-                   model_uri=PEHTERMS.project_roles, domain=None, range=Optional[Union[Union[str, "ProjectRole"], List[Union[str, "ProjectRole"]]]])
+                   model_uri=PEHTERMS.project_roles, domain=None, range=Optional[Union[Union[str, "ProjectRole"], list[Union[str, "ProjectRole"]]]])
 
 slots.study_stakeholders = Slot(uri=PEHTERMS.study_stakeholders, name="study_stakeholders", curie=PEHTERMS.curie('study_stakeholders'),
-                   model_uri=PEHTERMS.study_stakeholders, domain=None, range=Optional[Union[Union[dict, StudyStakeholder], List[Union[dict, StudyStakeholder]]]])
+                   model_uri=PEHTERMS.study_stakeholders, domain=None, range=Optional[Union[Union[dict, StudyStakeholder], list[Union[dict, StudyStakeholder]]]])
 
 slots.research_population_type = Slot(uri=PEHTERMS.research_population_type, name="research_population_type", curie=PEHTERMS.curie('research_population_type'),
                    model_uri=PEHTERMS.research_population_type, domain=None, range=Optional[Union[str, "ResearchPopulationType"]])
 
 slots.study_roles = Slot(uri=PEHTERMS.study_roles, name="study_roles", curie=PEHTERMS.curie('study_roles'),
-                   model_uri=PEHTERMS.study_roles, domain=None, range=Optional[Union[Union[str, "StudyRole"], List[Union[str, "StudyRole"]]]])
+                   model_uri=PEHTERMS.study_roles, domain=None, range=Optional[Union[Union[str, "StudyRole"], list[Union[str, "StudyRole"]]]])
 
 slots.observation_groups = Slot(uri=PEHTERMS.observation_groups, name="observation_groups", curie=PEHTERMS.curie('observation_groups'),
-                   model_uri=PEHTERMS.observation_groups, domain=None, range=Optional[Union[Dict[Union[str, ObservationGroupId], Union[dict, ObservationGroup]], List[Union[dict, ObservationGroup]]]])
+                   model_uri=PEHTERMS.observation_groups, domain=None, range=Optional[Union[dict[Union[str, ObservationGroupId], Union[dict, ObservationGroup]], list[Union[dict, ObservationGroup]]]])
 
 slots.observations = Slot(uri=PEHTERMS.observations, name="observations", curie=PEHTERMS.curie('observations'),
-                   model_uri=PEHTERMS.observations, domain=None, range=Optional[Union[Dict[Union[str, ObservationId], Union[dict, Observation]], List[Union[dict, Observation]]]])
+                   model_uri=PEHTERMS.observations, domain=None, range=Optional[Union[dict[Union[str, ObservationId], Union[dict, Observation]], list[Union[dict, Observation]]]])
 
 slots.linktype = Slot(uri=PEHTERMS.linktype, name="linktype", curie=PEHTERMS.curie('linktype'),
                    model_uri=PEHTERMS.linktype, domain=None, range=Optional[Union[str, "LinkType"]])
 
 slots.physical_entities = Slot(uri=PEHTERMS.physical_entities, name="physical_entities", curie=PEHTERMS.curie('physical_entities'),
-                   model_uri=PEHTERMS.physical_entities, domain=None, range=Optional[Union[Dict[Union[str, PhysicalEntityId], Union[dict, PhysicalEntity]], List[Union[dict, PhysicalEntity]]]])
+                   model_uri=PEHTERMS.physical_entities, domain=None, range=Optional[Union[dict[Union[str, PhysicalEntityId], Union[dict, PhysicalEntity]], list[Union[dict, PhysicalEntity]]]])
 
 slots.physical_entity_links = Slot(uri=PEHTERMS.physical_entity_links, name="physical_entity_links", curie=PEHTERMS.curie('physical_entity_links'),
-                   model_uri=PEHTERMS.physical_entity_links, domain=None, range=Optional[Union[Union[dict, PhysicalEntityLink], List[Union[dict, PhysicalEntityLink]]]])
+                   model_uri=PEHTERMS.physical_entity_links, domain=None, range=Optional[Union[Union[dict, PhysicalEntityLink], list[Union[dict, PhysicalEntityLink]]]])
 
 slots.physical_entity = Slot(uri=PEHTERMS.physical_entity, name="physical_entity", curie=PEHTERMS.curie('physical_entity'),
                    model_uri=PEHTERMS.physical_entity, domain=None, range=Optional[Union[str, PhysicalEntityId]])
 
 slots.study_entities = Slot(uri=PEHTERMS.study_entities, name="study_entities", curie=PEHTERMS.curie('study_entities'),
-                   model_uri=PEHTERMS.study_entities, domain=None, range=Optional[Union[Dict[Union[str, StudyEntityId], Union[dict, StudyEntity]], List[Union[dict, StudyEntity]]]])
+                   model_uri=PEHTERMS.study_entities, domain=None, range=Optional[Union[dict[Union[str, StudyEntityId], Union[dict, StudyEntity]], list[Union[dict, StudyEntity]]]])
 
 slots.study_entity_id_list = Slot(uri=PEHTERMS.study_entity_id_list, name="study_entity_id_list", curie=PEHTERMS.curie('study_entity_id_list'),
-                   model_uri=PEHTERMS.study_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+                   model_uri=PEHTERMS.study_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]])
 
 slots.study_entity_links = Slot(uri=PEHTERMS.study_entity_links, name="study_entity_links", curie=PEHTERMS.curie('study_entity_links'),
-                   model_uri=PEHTERMS.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], List[Union[dict, StudyEntityLink]]]])
+                   model_uri=PEHTERMS.study_entity_links, domain=None, range=Optional[Union[Union[dict, StudyEntityLink], list[Union[dict, StudyEntityLink]]]])
 
 slots.study_entity = Slot(uri=PEHTERMS.study_entity, name="study_entity", curie=PEHTERMS.curie('study_entity'),
                    model_uri=PEHTERMS.study_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
@@ -3329,49 +3524,49 @@ slots.observation_design = Slot(uri=PEHTERMS.observation_design, name="observati
                    model_uri=PEHTERMS.observation_design, domain=None, range=Optional[Union[dict, ObservationDesign]])
 
 slots.observable_entity_property_sets = Slot(uri=PEHTERMS.observable_entity_property_sets, name="observable_entity_property_sets", curie=PEHTERMS.curie('observable_entity_property_sets'),
-                   model_uri=PEHTERMS.observable_entity_property_sets, domain=None, range=Optional[Union[Union[dict, ObservableEntityPropertySet], List[Union[dict, ObservableEntityPropertySet]]]])
+                   model_uri=PEHTERMS.observable_entity_property_sets, domain=None, range=Optional[Union[Union[dict, ObservableEntityPropertySet], list[Union[dict, ObservableEntityPropertySet]]]])
 
 slots.observation_result_type = Slot(uri=PEHTERMS.observation_result_type, name="observation_result_type", curie=PEHTERMS.curie('observation_result_type'),
                    model_uri=PEHTERMS.observation_result_type, domain=None, range=Optional[Union[str, "ObservationResultType"]])
 
 slots.observation_results = Slot(uri=PEHTERMS.observation_results, name="observation_results", curie=PEHTERMS.curie('observation_results'),
-                   model_uri=PEHTERMS.observation_results, domain=None, range=Optional[Union[Dict[Union[str, ObservationResultId], Union[dict, ObservationResult]], List[Union[dict, ObservationResult]]]])
+                   model_uri=PEHTERMS.observation_results, domain=None, range=Optional[Union[dict[Union[str, ObservationResultId], Union[dict, ObservationResult]], list[Union[dict, ObservationResult]]]])
 
 slots.observation_result_id_list = Slot(uri=PEHTERMS.observation_result_id_list, name="observation_result_id_list", curie=PEHTERMS.curie('observation_result_id_list'),
-                   model_uri=PEHTERMS.observation_result_id_list, domain=None, range=Optional[Union[Union[str, ObservationResultId], List[Union[str, ObservationResultId]]]])
+                   model_uri=PEHTERMS.observation_result_id_list, domain=None, range=Optional[Union[Union[str, ObservationResultId], list[Union[str, ObservationResultId]]]])
 
 slots.observable_entity_type = Slot(uri=PEHTERMS.observable_entity_type, name="observable_entity_type", curie=PEHTERMS.curie('observable_entity_type'),
                    model_uri=PEHTERMS.observable_entity_type, domain=None, range=Optional[Union[str, "ObservableEntityType"]])
 
 slots.observable_entity_types = Slot(uri=PEHTERMS.observable_entity_types, name="observable_entity_types", curie=PEHTERMS.curie('observable_entity_types'),
-                   model_uri=PEHTERMS.observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], List[Union[str, "ObservableEntityType"]]]])
+                   model_uri=PEHTERMS.observable_entity_types, domain=None, range=Optional[Union[Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]]])
 
 slots.observable_entity_id_list = Slot(uri=PEHTERMS.observable_entity_id_list, name="observable_entity_id_list", curie=PEHTERMS.curie('observable_entity_id_list'),
-                   model_uri=PEHTERMS.observable_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+                   model_uri=PEHTERMS.observable_entity_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]])
 
 slots.observable_entities = Slot(uri=PEHTERMS.observable_entities, name="observable_entities", curie=PEHTERMS.curie('observable_entities'),
-                   model_uri=PEHTERMS.observable_entities, domain=None, range=Optional[Union[Dict[Union[str, StudyEntityId], Union[dict, StudyEntity]], List[Union[dict, StudyEntity]]]])
+                   model_uri=PEHTERMS.observable_entities, domain=None, range=Optional[Union[dict[Union[str, StudyEntityId], Union[dict, StudyEntity]], list[Union[dict, StudyEntity]]]])
 
 slots.observable_entity = Slot(uri=PEHTERMS.observable_entity, name="observable_entity", curie=PEHTERMS.curie('observable_entity'),
                    model_uri=PEHTERMS.observable_entity, domain=None, range=Optional[Union[str, StudyEntityId]])
 
 slots.identifying_observable_property_id_list = Slot(uri=PEHTERMS.identifying_observable_property_id_list, name="identifying_observable_property_id_list", curie=PEHTERMS.curie('identifying_observable_property_id_list'),
-                   model_uri=PEHTERMS.identifying_observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]])
+                   model_uri=PEHTERMS.identifying_observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]])
 
 slots.required_observable_property_id_list = Slot(uri=PEHTERMS.required_observable_property_id_list, name="required_observable_property_id_list", curie=PEHTERMS.curie('required_observable_property_id_list'),
-                   model_uri=PEHTERMS.required_observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]])
+                   model_uri=PEHTERMS.required_observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]])
 
 slots.optional_observable_property_id_list = Slot(uri=PEHTERMS.optional_observable_property_id_list, name="optional_observable_property_id_list", curie=PEHTERMS.curie('optional_observable_property_id_list'),
-                   model_uri=PEHTERMS.optional_observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], List[Union[str, ObservablePropertyId]]]])
+                   model_uri=PEHTERMS.optional_observable_property_id_list, domain=None, range=Optional[Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]])
 
 slots.observable_properties = Slot(uri=PEHTERMS.observable_properties, name="observable_properties", curie=PEHTERMS.curie('observable_properties'),
-                   model_uri=PEHTERMS.observable_properties, domain=None, range=Optional[Union[Dict[Union[str, ObservablePropertyId], Union[dict, ObservableProperty]], List[Union[dict, ObservableProperty]]]])
+                   model_uri=PEHTERMS.observable_properties, domain=None, range=Optional[Union[dict[Union[str, ObservablePropertyId], Union[dict, ObservableProperty]], list[Union[dict, ObservableProperty]]]])
 
 slots.observable_property = Slot(uri=PEHTERMS.observable_property, name="observable_property", curie=PEHTERMS.curie('observable_property'),
                    model_uri=PEHTERMS.observable_property, domain=None, range=Optional[Union[str, ObservablePropertyId]])
 
 slots.observed_values = Slot(uri=PEHTERMS.observed_values, name="observed_values", curie=PEHTERMS.curie('observed_values'),
-                   model_uri=PEHTERMS.observed_values, domain=None, range=Optional[Union[Union[dict, ObservedValue], List[Union[dict, ObservedValue]]]])
+                   model_uri=PEHTERMS.observed_values, domain=None, range=Optional[Union[Union[dict, ObservedValue], list[Union[dict, ObservedValue]]]])
 
 slots.unit = Slot(uri=PEHTERMS.unit, name="unit", curie=PEHTERMS.curie('unit'),
                    model_uri=PEHTERMS.unit, domain=None, range=Optional[Union[str, UnitId]])
@@ -3398,7 +3593,7 @@ slots.value_as_string = Slot(uri=PEHTERMS.value_as_string, name="value_as_string
                    model_uri=PEHTERMS.value_as_string, domain=None, range=Optional[str])
 
 slots.quality_data = Slot(uri=PEHTERMS.quality_data, name="quality_data", curie=PEHTERMS.curie('quality_data'),
-                   model_uri=PEHTERMS.quality_data, domain=None, range=Optional[Union[Union[dict, QualityData], List[Union[dict, QualityData]]]])
+                   model_uri=PEHTERMS.quality_data, domain=None, range=Optional[Union[Union[dict, QualityData], list[Union[dict, QualityData]]]])
 
 slots.quality_context_key = Slot(uri=PEHTERMS.quality_context_key, name="quality_context_key", curie=PEHTERMS.curie('quality_context_key'),
                    model_uri=PEHTERMS.quality_context_key, domain=None, range=Optional[str])
@@ -3407,7 +3602,7 @@ slots.quality_value = Slot(uri=PEHTERMS.quality_value, name="quality_value", cur
                    model_uri=PEHTERMS.quality_value, domain=None, range=Optional[str])
 
 slots.provenance_data = Slot(uri=PEHTERMS.provenance_data, name="provenance_data", curie=PEHTERMS.curie('provenance_data'),
-                   model_uri=PEHTERMS.provenance_data, domain=None, range=Optional[Union[Union[dict, ProvenanceData], List[Union[dict, ProvenanceData]]]])
+                   model_uri=PEHTERMS.provenance_data, domain=None, range=Optional[Union[Union[dict, ProvenanceData], list[Union[dict, ProvenanceData]]]])
 
 slots.provenance_context_key = Slot(uri=PEHTERMS.provenance_context_key, name="provenance_context_key", curie=PEHTERMS.curie('provenance_context_key'),
                    model_uri=PEHTERMS.provenance_context_key, domain=None, range=Optional[str])
@@ -3416,22 +3611,22 @@ slots.provenance_value = Slot(uri=PEHTERMS.provenance_value, name="provenance_va
                    model_uri=PEHTERMS.provenance_value, domain=None, range=Optional[str])
 
 slots.data_requests = Slot(uri=PEHTERMS.data_requests, name="data_requests", curie=PEHTERMS.curie('data_requests'),
-                   model_uri=PEHTERMS.data_requests, domain=None, range=Optional[Union[Dict[Union[str, DataRequestId], Union[dict, DataRequest]], List[Union[dict, DataRequest]]]])
+                   model_uri=PEHTERMS.data_requests, domain=None, range=Optional[Union[dict[Union[str, DataRequestId], Union[dict, DataRequest]], list[Union[dict, DataRequest]]]])
 
 slots.layouts = Slot(uri=PEHTERMS.layouts, name="layouts", curie=PEHTERMS.curie('layouts'),
-                   model_uri=PEHTERMS.layouts, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutId], Union[dict, DataLayout]], List[Union[dict, DataLayout]]]])
+                   model_uri=PEHTERMS.layouts, domain=None, range=Optional[Union[dict[Union[str, DataLayoutId], Union[dict, DataLayout]], list[Union[dict, DataLayout]]]])
 
 slots.sections = Slot(uri=PEHTERMS.sections, name="sections", curie=PEHTERMS.curie('sections'),
-                   model_uri=PEHTERMS.sections, domain=None, range=Optional[Union[Dict[Union[str, DataLayoutSectionId], Union[dict, DataLayoutSection]], List[Union[dict, DataLayoutSection]]]])
+                   model_uri=PEHTERMS.sections, domain=None, range=Optional[Union[dict[Union[str, DataLayoutSectionId], Union[dict, DataLayoutSection]], list[Union[dict, DataLayoutSection]]]])
 
 slots.section_type = Slot(uri=PEHTERMS.section_type, name="section_type", curie=PEHTERMS.curie('section_type'),
                    model_uri=PEHTERMS.section_type, domain=None, range=Optional[Union[str, "DataLayoutSectionType"]])
 
 slots.observable_entity_grouping_id_list = Slot(uri=PEHTERMS.observable_entity_grouping_id_list, name="observable_entity_grouping_id_list", curie=PEHTERMS.curie('observable_entity_grouping_id_list'),
-                   model_uri=PEHTERMS.observable_entity_grouping_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], List[Union[str, StudyEntityId]]]])
+                   model_uri=PEHTERMS.observable_entity_grouping_id_list, domain=None, range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]])
 
 slots.elements = Slot(uri=PEHTERMS.elements, name="elements", curie=PEHTERMS.curie('elements'),
-                   model_uri=PEHTERMS.elements, domain=None, range=Optional[Union[Union[dict, DataLayoutElement], List[Union[dict, DataLayoutElement]]]])
+                   model_uri=PEHTERMS.elements, domain=None, range=Optional[Union[Union[dict, DataLayoutElement], list[Union[dict, DataLayoutElement]]]])
 
 slots.element_type = Slot(uri=PEHTERMS.element_type, name="element_type", curie=PEHTERMS.curie('element_type'),
                    model_uri=PEHTERMS.element_type, domain=None, range=Optional[Union[str, "DataLayoutElementType"]])
@@ -3446,13 +3641,13 @@ slots.is_foreign_key = Slot(uri=PEHTERMS.is_foreign_key, name="is_foreign_key", 
                    model_uri=PEHTERMS.is_foreign_key, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.data_roles = Slot(uri=PEHTERMS.data_roles, name="data_roles", curie=PEHTERMS.curie('data_roles'),
-                   model_uri=PEHTERMS.data_roles, domain=None, range=Optional[Union[Union[str, "DataRole"], List[Union[str, "DataRole"]]]])
+                   model_uri=PEHTERMS.data_roles, domain=None, range=Optional[Union[Union[str, "DataRole"], list[Union[str, "DataRole"]]]])
 
 slots.contacts = Slot(uri=PEHTERMS.contacts, name="contacts", curie=PEHTERMS.curie('contacts'),
-                   model_uri=PEHTERMS.contacts, domain=None, range=Optional[Union[Union[dict, Contact], List[Union[dict, Contact]]]])
+                   model_uri=PEHTERMS.contacts, domain=None, range=Optional[Union[Union[dict, Contact], list[Union[dict, Contact]]]])
 
 slots.contact_roles = Slot(uri=PEHTERMS.contact_roles, name="contact_roles", curie=PEHTERMS.curie('contact_roles'),
-                   model_uri=PEHTERMS.contact_roles, domain=None, range=Optional[Union[Union[str, "ContactRole"], List[Union[str, "ContactRole"]]]])
+                   model_uri=PEHTERMS.contact_roles, domain=None, range=Optional[Union[Union[str, "ContactRole"], list[Union[str, "ContactRole"]]]])
 
 slots.contact_email = Slot(uri=PEHTERMS.contact_email, name="contact_email", curie=PEHTERMS.curie('contact_email'),
                    model_uri=PEHTERMS.contact_email, domain=None, range=Optional[str])
@@ -3464,16 +3659,16 @@ slots.request_properties = Slot(uri=PEHTERMS.request_properties, name="request_p
                    model_uri=PEHTERMS.request_properties, domain=None, range=Optional[str])
 
 slots.data_stakeholders = Slot(uri=PEHTERMS.data_stakeholders, name="data_stakeholders", curie=PEHTERMS.curie('data_stakeholders'),
-                   model_uri=PEHTERMS.data_stakeholders, domain=None, range=Optional[Union[Union[str, DataStakeholderId], List[Union[str, DataStakeholderId]]]])
+                   model_uri=PEHTERMS.data_stakeholders, domain=None, range=Optional[Union[Union[str, DataStakeholderId], list[Union[str, DataStakeholderId]]]])
 
 slots.research_objectives = Slot(uri=PEHTERMS.research_objectives, name="research_objectives", curie=PEHTERMS.curie('research_objectives'),
-                   model_uri=PEHTERMS.research_objectives, domain=None, range=Optional[Union[Union[str, ResearchObjectiveId], List[Union[str, ResearchObjectiveId]]]])
+                   model_uri=PEHTERMS.research_objectives, domain=None, range=Optional[Union[Union[str, ResearchObjectiveId], list[Union[str, ResearchObjectiveId]]]])
 
 slots.processing_actions = Slot(uri=PEHTERMS.processing_actions, name="processing_actions", curie=PEHTERMS.curie('processing_actions'),
-                   model_uri=PEHTERMS.processing_actions, domain=None, range=Optional[Union[Union[str, ProcessingActionId], List[Union[str, ProcessingActionId]]]])
+                   model_uri=PEHTERMS.processing_actions, domain=None, range=Optional[Union[Union[str, ProcessingActionId], list[Union[str, ProcessingActionId]]]])
 
 slots.processing_steps = Slot(uri=PEHTERMS.processing_steps, name="processing_steps", curie=PEHTERMS.curie('processing_steps'),
-                   model_uri=PEHTERMS.processing_steps, domain=None, range=Optional[Union[Union[str, ProcessingStepId], List[Union[str, ProcessingStepId]]]])
+                   model_uri=PEHTERMS.processing_steps, domain=None, range=Optional[Union[Union[str, ProcessingStepId], list[Union[str, ProcessingStepId]]]])
 
 slots.remark_on_content = Slot(uri=PEHTERMS.remark_on_content, name="remark_on_content", curie=PEHTERMS.curie('remark_on_content'),
                    model_uri=PEHTERMS.remark_on_content, domain=None, range=Optional[str])
@@ -3482,7 +3677,7 @@ slots.remark_on_methodology = Slot(uri=PEHTERMS.remark_on_methodology, name="rem
                    model_uri=PEHTERMS.remark_on_methodology, domain=None, range=Optional[str])
 
 slots.observed_entity_properties = Slot(uri=PEHTERMS.observed_entity_properties, name="observed_entity_properties", curie=PEHTERMS.curie('observed_entity_properties'),
-                   model_uri=PEHTERMS.observed_entity_properties, domain=None, range=Optional[Union[Union[dict, ObservedEntityProperty], List[Union[dict, ObservedEntityProperty]]]])
+                   model_uri=PEHTERMS.observed_entity_properties, domain=None, range=Optional[Union[Union[dict, ObservedEntityProperty], list[Union[dict, ObservedEntityProperty]]]])
 
 slots.processing_description = Slot(uri=PEHTERMS.processing_description, name="processing_description", curie=PEHTERMS.curie('processing_description'),
                    model_uri=PEHTERMS.processing_description, domain=None, range=Optional[str])
@@ -3491,7 +3686,7 @@ slots.objective_type = Slot(uri=PEHTERMS.objective_type, name="objective_type", 
                    model_uri=PEHTERMS.objective_type, domain=None, range=Optional[Union[str, "ObjectiveType"]])
 
 slots.authors = Slot(uri=PEHTERMS.authors, name="authors", curie=PEHTERMS.curie('authors'),
-                   model_uri=PEHTERMS.authors, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=PEHTERMS.authors, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.start_date = Slot(uri=PEHTERMS.start_date, name="start_date", curie=PEHTERMS.curie('start_date'),
                    model_uri=PEHTERMS.start_date, domain=None, range=Optional[Union[str, XSDDate]])
