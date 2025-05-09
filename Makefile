@@ -1,13 +1,30 @@
 MAKEFLAGS += --warn-undefined-variables
 SHELL := bash
-
 # ================================
 # Variables
 # ================================
+# Include the .env file
+ifneq (,$(wildcard .env))
+  include .env
+  export
+else
+  $(error .env file not found)
+endif
+
+# List of required variables
+REQUIRED_VARS = \
+  NANOPUB_ORCID_ID \
+  NANOPUB_NAME \
+  NANOPUB_PRIVATE_KEY \
+  NANOPUB_PUBLIC_KEY \
+  NANOPUB_INTRO_URI
+
 VENV := .venv
 PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
 RUN := $(VENV)/bin/python -m
+MAINTAINER:= gertjan.bisschop@vito.be
+VERSION:=0.0.0
 
 SCHEMA_NAME = peh
 SRC = linkml
@@ -16,24 +33,31 @@ SOURCE_SCHEMA_PATH = $(SRC)/schema/$(SCHEMA_NAME).yaml
 SOURCE_SCHEMA_DIR = $(dir $(SOURCE_SCHEMA_PATH))
 PYMODEL = $(SRC)/python
 
+CHANGELOG_SCRIPT_PATH=$(SRC)/scripts/changelog.py
+PUBLISH_SCRIPT_PATH=$(SRC)/scripts/publish.py
+CHANGELOG_SCHEMA_PATH=$(SRC)/changelog/changelog.schema.yaml
+CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
+
 # ================================
 # Phony targets
 # ================================
-.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize
+.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize publish-nanopubs
 
 # ================================
 # Help
 # ================================
 help: check-config
 	@echo ""
-	@echo "make install      -- create venv and install dependencies"
-	@echo "make setup        -- full project generation and setup"
-	@echo "make make-dirs    -- create necessary directories"
-	@echo "make test-schema  -- regenerate models and check schema"
-	@echo "make lint         -- lint the schema"
-	@echo "make lint-fix     -- lint-fix the schema and fix issues"
-	@echo "make serialize    -- serialize data examples"
-	@echo "make clean        -- clean generated files"
+	@echo "make install      		-- create venv and install dependencies"
+	@echo "make setup        		-- full project generation and setup"
+	@echo "check-env"				-- check presence of required env variables"
+	@echo "make make-dirs    		-- create necessary directories"
+	@echo "make test-schema  		-- regenerate models and check schema"
+	@echo "make lint         		-- lint the schema"
+	@echo "make lint-fix     		-- lint-fix the schema and fix issues"
+	@echo "make serialize    		-- serialize data examples"
+	@echo "make publish-nanopubs    -- publish model updates"
+	@echo "make clean        		-- clean generated files"
 	@echo ""
 
 # ================================
@@ -55,6 +79,23 @@ install:
 	@test -d $(VENV) || python3 -m venv $(VENV)
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements/publish.txt
+
+# ================================
+# Target to check env vars
+# ================================
+check-env:
+	@missing=0; \
+	for var in $(REQUIRED_VARS); do \
+	  if [ -z "$${!var}" ]; then \
+	    echo "ERROR: Required environment variable $$var is not set"; \
+	    missing=1; \
+	  fi; \
+	done; \
+	if [ $$missing -eq 1 ]; then \
+	  exit 1; \
+	else \
+	  echo "Found all required environment variables."; \
+	fi
 
 # ================================
 # Generate project files
@@ -135,3 +176,20 @@ clean:
 	rm -rf $(PYMODEL)/*
 	rm -rf $(VENV)
 
+# ================================
+# PUBLISHING
+# ================================
+publish-nanopubs: check-env
+	@VERSION=$$(python3 "$(CHANGELOG_SCRIPT_PATH)" extract-version $(CHANGELOG_PATH))
+	echo "Publishing schema version: $$VERSION"
+	python3 "$(CHANGELOG_SCRIPT_PATH)" validate-changelog -s "$(CHANGELOG_SCHEMA_PATH)" "$(CHANGELOG_PATH)"
+	@echo "Publish terms in changelog."
+	python3 $(PUBLISH_SCRIPT_PATH) publish \
+		-s $(SRC)/rdf/$(SCHEMA_NAME).ttl \
+		-c $(CHANGELOG_PATH) \
+		--dry-run \
+		--output-pairs $(DEST)/output-pairs.txt
+	@echo "Generating release notes ..."
+	python3 "$(CHANGELOG_SCRIPT_PATH)" generate-release-notes -o "$(DEST)" -f $(CHANGELOG_PATH)
+	@echo "Generating new changelog ..."
+	python3 "$(CHANGELOG_SCRIPT_PATH)" init-new-changelog -m "$(MAINTAINER)" -d "$(SRC)/changelog/"
