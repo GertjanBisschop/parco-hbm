@@ -1,0 +1,10 @@
+version: "2.0.0"
+release_date: "1970-01-01"
+maintainer: "main.tainer@voc-service.com"
+
+changes:
+  - term_uri: "https://w3id.org/peh/terms/Term1"
+    action: "added"
+    replacement_term: null
+    linkml_element_type: "class"
+    pr_reference: "https://github.com/org/repo/pull/123"
