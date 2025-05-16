@@ -31,7 +31,7 @@ SRC = linkml
 DEST = _temp
 SOURCE_SCHEMA_PATH = $(SRC)/schema/$(SCHEMA_NAME).yaml
 SOURCE_SCHEMA_DIR = $(dir $(SOURCE_SCHEMA_PATH))
-PYMODEL = $(SRC)/python
+PYMODEL = $(SRC)/src/peh_model
 
 CHANGELOG_SCRIPT_PATH=$(SRC)/scripts/changelog.py
 PUBLISH_SCRIPT_PATH=$(SRC)/scripts/publish.py
@@ -41,7 +41,7 @@ CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
 # ================================
 # Phony targets
 # ================================
-.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize publish-nanopubs
+.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize publish-nanopubs build-package publish-package-test publish-package
 
 # ================================
 # Help
@@ -58,8 +58,10 @@ help: check-config
 	@echo "make serialize    		-- serialize data examples"
 	@echo "make publish-nanopubs    -- publish model updates"
 	@echo "make clean        		-- clean generated files"
+	@echo "make build-peh-model		-- build peh-model"
+	@echo "make publish-peh-model-test		-- test publish peh-model"
+	@echo "make publish-peh-model	-- publish peh-model"
 	@echo ""
-
 # ================================
 # check-config
 # ================================
@@ -128,6 +130,7 @@ gen-project: make-dirs
 	mv $(DEST)/jsonld/*.jsonld $(SRC)/jsonld/.
 	mv $(DEST)/peh.py $(PYMODEL)/.
 	mv $(DEST)/peh.ttl	$(SRC)/rdf/.
+	cp $(SRC)/schema/peh.yaml $(PYMODEL)/schema/.
 # RUN BLACK
 # skip black as linkml pydantic schema is not conform requirements	
 #black $(PYMODEL)		
@@ -163,7 +166,8 @@ test-schema: lint gen-project serialize
 make-dirs:
 	@echo "Creating necessary directories..."
 	mkdir -p $(DEST)
-	mkdir -p $(SRC)/python
+	mkdir -p $(SRC)/src/peh_model
+	mkdir -p $(SRC)/src/peh_model/schema
 	mkdir -p $(SRC)/jsonld
 	mkdir -p $(SRC)/owl
 	mkdir -p $(SRC)/rdf
@@ -193,3 +197,18 @@ publish-nanopubs: check-env
 	python3 "$(CHANGELOG_SCRIPT_PATH)" generate-release-notes -o "$(DEST)" -f $(CHANGELOG_PATH)
 	@echo "Generating new changelog ..."
 	python3 "$(CHANGELOG_SCRIPT_PATH)" init-new-changelog -m "$(MAINTAINER)" -d "$(SRC)/changelog/"
+
+# ======================
+#     publishing
+# ======================
+build-peh-model:
+	pip install --upgrade build
+	python -m build
+
+publish-peh-model-test:
+	pip install --upgrade twine
+	python -m twine upload --repository testpypi dist/*
+
+publish-peh-model:
+	pip install --upgrade twine
+	python -m twine upload dist/*

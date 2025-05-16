@@ -3644,6 +3644,7 @@
     {
       "name": "EntityList",
       "definition_uri": "https://w3id.org/peh/terms/EntityList",
+      "description": "A generic top level object for collecting named entities under one root entity",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "matrices",
@@ -3673,7 +3674,7 @@
     {
       "name": "NamedThing",
       "definition_uri": "https://w3id.org/peh/terms/NamedThing",
-      "description": "A generic grouping for any identifiable entity",
+      "description": "An abstract model for any of the identifiable entities",
       "from_schema": "https://w3id.org/peh/peh-model",
       "close_mappings": [
         "schema:Thing"
@@ -3694,6 +3695,7 @@
     {
       "name": "Grouping",
       "definition_uri": "https://w3id.org/peh/terms/Grouping",
+      "description": "A generic grouping entity that allows categorising entities in a hierarchical structure",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "mixins": [
@@ -3720,6 +3722,7 @@
     {
       "name": "HasValidationStatus",
       "definition_uri": "https://w3id.org/peh/terms/HasValidationStatus",
+      "description": "The capacity of including both a current validation status and a history of validation records",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixin": true,
       "slots": [
@@ -3733,6 +3736,7 @@
     {
       "name": "ValidationHistoryRecord",
       "definition_uri": "https://w3id.org/peh/terms/ValidationHistoryRecord",
+      "description": "A list of events representing a historical record on the entity validation status",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "validation_datetime",
@@ -3748,6 +3752,7 @@
     {
       "name": "HasAliases",
       "definition_uri": "https://w3id.org/peh/terms/HasAliases",
+      "description": "The capacity of including one or more alternative naming terms (without qualifying the usage context)",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixin": true,
       "slots": [
@@ -3760,6 +3765,7 @@
     {
       "name": "HasContextAliases",
       "definition_uri": "https://w3id.org/peh/terms/HasContextAliases",
+      "description": "The capacity of including a list of terms being used in known scopes or contexts",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixin": true,
       "slots": [
@@ -3772,6 +3778,7 @@
     {
       "name": "ContextAlias",
       "definition_uri": "https://w3id.org/peh/terms/ContextAlias",
+      "description": "An alternative term as it is used in a known scope or context (e.g. a community, project or study) for any of the entities and its properties",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "property_name",
@@ -3785,6 +3792,7 @@
     {
       "name": "HasTranslations",
       "definition_uri": "https://w3id.org/peh/terms/HasTranslations",
+      "description": "The capacity of including a list of translated terms for one or more entity properties and languages",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixin": true,
       "slots": [
@@ -3797,6 +3805,7 @@
     {
       "name": "Translation",
       "definition_uri": "https://w3id.org/peh/terms/Translation",
+      "description": "A translation for any of the entity properties, defining the property, the language and the translated term",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "property_name",
@@ -3810,6 +3819,7 @@
     {
       "name": "Unit",
       "definition_uri": "https://w3id.org/peh/terms/Unit",
+      "description": "A unit of measurement, a quantity chosen as a standard in terms of which other quantities may be expressed",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "mixins": [
@@ -3874,6 +3884,7 @@
     {
       "name": "BioChemIdentifier",
       "definition_uri": "https://w3id.org/peh/terms/BioChemIdentifier",
+      "description": "An identifier by which a biochemical entity is known in a schema (the BioChemIdentifierSchema) used by a certain community or system",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixins": [
         "HasValidationStatus"
@@ -3891,6 +3902,7 @@
     {
       "name": "BioChemIdentifierSchema",
       "definition_uri": "https://w3id.org/peh/terms/BioChemIdentifierSchema",
+      "description": "A well-defined schema used by a certain community or system, listing biochemical entities with individual identifiers ",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -3909,6 +3921,7 @@
     {
       "name": "Matrix",
       "definition_uri": "https://w3id.org/peh/terms/Matrix",
+      "description": "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "mixins": [
@@ -3936,7 +3949,7 @@
     {
       "name": "Indicator",
       "definition_uri": "https://w3id.org/peh/terms/Indicator",
-      "description": "A measurable indicator that is relevant to the Personal Exposure and Health domain",
+      "description": "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain",
       "from_schema": "https://w3id.org/peh/peh-model",
       "close_mappings": [
         "iop:Variable"
@@ -3966,6 +3979,7 @@
     {
       "name": "BioChemEntityLink",
       "definition_uri": "https://w3id.org/peh/terms/BioChemEntityLink",
+      "description": "A relational property that allows creating qualified links to biochemical entities",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "biochementity_linktype",
@@ -3978,6 +3992,7 @@
     {
       "name": "PhysicalEntity",
       "definition_uri": "https://w3id.org/peh/terms/PhysicalEntity",
+      "description": "A digital placeholder for a physical entity as it exists in the real world, ",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "abstract": true,
@@ -3997,6 +4012,7 @@
     {
       "name": "PhysicalEntityLink",
       "definition_uri": "https://w3id.org/peh/terms/PhysicalEntityLink",
+      "description": "A relational property that allows creating qualified links to physical entities",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "linktype",
@@ -4009,6 +4025,7 @@
     {
       "name": "Sample",
       "definition_uri": "https://w3id.org/peh/terms/Sample",
+      "description": "A portion of a measurement matrix collected from a subject or environment for the purpose of lab analysis",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "PhysicalEntity",
       "slots": [
@@ -4032,6 +4049,7 @@
     {
       "name": "Person",
       "definition_uri": "https://w3id.org/peh/terms/Person",
+      "description": "A human subject or stakeholder in Personal Exposure and Health research",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "PhysicalEntity",
       "slots": [
@@ -4051,6 +4069,7 @@
     {
       "name": "Geolocation",
       "definition_uri": "https://w3id.org/peh/terms/Geolocation",
+      "description": "A geographic location relevant to the Personal Exposure and Health projects or studies",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "PhysicalEntity",
       "slots": [
@@ -4070,6 +4089,7 @@
     {
       "name": "Environment",
       "definition_uri": "https://w3id.org/peh/terms/Environment",
+      "description": "An environment relevant to the research, typically related to the exposure of a person",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "PhysicalEntity",
       "slots": [
@@ -4088,6 +4108,7 @@
     {
       "name": "HomeEnvironment",
       "definition_uri": "https://w3id.org/peh/terms/HomeEnvironment",
+      "description": "A home environment relevant to the research, typically related to the at-home exposure of a person",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "Environment",
       "slots": [
@@ -4106,6 +4127,7 @@
     {
       "name": "WorkEnvironment",
       "definition_uri": "https://w3id.org/peh/terms/WorkEnvironment",
+      "description": "A work environment relevant to the research, typically related to the at-work or commute exposure of a person",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "Environment",
       "slots": [
@@ -4124,6 +4146,7 @@
     {
       "name": "ObservableProperty",
       "definition_uri": "https://w3id.org/peh/terms/ObservableProperty",
+      "description": "A fully defined variable that allows registering an observation about any of the entities relevant to Personal Exposure and Health research",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "mixins": [
@@ -4165,6 +4188,7 @@
     {
       "name": "ObservablePropertyValueOption",
       "definition_uri": "https://w3id.org/peh/terms/ObservablePropertyValueOption",
+      "description": "Potential selection choices for Observable Properties that are categorical variables",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixins": [
         "HasContextAliases"
@@ -4182,6 +4206,7 @@
     {
       "name": "ObservablePropertyMetadataElement",
       "definition_uri": "https://w3id.org/peh/terms/ObservablePropertyMetadataElement",
+      "description": "Key-value element that adds contextual metadata to an Observable Property instance",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "field",
@@ -4194,6 +4219,7 @@
     {
       "name": "ObservablePropertyMetadataField",
       "definition_uri": "https://w3id.org/peh/terms/ObservablePropertyMetadataField",
+      "description": "Predefined contextual qualifier for Observable Property metadata",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4212,6 +4238,7 @@
     {
       "name": "CalculationDesign",
       "definition_uri": "https://w3id.org/peh/terms/CalculationDesign",
+      "description": "Definition of a calculation method for deriving an observational value from other variables and/or contexts",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "calculation_name",
@@ -4226,6 +4253,7 @@
     {
       "name": "CalculationImplementation",
       "definition_uri": "https://w3id.org/peh/terms/CalculationImplementation",
+      "description": "Reference and parameters mapping to the implementation that can perform the intended calculation",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "function_name",
@@ -4240,6 +4268,7 @@
     {
       "name": "CalculationArgument",
       "definition_uri": "https://w3id.org/peh/terms/CalculationArgument",
+      "description": "The definition of a positional argument used in the calculation, including the information needed to pick it from the project or study data structure",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "source_path",
@@ -4256,6 +4285,7 @@
     {
       "name": "CalculationKeywordArgument",
       "definition_uri": "https://w3id.org/peh/terms/CalculationKeywordArgument",
+      "description": "The definition of a named argument used in the calculation, including the information needed to pick it from the project or study data structure",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "mapping_name",
@@ -4273,6 +4303,7 @@
     {
       "name": "CalculationResult",
       "definition_uri": "https://w3id.org/peh/terms/CalculationResult",
+      "description": "The definition for the output the calculation, optionally including mapping information",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "mapping_name",
@@ -4289,6 +4320,7 @@
     {
       "name": "ValidationDesign",
       "definition_uri": "https://w3id.org/peh/terms/ValidationDesign",
+      "description": "Definition of a validation rule for automatically imposing business logic constraints",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "validation_name",
@@ -4305,6 +4337,7 @@
     {
       "name": "ValidationExpression",
       "definition_uri": "https://w3id.org/peh/terms/ValidationExpression",
+      "description": "A logical expression, allowing for combining arguments into more complex validation rules",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "validation_subject_source_paths",
@@ -4320,6 +4353,7 @@
     {
       "name": "Contact",
       "definition_uri": "https://w3id.org/peh/terms/Contact",
+      "description": "A stakeholder having a contact role in the research process",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixins": [
         "HasContextAliases"
@@ -4339,6 +4373,7 @@
     {
       "name": "Stakeholder",
       "definition_uri": "https://w3id.org/peh/terms/Stakeholder",
+      "description": "Any organisation involved in the research process",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "mixins": [
@@ -4362,6 +4397,7 @@
     {
       "name": "Project",
       "definition_uri": "https://w3id.org/peh/terms/Project",
+      "description": "A collaborative effort in the Personal Exposure and Health research domain",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "mixins": [
@@ -4392,6 +4428,7 @@
     {
       "name": "ProjectStakeholder",
       "definition_uri": "https://w3id.org/peh/terms/ProjectStakeholder",
+      "description": "An organisation collaborating in a Personal Exposure and Health research project",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mixins": [
         "HasTranslations"
@@ -4409,6 +4446,7 @@
     {
       "name": "StudyEntity",
       "definition_uri": "https://w3id.org/peh/terms/StudyEntity",
+      "description": "Any entity carrying data or context relevant to a Personal Exposure and Health research project or study",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "abstract": true,
@@ -4429,6 +4467,7 @@
     {
       "name": "StudyEntityLink",
       "definition_uri": "https://w3id.org/peh/terms/StudyEntityLink",
+      "description": "A relational property that allows creating qualified links to study entities",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "linktype",
@@ -4441,6 +4480,7 @@
     {
       "name": "Study",
       "definition_uri": "https://w3id.org/peh/terms/Study",
+      "description": "A structured, goal-directed observational investigation designed to collect and analyze data on human subjects and their environments",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "mixins": [
@@ -4473,6 +4513,7 @@
     {
       "name": "StudyStakeholder",
       "definition_uri": "https://w3id.org/peh/terms/StudyStakeholder",
+      "description": "An organisation collaborating in a Personal Exposure and Health research study",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "stakeholder",
@@ -4486,6 +4527,7 @@
     {
       "name": "ObservationGroup",
       "definition_uri": "https://w3id.org/peh/terms/ObservationGroup",
+      "description": "A grouped collection of observations, intended and/or executed, as part of a Personal Exposure and Health research study",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "slots": [
@@ -4509,6 +4551,7 @@
     {
       "name": "StudyPopulation",
       "definition_uri": "https://w3id.org/peh/terms/StudyPopulation",
+      "description": "A group of study entities that is itself also a study entity that observations can be recorded for",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "slots": [
@@ -4530,6 +4573,7 @@
     {
       "name": "SampleCollection",
       "definition_uri": "https://w3id.org/peh/terms/SampleCollection",
+      "description": "A collection of samples that is itself also a study entity that observations can be recorded for",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "slots": [
@@ -4552,6 +4596,7 @@
     {
       "name": "StudySubject",
       "definition_uri": "https://w3id.org/peh/terms/StudySubject",
+      "description": "A study entity that is a main subject for the study",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "slots": [
@@ -4571,6 +4616,7 @@
     {
       "name": "StudySubjectGroup",
       "definition_uri": "https://w3id.org/peh/terms/StudySubjectGroup",
+      "description": "A group of study subjects that is itself also a study entity that observations can be recorded for",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "StudyEntity",
       "slots": [
@@ -4590,6 +4636,7 @@
     {
       "name": "Observation",
       "definition_uri": "https://w3id.org/peh/terms/Observation",
+      "description": "The registration of the intent to perform a set of observations as well as the resulting observed values",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "abstract": true,
@@ -4611,6 +4658,7 @@
     {
       "name": "ObservationDesign",
       "definition_uri": "https://w3id.org/peh/terms/ObservationDesign",
+      "description": "The registration of the intent to perform a number of observations",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "observable_entity_property_sets"
@@ -4622,6 +4670,7 @@
     {
       "name": "ObservableEntityPropertySet",
       "definition_uri": "https://w3id.org/peh/terms/ObservableEntityPropertySet",
+      "description": "The list of properties being observed and the study entities they will be observed for (or, alternatively, the entity type all observed entities belong to)",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "observation_result_type",
@@ -4638,6 +4687,7 @@
     {
       "name": "ObservationResult",
       "definition_uri": "https://w3id.org/peh/terms/ObservationResult",
+      "description": "The result of an observational effort in Personal Exposure and Health research",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "abstract": true,
@@ -4660,6 +4710,7 @@
     {
       "name": "ObservedValue",
       "definition_uri": "https://w3id.org/peh/terms/ObservedValue",
+      "description": "A single observational result value registering a specific property for a specific entity at a specific moment",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "observable_entity",
@@ -4684,6 +4735,7 @@
     {
       "name": "QualityData",
       "definition_uri": "https://w3id.org/peh/terms/QualityData",
+      "description": "Quality metadata, adding context to an Observed Value",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "quality_context_key",
@@ -4696,6 +4748,7 @@
     {
       "name": "ProvenanceData",
       "definition_uri": "https://w3id.org/peh/terms/ProvenanceData",
+      "description": "Provenance metadata, adding context to an Observed Value",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "provenance_context_key",
@@ -4708,6 +4761,7 @@
     {
       "name": "DataLayout",
       "definition_uri": "https://w3id.org/peh/terms/DataLayout",
+      "description": "Layout, allowing the definition of templating sections for combining layout and data elements",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4726,6 +4780,7 @@
     {
       "name": "DataLayoutSection",
       "definition_uri": "https://w3id.org/peh/terms/DataLayoutSection",
+      "description": "Definition for an individual layout or data section, as part of a full layout",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4747,6 +4802,7 @@
     {
       "name": "DataLayoutElement",
       "definition_uri": "https://w3id.org/peh/terms/DataLayoutElement",
+      "description": "Definition for an individual layout or data element, as part of a layout section",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "label",
@@ -4764,6 +4820,7 @@
     {
       "name": "DataRequest",
       "definition_uri": "https://w3id.org/peh/terms/DataRequest",
+      "description": "Registration of a request for data by a data user",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4791,6 +4848,7 @@
     {
       "name": "ObservedEntityProperty",
       "definition_uri": "https://w3id.org/peh/terms/ObservedEntityProperty",
+      "description": "Conceptual definition of the observation of a certain property for a certain entity in a study",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "observable_entity",
@@ -4803,6 +4861,7 @@
     {
       "name": "DataStakeholder",
       "definition_uri": "https://w3id.org/peh/terms/DataStakeholder",
+      "description": "An organisation participating in a data process in Personal Exposure and Health research",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4824,6 +4883,7 @@
     {
       "name": "ResearchObjective",
       "definition_uri": "https://w3id.org/peh/terms/ResearchObjective",
+      "description": "A research objective communicated in the request and used to evaluate if the request is valid and appropriate",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4843,6 +4903,7 @@
     {
       "name": "ProcessingAction",
       "definition_uri": "https://w3id.org/peh/terms/ProcessingAction",
+      "description": "One action in the data request and processing flow",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4860,6 +4921,7 @@
     {
       "name": "ProcessingStep",
       "definition_uri": "https://w3id.org/peh/terms/ProcessingStep",
+      "description": "One step in the data request and processing flow",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -4879,6 +4941,7 @@
     {
       "name": "DataExtract",
       "definition_uri": "https://w3id.org/peh/terms/DataExtract",
+      "description": "A set of Observed Values, combined into a data extract",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "observed_values"
@@ -4890,9 +4953,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2025-05-07T14:49:49",
-  "source_file_size": 27906,
-  "generation_date": "2025-05-07T15:00:14",
+  "source_file_date": "2025-05-16T15:03:22",
+  "source_file_size": 35393,
+  "generation_date": "2025-05-16T16:09:37",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",
