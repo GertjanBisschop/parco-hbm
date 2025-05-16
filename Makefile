@@ -166,8 +166,8 @@ test-schema: lint gen-project serialize
 make-dirs:
 	@echo "Creating necessary directories..."
 	mkdir -p $(DEST)
-	mkdir -p $(SRC)/peh_model
-	mkdir -p $(SRC)/peh_model/schema
+	mkdir -p $(SRC)/src/peh_model
+	mkdir -p $(SRC)/src/peh_model/schema
 	mkdir -p $(SRC)/jsonld
 	mkdir -p $(SRC)/owl
 	mkdir -p $(SRC)/rdf

@@ -3,11 +3,12 @@
 import os
 import pathlib
 
-__version__ = "0.0.1"
+__version__ = "0.0.1a1"
+
 
 def get_schema_path():
     """Return the path to the schema file.
-    
+
     Returns:
         pathlib.Path: Path to the peh.yaml schema file
     """

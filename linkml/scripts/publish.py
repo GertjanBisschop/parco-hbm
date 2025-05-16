@@ -227,7 +227,7 @@ def add_vocabulary_membership(
 
 
 def extract_id(url: str):
-    return url.lstrip(TERM_NAMESPACE).lstrip('/')    
+    return url.lstrip(TERM_NAMESPACE).lstrip("/")
 
 
 def generate_htaccess(redirects: List, type_prefix: Optional[str]):

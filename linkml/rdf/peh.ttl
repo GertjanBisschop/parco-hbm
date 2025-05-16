@@ -14,28 +14,28 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     pav:version "0.0.1a" ;
     skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
-    sh:declare [ sh:namespace <https://w3id.org/peh/terms/> ;
-            sh:prefix "pehterms" ],
+    sh:declare [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
+            sh:prefix "qudt" ],
+        [ sh:namespace <https://w3id.org/iadopt/ont/> ;
+            sh:prefix "iop" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
         [ sh:namespace schema1: ;
             sh:prefix "schema" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
+        [ sh:namespace <https://w3id.org/peh/terms/> ;
+            sh:prefix "pehterms" ],
         [ sh:namespace <https://qudt.org/vocab/unit/> ;
             sh:prefix "qudtunit" ],
         [ sh:namespace <https://w3id.org/peh/> ;
             sh:prefix "peh" ],
-        [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
-            sh:prefix "qudt" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
         [ sh:namespace <http://qudt.org/2.1/vocab/quantitykind> ;
             sh:prefix "qudtqk" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
         [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace <https://w3id.org/iadopt/ont/> ;
-            sh:prefix "iop" ] ;
+            sh:prefix "linkml" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
         <https://w3id.org/peh/terms/BioChemEntityLink>,
         <https://w3id.org/peh/terms/BioChemIdentifier>,
@@ -124,7 +124,7 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2025-05-07T15:00:16"^^xsd:dateTime ;
+    linkml:generation_date "2025-05-16T16:09:39"^^xsd:dateTime ;
     linkml:id <https://w3id.org/peh/peh-model> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -320,8 +320,8 @@
         <https://w3id.org/peh/terms/varname>,
         <https://w3id.org/peh/terms/web_uri> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2025-05-07T14:49:49"^^xsd:dateTime ;
-    linkml:source_file_size 27906 ;
+    linkml:source_file_date "2025-05-16T15:03:22"^^xsd:dateTime ;
+    linkml:source_file_size 35393 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,
@@ -669,6 +669,7 @@
         <https://w3id.org/peh/terms/supplying_data_controller> .
 
 <https://w3id.org/peh/terms/HomeEnvironment> a linkml:ClassDefinition ;
+    skos:definition "A home environment relevant to the research, typically related to the at-home exposure of a person" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/HomeEnvironment> ;
     linkml:definition_uri <https://w3id.org/peh/terms/HomeEnvironment> ;
@@ -807,6 +808,7 @@
         <https://w3id.org/peh/terms/principal_investigator> .
 
 <https://w3id.org/peh/terms/StudySubject> a linkml:ClassDefinition ;
+    skos:definition "A study entity that is a main subject for the study" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/StudySubject> ;
     linkml:definition_uri <https://w3id.org/peh/terms/StudySubject> ;
@@ -822,6 +824,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/StudySubjectGroup> a linkml:ClassDefinition ;
+    skos:definition "A group of study subjects that is itself also a study entity that observations can be recorded for" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/StudySubjectGroup> ;
     linkml:definition_uri <https://w3id.org/peh/terms/StudySubjectGroup> ;
@@ -862,6 +865,7 @@
         <https://w3id.org/peh/terms/warning> .
 
 <https://w3id.org/peh/terms/WorkEnvironment> a linkml:ClassDefinition ;
+    skos:definition "A work environment relevant to the research, typically related to the at-work or commute exposure of a person" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/WorkEnvironment> ;
     linkml:definition_uri <https://w3id.org/peh/terms/WorkEnvironment> ;
@@ -946,6 +950,7 @@
         <https://w3id.org/peh/terms/sampling> .
 
 <https://w3id.org/peh/terms/ProcessingAction> a linkml:ClassDefinition ;
+    skos:definition "One action in the data request and processing flow" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ProcessingAction> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ProcessingAction> ;
@@ -2244,6 +2249,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/web_uri> .
 
 <https://w3id.org/peh/terms/DataExtract> a linkml:ClassDefinition ;
+    skos:definition "A set of Observed Values, combined into a data extract" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/DataExtract> ;
     linkml:definition_uri <https://w3id.org/peh/terms/DataExtract> ;
@@ -2251,6 +2257,7 @@
     linkml:slots <https://w3id.org/peh/terms/observed_values> .
 
 <https://w3id.org/peh/terms/Environment> a linkml:ClassDefinition ;
+    skos:definition "An environment relevant to the research, typically related to the exposure of a person" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Environment> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Environment> ;
@@ -2265,6 +2272,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/Geolocation> a linkml:ClassDefinition ;
+    skos:definition "A geographic location relevant to the Personal Exposure and Health projects or studies" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Geolocation> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Geolocation> ;
@@ -2290,6 +2298,7 @@
         <https://w3id.org/peh/terms/study> .
 
 <https://w3id.org/peh/terms/ObservationDesign> a linkml:ClassDefinition ;
+    skos:definition "The registration of the intent to perform a number of observations" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservationDesign> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservationDesign> ;
@@ -2297,6 +2306,7 @@
     linkml:slots <https://w3id.org/peh/terms/observable_entity_property_sets> .
 
 <https://w3id.org/peh/terms/Person> a linkml:ClassDefinition ;
+    skos:definition "A human subject or stakeholder in Personal Exposure and Health research" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Person> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Person> ;
@@ -2453,6 +2463,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/source_path> .
 
 <https://w3id.org/peh/terms/BioChemIdentifierSchema> a linkml:ClassDefinition ;
+    skos:definition "A well-defined schema used by a certain community or system, listing biochemical entities with individual identifiers " ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/BioChemIdentifierSchema> ;
     linkml:definition_uri <https://w3id.org/peh/terms/BioChemIdentifierSchema> ;
@@ -2467,6 +2478,7 @@
         <https://w3id.org/peh/terms/web_uri> .
 
 <https://w3id.org/peh/terms/DataLayout> a linkml:ClassDefinition ;
+    skos:definition "Layout, allowing the definition of templating sections for combining layout and data elements" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/DataLayout> ;
     linkml:definition_uri <https://w3id.org/peh/terms/DataLayout> ;
@@ -2481,6 +2493,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/HasAliases> a linkml:ClassDefinition ;
+    skos:definition "The capacity of including one or more alternative naming terms (without qualifying the usage context)" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/HasAliases> ;
     linkml:definition_uri <https://w3id.org/peh/terms/HasAliases> ;
@@ -2489,6 +2502,7 @@
     linkml:slots <https://w3id.org/peh/terms/aliases> .
 
 <https://w3id.org/peh/terms/ObservablePropertyMetadataField> a linkml:ClassDefinition ;
+    skos:definition "Predefined contextual qualifier for Observable Property metadata" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservablePropertyMetadataField> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservablePropertyMetadataField> ;
@@ -2503,6 +2517,7 @@
         <https://w3id.org/peh/terms/value_type> .
 
 <https://w3id.org/peh/terms/PhysicalEntityLink> a linkml:ClassDefinition ;
+    skos:definition "A relational property that allows creating qualified links to physical entities" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/PhysicalEntityLink> ;
     linkml:definition_uri <https://w3id.org/peh/terms/PhysicalEntityLink> ;
@@ -2616,6 +2631,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/value> .
 
 <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> a linkml:ClassDefinition ;
+    skos:definition "Key-value element that adds contextual metadata to an Observable Property instance" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> ;
@@ -2624,6 +2640,7 @@
         <https://w3id.org/peh/terms/value> .
 
 <https://w3id.org/peh/terms/StudyPopulation> a linkml:ClassDefinition ;
+    skos:definition "A group of study entities that is itself also a study entity that observations can be recorded for" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/StudyPopulation> ;
     linkml:definition_uri <https://w3id.org/peh/terms/StudyPopulation> ;
@@ -2708,6 +2725,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/BioChemEntityLink> a linkml:ClassDefinition ;
+    skos:definition "A relational property that allows creating qualified links to biochemical entities" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/BioChemEntityLink> ;
     linkml:definition_uri <https://w3id.org/peh/terms/BioChemEntityLink> ;
@@ -2716,6 +2734,7 @@
         <https://w3id.org/peh/terms/biochementity_linktype> .
 
 <https://w3id.org/peh/terms/BioChemIdentifier> a linkml:ClassDefinition ;
+    skos:definition "An identifier by which a biochemical entity is known in a schema (the BioChemIdentifierSchema) used by a certain community or system" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/BioChemIdentifier> ;
     linkml:definition_uri <https://w3id.org/peh/terms/BioChemIdentifier> ;
@@ -2727,6 +2746,7 @@
         <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/ObservablePropertyValueOption> a linkml:ClassDefinition ;
+    skos:definition "Potential selection choices for Observable Properties that are categorical variables" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservablePropertyValueOption> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservablePropertyValueOption> ;
@@ -2738,6 +2758,7 @@
         <https://w3id.org/peh/terms/value> .
 
 <https://w3id.org/peh/terms/ObservedEntityProperty> a linkml:ClassDefinition ;
+    skos:definition "Conceptual definition of the observation of a certain property for a certain entity in a study" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservedEntityProperty> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservedEntityProperty> ;
@@ -2746,6 +2767,7 @@
         <https://w3id.org/peh/terms/observable_property> .
 
 <https://w3id.org/peh/terms/ProcessingStep> a linkml:ClassDefinition ;
+    skos:definition "One step in the data request and processing flow" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ProcessingStep> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ProcessingStep> ;
@@ -2761,6 +2783,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/ProjectStakeholder> a linkml:ClassDefinition ;
+    skos:definition "An organisation collaborating in a Personal Exposure and Health research project" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ProjectStakeholder> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ProjectStakeholder> ;
@@ -2772,6 +2795,7 @@
         <https://w3id.org/peh/terms/translations> .
 
 <https://w3id.org/peh/terms/ProvenanceData> a linkml:ClassDefinition ;
+    skos:definition "Provenance metadata, adding context to an Observed Value" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ProvenanceData> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ProvenanceData> ;
@@ -2780,6 +2804,7 @@
         <https://w3id.org/peh/terms/provenance_value> .
 
 <https://w3id.org/peh/terms/QualityData> a linkml:ClassDefinition ;
+    skos:definition "Quality metadata, adding context to an Observed Value" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/QualityData> ;
     linkml:definition_uri <https://w3id.org/peh/terms/QualityData> ;
@@ -2788,6 +2813,7 @@
         <https://w3id.org/peh/terms/quality_value> .
 
 <https://w3id.org/peh/terms/ResearchObjective> a linkml:ClassDefinition ;
+    skos:definition "A research objective communicated in the request and used to evaluate if the request is valid and appropriate" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ResearchObjective> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ResearchObjective> ;
@@ -2803,6 +2829,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/StudyEntityLink> a linkml:ClassDefinition ;
+    skos:definition "A relational property that allows creating qualified links to study entities" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/StudyEntityLink> ;
     linkml:definition_uri <https://w3id.org/peh/terms/StudyEntityLink> ;
@@ -2811,6 +2838,7 @@
         <https://w3id.org/peh/terms/study_entity> .
 
 <https://w3id.org/peh/terms/StudyStakeholder> a linkml:ClassDefinition ;
+    skos:definition "An organisation collaborating in a Personal Exposure and Health research study" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/StudyStakeholder> ;
     linkml:definition_uri <https://w3id.org/peh/terms/StudyStakeholder> ;
@@ -2820,6 +2848,7 @@
         <https://w3id.org/peh/terms/study_roles> .
 
 <https://w3id.org/peh/terms/Unit> a linkml:ClassDefinition ;
+    skos:definition "A unit of measurement, a quantity chosen as a standard in terms of which other quantities may be expressed" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Unit> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Unit> ;
@@ -2866,6 +2895,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/varname> .
 
 <https://w3id.org/peh/terms/ContextAlias> a linkml:ClassDefinition ;
+    skos:definition "An alternative term as it is used in a known scope or context (e.g. a community, project or study) for any of the entities and its properties" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ContextAlias> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ContextAlias> ;
@@ -2875,6 +2905,7 @@
         <https://w3id.org/peh/terms/property_name> .
 
 <https://w3id.org/peh/terms/SampleCollection> a linkml:ClassDefinition ;
+    skos:definition "A collection of samples that is itself also a study entity that observations can be recorded for" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:definition_uri <https://w3id.org/peh/terms/SampleCollection> ;
@@ -2893,6 +2924,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/Stakeholder> a linkml:ClassDefinition ;
+    skos:definition "Any organisation involved in the research process" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Stakeholder> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Stakeholder> ;
@@ -2938,6 +2970,7 @@
         <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/CalculationArgument> a linkml:ClassDefinition ;
+    skos:definition "The definition of a positional argument used in the calculation, including the information needed to pick it from the project or study data structure" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/CalculationArgument> ;
     linkml:definition_uri <https://w3id.org/peh/terms/CalculationArgument> ;
@@ -2950,6 +2983,7 @@
         <https://w3id.org/peh/terms/varname> .
 
 <https://w3id.org/peh/terms/HasValidationStatus> a linkml:ClassDefinition ;
+    skos:definition "The capacity of including both a current validation status and a history of validation records" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/HasValidationStatus> ;
     linkml:definition_uri <https://w3id.org/peh/terms/HasValidationStatus> ;
@@ -2959,6 +2993,7 @@
         <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/Translation> a linkml:ClassDefinition ;
+    skos:definition "A translation for any of the entity properties, defining the property, the language and the translated term" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Translation> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Translation> ;
@@ -2990,6 +3025,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/physical_entity_links> .
 
 <https://w3id.org/peh/terms/CalculationDesign> a linkml:ClassDefinition ;
+    skos:definition "Definition of a calculation method for deriving an observational value from other variables and/or contexts" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:definition_uri <https://w3id.org/peh/terms/CalculationDesign> ;
@@ -3000,6 +3036,7 @@
         <https://w3id.org/peh/terms/conditional> .
 
 <https://w3id.org/peh/terms/Grouping> a linkml:ClassDefinition ;
+    skos:definition "A generic grouping entity that allows categorising entities in a hierarchical structure" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Grouping> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Grouping> ;
@@ -3020,6 +3057,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/Observation> a linkml:ClassDefinition ;
+    skos:definition "The registration of the intent to perform a set of observations as well as the resulting observed values" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:abstract true ;
     linkml:class_uri <https://w3id.org/peh/terms/Observation> ;
@@ -3037,6 +3075,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/PhysicalEntity> a linkml:ClassDefinition ;
+    skos:definition "A digital placeholder for a physical entity as it exists in the real world, " ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:abstract true ;
     linkml:class_uri <https://w3id.org/peh/terms/PhysicalEntity> ;
@@ -3063,6 +3102,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/study_entity_links> .
 
 <https://w3id.org/peh/terms/CalculationImplementation> a linkml:ClassDefinition ;
+    skos:definition "Reference and parameters mapping to the implementation that can perform the intended calculation" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:definition_uri <https://w3id.org/peh/terms/CalculationImplementation> ;
@@ -3073,6 +3113,7 @@
         <https://w3id.org/peh/terms/function_results> .
 
 <https://w3id.org/peh/terms/DataLayoutSection> a linkml:ClassDefinition ;
+    skos:definition "Definition for an individual layout or data section, as part of a full layout" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:definition_uri <https://w3id.org/peh/terms/DataLayoutSection> ;
@@ -3090,6 +3131,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/DataStakeholder> a linkml:ClassDefinition ;
+    skos:definition "An organisation participating in a data process in Personal Exposure and Health research" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:definition_uri <https://w3id.org/peh/terms/DataStakeholder> ;
@@ -3107,6 +3149,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/ObservationGroup> a linkml:ClassDefinition ;
+    skos:definition "A grouped collection of observations, intended and/or executed, as part of a Personal Exposure and Health research study" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservationGroup> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservationGroup> ;
@@ -3126,6 +3169,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/ObservationResult> a linkml:ClassDefinition ;
+    skos:definition "The result of an observational effort in Personal Exposure and Health research" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:abstract true ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservationResult> ;
@@ -3144,6 +3188,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/Sample> a linkml:ClassDefinition ;
+    skos:definition "A portion of a measurement matrix collected from a subject or environment for the purpose of lab analysis" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Sample> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Sample> ;
@@ -3183,6 +3228,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/physical_entity> .
 
 <https://w3id.org/peh/terms/HasContextAliases> a linkml:ClassDefinition ;
+    skos:definition "The capacity of including a list of terms being used in known scopes or contexts" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/HasContextAliases> ;
     linkml:definition_uri <https://w3id.org/peh/terms/HasContextAliases> ;
@@ -3202,6 +3248,7 @@
     linkml:slot_uri <https://w3id.org/peh/terms/translations> .
 
 <https://w3id.org/peh/terms/CalculationKeywordArgument> a linkml:ClassDefinition ;
+    skos:definition "The definition of a named argument used in the calculation, including the information needed to pick it from the project or study data structure" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
     linkml:definition_uri <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
@@ -3215,6 +3262,7 @@
         <https://w3id.org/peh/terms/varname> .
 
 <https://w3id.org/peh/terms/Contact> a linkml:ClassDefinition ;
+    skos:definition "A stakeholder having a contact role in the research process" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Contact> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Contact> ;
@@ -3228,6 +3276,7 @@
         <https://w3id.org/peh/terms/orcid> .
 
 <https://w3id.org/peh/terms/HasTranslations> a linkml:ClassDefinition ;
+    skos:definition "The capacity of including a list of translated terms for one or more entity properties and languages" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/HasTranslations> ;
     linkml:definition_uri <https://w3id.org/peh/terms/HasTranslations> ;
@@ -3236,6 +3285,7 @@
     linkml:slots <https://w3id.org/peh/terms/translations> .
 
 <https://w3id.org/peh/terms/Matrix> a linkml:ClassDefinition ;
+    skos:definition "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Matrix> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Matrix> ;
@@ -3257,6 +3307,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/Project> a linkml:ClassDefinition ;
+    skos:definition "A collaborative effort in the Personal Exposure and Health research domain" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Project> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Project> ;
@@ -3281,6 +3332,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/ValidationHistoryRecord> a linkml:ClassDefinition ;
+    skos:definition "A list of events representing a historical record on the entity validation status" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
@@ -3292,6 +3344,7 @@
         <https://w3id.org/peh/terms/validation_status> .
 
 <https://w3id.org/peh/terms/CalculationResult> a linkml:ClassDefinition ;
+    skos:definition "The definition for the output the calculation, optionally including mapping information" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:definition_uri <https://w3id.org/peh/terms/CalculationResult> ;
@@ -3304,6 +3357,7 @@
         <https://w3id.org/peh/terms/value_type> .
 
 <https://w3id.org/peh/terms/ObservableEntityPropertySet> a linkml:ClassDefinition ;
+    skos:definition "The list of properties being observed and the study entities they will be observed for (or, alternatively, the entity type all observed entities belong to)" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservableEntityPropertySet> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservableEntityPropertySet> ;
@@ -3316,6 +3370,7 @@
         <https://w3id.org/peh/terms/required_observable_property_id_list> .
 
 <https://w3id.org/peh/terms/ValidationDesign> a linkml:ClassDefinition ;
+    skos:definition "Definition of a validation rule for automatically imposing business logic constraints" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ValidationDesign> ;
@@ -3328,6 +3383,7 @@
         <https://w3id.org/peh/terms/validation_result_expression> .
 
 <https://w3id.org/peh/terms/ValidationExpression> a linkml:ClassDefinition ;
+    skos:definition "A logical expression, allowing for combining arguments into more complex validation rules" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ValidationExpression> ;
@@ -3339,6 +3395,7 @@
         <https://w3id.org/peh/terms/validation_subject_source_paths> .
 
 <https://w3id.org/peh/terms/DataLayoutElement> a linkml:ClassDefinition ;
+    skos:definition "Definition for an individual layout or data element, as part of a layout section" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:definition_uri <https://w3id.org/peh/terms/DataLayoutElement> ;
@@ -3353,7 +3410,7 @@
 
 <https://w3id.org/peh/terms/Indicator> a linkml:ClassDefinition ;
     skos:closeMatch <iop:Variable> ;
-    skos:definition "A measurable indicator that is relevant to the Personal Exposure and Health domain" ;
+    skos:definition "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Indicator> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Indicator> ;
@@ -3376,6 +3433,7 @@
         <https://w3id.org/peh/terms/varname> .
 
 <https://w3id.org/peh/terms/Study> a linkml:ClassDefinition ;
+    skos:definition "A structured, goal-directed observational investigation designed to collect and analyze data on human subjects and their environments" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/Study> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Study> ;
@@ -3402,6 +3460,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/StudyEntity> a linkml:ClassDefinition ;
+    skos:definition "Any entity carrying data or context relevant to a Personal Exposure and Health research project or study" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:abstract true ;
     linkml:class_uri <https://w3id.org/peh/terms/StudyEntity> ;
@@ -3418,6 +3477,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/DataRequest> a linkml:ClassDefinition ;
+    skos:definition "Registration of a request for data by a data user" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/DataRequest> ;
     linkml:definition_uri <https://w3id.org/peh/terms/DataRequest> ;
@@ -3441,6 +3501,7 @@
         <https://w3id.org/peh/terms/unique_name> .
 
 <https://w3id.org/peh/terms/ObservedValue> a linkml:ClassDefinition ;
+    skos:definition "A single observational result value registering a specific property for a specific entity at a specific moment" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservedValue> ;
@@ -3462,7 +3523,7 @@
 
 <https://w3id.org/peh/terms/NamedThing> a linkml:ClassDefinition ;
     skos:closeMatch schema1:Thing ;
-    skos:definition "A generic grouping for any identifiable entity" ;
+    skos:definition "An abstract model for any of the identifiable entities" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:abstract true ;
     linkml:class_uri <https://w3id.org/peh/terms/NamedThing> ;
@@ -3529,6 +3590,7 @@
     linkml:slot_uri schema1:name .
 
 <https://w3id.org/peh/terms/EntityList> a linkml:ClassDefinition ;
+    skos:definition "A generic top level object for collecting named entities under one root entity" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/EntityList> ;
     linkml:definition_uri <https://w3id.org/peh/terms/EntityList> ;
@@ -3566,6 +3628,7 @@
     linkml:slot_uri skos:prefLabel .
 
 <https://w3id.org/peh/terms/ObservableProperty> a linkml:ClassDefinition ;
+    skos:definition "A fully defined variable that allows registering an observation about any of the entities relevant to Personal Exposure and Health research" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:class_uri <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservableProperty> ;

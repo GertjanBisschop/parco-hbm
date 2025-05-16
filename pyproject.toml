@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "peh-model"
-version = "0.0.1"
-description = "Python package for Project Entity Harmonization (PEH)"
+version = "0.0.1a1"
+description = "Python package for the PEH data model."
 readme = "README.md"
 authors = [
     {name = "Dirk Devriendt", email = "dirk.devriendt.ext@vito.be"},
@@ -31,4 +31,4 @@ dependencies = [
 where = ["linkml/src"]
 
 [tool.setuptools.package-data]
-"peh" = ["py.typed", "schema/peh.yaml"]
+"peh_model" = ["py.typed", "schema/peh.yaml"]
