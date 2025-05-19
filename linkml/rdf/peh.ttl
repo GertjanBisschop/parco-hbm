@@ -14,28 +14,28 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     pav:version "0.0.1a1" ;
     skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
-    sh:declare [ sh:namespace prov: ;
+    sh:declare [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
+        [ sh:namespace prov: ;
             sh:prefix "prov" ],
-        [ sh:namespace <http://qudt.org/2.1/vocab/quantitykind> ;
-            sh:prefix "qudtqk" ],
-        [ sh:namespace <https://w3id.org/peh/> ;
-            sh:prefix "peh" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
+        [ sh:namespace <https://w3id.org/peh/terms/> ;
+            sh:prefix "pehterms" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
         [ sh:namespace <https://w3id.org/iadopt/ont/> ;
             sh:prefix "iop" ],
         [ sh:namespace <https://qudt.org/vocab/unit/> ;
             sh:prefix "qudtunit" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
+        [ sh:namespace <https://w3id.org/peh/> ;
+            sh:prefix "peh" ],
         [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
             sh:prefix "qudt" ],
-        [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace <https://w3id.org/peh/terms/> ;
-            sh:prefix "pehterms" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ] ;
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
+        [ sh:namespace <http://qudt.org/2.1/vocab/quantitykind> ;
+            sh:prefix "qudtqk" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
         <https://w3id.org/peh/terms/BioChemEntityLink>,
         <https://w3id.org/peh/terms/BioChemIdentifier>,
@@ -124,7 +124,7 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2025-05-19T13:17:54"^^xsd:dateTime ;
+    linkml:generation_date "2025-05-19T19:24:52"^^xsd:dateTime ;
     linkml:id <https://w3id.org/peh/peh-model> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -320,8 +320,8 @@
         <https://w3id.org/peh/terms/varname>,
         <https://w3id.org/peh/terms/web_uri> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2025-05-19T12:51:05"^^xsd:dateTime ;
-    linkml:source_file_size 36859 ;
+    linkml:source_file_date "2025-05-19T19:24:19"^^xsd:dateTime ;
+    linkml:source_file_size 35461 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,

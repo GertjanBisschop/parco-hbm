@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.0.1a",
+  "version": "0.0.1a1",
   "imports": [
     "linkml:types"
   ],
@@ -430,10 +430,10 @@
           "text": "is_not_null"
         },
         {
-          "text": "and"
+          "text": "conjunction"
         },
         {
-          "text": "or"
+          "text": "disjunction"
         }
       ]
     },
@@ -2131,10 +2131,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "validation_condition_expression",
-      "definition_uri": "https://w3id.org/peh/terms/validation_condition_expression",
+      "name": "validation_expression",
+      "definition_uri": "https://w3id.org/peh/terms/validation_expression",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_condition_expression",
+      "slot_uri": "https://w3id.org/peh/terms/validation_expression",
       "owner": "ValidationDesign",
       "domain_of": [
         "ValidationDesign"
@@ -2144,13 +2144,13 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "validation_result_expression",
-      "definition_uri": "https://w3id.org/peh/terms/validation_result_expression",
+      "name": "validation_condition_expression",
+      "definition_uri": "https://w3id.org/peh/terms/validation_condition_expression",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_result_expression",
-      "owner": "ValidationDesign",
+      "slot_uri": "https://w3id.org/peh/terms/validation_condition_expression",
+      "owner": "ValidationExpression",
       "domain_of": [
-        "ValidationDesign"
+        "ValidationExpression"
       ],
       "range": "ValidationExpression",
       "inlined": true,
@@ -3955,6 +3955,9 @@
         "iop:Variable"
       ],
       "is_a": "NamedThing",
+      "mixins": [
+        "HasContextAliases"
+      ],
       "slots": [
         "id",
         "unique_name",
@@ -3970,7 +3973,8 @@
         "constraints",
         "grouping_id_list",
         "relevant_observable_entity_types",
-        "biochementity_links"
+        "biochementity_links",
+        "context_aliases"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/Indicator",
@@ -4150,7 +4154,8 @@
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "mixins": [
-        "HasTranslations"
+        "HasTranslations",
+        "HasContextAliases"
       ],
       "slots": [
         "id",
@@ -4179,7 +4184,8 @@
         "varname",
         "calculation_designs",
         "validation_designs",
-        "translations"
+        "translations",
+        "context_aliases"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/ObservableProperty",
@@ -4324,8 +4330,7 @@
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "validation_name",
-        "validation_condition_expression",
-        "validation_result_expression",
+        "validation_expression",
         "validation_error_level",
         "validation_error_message_template",
         "conditional"
@@ -4341,6 +4346,7 @@
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
         "validation_subject_source_paths",
+        "validation_condition_expression",
         "validation_command",
         "validation_arg_values",
         "validation_arg_source_paths",
@@ -4953,9 +4959,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2025-05-16T15:03:22",
-  "source_file_size": 35393,
-  "generation_date": "2025-05-16T16:09:37",
+  "source_file_date": "2025-05-19T19:24:19",
+  "source_file_size": 35461,
+  "generation_date": "2025-05-19T19:24:48",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",
