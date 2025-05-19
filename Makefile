@@ -3,15 +3,8 @@ SHELL := bash
 # ================================
 # Variables
 # ================================
-# Include the .env file
-ifneq (,$(wildcard .env))
-  include .env
-  export
-else
-  $(error .env file not found)
-endif
 
-# List of required variables
+# List of required variables in .env for local publishing
 REQUIRED_VARS = \
   NANOPUB_ORCID_ID \
   NANOPUB_NAME \
