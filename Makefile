@@ -49,7 +49,8 @@ CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
 help: check-config
 	@echo ""
 	@echo "make install      		-- create venv and install dependencies"
-	@echo "make setup        		-- full project generation and setup"
+	@echo "make setup        		-- setup venv and necessary directories"
+	@echo "make gen-project        	-- generate all model artefacts"
 	@echo "check-env"				-- check presence of required env variables"
 	@echo "make make-dirs    		-- create necessary directories"
 	@echo "make test-schema  		-- regenerate models and check schema"
@@ -72,7 +73,7 @@ check-config:
 # ================================
 # Setup
 # ================================
-setup: instal gen-project
+setup: install make-dirs
 
 # ================================
 # Install dependencies
