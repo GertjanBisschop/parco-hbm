@@ -12,30 +12,30 @@
 
 <https://w3id.org/peh/terms/PEH-Model> a linkml:SchemaDefinition ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    pav:version "0.0.1a" ;
+    pav:version "0.0.1a1" ;
     skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
-    sh:declare [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
-            sh:prefix "qudt" ],
-        [ sh:namespace <https://w3id.org/iadopt/ont/> ;
-            sh:prefix "iop" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
-        [ sh:namespace prov: ;
+    sh:declare [ sh:namespace prov: ;
             sh:prefix "prov" ],
-        [ sh:namespace <https://w3id.org/peh/terms/> ;
-            sh:prefix "pehterms" ],
-        [ sh:namespace <https://qudt.org/vocab/unit/> ;
-            sh:prefix "qudtunit" ],
-        [ sh:namespace <https://w3id.org/peh/> ;
-            sh:prefix "peh" ],
         [ sh:namespace <http://qudt.org/2.1/vocab/quantitykind> ;
             sh:prefix "qudtqk" ],
+        [ sh:namespace <https://w3id.org/peh/> ;
+            sh:prefix "peh" ],
         [ sh:namespace linkml: ;
-            sh:prefix "linkml" ] ;
+            sh:prefix "linkml" ],
+        [ sh:namespace <https://w3id.org/iadopt/ont/> ;
+            sh:prefix "iop" ],
+        [ sh:namespace <https://qudt.org/vocab/unit/> ;
+            sh:prefix "qudtunit" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
+            sh:prefix "qudt" ],
+        [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
+        [ sh:namespace <https://w3id.org/peh/terms/> ;
+            sh:prefix "pehterms" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
         <https://w3id.org/peh/terms/BioChemEntityLink>,
         <https://w3id.org/peh/terms/BioChemIdentifier>,
@@ -124,7 +124,7 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2025-05-16T16:09:39"^^xsd:dateTime ;
+    linkml:generation_date "2025-05-19T13:17:54"^^xsd:dateTime ;
     linkml:id <https://w3id.org/peh/peh-model> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -305,11 +305,11 @@
         <https://w3id.org/peh/terms/validation_designs>,
         <https://w3id.org/peh/terms/validation_error_level>,
         <https://w3id.org/peh/terms/validation_error_message_template>,
+        <https://w3id.org/peh/terms/validation_expression>,
         <https://w3id.org/peh/terms/validation_history>,
         <https://w3id.org/peh/terms/validation_institute>,
         <https://w3id.org/peh/terms/validation_name>,
         <https://w3id.org/peh/terms/validation_remark>,
-        <https://w3id.org/peh/terms/validation_result_expression>,
         <https://w3id.org/peh/terms/validation_status>,
         <https://w3id.org/peh/terms/validation_subject_source_paths>,
         <https://w3id.org/peh/terms/value>,
@@ -320,8 +320,8 @@
         <https://w3id.org/peh/terms/varname>,
         <https://w3id.org/peh/terms/web_uri> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2025-05-16T15:03:22"^^xsd:dateTime ;
-    linkml:source_file_size 35393 ;
+    linkml:source_file_date "2025-05-19T12:51:05"^^xsd:dateTime ;
+    linkml:source_file_size 36859 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,
@@ -841,7 +841,8 @@
 
 <https://w3id.org/peh/terms/ValidationCommand> skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ValidationCommand> ;
-    linkml:permissible_values <https://w3id.org/peh/terms/and>,
+    linkml:permissible_values <https://w3id.org/peh/terms/conjunction>,
+        <https://w3id.org/peh/terms/disjunction>,
         <https://w3id.org/peh/terms/is_duplicated>,
         <https://w3id.org/peh/terms/is_equal_to>,
         <https://w3id.org/peh/terms/is_equal_to_or_both_missing>,
@@ -854,8 +855,7 @@
         <https://w3id.org/peh/terms/is_not_equal_to_and_not_both_missing>,
         <https://w3id.org/peh/terms/is_not_null>,
         <https://w3id.org/peh/terms/is_null>,
-        <https://w3id.org/peh/terms/is_unique>,
-        <https://w3id.org/peh/terms/or> .
+        <https://w3id.org/peh/terms/is_unique> .
 
 <https://w3id.org/peh/terms/ValidationErrorLevel> skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ValidationErrorLevel> ;
@@ -2119,9 +2119,9 @@
 <https://w3id.org/peh/terms/validation_condition_expression> a linkml:SlotDefinition ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/validation_condition_expression> ;
-    linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
+    linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:inlined true ;
-    linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
+    linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:slot_uri <https://w3id.org/peh/terms/validation_condition_expression> .
 
@@ -2160,6 +2160,15 @@
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri <https://w3id.org/peh/terms/validation_error_message_template> .
 
+<https://w3id.org/peh/terms/validation_expression> a linkml:SlotDefinition ;
+    skos:inScheme <https://w3id.org/peh/peh-model> ;
+    linkml:definition_uri <https://w3id.org/peh/terms/validation_expression> ;
+    linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
+    linkml:inlined true ;
+    linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
+    linkml:range <https://w3id.org/peh/terms/ValidationExpression> ;
+    linkml:slot_uri <https://w3id.org/peh/terms/validation_expression> .
+
 <https://w3id.org/peh/terms/validation_institute> a linkml:SlotDefinition ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/validation_institute> ;
@@ -2183,15 +2192,6 @@
     linkml:owner <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri <https://w3id.org/peh/terms/validation_remark> .
-
-<https://w3id.org/peh/terms/validation_result_expression> a linkml:SlotDefinition ;
-    skos:inScheme <https://w3id.org/peh/peh-model> ;
-    linkml:definition_uri <https://w3id.org/peh/terms/validation_result_expression> ;
-    linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
-    linkml:inlined true ;
-    linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
-    linkml:range <https://w3id.org/peh/terms/ValidationExpression> ;
-    linkml:slot_uri <https://w3id.org/peh/terms/validation_result_expression> .
 
 <https://w3id.org/peh/terms/validation_status> a linkml:SlotDefinition ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
@@ -3207,17 +3207,6 @@
         <https://w3id.org/peh/terms/sampled_in_project>,
         <https://w3id.org/peh/terms/unique_name> .
 
-<https://w3id.org/peh/terms/context_aliases> a linkml:SlotDefinition ;
-    skos:inScheme <https://w3id.org/peh/peh-model> ;
-    linkml:definition_uri <https://w3id.org/peh/terms/context_aliases> ;
-    linkml:domain_of <https://w3id.org/peh/terms/HasContextAliases> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/HasContextAliases> ;
-    linkml:range <https://w3id.org/peh/terms/ContextAlias> ;
-    linkml:slot_uri <https://w3id.org/peh/terms/context_aliases> .
-
 <https://w3id.org/peh/terms/physical_entity> a linkml:SlotDefinition ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/physical_entity> ;
@@ -3226,15 +3215,6 @@
     linkml:owner <https://w3id.org/peh/terms/StudyEntity> ;
     linkml:range <https://w3id.org/peh/terms/PhysicalEntity> ;
     linkml:slot_uri <https://w3id.org/peh/terms/physical_entity> .
-
-<https://w3id.org/peh/terms/HasContextAliases> a linkml:ClassDefinition ;
-    skos:definition "The capacity of including a list of terms being used in known scopes or contexts" ;
-    skos:inScheme <https://w3id.org/peh/peh-model> ;
-    linkml:class_uri <https://w3id.org/peh/terms/HasContextAliases> ;
-    linkml:definition_uri <https://w3id.org/peh/terms/HasContextAliases> ;
-    linkml:mixin true ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/context_aliases> .
 
 <https://w3id.org/peh/terms/translations> a linkml:SlotDefinition ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
@@ -3331,6 +3311,18 @@
         <https://w3id.org/peh/terms/translations>,
         <https://w3id.org/peh/terms/unique_name> .
 
+<https://w3id.org/peh/terms/ValidationDesign> a linkml:ClassDefinition ;
+    skos:definition "Definition of a validation rule for automatically imposing business logic constraints" ;
+    skos:inScheme <https://w3id.org/peh/peh-model> ;
+    linkml:class_uri <https://w3id.org/peh/terms/ValidationDesign> ;
+    linkml:definition_uri <https://w3id.org/peh/terms/ValidationDesign> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/conditional>,
+        <https://w3id.org/peh/terms/validation_error_level>,
+        <https://w3id.org/peh/terms/validation_error_message_template>,
+        <https://w3id.org/peh/terms/validation_expression>,
+        <https://w3id.org/peh/terms/validation_name> .
+
 <https://w3id.org/peh/terms/ValidationHistoryRecord> a linkml:ClassDefinition ;
     skos:definition "A list of events representing a historical record on the entity validation status" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
@@ -3342,6 +3334,17 @@
         <https://w3id.org/peh/terms/validation_institute>,
         <https://w3id.org/peh/terms/validation_remark>,
         <https://w3id.org/peh/terms/validation_status> .
+
+<https://w3id.org/peh/terms/context_aliases> a linkml:SlotDefinition ;
+    skos:inScheme <https://w3id.org/peh/peh-model> ;
+    linkml:definition_uri <https://w3id.org/peh/terms/context_aliases> ;
+    linkml:domain_of <https://w3id.org/peh/terms/HasContextAliases> ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/HasContextAliases> ;
+    linkml:range <https://w3id.org/peh/terms/ContextAlias> ;
+    linkml:slot_uri <https://w3id.org/peh/terms/context_aliases> .
 
 <https://w3id.org/peh/terms/CalculationResult> a linkml:ClassDefinition ;
     skos:definition "The definition for the output the calculation, optionally including mapping information" ;
@@ -3356,6 +3359,15 @@
         <https://w3id.org/peh/terms/unit>,
         <https://w3id.org/peh/terms/value_type> .
 
+<https://w3id.org/peh/terms/HasContextAliases> a linkml:ClassDefinition ;
+    skos:definition "The capacity of including a list of terms being used in known scopes or contexts" ;
+    skos:inScheme <https://w3id.org/peh/peh-model> ;
+    linkml:class_uri <https://w3id.org/peh/terms/HasContextAliases> ;
+    linkml:definition_uri <https://w3id.org/peh/terms/HasContextAliases> ;
+    linkml:mixin true ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/context_aliases> .
+
 <https://w3id.org/peh/terms/ObservableEntityPropertySet> a linkml:ClassDefinition ;
     skos:definition "The list of properties being observed and the study entities they will be observed for (or, alternatively, the entity type all observed entities belong to)" ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
@@ -3368,31 +3380,6 @@
         <https://w3id.org/peh/terms/observation_result_type>,
         <https://w3id.org/peh/terms/optional_observable_property_id_list>,
         <https://w3id.org/peh/terms/required_observable_property_id_list> .
-
-<https://w3id.org/peh/terms/ValidationDesign> a linkml:ClassDefinition ;
-    skos:definition "Definition of a validation rule for automatically imposing business logic constraints" ;
-    skos:inScheme <https://w3id.org/peh/peh-model> ;
-    linkml:class_uri <https://w3id.org/peh/terms/ValidationDesign> ;
-    linkml:definition_uri <https://w3id.org/peh/terms/ValidationDesign> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/conditional>,
-        <https://w3id.org/peh/terms/validation_condition_expression>,
-        <https://w3id.org/peh/terms/validation_error_level>,
-        <https://w3id.org/peh/terms/validation_error_message_template>,
-        <https://w3id.org/peh/terms/validation_name>,
-        <https://w3id.org/peh/terms/validation_result_expression> .
-
-<https://w3id.org/peh/terms/ValidationExpression> a linkml:ClassDefinition ;
-    skos:definition "A logical expression, allowing for combining arguments into more complex validation rules" ;
-    skos:inScheme <https://w3id.org/peh/peh-model> ;
-    linkml:class_uri <https://w3id.org/peh/terms/ValidationExpression> ;
-    linkml:definition_uri <https://w3id.org/peh/terms/ValidationExpression> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/validation_arg_expressions>,
-        <https://w3id.org/peh/terms/validation_arg_source_paths>,
-        <https://w3id.org/peh/terms/validation_arg_values>,
-        <https://w3id.org/peh/terms/validation_command>,
-        <https://w3id.org/peh/terms/validation_subject_source_paths> .
 
 <https://w3id.org/peh/terms/DataLayoutElement> a linkml:ClassDefinition ;
     skos:definition "Definition for an individual layout or data element, as part of a layout section" ;
@@ -3415,9 +3402,11 @@
     linkml:class_uri <https://w3id.org/peh/terms/Indicator> ;
     linkml:definition_uri <https://w3id.org/peh/terms/Indicator> ;
     linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/biochementity_links>,
         <https://w3id.org/peh/terms/constraints>,
+        <https://w3id.org/peh/terms/context_aliases>,
         <https://w3id.org/peh/terms/description>,
         <https://w3id.org/peh/terms/grouping_id_list>,
         <https://w3id.org/peh/terms/id>,
@@ -3458,6 +3447,19 @@
         <https://w3id.org/peh/terms/study_stakeholders>,
         <https://w3id.org/peh/terms/translations>,
         <https://w3id.org/peh/terms/unique_name> .
+
+<https://w3id.org/peh/terms/ValidationExpression> a linkml:ClassDefinition ;
+    skos:definition "A logical expression, allowing for combining arguments into more complex validation rules" ;
+    skos:inScheme <https://w3id.org/peh/peh-model> ;
+    linkml:class_uri <https://w3id.org/peh/terms/ValidationExpression> ;
+    linkml:definition_uri <https://w3id.org/peh/terms/ValidationExpression> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/validation_arg_expressions>,
+        <https://w3id.org/peh/terms/validation_arg_source_paths>,
+        <https://w3id.org/peh/terms/validation_arg_values>,
+        <https://w3id.org/peh/terms/validation_command>,
+        <https://w3id.org/peh/terms/validation_condition_expression>,
+        <https://w3id.org/peh/terms/validation_subject_source_paths> .
 
 <https://w3id.org/peh/terms/StudyEntity> a linkml:ClassDefinition ;
     skos:definition "Any entity carrying data or context relevant to a Personal Exposure and Health research project or study" ;
@@ -3633,10 +3635,12 @@
     linkml:class_uri <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:mixins <https://w3id.org/peh/terms/HasTranslations> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases>,
+        <https://w3id.org/peh/terms/HasTranslations> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/calculation_designs>,
         <https://w3id.org/peh/terms/categorical>,
+        <https://w3id.org/peh/terms/context_aliases>,
         <https://w3id.org/peh/terms/default_immutable>,
         <https://w3id.org/peh/terms/default_observation_result_type>,
         <https://w3id.org/peh/terms/default_required>,

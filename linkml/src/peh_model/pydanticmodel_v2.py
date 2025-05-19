@@ -12,8 +12,6 @@ from enum import Enum
 from typing import (
     Any,
     ClassVar,
-    Dict,
-    List,
     Literal,
     Optional,
     Union
@@ -47,7 +45,7 @@ class ConfiguredBaseModel(BaseModel):
 
 
 class LinkMLMeta(RootModel):
-    root: Dict[str, Any] = {}
+    root: dict[str, Any] = {}
     model_config = ConfigDict(frozen=True)
 
     def __getattr__(self, key:str):
@@ -86,8 +84,8 @@ class ValidationCommand(str, Enum):
     is_in = "is_in"
     is_null = "is_null"
     is_not_null = "is_not_null"
-    and = "and"
-    or = "or"
+    conjunction = "conjunction"
+    disjunction = "disjunction"
 
 
 class ValidationErrorLevel(str, Enum):
@@ -292,24 +290,24 @@ class EntityList(ConfiguredBaseModel):
     """
     A generic top level object for collecting named entities under one root entity
     """
-    matrices: Optional[List[Matrix]] = Field(default=None)
-    metadata_fields: Optional[List[ObservablePropertyMetadataField]] = Field(default=None)
-    biochementities: Optional[List[BioChemEntity]] = Field(default=None)
-    groupings: Optional[List[Grouping]] = Field(default=None)
-    indicators: Optional[List[Indicator]] = Field(default=None)
-    units: Optional[List[Unit]] = Field(default=None)
-    observable_properties: Optional[List[ObservableProperty]] = Field(default=None)
-    stakeholders: Optional[List[Stakeholder]] = Field(default=None)
-    projects: Optional[List[Project]] = Field(default=None)
-    studies: Optional[List[Study]] = Field(default=None)
-    study_entities: Optional[List[StudyEntity]] = Field(default=None)
-    physical_entities: Optional[List[PhysicalEntity]] = Field(default=None)
-    observation_groups: Optional[List[ObservationGroup]] = Field(default=None)
-    observations: Optional[List[Observation]] = Field(default=None)
-    observation_results: Optional[List[ObservationResult]] = Field(default=None)
-    observed_values: Optional[List[ObservedValue]] = Field(default=None)
-    layouts: Optional[List[DataLayout]] = Field(default=None)
-    data_requests: Optional[List[DataRequest]] = Field(default=None)
+    matrices: Optional[list[Matrix]] = Field(default=None)
+    metadata_fields: Optional[list[ObservablePropertyMetadataField]] = Field(default=None)
+    biochementities: Optional[list[BioChemEntity]] = Field(default=None)
+    groupings: Optional[list[Grouping]] = Field(default=None)
+    indicators: Optional[list[Indicator]] = Field(default=None)
+    units: Optional[list[Unit]] = Field(default=None)
+    observable_properties: Optional[list[ObservableProperty]] = Field(default=None)
+    stakeholders: Optional[list[Stakeholder]] = Field(default=None)
+    projects: Optional[list[Project]] = Field(default=None)
+    studies: Optional[list[Study]] = Field(default=None)
+    study_entities: Optional[list[StudyEntity]] = Field(default=None)
+    physical_entities: Optional[list[PhysicalEntity]] = Field(default=None)
+    observation_groups: Optional[list[ObservationGroup]] = Field(default=None)
+    observations: Optional[list[Observation]] = Field(default=None)
+    observation_results: Optional[list[ObservationResult]] = Field(default=None)
+    observed_values: Optional[list[ObservedValue]] = Field(default=None)
+    layouts: Optional[list[DataLayout]] = Field(default=None)
+    data_requests: Optional[list[DataRequest]] = Field(default=None)
 
 
 class NamedThing(ConfiguredBaseModel):
@@ -329,7 +327,7 @@ class HasValidationStatus(ConfiguredBaseModel):
     The capacity of including both a current validation status and a history of validation records
     """
     current_validation_status: Optional[ValidationStatus] = Field(default=None)
-    validation_history: Optional[List[ValidationHistoryRecord]] = Field(default=None)
+    validation_history: Optional[list[ValidationHistoryRecord]] = Field(default=None)
 
 
 class ValidationHistoryRecord(ConfiguredBaseModel):
@@ -347,14 +345,14 @@ class HasAliases(ConfiguredBaseModel):
     """
     The capacity of including one or more alternative naming terms (without qualifying the usage context)
     """
-    aliases: Optional[List[str]] = Field(default=None)
+    aliases: Optional[list[str]] = Field(default=None)
 
 
 class HasContextAliases(ConfiguredBaseModel):
     """
     The capacity of including a list of terms being used in known scopes or contexts
     """
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
 
 
 class ContextAlias(ConfiguredBaseModel):
@@ -370,7 +368,7 @@ class HasTranslations(ConfiguredBaseModel):
     """
     The capacity of including a list of translated terms for one or more entity properties and languages
     """
-    translations: Optional[List[Translation]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
 
 
 class Grouping(HasTranslations, HasContextAliases, NamedThing):
@@ -379,9 +377,9 @@ class Grouping(HasTranslations, HasContextAliases, NamedThing):
     """
     sort_order: Optional[Decimal] = Field(default=None)
     abstract: Optional[bool] = Field(default=None)
-    parent_grouping_id_list: Optional[List[str]] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    parent_grouping_id_list: Optional[list[str]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -405,10 +403,10 @@ class Unit(HasTranslations, HasContextAliases, HasValidationStatus, NamedThing):
     """
     same_unit_as: Optional[QudtUnit] = Field(default=None)
     quantity_kind: Optional[QudtQuantityKind] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
     current_validation_status: Optional[ValidationStatus] = Field(default=None)
-    validation_history: Optional[List[ValidationHistoryRecord]] = Field(default=None)
+    validation_history: Optional[list[ValidationHistoryRecord]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -421,15 +419,15 @@ class BioChemEntity(HasTranslations, HasContextAliases, HasAliases, HasValidatio
     """
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
     """
-    grouping_id_list: Optional[List[str]] = Field(default=None)
+    grouping_id_list: Optional[list[str]] = Field(default=None)
     molweight_grampermol: Optional[Decimal] = Field(default=None)
-    biochemidentifiers: Optional[List[BioChemIdentifier]] = Field(default=None)
-    biochementity_links: Optional[List[BioChemEntityLink]] = Field(default=None)
-    aliases: Optional[List[str]] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    biochemidentifiers: Optional[list[BioChemIdentifier]] = Field(default=None)
+    biochementity_links: Optional[list[BioChemEntityLink]] = Field(default=None)
+    aliases: Optional[list[str]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
     current_validation_status: Optional[ValidationStatus] = Field(default=None)
-    validation_history: Optional[List[ValidationHistoryRecord]] = Field(default=None)
+    validation_history: Optional[list[ValidationHistoryRecord]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -445,7 +443,7 @@ class BioChemIdentifier(HasValidationStatus):
     identifier_schema: Optional[str] = Field(default=None)
     identifier_code: Optional[str] = Field(default=None)
     current_validation_status: Optional[ValidationStatus] = Field(default=None)
-    validation_history: Optional[List[ValidationHistoryRecord]] = Field(default=None)
+    validation_history: Optional[list[ValidationHistoryRecord]] = Field(default=None)
 
 
 class BioChemIdentifierSchema(NamedThing):
@@ -468,9 +466,9 @@ class Matrix(HasTranslations, HasContextAliases, NamedThing):
     sort_order: Optional[Decimal] = Field(default=None)
     aggregation_target: Optional[bool] = Field(default=None)
     parent_matrix: Optional[str] = Field(default=None)
-    secondary_parent_matrix_id_list: Optional[List[str]] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    secondary_parent_matrix_id_list: Optional[list[str]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -479,7 +477,7 @@ class Matrix(HasTranslations, HasContextAliases, NamedThing):
     remark: Optional[str] = Field(default=None)
 
 
-class Indicator(NamedThing):
+class Indicator(HasContextAliases, NamedThing):
     """
     Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
     """
@@ -488,10 +486,11 @@ class Indicator(NamedThing):
     property: Optional[str] = Field(default=None)
     quantity_kind: Optional[QudtQuantityKind] = Field(default=None)
     matrix: Optional[str] = Field(default=None)
-    constraints: Optional[List[str]] = Field(default=None)
-    grouping_id_list: Optional[List[str]] = Field(default=None)
-    relevant_observable_entity_types: Optional[List[ObservableEntityType]] = Field(default=None)
-    biochementity_links: Optional[List[BioChemEntityLink]] = Field(default=None)
+    constraints: Optional[list[str]] = Field(default=None)
+    grouping_id_list: Optional[list[str]] = Field(default=None)
+    relevant_observable_entity_types: Optional[list[ObservableEntityType]] = Field(default=None)
+    biochementity_links: Optional[list[BioChemEntityLink]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -512,7 +511,7 @@ class PhysicalEntity(NamedThing):
     """
     A digital placeholder for a physical entity as it exists in the real world, 
     """
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -534,11 +533,11 @@ class Sample(PhysicalEntity):
     A portion of a measurement matrix collected from a subject or environment for the purpose of lab analysis
     """
     matrix: Optional[str] = Field(default=None)
-    constraints: Optional[List[str]] = Field(default=None)
+    constraints: Optional[list[str]] = Field(default=None)
     sampled_in_project: Optional[str] = Field(default=None)
     physical_label: Optional[str] = Field(default=None)
     collection_date: Optional[date] = Field(default=None)
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -552,7 +551,7 @@ class Person(PhysicalEntity):
     A human subject or stakeholder in Personal Exposure and Health research
     """
     recruited_in_project: Optional[str] = Field(default=None)
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -566,7 +565,7 @@ class Geolocation(PhysicalEntity):
     A geographic location relevant to the Personal Exposure and Health projects or studies
     """
     location: Optional[str] = Field(default=None)
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -579,7 +578,7 @@ class Environment(PhysicalEntity):
     """
     An environment relevant to the research, typically related to the exposure of a person
     """
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -592,7 +591,7 @@ class HomeEnvironment(Environment):
     """
     A home environment relevant to the research, typically related to the at-home exposure of a person
     """
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -605,7 +604,7 @@ class WorkEnvironment(Environment):
     """
     A work environment relevant to the research, typically related to the at-work or commute exposure of a person
     """
-    physical_entity_links: Optional[List[PhysicalEntityLink]] = Field(default=None)
+    physical_entity_links: Optional[list[PhysicalEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -614,15 +613,15 @@ class WorkEnvironment(Environment):
     remark: Optional[str] = Field(default=None)
 
 
-class ObservableProperty(HasTranslations, NamedThing):
+class ObservableProperty(HasTranslations, HasContextAliases, NamedThing):
     """
     A fully defined variable that allows registering an observation about any of the entities relevant to Personal Exposure and Health research
     """
     value_type: Optional[str] = Field(default=None)
     categorical: Optional[bool] = Field(default=None)
     multivalued: Optional[bool] = Field(default=None)
-    value_options: Optional[List[ObservablePropertyValueOption]] = Field(default=None)
-    value_metadata: Optional[List[ObservablePropertyMetadataElement]] = Field(default=None)
+    value_options: Optional[list[ObservablePropertyValueOption]] = Field(default=None)
+    value_metadata: Optional[list[ObservablePropertyMetadataElement]] = Field(default=None)
     quantity_kind: Optional[QudtQuantityKind] = Field(default=None)
     default_unit: Optional[str] = Field(default=None)
     default_unit_label: Optional[str] = Field(default=None)
@@ -630,15 +629,16 @@ class ObservableProperty(HasTranslations, NamedThing):
     default_zeroallowed: Optional[bool] = Field(default=None)
     default_significantdecimals: Optional[int] = Field(default=None)
     default_immutable: Optional[bool] = Field(default=None)
-    grouping_id_list: Optional[List[str]] = Field(default=None)
+    grouping_id_list: Optional[list[str]] = Field(default=None)
     default_observation_result_type: Optional[ObservationResultType] = Field(default=None)
-    relevant_observable_entity_types: Optional[List[ObservableEntityType]] = Field(default=None)
-    relevant_observation_types: Optional[List[ObservationType]] = Field(default=None)
+    relevant_observable_entity_types: Optional[list[ObservableEntityType]] = Field(default=None)
+    relevant_observation_types: Optional[list[ObservationType]] = Field(default=None)
     indicator: Optional[str] = Field(default=None)
     varname: Optional[str] = Field(default=None)
-    calculation_designs: Optional[List[CalculationDesign]] = Field(default=None)
-    validation_designs: Optional[List[ValidationDesign]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    calculation_designs: Optional[list[CalculationDesign]] = Field(default=None)
+    validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -654,7 +654,7 @@ class ObservablePropertyValueOption(HasContextAliases):
     key: Optional[str] = Field(default=None)
     value: Optional[str] = Field(default=None)
     label: Optional[str] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
 
 
 class ObservablePropertyMetadataElement(ConfiguredBaseModel):
@@ -693,9 +693,9 @@ class CalculationImplementation(ConfiguredBaseModel):
     Reference and parameters mapping to the implementation that can perform the intended calculation
     """
     function_name: Optional[str] = Field(default=None)
-    function_args: Optional[List[CalculationArgument]] = Field(default=None)
-    function_kwargs: Optional[List[CalculationKeywordArgument]] = Field(default=None)
-    function_results: Optional[List[CalculationResult]] = Field(default=None)
+    function_args: Optional[list[CalculationArgument]] = Field(default=None)
+    function_kwargs: Optional[list[CalculationKeywordArgument]] = Field(default=None)
+    function_results: Optional[list[CalculationResult]] = Field(default=None)
 
 
 class CalculationArgument(ConfiguredBaseModel):
@@ -740,8 +740,7 @@ class ValidationDesign(ConfiguredBaseModel):
     Definition of a validation rule for automatically imposing business logic constraints
     """
     validation_name: Optional[str] = Field(default=None)
-    validation_condition_expression: Optional[ValidationExpression] = Field(default=None)
-    validation_result_expression: Optional[ValidationExpression] = Field(default=None)
+    validation_expression: Optional[ValidationExpression] = Field(default=None)
     validation_error_level: Optional[ValidationErrorLevel] = Field(default=None)
     validation_error_message_template: Optional[str] = Field(default=None)
     conditional: Optional[str] = Field(default=None)
@@ -751,11 +750,12 @@ class ValidationExpression(ConfiguredBaseModel):
     """
     A logical expression, allowing for combining arguments into more complex validation rules
     """
-    validation_subject_source_paths: Optional[List[str]] = Field(default=None)
+    validation_subject_source_paths: Optional[list[str]] = Field(default=None)
+    validation_condition_expression: Optional[ValidationExpression] = Field(default=None)
     validation_command: Optional[ValidationCommand] = Field(default=None)
-    validation_arg_values: Optional[List[str]] = Field(default=None)
-    validation_arg_source_paths: Optional[List[str]] = Field(default=None)
-    validation_arg_expressions: Optional[List[ValidationExpression]] = Field(default=None)
+    validation_arg_values: Optional[list[str]] = Field(default=None)
+    validation_arg_source_paths: Optional[list[str]] = Field(default=None)
+    validation_arg_expressions: Optional[list[ValidationExpression]] = Field(default=None)
 
 
 class Contact(HasContextAliases):
@@ -764,10 +764,10 @@ class Contact(HasContextAliases):
     """
     name: Optional[str] = Field(default=None)
     orcid: Optional[str] = Field(default=None)
-    contact_roles: Optional[List[ContactRole]] = Field(default=None)
+    contact_roles: Optional[list[ContactRole]] = Field(default=None)
     contact_email: Optional[str] = Field(default=None)
     contact_phone: Optional[str] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
 
 
 class Stakeholder(HasTranslations, NamedThing):
@@ -776,7 +776,7 @@ class Stakeholder(HasTranslations, NamedThing):
     """
     rorid: Optional[str] = Field(default=None)
     geographic_scope: Optional[str] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -790,9 +790,9 @@ class ProjectStakeholder(HasTranslations):
     An organisation collaborating in a Personal Exposure and Health research project
     """
     stakeholder: Optional[str] = Field(default=None)
-    project_roles: Optional[List[ProjectRole]] = Field(default=None)
-    contacts: Optional[List[Contact]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
+    project_roles: Optional[list[ProjectRole]] = Field(default=None)
+    contacts: Optional[list[Contact]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
 
 
 class StudyEntity(NamedThing):
@@ -800,7 +800,7 @@ class StudyEntity(NamedThing):
     Any entity carrying data or context relevant to a Personal Exposure and Health research project or study
     """
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -814,14 +814,14 @@ class Project(StudyEntity, HasTranslations, HasContextAliases):
     A collaborative effort in the Personal Exposure and Health research domain
     """
     default_language: Optional[str] = Field(default=None)
-    project_stakeholders: Optional[List[ProjectStakeholder]] = Field(default=None)
+    project_stakeholders: Optional[list[ProjectStakeholder]] = Field(default=None)
     start_date: Optional[date] = Field(default=None)
     end_date: Optional[date] = Field(default=None)
-    study_id_list: Optional[List[str]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
+    study_id_list: Optional[list[str]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -843,16 +843,16 @@ class Study(StudyEntity, HasTranslations, HasContextAliases):
     A structured, goal-directed observational investigation designed to collect and analyze data on human subjects and their environments
     """
     default_language: Optional[str] = Field(default=None)
-    study_stakeholders: Optional[List[StudyStakeholder]] = Field(default=None)
+    study_stakeholders: Optional[list[StudyStakeholder]] = Field(default=None)
     start_date: Optional[date] = Field(default=None)
     end_date: Optional[date] = Field(default=None)
-    observation_group_id_list: Optional[List[str]] = Field(default=None)
-    study_entity_id_list: Optional[List[str]] = Field(default=None)
-    project_id_list: Optional[List[str]] = Field(default=None)
-    translations: Optional[List[Translation]] = Field(default=None)
-    context_aliases: Optional[List[ContextAlias]] = Field(default=None)
+    observation_group_id_list: Optional[list[str]] = Field(default=None)
+    study_entity_id_list: Optional[list[str]] = Field(default=None)
+    project_id_list: Optional[list[str]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -866,8 +866,8 @@ class StudyStakeholder(ConfiguredBaseModel):
     An organisation collaborating in a Personal Exposure and Health research study
     """
     stakeholder: Optional[str] = Field(default=None)
-    study_roles: Optional[List[StudyRole]] = Field(default=None)
-    contacts: Optional[List[Contact]] = Field(default=None)
+    study_roles: Optional[list[StudyRole]] = Field(default=None)
+    contacts: Optional[list[Contact]] = Field(default=None)
 
 
 class ObservationGroup(StudyEntity):
@@ -877,9 +877,9 @@ class ObservationGroup(StudyEntity):
     sort_order: Optional[Decimal] = Field(default=None)
     start_date: Optional[date] = Field(default=None)
     end_date: Optional[date] = Field(default=None)
-    observation_id_list: Optional[List[str]] = Field(default=None)
+    observation_id_list: Optional[list[str]] = Field(default=None)
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -893,9 +893,9 @@ class StudyPopulation(StudyEntity):
     A group of study entities that is itself also a study entity that observations can be recorded for
     """
     research_population_type: Optional[ResearchPopulationType] = Field(default=None)
-    member_id_list: Optional[List[str]] = Field(default=None)
+    member_id_list: Optional[list[str]] = Field(default=None)
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -909,10 +909,10 @@ class SampleCollection(StudyEntity):
     A collection of samples that is itself also a study entity that observations can be recorded for
     """
     matrix: Optional[str] = Field(default=None)
-    constraints: Optional[List[str]] = Field(default=None)
-    sample_id_list: Optional[List[str]] = Field(default=None)
+    constraints: Optional[list[str]] = Field(default=None)
+    sample_id_list: Optional[list[str]] = Field(default=None)
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -926,7 +926,7 @@ class StudySubject(StudyEntity):
     A study entity that is a main subject for the study
     """
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -940,7 +940,7 @@ class StudySubjectGroup(StudyEntity):
     A group of study subjects that is itself also a study entity that observations can be recorded for
     """
     physical_entity: Optional[str] = Field(default=None)
-    study_entity_links: Optional[List[StudyEntityLink]] = Field(default=None)
+    study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -955,7 +955,7 @@ class Observation(NamedThing):
     """
     observation_type: Optional[ObservationType] = Field(default=None)
     observation_design: Optional[ObservationDesign] = Field(default=None)
-    observation_result_id_list: Optional[List[str]] = Field(default=None)
+    observation_result_id_list: Optional[list[str]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -968,7 +968,7 @@ class ObservationDesign(ConfiguredBaseModel):
     """
     The registration of the intent to perform a number of observations
     """
-    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default=None)
+    observable_entity_property_sets: Optional[list[ObservableEntityPropertySet]] = Field(default=None)
 
 
 class ObservableEntityPropertySet(ConfiguredBaseModel):
@@ -977,10 +977,10 @@ class ObservableEntityPropertySet(ConfiguredBaseModel):
     """
     observation_result_type: Optional[ObservationResultType] = Field(default=None)
     observable_entity_type: Optional[ObservableEntityType] = Field(default=None)
-    observable_entity_id_list: Optional[List[str]] = Field(default=None)
-    identifying_observable_property_id_list: Optional[List[str]] = Field(default=None)
-    required_observable_property_id_list: Optional[List[str]] = Field(default=None)
-    optional_observable_property_id_list: Optional[List[str]] = Field(default=None)
+    observable_entity_id_list: Optional[list[str]] = Field(default=None)
+    identifying_observable_property_id_list: Optional[list[str]] = Field(default=None)
+    required_observable_property_id_list: Optional[list[str]] = Field(default=None)
+    optional_observable_property_id_list: Optional[list[str]] = Field(default=None)
 
 
 class ObservationResult(NamedThing):
@@ -990,7 +990,7 @@ class ObservationResult(NamedThing):
     observation_result_type: Optional[ObservationResultType] = Field(default=None)
     observation_start_date: Optional[date] = Field(default=None)
     observation_end_date: Optional[date] = Field(default=None)
-    observed_values: Optional[List[ObservedValue]] = Field(default=None)
+    observed_values: Optional[list[ObservedValue]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -1015,8 +1015,8 @@ class ObservedValue(ConfiguredBaseModel):
     value: Optional[str] = Field(default=None)
     unit: Optional[str] = Field(default=None)
     value_as_string: Optional[str] = Field(default=None)
-    quality_data: Optional[List[QualityData]] = Field(default=None)
-    provenance_data: Optional[List[ProvenanceData]] = Field(default=None)
+    quality_data: Optional[list[QualityData]] = Field(default=None)
+    provenance_data: Optional[list[ProvenanceData]] = Field(default=None)
 
 
 class QualityData(ConfiguredBaseModel):
@@ -1039,7 +1039,7 @@ class DataLayout(NamedThing):
     """
     Layout, allowing the definition of templating sections for combining layout and data elements
     """
-    sections: Optional[List[DataLayoutSection]] = Field(default=None)
+    sections: Optional[list[DataLayoutSection]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -1053,9 +1053,9 @@ class DataLayoutSection(NamedThing):
     Definition for an individual layout or data section, as part of a full layout
     """
     section_type: Optional[DataLayoutSectionType] = Field(default=None)
-    observable_entity_types: Optional[List[ObservableEntityType]] = Field(default=None)
-    observable_entity_grouping_id_list: Optional[List[str]] = Field(default=None)
-    elements: Optional[List[DataLayoutElement]] = Field(default=None)
+    observable_entity_types: Optional[list[ObservableEntityType]] = Field(default=None)
+    observable_entity_grouping_id_list: Optional[list[str]] = Field(default=None)
+    elements: Optional[list[DataLayoutElement]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -1081,16 +1081,16 @@ class DataRequest(NamedThing):
     """
     Registration of a request for data by a data user
     """
-    contacts: Optional[List[Contact]] = Field(default=None)
+    contacts: Optional[list[Contact]] = Field(default=None)
     request_properties: Optional[str] = Field(default=None)
-    data_stakeholders: Optional[List[str]] = Field(default=None)
-    research_objectives: Optional[List[str]] = Field(default=None)
-    processing_actions: Optional[List[str]] = Field(default=None)
-    processing_steps: Optional[List[str]] = Field(default=None)
+    data_stakeholders: Optional[list[str]] = Field(default=None)
+    research_objectives: Optional[list[str]] = Field(default=None)
+    processing_actions: Optional[list[str]] = Field(default=None)
+    processing_steps: Optional[list[str]] = Field(default=None)
     remark_on_content: Optional[str] = Field(default=None)
     remark_on_methodology: Optional[str] = Field(default=None)
-    observed_entity_properties: Optional[List[ObservedEntityProperty]] = Field(default=None)
-    observable_entity_property_sets: Optional[List[ObservableEntityPropertySet]] = Field(default=None)
+    observed_entity_properties: Optional[list[ObservedEntityProperty]] = Field(default=None)
+    observable_entity_property_sets: Optional[list[ObservableEntityPropertySet]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -1112,8 +1112,8 @@ class DataStakeholder(NamedThing):
     An organisation participating in a data process in Personal Exposure and Health research
     """
     stakeholder: Optional[str] = Field(default=None)
-    data_roles: Optional[List[DataRole]] = Field(default=None)
-    contacts: Optional[List[Contact]] = Field(default=None)
+    data_roles: Optional[list[DataRole]] = Field(default=None)
+    contacts: Optional[list[Contact]] = Field(default=None)
     processing_description: Optional[str] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
@@ -1128,7 +1128,7 @@ class ResearchObjective(NamedThing):
     A research objective communicated in the request and used to evaluate if the request is valid and appropriate
     """
     objective_type: Optional[ObjectiveType] = Field(default=None)
-    authors: Optional[List[str]] = Field(default=None)
+    authors: Optional[list[str]] = Field(default=None)
     id: str = Field(default=...)
     unique_name: Optional[str] = Field(default=None)
     name: Optional[str] = Field(default=None)
@@ -1167,7 +1167,7 @@ class DataExtract(ConfiguredBaseModel):
     """
     A set of Observed Values, combined into a data extract
     """
-    observed_values: Optional[List[ObservedValue]] = Field(default=None)
+    observed_values: Optional[list[ObservedValue]] = Field(default=None)
 
 
 # Model rebuild
