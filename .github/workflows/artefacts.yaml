@@ -2,8 +2,6 @@ name: Generate PEH Model Artefacts
 
 on:
   pull_request:
-    branches:
-      - main
     paths:
       - 'linkml/schema/**'
   push:
