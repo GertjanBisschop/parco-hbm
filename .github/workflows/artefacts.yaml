@@ -29,7 +29,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m venv .venv
           source .venv/bin/activate
-          pip install linkml==1.9
+          pip install "linkml>=1.9,<2"
 
       - name: Create necessary directories
         run: |
