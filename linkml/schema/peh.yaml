@@ -190,6 +190,8 @@ classes:
     close_mappings:
       - iop:Variable
     is_a: NamedThing
+    mixins:
+      - HasContextAliases
     slots:
       - indicator_type
       - varname
@@ -261,6 +263,7 @@ classes:
     is_a: NamedThing
     mixins:
       - HasTranslations
+      - HasContextAliases
     slots:
       - value_type
       - categorical
