@@ -25,6 +25,7 @@ PIP := $(VENV)/bin/pip
 RUN := $(VENV)/bin/python -m
 MAINTAINER:= gertjan.bisschop@vito.be
 VERSION:=0.0.0
+LINKML_VERSION:=1.9
 
 SCHEMA_NAME = peh
 SRC = linkml
@@ -48,20 +49,20 @@ CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
 # ================================
 help: check-config
 	@echo ""
-	@echo "make install      		-- create venv and install dependencies"
-	@echo "make setup        		-- setup venv and necessary directories"
-	@echo "make gen-project        	-- generate all model artefacts"
-	@echo "check-env"				-- check presence of required env variables"
-	@echo "make make-dirs    		-- create necessary directories"
-	@echo "make test-schema  		-- regenerate models and check schema"
-	@echo "make lint         		-- lint the schema"
-	@echo "make lint-fix     		-- lint-fix the schema and fix issues"
-	@echo "make serialize    		-- serialize data examples"
-	@echo "make publish-nanopubs    -- publish model updates"
-	@echo "make clean        		-- clean generated files"
-	@echo "make build-peh-model		-- build peh-model"
-	@echo "make publish-peh-model-test		-- test publish peh-model"
-	@echo "make publish-peh-model	-- publish peh-model"
+	@echo "make install      			-- create venv and install dependencies"
+	@echo "make setup        			-- setup venv and necessary directories"
+	@echo "make gen-project        		-- generate all model artefacts"
+	@echo "check-env"					-- check presence of required env variables"
+	@echo "make make-dirs    			-- create necessary directories"
+	@echo "make test-schema  			-- regenerate models and check schema"
+	@echo "make lint         			-- lint the schema"
+	@echo "make lint-fix     			-- lint-fix the schema and fix issues"
+	@echo "make serialize    			-- serialize data examples"
+	@echo "make publish-nanopubs    	-- publish model updates"
+	@echo "make clean        			-- clean generated files"
+	@echo "make build-peh-model			-- build peh-model"
+	@echo "make publish-peh-model-test	-- test publish peh-model"
+	@echo "make publish-peh-model		-- publish peh-model"
 	@echo ""
 # ================================
 # check-config
@@ -81,7 +82,7 @@ setup: install make-dirs
 install:
 	@test -d $(VENV) || python3 -m venv $(VENV)
 	$(PIP) install --upgrade pip
-	$(PIP) install -r requirements/publish.txt
+	$(PIP) install -r linkml==$(LINKML_VERSION)
 
 # ================================
 # Target to check env vars

@@ -1,0 +1,62 @@
+name: Generate PEH Model Artefacts
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'linkml/schema/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'linkml/schema/**'
+
+jobs:
+  generate-artefacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install linkml==1.9
+
+      - name: Create necessary directories
+        run: |
+          source .venv/bin/activate
+          make make-dirs
+
+      - name: Generate project artifacts
+        run: |
+          source .venv/bin/activate
+          make gen-project
+
+      - name: Commit and push changes if on main branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes to commit
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git add linkml/jsonld/ linkml/owl/ linkml/rdf/ linkml/src/peh_model/
+          git commit -m "Auto-generate model artifacts [skip ci]"
+          
+          # Use token to push changes
+          git push
