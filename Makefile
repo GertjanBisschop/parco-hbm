@@ -120,7 +120,7 @@ gen-project: make-dirs
 # MAKE RDF
 	gen-rdf $(SOURCE_SCHEMA_PATH) > $(DEST)/peh.ttl
 # MAKE PYDANTIC
-	gen-pydantic --meta None $(SOURCE_SCHEMA_PATH) > $(PYMODEL)/pydanticmodel_v2.py
+	gen-pydantic --meta NONE $(SOURCE_SCHEMA_PATH) > $(PYMODEL)/pydanticmodel_v2.py
 # MOVE OUTPUT TO CORRECT FOLDER
 	mv $(DEST)/jsonld/*.jsonld $(SRC)/jsonld/.
 	mv $(DEST)/peh.py $(PYMODEL)/.
