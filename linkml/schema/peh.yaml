@@ -355,8 +355,7 @@ classes:
       Definition of a validation rule for automatically imposing business logic constraints
     slots:
       - validation_name
-      - validation_condition_expression
-      - validation_result_expression
+      - validation_expression
       - validation_error_level
       - validation_error_message_template
       - conditional
@@ -365,6 +364,7 @@ classes:
       A logical expression, allowing for combining arguments into more complex validation rules
     slots:
       - validation_subject_source_paths
+      - validation_condition_expression
       - validation_command
       - validation_arg_values
       - validation_arg_source_paths
@@ -826,9 +826,9 @@ slots:
     inlined_as_list: true
     range: ValidationDesign
   validation_name:
-  validation_condition_expression:
+  validation_expression:
     range: ValidationExpression
-  validation_result_expression:
+  validation_condition_expression:
     range: ValidationExpression
   validation_error_level:
     range: ValidationErrorLevel
@@ -1131,8 +1131,8 @@ enums:
       is_in:
       is_null:
       is_not_null:
-      and:
-      or:
+      conjunction:
+      disjunction:
   ValidationErrorLevel:
     permissible_values:
       info:
