@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.0.1a1
+version: 0.0.1a2
 
 imports:
   - linkml:types
@@ -1179,13 +1179,20 @@ enums:
       household:
   ObservableEntityType:
     permissible_values:
-      person:
-      persongroup:
+      project:
+      organisation:
+      study:
       environment:
       location:
-      study:
-      dataset:
+      persongroup:
+      person:
+      samplegroup:
       sample:
+      dataset:
+      collection_process:
+      lab_analysis_process:
+      model_execution_process:
+      data_process:
   ObservationType:
     permissible_values:
       sampling:
