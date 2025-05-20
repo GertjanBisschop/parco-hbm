@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.0.1a1",
+  "version": "0.0.1a2",
   "imports": [
     "linkml:types"
   ],
@@ -568,10 +568,13 @@
       "from_schema": "https://w3id.org/peh/peh-model",
       "permissible_values": [
         {
-          "text": "person"
+          "text": "project"
         },
         {
-          "text": "persongroup"
+          "text": "organisation"
+        },
+        {
+          "text": "study"
         },
         {
           "text": "environment"
@@ -580,13 +583,31 @@
           "text": "location"
         },
         {
-          "text": "study"
+          "text": "persongroup"
+        },
+        {
+          "text": "person"
+        },
+        {
+          "text": "samplegroup"
+        },
+        {
+          "text": "sample"
         },
         {
           "text": "dataset"
         },
         {
-          "text": "sample"
+          "text": "collection_process"
+        },
+        {
+          "text": "lab_analysis_process"
+        },
+        {
+          "text": "model_execution_process"
+        },
+        {
+          "text": "data_process"
         }
       ]
     },
@@ -4959,9 +4980,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2025-05-19T19:24:19",
-  "source_file_size": 35461,
-  "generation_date": "2025-05-19T19:24:48",
+  "source_file_date": "2025-05-20T06:42:12",
+  "source_file_size": 35620,
+  "generation_date": "2025-05-20T06:42:39",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "0.0.1a1"
+version = "0.0.1a2"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -134,13 +134,20 @@ class ResearchPopulationType(str, Enum):
 
 
 class ObservableEntityType(str, Enum):
-    person = "person"
-    persongroup = "persongroup"
+    project = "project"
+    organisation = "organisation"
+    study = "study"
     environment = "environment"
     location = "location"
-    study = "study"
-    dataset = "dataset"
+    persongroup = "persongroup"
+    person = "person"
+    samplegroup = "samplegroup"
     sample = "sample"
+    dataset = "dataset"
+    collection_process = "collection_process"
+    lab_analysis_process = "lab_analysis_process"
+    model_execution_process = "model_execution_process"
+    data_process = "data_process"
 
 
 class ObservationType(str, Enum):

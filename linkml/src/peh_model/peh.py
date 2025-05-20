@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-19T19:24:48
+# Generation date: 2025-05-20T06:42:40
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.0.1a1"
+version = "0.0.1a2"
 
 # Namespaces
 IOP = CurieNamespace('iop', 'https://w3id.org/iadopt/ont/')
@@ -2783,13 +2783,20 @@ class ResearchPopulationType(EnumDefinitionImpl):
 
 class ObservableEntityType(EnumDefinitionImpl):
 
-    person = PermissibleValue(text="person")
-    persongroup = PermissibleValue(text="persongroup")
+    project = PermissibleValue(text="project")
+    organisation = PermissibleValue(text="organisation")
+    study = PermissibleValue(text="study")
     environment = PermissibleValue(text="environment")
     location = PermissibleValue(text="location")
-    study = PermissibleValue(text="study")
-    dataset = PermissibleValue(text="dataset")
+    persongroup = PermissibleValue(text="persongroup")
+    person = PermissibleValue(text="person")
+    samplegroup = PermissibleValue(text="samplegroup")
     sample = PermissibleValue(text="sample")
+    dataset = PermissibleValue(text="dataset")
+    collection_process = PermissibleValue(text="collection_process")
+    lab_analysis_process = PermissibleValue(text="lab_analysis_process")
+    model_execution_process = PermissibleValue(text="model_execution_process")
+    data_process = PermissibleValue(text="data_process")
 
     _defn = EnumDefinition(
         name="ObservableEntityType",

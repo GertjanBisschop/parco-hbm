@@ -12,30 +12,30 @@
 
 <https://w3id.org/peh/terms/PEH-Model> a linkml:SchemaDefinition ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    pav:version "0.0.1a1" ;
+    pav:version "0.0.1a2" ;
     skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
     sh:declare [ sh:namespace schema1: ;
             sh:prefix "schema" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
+        [ sh:namespace <http://qudt.org/2.1/vocab/quantitykind> ;
+            sh:prefix "qudtqk" ],
+        [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
+            sh:prefix "qudt" ],
+        [ sh:namespace <https://w3id.org/peh/> ;
+            sh:prefix "peh" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
         [ sh:namespace <https://w3id.org/peh/terms/> ;
             sh:prefix "pehterms" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
         [ sh:namespace <https://w3id.org/iadopt/ont/> ;
             sh:prefix "iop" ],
         [ sh:namespace <https://qudt.org/vocab/unit/> ;
             sh:prefix "qudtunit" ],
-        [ sh:namespace <https://w3id.org/peh/> ;
-            sh:prefix "peh" ],
-        [ sh:namespace <http://qudt.org/2.1/schema/qudt> ;
-            sh:prefix "qudt" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace <http://qudt.org/2.1/vocab/quantitykind> ;
-            sh:prefix "qudtqk" ] ;
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
         <https://w3id.org/peh/terms/BioChemEntityLink>,
         <https://w3id.org/peh/terms/BioChemIdentifier>,
@@ -124,7 +124,7 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2025-05-19T19:24:52"^^xsd:dateTime ;
+    linkml:generation_date "2025-05-20T06:42:43"^^xsd:dateTime ;
     linkml:id <https://w3id.org/peh/peh-model> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -320,8 +320,8 @@
         <https://w3id.org/peh/terms/varname>,
         <https://w3id.org/peh/terms/web_uri> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2025-05-19T19:24:19"^^xsd:dateTime ;
-    linkml:source_file_size 35461 ;
+    linkml:source_file_date "2025-05-20T06:42:12"^^xsd:dateTime ;
+    linkml:source_file_size 35620 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,
@@ -612,13 +612,6 @@
     linkml:imported_from "linkml:types" ;
     linkml:repr "str" ;
     linkml:uri xsd:dateTime .
-
-<https://w3id.org/peh/terms/project> a linkml:SlotDefinition ;
-    skos:inScheme <https://w3id.org/peh/peh-model> ;
-    skos:mappingRelation schema1:ResearchProject ;
-    linkml:definition_uri <https://w3id.org/peh/terms/project> ;
-    linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri schema1:ResearchProject .
 
 <https://w3id.org/peh/terms/BioChemEntityLinkType> skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/BioChemEntityLinkType> ;
@@ -925,6 +918,13 @@
     linkml:owner <https://w3id.org/peh/terms/Matrix> ;
     linkml:range <https://w3id.org/peh/terms/Matrix> ;
     linkml:slot_uri skos:broader .
+
+<https://w3id.org/peh/terms/project> a linkml:SlotDefinition ;
+    skos:inScheme <https://w3id.org/peh/peh-model> ;
+    skos:mappingRelation schema1:ResearchProject ;
+    linkml:definition_uri <https://w3id.org/peh/terms/project> ;
+    linkml:range <https://w3id.org/peh/terms/string> ;
+    linkml:slot_uri schema1:ResearchProject .
 
 <https://w3id.org/peh/terms/rorid> a linkml:SlotDefinition ;
     skos:inScheme <https://w3id.org/peh/peh-model> ;
@@ -2289,12 +2289,19 @@
 
 <https://w3id.org/peh/terms/ObservableEntityType> skos:inScheme <https://w3id.org/peh/peh-model> ;
     linkml:definition_uri <https://w3id.org/peh/terms/ObservableEntityType> ;
-    linkml:permissible_values <https://w3id.org/peh/terms/dataset>,
+    linkml:permissible_values <https://w3id.org/peh/terms/collection_process>,
+        <https://w3id.org/peh/terms/data_process>,
+        <https://w3id.org/peh/terms/dataset>,
         <https://w3id.org/peh/terms/environment>,
+        <https://w3id.org/peh/terms/lab_analysis_process>,
         <https://w3id.org/peh/terms/location>,
+        <https://w3id.org/peh/terms/model_execution_process>,
+        <https://w3id.org/peh/terms/organisation>,
         <https://w3id.org/peh/terms/person>,
         <https://w3id.org/peh/terms/persongroup>,
+        <https://w3id.org/peh/terms/project>,
         <https://w3id.org/peh/terms/sample>,
+        <https://w3id.org/peh/terms/samplegroup>,
         <https://w3id.org/peh/terms/study> .
 
 <https://w3id.org/peh/terms/ObservationDesign> a linkml:ClassDefinition ;
