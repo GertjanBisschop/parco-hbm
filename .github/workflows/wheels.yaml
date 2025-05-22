@@ -1,0 +1,73 @@
+name: Build and Publish Python Package
+
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    
+    - name: Install build dependencies
+      run: |
+        pip install build twine check-wheel-contents
+    
+    - name: Build package
+      run: python -m build
+    
+    - name: Check wheel contents
+      run: |
+        check-wheel-contents dist/*.whl
+    
+    - name: Verify package can be installed
+      run: |
+        pip install dist/*.whl
+
+    - name: Test package import
+      run: |
+        python -c "import peh_model; print(f'Successfully imported peh_model version: {peh_model.__version__}')"
+        # Test key modules/functions if needed
+        python -c "from peh_model.pydanticmodel_v2 import EntityList; print('Key class importable')"
+    
+    - name: Check package metadata
+      run: |
+        python -m twine check dist/*
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: dist/
+
+  PyPI-upload:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist/
+        
+    - name: Publish package to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      with:
+        repository-url: https://test.pypi.org/legacy/
+            
+    - name: Publish package to PyPI
+      if: github.event_name == 'release' && github.event.action == 'published'
+      uses: pypa/gh-action-pypi-publish@release/v1
