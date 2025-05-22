@@ -65,9 +65,9 @@ class SchemaElements(Flag):
 class Element(BaseModel):
     term_uri: str
     action: str = "added"
-    element_type: Union[str, ElementTypeEnum]
+    linkml_element_type: Union[str, ElementTypeEnum]
 
-    @field_validator("element_type", mode="after")
+    @field_validator("linkml_element_type", mode="after")
     @classmethod
     def map_long_enum(cls, value: Optional[Union[str, ElementTypeEnum]]) -> str:
         ret = None
@@ -366,11 +366,11 @@ def list_terms(
                         in_subset_list = getattr(definition, "in_subset")
                         if subset in in_subset_list:
                             elements.append(
-                                Element(term_uri=term_uri, element_type=element_type)
+                                Element(term_uri=term_uri, linkml_element_type=element_type)
                             )
                 else:
                     elements.append(
-                        Element(term_uri=term_uri, element_type=element_type)
+                        Element(term_uri=term_uri, linkml_element_type=element_type)
                     )
 
     # Filter on subset
