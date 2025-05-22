@@ -6,6 +6,9 @@ permissions:
 
 on:
   pull_request:
+    paths:
+      - '.github/workflows/artefacts.yaml'
+      - 'linkml/schema/**'
   push:
     branches:
       - main

@@ -1,6 +1,9 @@
 name: Build and Publish Python Package
 
 on:
+  pull_request:
+    paths:
+    - '.github/workflows/wheels.yaml'
   push:
     branches: [ main ]
   release:
@@ -64,7 +67,9 @@ jobs:
         
     - name: Publish package to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      if: |  
+        github.event_name == 'push' && github.ref == 'refs/heads/main' ||
+        github.event_name == 'pull_request'    
       with:
         repository-url: https://test.pypi.org/legacy/
             
