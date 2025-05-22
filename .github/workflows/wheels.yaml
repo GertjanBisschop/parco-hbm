@@ -6,6 +6,7 @@ on:
     - '.github/workflows/wheels.yaml'
   push:
     branches: [ main ]
+    tags: '*'
   release:
     types: [published]
 
@@ -68,7 +69,7 @@ jobs:
         
     - name: Publish package to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
       with:
         repository-url: https://test.pypi.org/legacy/
             
