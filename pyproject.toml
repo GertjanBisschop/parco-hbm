@@ -14,6 +14,14 @@ dependencies = [ "pydantic>=2.0.0", "linkml-runtime",]
 name = "Dirk Devriendt"
 email = "dirk.devriendt.ext@vito.be"
 
+[project.optional-dependencies]
+docs = [
+    "mkdocs",
+    "mkdocs-material>=8.2.8",
+    "mkdocs-mermaid2-plugin>=1.1.1",
+    "mknotebooks>=0.8.0",
+]
+
 [[project.authors]]
 name = "Gertjan Bisschop"
 email = "gertjan.bisschop@vito.be"
