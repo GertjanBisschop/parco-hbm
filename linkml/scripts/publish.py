@@ -35,6 +35,16 @@ BASE_NAMESPACE = rdflib.Namespace("https://w3id.org/peh/terms/")
 PEH_NAMESPACE = "https://w3id.org/peh/"
 TERM_NAMESPACE = "https://w3id.org/peh/terms/"
 
+NAMESPACES = {
+    "iop": "https://w3id.org/iadopt/ont/",
+    "linkml": "https://w3id.org/linkml/",
+    "pav": "http://purl.org/pav/",
+    "peh": "https://w3id.org/peh/",
+    "pehterms": "https://w3id.org/peh/terms/",
+    "qudtqk": "http://qudt.org/2.1/vocab/quantitykind/",
+    "qudtunit": "https://qudt.org/vocab/unit/",
+    "schema1": "http://schema.org/",
+}
 ###### listing terms
 
 
@@ -227,7 +237,7 @@ def add_vocabulary_membership(
 
 
 def extract_id(url: str):
-    return url.lstrip(TERM_NAMESPACE).lstrip("/")
+    return url.replace(TERM_NAMESPACE, "", 1).lstrip("/")
 
 
 def generate_htaccess(redirects: List, type_prefix: Optional[str]):
@@ -255,7 +265,7 @@ def update_htaccess(
     # """
 
     if not redirects:
-        print("No valid redirects found in input file.", file=sys.stderr)
+        logger.error("No valid redirects found in input file.", file=sys.stderr)
         sys.exit(1)
 
     new_content = generate_htaccess(redirects, type_prefix=type_prefix)
@@ -263,8 +273,8 @@ def update_htaccess(
     with open(output_file, "w") as f:
         f.write(new_content)
 
-    print(f"Successfully wrote .htaccess to {output_file}")
-    print(f"Added {len(redirects)} redirect rules")
+    logger.info(f"Successfully wrote .htaccess to {output_file}")
+    logger.info(f"Added {len(redirects)} redirect rules")
 
 
 def dump_identifier_pairs(pairs: List[tuple], file_name: str):
@@ -278,13 +288,140 @@ def dump_identifier_pairs(pairs: List[tuple], file_name: str):
         raise
 
 
-def build_graph_metadata():
-    return None
+def add_domain_statement(g: rdflib.Graph, term_uri: str, domain_uris: List[str]):
+    """
+    Adds RDF statements to define an OWL ObjectProperty with a union of domain classes.
+    """
+    term = rdflib.URIRef(term_uri)
+    domain_refs = [rdflib.URIRef(uri) for uri in domain_uris]
+    domain_node = rdflib.BNode()
+    union_list_node = rdflib.BNode()
+
+    if len(domain_refs) == 1:
+        # Directly assign the domain if there's only one term
+        g.add((term, rdflib.RDFS.domain, domain_refs[0]))
+
+    else:
+        g.add((domain_node, RDF.type, rdflib.OWL.Class))
+        g.add((domain_node, rdflib.OWL.unionOf, union_list_node))
+
+        # Construct the OWL:unionOf list
+        prev_node = None
+        for domain_ref in domain_refs:
+            list_node = rdflib.BNode()
+            g.add((list_node, RDF.first, domain_ref))
+            if prev_node:
+                g.add((prev_node, RDF.rest, list_node))
+            else:
+                g.add((union_list_node, RDF.first, domain_ref))
+            prev_node = list_node
+
+        # Close the RDF list structure
+        g.add((prev_node, RDF.rest, RDF.nil))
+
+        # Set the domain property
+        g.add((term, rdflib.RDFS.domain, domain_node))
+
+    return True
+
+
+def build_new_graph() -> rdflib.Graph:
+    g = rdflib.Graph()
+    # bind custom namespaces
+    for prefix, uri in NAMESPACES.items():
+        g.bind(prefix, rdflib.Namespace(uri))
+
+    return g
+
+
+def adjust_linkml_graph(
+    term_uri: str, element_type: str, sv: SchemaView
+) -> Optional[rdflib.Graph]:
+    g = None
+    if element_type == "slot":
+        g = build_new_graph()
+        term = term_uri.replace(TERM_NAMESPACE, "", 1)
+        name_slot = sv.get_slot(term)
+        all_classes = sv.get_classes_by_slot(name_slot)
+        domain_uris = [BASE_NAMESPACE[a] for a in all_classes]
+        _ = add_domain_statement(g, term_uri, domain_uris)
+        exact_match = str(getattr(name_slot, "slot_uri", None))
+        if exact_match is not None:
+            if not exact_match.startswith("http"):
+                prefix, exact_match_term = exact_match.split(":")
+                namespaces = sv.namespaces()
+                exact_match = rdflib.URIRef(namespaces[prefix] + exact_match_term)
+        else:
+            exact_match = rdflib.URIRef(exact_match)
+        g.add((BASE_NAMESPACE[term], rdflib.SKOS.exactMatch, exact_match))
+    return g
+
+
+def skolemize_blank_nodes(graph: rdflib.Graph):
+    # Counter for unique Skolemized URIs
+    skolem_counter = 1
+    blank_node_mapping = {}
+
+    # Iterate over graph triples
+    for s, p, o in list(graph):
+        # Replace blank nodes in Subject
+        if isinstance(s, rdflib.BNode):
+            if s not in blank_node_mapping:
+                blank_node_mapping[s] = rdflib.URIRef(
+                    f"{TERM_NAMESPACE}skolem{skolem_counter}"
+                )
+                skolem_counter += 1
+            new_s = blank_node_mapping[s]
+        else:
+            new_s = s
+
+        # Replace blank nodes in Object
+        if isinstance(o, rdflib.BNode):
+            if o not in blank_node_mapping:
+                blank_node_mapping[o] = rdflib.URIRef(
+                    f"{TERM_NAMESPACE}skolem{skolem_counter}"
+                )
+                skolem_counter += 1
+            new_o = blank_node_mapping[o]
+        else:
+            new_o = o
+
+        # Add updated triples
+        graph.remove((s, p, o))  # Remove original triple
+        graph.add((new_s, p, new_o))  # Add skolemized triple
 
 
 def is_valid_assertion_graph(g: rdflib.Graph) -> bool:
     # TODO: add more checks
     return 0 < len(g) < nanopub.definitions.MAX_TRIPLES_PER_NANOPUB
+
+
+def collect_related_bnodes(graph, start_node, visited=None):
+    """Recursively collect all triples related to a blank node, especially rdf:Lists"""
+    if visited is None:
+        visited = set()
+    if not isinstance(start_node, rdflib.BNode) or start_node in visited:
+        return set()
+
+    visited.add(start_node)
+    related_triples = set()
+
+    for s, p, o in graph.triples((start_node, None, None)):
+        related_triples.add((s, p, o))
+        if isinstance(o, rdflib.BNode):
+            related_triples.update(collect_related_bnodes(graph, o, visited))
+
+    return related_triples
+
+
+def collect_subgraph(graph, subject):
+    """Collect all triples about a subject, including recursively nested BNodes"""
+    subgraph = set()
+    for s, p, o in graph.triples((subject, None, None)):
+        subgraph.add((s, p, o))
+        if isinstance(o, rdflib.BNode):
+            subgraph.update(collect_related_bnodes(graph, o))
+    return subgraph
 
 
 def build_rdf_graph(
@@ -293,13 +430,19 @@ def build_rdf_graph(
     additional_statements: rdflib.Graph,
 ) -> rdflib.Graph:
     try:
-        g = rdflib.Graph()
+        g = build_new_graph()
         term_uri = rdflib.URIRef(term_uri)
-        for s, p, o in schema_graph.triples((term_uri, None, None)):
+        collected_triples = collect_subgraph(schema_graph, term_uri)
+        for s, p, o in collected_triples:
             g.add((s, p, o))
+
         # add additional staments
         if additional_statements is not None:
             g += additional_statements
+
+        # skolemization step
+        _ = skolemize_blank_nodes(g)
+
         if is_valid_assertion_graph(g):
             return g
         else:
@@ -307,6 +450,42 @@ def build_rdf_graph(
     except Exception as e:
         logger.debug(f"Error in build_rdf_graph: {e}")
         raise
+
+
+def add_term(
+    term_uri: str,
+    schema_graph: rdflib.Graph,
+    np_generator: NanopubGenerator,
+    dry_run: bool,
+    identifier_pairs: list,
+    additional_statements: Optional[rdflib.Graph] = None,
+) -> nanopub.Nanopub:
+    term = term_uri.replace(TERM_NAMESPACE, "", 1)
+    # build rdf graph
+    graph = build_rdf_graph(schema_graph, term_uri, additional_statements)
+    # publish nanopub
+    np = np_generator.create_nanopub(assertion=graph)
+    np.sign()
+    logger.info("Nanopub signed")
+    np_uri = np.metadata.np_uri
+    if np_uri is None:
+        raise ValueError("no URI returned by nanpub server.")
+    logger.info(f"Nanopub signed for entity: {term}")
+    if not dry_run:
+        publication_info = np.publish()
+        logger.info(f"Nanopub published: {publication_info}")
+    # create w3id - nanopub pairs
+    identifier_pairs.append((term_uri, np_uri))
+
+    return np
+
+
+def modify_term() -> nanopub.Nanopub:
+    pass
+
+
+def deprecate_term() -> nanopub.Nanopub:
+    pass
 
 
 @click.group()
@@ -366,7 +545,9 @@ def list_terms(
                         in_subset_list = getattr(definition, "in_subset")
                         if subset in in_subset_list:
                             elements.append(
-                                Element(term_uri=term_uri, linkml_element_type=element_type)
+                                Element(
+                                    term_uri=term_uri, linkml_element_type=element_type
+                                )
                             )
                 else:
                     elements.append(
@@ -407,6 +588,14 @@ def list_terms(
     required=True,
     type=click.Path(exists=True),
     help="Path to the LinkML schema from which to publish terms.",
+)
+@click.option(
+    "--graph",
+    "-g",
+    "graph_path",
+    required=True,
+    type=click.Path(exists=True),
+    help="Path to the rdf graph from which to publish terms.",
 )
 @click.option(
     "--changelog",
@@ -453,16 +642,9 @@ def list_terms(
     help="Path to output identifier nanopub pairs",
     default=None,
 )
-@click.option(
-    "--schema-uri",
-    "schema_uri",
-    required=False,
-    type=str,
-    help="URI for the schema this term is part of.",
-    default=None,
-)
 def publish(
     schema_path: str,
+    graph_path: str,
     changelog_path: str,
     orcid_id: str,
     name: str,
@@ -472,7 +654,6 @@ def publish(
     dry_run: bool = False,
     verbose: bool = False,
     output_path_pairs: str = None,
-    schema_uri: str = None,
 ):
     """
     Create and publish nanopublications from changelog.
@@ -489,9 +670,9 @@ def publish(
         updated = 0
 
         # import linkml schema:
-        schema_graph = rdflib.Graph()
-        schema_graph.parse(schema_path)
-
+        schema_graph = build_new_graph()
+        schema_graph.parse(graph_path)
+        schema_view = SchemaView(schema_path)
         nanopub_generator = NanopubGenerator(
             orcid_id=orcid_id,
             name=name,
@@ -501,7 +682,7 @@ def publish(
             test_server=dry_run,
         )
 
-        logger.info(f"Processing terms from {changelog_path} as part of {schema_path}")
+        logger.info(f"Processing terms from {changelog_path} as part of {graph_path}")
 
         # Load YAML file
         click.echo("Validating changelog ...")
@@ -513,33 +694,27 @@ def publish(
             if change["action"] == "added":
                 # generate nanopub and publish
                 term_uri = change["term_uri"]
-                term = term_uri.lstrip(TERM_NAMESPACE)
-                # build rdf graph
-                additional_statements = build_graph_metadata()
-                graph = build_rdf_graph(schema_graph, term_uri, additional_statements)
-                # publish nanopub
-                np = nanopub_generator.create_nanopub(assertion=graph)
-                np.sign()
-                logger.info(f"Nanopub {processed} signed")
-                np_uri = np.metadata.np_uri
-                if np_uri is None:
-                    raise ValueError("no URI returned by nanpub server.")
-
-                logger.info(f"Nanopub signed: {np_uri} for entity: {term}")
+                element_type = change["linkml_element_type"]
+                additional_statements = adjust_linkml_graph(
+                    term_uri, 
+                    element_type, 
+                    schema_view
+                )
+                np = add_term(
+                    term_uri, schema_graph, nanopub_generator, dry_run, identifier_pairs, additional_statements=additional_statements
+                )
+                processed += 1
                 if not dry_run:
-                    publication_info = np.publish()
                     published += 1
-                    logger.info(f"Nanopub {processed} published: {publication_info}")
-
-                # create w3id - nanopub pairs
-                identifier_pairs.append((term_uri, np_uri))
 
             elif change["action"] == "modified":
                 # get nanopub id from term id and update
-                pass
+                np = modify_term(term_uri)
+                processed += 1
             elif change["action"] == "deprecated":
                 # action TBD
-                pass
+                np = deprecate_term(term_uri)
+                processed += 1
             else:
                 logger.error(
                     f"Action {change['action']} for term {change['term_uri']} not implemented"
@@ -563,8 +738,119 @@ def publish(
         sys.exit(1)
 
 
+@click.command()
+@click.option(
+    "--schema",
+    "-s",
+    "schema_path",
+    required=True,
+    type=click.Path(exists=True),
+    help="Path to the LinkML schema from which to publish terms.",
+)
+@click.option(
+    "--graph",
+    "-g",
+    "graph_path",
+    required=True,
+    type=click.Path(exists=True),
+    help="Path to the rdf graph from which to publish terms.",
+)
+@click.option(
+    "--orcid-id",
+    required=True,
+    envvar="NANOPUB_ORCID_ID",
+    help="ORCID ID for nanopub profile",
+)
+@click.option(
+    "--name", required=True, envvar="NANOPUB_NAME", help="Name for nanopub profile"
+)
+@click.option(
+    "--private-key",
+    required=True,
+    envvar="NANOPUB_PRIVATE_KEY",
+    help="Private key for nanopub profile",
+)
+@click.option(
+    "--public-key",
+    required=True,
+    envvar="NANOPUB_PUBLIC_KEY",
+    help="Public key for nanopub profile",
+)
+@click.option(
+    "--intro-nanopub-uri",
+    required=True,
+    envvar="NANOPUB_INTRO_URI",
+    help="Introduction nanopub URI",
+)
+@click.option(
+    "--example-for",
+    "example",
+    required=True,
+    type=str,
+    help="Serialize single nanopub for specified term.",
+    default=None,
+)
+@click.option(
+    "--element-type",
+    "linkml_element_type",
+    required=True,
+    type=str,
+    help="class, enum or slot",
+)
+def example(
+    schema_path: str,
+    graph_path: str,
+    orcid_id: str,
+    name: str,
+    private_key: str,
+    public_key: str,
+    intro_nanopub_uri: str,
+    example: str,
+    linkml_element_type: str,
+):
+    """
+    Create and publish nanopublications from changelog.
+    """
+    try:
+
+        schema_graph = build_new_graph()
+        schema_graph.parse(graph_path)
+        sv = SchemaView(schema_path)
+
+        nanopub_generator = NanopubGenerator(
+            orcid_id=orcid_id,
+            name=name,
+            private_key=private_key,
+            public_key=public_key,
+            intro_nanopub_uri=intro_nanopub_uri,
+            test_server=True,
+        )
+
+        logger.info(f"Serialize single example of type {example} from {graph_path}")
+        temp_pairs = []
+        dry_run = True
+        additional_statement = adjust_linkml_graph(example, linkml_element_type, sv)
+
+        np = add_term(
+            example,
+            schema_graph,
+            nanopub_generator,
+            dry_run,
+            temp_pairs,
+            additional_statement,
+        )
+        term = example.replace(TERM_NAMESPACE, "", 1)
+        with open(f"example-{term}.trig", "w") as file:
+            print(np, file=file)
+
+    except Exception as e:
+        logger.error(f"Error in processing: {e}")
+        sys.exit(1)
+
+
 cli.add_command(list_terms)
 cli.add_command(publish)
+cli.add_command(example)
 
 if __name__ == "__main__":
     cli()

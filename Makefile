@@ -184,13 +184,15 @@ clean:
 # ================================
 # PUBLISHING
 # ================================
-publish-nanopubs: check-env
+publish-nanopubs:
 	@VERSION=$$(python3 "$(CHANGELOG_SCRIPT_PATH)" extract-version $(CHANGELOG_PATH))
 	echo "Publishing schema version: $$VERSION"
 	python3 "$(CHANGELOG_SCRIPT_PATH)" validate-changelog -s "$(CHANGELOG_SCHEMA_PATH)" "$(CHANGELOG_PATH)"
 	@echo "Publish terms in changelog."
+	set -a && source .env && set +a && \
 	python3 $(PUBLISH_SCRIPT_PATH) publish \
-		-s $(SRC)/rdf/$(SCHEMA_NAME).ttl \
+		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
+		-s $(SOURCE_SCHEMA_PATH) \
 		-c $(CHANGELOG_PATH) \
 		--dry-run \
 		--output-pairs $(DEST)/output-pairs.txt
@@ -198,6 +200,32 @@ publish-nanopubs: check-env
 	python3 "$(CHANGELOG_SCRIPT_PATH)" generate-release-notes -o "$(DEST)" -f $(CHANGELOG_PATH)
 	@echo "Generating new changelog ..."
 	python3 "$(CHANGELOG_SCRIPT_PATH)" init-new-changelog -m "$(MAINTAINER)" -d "$(SRC)/changelog/"
+
+# ================================
+# EXAMPLE NANOPUB
+# ================================
+example-nanopubs:
+	set -a && source .env && set +a && \
+	python3 $(PUBLISH_SCRIPT_PATH) example \
+		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
+		-s $(SOURCE_SCHEMA_PATH) \
+		--element-type class \
+		--example-for https://w3id.org/peh/terms/Matrix
+	@echo "Matrix example produced."
+	set -a && source .env && set +a && \
+	python3 $(PUBLISH_SCRIPT_PATH) example \
+		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
+		-s $(SOURCE_SCHEMA_PATH) \
+		--element-type slot \
+		--example-for https://w3id.org/peh/terms/parent_matrix
+	@echo "parent_matrix example produced."
+	set -a && source .env && set +a && \
+	python3 $(PUBLISH_SCRIPT_PATH) example \
+		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
+		-s $(SOURCE_SCHEMA_PATH) \
+		--element-type enum \
+		--example-for https://w3id.org/peh/terms/ValidationStatus
+	@echo "ValidationStatus example produced."
 
 # ======================
 #     publishing
