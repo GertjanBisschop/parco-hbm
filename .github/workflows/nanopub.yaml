@@ -1,0 +1,107 @@
+name: Generate PEH Model Artefacts
+
+permissions:
+  contents: write
+  pull-requests: write 
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no actual publishing)'
+        required: false
+        default: true
+        type: boolean
+  pull_request:
+    paths:
+      - '.github/workflows/nanopub.yaml'
+      - 'linkml/scripts/publish.py'
+  release:
+    types: [published]
+
+jobs:
+  Terms2Nanopub:
+    runs-on: ubuntu-latest
+    env:
+      # Set dry-run to false only for releases, true for everything else
+      DRY_RUN: ${{ github.event_name == 'release' && 'false' || (inputs.dry_run == false && 'false' || 'true') }}
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install "linkml-runtime>=1.9,<2" nanopub pydantic 
+
+      - name: Validate changelog
+        run: |
+          make validate-changelog
+
+      - name: Publish individual terms
+        run: |
+          make publish-terms DRY_RUN=${{ env.DRY_RUN }}
+        env:
+          DRY_RUN: ${{ env.DRY_RUN }}
+          NANOPUB_ORCID_ID: ${{ secrets.NANOPUB_ORCID_ID }}
+          NANOPUB_NAME: ${{ secrets.NANOPUB_NAME }}
+          NANOPUB_PRIVATE_KEY: ${{ secrets.NANOPUB_PRIVATE_KEY }}
+          NANOPUB_PUBLIC_KEY: ${{ secrets.NANOPUB_PUBLIC_KEY }}
+          NANOPUB_INTRO_URI: ${{ secrets.NANOPUB_INTRO_URI }}
+
+      - name: Upload htaccess.txt
+        uses: actions/upload-artifact@v4 
+        with:
+          name: htaccess.txt
+          path: ./htaccess.txt
+
+  NanopubIndex:
+    needs: Terms2Nanopub
+    runs-on: ubuntu-latest
+    env:
+      DRY_RUN: ${{ github.event_name == 'release' && 'false' || (inputs.dry_run == false && 'false' || 'true') }}
+      
+    steps:
+    - name: Checkout code 
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install "linkml-runtime>=1.9,<2" nanopub pydantic 
+
+    - name: Download htaccess.txt
+      uses: actions/download-artifact@v4
+      with:
+        name: htaccess.txt
+        path: ./
+
+    - name: Make index
+      run: |
+        make build-index DRY_RUN=${{ env.DRY_RUN }}
+      env:
+        DRY_RUN: ${{ env.DRY_RUN }}
+        NANOPUB_ORCID_ID: ${{ secrets.NANOPUB_ORCID_ID }}
+        NANOPUB_NAME: ${{ secrets.NANOPUB_NAME }}
+        NANOPUB_PRIVATE_KEY: ${{ secrets.NANOPUB_PRIVATE_KEY }}
+        NANOPUB_PUBLIC_KEY: ${{ secrets.NANOPUB_PUBLIC_KEY }}
+        NANOPUB_INTRO_URI: ${{ secrets.NANOPUB_INTRO_URI }}

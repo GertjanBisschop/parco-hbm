@@ -9,6 +9,7 @@ structured changelog files.
 import click
 import yaml
 import logging
+import sys
 
 from pathlib import Path
 from jsonschema import validate
@@ -64,14 +65,17 @@ def validate_changelog(
     except yaml.YAMLError as e:
         errors.append(f"Invalid YAML format: {str(e)}")
         logger.error(f"Invalid YAML format: {str(e)}")
+        sys.exit(1)
     except ValidationError as e:
         # Extract the specific validation error information
         path = ".".join(str(p) for p in e.path) if e.path else "root"
         errors.append(f"Validation error at {path}: {e.message}")
         logger.error(f"Validation error at {path}: {e.message}")
+        sys.exit(1)
     except Exception as e:
         errors.append(f"Error validating changelog: {str(e)}")
         logger.error(f"Error validating changelog: {str(e)}")
+        sys.exit(1)
 
     return False, errors
 

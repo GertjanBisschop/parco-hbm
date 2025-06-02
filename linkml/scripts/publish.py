@@ -526,6 +526,15 @@ def nanopub_identifier_args(f):
     )(f)
     return f
 
+def dry_run_flag(f):
+    f = click.option(
+        "--dry-run",
+        required=True,
+        envvar="DRY_RUN",
+        type=click.BOOL,
+        help="Test publication workflow or push to production.",
+    )(f)
+    return f
 
 @click.group()
 def cli():
@@ -645,34 +654,6 @@ def list_terms(
     type=click.Path(exists=True),
     help="Path to changelog",
 )
-@click.option(
-    "--orcid-id",
-    required=True,
-    envvar="NANOPUB_ORCID_ID",
-    help="ORCID ID for nanopub profile",
-)
-@click.option(
-    "--name", required=True, envvar="NANOPUB_NAME", help="Name for nanopub profile"
-)
-@click.option(
-    "--private-key",
-    required=True,
-    envvar="NANOPUB_PRIVATE_KEY",
-    help="Private key for nanopub profile",
-)
-@click.option(
-    "--public-key",
-    required=True,
-    envvar="NANOPUB_PUBLIC_KEY",
-    help="Public key for nanopub profile",
-)
-@click.option(
-    "--intro-nanopub-uri",
-    required=True,
-    envvar="NANOPUB_INTRO_URI",
-    help="Introduction nanopub URI",
-)
-@click.option("--dry-run", is_flag=True, help="Prepare nanopubs but do not publish")
 @click.option("--verbose", "-v", is_flag=True, help="Enable verbose output")
 @click.option(
     "--htaccess-path",
@@ -682,6 +663,8 @@ def list_terms(
     help="Path to output identifier nanopub pairs",
     default=None,
 )
+@dry_run_flag
+@nanopub_identifier_args
 def publish(
     schema_path: str,
     graph_path: str,
@@ -691,7 +674,7 @@ def publish(
     private_key: str,
     public_key: str,
     intro_nanopub_uri: str,
-    dry_run: bool = False,
+    dry_run: bool = True,
     verbose: bool = False,
     htaccess_path: str = None,
 ):
@@ -920,6 +903,7 @@ def get_np_uri_from_linkml(uri: str) -> str:
     default=None,
 )
 @click.option("--dry-run", is_flag=True, help="Prepare index but do not publish")
+@dry_run_flag
 @nanopub_identifier_args
 def push_index(
     schema_path: str,
