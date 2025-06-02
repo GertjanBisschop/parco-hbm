@@ -56,6 +56,7 @@ CREATORS = [
 class ElementTypeEnum(str, Enum):
     CLASS = "class"
     SLOT = "slot"
+    ENUM = "enum"
 
     @classmethod
     def name_to_value(cls, name) -> str:
@@ -74,7 +75,8 @@ class ElementTypeEnum(str, Enum):
 class SchemaElements(Flag):
     CLASS = auto()
     SLOT = auto()
-    ALL = CLASS | SLOT
+    ENUM = auto()
+    ALL = CLASS | SLOT | ENUM
 
 
 class Element(BaseModel):
@@ -561,7 +563,7 @@ def cli():
     "schema_element",
     required=False,
     default=SchemaElements.ALL.name,
-    help="Schema element type: CLASS, SLOT, or ALL (default: all).",
+    help="Schema element type: CLASS, SLOT, ENUM, or ALL (default: all).",
 )
 # add bool click option to filter deprecated elements
 def list_terms(
@@ -575,21 +577,20 @@ def list_terms(
     # Function to collect elements
     def collect_elements(source, element_type: ElementTypeEnum, subset: str):
         for name, definition in source.items():
-            if schema_view.get_uri(name).startswith("peh"):
-                term_uri = TERM_NAMESPACE + name
-                if subset is not None:
-                    if hasattr(definition, "in_subset"):
-                        in_subset_list = getattr(definition, "in_subset")
-                        if subset in in_subset_list:
-                            elements.append(
-                                Element(
-                                    term_uri=term_uri, linkml_element_type=element_type
-                                )
+            term_uri = TERM_NAMESPACE + name
+            if subset is not None:
+                if hasattr(definition, "in_subset"):
+                    in_subset_list = getattr(definition, "in_subset")
+                    if subset in in_subset_list:
+                        elements.append(
+                            Element(
+                                term_uri=term_uri, linkml_element_type=element_type
                             )
-                else:
-                    elements.append(
-                        Element(term_uri=term_uri, linkml_element_type=element_type)
-                    )
+                        )
+            else:
+                elements.append(
+                    Element(term_uri=term_uri, linkml_element_type=element_type)
+                )
 
     # Filter on subset
     if subset is not None:
@@ -603,10 +604,12 @@ def list_terms(
         collect_elements(schema_view.all_classes(), ElementTypeEnum.CLASS, subset)
     if schema_element_enum & SchemaElements.SLOT:
         collect_elements(schema_view.all_slots(), ElementTypeEnum.SLOT, subset)
+    if schema_element_enum & SchemaElements.ENUM:
+        collect_elements(schema_view.all_slots(), ElementTypeEnum.ENUM, subset)
 
     # Check if elements were found
     if not elements:
-        click.echo("No matching elements found with 'peh' prefix.")
+        click.echo("No matching elements found.")
         return
 
     # Serialize the elements list to a YAML file
