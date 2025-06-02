@@ -38,6 +38,6 @@ properties:
             - "null"
         linkml_element_type:
           type: string
-          enum: [class, slot]
+          enum: [class, slot, enum]
         pr_reference:
           type: string
