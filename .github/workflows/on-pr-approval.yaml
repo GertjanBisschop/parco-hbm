@@ -1,0 +1,23 @@
+name: Trigger Nanopub Publish on PR Approval
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  dispatch-nanopub-publish:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+
+    steps:
+      - name: Trigger Publish PEH Terms Workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Publish PEH terms to nanopub
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          inputs: |
+            dry_run: 'true'

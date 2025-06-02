@@ -17,7 +17,7 @@ PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
 RUN := $(VENV)/bin/python -m
 MAINTAINER:= gertjan.bisschop@vito.be
-VERSION:=0.0.0
+VERSION:= 0.0.0
 LINKML_VERSION:=1.9
 
 SCHEMA_NAME = peh
@@ -186,29 +186,27 @@ clean:
 # PUBLISHING
 # ================================
 publish-nanopubs:
-	@VERSION=$$(python3 "$(CHANGELOG_SCRIPT_PATH)" extract-version $(CHANGELOG_PATH))
-	echo "Publishing schema version: $$VERSION"
+	@echo "Publishing schema"
 	python3 "$(CHANGELOG_SCRIPT_PATH)" validate-changelog -s "$(CHANGELOG_SCHEMA_PATH)" "$(CHANGELOG_PATH)"
 	@echo "Publish terms in changelog."
-	set -a && source .env && set +a && \
+	@if [ -f .env ]; then \
+		echo "Loading .env file for local development"; \
+		set -a && source .env && set +a; \
+	else \
+		echo "Using environment variables (CI/CD mode)"; \
+	fi && \
 	python3 $(PUBLISH_SCRIPT_PATH) publish \
 		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
 		-s $(SOURCE_SCHEMA_PATH) \
 		-c $(CHANGELOG_PATH) \
-		--dry-run \
-		--htaccess-path $(DEST)/htaccess.txt
-	@echo "Generating release notes ..."
-	python3 "$(CHANGELOG_SCRIPT_PATH)" generate-release-notes -o "$(DEST)" -f $(CHANGELOG_PATH)
-	@echo "Generating new changelog ..."
-	python3 "$(CHANGELOG_SCRIPT_PATH)" init-new-changelog -m "$(MAINTAINER)" -d "$(SRC)/changelog/"
+		--htaccess-path htaccess.txt
 
 push-index:
-	@echo "Pushing nanopub index for schema version: $$VERSION"
+	@echo "Pushing nanopub index for schema"
 	set -a && source .env && set +a && \
 	python3 $(PUBLISH_SCRIPT_PATH) push-index \
 		-s $(SOURCE_SCHEMA_PATH) \
-		--htaccess-file htaccess.txt \
-		--dry-run
+		--htaccess-file htaccess.txt
 
 # ================================
 # EXAMPLE NANOPUB

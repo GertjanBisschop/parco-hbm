@@ -1,0 +1,93 @@
+name: Publish PEH terms to nanopub
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no actual publishing)'
+        required: false
+        default: true
+        type: boolean
+  release:
+    types: [published]
+
+env:
+  NANOPUB_INTRO_URI: "https://w3id.org/np/RACq6O6F4gSuC0A037LXUt2QOr_yYHJUwx3wAWDGv4Ryc"
+  NANOPUB_NAME: "Gertjan Bisschop"
+  NANOPUB_ORCID_ID: "https://orcid.org/0000-0001-8327-0142"
+  NANOPUB_PUBLIC_KEY: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArlLcAwjvZ4CcLJrgreOAZBEMWulAW3ja+oEceoowiWmR7sgGOKB0HdJIX2eA2FnoR4ZFaoSjLvszMs0+qfu1mVSQk/txEI6gbZME0A75nk8/IPh26+JnEVKOtaVM61F6HZ/sh/lbF8a8WOtf0FyBlfx3kn1jq7N7EdYGWYyFvLQf9YVIOcgz2X8mP7hWJ6p+UoCK7ZzmOBNELwd1NeQQe1Iwt4tbQR/CtjMYwZZTfDRVh6tCOv7jC3IywhiwVFmFp4mXN5f0/LjByzqQSVbxwAMWvhy41W9+eJJGUiLiumHOdY4Y/pwnHVyuPuiTfRn+GQsAaB+nOwpOkQSofpdvuwIDAQAB"
+
+jobs:
+  Terms2Nanopub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install "linkml-runtime>=1.9,<2" nanopub pydantic
+
+      - name: Publish individual terms
+        run: |
+          DRY_RUN="${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false') && 'false' || 'true' }}" \
+          NANOPUB_ORCID_ID="${{ env.NANOPUB_ORCID_ID }}" \
+          NANOPUB_NAME="${{ env.NANOPUB_NAME }}" \
+          NANOPUB_PRIVATE_KEY="${{ secrets.NANOPUB_PRIVATE_KEY }}" \
+          NANOPUB_PUBLIC_KEY="${{ env.NANOPUB_PUBLIC_KEY }}" \
+          NANOPUB_INTRO_URI="${{ env.NANOPUB_INTRO_URI }}" \
+          make publish-nanopubs
+
+      - name: Upload htaccess.txt
+        uses: actions/upload-artifact@v4 
+        with:
+          name: htaccess.txt
+          path: ./htaccess.txt
+
+  NanopubIndex:
+    needs: Terms2Nanopub
+    runs-on: ubuntu-latest  
+    steps:
+    - name: Checkout code 
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install "linkml-runtime>=1.9,<2" nanopub pydantic 
+
+    - name: Download htaccess.txt
+      uses: actions/download-artifact@v4
+      with:
+        name: htaccess.txt
+        path: ./
+
+    - name: Make index
+      run: |
+        DRY_RUN="${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false') && 'false' || 'true' }}" \
+        NANOPUB_ORCID_ID="${{ env.NANOPUB_ORCID_ID }}" \
+        NANOPUB_NAME="${{ env.NANOPUB_NAME }}" \
+        NANOPUB_PRIVATE_KEY="${{ secrets.NANOPUB_PRIVATE_KEY }}" \
+        NANOPUB_PUBLIC_KEY="${{ env.NANOPUB_PUBLIC_KEY }}" \
+        NANOPUB_INTRO_URI="${{ env.NANOPUB_INTRO_URI }}" \
+        make push-index
