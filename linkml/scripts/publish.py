@@ -304,8 +304,10 @@ def add_domain_statement(g: rdflib.Graph, term_uri: str, domain_uris: List[str])
     domain_refs = [rdflib.URIRef(uri) for uri in domain_uris]
     domain_node = rdflib.BNode()
     union_list_node = rdflib.BNode()
-
-    if len(domain_refs) == 1:
+    if len(domain_refs) == 0:
+        logger.error(f"No domain_refs found for term: {term_uri}")
+        sys.exit()
+    elif len(domain_refs) == 1:
         # Directly assign the domain if there's only one term
         g.add((term, rdflib.RDFS.domain, domain_refs[0]))
 
@@ -346,23 +348,32 @@ def adjust_linkml_graph(
     term_uri: str, element_type: str, sv: SchemaView
 ) -> Optional[rdflib.Graph]:
     g = None
-    if element_type == "slot":
-        g = build_new_graph()
-        term = term_uri.replace(TERM_NAMESPACE, "", 1)
-        name_slot = sv.get_slot(term)
-        all_classes = sv.get_classes_by_slot(name_slot)
-        domain_uris = [BASE_NAMESPACE[a] for a in all_classes]
-        _ = add_domain_statement(g, term_uri, domain_uris)
-        exact_match = str(getattr(name_slot, "slot_uri", None))
-        if exact_match is not None:
-            if not exact_match.startswith("http"):
-                prefix, exact_match_term = exact_match.split(":")
-                namespaces = sv.namespaces()
-                exact_match = rdflib.URIRef(namespaces[prefix] + exact_match_term)
-        else:
-            exact_match = rdflib.URIRef(exact_match)
-        g.add((BASE_NAMESPACE[term], rdflib.SKOS.exactMatch, exact_match))
-    return g
+    try:
+        if element_type == "slot":
+            g = build_new_graph()
+            term = term_uri.replace(TERM_NAMESPACE, "", 1)
+            name_slot = sv.get_slot(term)
+            all_classes = sv.get_classes_by_slot(name_slot)
+            domain_uris = [BASE_NAMESPACE[a] for a in all_classes]
+            _ = add_domain_statement(g, term_uri, domain_uris)
+            exact_match = getattr(name_slot, "slot_uri", None)
+            if exact_match is not None:
+                exact_match = str(exact_match)
+                if not exact_match.startswith("http"):
+                    prefix, exact_match_term = exact_match.split(":")
+                    namespaces = sv.namespaces()
+                    exact_match = rdflib.URIRef(namespaces[prefix] + exact_match_term)
+                else:
+                    exact_match = rdflib.URIRef(exact_match)
+                if BASE_NAMESPACE[term] is None:
+                    logger.error(
+                        f"Term {term} with term_uri {term_uri} and exact_match {exact_match} cannot be resolved."
+                    )
+                g.add((BASE_NAMESPACE[term], rdflib.SKOS.exactMatch, exact_match))
+        return g
+    except Exception as e:
+        logger.error(f"Error in adjust_linkml_graph: {e}")
+        sys.exit(1)
 
 
 def skolemize_blank_nodes(graph: rdflib.Graph):
@@ -468,22 +479,26 @@ def add_term(
     identifier_pairs: list,
     additional_statements: Optional[rdflib.Graph] = None,
 ) -> nanopub.Nanopub:
-    term = term_uri.replace(TERM_NAMESPACE, "", 1)
-    # build rdf graph
-    graph = build_rdf_graph(schema_graph, term_uri, additional_statements)
-    # publish nanopub
-    np = np_generator.create_nanopub(assertion=graph)
-    np.sign()
-    logger.info("Nanopub signed")
-    np_uri = np.metadata.np_uri
-    if np_uri is None:
-        raise ValueError("no URI returned by nanpub server.")
-    logger.info(f"Nanopub signed for entity: {term}")
-    if not dry_run:
-        publication_info = np.publish()
-        logger.info(f"Nanopub published: {publication_info}")
-    # create w3id - nanopub pairs
-    identifier_pairs.append((term_uri, np_uri))
+    try:
+        term = term_uri.replace(TERM_NAMESPACE, "", 1)
+        # build rdf graph
+        graph = build_rdf_graph(schema_graph, term_uri, additional_statements)
+        # publish nanopub
+        np = np_generator.create_nanopub(assertion=graph)
+        np.sign()
+        logger.info("Nanopub signed")
+        np_uri = np.metadata.np_uri
+        if np_uri is None:
+            raise ValueError("no URI returned by nanpub server.")
+        logger.info(f"Nanopub signed for entity: {term}")
+        if not dry_run:
+            publication_info = np.publish()
+            logger.info(f"Nanopub published: {publication_info}")
+        # create w3id - nanopub pairs
+        identifier_pairs.append((term_uri, np_uri))
+    except Exception as e:
+        logger.error(f"Error in add_term: {e}")
+        sys.exit(1)
 
     return np
 
@@ -526,6 +541,7 @@ def nanopub_identifier_args(f):
     )(f)
     return f
 
+
 def dry_run_flag(f):
     f = click.option(
         "--dry-run",
@@ -535,6 +551,7 @@ def dry_run_flag(f):
         help="Test publication workflow or push to production.",
     )(f)
     return f
+
 
 @click.group()
 def cli():
@@ -592,9 +609,7 @@ def list_terms(
                     in_subset_list = getattr(definition, "in_subset")
                     if subset in in_subset_list:
                         elements.append(
-                            Element(
-                                term_uri=term_uri, linkml_element_type=element_type
-                            )
+                            Element(term_uri=term_uri, linkml_element_type=element_type)
                         )
             else:
                 elements.append(
@@ -718,9 +733,11 @@ def publish(
                 # generate nanopub and publish
                 term_uri = change["term_uri"]
                 element_type = change["linkml_element_type"]
+                logger.info(f"adjust graph for {term_uri} of type {element_type}")
                 additional_statements = adjust_linkml_graph(
                     term_uri, element_type, schema_view
                 )
+                logger.info(f"Adding term: {term_uri}")
                 np = add_term(
                     term_uri,
                     schema_graph,
@@ -735,10 +752,12 @@ def publish(
 
             elif change["action"] == "modified":
                 # get nanopub id from term id and update
+                logger.info(f"Modifying term: {term_uri}")
                 np = modify_term(term_uri)
                 processed += 1
             elif change["action"] == "deprecated":
                 # action TBD
+                logger.info(f"Deprecating term: {term_uri}")
                 np = deprecate_term(term_uri)
                 processed += 1
             else:
@@ -780,33 +799,6 @@ def publish(
     required=True,
     type=click.Path(exists=True),
     help="Path to the rdf graph from which to publish terms.",
-)
-@click.option(
-    "--orcid-id",
-    required=True,
-    envvar="NANOPUB_ORCID_ID",
-    help="ORCID ID for nanopub profile",
-)
-@click.option(
-    "--name", required=True, envvar="NANOPUB_NAME", help="Name for nanopub profile"
-)
-@click.option(
-    "--private-key",
-    required=True,
-    envvar="NANOPUB_PRIVATE_KEY",
-    help="Private key for nanopub profile",
-)
-@click.option(
-    "--public-key",
-    required=True,
-    envvar="NANOPUB_PUBLIC_KEY",
-    help="Public key for nanopub profile",
-)
-@click.option(
-    "--intro-nanopub-uri",
-    required=True,
-    envvar="NANOPUB_INTRO_URI",
-    help="Introduction nanopub URI",
 )
 @click.option(
     "--example-for",
@@ -987,7 +979,7 @@ def push_index(
         for np in np_list:
             np.publish()
         logger.info(f"Index is published at {np_list[-1].metadata.np_uri}")
-    print(np_list[-1])
+
     return True
 
 

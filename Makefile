@@ -17,7 +17,7 @@ PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
 RUN := $(VENV)/bin/python -m
 MAINTAINER:= gertjan.bisschop@vito.be
-VERSION:=0.0.0
+VERSION:= 0.0.0
 LINKML_VERSION:=1.9
 
 SCHEMA_NAME = peh
@@ -186,8 +186,7 @@ clean:
 # PUBLISHING
 # ================================
 publish-nanopubs:
-	@VERSION=$$(python3 "$(CHANGELOG_SCRIPT_PATH)" extract-version $(CHANGELOG_PATH))
-	echo "Publishing schema version: $$VERSION"
+	@echo "Publishing schema"
 	python3 "$(CHANGELOG_SCRIPT_PATH)" validate-changelog -s "$(CHANGELOG_SCHEMA_PATH)" "$(CHANGELOG_PATH)"
 	@echo "Publish terms in changelog."
 	set -a && source .env && set +a && \
@@ -195,7 +194,7 @@ publish-nanopubs:
 		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
 		-s $(SOURCE_SCHEMA_PATH) \
 		-c $(CHANGELOG_PATH) \
-		--htaccess-path $(DEST)/htaccess.txt
+		--htaccess-path htaccess.txt
 
 push-index:
 	@echo "Pushing nanopub index for schema"

@@ -52,7 +52,7 @@ jobs:
 
       - name: Publish individual terms
         run: |
-          make publish-terms DRY_RUN=${{ env.DRY_RUN }}
+          make publish-nanopubs
         env:
           DRY_RUN: ${{ env.DRY_RUN }}
           NANOPUB_ORCID_ID: ${{ secrets.NANOPUB_ORCID_ID }}
@@ -97,7 +97,7 @@ jobs:
 
     - name: Make index
       run: |
-        make build-index DRY_RUN=${{ env.DRY_RUN }}
+        make push-index
       env:
         DRY_RUN: ${{ env.DRY_RUN }}
         NANOPUB_ORCID_ID: ${{ secrets.NANOPUB_ORCID_ID }}

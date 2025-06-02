@@ -895,8 +895,8 @@ slots:
     inlined_as_list: true
     range: Project
   geographic_scope:
-  project:
-    slot_uri: schema:ResearchProject
+  #project: ## unused
+  #  slot_uri: schema:ResearchProject
   default_language:
   stakeholder:
     range: Stakeholder
@@ -987,10 +987,10 @@ slots:
   observable_entity_id_list:
     multivalued: true
     range: StudyEntity
-  observable_entities:
-    multivalued: true
-    inlined_as_list: true
-    range: StudyEntity
+  #observable_entities: ## unused
+  #  multivalued: true
+  #  inlined_as_list: true
+  #  range: StudyEntity
   observable_entity:
     range: StudyEntity
   identifying_observable_property_id_list:

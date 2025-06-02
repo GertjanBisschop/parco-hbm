@@ -510,9 +510,6 @@ changes:
 - term_uri: https://w3id.org/peh/terms/sample_id_list
   action: added
   linkml_element_type: slot
-- term_uri: https://w3id.org/peh/terms/projects
-  action: added
-  linkml_element_type: slot
 - term_uri: https://w3id.org/peh/terms/geographic_scope
   action: added
   linkml_element_type: slot
@@ -610,9 +607,6 @@ changes:
   action: added
   linkml_element_type: slot
 - term_uri: https://w3id.org/peh/terms/observable_entity_id_list
-  action: added
-  linkml_element_type: slot
-- term_uri: https://w3id.org/peh/terms/observable_entities
   action: added
   linkml_element_type: slot
 - term_uri: https://w3id.org/peh/terms/observable_entity
