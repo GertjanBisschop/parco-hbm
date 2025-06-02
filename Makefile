@@ -36,7 +36,7 @@ CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
 # ================================
 # Phony targets
 # ================================
-.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize publish-nanopubs build-package publish-package-test publish-package
+.PHONY: help install setup make-dirs clean lint lint-fix test-schema gen-project check-config serialize publish-nanopubs build-package publish-package-test publish-package push-index
 
 # ================================
 # Help
@@ -57,6 +57,7 @@ help: check-config
 	@echo "make build-peh-model			-- build peh-model"
 	@echo "make publish-peh-model-test	-- test publish peh-model"
 	@echo "make publish-peh-model		-- publish peh-model"
+	@echo "make push-index				-- push uris to nanopub index."
 	@echo ""
 # ================================
 # check-config
@@ -195,11 +196,19 @@ publish-nanopubs:
 		-s $(SOURCE_SCHEMA_PATH) \
 		-c $(CHANGELOG_PATH) \
 		--dry-run \
-		--output-pairs $(DEST)/output-pairs.txt
+		--htaccess-path $(DEST)/htaccess.txt
 	@echo "Generating release notes ..."
 	python3 "$(CHANGELOG_SCRIPT_PATH)" generate-release-notes -o "$(DEST)" -f $(CHANGELOG_PATH)
 	@echo "Generating new changelog ..."
 	python3 "$(CHANGELOG_SCRIPT_PATH)" init-new-changelog -m "$(MAINTAINER)" -d "$(SRC)/changelog/"
+
+push-index:
+	@echo "Pushing nanopub index for schema version: $$VERSION"
+	set -a && source .env && set +a && \
+	python3 $(PUBLISH_SCRIPT_PATH) push-index \
+		-s $(SOURCE_SCHEMA_PATH) \
+		--htaccess-file htaccess.txt \
+		--dry-run
 
 # ================================
 # EXAMPLE NANOPUB

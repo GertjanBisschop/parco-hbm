@@ -6,6 +6,7 @@ Nanopub Batch Upload GitHub Action Script
 
 import sys
 import click
+import datetime
 import logging
 import nanopub
 import nanopub.definitions
@@ -45,7 +46,11 @@ NAMESPACES = {
     "qudtunit": "https://qudt.org/vocab/unit/",
     "schema1": "http://schema.org/",
 }
-###### listing terms
+
+CREATORS = [
+    "https://orcid.org/0000-0002-6514-0173",  # Dirk Devriendt
+    "https://orcid.org/0000-0001-8327-0142",  # Gertjan Bisschop
+]
 
 
 class ElementTypeEnum(str, Enum):
@@ -148,6 +153,7 @@ class NanopubGenerator:
 
         except Exception as e:
             logger.error(f"Error in check_nanopub_existence: {e}")
+            sys.exit(1)
 
 
 def get_property_mapping(
@@ -488,6 +494,37 @@ def deprecate_term() -> nanopub.Nanopub:
     pass
 
 
+def nanopub_identifier_args(f):
+    f = click.option(
+        "--orcid-id",
+        required=True,
+        envvar="NANOPUB_ORCID_ID",
+        help="ORCID ID for nanopub profile",
+    )(f)
+    f = click.option(
+        "--name", required=True, envvar="NANOPUB_NAME", help="Name for nanopub profile"
+    )(f)
+    f = click.option(
+        "--private-key",
+        required=True,
+        envvar="NANOPUB_PRIVATE_KEY",
+        help="Private key for nanopub profile",
+    )(f)
+    f = click.option(
+        "--public-key",
+        required=True,
+        envvar="NANOPUB_PUBLIC_KEY",
+        help="Public key for nanopub profile",
+    )(f)
+    f = click.option(
+        "--intro-nanopub-uri",
+        required=True,
+        envvar="NANOPUB_INTRO_URI",
+        help="Introduction nanopub URI",
+    )(f)
+    return f
+
+
 @click.group()
 def cli():
     """Main entry point"""
@@ -635,8 +672,8 @@ def list_terms(
 @click.option("--dry-run", is_flag=True, help="Prepare nanopubs but do not publish")
 @click.option("--verbose", "-v", is_flag=True, help="Enable verbose output")
 @click.option(
-    "--output-pairs",
-    "output_path_pairs",
+    "--htaccess-path",
+    "htaccess_path",
     required=False,
     type=click.Path(),
     help="Path to output identifier nanopub pairs",
@@ -653,7 +690,7 @@ def publish(
     intro_nanopub_uri: str,
     dry_run: bool = False,
     verbose: bool = False,
-    output_path_pairs: str = None,
+    htaccess_path: str = None,
 ):
     """
     Create and publish nanopublications from changelog.
@@ -696,12 +733,15 @@ def publish(
                 term_uri = change["term_uri"]
                 element_type = change["linkml_element_type"]
                 additional_statements = adjust_linkml_graph(
-                    term_uri, 
-                    element_type, 
-                    schema_view
+                    term_uri, element_type, schema_view
                 )
                 np = add_term(
-                    term_uri, schema_graph, nanopub_generator, dry_run, identifier_pairs, additional_statements=additional_statements
+                    term_uri,
+                    schema_graph,
+                    nanopub_generator,
+                    dry_run,
+                    identifier_pairs,
+                    additional_statements=additional_statements,
                 )
                 processed += 1
                 if not dry_run:
@@ -728,10 +768,10 @@ def publish(
         )
 
         # dump identifier_pairs
-        if output_path_pairs is None:
-            output_path_pairs = "./pairs.txt"
-        output_path_pairs = pathlib.Path(output_path_pairs).resolve()
-        _ = update_htaccess(identifier_pairs, output_path_pairs)
+        if htaccess_path is None:
+            htaccess_path = "./htaccess.txt"
+        htaccess_path = pathlib.Path(htaccess_path).resolve()
+        _ = update_htaccess(identifier_pairs, htaccess_path)
 
     except Exception as e:
         logger.error(f"Error in processing: {e}")
@@ -797,6 +837,7 @@ def publish(
     type=str,
     help="class, enum or slot",
 )
+@nanopub_identifier_args
 def example(
     schema_path: str,
     graph_path: str,
@@ -848,9 +889,125 @@ def example(
         sys.exit(1)
 
 
+def get_np_uri_from_linkml(uri: str) -> str:
+    # TODO: this requires testing!!!
+    try:
+        response = requests.get(uri, allow_redirects=True)
+        response.raise_for_status()
+        return response.url
+    except requests.RequestException as e:
+        logger.error(f"An error occurred in get_np_uri_from_linkml: {e}")
+        sys.exit(1)
+
+
+@click.command()
+@click.option(
+    "--schema",
+    "-s",
+    "schema_path",
+    required=True,
+    type=click.Path(exists=True),
+    help="Path to the LinkML schema from which to publish terms.",
+)
+@click.option(
+    "--htaccess-file",
+    "htaccess_file",
+    required=False,
+    type=click.Path(exists=True),
+    default=None,
+)
+@click.option("--dry-run", is_flag=True, help="Prepare index but do not publish")
+@nanopub_identifier_args
+def push_index(
+    schema_path: str,
+    orcid_id: str,
+    name: str,
+    private_key: str,
+    public_key: str,
+    intro_nanopub_uri: str,
+    htaccess_file: Optional[str] = None,
+    dry_run: bool = True,
+):
+    logger.info(f"Running dry run is set to {dry_run}. Starting ...")
+    uri_mapping = {}
+
+    schema_view = SchemaView(schema_path)
+    version = schema_view.schema.version
+    if version is None:
+        logger.error("Schema does not contain a version key.")
+        sys.exit(1)
+    model_title = schema_view.schema.title
+    model_description = schema_view.schema.description
+
+    nanopub_generator = NanopubGenerator(
+        orcid_id=orcid_id,
+        name=name,
+        private_key=private_key,
+        public_key=public_key,
+        intro_nanopub_uri=intro_nanopub_uri,
+        test_server=True,
+    )
+    if htaccess_file is not None:
+        logger.info(f"Fetching nanopub uris for statements in {htaccess_file}")
+        with open(htaccess_file, "r") as file:
+            for line in file:
+                # Example content of uri_pairs
+                # RewriteRule ^EntityList$ http://purl.org/np/RAucNj8-CjIWhDt8y8arZ-Sgcr_-roQBzAohHRHww7bWQ [R=302,L]
+                rewrite_rule = line.rstrip().split(" ")
+                nanopub_uri = rewrite_rule[-2]
+                term = rewrite_rule[1].replace("^", "", 1)
+                term = re.sub(r"\$", "", term, count=1)
+                uri_mapping[term] = nanopub_uri
+
+    ## iterate over schema and add each of terms to index.
+    # STEPS:
+    # 1/ check if term in htaccess_file
+    # 2/ check if nanopub can be found (request)
+    logger.info(f"Collecting all terms that are part of the ontology version {version}")
+    for cls in schema_view.all_classes():
+        if cls not in uri_mapping:
+            uri_mapping[cls] = get_np_uri_from_linkml(cls)
+    for slot in schema_view.all_slots():
+        if slot not in uri_mapping:
+            uri_mapping[slot] = get_np_uri_from_linkml(slot)
+    for enum in schema_view.all_enums():
+        if enum not in uri_mapping:
+            uri_mapping[enum] = get_np_uri_from_linkml(enum)
+
+    np_uri_list = list(uri_mapping.values())
+    np_list = nanopub.create_nanopub_index(
+        nanopub_generator.np_conf,
+        np_uri_list,
+        model_title,
+        model_description,
+        datetime.datetime.now().astimezone().replace(microsecond=0).isoformat(),
+        CREATORS,
+    )
+    # add version info
+    top_np = np_list[-1]
+    SCHEMA_NS = rdflib.Namespace(NAMESPACES["schema1"])
+    top_np.assertion.bind("schema1", SCHEMA_NS)
+    top_np.assertion.add(
+        (
+            top_np.metadata.np_uri,
+            rdflib.URIRef(SCHEMA_NS["version"]),
+            rdflib.Literal(version),
+        )
+    )
+    # publish the lot
+    if not dry_run:
+        logger.info("Publishing the signed nanopub(s) that make(s) up the index.")
+        for np in np_list:
+            np.publish()
+        logger.info(f"Index is published at {np_list[-1].metadata.np_uri}")
+    print(np_list[-1])
+    return True
+
+
 cli.add_command(list_terms)
 cli.add_command(publish)
 cli.add_command(example)
+cli.add_command(push_index)
 
 if __name__ == "__main__":
     cli()
