@@ -1,8 +1,4 @@
-name: Generate PEH Model Artefacts
-
-permissions:
-  contents: write
-  pull-requests: write 
+name: Publish PEH terms to nanopub
 
 on:
   workflow_dispatch:
@@ -16,15 +12,20 @@ on:
     paths:
       - '.github/workflows/nanopub.yaml'
       - 'linkml/scripts/publish.py'
+      - 'linkml/schema'
   release:
     types: [published]
+
+env:
+  NANOPUB_INTRO_URI: "https://w3id.org/np/RACq6O6F4gSuC0A037LXUt2QOr_yYHJUwx3wAWDGv4Ryc"
+  NANOPUB_NAME: "Gertjan Bisschop"
+  NANOPUB_ORCID_ID: "https://orcid.org/0000-0001-8327-0142"
+  NANOPUB_PUBLIC_KEY: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArlLcAwjvZ4CcLJrgreOAZBEMWulAW3ja+oEceoowiWmR7sgGOKB0HdJIX2eA2FnoR4ZFaoSjLvszMs0+qfu1mVSQk/txEI6gbZME0A75nk8/IPh26+JnEVKOtaVM61F6HZ/sh/lbF8a8WOtf0FyBlfx3kn1jq7N7EdYGWYyFvLQf9YVIOcgz2X8mP7hWJ6p+UoCK7ZzmOBNELwd1NeQQe1Iwt4tbQR/CtjMYwZZTfDRVh6tCOv7jC3IywhiwVFmFp4mXN5f0/LjByzqQSVbxwAMWvhy41W9+eJJGUiLiumHOdY4Y/pwnHVyuPuiTfRn+GQsAaB+nOwpOkQSofpdvuwIDAQAB"
+  DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == false && 'false' || 'true' }}
 
 jobs:
   Terms2Nanopub:
     runs-on: ubuntu-latest
-    env:
-      # Set dry-run to false only for releases, true for everything else
-      DRY_RUN: ${{ github.event_name == 'release' && 'false' || (inputs.dry_run == false && 'false' || 'true') }}
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
@@ -55,11 +56,11 @@ jobs:
           make publish-nanopubs
         env:
           DRY_RUN: ${{ env.DRY_RUN }}
-          NANOPUB_ORCID_ID: ${{ secrets.NANOPUB_ORCID_ID }}
-          NANOPUB_NAME: ${{ secrets.NANOPUB_NAME }}
+          NANOPUB_ORCID_ID: ${{ env.NANOPUB_ORCID_ID }}
+          NANOPUB_NAME: ${{ env.NANOPUB_NAME }}
           NANOPUB_PRIVATE_KEY: ${{ secrets.NANOPUB_PRIVATE_KEY }}
-          NANOPUB_PUBLIC_KEY: ${{ secrets.NANOPUB_PUBLIC_KEY }}
-          NANOPUB_INTRO_URI: ${{ secrets.NANOPUB_INTRO_URI }}
+          NANOPUB_PUBLIC_KEY: ${{ env.NANOPUB_PUBLIC_KEY }}
+          NANOPUB_INTRO_URI: ${{ env.NANOPUB_INTRO_URI }}
 
       - name: Upload htaccess.txt
         uses: actions/upload-artifact@v4 
@@ -69,10 +70,7 @@ jobs:
 
   NanopubIndex:
     needs: Terms2Nanopub
-    runs-on: ubuntu-latest
-    env:
-      DRY_RUN: ${{ github.event_name == 'release' && 'false' || (inputs.dry_run == false && 'false' || 'true') }}
-      
+    runs-on: ubuntu-latest  
     steps:
     - name: Checkout code 
       uses: actions/checkout@v4
@@ -100,8 +98,8 @@ jobs:
         make push-index
       env:
         DRY_RUN: ${{ env.DRY_RUN }}
-        NANOPUB_ORCID_ID: ${{ secrets.NANOPUB_ORCID_ID }}
-        NANOPUB_NAME: ${{ secrets.NANOPUB_NAME }}
-        NANOPUB_PRIVATE_KEY: ${{ secrets.NANOPUB_PRIVATE_KEY }}
-        NANOPUB_PUBLIC_KEY: ${{ secrets.NANOPUB_PUBLIC_KEY }}
-        NANOPUB_INTRO_URI: ${{ secrets.NANOPUB_INTRO_URI }}
+        NANOPUB_ORCID_ID: ${{ env.NANOPUB_ORCID_ID }}
+        NANOPUB_NAME: ${{ env.NANOPUB_NAME }}
+        NANOPUB_PRIVATE_KEY: ${{ env.NANOPUB_PRIVATE_KEY }}
+        NANOPUB_PUBLIC_KEY: ${{ env.NANOPUB_PUBLIC_KEY }}
+        NANOPUB_INTRO_URI: ${{ env.NANOPUB_INTRO_URI }}
