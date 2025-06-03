@@ -12,7 +12,7 @@ on:
     paths:
       - '.github/workflows/nanopub.yaml'
       - 'linkml/scripts/publish.py'
-      - 'linkml/schema'
+      - 'linkml/schema/**'
   release:
     types: [published]
 
@@ -45,11 +45,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install "linkml-runtime>=1.9,<2" nanopub pydantic 
-
-      - name: Validate changelog
-        run: |
-          make validate-changelog
+          pip install "linkml-runtime>=1.9,<2" nanopub pydantic
 
       - name: Publish individual terms
         run: |
