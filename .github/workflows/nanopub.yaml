@@ -21,7 +21,7 @@ env:
   NANOPUB_NAME: "Gertjan Bisschop"
   NANOPUB_ORCID_ID: "https://orcid.org/0000-0001-8327-0142"
   NANOPUB_PUBLIC_KEY: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArlLcAwjvZ4CcLJrgreOAZBEMWulAW3ja+oEceoowiWmR7sgGOKB0HdJIX2eA2FnoR4ZFaoSjLvszMs0+qfu1mVSQk/txEI6gbZME0A75nk8/IPh26+JnEVKOtaVM61F6HZ/sh/lbF8a8WOtf0FyBlfx3kn1jq7N7EdYGWYyFvLQf9YVIOcgz2X8mP7hWJ6p+UoCK7ZzmOBNELwd1NeQQe1Iwt4tbQR/CtjMYwZZTfDRVh6tCOv7jC3IywhiwVFmFp4mXN5f0/LjByzqQSVbxwAMWvhy41W9+eJJGUiLiumHOdY4Y/pwnHVyuPuiTfRn+GQsAaB+nOwpOkQSofpdvuwIDAQAB"
-  DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == false && 'false' || 'true' }}
+  DRY_RUN: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false') && 'false' || 'true' }}
 
 jobs:
   Terms2Nanopub:
