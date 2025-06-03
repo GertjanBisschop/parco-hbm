@@ -189,7 +189,12 @@ publish-nanopubs:
 	@echo "Publishing schema"
 	python3 "$(CHANGELOG_SCRIPT_PATH)" validate-changelog -s "$(CHANGELOG_SCHEMA_PATH)" "$(CHANGELOG_PATH)"
 	@echo "Publish terms in changelog."
-	set -a && source .env && set +a && \
+	@if [ -f .env ]; then \
+		echo "Loading .env file for local development"; \
+		set -a && source .env && set +a; \
+	else \
+		echo "Using environment variables (CI/CD mode)"; \
+	fi && \
 	python3 $(PUBLISH_SCRIPT_PATH) publish \
 		-g $(SRC)/owl/$(SCHEMA_NAME).owl.ttl \
 		-s $(SOURCE_SCHEMA_PATH) \
