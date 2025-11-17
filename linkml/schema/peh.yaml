@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.3.0
+version: 0.3.1
 
 imports:
   - linkml:types
@@ -308,6 +308,13 @@ classes:
     is_a: NamedThing
     slots:
       - value_type
+  ObservablePropertyLink:
+    description: >-
+      Configuration that refers to an ObservableProperty in an Observation
+    slots:
+      - observation
+      - observable_property
+  
   CalculationDesign:
     description: >-
       Definition of a calculation method for deriving an observational value from other variables and/or contexts
@@ -321,18 +328,8 @@ classes:
       Reference and parameters mapping to the implementation that can perform the intended calculation
     slots:
       - function_name
-      - function_args
       - function_kwargs
       - function_results
-  CalculationArgument:
-    description: >-
-      The definition of a positional argument used in the calculation, including the information needed to pick it from the project or study data structure
-    slots:
-      - source_path
-      - process_state
-      - imputation_state
-      - value_type
-      - unit
   CalculationKeywordArgument:
     description: >-
       The definition of a named argument used in the calculation, including the information needed to pick it from the project or study data structure
@@ -839,10 +836,6 @@ slots:
   calculation_implementation:
     range: CalculationImplementation
   function_name:
-  function_args:
-    multivalued: true
-    inlined_as_list: true
-    range: CalculationArgument
   function_kwargs:
     multivalued: true
     inlined_as_list: true
@@ -865,13 +858,17 @@ slots:
     range: ValidationErrorLevel
   validation_error_message_template:
   validation_subject_source_paths:
+    range: DataLayoutElementLink
     multivalued: true
+    inlined_as_list: true
   validation_command:
     range: ValidationCommand
   validation_arg_values:
     multivalued: true
   validation_arg_source_paths:
+    range: DataLayoutElementLink
     multivalued: true
+    inlined_as_list: true
   validation_arg_expressions:
     multivalued: true
     inlined_as_list: true
@@ -1036,6 +1033,7 @@ slots:
     range: ObservableProperty
   observable_property:
     range: ObservableProperty
+    inlined: false
   observed_values:
     multivalued: true
     inlined_as_list: true
