@@ -1033,7 +1033,9 @@ slots:
     inlined: false
   dependent_contextual_observable_properties:
     range: ContextualObservableProperty
-    inline: false
+    multivalued: true
+    required: false
+    inlined_as_list: false
   observed_values:
     multivalued: true
     inlined_as_list: true
