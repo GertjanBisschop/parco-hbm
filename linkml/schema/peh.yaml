@@ -353,11 +353,11 @@ classes:
     description: >-
       A logical expression, allowing for combining arguments into more complex validation rules
     slots:
-      - validation_subject_contextual_field_references
+      - validation_subject_observable_properties
       - validation_condition_expression
       - validation_command
       - validation_arg_values
-      - validation_arg_contextual_field_references
+      - validation_arg_observable_properties
       - validation_arg_expressions
   ContextualFieldReference:
     description: >-
@@ -371,18 +371,8 @@ classes:
     is_a: NamedThing
     slots:
       - observable_property
-      - contextual_field_reference_links
-      # slots from an ObservableProperty that we should be able to overrule
-      - unit
-      - unit_label
-      - calculation_designs
-      - validation_designs
-  ContextualFieldReferenceLink:
-    description: >-
-      A something something
-    slots:
-      - observable_property
-      - contextual_field_reference        
+      - contextual_field_reference
+      - dependent_contextual_observable_properties
   Contact:
     description: >-
       A stakeholder having a contact role in the research process
@@ -862,18 +852,18 @@ slots:
   validation_error_level:
     range: ValidationErrorLevel
   validation_error_message_template:
-  validation_subject_contextual_field_references:
+  validation_subject_observable_properties:
     multivalued: true
-    inlined_as_list: true
-    range: ContextualFieldReference
+    inlined_as_list: false
+    range: ObservableProperty
   validation_command:
     range: ValidationCommand
   validation_arg_values:
     multivalued: true
-  validation_arg_contextual_field_references:
+  validation_arg_observable_properties:
     multivalued: true
-    inlined_as_list: true
-    range: ContextualFieldReference
+    inlined_as_list: false
+    range: ObservableProperty
   validation_arg_expressions:
     multivalued: true
     inlined_as_list: true
@@ -1041,6 +1031,9 @@ slots:
   observable_property:
     range: ObservableProperty
     inlined: false
+  dependent_contextual_observable_properties:
+    range: ContextualObservableProperty
+    inline: false
   observed_values:
     multivalued: true
     inlined_as_list: true
