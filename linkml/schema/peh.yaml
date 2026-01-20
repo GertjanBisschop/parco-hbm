@@ -365,6 +365,24 @@ classes:
     slots:
       - dataset_label
       - field_label
+  ContextualObservableProperty:
+    description: >-
+      A context-specific binding of an ObservableProperty
+    is_a: NamedThing
+    slots:
+      - observable_property
+      - contextual_field_reference_links
+      # slots from an ObservableProperty that we should be able to overrule
+      - unit
+      - unit_label
+      - calculation_designs
+      - validation_designs
+  ContextualFieldReferenceLink:
+    description: >-
+      A something something
+    slots:
+      - observable_property
+      - contextual_field_reference        
   Contact:
     description: >-
       A stakeholder having a contact role in the research process
