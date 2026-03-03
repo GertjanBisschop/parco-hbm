@@ -2056,16 +2056,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "calculation_designs",
-      "definition_uri": "https://w3id.org/peh/terms/calculation_designs",
+      "name": "calculation_design",
+      "definition_uri": "https://w3id.org/peh/terms/calculation_design",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/calculation_designs",
+      "slot_uri": "https://w3id.org/peh/terms/calculation_design",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
       ],
       "range": "CalculationDesign",
-      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -4282,7 +4281,7 @@
         "relevant_observable_entity_types",
         "relevant_observation_types",
         "indicator",
-        "calculation_designs",
+        "calculation_design",
         "validation_designs",
         "translations",
         "context_aliases"
@@ -5138,9 +5137,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-02-09T11:46:14",
-  "source_file_size": 38913,
-  "generation_date": "2026-02-09T11:46:32",
+  "source_file_date": "2026-03-03T13:47:38",
+  "source_file_size": 38863,
+  "generation_date": "2026-03-03T13:47:59",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

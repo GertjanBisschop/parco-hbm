@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-09T11:46:32
+# Generation date: 2026-03-03T13:47:59
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1479,9 +1479,7 @@ class ObservableProperty(NamedThing):
         Union[Union[str, "ObservationType"], list[Union[str, "ObservationType"]]]
     ] = empty_list()
     indicator: Optional[Union[str, IndicatorId]] = None
-    calculation_designs: Optional[
-        Union[Union[dict, "CalculationDesign"], list[Union[dict, "CalculationDesign"]]]
-    ] = empty_list()
+    calculation_design: Optional[Union[dict, "CalculationDesign"]] = None
     validation_designs: Optional[
         Union[Union[dict, "ValidationDesign"], list[Union[dict, "ValidationDesign"]]]
     ] = empty_list()
@@ -1599,16 +1597,12 @@ class ObservableProperty(NamedThing):
         if self.indicator is not None and not isinstance(self.indicator, IndicatorId):
             self.indicator = IndicatorId(self.indicator)
 
-        if not isinstance(self.calculation_designs, list):
-            self.calculation_designs = (
-                [self.calculation_designs]
-                if self.calculation_designs is not None
-                else []
+        if self.calculation_design is not None and not isinstance(
+            self.calculation_design, CalculationDesign
+        ):
+            self.calculation_design = CalculationDesign(
+                **as_dict(self.calculation_design)
             )
-        self.calculation_designs = [
-            v if isinstance(v, CalculationDesign) else CalculationDesign(**as_dict(v))
-            for v in self.calculation_designs
-        ]
 
         if not isinstance(self.validation_designs, list):
             self.validation_designs = (
@@ -4872,15 +4866,13 @@ slots.indicator = Slot(
     range=Optional[Union[str, IndicatorId]],
 )
 
-slots.calculation_designs = Slot(
-    uri=PEHTERMS.calculation_designs,
-    name="calculation_designs",
-    curie=PEHTERMS.curie("calculation_designs"),
-    model_uri=PEHTERMS.calculation_designs,
+slots.calculation_design = Slot(
+    uri=PEHTERMS.calculation_design,
+    name="calculation_design",
+    curie=PEHTERMS.curie("calculation_design"),
+    model_uri=PEHTERMS.calculation_design,
     domain=None,
-    range=Optional[
-        Union[Union[dict, CalculationDesign], list[Union[dict, CalculationDesign]]]
-    ],
+    range=Optional[Union[dict, CalculationDesign]],
 )
 
 slots.calculation_name = Slot(
