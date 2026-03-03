@@ -1231,30 +1231,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "unique_name",
-      "definition_uri": "https://w3id.org/peh/terms/unique_name",
-      "description": "Human readable name, unique across the context the entity is defined in.",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "http://www.w3.org/2004/02/skos/core#prefLabel"
-      ],
-      "close_mappings": [
-        "http://schema.org/identifier"
-      ],
-      "slot_uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "short_name",
       "definition_uri": "https://w3id.org/peh/terms/short_name",
-      "description": "Shortened name or code, preferrable unique across the context the entity is defined in.",
+      "description": "Shortened name or code, preferrably unique within the context the entity is (typically) used in.",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/short_name",
+      "mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2004/02/skos/core#altLabel"
+      ],
+      "slot_uri": "http://schema.org/alternateName",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -1268,12 +1255,13 @@
       "description": "Common human readable name",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
-        "http://schema.org/name"
+        "http://www.w3.org/2000/01/rdf-schema#label"
       ],
       "exact_mappings": [
-        "http://www.w3.org/2004/02/skos/core#altLabel"
+        "http://schema.org/name",
+        "http://www.w3.org/2004/02/skos/core#prefLabel"
       ],
-      "slot_uri": "http://schema.org/name",
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#label",
       "owner": "Contact",
       "domain_of": [
         "NamedThing",
@@ -1302,23 +1290,9 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "label",
-      "definition_uri": "https://w3id.org/peh/terms/label",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/label",
-      "owner": "DataLayoutElementLink",
-      "domain_of": [
-        "ObservablePropertyValueOption",
-        "DataLayoutElement",
-        "DataLayoutElementLink"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "ui_label",
       "definition_uri": "https://w3id.org/peh/terms/ui_label",
-      "description": "Human readable label, to be used in user facing interfaces in the most common use cases.",
+      "description": "Human readable label, to be used in user interactions through forms or documents.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/ui_label",
       "owner": "NamedThing",
@@ -1373,6 +1347,20 @@
       "owner": "Stakeholder",
       "domain_of": [
         "Stakeholder"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "label",
+      "definition_uri": "https://w3id.org/peh/terms/label",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/label",
+      "owner": "DataLayoutElementLink",
+      "domain_of": [
+        "ObservablePropertyValueOption",
+        "DataLayoutElement",
+        "DataLayoutElementLink"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3799,7 +3787,6 @@
       "abstract": true,
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -3823,7 +3810,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -3950,7 +3936,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -3984,7 +3969,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4022,7 +4006,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4055,7 +4038,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4086,7 +4068,6 @@
       "abstract": true,
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4120,7 +4101,6 @@
       "is_a": "PhysicalEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4146,7 +4126,6 @@
       "is_a": "PhysicalEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4168,7 +4147,6 @@
       "is_a": "PhysicalEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4190,7 +4168,6 @@
       "is_a": "PhysicalEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4211,7 +4188,6 @@
       "is_a": "Environment",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4232,7 +4208,6 @@
       "is_a": "Environment",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4257,7 +4232,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4329,7 +4303,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4484,7 +4457,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4511,7 +4483,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4559,7 +4530,6 @@
       "abstract": true,
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4598,7 +4568,6 @@
       ],
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4643,7 +4612,6 @@
       "is_a": "StudyEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4668,7 +4636,6 @@
       "is_a": "StudyEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4692,7 +4659,6 @@
       "is_a": "StudyEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4717,7 +4683,6 @@
       "is_a": "StudyEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4739,7 +4704,6 @@
       "is_a": "StudyEntity",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4762,7 +4726,6 @@
       "abstract": true,
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4803,7 +4766,6 @@
       "abstract": true,
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4877,7 +4839,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4898,7 +4859,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4952,7 +4912,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -4999,7 +4958,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -5042,7 +5000,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -5066,7 +5023,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -5088,7 +5044,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -5108,7 +5063,6 @@
       "is_a": "NamedThing",
       "slots": [
         "id",
-        "unique_name",
         "short_name",
         "name",
         "ui_label",
@@ -5137,9 +5091,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-03-03T13:47:38",
-  "source_file_size": 38863,
-  "generation_date": "2026-03-03T13:47:59",
+  "source_file_date": "2026-03-03T13:53:30",
+  "source_file_size": 38784,
+  "generation_date": "2026-03-03T13:53:52",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

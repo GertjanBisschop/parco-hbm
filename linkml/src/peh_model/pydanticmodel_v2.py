@@ -334,20 +334,16 @@ class NamedThing(ConfiguredBaseModel):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -427,20 +423,16 @@ class Grouping(HasTranslations, HasContextAliases, NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -477,20 +469,16 @@ class Unit(HasTranslations, HasValidationStatus, NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -531,20 +519,16 @@ class BioChemEntity(
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -569,20 +553,16 @@ class Matrix(HasTranslations, HasContextAliases, NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -616,20 +596,16 @@ class Indicator(HasTranslations, HasContextAliases, NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -652,20 +628,16 @@ class PhysicalEntity(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -702,20 +674,16 @@ class Sample(PhysicalEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -739,20 +707,16 @@ class Person(PhysicalEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -776,20 +740,16 @@ class Geolocation(PhysicalEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -812,20 +772,16 @@ class Environment(PhysicalEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -848,20 +804,16 @@ class HomeEnvironment(Environment):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -884,20 +836,16 @@ class WorkEnvironment(Environment):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -950,20 +898,16 @@ class ObservableProperty(HasTranslations, HasContextAliases, NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1006,20 +950,16 @@ class ObservablePropertyMetadataField(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1152,20 +1092,16 @@ class Stakeholder(HasTranslations, NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1200,20 +1136,16 @@ class StudyEntity(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1244,20 +1176,16 @@ class Project(StudyEntity, HasTranslations, HasContextAliases):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1299,20 +1227,16 @@ class Study(StudyEntity, HasTranslations, HasContextAliases):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1349,20 +1273,16 @@ class ObservationGroup(StudyEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1388,20 +1308,16 @@ class StudyPopulation(StudyEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1428,20 +1344,16 @@ class SampleCollection(StudyEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1465,20 +1377,16 @@ class StudySubject(StudyEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1502,20 +1410,16 @@ class StudySubjectGroup(StudyEntity):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1540,20 +1444,16 @@ class Observation(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1592,20 +1492,16 @@ class ObservationResult(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1666,20 +1562,16 @@ class DataLayout(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1705,20 +1597,16 @@ class DataLayoutSection(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1764,20 +1652,16 @@ class DataImportConfig(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1830,20 +1714,16 @@ class DataRequest(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1878,20 +1758,16 @@ class DataStakeholder(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1915,20 +1791,16 @@ class ResearchObjective(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1950,20 +1822,16 @@ class ProcessingAction(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,
@@ -1987,20 +1855,16 @@ class ProcessingStep(NamedThing):
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
-    unique_name: Optional[str] = Field(
-        default=None,
-        description="""Human readable name, unique across the context the entity is defined in.""",
-    )
     short_name: Optional[str] = Field(
         default=None,
-        description="""Shortened name or code, preferrable unique across the context the entity is defined in.""",
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
     )
     name: Optional[str] = Field(
         default=None, description="""Common human readable name"""
     )
     ui_label: Optional[str] = Field(
         default=None,
-        description="""Human readable label, to be used in user facing interfaces in the most common use cases.""",
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
     )
     description: Optional[str] = Field(
         default=None,

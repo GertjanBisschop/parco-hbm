@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-03T13:47:59
+# Generation date: 2026-03-03T13:53:52
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -451,7 +451,6 @@ class NamedThing(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.NamedThing
 
     id: Union[str, NamedThingId] = None
-    unique_name: Optional[str] = None
     short_name: Optional[str] = None
     name: Optional[str] = None
     ui_label: Optional[str] = None
@@ -466,9 +465,6 @@ class NamedThing(YAMLRoot):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingId):
             self.id = NamedThingId(self.id)
-
-        if self.unique_name is not None and not isinstance(self.unique_name, str):
-            self.unique_name = str(self.unique_name)
 
         if self.short_name is not None and not isinstance(self.short_name, str):
             self.short_name = str(self.short_name)
@@ -4296,28 +4292,19 @@ slots.id = Slot(
     range=URIRef,
 )
 
-slots.unique_name = Slot(
-    uri=SKOS.prefLabel,
-    name="unique_name",
-    curie=SKOS.curie("prefLabel"),
-    model_uri=PEHTERMS.unique_name,
-    domain=None,
-    range=Optional[str],
-)
-
 slots.short_name = Slot(
-    uri=PEHTERMS.short_name,
+    uri=SCHEMA.alternateName,
     name="short_name",
-    curie=PEHTERMS.curie("short_name"),
+    curie=SCHEMA.curie("alternateName"),
     model_uri=PEHTERMS.short_name,
     domain=None,
     range=Optional[str],
 )
 
 slots.name = Slot(
-    uri=SCHEMA.name,
+    uri=RDFS.label,
     name="name",
-    curie=SCHEMA.curie("name"),
+    curie=RDFS.curie("label"),
     model_uri=PEHTERMS.name,
     domain=None,
     range=Optional[str],
@@ -4328,15 +4315,6 @@ slots.description = Slot(
     name="description",
     curie=SCHEMA.curie("description"),
     model_uri=PEHTERMS.description,
-    domain=None,
-    range=Optional[str],
-)
-
-slots.label = Slot(
-    uri=PEHTERMS.label,
-    name="label",
-    curie=PEHTERMS.curie("label"),
-    model_uri=PEHTERMS.label,
     domain=None,
     range=Optional[str],
 )
@@ -4373,6 +4351,15 @@ slots.rorid = Slot(
     name="rorid",
     curie=SCHEMA.curie("identifier"),
     model_uri=PEHTERMS.rorid,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.label = Slot(
+    uri=PEHTERMS.label,
+    name="label",
+    curie=PEHTERMS.curie("label"),
+    model_uri=PEHTERMS.label,
     domain=None,
     range=Optional[str],
 )

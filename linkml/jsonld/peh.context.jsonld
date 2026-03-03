@@ -308,7 +308,7 @@
          "@id": "multivalued"
       },
       "name": {
-         "@id": "schema:name"
+         "@id": "rdfs:label"
       },
       "normalised_unit": {
          "@type": "@id",
@@ -630,7 +630,7 @@
          "@id": "sections"
       },
       "short_name": {
-         "@id": "short_name"
+         "@id": "schema:alternateName"
       },
       "significantdecimals": {
          "@type": "xsd:integer",
@@ -693,9 +693,6 @@
       },
       "ui_label": {
          "@id": "ui_label"
-      },
-      "unique_name": {
-         "@id": "skos:prefLabel"
       },
       "unit": {
          "@type": "@id",
