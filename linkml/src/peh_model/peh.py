@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-03T13:53:52
+# Generation date: 2026-03-03T14:23:29
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -54,12 +54,14 @@ version = "0.4.0"
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
 LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
+OWL = CurieNamespace("owl", "http://www.w3.org/2002/07/owl#")
 PEH = CurieNamespace("peh", "https://w3id.org/peh/")
 PEHTERMS = CurieNamespace("pehterms", "https://w3id.org/peh/terms/")
 PROV = CurieNamespace("prov", "http://www.w3.org/ns/prov#")
 QUDT = CurieNamespace("qudt", "http://qudt.org/2.1/schema/qudt")
 QUDTQK = CurieNamespace("qudtqk", "http://qudt.org/2.1/vocab/quantitykind")
 QUDTUNIT = CurieNamespace("qudtunit", "https://qudt.org/vocab/unit/")
+RDF = CurieNamespace("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 RDFS = CurieNamespace("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
 SCHEMA = CurieNamespace("schema", "http://schema.org/")
 SKOS = CurieNamespace("skos", "http://www.w3.org/2004/02/skos/core#")
@@ -87,11 +89,23 @@ class BioChemEntityId(NamedThingId):
     pass
 
 
+class BioChemEntitySubClassId(NamedThingId):
+    pass
+
+
 class MatrixId(NamedThingId):
     pass
 
 
+class MatrixSubClassId(NamedThingId):
+    pass
+
+
 class IndicatorId(NamedThingId):
+    pass
+
+
+class IndicatorSubClassId(NamedThingId):
     pass
 
 
@@ -220,12 +234,6 @@ class EntityList(YAMLRoot):
     class_name: ClassVar[str] = "EntityList"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.EntityList
 
-    matrices: Optional[
-        Union[
-            dict[Union[str, MatrixId], Union[dict, "Matrix"]],
-            list[Union[dict, "Matrix"]],
-        ]
-    ] = empty_dict()
     metadata_fields: Optional[
         Union[
             dict[
@@ -235,22 +243,10 @@ class EntityList(YAMLRoot):
             list[Union[dict, "ObservablePropertyMetadataField"]],
         ]
     ] = empty_dict()
-    biochementities: Optional[
-        Union[
-            dict[Union[str, BioChemEntityId], Union[dict, "BioChemEntity"]],
-            list[Union[dict, "BioChemEntity"]],
-        ]
-    ] = empty_dict()
     groupings: Optional[
         Union[
             dict[Union[str, GroupingId], Union[dict, "Grouping"]],
             list[Union[dict, "Grouping"]],
-        ]
-    ] = empty_dict()
-    indicators: Optional[
-        Union[
-            dict[Union[str, IndicatorId], Union[dict, "Indicator"]],
-            list[Union[dict, "Indicator"]],
         ]
     ] = empty_dict()
     units: Optional[
@@ -330,12 +326,29 @@ class EntityList(YAMLRoot):
             list[Union[dict, "DataRequest"]],
         ]
     ] = empty_dict()
+    matrix_subclasses: Optional[
+        Union[
+            dict[Union[str, MatrixSubClassId], Union[dict, "MatrixSubClass"]],
+            list[Union[dict, "MatrixSubClass"]],
+        ]
+    ] = empty_dict()
+    biochementity_subclasses: Optional[
+        Union[
+            dict[
+                Union[str, BioChemEntitySubClassId],
+                Union[dict, "BioChemEntitySubClass"],
+            ],
+            list[Union[dict, "BioChemEntitySubClass"]],
+        ]
+    ] = empty_dict()
+    indicator_subclasses: Optional[
+        Union[
+            dict[Union[str, IndicatorSubClassId], Union[dict, "IndicatorSubClass"]],
+            list[Union[dict, "IndicatorSubClass"]],
+        ]
+    ] = empty_dict()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        self._normalize_inlined_as_list(
-            slot_name="matrices", slot_type=Matrix, key_name="id", keyed=True
-        )
-
         self._normalize_inlined_as_list(
             slot_name="metadata_fields",
             slot_type=ObservablePropertyMetadataField,
@@ -344,18 +357,7 @@ class EntityList(YAMLRoot):
         )
 
         self._normalize_inlined_as_list(
-            slot_name="biochementities",
-            slot_type=BioChemEntity,
-            key_name="id",
-            keyed=True,
-        )
-
-        self._normalize_inlined_as_list(
             slot_name="groupings", slot_type=Grouping, key_name="id", keyed=True
-        )
-
-        self._normalize_inlined_as_list(
-            slot_name="indicators", slot_type=Indicator, key_name="id", keyed=True
         )
 
         self._normalize_inlined_as_list(
@@ -432,6 +434,27 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(
             slot_name="data_requests", slot_type=DataRequest, key_name="id", keyed=True
+        )
+
+        self._normalize_inlined_as_list(
+            slot_name="matrix_subclasses",
+            slot_type=MatrixSubClass,
+            key_name="id",
+            keyed=True,
+        )
+
+        self._normalize_inlined_as_list(
+            slot_name="biochementity_subclasses",
+            slot_type=BioChemEntitySubClass,
+            key_name="id",
+            keyed=True,
+        )
+
+        self._normalize_inlined_as_list(
+            slot_name="indicator_subclasses",
+            slot_type=IndicatorSubClass,
+            key_name="id",
+            keyed=True,
         )
 
         super().__post_init__(**kwargs)
@@ -883,13 +906,96 @@ class BioChemEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.BioChemEntity
 
     id: Union[str, BioChemEntityId] = None
+    aliases: Optional[Union[str, list[str]]] = empty_list()
+    context_aliases: Optional[
+        Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
+    ] = empty_list()
+    translations: Optional[
+        Union[Union[dict, Translation], list[Union[dict, Translation]]]
+    ] = empty_list()
+    current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
+    validation_history: Optional[
+        Union[
+            Union[dict, ValidationHistoryRecord],
+            list[Union[dict, ValidationHistoryRecord]],
+        ]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BioChemEntityId):
+            self.id = BioChemEntityId(self.id)
+
+        if not isinstance(self.aliases, list):
+            self.aliases = [self.aliases] if self.aliases is not None else []
+        self.aliases = [v if isinstance(v, str) else str(v) for v in self.aliases]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = (
+                [self.context_aliases] if self.context_aliases is not None else []
+            )
+        self.context_aliases = [
+            v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v))
+            for v in self.context_aliases
+        ]
+
+        if not isinstance(self.translations, list):
+            self.translations = (
+                [self.translations] if self.translations is not None else []
+            )
+        self.translations = [
+            v if isinstance(v, Translation) else Translation(**as_dict(v))
+            for v in self.translations
+        ]
+
+        if self.current_validation_status is not None and not isinstance(
+            self.current_validation_status, ValidationStatus
+        ):
+            self.current_validation_status = ValidationStatus(
+                self.current_validation_status
+            )
+
+        if not isinstance(self.validation_history, list):
+            self.validation_history = (
+                [self.validation_history] if self.validation_history is not None else []
+            )
+        self.validation_history = [
+            (
+                v
+                if isinstance(v, ValidationHistoryRecord)
+                else ValidationHistoryRecord(**as_dict(v))
+            )
+            for v in self.validation_history
+        ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class BioChemEntitySubClass(NamedThing):
+    """
+    Template class used to generate OWL Classes.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OWL["Class"]
+    class_class_curie: ClassVar[str] = "owl:Class"
+    class_name: ClassVar[str] = "BioChemEntitySubClass"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.BioChemEntitySubClass
+
+    id: Union[str, BioChemEntitySubClassId] = None
     grouping_id_list: Optional[
         Union[Union[str, GroupingId], list[Union[str, GroupingId]]]
     ] = empty_list()
     biochementity_type: Optional[Union[str, "BioChemEntityType"]] = None
     molweight_grampermol: Optional[Decimal] = None
     parent_compounds: Optional[
-        Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
+        Union[
+            Union[str, BioChemEntitySubClassId],
+            list[Union[str, BioChemEntitySubClassId]],
+        ]
     ] = empty_list()
     group_compound_members: Optional[
         Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
@@ -915,8 +1021,8 @@ class BioChemEntity(NamedThing):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, BioChemEntityId):
-            self.id = BioChemEntityId(self.id)
+        if not isinstance(self.id, BioChemEntitySubClassId):
+            self.id = BioChemEntitySubClassId(self.id)
 
         if not isinstance(self.grouping_id_list, list):
             self.grouping_id_list = (
@@ -942,7 +1048,7 @@ class BioChemEntity(NamedThing):
                 [self.parent_compounds] if self.parent_compounds is not None else []
             )
         self.parent_compounds = [
-            v if isinstance(v, BioChemEntityId) else BioChemEntityId(v)
+            v if isinstance(v, BioChemEntitySubClassId) else BioChemEntitySubClassId(v)
             for v in self.parent_compounds
         ]
 
@@ -1028,7 +1134,6 @@ class Matrix(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.Matrix
 
     id: Union[str, MatrixId] = None
-    parent_matrix: Optional[Union[str, MatrixId]] = None
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
     ] = empty_list()
@@ -1041,11 +1146,6 @@ class Matrix(NamedThing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MatrixId):
             self.id = MatrixId(self.id)
-
-        if self.parent_matrix is not None and not isinstance(
-            self.parent_matrix, MatrixId
-        ):
-            self.parent_matrix = MatrixId(self.parent_matrix)
 
         if not isinstance(self.context_aliases, list):
             self.context_aliases = (
@@ -1069,6 +1169,60 @@ class Matrix(NamedThing):
 
 
 @dataclass(repr=False)
+class MatrixSubClass(NamedThing):
+    """
+    Template class used to generate OWL Classes.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OWL["Class"]
+    class_class_curie: ClassVar[str] = "owl:Class"
+    class_name: ClassVar[str] = "MatrixSubClass"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.MatrixSubClass
+
+    id: Union[str, MatrixSubClassId] = None
+    parent_matrix: Optional[Union[str, MatrixSubClassId]] = None
+    translations: Optional[
+        Union[Union[dict, Translation], list[Union[dict, Translation]]]
+    ] = empty_list()
+    context_aliases: Optional[
+        Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MatrixSubClassId):
+            self.id = MatrixSubClassId(self.id)
+
+        if self.parent_matrix is not None and not isinstance(
+            self.parent_matrix, MatrixSubClassId
+        ):
+            self.parent_matrix = MatrixSubClassId(self.parent_matrix)
+
+        if not isinstance(self.translations, list):
+            self.translations = (
+                [self.translations] if self.translations is not None else []
+            )
+        self.translations = [
+            v if isinstance(v, Translation) else Translation(**as_dict(v))
+            for v in self.translations
+        ]
+
+        if not isinstance(self.context_aliases, list):
+            self.context_aliases = (
+                [self.context_aliases] if self.context_aliases is not None else []
+            )
+        self.context_aliases = [
+            v if isinstance(v, ContextAlias) else ContextAlias(**as_dict(v))
+            for v in self.context_aliases
+        ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class Indicator(NamedThing):
     """
     Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
@@ -1082,6 +1236,30 @@ class Indicator(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.Indicator
 
     id: Union[str, IndicatorId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, IndicatorId):
+            self.id = IndicatorId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class IndicatorSubClass(NamedThing):
+    """
+    Template class used to generate OWL Classes
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OWL["Class"]
+    class_class_curie: ClassVar[str] = "owl:Class"
+    class_name: ClassVar[str] = "IndicatorSubClass"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.IndicatorSubClass
+
+    id: Union[str, IndicatorSubClassId] = None
     indicator_type: Optional[Union[str, "IndicatorType"]] = None
     property: Optional[str] = None
     quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
@@ -1096,6 +1274,7 @@ class Indicator(NamedThing):
         ]
     ] = empty_list()
     biochementity: Optional[Union[str, BioChemEntityId]] = None
+    parent_indicator: Optional[Union[str, IndicatorSubClassId]] = None
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
     ] = empty_list()
@@ -1106,8 +1285,8 @@ class Indicator(NamedThing):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, IndicatorId):
-            self.id = IndicatorId(self.id)
+        if not isinstance(self.id, IndicatorSubClassId):
+            self.id = IndicatorSubClassId(self.id)
 
         if self.indicator_type is not None and not isinstance(
             self.indicator_type, IndicatorType
@@ -1157,6 +1336,11 @@ class Indicator(NamedThing):
             self.biochementity, BioChemEntityId
         ):
             self.biochementity = BioChemEntityId(self.biochementity)
+
+        if self.parent_indicator is not None and not isinstance(
+            self.parent_indicator, IndicatorSubClassId
+        ):
+            self.parent_indicator = IndicatorSubClassId(self.parent_indicator)
 
         if not isinstance(self.context_aliases, list):
             self.context_aliases = (
@@ -1474,10 +1658,12 @@ class ObservableProperty(NamedThing):
     relevant_observation_types: Optional[
         Union[Union[str, "ObservationType"], list[Union[str, "ObservationType"]]]
     ] = empty_list()
-    indicator: Optional[Union[str, IndicatorId]] = None
     calculation_design: Optional[Union[dict, "CalculationDesign"]] = None
     validation_designs: Optional[
         Union[Union[dict, "ValidationDesign"], list[Union[dict, "ValidationDesign"]]]
+    ] = empty_list()
+    has_observable_property_type: Optional[
+        Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
     ] = empty_list()
     translations: Optional[
         Union[Union[dict, Translation], list[Union[dict, Translation]]]
@@ -1590,9 +1776,6 @@ class ObservableProperty(NamedThing):
             for v in self.relevant_observation_types
         ]
 
-        if self.indicator is not None and not isinstance(self.indicator, IndicatorId):
-            self.indicator = IndicatorId(self.indicator)
-
         if self.calculation_design is not None and not isinstance(
             self.calculation_design, CalculationDesign
         ):
@@ -1607,6 +1790,17 @@ class ObservableProperty(NamedThing):
         self.validation_designs = [
             v if isinstance(v, ValidationDesign) else ValidationDesign(**as_dict(v))
             for v in self.validation_designs
+        ]
+
+        if not isinstance(self.has_observable_property_type, list):
+            self.has_observable_property_type = (
+                [self.has_observable_property_type]
+                if self.has_observable_property_type is not None
+                else []
+            )
+        self.has_observable_property_type = [
+            v if isinstance(v, IndicatorSubClassId) else IndicatorSubClassId(v)
+            for v in self.has_observable_property_type
         ]
 
         if not isinstance(self.translations, list):
@@ -4520,34 +4714,6 @@ slots.parent_grouping_id_list = Slot(
     range=Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]],
 )
 
-slots.biochementities = Slot(
-    uri=PEHTERMS.biochementities,
-    name="biochementities",
-    curie=PEHTERMS.curie("biochementities"),
-    model_uri=PEHTERMS.biochementities,
-    domain=None,
-    range=Optional[
-        Union[
-            dict[Union[str, BioChemEntityId], Union[dict, BioChemEntity]],
-            list[Union[dict, BioChemEntity]],
-        ]
-    ],
-)
-
-slots.indicators = Slot(
-    uri=PEHTERMS.indicators,
-    name="indicators",
-    curie=PEHTERMS.curie("indicators"),
-    model_uri=PEHTERMS.indicators,
-    domain=None,
-    range=Optional[
-        Union[
-            dict[Union[str, IndicatorId], Union[dict, Indicator]],
-            list[Union[dict, Indicator]],
-        ]
-    ],
-)
-
 slots.current_validation_status = Slot(
     uri=PEHTERMS.current_validation_status,
     name="current_validation_status",
@@ -4627,7 +4793,10 @@ slots.parent_compounds = Slot(
     model_uri=PEHTERMS.parent_compounds,
     domain=None,
     range=Optional[
-        Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
+        Union[
+            Union[str, BioChemEntitySubClassId],
+            list[Union[str, BioChemEntitySubClassId]],
+        ]
     ],
 )
 
@@ -4636,7 +4805,7 @@ slots.group_compound_members = Slot(
     name="group_compound_members",
     curie=SKOS.curie("narrower"),
     model_uri=PEHTERMS.group_compound_members,
-    domain=None,
+    domain=BioChemEntity,
     range=Optional[
         Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
     ],
@@ -4647,9 +4816,53 @@ slots.member_of_group_compounds = Slot(
     name="member_of_group_compounds",
     curie=SKOS.curie("broader"),
     model_uri=PEHTERMS.member_of_group_compounds,
-    domain=None,
+    domain=BioChemEntity,
     range=Optional[
         Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
+    ],
+)
+
+slots.matrix_subclasses = Slot(
+    uri=PEHTERMS.matrix_subclasses,
+    name="matrix_subclasses",
+    curie=PEHTERMS.curie("matrix_subclasses"),
+    model_uri=PEHTERMS.matrix_subclasses,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[Union[str, MatrixSubClassId], Union[dict, MatrixSubClass]],
+            list[Union[dict, MatrixSubClass]],
+        ]
+    ],
+)
+
+slots.biochementity_subclasses = Slot(
+    uri=PEHTERMS.biochementity_subclasses,
+    name="biochementity_subclasses",
+    curie=PEHTERMS.curie("biochementity_subclasses"),
+    model_uri=PEHTERMS.biochementity_subclasses,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[
+                Union[str, BioChemEntitySubClassId], Union[dict, BioChemEntitySubClass]
+            ],
+            list[Union[dict, BioChemEntitySubClass]],
+        ]
+    ],
+)
+
+slots.indicator_subclasses = Slot(
+    uri=PEHTERMS.indicator_subclasses,
+    name="indicator_subclasses",
+    curie=PEHTERMS.curie("indicator_subclasses"),
+    model_uri=PEHTERMS.indicator_subclasses,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[Union[str, IndicatorSubClassId], Union[dict, IndicatorSubClass]],
+            list[Union[dict, IndicatorSubClass]],
+        ]
     ],
 )
 
@@ -4659,7 +4872,7 @@ slots.parent_matrix = Slot(
     curie=RDFS.curie("subClassOf"),
     model_uri=PEHTERMS.parent_matrix,
     domain=None,
-    range=Optional[Union[str, MatrixId]],
+    range=Optional[Union[str, MatrixSubClassId]],
 )
 
 slots.indicator_type = Slot(
@@ -4671,6 +4884,15 @@ slots.indicator_type = Slot(
     range=Optional[Union[str, "IndicatorType"]],
 )
 
+slots.parent_indicator = Slot(
+    uri=RDFS.subClassOf,
+    name="parent_indicator",
+    curie=RDFS.curie("subClassOf"),
+    model_uri=PEHTERMS.parent_indicator,
+    domain=None,
+    range=Optional[Union[str, IndicatorSubClassId]],
+)
+
 slots.property = Slot(
     uri=PEHTERMS.property,
     name="property",
@@ -4678,19 +4900,6 @@ slots.property = Slot(
     model_uri=PEHTERMS.property,
     domain=None,
     range=Optional[str],
-)
-
-slots.matrices = Slot(
-    uri=PEHTERMS.matrices,
-    name="matrices",
-    curie=PEHTERMS.curie("matrices"),
-    model_uri=PEHTERMS.matrices,
-    domain=None,
-    range=Optional[
-        Union[
-            dict[Union[str, MatrixId], Union[dict, Matrix]], list[Union[dict, Matrix]]
-        ]
-    ],
 )
 
 slots.matrix = Slot(
@@ -4844,13 +5053,15 @@ slots.relevant_observation_types = Slot(
     ],
 )
 
-slots.indicator = Slot(
-    uri=RDFS.subClassOf,
-    name="indicator",
-    curie=RDFS.curie("subClassOf"),
-    model_uri=PEHTERMS.indicator,
+slots.has_observable_property_type = Slot(
+    uri=RDF.type,
+    name="has_observable_property_type",
+    curie=RDF.curie("type"),
+    model_uri=PEHTERMS.has_observable_property_type,
     domain=None,
-    range=Optional[Union[str, IndicatorId]],
+    range=Optional[
+        Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
+    ],
 )
 
 slots.calculation_design = Slot(

@@ -15,12 +15,14 @@ prefixes:
   schema: http://schema.org/
   wikidata: https://www.wikidata.org/wiki/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   skos: http://www.w3.org/2004/02/skos/core#
   prov: http://www.w3.org/ns/prov#
   qudt: http://qudt.org/2.1/schema/qudt
   qudtunit: https://qudt.org/vocab/unit/
   qudtqk: http://qudt.org/2.1/vocab/quantitykind
   iop: https://w3id.org/iadopt/ont/
+  owl: http://www.w3.org/2002/07/owl#
   # DATA PREFIXES
   # P: http://example.org/P/
   # ROR: http://example.org/ror/
@@ -36,11 +38,8 @@ classes:
     description: >-
       A generic top level object for collecting named entities under one root entity
     slots:
-      - matrices
       - metadata_fields
-      - biochementities
       - groupings
-      - indicators
       - units
       - observable_properties
       - stakeholders
@@ -55,7 +54,11 @@ classes:
       - layouts
       - import_configs
       - data_requests
-
+      # subclass templates
+      - matrix_subclasses
+      - biochementity_subclasses
+      - indicator_subclasses
+  
   NamedThing:
     abstract: true
     description: >-
@@ -154,6 +157,16 @@ classes:
       - HasContextAliases
       - HasTranslations
       - HasValidationStatus
+  
+  BioChemEntitySubClass:
+    class_uri: owl:Class
+    description: Template class used to generate OWL Classes.
+    is_a: NamedThing
+    mixins:
+      - HasAliases
+      - HasContextAliases
+      - HasTranslations
+      - HasValidationStatus
     slots:
       - grouping_id_list
       - biochementity_type
@@ -161,6 +174,7 @@ classes:
       - parent_compounds
       - group_compound_members
       - member_of_group_compounds
+  
   Matrix:
     class_uri: wikidata:Q685816
     description: >-
@@ -169,14 +183,30 @@ classes:
     mixins:
       - HasContextAliases
       - HasTranslations
+
+  MatrixSubClass:
+    class_uri: owl:Class
+    is_a: NamedThing
+    mixins:
+      - HasTranslations
+      - HasContextAliases
+    description: >
+      Template class used to generate OWL Classes.
     slots:
       - parent_matrix
+
   Indicator:
     class_uri: wikidata:Q937228
     description: >-
       Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
     close_mappings:
       - iop:Variable
+    is_a: NamedThing
+
+  IndicatorSubClass:
+    class_uri: owl:Class
+    description: >-
+      Template class used to generate OWL Classes
     is_a: NamedThing
     mixins:
       - HasContextAliases
@@ -190,6 +220,7 @@ classes:
       - grouping_id_list
       - relevant_observable_entity_types
       - biochementity
+      - parent_indicator
 
   PhysicalEntity:
     description: >-
@@ -263,9 +294,11 @@ classes:
       - observation_result_type
       - relevant_observable_entity_types
       - relevant_observation_types
-      - indicator
       - calculation_design
       - validation_designs
+      # instance-specific
+      - has_observable_property_type
+  
   ObservablePropertyValueOption:
     description: >-
       Potential selection choices for Observable Properties that are categorical variables
@@ -714,14 +747,6 @@ slots:
     multivalued: true
     range: Grouping
     slot_uri: rdfs:subClassOf
-  biochementities:
-    multivalued: true
-    inlined_as_list: true
-    range: BioChemEntity
-  indicators:
-    multivalued: true
-    inlined_as_list: true
-    range: Indicator
 
   current_validation_status:
     range: ValidationStatus
@@ -739,10 +764,11 @@ slots:
     range: decimal
   parent_compounds:
     multivalued: true
-    range: BioChemEntity
+    range: BioChemEntitySubClass
     slot_uri: rdfs:subClassOf
   group_compound_members:
     multivalued: true
+    domain: BioChemEntity
     range: BioChemEntity
     slot_uri: skos:narrower
     description: >-
@@ -751,6 +777,7 @@ slots:
     inverse: member_of_group_compounds
   member_of_group_compounds:
     multivalued: true
+    domain: BioChemEntity
     range: BioChemEntity
     slot_uri: skos:broader
     description: >-
@@ -758,16 +785,28 @@ slots:
       Inverse of the BioChemEntity group_compound_members slot
     inverse: group_compound_members
 
+  matrix_subclasses:
+    multivalued: true
+    inlined_as_list: true
+    range: MatrixSubClass
+  biochementity_subclasses:
+    multivalued: true
+    inlined_as_list: true
+    range: BioChemEntitySubClass
+  indicator_subclasses:
+    multivalued: true
+    inlined_as_list: true
+    range: IndicatorSubClass
+
   parent_matrix:
-    range: Matrix
+    range: MatrixSubClass
     slot_uri: rdfs:subClassOf
   indicator_type:
     range: IndicatorType
+  parent_indicator:
+    range: IndicatorSubClass
+    slot_uri: rdfs:subClassOf
   property:
-  matrices:
-    multivalued: true
-    inlined_as_list: true
-    range: Matrix
   matrix:
     range: Matrix
   constraints:
@@ -806,9 +845,10 @@ slots:
   relevant_observation_types:
     multivalued: true
     range: ObservationType
-  indicator:
-    range: Indicator
-    slot_uri: rdfs:subClassOf
+  has_observable_property_type:
+    slot_uri: rdf:type
+    multivalued: true
+    range: IndicatorSubClass
 
   calculation_design:
     range: CalculationDesign
@@ -996,10 +1036,6 @@ slots:
   observable_entity_id_list:
     multivalued: true
     range: StudyEntity
-  #observable_entities: ## unused
-  #  multivalued: true
-  #  inlined_as_list: true
-  #  range: StudyEntity
   observable_entity:
     range: StudyEntity
   identifying_observable_property_id_list:

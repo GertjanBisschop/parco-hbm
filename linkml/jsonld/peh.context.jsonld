@@ -3,6 +3,7 @@
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "iop": "https://w3id.org/iadopt/ont/",
       "linkml": "https://w3id.org/linkml/",
+      "owl": "http://www.w3.org/2002/07/owl#",
       "peh": "https://w3id.org/peh/",
       "pehterms": "https://w3id.org/peh/terms/",
       "prov": "http://www.w3.org/ns/prov#",
@@ -15,6 +16,7 @@
          "@prefix": true
       },
       "qudtunit": "https://qudt.org/vocab/unit/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "schema": "http://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -29,13 +31,13 @@
       "authors": {
          "@id": "authors"
       },
-      "biochementities": {
-         "@type": "@id",
-         "@id": "biochementities"
-      },
       "biochementity": {
          "@type": "@id",
          "@id": "biochementity"
+      },
+      "biochementity_subclasses": {
+         "@type": "@id",
+         "@id": "biochementity_subclasses"
       },
       "biochementity_type": {
          "@context": {
@@ -205,6 +207,10 @@
          "@type": "@id",
          "@id": "groupings"
       },
+      "has_observable_property_type": {
+         "@type": "@id",
+         "@id": "rdf:type"
+      },
       "id": "@id",
       "identifying_observable_property_id_list": {
          "@type": "@id",
@@ -228,9 +234,9 @@
       "imputed_value": {
          "@id": "imputed_value"
       },
-      "indicator": {
+      "indicator_subclasses": {
          "@type": "@id",
-         "@id": "rdfs:subClassOf"
+         "@id": "indicator_subclasses"
       },
       "indicator_type": {
          "@context": {
@@ -239,10 +245,6 @@
             "meaning": "@id"
          },
          "@id": "indicator_type"
-      },
-      "indicators": {
-         "@type": "@id",
-         "@id": "indicators"
       },
       "is_observable_entity_key": {
          "@type": "xsd:boolean",
@@ -279,13 +281,13 @@
       "mapping_name": {
          "@id": "mapping_name"
       },
-      "matrices": {
-         "@type": "@id",
-         "@id": "matrices"
-      },
       "matrix": {
          "@type": "@id",
          "@id": "matrix"
+      },
+      "matrix_subclasses": {
+         "@type": "@id",
+         "@id": "matrix_subclasses"
       },
       "member_id_list": {
          "@type": "@id",
@@ -429,6 +431,10 @@
          "@id": "rdfs:subClassOf"
       },
       "parent_grouping_id_list": {
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
+      },
+      "parent_indicator": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
       },
@@ -803,6 +809,9 @@
       "BioChemEntity": {
          "@id": "schema:BioChemEntity"
       },
+      "BioChemEntitySubClass": {
+         "@id": "owl:Class"
+      },
       "CalculationDesign": {
          "@id": "CalculationDesign"
       },
@@ -884,8 +893,14 @@
       "Indicator": {
          "@id": "wikidata:Q937228"
       },
+      "IndicatorSubClass": {
+         "@id": "owl:Class"
+      },
       "Matrix": {
          "@id": "wikidata:Q685816"
+      },
+      "MatrixSubClass": {
+         "@id": "owl:Class"
       },
       "NamedThing": {
          "@id": "NamedThing"

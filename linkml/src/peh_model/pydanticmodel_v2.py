@@ -302,13 +302,10 @@ class EntityList(ConfiguredBaseModel):
     A generic top level object for collecting named entities under one root entity
     """
 
-    matrices: Optional[list[Matrix]] = Field(default=None)
     metadata_fields: Optional[list[ObservablePropertyMetadataField]] = Field(
         default=None
     )
-    biochementities: Optional[list[BioChemEntity]] = Field(default=None)
     groupings: Optional[list[Grouping]] = Field(default=None)
-    indicators: Optional[list[Indicator]] = Field(default=None)
     units: Optional[list[Unit]] = Field(default=None)
     observable_properties: Optional[list[ObservableProperty]] = Field(default=None)
     stakeholders: Optional[list[Stakeholder]] = Field(default=None)
@@ -323,6 +320,11 @@ class EntityList(ConfiguredBaseModel):
     layouts: Optional[list[DataLayout]] = Field(default=None)
     import_configs: Optional[list[DataImportConfig]] = Field(default=None)
     data_requests: Optional[list[DataRequest]] = Field(default=None)
+    matrix_subclasses: Optional[list[MatrixSubClass]] = Field(default=None)
+    biochementity_subclasses: Optional[list[BioChemEntitySubClass]] = Field(
+        default=None
+    )
+    indicator_subclasses: Optional[list[IndicatorSubClass]] = Field(default=None)
 
 
 class NamedThing(ConfiguredBaseModel):
@@ -498,6 +500,44 @@ class BioChemEntity(
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
     """
 
+    aliases: Optional[list[str]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
+    current_validation_status: Optional[ValidationStatus] = Field(default=None)
+    validation_history: Optional[list[ValidationHistoryRecord]] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class BioChemEntitySubClass(
+    HasTranslations, HasContextAliases, HasAliases, HasValidationStatus, NamedThing
+):
+    """
+    Template class used to generate OWL Classes.
+    """
+
     grouping_id_list: Optional[list[str]] = Field(default=None)
     biochementity_type: Optional[BioChemEntityType] = Field(default=None)
     molweight_grampermol: Optional[Decimal] = Field(default=None)
@@ -546,7 +586,6 @@ class Matrix(HasTranslations, HasContextAliases, NamedThing):
     The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies
     """
 
-    parent_matrix: Optional[str] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(
@@ -575,9 +614,75 @@ class Matrix(HasTranslations, HasContextAliases, NamedThing):
     exact_matches: Optional[list[str]] = Field(default=None)
 
 
-class Indicator(HasTranslations, HasContextAliases, NamedThing):
+class MatrixSubClass(HasTranslations, HasContextAliases, NamedThing):
+    """
+    Template class used to generate OWL Classes.
+
+    """
+
+    parent_matrix: Optional[str] = Field(default=None)
+    translations: Optional[list[Translation]] = Field(default=None)
+    context_aliases: Optional[list[ContextAlias]] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class Indicator(NamedThing):
     """
     Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
+    """
+
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
+    """
+    Template class used to generate OWL Classes
     """
 
     indicator_type: Optional[IndicatorType] = Field(default=None)
@@ -590,6 +695,7 @@ class Indicator(HasTranslations, HasContextAliases, NamedThing):
         default=None
     )
     biochementity: Optional[str] = Field(default=None)
+    parent_indicator: Optional[str] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(
@@ -889,9 +995,9 @@ class ObservableProperty(HasTranslations, HasContextAliases, NamedThing):
         default=None
     )
     relevant_observation_types: Optional[list[ObservationType]] = Field(default=None)
-    indicator: Optional[str] = Field(default=None)
     calculation_design: Optional[CalculationDesign] = Field(default=None)
     validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
+    has_observable_property_type: Optional[list[str]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     id: str = Field(
@@ -1899,8 +2005,11 @@ Grouping.model_rebuild()
 Translation.model_rebuild()
 Unit.model_rebuild()
 BioChemEntity.model_rebuild()
+BioChemEntitySubClass.model_rebuild()
 Matrix.model_rebuild()
+MatrixSubClass.model_rebuild()
 Indicator.model_rebuild()
+IndicatorSubClass.model_rebuild()
 PhysicalEntity.model_rebuild()
 PhysicalEntityLink.model_rebuild()
 Sample.model_rebuild()

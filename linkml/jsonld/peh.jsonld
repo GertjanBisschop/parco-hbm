@@ -33,6 +33,10 @@
       "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#"
     },
     {
+      "prefix_prefix": "rdf",
+      "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    },
+    {
       "prefix_prefix": "skos",
       "prefix_reference": "http://www.w3.org/2004/02/skos/core#"
     },
@@ -55,6 +59,10 @@
     {
       "prefix_prefix": "iop",
       "prefix_reference": "https://w3id.org/iadopt/ont/"
+    },
+    {
+      "prefix_prefix": "owl",
+      "prefix_reference": "http://www.w3.org/2002/07/owl#"
     }
   ],
   "default_prefix": "pehterms",
@@ -1542,7 +1550,7 @@
       "owner": "ObservableProperty",
       "domain_of": [
         "Unit",
-        "Indicator",
+        "IndicatorSubClass",
         "ObservableProperty"
       ],
       "range": "QudtQuantityKind",
@@ -1573,8 +1581,8 @@
       "slot_uri": "http://www.w3.org/2004/02/skos/core#broader",
       "owner": "ObservableProperty",
       "domain_of": [
-        "BioChemEntity",
-        "Indicator",
+        "BioChemEntitySubClass",
+        "IndicatorSubClass",
         "ObservableProperty"
       ],
       "range": "Grouping",
@@ -1595,36 +1603,6 @@
       ],
       "range": "Grouping",
       "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "biochementities",
-      "definition_uri": "https://w3id.org/peh/terms/biochementities",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/biochementities",
-      "owner": "EntityList",
-      "domain_of": [
-        "EntityList"
-      ],
-      "range": "BioChemEntity",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "indicators",
-      "definition_uri": "https://w3id.org/peh/terms/indicators",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/indicators",
-      "owner": "EntityList",
-      "domain_of": [
-        "EntityList"
-      ],
-      "range": "Indicator",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1704,9 +1682,9 @@
       "definition_uri": "https://w3id.org/peh/terms/biochementity_type",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/biochementity_type",
-      "owner": "BioChemEntity",
+      "owner": "BioChemEntitySubClass",
       "domain_of": [
-        "BioChemEntity"
+        "BioChemEntitySubClass"
       ],
       "range": "BioChemEntityType",
       "@type": "SlotDefinition"
@@ -1716,9 +1694,9 @@
       "definition_uri": "https://w3id.org/peh/terms/molweight_grampermol",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/molweight_grampermol",
-      "owner": "BioChemEntity",
+      "owner": "BioChemEntitySubClass",
       "domain_of": [
-        "BioChemEntity"
+        "BioChemEntitySubClass"
       ],
       "range": "decimal",
       "@type": "SlotDefinition"
@@ -1731,11 +1709,11 @@
         "http://www.w3.org/2000/01/rdf-schema#subClassOf"
       ],
       "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-      "owner": "BioChemEntity",
+      "owner": "BioChemEntitySubClass",
       "domain_of": [
-        "BioChemEntity"
+        "BioChemEntitySubClass"
       ],
-      "range": "BioChemEntity",
+      "range": "BioChemEntitySubClass",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -1747,10 +1725,11 @@
       "mappings": [
         "http://www.w3.org/2004/02/skos/core#narrower"
       ],
+      "domain": "BioChemEntity",
       "slot_uri": "http://www.w3.org/2004/02/skos/core#narrower",
-      "owner": "BioChemEntity",
+      "owner": "group_compound_members",
       "domain_of": [
-        "BioChemEntity"
+        "BioChemEntitySubClass"
       ],
       "inverse": "member_of_group_compounds",
       "range": "BioChemEntity",
@@ -1765,14 +1744,60 @@
       "mappings": [
         "http://www.w3.org/2004/02/skos/core#broader"
       ],
+      "domain": "BioChemEntity",
       "slot_uri": "http://www.w3.org/2004/02/skos/core#broader",
-      "owner": "BioChemEntity",
+      "owner": "member_of_group_compounds",
       "domain_of": [
-        "BioChemEntity"
+        "BioChemEntitySubClass"
       ],
       "inverse": "group_compound_members",
       "range": "BioChemEntity",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "matrix_subclasses",
+      "definition_uri": "https://w3id.org/peh/terms/matrix_subclasses",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/matrix_subclasses",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "MatrixSubClass",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biochementity_subclasses",
+      "definition_uri": "https://w3id.org/peh/terms/biochementity_subclasses",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/biochementity_subclasses",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "BioChemEntitySubClass",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "indicator_subclasses",
+      "definition_uri": "https://w3id.org/peh/terms/indicator_subclasses",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/indicator_subclasses",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "IndicatorSubClass",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1783,11 +1808,11 @@
         "http://www.w3.org/2000/01/rdf-schema#subClassOf"
       ],
       "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-      "owner": "Matrix",
+      "owner": "MatrixSubClass",
       "domain_of": [
-        "Matrix"
+        "MatrixSubClass"
       ],
-      "range": "Matrix",
+      "range": "MatrixSubClass",
       "@type": "SlotDefinition"
     },
     {
@@ -1795,11 +1820,26 @@
       "definition_uri": "https://w3id.org/peh/terms/indicator_type",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/indicator_type",
-      "owner": "Indicator",
+      "owner": "IndicatorSubClass",
       "domain_of": [
-        "Indicator"
+        "IndicatorSubClass"
       ],
       "range": "IndicatorType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "parent_indicator",
+      "definition_uri": "https://w3id.org/peh/terms/parent_indicator",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+      ],
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "owner": "IndicatorSubClass",
+      "domain_of": [
+        "IndicatorSubClass"
+      ],
+      "range": "IndicatorSubClass",
       "@type": "SlotDefinition"
     },
     {
@@ -1807,26 +1847,11 @@
       "definition_uri": "https://w3id.org/peh/terms/property",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/property",
-      "owner": "Indicator",
+      "owner": "IndicatorSubClass",
       "domain_of": [
-        "Indicator"
+        "IndicatorSubClass"
       ],
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "matrices",
-      "definition_uri": "https://w3id.org/peh/terms/matrices",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/matrices",
-      "owner": "EntityList",
-      "domain_of": [
-        "EntityList"
-      ],
-      "range": "Matrix",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1836,7 +1861,7 @@
       "slot_uri": "https://w3id.org/peh/terms/matrix",
       "owner": "SampleCollection",
       "domain_of": [
-        "Indicator",
+        "IndicatorSubClass",
         "Sample",
         "SampleCollection"
       ],
@@ -1850,7 +1875,7 @@
       "slot_uri": "https://w3id.org/peh/terms/constraints",
       "owner": "SampleCollection",
       "domain_of": [
-        "Indicator",
+        "IndicatorSubClass",
         "Sample",
         "SampleCollection"
       ],
@@ -1865,7 +1890,7 @@
       "slot_uri": "https://w3id.org/peh/terms/relevant_observable_entity_types",
       "owner": "ObservableProperty",
       "domain_of": [
-        "Indicator",
+        "IndicatorSubClass",
         "ObservableProperty"
       ],
       "range": "ObservableEntityType",
@@ -1877,9 +1902,9 @@
       "definition_uri": "https://w3id.org/peh/terms/biochementity",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/biochementity",
-      "owner": "Indicator",
+      "owner": "IndicatorSubClass",
       "domain_of": [
-        "Indicator"
+        "IndicatorSubClass"
       ],
       "range": "BioChemEntity",
       "@type": "SlotDefinition"
@@ -2029,18 +2054,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "indicator",
-      "definition_uri": "https://w3id.org/peh/terms/indicator",
+      "name": "has_observable_property_type",
+      "definition_uri": "https://w3id.org/peh/terms/has_observable_property_type",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
-      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
       ],
-      "range": "Indicator",
+      "range": "IndicatorSubClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3751,11 +3777,8 @@
       "description": "A generic top level object for collecting named entities under one root entity",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slots": [
-        "matrices",
         "metadata_fields",
-        "biochementities",
         "groupings",
-        "indicators",
         "units",
         "observable_properties",
         "stakeholders",
@@ -3769,7 +3792,10 @@
         "observed_values",
         "layouts",
         "import_configs",
-        "data_requests"
+        "data_requests",
+        "matrix_subclasses",
+        "biochementity_subclasses",
+        "indicator_subclasses"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/EntityList",
@@ -3975,6 +4001,39 @@
         "description",
         "remark",
         "exact_matches",
+        "aliases",
+        "context_aliases",
+        "translations",
+        "current_validation_status",
+        "validation_history"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://schema.org/BioChemEntity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BioChemEntitySubClass",
+      "definition_uri": "https://w3id.org/peh/terms/BioChemEntitySubClass",
+      "description": "Template class used to generate OWL Classes.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "owl:Class"
+      ],
+      "is_a": "NamedThing",
+      "mixins": [
+        "HasAliases",
+        "HasContextAliases",
+        "HasTranslations",
+        "HasValidationStatus"
+      ],
+      "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches",
         "grouping_id_list",
         "biochementity_type",
         "molweight_grampermol",
@@ -3988,7 +4047,7 @@
         "validation_history"
       ],
       "slot_usage": {},
-      "class_uri": "http://schema.org/BioChemEntity",
+      "class_uri": "http://www.w3.org/2002/07/owl#Class",
       "@type": "ClassDefinition"
     },
     {
@@ -4012,12 +4071,40 @@
         "description",
         "remark",
         "exact_matches",
-        "parent_matrix",
         "context_aliases",
         "translations"
       ],
       "slot_usage": {},
       "class_uri": "https://www.wikidata.org/wiki/Q685816",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MatrixSubClass",
+      "definition_uri": "https://w3id.org/peh/terms/MatrixSubClass",
+      "description": "Template class used to generate OWL Classes.\n",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "owl:Class"
+      ],
+      "is_a": "NamedThing",
+      "mixins": [
+        "HasTranslations",
+        "HasContextAliases"
+      ],
+      "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches",
+        "parent_matrix",
+        "translations",
+        "context_aliases"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2002/07/owl#Class",
       "@type": "ClassDefinition"
     },
     {
@@ -4030,6 +4117,28 @@
       ],
       "close_mappings": [
         "iop:Variable"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://www.wikidata.org/wiki/Q937228",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IndicatorSubClass",
+      "definition_uri": "https://w3id.org/peh/terms/IndicatorSubClass",
+      "description": "Template class used to generate OWL Classes",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "owl:Class"
       ],
       "is_a": "NamedThing",
       "mixins": [
@@ -4052,11 +4161,12 @@
         "grouping_id_list",
         "relevant_observable_entity_types",
         "biochementity",
+        "parent_indicator",
         "context_aliases",
         "translations"
       ],
       "slot_usage": {},
-      "class_uri": "https://www.wikidata.org/wiki/Q937228",
+      "class_uri": "http://www.w3.org/2002/07/owl#Class",
       "@type": "ClassDefinition"
     },
     {
@@ -4254,9 +4364,9 @@
         "observation_result_type",
         "relevant_observable_entity_types",
         "relevant_observation_types",
-        "indicator",
         "calculation_design",
         "validation_designs",
+        "has_observable_property_type",
         "translations",
         "context_aliases"
       ],
@@ -5091,9 +5201,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-03-03T13:53:30",
-  "source_file_size": 38784,
-  "generation_date": "2026-03-03T13:53:52",
+  "source_file_date": "2026-03-03T14:22:59",
+  "source_file_size": 39721,
+  "generation_date": "2026-03-03T14:23:29",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

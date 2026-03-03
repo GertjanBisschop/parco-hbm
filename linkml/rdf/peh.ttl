@@ -9,31 +9,36 @@
 <https://w3id.org/peh/terms/PEH-Model> a linkml:SchemaDefinition ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     pav:version "0.4.0" ;
-    sh:declare [ sh:namespace "https://qudt.org/vocab/unit/"^^xsd:anyURI ;
-            sh:prefix "qudtunit" ],
-        [ sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
-            sh:prefix "skos" ],
-        [ sh:namespace "https://www.wikidata.org/wiki/"^^xsd:anyURI ;
-            sh:prefix "wikidata" ],
-        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace "https://w3id.org/peh/"^^xsd:anyURI ;
-            sh:prefix "peh" ],
+    sh:declare [ sh:namespace "http://schema.org/"^^xsd:anyURI ;
+            sh:prefix "schema" ],
         [ sh:namespace "http://qudt.org/2.1/vocab/quantitykind"^^xsd:anyURI ;
             sh:prefix "qudtqk" ],
         [ sh:namespace "https://w3id.org/iadopt/ont/"^^xsd:anyURI ;
             sh:prefix "iop" ],
+        [ sh:namespace "https://www.wikidata.org/wiki/"^^xsd:anyURI ;
+            sh:prefix "wikidata" ],
+        [ sh:namespace "https://w3id.org/peh/"^^xsd:anyURI ;
+            sh:prefix "peh" ],
+        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "https://qudt.org/vocab/unit/"^^xsd:anyURI ;
+            sh:prefix "qudtunit" ],
         [ sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
             sh:prefix "prov" ],
-        [ sh:namespace "http://schema.org/"^^xsd:anyURI ;
-            sh:prefix "schema" ],
-        [ sh:namespace "http://qudt.org/2.1/schema/qudt"^^xsd:anyURI ;
-            sh:prefix "qudt" ],
         [ sh:namespace "https://w3id.org/peh/terms/"^^xsd:anyURI ;
             sh:prefix "pehterms" ],
+        [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
+            sh:prefix "owl" ],
+        [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+            sh:prefix "rdf" ],
+        [ sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
+            sh:prefix "skos" ],
+        [ sh:namespace "http://qudt.org/2.1/schema/qudt"^^xsd:anyURI ;
+            sh:prefix "qudt" ],
         [ sh:namespace "https://w3id.org/linkml/"^^xsd:anyURI ;
             sh:prefix "linkml" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
+        <https://w3id.org/peh/terms/BioChemEntitySubClass>,
         <https://w3id.org/peh/terms/CalculationDesign>,
         <https://w3id.org/peh/terms/CalculationImplementation>,
         <https://w3id.org/peh/terms/CalculationKeywordArgument>,
@@ -61,7 +66,9 @@
         <https://w3id.org/peh/terms/HasValidationStatus>,
         <https://w3id.org/peh/terms/HomeEnvironment>,
         <https://w3id.org/peh/terms/Indicator>,
+        <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/Matrix>,
+        <https://w3id.org/peh/terms/MatrixSubClass>,
         <https://w3id.org/peh/terms/NamedThing>,
         <https://w3id.org/peh/terms/ObservableProperty>,
         <https://w3id.org/peh/terms/ObservablePropertyMetadataElement>,
@@ -122,15 +129,15 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2026-03-03T13:53:57"^^xsd:dateTime ;
+    linkml:generation_date "2026-03-03T14:23:33"^^xsd:dateTime ;
     linkml:id "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:imports "linkml:types"^^xsd:anyURI ;
     linkml:metamodel_version "1.7.0" ;
     linkml:slots <https://w3id.org/peh/terms/alias>,
         <https://w3id.org/peh/terms/aliases>,
         <https://w3id.org/peh/terms/authors>,
-        <https://w3id.org/peh/terms/biochementities>,
         <https://w3id.org/peh/terms/biochementity>,
+        <https://w3id.org/peh/terms/biochementity_subclasses>,
         <https://w3id.org/peh/terms/biochementity_type>,
         <https://w3id.org/peh/terms/calculation_design>,
         <https://w3id.org/peh/terms/calculation_implementation>,
@@ -170,6 +177,7 @@
         <https://w3id.org/peh/terms/group_compound_members>,
         <https://w3id.org/peh/terms/grouping_id_list>,
         <https://w3id.org/peh/terms/groupings>,
+        <https://w3id.org/peh/terms/has_observable_property_type>,
         <https://w3id.org/peh/terms/id>,
         <https://w3id.org/peh/terms/identifying_observable_property_id_list>,
         <https://w3id.org/peh/terms/immutable>,
@@ -177,9 +185,8 @@
         <https://w3id.org/peh/terms/imputation_state>,
         <https://w3id.org/peh/terms/imputed_unit>,
         <https://w3id.org/peh/terms/imputed_value>,
-        <https://w3id.org/peh/terms/indicator>,
+        <https://w3id.org/peh/terms/indicator_subclasses>,
         <https://w3id.org/peh/terms/indicator_type>,
-        <https://w3id.org/peh/terms/indicators>,
         <https://w3id.org/peh/terms/is_observable_entity_key>,
         <https://w3id.org/peh/terms/key>,
         <https://w3id.org/peh/terms/label>,
@@ -189,8 +196,8 @@
         <https://w3id.org/peh/terms/linktype>,
         <https://w3id.org/peh/terms/location>,
         <https://w3id.org/peh/terms/mapping_name>,
-        <https://w3id.org/peh/terms/matrices>,
         <https://w3id.org/peh/terms/matrix>,
+        <https://w3id.org/peh/terms/matrix_subclasses>,
         <https://w3id.org/peh/terms/member_id_list>,
         <https://w3id.org/peh/terms/member_of_group_compounds>,
         <https://w3id.org/peh/terms/metadata_fields>,
@@ -224,6 +231,7 @@
         <https://w3id.org/peh/terms/orcid>,
         <https://w3id.org/peh/terms/parent_compounds>,
         <https://w3id.org/peh/terms/parent_grouping_id_list>,
+        <https://w3id.org/peh/terms/parent_indicator>,
         <https://w3id.org/peh/terms/parent_matrix>,
         <https://w3id.org/peh/terms/physical_entities>,
         <https://w3id.org/peh/terms/physical_entity>,
@@ -313,8 +321,8 @@
         <https://w3id.org/peh/terms/value_type>,
         <https://w3id.org/peh/terms/zeroallowed> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2026-03-03T13:53:30"^^xsd:dateTime ;
-    linkml:source_file_size 38784 ;
+    linkml:source_file_date "2026-03-03T14:22:59"^^xsd:dateTime ;
+    linkml:source_file_size 39721 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,
@@ -386,6 +394,23 @@
 <https://w3id.org/peh/terms/IU-PER-L> linkml:meaning "qudtunit:IU-PER-L"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/IU-PER-MilliL> linkml:meaning "qudtunit:IU-PER-MilliL"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/Indicator> a linkml:ClassDefinition ;
+    skos:closeMatch "iop:Variable"^^xsd:anyURI ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "wikidata:Q937228"^^xsd:anyURI ;
+    linkml:class_uri "https://www.wikidata.org/wiki/Q937228"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/Indicator"^^xsd:anyURI ;
+    linkml:description "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain" ;
+    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/exact_matches>,
+        <https://w3id.org/peh/terms/id>,
+        <https://w3id.org/peh/terms/name>,
+        <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/short_name>,
+        <https://w3id.org/peh/terms/ui_label> .
 
 <https://w3id.org/peh/terms/InverseLength> linkml:meaning "qudtqk:InverseLength"^^xsd:anyURI .
 
@@ -773,6 +798,26 @@
         <https://w3id.org/peh/terms/is_part_of>,
         <https://w3id.org/peh/terms/is_same_as> .
 
+<https://w3id.org/peh/terms/Matrix> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "wikidata:Q685816"^^xsd:anyURI ;
+    linkml:class_uri "https://www.wikidata.org/wiki/Q685816"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/Matrix"^^xsd:anyURI ;
+    linkml:description "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies" ;
+    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases>,
+        <https://w3id.org/peh/terms/HasTranslations> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/context_aliases>,
+        <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/exact_matches>,
+        <https://w3id.org/peh/terms/id>,
+        <https://w3id.org/peh/terms/name>,
+        <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/short_name>,
+        <https://w3id.org/peh/terms/translations>,
+        <https://w3id.org/peh/terms/ui_label> .
+
 <https://w3id.org/peh/terms/ObjectiveType> skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/ObjectiveType"^^xsd:anyURI ;
     linkml:permissible_values <https://w3id.org/peh/terms/project_result>,
@@ -962,30 +1007,30 @@
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/authors"^^xsd:anyURI .
 
-<https://w3id.org/peh/terms/biochementities> a linkml:SlotDefinition ;
+<https://w3id.org/peh/terms/biochementity> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/biochementities"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/biochementity"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/biochementity"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/biochementity_subclasses> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/biochementity_subclasses"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
-    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/biochementities"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/biochementity> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/biochementity"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator> ;
-    linkml:owner <https://w3id.org/peh/terms/Indicator> ;
-    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/biochementity"^^xsd:anyURI .
+    linkml:range <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/biochementity_subclasses"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/biochementity_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/biochementity_type"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:owner <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
     linkml:range <https://w3id.org/peh/terms/BioChemEntityType> ;
     linkml:slot_uri "https://w3id.org/peh/terms/biochementity_type"^^xsd:anyURI .
 
@@ -1232,6 +1277,16 @@
     linkml:range <https://w3id.org/peh/terms/Grouping> ;
     linkml:slot_uri "https://w3id.org/peh/terms/groupings"^^xsd:anyURI .
 
+<https://w3id.org/peh/terms/has_observable_property_type> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/has_observable_property_type"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
+    linkml:range <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:slot_uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/identifying_observable_property_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/identifying_observable_property_id_list"^^xsd:anyURI ;
@@ -1285,33 +1340,24 @@
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/imputed_value"^^xsd:anyURI .
 
-<https://w3id.org/peh/terms/indicator> a linkml:SlotDefinition ;
+<https://w3id.org/peh/terms/indicator_subclasses> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/indicator"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
-    linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
-    linkml:range <https://w3id.org/peh/terms/Indicator> ;
-    linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/indicator_type> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/indicator_type"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator> ;
-    linkml:owner <https://w3id.org/peh/terms/Indicator> ;
-    linkml:range <https://w3id.org/peh/terms/IndicatorType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/indicator_type"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/indicators> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/indicators"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/indicator_subclasses"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
-    linkml:range <https://w3id.org/peh/terms/Indicator> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/indicators"^^xsd:anyURI .
+    linkml:range <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/indicator_subclasses"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/indicator_type> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/indicator_type"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:range <https://w3id.org/peh/terms/IndicatorType> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/indicator_type"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/is_observable_entity_key> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -1356,16 +1402,16 @@
     linkml:range <https://w3id.org/peh/terms/DataLayout> ;
     linkml:slot_uri "https://w3id.org/peh/terms/layouts"^^xsd:anyURI .
 
-<https://w3id.org/peh/terms/matrices> a linkml:SlotDefinition ;
+<https://w3id.org/peh/terms/matrix_subclasses> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/matrices"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/matrix_subclasses"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
-    linkml:range <https://w3id.org/peh/terms/Matrix> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/matrices"^^xsd:anyURI .
+    linkml:range <https://w3id.org/peh/terms/MatrixSubClass> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/matrix_subclasses"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/member_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -1390,8 +1436,8 @@
 <https://w3id.org/peh/terms/molweight_grampermol> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/molweight_grampermol"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:owner <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
     linkml:range <https://w3id.org/peh/terms/decimal> ;
     linkml:slot_uri "https://w3id.org/peh/terms/molweight_grampermol"^^xsd:anyURI .
 
@@ -1582,10 +1628,10 @@
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/parent_compounds"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
     linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:owner <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
+    linkml:range <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
     linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/parent_grouping_id_list> a linkml:SlotDefinition ;
@@ -1598,13 +1644,22 @@
     linkml:range <https://w3id.org/peh/terms/Grouping> ;
     linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI .
 
+<https://w3id.org/peh/terms/parent_indicator> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/parent_indicator"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:range <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/parent_matrix> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/parent_matrix"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Matrix> ;
-    linkml:owner <https://w3id.org/peh/terms/Matrix> ;
-    linkml:range <https://w3id.org/peh/terms/Matrix> ;
+    linkml:domain_of <https://w3id.org/peh/terms/MatrixSubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/MatrixSubClass> ;
+    linkml:range <https://w3id.org/peh/terms/MatrixSubClass> ;
     linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#subClassOf"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/person> skos:exactMatch "schema:Person"^^xsd:anyURI,
@@ -1706,8 +1761,8 @@
 <https://w3id.org/peh/terms/property> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/property"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator> ;
-    linkml:owner <https://w3id.org/peh/terms/Indicator> ;
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/property"^^xsd:anyURI .
 
@@ -2334,16 +2389,6 @@
         <https://w3id.org/peh/terms/unvalidated>,
         <https://w3id.org/peh/terms/validated> .
 
-<https://w3id.org/peh/terms/aliases> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/aliases"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/HasAliases> ;
-    linkml:inlined_as_list true ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/HasAliases> ;
-    linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/aliases"^^xsd:anyURI .
-
 <https://w3id.org/peh/terms/conditional> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/conditional"^^xsd:anyURI ;
@@ -2383,18 +2428,6 @@
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/default_language"^^xsd:anyURI .
 
-<https://w3id.org/peh/terms/group_compound_members> a linkml:SlotDefinition ;
-    owl:inverseOf <https://w3id.org/peh/terms/member_of_group_compounds> ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "http://www.w3.org/2004/02/skos/core#narrower"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/group_compound_members"^^xsd:anyURI ;
-    linkml:description "For a compound that groups other compounds, links to members of the group. Inverse of the BioChemEntity member_of_group_compounds slot" ;
-    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:slot_uri "http://www.w3.org/2004/02/skos/core#narrower"^^xsd:anyURI .
-
 <https://w3id.org/peh/terms/integer> a linkml:TypeDefinition ;
     skos:editorialNote "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"." ;
     skos:exactMatch "schema:Integer"^^xsd:anyURI ;
@@ -2432,18 +2465,6 @@
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/mapping_name"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/member_of_group_compounds> a linkml:SlotDefinition ;
-    owl:inverseOf <https://w3id.org/peh/terms/group_compound_members> ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "http://www.w3.org/2004/02/skos/core#broader"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/member_of_group_compounds"^^xsd:anyURI ;
-    linkml:description "Declares the compound being part of one or more group compounds. Inverse of the BioChemEntity group_compound_members slot" ;
-    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:slot_uri "http://www.w3.org/2004/02/skos/core#broader"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observable_entity> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2486,7 +2507,7 @@
 <https://w3id.org/peh/terms/relevant_observable_entity_types> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/relevant_observable_entity_types"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator>,
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
@@ -2522,15 +2543,6 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/section_mapping_links> .
 
-<https://w3id.org/peh/terms/HasAliases> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:class_uri "https://w3id.org/peh/terms/HasAliases"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/HasAliases"^^xsd:anyURI ;
-    linkml:description "The capacity of including one or more alternative naming terms (without qualifying the usage context)" ;
-    linkml:mixin true ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/aliases> .
-
 <https://w3id.org/peh/terms/ObservablePropertyMetadataField> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:class_uri "https://w3id.org/peh/terms/ObservablePropertyMetadataField"^^xsd:anyURI ;
@@ -2556,24 +2568,26 @@
     linkml:slots <https://w3id.org/peh/terms/linktype>,
         <https://w3id.org/peh/terms/physical_entity> .
 
+<https://w3id.org/peh/terms/aliases> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/aliases"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/HasAliases> ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/HasAliases> ;
+    linkml:range <https://w3id.org/peh/terms/string> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/aliases"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/constraints> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/constraints"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator>,
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/Sample>,
         <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/constraints"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/current_validation_status> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/current_validation_status"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/HasValidationStatus> ;
-    linkml:owner <https://w3id.org/peh/terms/HasValidationStatus> ;
-    linkml:range <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/current_validation_status"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/end_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2585,12 +2599,25 @@
     linkml:range <https://w3id.org/peh/terms/date> ;
     linkml:slot_uri "https://w3id.org/peh/terms/end_date"^^xsd:anyURI .
 
+<https://w3id.org/peh/terms/group_compound_members> a linkml:SlotDefinition ;
+    owl:inverseOf <https://w3id.org/peh/terms/member_of_group_compounds> ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/2004/02/skos/core#narrower"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/group_compound_members"^^xsd:anyURI ;
+    linkml:description "For a compound that groups other compounds, links to members of the group. Inverse of the BioChemEntity member_of_group_compounds slot" ;
+    linkml:domain <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/group_compound_members> ;
+    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:slot_uri "http://www.w3.org/2004/02/skos/core#narrower"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/grouping_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     skos:mappingRelation "http://www.w3.org/2004/02/skos/core#broader"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/grouping_id_list"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntity>,
-        <https://w3id.org/peh/terms/Indicator>,
+    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass>,
+        <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
@@ -2610,12 +2637,25 @@
 <https://w3id.org/peh/terms/matrix> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/matrix"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator>,
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/Sample>,
         <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:range <https://w3id.org/peh/terms/Matrix> ;
     linkml:slot_uri "https://w3id.org/peh/terms/matrix"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/member_of_group_compounds> a linkml:SlotDefinition ;
+    owl:inverseOf <https://w3id.org/peh/terms/group_compound_members> ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/2004/02/skos/core#broader"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/member_of_group_compounds"^^xsd:anyURI ;
+    linkml:description "Declares the compound being part of one or more group compounds. Inverse of the BioChemEntity group_compound_members slot" ;
+    linkml:domain <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/member_of_group_compounds> ;
+    linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
+    linkml:slot_uri "http://www.w3.org/2004/02/skos/core#broader"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_result_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2643,7 +2683,7 @@
 <https://w3id.org/peh/terms/quantity_kind> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/quantity_kind"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/Indicator>,
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/ObservableProperty>,
         <https://w3id.org/peh/terms/Unit> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
@@ -2659,17 +2699,6 @@
     linkml:owner <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/Stakeholder> ;
     linkml:slot_uri "https://w3id.org/peh/terms/stakeholder"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/validation_history> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/validation_history"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/HasValidationStatus> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/HasValidationStatus> ;
-    linkml:range <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_history"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2705,6 +2734,37 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/label>,
         <https://w3id.org/peh/terms/section> .
+
+<https://w3id.org/peh/terms/HasAliases> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/peh/terms/HasAliases"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/HasAliases"^^xsd:anyURI ;
+    linkml:description "The capacity of including one or more alternative naming terms (without qualifying the usage context)" ;
+    linkml:mixin true ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/aliases> .
+
+<https://w3id.org/peh/terms/MatrixSubClass> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "owl:Class"^^xsd:anyURI ;
+    linkml:class_uri "http://www.w3.org/2002/07/owl#Class"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/MatrixSubClass"^^xsd:anyURI ;
+    linkml:description """Template class used to generate OWL Classes.
+""" ;
+    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases>,
+        <https://w3id.org/peh/terms/HasTranslations> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/context_aliases>,
+        <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/exact_matches>,
+        <https://w3id.org/peh/terms/id>,
+        <https://w3id.org/peh/terms/name>,
+        <https://w3id.org/peh/terms/parent_matrix>,
+        <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/short_name>,
+        <https://w3id.org/peh/terms/translations>,
+        <https://w3id.org/peh/terms/ui_label> .
 
 <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2748,6 +2808,14 @@
     linkml:range <https://w3id.org/peh/terms/Contact> ;
     linkml:slot_uri "https://w3id.org/peh/terms/contacts"^^xsd:anyURI .
 
+<https://w3id.org/peh/terms/current_validation_status> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/current_validation_status"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:owner <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:range <https://w3id.org/peh/terms/ValidationStatus> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/current_validation_status"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/start_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/start_date"^^xsd:anyURI ;
@@ -2770,6 +2838,17 @@
     linkml:range <https://w3id.org/peh/terms/Unit> ;
     linkml:slot_uri "https://w3id.org/peh/terms/unit"^^xsd:anyURI .
 
+<https://w3id.org/peh/terms/validation_history> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/validation_history"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:range <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/validation_history"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/value_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/value_type"^^xsd:anyURI ;
@@ -2780,6 +2859,31 @@
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/value_type"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/BioChemEntity> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "schema:BioChemEntity"^^xsd:anyURI ;
+    linkml:class_uri "http://schema.org/BioChemEntity"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/BioChemEntity"^^xsd:anyURI ;
+    linkml:description "A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain" ;
+    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasAliases>,
+        <https://w3id.org/peh/terms/HasContextAliases>,
+        <https://w3id.org/peh/terms/HasTranslations>,
+        <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/aliases>,
+        <https://w3id.org/peh/terms/context_aliases>,
+        <https://w3id.org/peh/terms/current_validation_status>,
+        <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/exact_matches>,
+        <https://w3id.org/peh/terms/id>,
+        <https://w3id.org/peh/terms/name>,
+        <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/short_name>,
+        <https://w3id.org/peh/terms/translations>,
+        <https://w3id.org/peh/terms/ui_label>,
+        <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/DataImportConfig> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2822,27 +2926,6 @@
         <https://w3id.org/peh/terms/id>,
         <https://w3id.org/peh/terms/name>,
         <https://w3id.org/peh/terms/parent_grouping_id_list>,
-        <https://w3id.org/peh/terms/remark>,
-        <https://w3id.org/peh/terms/short_name>,
-        <https://w3id.org/peh/terms/translations>,
-        <https://w3id.org/peh/terms/ui_label> .
-
-<https://w3id.org/peh/terms/Matrix> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "wikidata:Q685816"^^xsd:anyURI ;
-    linkml:class_uri "https://www.wikidata.org/wiki/Q685816"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/Matrix"^^xsd:anyURI ;
-    linkml:description "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies" ;
-    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases>,
-        <https://w3id.org/peh/terms/HasTranslations> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/context_aliases>,
-        <https://w3id.org/peh/terms/description>,
-        <https://w3id.org/peh/terms/exact_matches>,
-        <https://w3id.org/peh/terms/id>,
-        <https://w3id.org/peh/terms/name>,
-        <https://w3id.org/peh/terms/parent_matrix>,
         <https://w3id.org/peh/terms/remark>,
         <https://w3id.org/peh/terms/short_name>,
         <https://w3id.org/peh/terms/translations>,
@@ -2974,16 +3057,6 @@
         <https://w3id.org/peh/terms/context>,
         <https://w3id.org/peh/terms/property_name> .
 
-<https://w3id.org/peh/terms/HasValidationStatus> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:class_uri "https://w3id.org/peh/terms/HasValidationStatus"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/HasValidationStatus"^^xsd:anyURI ;
-    linkml:description "The capacity of including both a current validation status and a history of validation records" ;
-    linkml:mixin true ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/current_validation_status>,
-        <https://w3id.org/peh/terms/validation_history> .
-
 <https://w3id.org/peh/terms/ObservationGroup> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:class_uri "https://w3id.org/peh/terms/ObservationGroup"^^xsd:anyURI ;
@@ -3084,6 +3157,16 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/dataset_label>,
         <https://w3id.org/peh/terms/field_label> .
+
+<https://w3id.org/peh/terms/HasValidationStatus> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/peh/terms/HasValidationStatus"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/HasValidationStatus"^^xsd:anyURI ;
+    linkml:description "The capacity of including both a current validation status and a history of validation records" ;
+    linkml:mixin true ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/current_validation_status>,
+        <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/Translation> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3289,16 +3372,36 @@
         <https://w3id.org/peh/terms/ui_label>,
         <https://w3id.org/peh/terms/validation_designs> .
 
-<https://w3id.org/peh/terms/context_aliases> a linkml:SlotDefinition ;
+<https://w3id.org/peh/terms/BioChemEntitySubClass> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/context_aliases"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/HasContextAliases> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/HasContextAliases> ;
-    linkml:range <https://w3id.org/peh/terms/ContextAlias> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/context_aliases"^^xsd:anyURI .
+    skos:mappingRelation "owl:Class"^^xsd:anyURI ;
+    linkml:class_uri "http://www.w3.org/2002/07/owl#Class"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/BioChemEntitySubClass"^^xsd:anyURI ;
+    linkml:description "Template class used to generate OWL Classes." ;
+    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasAliases>,
+        <https://w3id.org/peh/terms/HasContextAliases>,
+        <https://w3id.org/peh/terms/HasTranslations>,
+        <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/aliases>,
+        <https://w3id.org/peh/terms/biochementity_type>,
+        <https://w3id.org/peh/terms/context_aliases>,
+        <https://w3id.org/peh/terms/current_validation_status>,
+        <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/exact_matches>,
+        <https://w3id.org/peh/terms/group_compound_members>,
+        <https://w3id.org/peh/terms/grouping_id_list>,
+        <https://w3id.org/peh/terms/id>,
+        <https://w3id.org/peh/terms/member_of_group_compounds>,
+        <https://w3id.org/peh/terms/molweight_grampermol>,
+        <https://w3id.org/peh/terms/name>,
+        <https://w3id.org/peh/terms/parent_compounds>,
+        <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/short_name>,
+        <https://w3id.org/peh/terms/translations>,
+        <https://w3id.org/peh/terms/ui_label>,
+        <https://w3id.org/peh/terms/validation_history> .
 
 <https://w3id.org/peh/terms/Contact> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3326,15 +3429,6 @@
         <https://w3id.org/peh/terms/is_observable_entity_key>,
         <https://w3id.org/peh/terms/label>,
         <https://w3id.org/peh/terms/observable_property> .
-
-<https://w3id.org/peh/terms/HasContextAliases> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:class_uri "https://w3id.org/peh/terms/HasContextAliases"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/HasContextAliases"^^xsd:anyURI ;
-    linkml:description "The capacity of including a list of terms being used in known scopes or contexts" ;
-    linkml:mixin true ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/context_aliases> .
 
 <https://w3id.org/peh/terms/Project> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3386,6 +3480,53 @@
         <https://w3id.org/peh/terms/validation_remark>,
         <https://w3id.org/peh/terms/validation_status> .
 
+<https://w3id.org/peh/terms/ObservationDesign> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/peh/terms/ObservationDesign"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/ObservationDesign"^^xsd:anyURI ;
+    linkml:description "The list of properties being observed and the study entities they are observed for (or, alternatively, the entity type all observed entities belong to)" ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/identifying_observable_property_id_list>,
+        <https://w3id.org/peh/terms/observable_entity_id_list>,
+        <https://w3id.org/peh/terms/observable_entity_type>,
+        <https://w3id.org/peh/terms/observation_result_type>,
+        <https://w3id.org/peh/terms/optional_observable_property_id_list>,
+        <https://w3id.org/peh/terms/required_observable_property_id_list> .
+
+<https://w3id.org/peh/terms/context_aliases> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/context_aliases"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/HasContextAliases> ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/HasContextAliases> ;
+    linkml:range <https://w3id.org/peh/terms/ContextAlias> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/context_aliases"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/CalculationResult> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/peh/terms/CalculationResult"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/CalculationResult"^^xsd:anyURI ;
+    linkml:description "The definition for the output the calculation, optionally including mapping information" ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/contextual_field_reference>,
+        <https://w3id.org/peh/terms/mapping_name>,
+        <https://w3id.org/peh/terms/observable_property>,
+        <https://w3id.org/peh/terms/round_decimals>,
+        <https://w3id.org/peh/terms/scale_factor>,
+        <https://w3id.org/peh/terms/unit>,
+        <https://w3id.org/peh/terms/value_type> .
+
+<https://w3id.org/peh/terms/HasContextAliases> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/peh/terms/HasContextAliases"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/HasContextAliases"^^xsd:anyURI ;
+    linkml:description "The capacity of including a list of terms being used in known scopes or contexts" ;
+    linkml:mixin true ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/context_aliases> .
+
 <https://w3id.org/peh/terms/translations> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/translations"^^xsd:anyURI ;
@@ -3405,62 +3546,6 @@
     linkml:mixin true ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/translations> .
-
-<https://w3id.org/peh/terms/ObservationDesign> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:class_uri "https://w3id.org/peh/terms/ObservationDesign"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/ObservationDesign"^^xsd:anyURI ;
-    linkml:description "The list of properties being observed and the study entities they are observed for (or, alternatively, the entity type all observed entities belong to)" ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/identifying_observable_property_id_list>,
-        <https://w3id.org/peh/terms/observable_entity_id_list>,
-        <https://w3id.org/peh/terms/observable_entity_type>,
-        <https://w3id.org/peh/terms/observation_result_type>,
-        <https://w3id.org/peh/terms/optional_observable_property_id_list>,
-        <https://w3id.org/peh/terms/required_observable_property_id_list> .
-
-<https://w3id.org/peh/terms/CalculationResult> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:class_uri "https://w3id.org/peh/terms/CalculationResult"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/CalculationResult"^^xsd:anyURI ;
-    linkml:description "The definition for the output the calculation, optionally including mapping information" ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/contextual_field_reference>,
-        <https://w3id.org/peh/terms/mapping_name>,
-        <https://w3id.org/peh/terms/observable_property>,
-        <https://w3id.org/peh/terms/round_decimals>,
-        <https://w3id.org/peh/terms/scale_factor>,
-        <https://w3id.org/peh/terms/unit>,
-        <https://w3id.org/peh/terms/value_type> .
-
-<https://w3id.org/peh/terms/Indicator> a linkml:ClassDefinition ;
-    skos:closeMatch "iop:Variable"^^xsd:anyURI ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "wikidata:Q937228"^^xsd:anyURI ;
-    linkml:class_uri "https://www.wikidata.org/wiki/Q937228"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/Indicator"^^xsd:anyURI ;
-    linkml:description "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain" ;
-    linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases>,
-        <https://w3id.org/peh/terms/HasTranslations> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/biochementity>,
-        <https://w3id.org/peh/terms/constraints>,
-        <https://w3id.org/peh/terms/context_aliases>,
-        <https://w3id.org/peh/terms/description>,
-        <https://w3id.org/peh/terms/exact_matches>,
-        <https://w3id.org/peh/terms/grouping_id_list>,
-        <https://w3id.org/peh/terms/id>,
-        <https://w3id.org/peh/terms/indicator_type>,
-        <https://w3id.org/peh/terms/matrix>,
-        <https://w3id.org/peh/terms/name>,
-        <https://w3id.org/peh/terms/property>,
-        <https://w3id.org/peh/terms/quantity_kind>,
-        <https://w3id.org/peh/terms/relevant_observable_entity_types>,
-        <https://w3id.org/peh/terms/remark>,
-        <https://w3id.org/peh/terms/short_name>,
-        <https://w3id.org/peh/terms/translations>,
-        <https://w3id.org/peh/terms/ui_label> .
 
 <https://w3id.org/peh/terms/Study> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3503,36 +3588,34 @@
         <https://w3id.org/peh/terms/validation_condition_expression>,
         <https://w3id.org/peh/terms/validation_subject_contextual_field_references> .
 
-<https://w3id.org/peh/terms/BioChemEntity> a linkml:ClassDefinition ;
+<https://w3id.org/peh/terms/IndicatorSubClass> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "schema:BioChemEntity"^^xsd:anyURI ;
-    linkml:class_uri "http://schema.org/BioChemEntity"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/BioChemEntity"^^xsd:anyURI ;
-    linkml:description "A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain" ;
+    skos:mappingRelation "owl:Class"^^xsd:anyURI ;
+    linkml:class_uri "http://www.w3.org/2002/07/owl#Class"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/IndicatorSubClass"^^xsd:anyURI ;
+    linkml:description "Template class used to generate OWL Classes" ;
     linkml:is_a <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:mixins <https://w3id.org/peh/terms/HasAliases>,
-        <https://w3id.org/peh/terms/HasContextAliases>,
-        <https://w3id.org/peh/terms/HasTranslations>,
-        <https://w3id.org/peh/terms/HasValidationStatus> ;
+    linkml:mixins <https://w3id.org/peh/terms/HasContextAliases>,
+        <https://w3id.org/peh/terms/HasTranslations> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/aliases>,
-        <https://w3id.org/peh/terms/biochementity_type>,
+    linkml:slots <https://w3id.org/peh/terms/biochementity>,
+        <https://w3id.org/peh/terms/constraints>,
         <https://w3id.org/peh/terms/context_aliases>,
-        <https://w3id.org/peh/terms/current_validation_status>,
         <https://w3id.org/peh/terms/description>,
         <https://w3id.org/peh/terms/exact_matches>,
-        <https://w3id.org/peh/terms/group_compound_members>,
         <https://w3id.org/peh/terms/grouping_id_list>,
         <https://w3id.org/peh/terms/id>,
-        <https://w3id.org/peh/terms/member_of_group_compounds>,
-        <https://w3id.org/peh/terms/molweight_grampermol>,
+        <https://w3id.org/peh/terms/indicator_type>,
+        <https://w3id.org/peh/terms/matrix>,
         <https://w3id.org/peh/terms/name>,
-        <https://w3id.org/peh/terms/parent_compounds>,
+        <https://w3id.org/peh/terms/parent_indicator>,
+        <https://w3id.org/peh/terms/property>,
+        <https://w3id.org/peh/terms/quantity_kind>,
+        <https://w3id.org/peh/terms/relevant_observable_entity_types>,
         <https://w3id.org/peh/terms/remark>,
         <https://w3id.org/peh/terms/short_name>,
         <https://w3id.org/peh/terms/translations>,
-        <https://w3id.org/peh/terms/ui_label>,
-        <https://w3id.org/peh/terms/validation_history> .
+        <https://w3id.org/peh/terms/ui_label> .
 
 <https://w3id.org/peh/terms/StudyEntity> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3596,6 +3679,33 @@
         <https://w3id.org/peh/terms/unit>,
         <https://w3id.org/peh/terms/value>,
         <https://w3id.org/peh/terms/value_as_string> .
+
+<https://w3id.org/peh/terms/EntityList> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/peh/terms/EntityList"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/EntityList"^^xsd:anyURI ;
+    linkml:description "A generic top level object for collecting named entities under one root entity" ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/biochementity_subclasses>,
+        <https://w3id.org/peh/terms/data_requests>,
+        <https://w3id.org/peh/terms/groupings>,
+        <https://w3id.org/peh/terms/import_configs>,
+        <https://w3id.org/peh/terms/indicator_subclasses>,
+        <https://w3id.org/peh/terms/layouts>,
+        <https://w3id.org/peh/terms/matrix_subclasses>,
+        <https://w3id.org/peh/terms/metadata_fields>,
+        <https://w3id.org/peh/terms/observable_properties>,
+        <https://w3id.org/peh/terms/observation_groups>,
+        <https://w3id.org/peh/terms/observation_results>,
+        <https://w3id.org/peh/terms/observations>,
+        <https://w3id.org/peh/terms/observed_values>,
+        <https://w3id.org/peh/terms/physical_entities>,
+        <https://w3id.org/peh/terms/projects>,
+        <https://w3id.org/peh/terms/stakeholders>,
+        <https://w3id.org/peh/terms/studies>,
+        <https://w3id.org/peh/terms/study_entities>,
+        <https://w3id.org/peh/terms/units> ;
+    linkml:tree_root true .
 
 <https://w3id.org/peh/terms/NamedThing> a linkml:ClassDefinition ;
     skos:closeMatch "schema:Thing"^^xsd:anyURI ;
@@ -3690,33 +3800,6 @@
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI .
 
-<https://w3id.org/peh/terms/EntityList> a linkml:ClassDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:class_uri "https://w3id.org/peh/terms/EntityList"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/EntityList"^^xsd:anyURI ;
-    linkml:description "A generic top level object for collecting named entities under one root entity" ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/biochementities>,
-        <https://w3id.org/peh/terms/data_requests>,
-        <https://w3id.org/peh/terms/groupings>,
-        <https://w3id.org/peh/terms/import_configs>,
-        <https://w3id.org/peh/terms/indicators>,
-        <https://w3id.org/peh/terms/layouts>,
-        <https://w3id.org/peh/terms/matrices>,
-        <https://w3id.org/peh/terms/metadata_fields>,
-        <https://w3id.org/peh/terms/observable_properties>,
-        <https://w3id.org/peh/terms/observation_groups>,
-        <https://w3id.org/peh/terms/observation_results>,
-        <https://w3id.org/peh/terms/observations>,
-        <https://w3id.org/peh/terms/observed_values>,
-        <https://w3id.org/peh/terms/physical_entities>,
-        <https://w3id.org/peh/terms/projects>,
-        <https://w3id.org/peh/terms/stakeholders>,
-        <https://w3id.org/peh/terms/studies>,
-        <https://w3id.org/peh/terms/study_entities>,
-        <https://w3id.org/peh/terms/units> ;
-    linkml:tree_root true .
-
 <https://w3id.org/peh/terms/ObservableProperty> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:class_uri "https://w3id.org/peh/terms/ObservableProperty"^^xsd:anyURI ;
@@ -3732,9 +3815,9 @@
         <https://w3id.org/peh/terms/description>,
         <https://w3id.org/peh/terms/exact_matches>,
         <https://w3id.org/peh/terms/grouping_id_list>,
+        <https://w3id.org/peh/terms/has_observable_property_type>,
         <https://w3id.org/peh/terms/id>,
         <https://w3id.org/peh/terms/immutable>,
-        <https://w3id.org/peh/terms/indicator>,
         <https://w3id.org/peh/terms/multivalued>,
         <https://w3id.org/peh/terms/name>,
         <https://w3id.org/peh/terms/observation_result_type>,
