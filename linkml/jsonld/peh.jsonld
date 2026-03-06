@@ -690,6 +690,29 @@
       ]
     },
     {
+      "name": "ObservablePropertySpecificationCategory",
+      "definition_uri": "https://w3id.org/peh/terms/ObservablePropertySpecificationCategory",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "permissible_values": [
+        {
+          "text": "identifying",
+          "description": "Used to uniquely identify the ObservableEntity"
+        },
+        {
+          "text": "required",
+          "description": "Must be provided for the observation to be valid"
+        },
+        {
+          "text": "optional",
+          "description": "May be provided but not required"
+        },
+        {
+          "text": "derived",
+          "description": "Is calculated from other ObservableProperties"
+        }
+      ]
+    },
+    {
       "name": "ObservationResultType",
       "definition_uri": "https://w3id.org/peh/terms/ObservationResultType",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -2074,9 +2097,10 @@
       "definition_uri": "https://w3id.org/peh/terms/calculation_design",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/calculation_design",
-      "owner": "ObservableProperty",
+      "owner": "ObservablePropertySpecification",
       "domain_of": [
-        "ObservableProperty"
+        "ObservableProperty",
+        "ObservablePropertySpecification"
       ],
       "range": "CalculationDesign",
       "inlined": true,
@@ -2184,6 +2208,7 @@
       "owner": "DataLayoutSection",
       "domain_of": [
         "ObservableProperty",
+        "ObservablePropertySpecification",
         "DataLayoutSection"
       ],
       "range": "ValidationDesign",
@@ -2929,8 +2954,6 @@
         "Observation"
       ],
       "range": "ObservationDesign",
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2940,12 +2963,11 @@
       "slot_uri": "https://w3id.org/peh/terms/observation_designs",
       "owner": "DataRequest",
       "domain_of": [
+        "EntityList",
         "DataRequest"
       ],
       "range": "ObservationDesign",
       "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2960,6 +2982,33 @@
         "ObservationResult"
       ],
       "range": "ObservationResultType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "observable_property_specifications",
+      "definition_uri": "https://w3id.org/peh/terms/observable_property_specifications",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/observable_property_specifications",
+      "owner": "ObservationDesign",
+      "domain_of": [
+        "ObservationDesign"
+      ],
+      "range": "ObservablePropertySpecification",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "specification_category",
+      "definition_uri": "https://w3id.org/peh/terms/specification_category",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/specification_category",
+      "owner": "ObservablePropertySpecification",
+      "domain_of": [
+        "ObservablePropertySpecification"
+      ],
+      "range": "ObservablePropertySpecificationCategory",
       "@type": "SlotDefinition"
     },
     {
@@ -3030,45 +3079,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "identifying_observable_property_id_list",
-      "definition_uri": "https://w3id.org/peh/terms/identifying_observable_property_id_list",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/identifying_observable_property_id_list",
-      "owner": "ObservationDesign",
-      "domain_of": [
-        "ObservationDesign"
-      ],
-      "range": "ObservableProperty",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "required_observable_property_id_list",
-      "definition_uri": "https://w3id.org/peh/terms/required_observable_property_id_list",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/required_observable_property_id_list",
-      "owner": "ObservationDesign",
-      "domain_of": [
-        "ObservationDesign"
-      ],
-      "range": "ObservableProperty",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "optional_observable_property_id_list",
-      "definition_uri": "https://w3id.org/peh/terms/optional_observable_property_id_list",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/optional_observable_property_id_list",
-      "owner": "ObservationDesign",
-      "domain_of": [
-        "ObservationDesign"
-      ],
-      "range": "ObservableProperty",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "observable_properties",
       "definition_uri": "https://w3id.org/peh/terms/observable_properties",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -3092,6 +3102,7 @@
       "domain_of": [
         "CalculationKeywordArgument",
         "CalculationResult",
+        "ObservablePropertySpecification",
         "ObservedValue",
         "DataLayoutElement",
         "ObservedEntityProperty"
@@ -3788,6 +3799,7 @@
         "physical_entities",
         "observation_groups",
         "observations",
+        "observation_designs",
         "observation_results",
         "observed_values",
         "layouts",
@@ -4853,18 +4865,39 @@
     {
       "name": "ObservationDesign",
       "definition_uri": "https://w3id.org/peh/terms/ObservationDesign",
-      "description": "The list of properties being observed and the study entities they are observed for (or, alternatively, the entity type all observed entities belong to)",
+      "description": "The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded",
       "from_schema": "https://w3id.org/peh/peh-model",
+      "is_a": "NamedThing",
       "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches",
         "observation_result_type",
         "observable_entity_type",
         "observable_entity_id_list",
-        "identifying_observable_property_id_list",
-        "required_observable_property_id_list",
-        "optional_observable_property_id_list"
+        "observable_property_specifications"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/ObservationDesign",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservablePropertySpecification",
+      "definition_uri": "https://w3id.org/peh/terms/ObservablePropertySpecification",
+      "description": "For an observable property being recorded, lists its categorisation and processing rules",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "observable_property",
+        "specification_category",
+        "calculation_design",
+        "validation_designs"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/ObservablePropertySpecification",
       "@type": "ClassDefinition"
     },
     {
@@ -5201,9 +5234,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-03-03T14:22:59",
-  "source_file_size": 39721,
-  "generation_date": "2026-03-03T14:23:29",
+  "source_file_date": "2026-03-06T14:00:22",
+  "source_file_size": 40280,
+  "generation_date": "2026-03-06T14:00:46",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

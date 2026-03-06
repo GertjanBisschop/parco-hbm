@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-03T14:23:29
+# Generation date: 2026-03-06T14:00:47
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -185,6 +185,10 @@ class ObservationId(NamedThingId):
     pass
 
 
+class ObservationDesignId(NamedThingId):
+    pass
+
+
 class ObservationResultId(NamedThingId):
     pass
 
@@ -299,6 +303,9 @@ class EntityList(YAMLRoot):
             list[Union[dict, "Observation"]],
         ]
     ] = empty_dict()
+    observation_designs: Optional[
+        Union[Union[str, ObservationDesignId], list[Union[str, ObservationDesignId]]]
+    ] = empty_list()
     observation_results: Optional[
         Union[
             dict[Union[str, ObservationResultId], Union[dict, "ObservationResult"]],
@@ -404,6 +411,17 @@ class EntityList(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="observations", slot_type=Observation, key_name="id", keyed=True
         )
+
+        if not isinstance(self.observation_designs, list):
+            self.observation_designs = (
+                [self.observation_designs]
+                if self.observation_designs is not None
+                else []
+            )
+        self.observation_designs = [
+            v if isinstance(v, ObservationDesignId) else ObservationDesignId(v)
+            for v in self.observation_designs
+        ]
 
         self._normalize_inlined_as_list(
             slot_name="observation_results",
@@ -2990,7 +3008,7 @@ class Observation(NamedThing):
 
     id: Union[str, ObservationId] = None
     observation_type: Optional[Union[str, "ObservationType"]] = None
-    observation_design: Optional[Union[dict, "ObservationDesign"]] = None
+    observation_design: Optional[Union[str, ObservationDesignId]] = None
     observation_result_id_list: Optional[
         Union[Union[str, ObservationResultId], list[Union[str, ObservationResultId]]]
     ] = empty_list()
@@ -3002,11 +3020,9 @@ class Observation(NamedThing):
             self.observation_type = ObservationType(self.observation_type)
 
         if self.observation_design is not None and not isinstance(
-            self.observation_design, ObservationDesign
+            self.observation_design, ObservationDesignId
         ):
-            self.observation_design = ObservationDesign(
-                **as_dict(self.observation_design)
-            )
+            self.observation_design = ObservationDesignId(self.observation_design)
 
         if not isinstance(self.observation_result_id_list, list):
             self.observation_result_id_list = (
@@ -3023,10 +3039,10 @@ class Observation(NamedThing):
 
 
 @dataclass(repr=False)
-class ObservationDesign(YAMLRoot):
+class ObservationDesign(NamedThing):
     """
-    The list of properties being observed and the study entities they are observed for (or, alternatively, the entity
-    type all observed entities belong to)
+    The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as
+    well as the the properties being recorded
     """
 
     _inherited_slots: ClassVar[list[str]] = []
@@ -3036,22 +3052,25 @@ class ObservationDesign(YAMLRoot):
     class_name: ClassVar[str] = "ObservationDesign"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservationDesign
 
+    id: Union[str, ObservationDesignId] = None
     observation_result_type: Optional[Union[str, "ObservationResultType"]] = None
     observable_entity_type: Optional[Union[str, "ObservableEntityType"]] = None
     observable_entity_id_list: Optional[
         Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]
     ] = empty_list()
-    identifying_observable_property_id_list: Optional[
-        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
-    ] = empty_list()
-    required_observable_property_id_list: Optional[
-        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
-    ] = empty_list()
-    optional_observable_property_id_list: Optional[
-        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
+    observable_property_specifications: Optional[
+        Union[
+            Union[dict, "ObservablePropertySpecification"],
+            list[Union[dict, "ObservablePropertySpecification"]],
+        ]
     ] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObservationDesignId):
+            self.id = ObservationDesignId(self.id)
+
         if self.observation_result_type is not None and not isinstance(
             self.observation_result_type, ObservationResultType
         ):
@@ -3077,37 +3096,73 @@ class ObservationDesign(YAMLRoot):
             for v in self.observable_entity_id_list
         ]
 
-        if not isinstance(self.identifying_observable_property_id_list, list):
-            self.identifying_observable_property_id_list = (
-                [self.identifying_observable_property_id_list]
-                if self.identifying_observable_property_id_list is not None
+        if not isinstance(self.observable_property_specifications, list):
+            self.observable_property_specifications = (
+                [self.observable_property_specifications]
+                if self.observable_property_specifications is not None
                 else []
             )
-        self.identifying_observable_property_id_list = [
-            v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v)
-            for v in self.identifying_observable_property_id_list
+        self.observable_property_specifications = [
+            (
+                v
+                if isinstance(v, ObservablePropertySpecification)
+                else ObservablePropertySpecification(**as_dict(v))
+            )
+            for v in self.observable_property_specifications
         ]
 
-        if not isinstance(self.required_observable_property_id_list, list):
-            self.required_observable_property_id_list = (
-                [self.required_observable_property_id_list]
-                if self.required_observable_property_id_list is not None
-                else []
-            )
-        self.required_observable_property_id_list = [
-            v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v)
-            for v in self.required_observable_property_id_list
-        ]
+        super().__post_init__(**kwargs)
 
-        if not isinstance(self.optional_observable_property_id_list, list):
-            self.optional_observable_property_id_list = (
-                [self.optional_observable_property_id_list]
-                if self.optional_observable_property_id_list is not None
-                else []
+
+@dataclass(repr=False)
+class ObservablePropertySpecification(YAMLRoot):
+    """
+    For an observable property being recorded, lists its categorisation and processing rules
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservablePropertySpecification"]
+    class_class_curie: ClassVar[str] = "pehterms:ObservablePropertySpecification"
+    class_name: ClassVar[str] = "ObservablePropertySpecification"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservablePropertySpecification
+
+    observable_property: Optional[Union[str, ObservablePropertyId]] = None
+    specification_category: Optional[
+        Union[str, "ObservablePropertySpecificationCategory"]
+    ] = None
+    calculation_design: Optional[Union[dict, CalculationDesign]] = None
+    validation_designs: Optional[
+        Union[Union[dict, ValidationDesign], list[Union[dict, ValidationDesign]]]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.observable_property is not None and not isinstance(
+            self.observable_property, ObservablePropertyId
+        ):
+            self.observable_property = ObservablePropertyId(self.observable_property)
+
+        if self.specification_category is not None and not isinstance(
+            self.specification_category, ObservablePropertySpecificationCategory
+        ):
+            self.specification_category = ObservablePropertySpecificationCategory(
+                self.specification_category
             )
-        self.optional_observable_property_id_list = [
-            v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v)
-            for v in self.optional_observable_property_id_list
+
+        if self.calculation_design is not None and not isinstance(
+            self.calculation_design, CalculationDesign
+        ):
+            self.calculation_design = CalculationDesign(
+                **as_dict(self.calculation_design)
+            )
+
+        if not isinstance(self.validation_designs, list):
+            self.validation_designs = (
+                [self.validation_designs] if self.validation_designs is not None else []
+            )
+        self.validation_designs = [
+            v if isinstance(v, ValidationDesign) else ValidationDesign(**as_dict(v))
+            for v in self.validation_designs
         ]
 
         super().__post_init__(**kwargs)
@@ -3647,7 +3702,7 @@ class DataRequest(NamedThing):
         ]
     ] = empty_list()
     observation_designs: Optional[
-        Union[Union[dict, ObservationDesign], list[Union[dict, ObservationDesign]]]
+        Union[Union[str, ObservationDesignId], list[Union[str, ObservationDesignId]]]
     ] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3738,7 +3793,7 @@ class DataRequest(NamedThing):
                 else []
             )
         self.observation_designs = [
-            v if isinstance(v, ObservationDesign) else ObservationDesign(**as_dict(v))
+            v if isinstance(v, ObservationDesignId) else ObservationDesignId(v)
             for v in self.observation_designs
         ]
 
@@ -4090,6 +4145,26 @@ class ObservationType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ObservationType",
+    )
+
+
+class ObservablePropertySpecificationCategory(EnumDefinitionImpl):
+
+    identifying = PermissibleValue(
+        text="identifying", description="Used to uniquely identify the ObservableEntity"
+    )
+    required = PermissibleValue(
+        text="required", description="Must be provided for the observation to be valid"
+    )
+    optional = PermissibleValue(
+        text="optional", description="May be provided but not required"
+    )
+    derived = PermissibleValue(
+        text="derived", description="Is calculated from other ObservableProperties"
+    )
+
+    _defn = EnumDefinition(
+        name="ObservablePropertySpecificationCategory",
     )
 
 
@@ -5719,7 +5794,7 @@ slots.observation_design = Slot(
     curie=PEHTERMS.curie("observation_design"),
     model_uri=PEHTERMS.observation_design,
     domain=None,
-    range=Optional[Union[dict, ObservationDesign]],
+    range=Optional[Union[str, ObservationDesignId]],
 )
 
 slots.observation_designs = Slot(
@@ -5729,7 +5804,7 @@ slots.observation_designs = Slot(
     model_uri=PEHTERMS.observation_designs,
     domain=None,
     range=Optional[
-        Union[Union[dict, ObservationDesign], list[Union[dict, ObservationDesign]]]
+        Union[Union[str, ObservationDesignId], list[Union[str, ObservationDesignId]]]
     ],
 )
 
@@ -5740,6 +5815,29 @@ slots.observation_result_type = Slot(
     model_uri=PEHTERMS.observation_result_type,
     domain=None,
     range=Optional[Union[str, "ObservationResultType"]],
+)
+
+slots.observable_property_specifications = Slot(
+    uri=PEHTERMS.observable_property_specifications,
+    name="observable_property_specifications",
+    curie=PEHTERMS.curie("observable_property_specifications"),
+    model_uri=PEHTERMS.observable_property_specifications,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ObservablePropertySpecification],
+            list[Union[dict, ObservablePropertySpecification]],
+        ]
+    ],
+)
+
+slots.specification_category = Slot(
+    uri=PEHTERMS.specification_category,
+    name="specification_category",
+    curie=PEHTERMS.curie("specification_category"),
+    model_uri=PEHTERMS.specification_category,
+    domain=None,
+    range=Optional[Union[str, "ObservablePropertySpecificationCategory"]],
 )
 
 slots.observation_results = Slot(
@@ -5792,39 +5890,6 @@ slots.observable_entity = Slot(
     model_uri=PEHTERMS.observable_entity,
     domain=None,
     range=Optional[Union[str, StudyEntityId]],
-)
-
-slots.identifying_observable_property_id_list = Slot(
-    uri=PEHTERMS.identifying_observable_property_id_list,
-    name="identifying_observable_property_id_list",
-    curie=PEHTERMS.curie("identifying_observable_property_id_list"),
-    model_uri=PEHTERMS.identifying_observable_property_id_list,
-    domain=None,
-    range=Optional[
-        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
-    ],
-)
-
-slots.required_observable_property_id_list = Slot(
-    uri=PEHTERMS.required_observable_property_id_list,
-    name="required_observable_property_id_list",
-    curie=PEHTERMS.curie("required_observable_property_id_list"),
-    model_uri=PEHTERMS.required_observable_property_id_list,
-    domain=None,
-    range=Optional[
-        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
-    ],
-)
-
-slots.optional_observable_property_id_list = Slot(
-    uri=PEHTERMS.optional_observable_property_id_list,
-    name="optional_observable_property_id_list",
-    curie=PEHTERMS.curie("optional_observable_property_id_list"),
-    model_uri=PEHTERMS.optional_observable_property_id_list,
-    domain=None,
-    range=Optional[
-        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
-    ],
 )
 
 slots.observable_properties = Slot(

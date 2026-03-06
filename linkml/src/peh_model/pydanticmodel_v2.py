@@ -147,6 +147,25 @@ class ObservationType(str, Enum):
     metadata = "metadata"
 
 
+class ObservablePropertySpecificationCategory(str, Enum):
+    identifying = "identifying"
+    """
+    Used to uniquely identify the ObservableEntity
+    """
+    required = "required"
+    """
+    Must be provided for the observation to be valid
+    """
+    optional = "optional"
+    """
+    May be provided but not required
+    """
+    derived = "derived"
+    """
+    Is calculated from other ObservableProperties
+    """
+
+
 class ObservationResultType(str, Enum):
     measurement = "measurement"
     control = "control"
@@ -315,6 +334,7 @@ class EntityList(ConfiguredBaseModel):
     physical_entities: Optional[list[PhysicalEntity]] = Field(default=None)
     observation_groups: Optional[list[ObservationGroup]] = Field(default=None)
     observations: Optional[list[Observation]] = Field(default=None)
+    observation_designs: Optional[list[str]] = Field(default=None)
     observation_results: Optional[list[ObservationResult]] = Field(default=None)
     observed_values: Optional[list[ObservedValue]] = Field(default=None)
     layouts: Optional[list[DataLayout]] = Field(default=None)
@@ -1544,7 +1564,7 @@ class Observation(NamedThing):
     """
 
     observation_type: Optional[ObservationType] = Field(default=None)
-    observation_design: Optional[ObservationDesign] = Field(default=None)
+    observation_design: Optional[str] = Field(default=None)
     observation_result_id_list: Optional[list[str]] = Field(default=None)
     id: str = Field(
         default=...,
@@ -1572,17 +1592,54 @@ class Observation(NamedThing):
     exact_matches: Optional[list[str]] = Field(default=None)
 
 
-class ObservationDesign(ConfiguredBaseModel):
+class ObservationDesign(NamedThing):
     """
-    The list of properties being observed and the study entities they are observed for (or, alternatively, the entity type all observed entities belong to)
+    The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded
     """
 
     observation_result_type: Optional[ObservationResultType] = Field(default=None)
     observable_entity_type: Optional[ObservableEntityType] = Field(default=None)
     observable_entity_id_list: Optional[list[str]] = Field(default=None)
-    identifying_observable_property_id_list: Optional[list[str]] = Field(default=None)
-    required_observable_property_id_list: Optional[list[str]] = Field(default=None)
-    optional_observable_property_id_list: Optional[list[str]] = Field(default=None)
+    observable_property_specifications: Optional[
+        list[ObservablePropertySpecification]
+    ] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class ObservablePropertySpecification(ConfiguredBaseModel):
+    """
+    For an observable property being recorded, lists its categorisation and processing rules
+    """
+
+    observable_property: Optional[str] = Field(default=None)
+    specification_category: Optional[ObservablePropertySpecificationCategory] = Field(
+        default=None
+    )
+    calculation_design: Optional[CalculationDesign] = Field(default=None)
+    validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
 
 
 class ObservationResult(NamedThing):
@@ -1815,7 +1872,7 @@ class DataRequest(NamedThing):
     observed_entity_properties: Optional[list[ObservedEntityProperty]] = Field(
         default=None
     )
-    observation_designs: Optional[list[ObservationDesign]] = Field(default=None)
+    observation_designs: Optional[list[str]] = Field(default=None)
     id: str = Field(
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
@@ -2044,6 +2101,7 @@ StudySubject.model_rebuild()
 StudySubjectGroup.model_rebuild()
 Observation.model_rebuild()
 ObservationDesign.model_rebuild()
+ObservablePropertySpecification.model_rebuild()
 ObservationResult.model_rebuild()
 ObservedValue.model_rebuild()
 QualityData.model_rebuild()

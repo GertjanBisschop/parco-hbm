@@ -212,10 +212,6 @@
          "@id": "rdf:type"
       },
       "id": "@id",
-      "identifying_observable_property_id_list": {
-         "@type": "@id",
-         "@id": "identifying_observable_property_id_list"
-      },
       "immutable": {
          "@type": "xsd:boolean",
          "@id": "immutable"
@@ -351,6 +347,10 @@
          "@type": "@id",
          "@id": "observable_property"
       },
+      "observable_property_specifications": {
+         "@type": "@id",
+         "@id": "observable_property_specifications"
+      },
       "observation": {
          "@type": "@id",
          "@id": "observation"
@@ -418,10 +418,6 @@
       "observed_values": {
          "@type": "@id",
          "@id": "observed_values"
-      },
-      "optional_observable_property_id_list": {
-         "@type": "@id",
-         "@id": "optional_observable_property_id_list"
       },
       "orcid": {
          "@id": "schema:identifier"
@@ -568,10 +564,6 @@
          "@type": "xsd:boolean",
          "@id": "required"
       },
-      "required_observable_property_id_list": {
-         "@type": "@id",
-         "@id": "required_observable_property_id_list"
-      },
       "research_objectives": {
          "@type": "@id",
          "@id": "research_objectives"
@@ -641,6 +633,14 @@
       "significantdecimals": {
          "@type": "xsd:integer",
          "@id": "significantdecimals"
+      },
+      "specification_category": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "specification_category"
       },
       "stakeholder": {
          "@type": "@id",
@@ -913,6 +913,9 @@
       },
       "ObservablePropertyMetadataField": {
          "@id": "ObservablePropertyMetadataField"
+      },
+      "ObservablePropertySpecification": {
+         "@id": "ObservablePropertySpecification"
       },
       "ObservablePropertyValueOption": {
          "@id": "ObservablePropertyValueOption"
