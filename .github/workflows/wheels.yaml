@@ -17,12 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6.0.1
     
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6.1.0
       with:
-        python-version: '3.10'
+        python-version: '3.11'
     
     - name: Install build dependencies
       run: |
@@ -64,7 +64,7 @@ jobs:
       
     steps:
     - name: Download build artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v7
       with:
         name: dist
         path: dist/
