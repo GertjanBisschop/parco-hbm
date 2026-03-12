@@ -20,20 +20,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
+        uses: styfle/cancel-workflow-action@0.13.1
         with:
           access_token: ${{ github.token }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.1.0
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -50,13 +50,13 @@ jobs:
           make publish-nanopubs
 
       - name: Upload htaccess.txt
-        uses: actions/upload-artifact@v4 
+        uses: actions/upload-artifact@v7  
         with:
           name: htaccess.txt
           path: ./htaccess.txt
 
       - name: Upload index.yaml
-        uses: actions/upload-artifact@v4 
+        uses: actions/upload-artifact@v7 
         with:
           name: nanopub-index.yaml
           path: ./nanopub-index.yaml
@@ -66,22 +66,22 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
     - name: Checkout code 
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6.0.1
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6.1.0
       with:
-        python-version: '3.10'
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
         pip install "linkml-runtime>=1.9,<2" nanopub pydantic 
 
     - name: Download nanopub-index.yaml
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v7 
       with:
         name: nanopub-index.yaml
         path: ./linkml/changelog/nanopub-index.yaml
