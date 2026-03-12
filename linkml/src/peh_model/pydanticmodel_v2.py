@@ -235,87 +235,6 @@ class DataRole(str, Enum):
     external_data_controller = "external_data_controller"
 
 
-class QudtUnit(str, Enum):
-    PERCENT = "PERCENT"
-    PPTH = "PPTH"
-    KiloGM_PER_M3 = "KiloGM-PER-M3"
-    DAY = "DAY"
-    NanoGM = "NanoGM"
-    GM = "GM"
-    MilliGM_PER_KiloGM = "MilliGM-PER-KiloGM"
-    MilliMOL_PER_MOL = "MilliMOL-PER-MOL"
-    MicroGM_PER_MilliL = "MicroGM-PER-MilliL"
-    MO = "MO"
-    UNITLESS = "UNITLESS"
-    NanoMOL_PER_L = "NanoMOL-PER-L"
-    MIN = "MIN"
-    NanoGM_PER_M3 = "NanoGM-PER-M3"
-    GM_PER_DeciL = "GM-PER-DeciL"
-    GM_PER_L = "GM-PER-L"
-    MilliL = "MilliL"
-    HR = "HR"
-    PicoGM = "PicoGM"
-    FemtoMOL_PER_KiloGM = "FemtoMOL-PER-KiloGM"
-    NUM = "NUM"
-    NanoGM_PER_MilliL = "NanoGM-PER-MilliL"
-    MicroGM_PER_KiloGM = "MicroGM-PER-KiloGM"
-    KiloGM = "KiloGM"
-    NanoGM_PER_L = "NanoGM-PER-L"
-    MicroMOL_PER_L = "MicroMOL-PER-L"
-    M = "M"
-    CentiM = "CentiM"
-    MilliM = "MilliM"
-    MicroGM_PER_GM = "MicroGM-PER-GM"
-    WK = "WK"
-    NanoGM_PER_DeciL = "NanoGM-PER-DeciL"
-    MilliGM_PER_L = "MilliGM-PER-L"
-    PicoGM_PER_GM = "PicoGM-PER-GM"
-    L = "L"
-    NanoGM_PER_M2 = "NanoGM-PER-M2"
-    IU_PER_L = "IU-PER-L"
-    IU_PER_MilliL = "IU-PER-MilliL"
-    NUM_PER_MilliL = "NUM-PER-MilliL"
-    GM_PER_MOL = "GM-PER-MOL"
-    PER_WK = "PER-WK"
-    PicoGM_PER_MilliL = "PicoGM-PER-MilliL"
-    YR = "YR"
-    PER_DAY = "PER-DAY"
-    PicoGM_PER_MilliGM = "PicoGM-PER-MilliGM"
-    MilliGM_PER_GM = "MilliGM-PER-GM"
-    MicroGM_PER_L = "MicroGM-PER-L"
-    KiloGM_PER_M2 = "KiloGM-PER-M2"
-    MilliGM_PER_DeciL = "MilliGM-PER-DeciL"
-    MilliM_HG = "MilliM_HG"
-    PER_KiloM = "PER-KiloM"
-    NUM_PER_KiloM2___ = "NUM-PER-KiloM2___"
-    M2 = "M2"
-    M_PER_SEC = "M-PER-SEC"
-    GM_PER_HA = "GM-PER-HA"
-
-
-class QudtQuantityKind(str, Enum):
-    AmountOfSubstanceConcentration = "AmountOfSubstanceConcentration"
-    AmountOfSubstancePerMass = "AmountOfSubstancePerMass"
-    Count = "Count"
-    Dimensionless = "Dimensionless"
-    DimensionlessRatio = "DimensionlessRatio"
-    Time = "Time"
-    Speed = "Speed"
-    Frequency = "Frequency"
-    Length = "Length"
-    InverseLength = "InverseLength"
-    Area = "Area"
-    Mass = "Mass"
-    MassPerArea = "MassPerArea"
-    MassConcentration = "MassConcentration"
-    MassRatio = "MassRatio"
-    MolarMass = "MolarMass"
-    MolarRatio = "MolarRatio"
-    NumberDensity = "NumberDensity"
-    Volume = "Volume"
-    Pressure = "Pressure"
-
-
 class EntityList(ConfiguredBaseModel):
     """
     A generic top level object for collecting named entities under one root entity
@@ -325,7 +244,6 @@ class EntityList(ConfiguredBaseModel):
         default=None
     )
     groupings: Optional[list[Grouping]] = Field(default=None)
-    units: Optional[list[Unit]] = Field(default=None)
     observable_properties: Optional[list[ObservableProperty]] = Field(default=None)
     stakeholders: Optional[list[Stakeholder]] = Field(default=None)
     projects: Optional[list[Project]] = Field(default=None)
@@ -475,42 +393,6 @@ class Translation(ConfiguredBaseModel):
     property_name: Optional[str] = Field(default=None)
     language: Optional[str] = Field(default=None)
     translated_value: Optional[str] = Field(default=None)
-
-
-class Unit(HasTranslations, HasValidationStatus, NamedThing):
-    """
-    A unit of measurement, a quantity chosen as a standard in terms of which other quantities may be expressed
-    """
-
-    same_unit_as: Optional[QudtUnit] = Field(default=None)
-    quantity_kind: Optional[QudtQuantityKind] = Field(default=None)
-    translations: Optional[list[Translation]] = Field(default=None)
-    current_validation_status: Optional[ValidationStatus] = Field(default=None)
-    validation_history: Optional[list[ValidationHistoryRecord]] = Field(default=None)
-    id: str = Field(
-        default=...,
-        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
-    )
-    short_name: Optional[str] = Field(
-        default=None,
-        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
-    )
-    name: Optional[str] = Field(
-        default=None, description="""Common human readable name"""
-    )
-    ui_label: Optional[str] = Field(
-        default=None,
-        description="""Human readable label, to be used in user interactions through forms or documents.""",
-    )
-    description: Optional[str] = Field(
-        default=None,
-        description="""Long form description or definition for the entity.""",
-    )
-    remark: Optional[str] = Field(
-        default=None,
-        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
-    )
-    exact_matches: Optional[list[str]] = Field(default=None)
 
 
 class BioChemEntity(
@@ -707,7 +589,7 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
 
     indicator_type: Optional[IndicatorType] = Field(default=None)
     property: Optional[str] = Field(default=None)
-    quantity_kind: Optional[QudtQuantityKind] = Field(default=None)
+    quantity_kind: Optional[str] = Field(default=None)
     matrix: Optional[str] = Field(default=None)
     constraints: Optional[list[str]] = Field(default=None)
     grouping_id_list: Optional[list[str]] = Field(default=None)
@@ -742,6 +624,20 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
         description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
     )
     exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class QUDTUnit(ConfiguredBaseModel):
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+
+
+class QUDTQuantityKind(ConfiguredBaseModel):
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
 
 
 class PhysicalEntity(NamedThing):
@@ -996,9 +892,8 @@ class ObservableProperty(HasTranslations, HasContextAliases, NamedThing):
     value_metadata: Optional[list[ObservablePropertyMetadataElement]] = Field(
         default=None
     )
-    quantity_kind: Optional[QudtQuantityKind] = Field(default=None)
+    quantity_kind: Optional[str] = Field(default=None)
     unit: Optional[str] = Field(default=None)
-    unit_label: Optional[str] = Field(default=None)
     required: Optional[bool] = Field(default=None)
     zeroallowed: Optional[bool] = Field(default=None)
     significantdecimals: Optional[int] = Field(
@@ -2060,13 +1955,14 @@ ContextAlias.model_rebuild()
 HasTranslations.model_rebuild()
 Grouping.model_rebuild()
 Translation.model_rebuild()
-Unit.model_rebuild()
 BioChemEntity.model_rebuild()
 BioChemEntitySubClass.model_rebuild()
 Matrix.model_rebuild()
 MatrixSubClass.model_rebuild()
 Indicator.model_rebuild()
 IndicatorSubClass.model_rebuild()
+QUDTUnit.model_rebuild()
+QUDTQuantityKind.model_rebuild()
 PhysicalEntity.model_rebuild()
 PhysicalEntityLink.model_rebuild()
 Sample.model_rebuild()

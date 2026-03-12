@@ -7,10 +7,7 @@
       "peh": "https://w3id.org/peh/",
       "pehterms": "https://w3id.org/peh/terms/",
       "prov": "http://www.w3.org/ns/prov#",
-      "qudt": {
-         "@id": "http://qudt.org/2.1/schema/qudt",
-         "@prefix": true
-      },
+      "qudt": "https://qudt.org/schema/qudt/",
       "qudtqk": {
          "@id": "http://qudt.org/2.1/vocab/quantitykind",
          "@prefix": true
@@ -514,12 +511,8 @@
          "@id": "quality_value"
       },
       "quantity_kind": {
-         "@context": {
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "quantity_kind"
+         "@type": "@id",
+         "@id": "qudt:hasQuantityKind"
       },
       "raw_unit": {
          "@type": "@id",
@@ -582,14 +575,6 @@
       "round_decimals": {
          "@type": "xsd:integer",
          "@id": "round_decimals"
-      },
-      "same_unit_as": {
-         "@context": {
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "skos:exactMatch"
       },
       "sample_id_list": {
          "@type": "@id",
@@ -702,14 +687,7 @@
       },
       "unit": {
          "@type": "@id",
-         "@id": "unit"
-      },
-      "unit_label": {
-         "@id": "unit_label"
-      },
-      "units": {
-         "@type": "@id",
-         "@id": "units"
+         "@id": "qudt:hasUnit"
       },
       "validation_actor": {
          "@id": "validation_actor"
@@ -965,6 +943,12 @@
       "QualityData": {
          "@id": "QualityData"
       },
+      "QUDTQuantityKind": {
+         "@id": "qudt:QuantityKind"
+      },
+      "QUDTUnit": {
+         "@id": "qudt:Unit"
+      },
       "ResearchObjective": {
          "@id": "ResearchObjective"
       },
@@ -1000,9 +984,6 @@
       },
       "Translation": {
          "@id": "Translation"
-      },
-      "Unit": {
-         "@id": "wikidata:Q2198779"
       },
       "ValidationDesign": {
          "@id": "ValidationDesign"

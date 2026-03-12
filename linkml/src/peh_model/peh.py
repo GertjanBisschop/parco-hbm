@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-06T14:00:47
+# Generation date: 2026-03-12T08:29:27
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -58,7 +58,7 @@ OWL = CurieNamespace("owl", "http://www.w3.org/2002/07/owl#")
 PEH = CurieNamespace("peh", "https://w3id.org/peh/")
 PEHTERMS = CurieNamespace("pehterms", "https://w3id.org/peh/terms/")
 PROV = CurieNamespace("prov", "http://www.w3.org/ns/prov#")
-QUDT = CurieNamespace("qudt", "http://qudt.org/2.1/schema/qudt")
+QUDT = CurieNamespace("qudt", "https://qudt.org/schema/qudt/")
 QUDTQK = CurieNamespace("qudtqk", "http://qudt.org/2.1/vocab/quantitykind")
 QUDTUNIT = CurieNamespace("qudtunit", "https://qudt.org/vocab/unit/")
 RDF = CurieNamespace("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
@@ -73,15 +73,11 @@ DEFAULT_ = PEHTERMS
 
 
 # Class references
-class NamedThingId(extended_str):
+class NamedThingId(URIorCURIE):
     pass
 
 
 class GroupingId(NamedThingId):
-    pass
-
-
-class UnitId(NamedThingId):
     pass
 
 
@@ -106,6 +102,14 @@ class IndicatorId(NamedThingId):
 
 
 class IndicatorSubClassId(NamedThingId):
+    pass
+
+
+class QUDTUnitId(URIorCURIE):
+    pass
+
+
+class QUDTQuantityKindId(URIorCURIE):
     pass
 
 
@@ -253,9 +257,6 @@ class EntityList(YAMLRoot):
             list[Union[dict, "Grouping"]],
         ]
     ] = empty_dict()
-    units: Optional[
-        Union[dict[Union[str, UnitId], Union[dict, "Unit"]], list[Union[dict, "Unit"]]]
-    ] = empty_dict()
     observable_properties: Optional[
         Union[
             dict[Union[str, ObservablePropertyId], Union[dict, "ObservableProperty"]],
@@ -365,10 +366,6 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(
             slot_name="groupings", slot_type=Grouping, key_name="id", keyed=True
-        )
-
-        self._normalize_inlined_as_list(
-            slot_name="units", slot_type=Unit, key_name="id", keyed=True
         )
 
         self._normalize_inlined_as_list(
@@ -836,81 +833,6 @@ class Translation(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Unit(NamedThing):
-    """
-    A unit of measurement, a quantity chosen as a standard in terms of which other quantities may be expressed
-    """
-
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = WIKIDATA["Q2198779"]
-    class_class_curie: ClassVar[str] = "wikidata:Q2198779"
-    class_name: ClassVar[str] = "Unit"
-    class_model_uri: ClassVar[URIRef] = PEHTERMS.Unit
-
-    id: Union[str, UnitId] = None
-    same_unit_as: Optional[Union[str, "QudtUnit"]] = None
-    quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
-    translations: Optional[
-        Union[Union[dict, Translation], list[Union[dict, Translation]]]
-    ] = empty_list()
-    current_validation_status: Optional[Union[str, "ValidationStatus"]] = None
-    validation_history: Optional[
-        Union[
-            Union[dict, ValidationHistoryRecord],
-            list[Union[dict, ValidationHistoryRecord]],
-        ]
-    ] = empty_list()
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, UnitId):
-            self.id = UnitId(self.id)
-
-        if self.same_unit_as is not None and not isinstance(
-            self.same_unit_as, QudtUnit
-        ):
-            self.same_unit_as = QudtUnit(self.same_unit_as)
-
-        if self.quantity_kind is not None and not isinstance(
-            self.quantity_kind, QudtQuantityKind
-        ):
-            self.quantity_kind = QudtQuantityKind(self.quantity_kind)
-
-        if not isinstance(self.translations, list):
-            self.translations = (
-                [self.translations] if self.translations is not None else []
-            )
-        self.translations = [
-            v if isinstance(v, Translation) else Translation(**as_dict(v))
-            for v in self.translations
-        ]
-
-        if self.current_validation_status is not None and not isinstance(
-            self.current_validation_status, ValidationStatus
-        ):
-            self.current_validation_status = ValidationStatus(
-                self.current_validation_status
-            )
-
-        if not isinstance(self.validation_history, list):
-            self.validation_history = (
-                [self.validation_history] if self.validation_history is not None else []
-            )
-        self.validation_history = [
-            (
-                v
-                if isinstance(v, ValidationHistoryRecord)
-                else ValidationHistoryRecord(**as_dict(v))
-            )
-            for v in self.validation_history
-        ]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class BioChemEntity(NamedThing):
     """
     A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
@@ -1280,7 +1202,7 @@ class IndicatorSubClass(NamedThing):
     id: Union[str, IndicatorSubClassId] = None
     indicator_type: Optional[Union[str, "IndicatorType"]] = None
     property: Optional[str] = None
-    quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
+    quantity_kind: Optional[Union[str, QUDTQuantityKindId]] = None
     matrix: Optional[Union[str, MatrixId]] = None
     constraints: Optional[Union[str, list[str]]] = empty_list()
     grouping_id_list: Optional[
@@ -1315,9 +1237,9 @@ class IndicatorSubClass(NamedThing):
             self.property = str(self.property)
 
         if self.quantity_kind is not None and not isinstance(
-            self.quantity_kind, QudtQuantityKind
+            self.quantity_kind, QUDTQuantityKindId
         ):
-            self.quantity_kind = QudtQuantityKind(self.quantity_kind)
+            self.quantity_kind = QUDTQuantityKindId(self.quantity_kind)
 
         if self.matrix is not None and not isinstance(self.matrix, MatrixId):
             self.matrix = MatrixId(self.matrix)
@@ -1377,6 +1299,46 @@ class IndicatorSubClass(NamedThing):
             v if isinstance(v, Translation) else Translation(**as_dict(v))
             for v in self.translations
         ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class QUDTUnit(YAMLRoot):
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = QUDT["Unit"]
+    class_class_curie: ClassVar[str] = "qudt:Unit"
+    class_name: ClassVar[str] = "QUDTUnit"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.QUDTUnit
+
+    id: Union[str, QUDTUnitId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, QUDTUnitId):
+            self.id = QUDTUnitId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class QUDTQuantityKind(YAMLRoot):
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = QUDT["QuantityKind"]
+    class_class_curie: ClassVar[str] = "qudt:QuantityKind"
+    class_name: ClassVar[str] = "QUDTQuantityKind"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.QUDTQuantityKind
+
+    id: Union[str, QUDTQuantityKindId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, QUDTQuantityKindId):
+            self.id = QUDTQuantityKindId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -1657,9 +1619,8 @@ class ObservableProperty(NamedThing):
             list[Union[dict, "ObservablePropertyMetadataElement"]],
         ]
     ] = empty_list()
-    quantity_kind: Optional[Union[str, "QudtQuantityKind"]] = None
-    unit: Optional[Union[str, UnitId]] = None
-    unit_label: Optional[str] = None
+    quantity_kind: Optional[Union[str, QUDTQuantityKindId]] = None
+    unit: Optional[Union[str, QUDTUnitId]] = None
     required: Optional[Union[bool, Bool]] = None
     zeroallowed: Optional[Union[bool, Bool]] = None
     significantdecimals: Optional[int] = None
@@ -1732,15 +1693,12 @@ class ObservableProperty(NamedThing):
         ]
 
         if self.quantity_kind is not None and not isinstance(
-            self.quantity_kind, QudtQuantityKind
+            self.quantity_kind, QUDTQuantityKindId
         ):
-            self.quantity_kind = QudtQuantityKind(self.quantity_kind)
+            self.quantity_kind = QUDTQuantityKindId(self.quantity_kind)
 
-        if self.unit is not None and not isinstance(self.unit, UnitId):
-            self.unit = UnitId(self.unit)
-
-        if self.unit_label is not None and not isinstance(self.unit_label, str):
-            self.unit_label = str(self.unit_label)
+        if self.unit is not None and not isinstance(self.unit, QUDTUnitId):
+            self.unit = QUDTUnitId(self.unit)
 
         if self.required is not None and not isinstance(self.required, Bool):
             self.required = Bool(self.required)
@@ -2057,7 +2015,7 @@ class CalculationKeywordArgument(YAMLRoot):
     process_state: Optional[str] = None
     imputation_state: Optional[str] = None
     value_type: Optional[str] = None
-    unit: Optional[Union[str, UnitId]] = None
+    unit: Optional[Union[str, QUDTUnitId]] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
     contextual_field_reference: Optional[Union[dict, "ContextualFieldReference"]] = None
 
@@ -2076,8 +2034,8 @@ class CalculationKeywordArgument(YAMLRoot):
         if self.value_type is not None and not isinstance(self.value_type, str):
             self.value_type = str(self.value_type)
 
-        if self.unit is not None and not isinstance(self.unit, UnitId):
-            self.unit = UnitId(self.unit)
+        if self.unit is not None and not isinstance(self.unit, QUDTUnitId):
+            self.unit = QUDTUnitId(self.unit)
 
         if self.observable_property is not None and not isinstance(
             self.observable_property, ObservablePropertyId
@@ -2109,7 +2067,7 @@ class CalculationResult(YAMLRoot):
 
     mapping_name: Optional[str] = None
     value_type: Optional[str] = None
-    unit: Optional[Union[str, UnitId]] = None
+    unit: Optional[Union[str, QUDTUnitId]] = None
     round_decimals: Optional[int] = None
     scale_factor: Optional[Decimal] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
@@ -2122,8 +2080,8 @@ class CalculationResult(YAMLRoot):
         if self.value_type is not None and not isinstance(self.value_type, str):
             self.value_type = str(self.value_type)
 
-        if self.unit is not None and not isinstance(self.unit, UnitId):
-            self.unit = UnitId(self.unit)
+        if self.unit is not None and not isinstance(self.unit, QUDTUnitId):
+            self.unit = QUDTUnitId(self.unit)
 
         if self.round_decimals is not None and not isinstance(self.round_decimals, int):
             self.round_decimals = int(self.round_decimals)
@@ -3235,13 +3193,13 @@ class ObservedValue(YAMLRoot):
     observable_entity: Optional[Union[str, StudyEntityId]] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
     raw_value: Optional[str] = None
-    raw_unit: Optional[Union[str, UnitId]] = None
+    raw_unit: Optional[Union[str, QUDTUnitId]] = None
     imputed_value: Optional[str] = None
-    imputed_unit: Optional[Union[str, UnitId]] = None
+    imputed_unit: Optional[Union[str, QUDTUnitId]] = None
     normalised_value: Optional[str] = None
-    normalised_unit: Optional[Union[str, UnitId]] = None
+    normalised_unit: Optional[Union[str, QUDTUnitId]] = None
     value: Optional[str] = None
-    unit: Optional[Union[str, UnitId]] = None
+    unit: Optional[Union[str, QUDTUnitId]] = None
     value_as_string: Optional[str] = None
     quality_data: Optional[
         Union[Union[dict, "QualityData"], list[Union[dict, "QualityData"]]]
@@ -3264,14 +3222,16 @@ class ObservedValue(YAMLRoot):
         if self.raw_value is not None and not isinstance(self.raw_value, str):
             self.raw_value = str(self.raw_value)
 
-        if self.raw_unit is not None and not isinstance(self.raw_unit, UnitId):
-            self.raw_unit = UnitId(self.raw_unit)
+        if self.raw_unit is not None and not isinstance(self.raw_unit, QUDTUnitId):
+            self.raw_unit = QUDTUnitId(self.raw_unit)
 
         if self.imputed_value is not None and not isinstance(self.imputed_value, str):
             self.imputed_value = str(self.imputed_value)
 
-        if self.imputed_unit is not None and not isinstance(self.imputed_unit, UnitId):
-            self.imputed_unit = UnitId(self.imputed_unit)
+        if self.imputed_unit is not None and not isinstance(
+            self.imputed_unit, QUDTUnitId
+        ):
+            self.imputed_unit = QUDTUnitId(self.imputed_unit)
 
         if self.normalised_value is not None and not isinstance(
             self.normalised_value, str
@@ -3279,15 +3239,15 @@ class ObservedValue(YAMLRoot):
             self.normalised_value = str(self.normalised_value)
 
         if self.normalised_unit is not None and not isinstance(
-            self.normalised_unit, UnitId
+            self.normalised_unit, QUDTUnitId
         ):
-            self.normalised_unit = UnitId(self.normalised_unit)
+            self.normalised_unit = QUDTUnitId(self.normalised_unit)
 
         if self.value is not None and not isinstance(self.value, str):
             self.value = str(self.value)
 
-        if self.unit is not None and not isinstance(self.unit, UnitId):
-            self.unit = UnitId(self.unit)
+        if self.unit is not None and not isinstance(self.unit, QUDTUnitId):
+            self.unit = QUDTUnitId(self.unit)
 
         if self.value_as_string is not None and not isinstance(
             self.value_as_string, str
@@ -4282,271 +4242,6 @@ class DataRole(EnumDefinitionImpl):
     )
 
 
-class QudtUnit(EnumDefinitionImpl):
-
-    PERCENT = PermissibleValue(text="PERCENT", meaning=QUDTUNIT["PERCENT"])
-    PPTH = PermissibleValue(text="PPTH", meaning=QUDTUNIT["PPTH"])
-    DAY = PermissibleValue(text="DAY", meaning=QUDTUNIT["DAY"])
-    NanoGM = PermissibleValue(text="NanoGM", meaning=QUDTUNIT["NanoGM"])
-    GM = PermissibleValue(text="GM", meaning=QUDTUNIT["GM"])
-    MO = PermissibleValue(text="MO", meaning=QUDTUNIT["MO"])
-    UNITLESS = PermissibleValue(text="UNITLESS", meaning=QUDTUNIT["UNITLESS"])
-    MIN = PermissibleValue(text="MIN", meaning=QUDTUNIT["MIN"])
-    MilliL = PermissibleValue(text="MilliL", meaning=QUDTUNIT["MilliL"])
-    HR = PermissibleValue(text="HR", meaning=QUDTUNIT["HR"])
-    PicoGM = PermissibleValue(text="PicoGM", meaning=QUDTUNIT["PicoGM"])
-    NUM = PermissibleValue(text="NUM", meaning=QUDTUNIT["NUM"])
-    KiloGM = PermissibleValue(text="KiloGM", meaning=QUDTUNIT["KiloGM"])
-    M = PermissibleValue(text="M", meaning=QUDTUNIT["M"])
-    CentiM = PermissibleValue(text="CentiM", meaning=QUDTUNIT["CentiM"])
-    MilliM = PermissibleValue(text="MilliM", meaning=QUDTUNIT["MilliM"])
-    WK = PermissibleValue(text="WK", meaning=QUDTUNIT["WK"])
-    L = PermissibleValue(text="L", meaning=QUDTUNIT["L"])
-    YR = PermissibleValue(text="YR", meaning=QUDTUNIT["YR"])
-    MilliM_HG = PermissibleValue(text="MilliM_HG", meaning=QUDTUNIT["MilliM_HG"])
-    M2 = PermissibleValue(text="M2", meaning=QUDTUNIT["M2"])
-
-    _defn = EnumDefinition(
-        name="QudtUnit",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(
-            cls,
-            "KiloGM-PER-M3",
-            PermissibleValue(text="KiloGM-PER-M3", meaning=QUDTUNIT["KiloGM-PER-M3"]),
-        )
-        setattr(
-            cls,
-            "MilliGM-PER-KiloGM",
-            PermissibleValue(
-                text="MilliGM-PER-KiloGM", meaning=QUDTUNIT["MilliGM-PER-KiloGM"]
-            ),
-        )
-        setattr(
-            cls,
-            "MilliMOL-PER-MOL",
-            PermissibleValue(
-                text="MilliMOL-PER-MOL", meaning=QUDTUNIT["MilliMOL-PER-MOL"]
-            ),
-        )
-        setattr(
-            cls,
-            "MicroGM-PER-MilliL",
-            PermissibleValue(
-                text="MicroGM-PER-MilliL", meaning=QUDTUNIT["MicroGM-PER-MilliL"]
-            ),
-        )
-        setattr(
-            cls,
-            "NanoMOL-PER-L",
-            PermissibleValue(text="NanoMOL-PER-L", meaning=QUDTUNIT["NanoMOL-PER-L"]),
-        )
-        setattr(
-            cls,
-            "NanoGM-PER-M3",
-            PermissibleValue(text="NanoGM-PER-M3", meaning=QUDTUNIT["NanoGM-PER-M3"]),
-        )
-        setattr(
-            cls,
-            "GM-PER-DeciL",
-            PermissibleValue(text="GM-PER-DeciL", meaning=QUDTUNIT["GM-PER-DeciL"]),
-        )
-        setattr(
-            cls,
-            "GM-PER-L",
-            PermissibleValue(text="GM-PER-L", meaning=QUDTUNIT["GM-PER-L"]),
-        )
-        setattr(
-            cls,
-            "FemtoMOL-PER-KiloGM",
-            PermissibleValue(
-                text="FemtoMOL-PER-KiloGM", meaning=QUDTUNIT["FemtoMOL-PER-KiloGM"]
-            ),
-        )
-        setattr(
-            cls,
-            "NanoGM-PER-MilliL",
-            PermissibleValue(
-                text="NanoGM-PER-MilliL", meaning=QUDTUNIT["NanoGM-PER-MilliL"]
-            ),
-        )
-        setattr(
-            cls,
-            "MicroGM-PER-KiloGM",
-            PermissibleValue(
-                text="MicroGM-PER-KiloGM", meaning=QUDTUNIT["MicroGM-PER-KiloGM"]
-            ),
-        )
-        setattr(
-            cls,
-            "NanoGM-PER-L",
-            PermissibleValue(text="NanoGM-PER-L", meaning=QUDTUNIT["NanoGM-PER-L"]),
-        )
-        setattr(
-            cls,
-            "MicroMOL-PER-L",
-            PermissibleValue(text="MicroMOL-PER-L", meaning=QUDTUNIT["MicroMOL-PER-L"]),
-        )
-        setattr(
-            cls,
-            "MicroGM-PER-GM",
-            PermissibleValue(text="MicroGM-PER-GM", meaning=QUDTUNIT["MicroGM-PER-GM"]),
-        )
-        setattr(
-            cls,
-            "NanoGM-PER-DeciL",
-            PermissibleValue(
-                text="NanoGM-PER-DeciL", meaning=QUDTUNIT["NanoGM-PER-DeciL"]
-            ),
-        )
-        setattr(
-            cls,
-            "MilliGM-PER-L",
-            PermissibleValue(text="MilliGM-PER-L", meaning=QUDTUNIT["MilliGM-PER-L"]),
-        )
-        setattr(
-            cls,
-            "PicoGM-PER-GM",
-            PermissibleValue(text="PicoGM-PER-GM", meaning=QUDTUNIT["PicoGM-PER-GM"]),
-        )
-        setattr(
-            cls,
-            "NanoGM-PER-M2",
-            PermissibleValue(text="NanoGM-PER-M2", meaning=QUDTUNIT["NanoGM-PER-M2"]),
-        )
-        setattr(
-            cls,
-            "IU-PER-L",
-            PermissibleValue(text="IU-PER-L", meaning=QUDTUNIT["IU-PER-L"]),
-        )
-        setattr(
-            cls,
-            "IU-PER-MilliL",
-            PermissibleValue(text="IU-PER-MilliL", meaning=QUDTUNIT["IU-PER-MilliL"]),
-        )
-        setattr(
-            cls,
-            "NUM-PER-MilliL",
-            PermissibleValue(text="NUM-PER-MilliL", meaning=QUDTUNIT["NUM-PER-MilliL"]),
-        )
-        setattr(
-            cls,
-            "GM-PER-MOL",
-            PermissibleValue(text="GM-PER-MOL", meaning=QUDTUNIT["GM-PER-MOL"]),
-        )
-        setattr(
-            cls, "PER-WK", PermissibleValue(text="PER-WK", meaning=QUDTUNIT["PER-WK"])
-        )
-        setattr(
-            cls,
-            "PicoGM-PER-MilliL",
-            PermissibleValue(
-                text="PicoGM-PER-MilliL", meaning=QUDTUNIT["PicoGM-PER-MilliL"]
-            ),
-        )
-        setattr(
-            cls,
-            "PER-DAY",
-            PermissibleValue(text="PER-DAY", meaning=QUDTUNIT["PER-DAY"]),
-        )
-        setattr(
-            cls,
-            "PicoGM-PER-MilliGM",
-            PermissibleValue(
-                text="PicoGM-PER-MilliGM", meaning=QUDTUNIT["PicoGM-PER-MilliGM"]
-            ),
-        )
-        setattr(
-            cls,
-            "MilliGM-PER-GM",
-            PermissibleValue(text="MilliGM-PER-GM", meaning=QUDTUNIT["MilliGM-PER-GM"]),
-        )
-        setattr(
-            cls,
-            "MicroGM-PER-L",
-            PermissibleValue(text="MicroGM-PER-L", meaning=QUDTUNIT["MicroGM-PER-L"]),
-        )
-        setattr(
-            cls,
-            "KiloGM-PER-M2",
-            PermissibleValue(text="KiloGM-PER-M2", meaning=QUDTUNIT["KiloGM-PER-M2"]),
-        )
-        setattr(
-            cls,
-            "MilliGM-PER-DeciL",
-            PermissibleValue(
-                text="MilliGM-PER-DeciL", meaning=QUDTUNIT["MilliGM-PER-DeciL"]
-            ),
-        )
-        setattr(
-            cls,
-            "PER-KiloM",
-            PermissibleValue(text="PER-KiloM", meaning=QUDTUNIT["PER-KiloM"]),
-        )
-        setattr(
-            cls,
-            "NUM-PER-KiloM2___",
-            PermissibleValue(
-                text="NUM-PER-KiloM2___", meaning=QUDTUNIT["NUM-PER-KiloM2"]
-            ),
-        )
-        setattr(
-            cls,
-            "M-PER-SEC",
-            PermissibleValue(text="M-PER-SEC", meaning=QUDTUNIT["M-PER-SEC"]),
-        )
-        setattr(
-            cls,
-            "GM-PER-HA",
-            PermissibleValue(text="GM-PER-HA", meaning=QUDTUNIT["GM-PER-HA"]),
-        )
-
-
-class QudtQuantityKind(EnumDefinitionImpl):
-
-    AmountOfSubstanceConcentration = PermissibleValue(
-        text="AmountOfSubstanceConcentration",
-        meaning=QUDTQK["AmountOfSubstanceConcentration"],
-    )
-    AmountOfSubstancePerMass = PermissibleValue(
-        text="AmountOfSubstancePerMass", meaning=QUDTQK["AmountOfSubstancePerMass"]
-    )
-    Count = PermissibleValue(text="Count", meaning=QUDTQK["Count"])
-    Dimensionless = PermissibleValue(
-        text="Dimensionless", meaning=QUDTQK["Dimensionless"]
-    )
-    DimensionlessRatio = PermissibleValue(
-        text="DimensionlessRatio", meaning=QUDTQK["DimensionlessRatio"]
-    )
-    Time = PermissibleValue(text="Time", meaning=QUDTQK["Time"])
-    Speed = PermissibleValue(text="Speed", meaning=QUDTQK["Speed"])
-    Frequency = PermissibleValue(text="Frequency", meaning=QUDTQK["Frequency"])
-    Length = PermissibleValue(text="Length", meaning=QUDTQK["Length"])
-    InverseLength = PermissibleValue(
-        text="InverseLength", meaning=QUDTQK["InverseLength"]
-    )
-    Area = PermissibleValue(text="Area", meaning=QUDTQK["Area"])
-    Mass = PermissibleValue(text="Mass", meaning=QUDTQK["Mass"])
-    MassPerArea = PermissibleValue(text="MassPerArea", meaning=QUDTQK["MassPerArea"])
-    MassConcentration = PermissibleValue(
-        text="MassConcentration", meaning=QUDTQK["MassConcentration"]
-    )
-    MassRatio = PermissibleValue(text="MassRatio", meaning=QUDTQK["MassRatio"])
-    MolarMass = PermissibleValue(text="MolarMass", meaning=QUDTQK["MolarMass"])
-    MolarRatio = PermissibleValue(text="MolarRatio", meaning=QUDTQK["MolarRatio"])
-    NumberDensity = PermissibleValue(
-        text="NumberDensity", meaning=QUDTQK["NumberDensity"]
-    )
-    Volume = PermissibleValue(text="Volume", meaning=QUDTQK["Volume"])
-    Pressure = PermissibleValue(text="Pressure", meaning=QUDTQK["Pressure"])
-
-    _defn = EnumDefinition(
-        name="QudtQuantityKind",
-    )
-
-
 # Slots
 class slots:
     pass
@@ -4728,33 +4423,13 @@ slots.validation_history = Slot(
     ],
 )
 
-slots.units = Slot(
-    uri=PEHTERMS.units,
-    name="units",
-    curie=PEHTERMS.curie("units"),
-    model_uri=PEHTERMS.units,
-    domain=None,
-    range=Optional[
-        Union[dict[Union[str, UnitId], Union[dict, Unit]], list[Union[dict, Unit]]]
-    ],
-)
-
-slots.same_unit_as = Slot(
-    uri=SKOS.exactMatch,
-    name="same_unit_as",
-    curie=SKOS.curie("exactMatch"),
-    model_uri=PEHTERMS.same_unit_as,
-    domain=None,
-    range=Optional[Union[str, "QudtUnit"]],
-)
-
 slots.quantity_kind = Slot(
-    uri=PEHTERMS.quantity_kind,
+    uri=QUDT.hasQuantityKind,
     name="quantity_kind",
-    curie=PEHTERMS.curie("quantity_kind"),
+    curie=QUDT.curie("hasQuantityKind"),
     model_uri=PEHTERMS.quantity_kind,
     domain=None,
-    range=Optional[Union[str, "QudtQuantityKind"]],
+    range=Optional[Union[str, QUDTQuantityKindId]],
 )
 
 slots.groupings = Slot(
@@ -5097,15 +4772,6 @@ slots.significantdecimals = Slot(
     model_uri=PEHTERMS.significantdecimals,
     domain=None,
     range=Optional[int],
-)
-
-slots.unit_label = Slot(
-    uri=PEHTERMS.unit_label,
-    name="unit_label",
-    curie=PEHTERMS.curie("unit_label"),
-    model_uri=PEHTERMS.unit_label,
-    domain=None,
-    range=Optional[str],
 )
 
 slots.immutable = Slot(
@@ -5925,12 +5591,12 @@ slots.observed_values = Slot(
 )
 
 slots.unit = Slot(
-    uri=PEHTERMS.unit,
+    uri=QUDT.hasUnit,
     name="unit",
-    curie=PEHTERMS.curie("unit"),
+    curie=QUDT.curie("hasUnit"),
     model_uri=PEHTERMS.unit,
     domain=None,
-    range=Optional[Union[str, UnitId]],
+    range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.raw_value = Slot(
@@ -5948,7 +5614,7 @@ slots.raw_unit = Slot(
     curie=PEHTERMS.curie("raw_unit"),
     model_uri=PEHTERMS.raw_unit,
     domain=None,
-    range=Optional[Union[str, UnitId]],
+    range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.imputed_value = Slot(
@@ -5966,7 +5632,7 @@ slots.imputed_unit = Slot(
     curie=PEHTERMS.curie("imputed_unit"),
     model_uri=PEHTERMS.imputed_unit,
     domain=None,
-    range=Optional[Union[str, UnitId]],
+    range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.normalised_value = Slot(
@@ -5984,7 +5650,7 @@ slots.normalised_unit = Slot(
     curie=PEHTERMS.curie("normalised_unit"),
     model_uri=PEHTERMS.normalised_unit,
     domain=None,
-    range=Optional[Union[str, UnitId]],
+    range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.value_as_string = Slot(

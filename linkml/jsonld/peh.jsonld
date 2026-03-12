@@ -46,7 +46,7 @@
     },
     {
       "prefix_prefix": "qudt",
-      "prefix_reference": "http://qudt.org/2.1/schema/qudt"
+      "prefix_reference": "https://qudt.org/schema/qudt/"
     },
     {
       "prefix_prefix": "qudtunit",
@@ -900,346 +900,6 @@
           "text": "external_data_controller"
         }
       ]
-    },
-    {
-      "name": "QudtUnit",
-      "definition_uri": "https://w3id.org/peh/terms/QudtUnit",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "permissible_values": [
-        {
-          "text": "PERCENT",
-          "meaning": "qudtunit:PERCENT"
-        },
-        {
-          "text": "PPTH",
-          "meaning": "qudtunit:PPTH"
-        },
-        {
-          "text": "KiloGM-PER-M3",
-          "meaning": "qudtunit:KiloGM-PER-M3"
-        },
-        {
-          "text": "DAY",
-          "meaning": "qudtunit:DAY"
-        },
-        {
-          "text": "NanoGM",
-          "meaning": "qudtunit:NanoGM"
-        },
-        {
-          "text": "GM",
-          "meaning": "qudtunit:GM"
-        },
-        {
-          "text": "MilliGM-PER-KiloGM",
-          "meaning": "qudtunit:MilliGM-PER-KiloGM"
-        },
-        {
-          "text": "MilliMOL-PER-MOL",
-          "meaning": "qudtunit:MilliMOL-PER-MOL"
-        },
-        {
-          "text": "MicroGM-PER-MilliL",
-          "meaning": "qudtunit:MicroGM-PER-MilliL"
-        },
-        {
-          "text": "MO",
-          "meaning": "qudtunit:MO"
-        },
-        {
-          "text": "UNITLESS",
-          "meaning": "qudtunit:UNITLESS"
-        },
-        {
-          "text": "NanoMOL-PER-L",
-          "meaning": "qudtunit:NanoMOL-PER-L"
-        },
-        {
-          "text": "MIN",
-          "meaning": "qudtunit:MIN"
-        },
-        {
-          "text": "NanoGM-PER-M3",
-          "meaning": "qudtunit:NanoGM-PER-M3"
-        },
-        {
-          "text": "GM-PER-DeciL",
-          "meaning": "qudtunit:GM-PER-DeciL"
-        },
-        {
-          "text": "GM-PER-L",
-          "meaning": "qudtunit:GM-PER-L"
-        },
-        {
-          "text": "MilliL",
-          "meaning": "qudtunit:MilliL"
-        },
-        {
-          "text": "HR",
-          "meaning": "qudtunit:HR"
-        },
-        {
-          "text": "PicoGM",
-          "meaning": "qudtunit:PicoGM"
-        },
-        {
-          "text": "FemtoMOL-PER-KiloGM",
-          "meaning": "qudtunit:FemtoMOL-PER-KiloGM"
-        },
-        {
-          "text": "NUM",
-          "meaning": "qudtunit:NUM"
-        },
-        {
-          "text": "NanoGM-PER-MilliL",
-          "meaning": "qudtunit:NanoGM-PER-MilliL"
-        },
-        {
-          "text": "MicroGM-PER-KiloGM",
-          "meaning": "qudtunit:MicroGM-PER-KiloGM"
-        },
-        {
-          "text": "KiloGM",
-          "meaning": "qudtunit:KiloGM"
-        },
-        {
-          "text": "NanoGM-PER-L",
-          "meaning": "qudtunit:NanoGM-PER-L"
-        },
-        {
-          "text": "MicroMOL-PER-L",
-          "meaning": "qudtunit:MicroMOL-PER-L"
-        },
-        {
-          "text": "M",
-          "meaning": "qudtunit:M"
-        },
-        {
-          "text": "CentiM",
-          "meaning": "qudtunit:CentiM"
-        },
-        {
-          "text": "MilliM",
-          "meaning": "qudtunit:MilliM"
-        },
-        {
-          "text": "MicroGM-PER-GM",
-          "meaning": "qudtunit:MicroGM-PER-GM"
-        },
-        {
-          "text": "WK",
-          "meaning": "qudtunit:WK"
-        },
-        {
-          "text": "NanoGM-PER-DeciL",
-          "meaning": "qudtunit:NanoGM-PER-DeciL"
-        },
-        {
-          "text": "MilliGM-PER-L",
-          "meaning": "qudtunit:MilliGM-PER-L"
-        },
-        {
-          "text": "PicoGM-PER-GM",
-          "meaning": "qudtunit:PicoGM-PER-GM"
-        },
-        {
-          "text": "L",
-          "meaning": "qudtunit:L"
-        },
-        {
-          "text": "NanoGM-PER-M2",
-          "meaning": "qudtunit:NanoGM-PER-M2"
-        },
-        {
-          "text": "IU-PER-L",
-          "meaning": "qudtunit:IU-PER-L"
-        },
-        {
-          "text": "IU-PER-MilliL",
-          "meaning": "qudtunit:IU-PER-MilliL"
-        },
-        {
-          "text": "NUM-PER-MilliL",
-          "meaning": "qudtunit:NUM-PER-MilliL"
-        },
-        {
-          "text": "GM-PER-MOL",
-          "meaning": "qudtunit:GM-PER-MOL"
-        },
-        {
-          "text": "PER-WK",
-          "meaning": "qudtunit:PER-WK"
-        },
-        {
-          "text": "PicoGM-PER-MilliL",
-          "meaning": "qudtunit:PicoGM-PER-MilliL"
-        },
-        {
-          "text": "YR",
-          "meaning": "qudtunit:YR"
-        },
-        {
-          "text": "PER-DAY",
-          "meaning": "qudtunit:PER-DAY"
-        },
-        {
-          "text": "PicoGM-PER-MilliGM",
-          "meaning": "qudtunit:PicoGM-PER-MilliGM"
-        },
-        {
-          "text": "MilliGM-PER-GM",
-          "meaning": "qudtunit:MilliGM-PER-GM"
-        },
-        {
-          "text": "MicroGM-PER-L",
-          "meaning": "qudtunit:MicroGM-PER-L"
-        },
-        {
-          "text": "KiloGM-PER-M2",
-          "meaning": "qudtunit:KiloGM-PER-M2"
-        },
-        {
-          "text": "MilliGM-PER-DeciL",
-          "meaning": "qudtunit:MilliGM-PER-DeciL"
-        },
-        {
-          "text": "MilliM_HG",
-          "meaning": "qudtunit:MilliM_HG"
-        },
-        {
-          "text": "PER-KiloM",
-          "meaning": "qudtunit:PER-KiloM"
-        },
-        {
-          "text": "NUM-PER-KiloM2___",
-          "meaning": "qudtunit:NUM-PER-KiloM2"
-        },
-        {
-          "text": "M2",
-          "meaning": "qudtunit:M2"
-        },
-        {
-          "text": "M-PER-SEC",
-          "meaning": "qudtunit:M-PER-SEC"
-        },
-        {
-          "text": "GM-PER-HA",
-          "meaning": "qudtunit:GM-PER-HA"
-        }
-      ],
-      "include": [
-        {
-          "reachable_from": {
-            "source_ontology": "qudt",
-            "source_nodes": [
-              "qudt:Unit"
-            ],
-            "relationship_types": [
-              "rdfs:subClassOf"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "QudtQuantityKind",
-      "definition_uri": "https://w3id.org/peh/terms/QudtQuantityKind",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "permissible_values": [
-        {
-          "text": "AmountOfSubstanceConcentration",
-          "meaning": "qudtqk:AmountOfSubstanceConcentration"
-        },
-        {
-          "text": "AmountOfSubstancePerMass",
-          "meaning": "qudtqk:AmountOfSubstancePerMass"
-        },
-        {
-          "text": "Count",
-          "meaning": "qudtqk:Count"
-        },
-        {
-          "text": "Dimensionless",
-          "meaning": "qudtqk:Dimensionless"
-        },
-        {
-          "text": "DimensionlessRatio",
-          "meaning": "qudtqk:DimensionlessRatio"
-        },
-        {
-          "text": "Time",
-          "meaning": "qudtqk:Time"
-        },
-        {
-          "text": "Speed",
-          "meaning": "qudtqk:Speed"
-        },
-        {
-          "text": "Frequency",
-          "meaning": "qudtqk:Frequency"
-        },
-        {
-          "text": "Length",
-          "meaning": "qudtqk:Length"
-        },
-        {
-          "text": "InverseLength",
-          "meaning": "qudtqk:InverseLength"
-        },
-        {
-          "text": "Area",
-          "meaning": "qudtqk:Area"
-        },
-        {
-          "text": "Mass",
-          "meaning": "qudtqk:Mass"
-        },
-        {
-          "text": "MassPerArea",
-          "meaning": "qudtqk:MassPerArea"
-        },
-        {
-          "text": "MassConcentration",
-          "meaning": "qudtqk:MassConcentration"
-        },
-        {
-          "text": "MassRatio",
-          "meaning": "qudtqk:MassRatio"
-        },
-        {
-          "text": "MolarMass",
-          "meaning": "qudtqk:MolarMass"
-        },
-        {
-          "text": "MolarRatio",
-          "meaning": "qudtqk:MolarRatio"
-        },
-        {
-          "text": "NumberDensity",
-          "meaning": "qudtqk:NumberDensity"
-        },
-        {
-          "text": "Volume",
-          "meaning": "qudtqk:Volume"
-        },
-        {
-          "text": "Pressure",
-          "meaning": "qudtqk:Pressure"
-        }
-      ],
-      "include": [
-        {
-          "reachable_from": {
-            "source_ontology": "qudtqk",
-            "source_nodes": [
-              "qudtqk:QuantityKind"
-            ],
-            "relationship_types": [
-              "rdfs:subClassOf"
-            ]
-          }
-        }
-      ]
     }
   ],
   "slots": [
@@ -1253,11 +913,13 @@
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "NamedThing",
+      "owner": "QUDTQuantityKind",
       "domain_of": [
-        "NamedThing"
+        "NamedThing",
+        "QUDTUnit",
+        "QUDTQuantityKind"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -1536,47 +1198,26 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "units",
-      "definition_uri": "https://w3id.org/peh/terms/units",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/units",
-      "owner": "EntityList",
-      "domain_of": [
-        "EntityList"
-      ],
-      "range": "Unit",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "same_unit_as",
-      "definition_uri": "https://w3id.org/peh/terms/same_unit_as",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "http://www.w3.org/2004/02/skos/core#exactMatch"
-      ],
-      "slot_uri": "http://www.w3.org/2004/02/skos/core#exactMatch",
-      "owner": "Unit",
-      "domain_of": [
-        "Unit"
-      ],
-      "range": "QudtUnit",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "quantity_kind",
       "definition_uri": "https://w3id.org/peh/terms/quantity_kind",
+      "annotations": [
+        {
+          "tag": "rdf_type",
+          "value": "qudt:QuantityKind",
+          "@type": "Annotation"
+        }
+      ],
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/quantity_kind",
+      "mappings": [
+        "https://qudt.org/schema/qudt/hasQuantityKind"
+      ],
+      "slot_uri": "https://qudt.org/schema/qudt/hasQuantityKind",
       "owner": "ObservableProperty",
       "domain_of": [
-        "Unit",
         "IndicatorSubClass",
         "ObservableProperty"
       ],
-      "range": "QudtQuantityKind",
+      "range": "QUDTQuantityKind",
       "@type": "SlotDefinition"
     },
     {
@@ -2036,18 +1677,6 @@
         "ObservableProperty"
       ],
       "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "unit_label",
-      "definition_uri": "https://w3id.org/peh/terms/unit_label",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/unit_label",
-      "owner": "ObservableProperty",
-      "domain_of": [
-        "ObservableProperty"
-      ],
-      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -3130,8 +2759,18 @@
     {
       "name": "unit",
       "definition_uri": "https://w3id.org/peh/terms/unit",
+      "annotations": [
+        {
+          "tag": "rdf_type",
+          "value": "qudt:Unit",
+          "@type": "Annotation"
+        }
+      ],
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/unit",
+      "mappings": [
+        "https://qudt.org/schema/qudt/hasUnit"
+      ],
+      "slot_uri": "https://qudt.org/schema/qudt/hasUnit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservableProperty",
@@ -3139,7 +2778,7 @@
         "CalculationResult",
         "ObservedValue"
       ],
-      "range": "Unit",
+      "range": "QUDTUnit",
       "@type": "SlotDefinition"
     },
     {
@@ -3157,13 +2796,20 @@
     {
       "name": "raw_unit",
       "definition_uri": "https://w3id.org/peh/terms/raw_unit",
+      "annotations": [
+        {
+          "tag": "rdf_type",
+          "value": "qudt:Unit",
+          "@type": "Annotation"
+        }
+      ],
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/raw_unit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
       ],
-      "range": "Unit",
+      "range": "QUDTUnit",
       "@type": "SlotDefinition"
     },
     {
@@ -3181,13 +2827,20 @@
     {
       "name": "imputed_unit",
       "definition_uri": "https://w3id.org/peh/terms/imputed_unit",
+      "annotations": [
+        {
+          "tag": "rdf_type",
+          "value": "qudt:Unit",
+          "@type": "Annotation"
+        }
+      ],
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/imputed_unit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
       ],
-      "range": "Unit",
+      "range": "QUDTUnit",
       "@type": "SlotDefinition"
     },
     {
@@ -3205,13 +2858,20 @@
     {
       "name": "normalised_unit",
       "definition_uri": "https://w3id.org/peh/terms/normalised_unit",
+      "annotations": [
+        {
+          "tag": "rdf_type",
+          "value": "qudt:Unit",
+          "@type": "Annotation"
+        }
+      ],
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/normalised_unit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
       ],
-      "range": "Unit",
+      "range": "QUDTUnit",
       "@type": "SlotDefinition"
     },
     {
@@ -3790,7 +3450,6 @@
       "slots": [
         "metadata_fields",
         "groupings",
-        "units",
         "observable_properties",
         "stakeholders",
         "projects",
@@ -3957,37 +3616,6 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/Translation",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Unit",
-      "definition_uri": "https://w3id.org/peh/terms/Unit",
-      "description": "A unit of measurement, a quantity chosen as a standard in terms of which other quantities may be expressed",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "wikidata:Q2198779"
-      ],
-      "is_a": "NamedThing",
-      "mixins": [
-        "HasTranslations",
-        "HasValidationStatus"
-      ],
-      "slots": [
-        "id",
-        "short_name",
-        "name",
-        "ui_label",
-        "description",
-        "remark",
-        "exact_matches",
-        "same_unit_as",
-        "quantity_kind",
-        "translations",
-        "current_validation_status",
-        "validation_history"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://www.wikidata.org/wiki/Q2198779",
       "@type": "ClassDefinition"
     },
     {
@@ -4182,6 +3810,34 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "QUDTUnit",
+      "definition_uri": "https://w3id.org/peh/terms/QUDTUnit",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "qudt:Unit"
+      ],
+      "slots": [
+        "id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://qudt.org/schema/qudt/Unit",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QUDTQuantityKind",
+      "definition_uri": "https://w3id.org/peh/terms/QUDTQuantityKind",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "qudt:QuantityKind"
+      ],
+      "slots": [
+        "id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://qudt.org/schema/qudt/QuantityKind",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "PhysicalEntity",
       "definition_uri": "https://w3id.org/peh/terms/PhysicalEntity",
       "description": "A digital placeholder for a physical entity as it exists in the real world, ",
@@ -4367,7 +4023,6 @@
         "value_metadata",
         "quantity_kind",
         "unit",
-        "unit_label",
         "required",
         "zeroallowed",
         "significantdecimals",
@@ -5234,9 +4889,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-03-06T14:00:22",
-  "source_file_size": 40280,
-  "generation_date": "2026-03-06T14:00:46",
+  "source_file_date": "2026-03-12T08:29:03",
+  "source_file_size": 35526,
+  "generation_date": "2026-03-12T08:29:27",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",
