@@ -356,6 +356,10 @@
          "@type": "@id",
          "@id": "observation_design"
       },
+      "observation_design_id_list": {
+         "@type": "@id",
+         "@id": "observation_design_id_list"
+      },
       "observation_designs": {
          "@type": "@id",
          "@id": "observation_designs"

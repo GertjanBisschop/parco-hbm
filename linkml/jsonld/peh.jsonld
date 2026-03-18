@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "imports": [
     "linkml:types"
   ],
@@ -2590,9 +2590,23 @@
       "definition_uri": "https://w3id.org/peh/terms/observation_designs",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/observation_designs",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "ObservationDesign",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "observation_design_id_list",
+      "definition_uri": "https://w3id.org/peh/terms/observation_design_id_list",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/observation_design_id_list",
       "owner": "DataRequest",
       "domain_of": [
-        "EntityList",
         "DataRequest"
       ],
       "range": "ObservationDesign",
@@ -4771,7 +4785,7 @@
         "remark_on_content",
         "remark_on_methodology",
         "observed_entity_properties",
-        "observation_designs"
+        "observation_design_id_list"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataRequest",
@@ -4889,9 +4903,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-03-12T08:33:38",
-  "source_file_size": 35526,
-  "generation_date": "2026-03-12T08:34:01",
+  "source_file_date": "2026-03-18T16:38:36",
+  "source_file_size": 35640,
+  "generation_date": "2026-03-18T16:38:55",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

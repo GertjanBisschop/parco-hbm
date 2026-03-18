@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.7.0"
-version = "0.5.0"
+version = "0.5.1"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -252,7 +252,7 @@ class EntityList(ConfiguredBaseModel):
     physical_entities: Optional[list[PhysicalEntity]] = Field(default=None)
     observation_groups: Optional[list[ObservationGroup]] = Field(default=None)
     observations: Optional[list[Observation]] = Field(default=None)
-    observation_designs: Optional[list[str]] = Field(default=None)
+    observation_designs: Optional[list[ObservationDesign]] = Field(default=None)
     observation_results: Optional[list[ObservationResult]] = Field(default=None)
     observed_values: Optional[list[ObservedValue]] = Field(default=None)
     layouts: Optional[list[DataLayout]] = Field(default=None)
@@ -1767,7 +1767,7 @@ class DataRequest(NamedThing):
     observed_entity_properties: Optional[list[ObservedEntityProperty]] = Field(
         default=None
     )
-    observation_designs: Optional[list[str]] = Field(default=None)
+    observation_design_id_list: Optional[list[str]] = Field(default=None)
     id: str = Field(
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",

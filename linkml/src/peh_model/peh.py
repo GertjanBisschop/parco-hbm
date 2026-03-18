@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-12T08:34:01
+# Generation date: 2026-03-18T16:38:55
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.7.0"
-version = "0.5.0"
+version = "0.5.1"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -305,8 +305,11 @@ class EntityList(YAMLRoot):
         ]
     ] = empty_dict()
     observation_designs: Optional[
-        Union[Union[str, ObservationDesignId], list[Union[str, ObservationDesignId]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ObservationDesignId], Union[dict, "ObservationDesign"]],
+            list[Union[dict, "ObservationDesign"]],
+        ]
+    ] = empty_dict()
     observation_results: Optional[
         Union[
             dict[Union[str, ObservationResultId], Union[dict, "ObservationResult"]],
@@ -409,16 +412,12 @@ class EntityList(YAMLRoot):
             slot_name="observations", slot_type=Observation, key_name="id", keyed=True
         )
 
-        if not isinstance(self.observation_designs, list):
-            self.observation_designs = (
-                [self.observation_designs]
-                if self.observation_designs is not None
-                else []
-            )
-        self.observation_designs = [
-            v if isinstance(v, ObservationDesignId) else ObservationDesignId(v)
-            for v in self.observation_designs
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="observation_designs",
+            slot_type=ObservationDesign,
+            key_name="id",
+            keyed=True,
+        )
 
         self._normalize_inlined_as_list(
             slot_name="observation_results",
@@ -3661,7 +3660,7 @@ class DataRequest(NamedThing):
             list[Union[dict, "ObservedEntityProperty"]],
         ]
     ] = empty_list()
-    observation_designs: Optional[
+    observation_design_id_list: Optional[
         Union[Union[str, ObservationDesignId], list[Union[str, ObservationDesignId]]]
     ] = empty_list()
 
@@ -3746,15 +3745,15 @@ class DataRequest(NamedThing):
             for v in self.observed_entity_properties
         ]
 
-        if not isinstance(self.observation_designs, list):
-            self.observation_designs = (
-                [self.observation_designs]
-                if self.observation_designs is not None
+        if not isinstance(self.observation_design_id_list, list):
+            self.observation_design_id_list = (
+                [self.observation_design_id_list]
+                if self.observation_design_id_list is not None
                 else []
             )
-        self.observation_designs = [
+        self.observation_design_id_list = [
             v if isinstance(v, ObservationDesignId) else ObservationDesignId(v)
-            for v in self.observation_designs
+            for v in self.observation_design_id_list
         ]
 
         super().__post_init__(**kwargs)
@@ -5468,6 +5467,20 @@ slots.observation_designs = Slot(
     name="observation_designs",
     curie=PEHTERMS.curie("observation_designs"),
     model_uri=PEHTERMS.observation_designs,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[Union[str, ObservationDesignId], Union[dict, ObservationDesign]],
+            list[Union[dict, ObservationDesign]],
+        ]
+    ],
+)
+
+slots.observation_design_id_list = Slot(
+    uri=PEHTERMS.observation_design_id_list,
+    name="observation_design_id_list",
+    curie=PEHTERMS.curie("observation_design_id_list"),
+    model_uri=PEHTERMS.observation_design_id_list,
     domain=None,
     range=Optional[
         Union[Union[str, ObservationDesignId], list[Union[str, ObservationDesignId]]]
