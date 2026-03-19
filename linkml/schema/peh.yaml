@@ -569,6 +569,7 @@ classes:
       - observable_entity_type
       - elements
       - validation_designs
+      - foreign_key_groups
   DataLayoutElement:
     description: >-
       Definition for an individual layout or data element, as part of a layout section
@@ -585,6 +586,12 @@ classes:
     slots:
       - section
       - label
+  ForeignKeyGroup:
+    description: >-
+      Configuration grouping multiple foreign key links
+    slots:
+      - label
+      - foreign_key_links
 
   DataImportConfig:
     description: >-
@@ -1116,10 +1123,18 @@ slots:
     range: DataLayoutElementType
   element_style:
     range: DataLayoutElementStyle
+  foreign_key_groups:
+    range: ForeignKeyGroup
+    inlined_as_list: true
+    multivalued: true
   is_observable_entity_key:
     range: boolean
   foreign_key_link:
     range: DataLayoutElementLink
+  foreign_key_links:
+    range: DataLayoutElementLink
+    multivalued: true
+    inlined_as_list: true
   import_configs:
     multivalued: true
     inlined_as_list: true
