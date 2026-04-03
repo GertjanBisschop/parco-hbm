@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-03T07:35:32
+# Generation date: 2026-04-03T10:56:43
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -1639,6 +1639,8 @@ class ObservableProperty(NamedThing):
     unit: Optional[Union[str, QUDTUnitId]] = None
     required: Optional[Union[bool, Bool]] = None
     zeroallowed: Optional[Union[bool, Bool]] = None
+    min_value: Optional[str] = None
+    max_value: Optional[str] = None
     significantdecimals: Optional[int] = None
     immutable: Optional[Union[bool, Bool]] = None
     grouping_id_list: Optional[
@@ -1721,6 +1723,12 @@ class ObservableProperty(NamedThing):
 
         if self.zeroallowed is not None and not isinstance(self.zeroallowed, Bool):
             self.zeroallowed = Bool(self.zeroallowed)
+
+        if self.min_value is not None and not isinstance(self.min_value, str):
+            self.min_value = str(self.min_value)
+
+        if self.max_value is not None and not isinstance(self.max_value, str):
+            self.max_value = str(self.max_value)
 
         if self.significantdecimals is not None and not isinstance(
             self.significantdecimals, int
@@ -4824,6 +4832,24 @@ slots.zeroallowed = Slot(
     model_uri=PEHTERMS.zeroallowed,
     domain=None,
     range=Optional[Union[bool, Bool]],
+)
+
+slots.min_value = Slot(
+    uri=PEHTERMS.min_value,
+    name="min_value",
+    curie=PEHTERMS.curie("min_value"),
+    model_uri=PEHTERMS.min_value,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.max_value = Slot(
+    uri=PEHTERMS.max_value,
+    name="max_value",
+    curie=PEHTERMS.curie("max_value"),
+    model_uri=PEHTERMS.max_value,
+    domain=None,
+    range=Optional[str],
 )
 
 slots.significantdecimals = Slot(

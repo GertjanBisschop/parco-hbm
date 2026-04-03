@@ -1683,6 +1683,32 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "min_value",
+      "definition_uri": "https://w3id.org/peh/terms/min_value",
+      "description": "String representation of the expected lower bound in observations, usable for data validation",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/min_value",
+      "owner": "ObservableProperty",
+      "domain_of": [
+        "ObservableProperty"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "max_value",
+      "definition_uri": "https://w3id.org/peh/terms/max_value",
+      "description": "String representation of the expected upper bound in observations, usable for data validation",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/max_value",
+      "owner": "ObservableProperty",
+      "domain_of": [
+        "ObservableProperty"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "significantdecimals",
       "definition_uri": "https://w3id.org/peh/terms/significantdecimals",
       "description": "Variable precision indication, expressed as the number of significant decimals",
@@ -2123,6 +2149,7 @@
     {
       "name": "value",
       "definition_uri": "https://w3id.org/peh/terms/value",
+      "description": "String representation of a measured or configured value, to be parsed according to the corresponding value type",
       "from_schema": "https://w3id.org/peh/peh-model",
       "slot_uri": "https://w3id.org/peh/terms/value",
       "owner": "ObservedValue",
@@ -4072,6 +4099,8 @@
         "unit",
         "required",
         "zeroallowed",
+        "min_value",
+        "max_value",
         "significantdecimals",
         "immutable",
         "grouping_id_list",
@@ -4958,9 +4987,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-04-03T07:35:11",
-  "source_file_size": 36100,
-  "generation_date": "2026-04-03T07:35:32",
+  "source_file_date": "2026-04-03T10:56:17",
+  "source_file_size": 36513,
+  "generation_date": "2026-04-03T10:56:43",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

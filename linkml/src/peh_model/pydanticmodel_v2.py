@@ -897,6 +897,14 @@ class ObservableProperty(HasTranslations, HasContextAliases, NamedThing):
     unit: Optional[str] = Field(default=None)
     required: Optional[bool] = Field(default=None)
     zeroallowed: Optional[bool] = Field(default=None)
+    min_value: Optional[str] = Field(
+        default=None,
+        description="""String representation of the expected lower bound in observations, usable for data validation""",
+    )
+    max_value: Optional[str] = Field(
+        default=None,
+        description="""String representation of the expected upper bound in observations, usable for data validation""",
+    )
     significantdecimals: Optional[int] = Field(
         default=None,
         description="""Variable precision indication, expressed as the number of significant decimals""",
@@ -948,7 +956,10 @@ class ObservablePropertyValueOption(HasContextAliases):
     """
 
     key: Optional[str] = Field(default=None)
-    value: Optional[str] = Field(default=None)
+    value: Optional[str] = Field(
+        default=None,
+        description="""String representation of a measured or configured value, to be parsed according to the corresponding value type""",
+    )
     label: Optional[str] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
 
@@ -959,7 +970,10 @@ class ObservablePropertyMetadataElement(ConfiguredBaseModel):
     """
 
     field: Optional[str] = Field(default=None)
-    value: Optional[str] = Field(default=None)
+    value: Optional[str] = Field(
+        default=None,
+        description="""String representation of a measured or configured value, to be parsed according to the corresponding value type""",
+    )
 
 
 class ObservablePropertyMetadataField(NamedThing):
@@ -1621,7 +1635,10 @@ class ObservedValue(ConfiguredBaseModel):
     imputed_unit: Optional[str] = Field(default=None)
     normalised_value: Optional[str] = Field(default=None)
     normalised_unit: Optional[str] = Field(default=None)
-    value: Optional[str] = Field(default=None)
+    value: Optional[str] = Field(
+        default=None,
+        description="""String representation of a measured or configured value, to be parsed according to the corresponding value type""",
+    )
     unit: Optional[str] = Field(default=None)
     value_as_string: Optional[str] = Field(default=None)
     quality_data: Optional[list[QualityData]] = Field(default=None)

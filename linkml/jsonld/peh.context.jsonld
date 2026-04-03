@@ -286,6 +286,9 @@
          "@type": "@id",
          "@id": "matrix_subclasses"
       },
+      "max_value": {
+         "@id": "max_value"
+      },
       "member_id_list": {
          "@type": "@id",
          "@id": "member_id_list"
@@ -297,6 +300,9 @@
       "metadata_fields": {
          "@type": "@id",
          "@id": "metadata_fields"
+      },
+      "min_value": {
+         "@id": "min_value"
       },
       "molweight_grampermol": {
          "@type": "xsd:decimal",
