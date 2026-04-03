@@ -1015,6 +1015,22 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "was_derived_from",
+      "definition_uri": "https://w3id.org/peh/terms/was_derived_from",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "http://www.w3.org/ns/prov#wasDerivedFrom"
+      ],
+      "domain": "NamedThing",
+      "slot_uri": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "owner": "was_derived_from",
+      "domain_of": [
+        "DerivedObservation"
+      ],
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "orcid",
       "definition_uri": "https://w3id.org/peh/terms/orcid",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -2395,6 +2411,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "derived_observations",
+      "definition_uri": "https://w3id.org/peh/terms/derived_observations",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/derived_observations",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "DerivedObservation",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "linktype",
       "definition_uri": "https://w3id.org/peh/terms/linktype",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -3472,6 +3503,7 @@
         "physical_entities",
         "observation_groups",
         "observations",
+        "derived_observations",
         "observation_designs",
         "observation_results",
         "observed_values",
@@ -3493,7 +3525,8 @@
       "description": "An abstract model for any of the identifiable entities",
       "from_schema": "https://w3id.org/peh/peh-model",
       "close_mappings": [
-        "schema:Thing"
+        "schema:Thing",
+        "prov:Entity"
       ],
       "abstract": true,
       "slots": [
@@ -4514,7 +4547,6 @@
       "description": "The registration of the intent to perform a set of observations as well as the resulting observed values",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
-      "abstract": true,
       "slots": [
         "id",
         "short_name",
@@ -4529,6 +4561,29 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/Observation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DerivedObservation",
+      "definition_uri": "https://w3id.org/peh/terms/DerivedObservation",
+      "description": "An observation in which all observed values are derived from a prior observation through analytical or statistical processing.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "is_a": "Observation",
+      "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches",
+        "observation_type",
+        "observation_design",
+        "observation_result_id_list",
+        "was_derived_from"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/DerivedObservation",
       "@type": "ClassDefinition"
     },
     {
@@ -4903,9 +4958,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-03-18T16:38:36",
-  "source_file_size": 35640,
-  "generation_date": "2026-03-18T16:38:55",
+  "source_file_date": "2026-04-03T07:35:11",
+  "source_file_size": 36100,
+  "generation_date": "2026-04-03T07:35:32",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

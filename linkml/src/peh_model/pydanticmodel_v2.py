@@ -252,6 +252,7 @@ class EntityList(ConfiguredBaseModel):
     physical_entities: Optional[list[PhysicalEntity]] = Field(default=None)
     observation_groups: Optional[list[ObservationGroup]] = Field(default=None)
     observations: Optional[list[Observation]] = Field(default=None)
+    derived_observations: Optional[list[DerivedObservation]] = Field(default=None)
     observation_designs: Optional[list[ObservationDesign]] = Field(default=None)
     observation_results: Optional[list[ObservationResult]] = Field(default=None)
     observed_values: Optional[list[ObservedValue]] = Field(default=None)
@@ -1487,6 +1488,41 @@ class Observation(NamedThing):
     exact_matches: Optional[list[str]] = Field(default=None)
 
 
+class DerivedObservation(Observation):
+    """
+    An observation in which all observed values are derived from a prior observation through analytical or statistical processing.
+    """
+
+    was_derived_from: Optional[str] = Field(default=None)
+    observation_type: Optional[ObservationType] = Field(default=None)
+    observation_design: Optional[str] = Field(default=None)
+    observation_result_id_list: Optional[list[str]] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
+
+
 class ObservationDesign(NamedThing):
     """
     The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded
@@ -1996,6 +2032,7 @@ SampleCollection.model_rebuild()
 StudySubject.model_rebuild()
 StudySubjectGroup.model_rebuild()
 Observation.model_rebuild()
+DerivedObservation.model_rebuild()
 ObservationDesign.model_rebuild()
 ObservablePropertySpecification.model_rebuild()
 ObservationResult.model_rebuild()

@@ -136,6 +136,10 @@
          "@type": "xsd:date",
          "@id": "delivery_date"
       },
+      "derived_observations": {
+         "@type": "@id",
+         "@id": "derived_observations"
+      },
       "description": {
          "@id": "schema:description"
       },
@@ -784,6 +788,10 @@
       "value_type": {
          "@id": "value_type"
       },
+      "was_derived_from": {
+         "@type": "@id",
+         "@id": "prov:wasDerivedFrom"
+      },
       "zeroallowed": {
          "@type": "xsd:boolean",
          "@id": "zeroallowed"
@@ -844,6 +852,9 @@
       },
       "DataStakeholder": {
          "@id": "DataStakeholder"
+      },
+      "DerivedObservation": {
+         "@id": "DerivedObservation"
       },
       "EntityList": {
          "@id": "EntityList"

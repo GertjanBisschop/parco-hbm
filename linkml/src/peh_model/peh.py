@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-18T16:38:55
+# Generation date: 2026-04-03T07:35:32
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -189,6 +189,10 @@ class ObservationId(NamedThingId):
     pass
 
 
+class DerivedObservationId(ObservationId):
+    pass
+
+
 class ObservationDesignId(NamedThingId):
     pass
 
@@ -304,6 +308,12 @@ class EntityList(YAMLRoot):
             list[Union[dict, "Observation"]],
         ]
     ] = empty_dict()
+    derived_observations: Optional[
+        Union[
+            dict[Union[str, DerivedObservationId], Union[dict, "DerivedObservation"]],
+            list[Union[dict, "DerivedObservation"]],
+        ]
+    ] = empty_dict()
     observation_designs: Optional[
         Union[
             dict[Union[str, ObservationDesignId], Union[dict, "ObservationDesign"]],
@@ -410,6 +420,13 @@ class EntityList(YAMLRoot):
 
         self._normalize_inlined_as_list(
             slot_name="observations", slot_type=Observation, key_name="id", keyed=True
+        )
+
+        self._normalize_inlined_as_list(
+            slot_name="derived_observations",
+            slot_type=DerivedObservation,
+            key_name="id",
+            keyed=True,
         )
 
         self._normalize_inlined_as_list(
@@ -2971,6 +2988,11 @@ class Observation(NamedThing):
     ] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObservationId):
+            self.id = ObservationId(self.id)
+
         if self.observation_type is not None and not isinstance(
             self.observation_type, ObservationType
         ):
@@ -2991,6 +3013,37 @@ class Observation(NamedThing):
             v if isinstance(v, ObservationResultId) else ObservationResultId(v)
             for v in self.observation_result_id_list
         ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DerivedObservation(Observation):
+    """
+    An observation in which all observed values are derived from a prior observation through analytical or statistical
+    processing.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["DerivedObservation"]
+    class_class_curie: ClassVar[str] = "pehterms:DerivedObservation"
+    class_name: ClassVar[str] = "DerivedObservation"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.DerivedObservation
+
+    id: Union[str, DerivedObservationId] = None
+    was_derived_from: Optional[Union[str, NamedThingId]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DerivedObservationId):
+            self.id = DerivedObservationId(self.id)
+
+        if self.was_derived_from is not None and not isinstance(
+            self.was_derived_from, NamedThingId
+        ):
+            self.was_derived_from = NamedThingId(self.was_derived_from)
 
         super().__post_init__(**kwargs)
 
@@ -4300,6 +4353,15 @@ slots.remark = Slot(
     range=Optional[str],
 )
 
+slots.was_derived_from = Slot(
+    uri=PROV.wasDerivedFrom,
+    name="was_derived_from",
+    curie=PROV.curie("wasDerivedFrom"),
+    model_uri=PEHTERMS.was_derived_from,
+    domain=NamedThing,
+    range=Optional[Union[str, NamedThingId]],
+)
+
 slots.orcid = Slot(
     uri=SCHEMA.identifier,
     name="orcid",
@@ -5309,6 +5371,20 @@ slots.observations = Slot(
         Union[
             dict[Union[str, ObservationId], Union[dict, Observation]],
             list[Union[dict, Observation]],
+        ]
+    ],
+)
+
+slots.derived_observations = Slot(
+    uri=PEHTERMS.derived_observations,
+    name="derived_observations",
+    curie=PEHTERMS.curie("derived_observations"),
+    model_uri=PEHTERMS.derived_observations,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[Union[str, DerivedObservationId], Union[dict, DerivedObservation]],
+            list[Union[dict, DerivedObservation]],
         ]
     ],
 )
