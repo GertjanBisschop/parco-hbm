@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-03T10:56:43
+# Generation date: 2026-04-03T11:17:37
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.7.0"
-version = "0.5.1"
+version = "0.5.2"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
