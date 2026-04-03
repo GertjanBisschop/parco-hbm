@@ -49,6 +49,7 @@ classes:
       - physical_entities
       - observation_groups
       - observations
+      - derived_observations
       - observation_designs
       - observation_results
       - observed_values
@@ -74,6 +75,7 @@ classes:
       - exact_matches
     close_mappings:
      - schema:Thing
+     - prov:Entity
 
   Grouping:
     description: >-
@@ -491,12 +493,17 @@ classes:
   Observation:
     description: >-
       The registration of the intent to perform a set of observations as well as the resulting observed values
-    abstract: true
     is_a: NamedThing
     slots:
       - observation_type
       - observation_design
       - observation_result_id_list
+  DerivedObservation:
+    description: >-
+      An observation in which all observed values are derived from a prior observation through analytical or statistical processing.
+    is_a: Observation
+    slots:
+    - was_derived_from
   ObservationDesign:
     description: >-
       The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded
@@ -695,7 +702,10 @@ slots:
     - skos:note
     description: >-
       Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.
-
+  was_derived_from:
+    slot_uri: prov:wasDerivedFrom
+    range: NamedThing
+    domain: NamedThing
   orcid:
     slot_uri: schema:identifier
   rorid:
@@ -975,6 +985,10 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: Observation
+  derived_observations:
+    multivalued: true
+    inlined_as_list: true
+    range: DerivedObservation
   linktype:
     range: LinkType
   physical_entities:
