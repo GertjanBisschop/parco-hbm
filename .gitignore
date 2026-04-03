@@ -114,3 +114,6 @@ venv.bak/
 .vscode/
 *.swp
 *.swo
+
+# VSCode
+.codex
