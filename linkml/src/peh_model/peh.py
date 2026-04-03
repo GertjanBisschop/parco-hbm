@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-03T11:17:37
+# Generation date: 2026-04-03T13:02:10
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -2041,6 +2041,7 @@ class CalculationKeywordArgument(YAMLRoot):
     value_type: Optional[str] = None
     unit: Optional[Union[str, QUDTUnitId]] = None
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
+    value: Optional[str] = None
     contextual_field_reference: Optional[Union[dict, "ContextualFieldReference"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -2065,6 +2066,9 @@ class CalculationKeywordArgument(YAMLRoot):
             self.observable_property, ObservablePropertyId
         ):
             self.observable_property = ObservablePropertyId(self.observable_property)
+
+        if self.value is not None and not isinstance(self.value, str):
+            self.value = str(self.value)
 
         if self.contextual_field_reference is not None and not isinstance(
             self.contextual_field_reference, ContextualFieldReference

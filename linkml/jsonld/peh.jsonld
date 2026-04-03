@@ -2156,6 +2156,7 @@
       "domain_of": [
         "ObservablePropertyValueOption",
         "ObservablePropertyMetadataElement",
+        "CalculationKeywordArgument",
         "ObservedValue"
       ],
       "range": "string",
@@ -4209,10 +4210,33 @@
         "value_type",
         "unit",
         "observable_property",
+        "value",
         "contextual_field_reference"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/CalculationKeywordArgument",
+      "exactly_one_of": [
+        {
+          "slot_conditions": [
+            {
+              "name": "value",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "contextual_field_reference",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -4987,9 +5011,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-04-03T11:17:16",
-  "source_file_size": 36513,
-  "generation_date": "2026-04-03T11:17:36",
+  "source_file_date": "2026-04-03T13:01:49",
+  "source_file_size": 36706,
+  "generation_date": "2026-04-03T13:02:09",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

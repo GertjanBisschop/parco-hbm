@@ -1042,6 +1042,10 @@ class CalculationKeywordArgument(ConfiguredBaseModel):
     value_type: Optional[str] = Field(default=None)
     unit: Optional[str] = Field(default=None)
     observable_property: Optional[str] = Field(default=None)
+    value: Optional[str] = Field(
+        default=None,
+        description="""String representation of a measured or configured value, to be parsed according to the corresponding value type""",
+    )
     contextual_field_reference: Optional[ContextualFieldReference] = Field(default=None)
 
 

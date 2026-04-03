@@ -346,7 +346,16 @@ classes:
       - value_type
       - unit
       - observable_property
+      - value
       - contextual_field_reference
+    exactly_one_of:
+      - slot_conditions:
+          value:
+            required: true
+      - slot_conditions:
+          contextual_field_reference:
+            required: true
+
   CalculationResult:
     description: >-
       The definition for the output the calculation, optionally including mapping information
@@ -1399,4 +1408,3 @@ enums:
       supplying_data_controller:
       receiving_data_controller:
       external_data_controller:
-
