@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.5.3
+version: 0.6.0
 
 imports:
   - linkml:types
@@ -58,7 +58,9 @@ classes:
       - data_requests
       # subclass templates
       - matrix_subclasses
-      - biochementity_subclasses
+      - bio_entity_subclasses
+      - molecular_entity_subclasses
+      - chemical_entity_subclasses
       - indicator_subclasses
   
   NamedThing:
@@ -141,31 +143,72 @@ classes:
     class_uri:
       schema:BioChemEntity
     description: >-
-      A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
+      A biological, chemical or biochemical entity that is relevant to measurements in the Personal Exposure and Health domain
     is_a: NamedThing
     mixins:
       - HasAliases
       - HasContextAliases
       - HasTranslations
       - HasValidationStatus
-  
-  BioChemEntitySubClass:
+
+  ChemicalEntity:
+    is_a: BioChemEntity
+    class_uri:
+      http://purl.obolibrary.org/obo/CHEBI_24431
+    description: >-
+      A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.
+
+  ChemicalEntitySubClass:
+    is_a: NamedThing
     class_uri: owl:Class
     description: Template class used to generate OWL Classes.
-    is_a: NamedThing
     mixins:
       - HasAliases
       - HasContextAliases
       - HasTranslations
       - HasValidationStatus
     slots:
+      - chemical_entity_subclass_of
       - grouping_id_list
-      - biochementity_type
-      - molweight_grampermol
-      - parent_compounds
-      - group_compound_members
-      - member_of_group_compounds
+
+  MolecularEntity:
+    is_a: ChemicalEntity
+    description: >-
+      Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+    class_uri: http://purl.obolibrary.org/obo/CHEBI_23367
+    
+  MolecularEntitySubClass:
+    is_a: NamedThing
+    class_uri: owl:Class
+    description: Template class used to generate OWL Classes.
+    mixins:
+      - HasAliases
+      - HasContextAliases
+      - HasTranslations
+      - HasValidationStatus
+    slots:
+      - molecular_entity_subclass_of
+      - grouping_id_list
+      - is_metabolite_of
+      - is_isomer_of
   
+  BioEntity:
+    is_a: BioChemEntity
+    description: >-
+      A biological entity that is relevant to measurements in the Personal Exposure and Health domain
+  BioEntitySubClass:
+    description: Template class used to generate OWL Classes.
+    is_a: NamedThing
+    class_uri: owl:Class
+    mixins:
+      - HasAliases
+      - HasContextAliases
+      - HasTranslations
+      - HasValidationStatus
+    slots:
+      - bio_entity_subclass_of
+      - grouping_id_list
+
   Matrix:
     class_uri: wikidata:Q685816
     description: >-
@@ -778,41 +821,52 @@ slots:
   validation_institute:
   validation_remark:
 
-  biochementity_type:
-    range: BioChemEntityType
   molweight_grampermol:
     range: decimal
-  parent_compounds:
+    description: The molecular weight of the chemical entity in g/mol
+    unit:
+      ucum_code: "g/mol"
+    exact_mappings:
+      - http://purl.obolibrary.org/obo/MI_2025
+  is_metabolite_of:
+    description: Indicates that this molecular entity is a metabolite of another molecular entity
+    range: MolecularEntity
     multivalued: true
-    range: BioChemEntitySubClass
+    slot_uri: pehterms:isMetaboliteOf
+  is_isomer_of:
+    description: Indicates that this molecular entity is an isomer of another molecular entity
+    range: MolecularEntity
+    multivalued: true
+    slot_uri: pehterms:isIsomerOf
+  molecular_entity_subclass_of:
+    multivalued: true
+    range: MolecularEntity
     slot_uri: rdfs:subClassOf
-  group_compound_members:
+  bio_entity_subclass_of:
     multivalued: true
-    domain: BioChemEntity
-    range: BioChemEntity
-    slot_uri: skos:narrower
-    description: >-
-      For a compound that groups other compounds, links to members of the group.
-      Inverse of the BioChemEntity member_of_group_compounds slot
-    inverse: member_of_group_compounds
-  member_of_group_compounds:
+    range: BioEntity
+    slot_uri: rdfs:subClassOf
+  chemical_entity_subclass_of:
     multivalued: true
-    domain: BioChemEntity
-    range: BioChemEntity
-    slot_uri: skos:broader
-    description: >-
-      Declares the compound being part of one or more group compounds.
-      Inverse of the BioChemEntity group_compound_members slot
-    inverse: group_compound_members
+    range: ChemicalEntity
+    slot_uri: rdfs:subClassOf
 
   matrix_subclasses:
     multivalued: true
     inlined_as_list: true
     range: MatrixSubClass
-  biochementity_subclasses:
+  bio_entity_subclasses:
     multivalued: true
     inlined_as_list: true
-    range: BioChemEntitySubClass
+    range: BioEntitySubClass
+  molecular_entity_subclasses:
+    multivalued: true
+    inlined_as_list: true
+    range: MolecularEntitySubClass
+  chemical_entity_subclasses:
+    multivalued: true
+    inlined_as_list: true
+    range: ChemicalEntitySubClass
   indicator_subclasses:
     multivalued: true
     inlined_as_list: true
@@ -1260,12 +1314,6 @@ enums:
       exposuremarker:
       geomarker:
       observation:
-  BioChemEntityType:
-    permissible_values:
-      compound_group:
-      compound:
-      conjugated_compound:
-      unconjugated_compound:
   ResearchPopulationType:
     permissible_values:
       general_population:
