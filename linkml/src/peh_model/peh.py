@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-21T07:45:27
+# Generation date: 2026-05-05T12:06:59
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -230,6 +230,10 @@ class ProcessingActionId(NamedThingId):
 
 
 class ProcessingStepId(NamedThingId):
+    pass
+
+
+class IAdoptVariableId(URIorCURIE):
     pass
 
 
@@ -1659,6 +1663,7 @@ class ObservableProperty(NamedThing):
     validation_designs: Optional[
         Union[Union[dict, "ValidationDesign"], list[Union[dict, "ValidationDesign"]]]
     ] = empty_list()
+    has_iadopt_variable: Optional[Union[str, IAdoptVariableId]] = None
     has_observable_property_type: Optional[
         Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
     ] = empty_list()
@@ -1791,6 +1796,11 @@ class ObservableProperty(NamedThing):
             v if isinstance(v, ValidationDesign) else ValidationDesign(**as_dict(v))
             for v in self.validation_designs
         ]
+
+        if self.has_iadopt_variable is not None and not isinstance(
+            self.has_iadopt_variable, IAdoptVariableId
+        ):
+            self.has_iadopt_variable = IAdoptVariableId(self.has_iadopt_variable)
 
         if not isinstance(self.has_observable_property_type, list):
             self.has_observable_property_type = (
@@ -4032,6 +4042,30 @@ class DataExtract(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+@dataclass(repr=False)
+class IAdoptVariable(YAMLRoot):
+    """
+    Placeholder class for actual IAdoptVariable
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["IAdoptVariable"]
+    class_class_curie: ClassVar[str] = "pehterms:IAdoptVariable"
+    class_name: ClassVar[str] = "IAdoptVariable"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.IAdoptVariable
+
+    id: Union[str, IAdoptVariableId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, IAdoptVariableId):
+            self.id = IAdoptVariableId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
 # Enumerations
 class ValidationStatus(EnumDefinitionImpl):
 
@@ -4894,6 +4928,15 @@ slots.has_observable_property_type = Slot(
     range=Optional[
         Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
     ],
+)
+
+slots.has_iadopt_variable = Slot(
+    uri=PEHTERMS.hasVariable,
+    name="has_iadopt_variable",
+    curie=PEHTERMS.curie("hasVariable"),
+    model_uri=PEHTERMS.has_iadopt_variable,
+    domain=ObservableProperty,
+    range=Optional[Union[str, IAdoptVariableId]],
 )
 
 slots.calculation_design = Slot(

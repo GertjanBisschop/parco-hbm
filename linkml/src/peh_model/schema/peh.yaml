@@ -297,7 +297,7 @@ classes:
       - relevant_observation_types
       - calculation_design
       - validation_designs
-      # instance-specific
+      - has_iadopt_variable
       - has_observable_property_type
   
   ObservablePropertyValueOption:
@@ -677,6 +677,11 @@ classes:
     slots:
       - observed_values
 
+  IAdoptVariable:
+    description: >-
+      Placeholder class for actual IAdoptVariable
+    slots:
+      - id
 slots:
   id:
     identifier: true
@@ -872,7 +877,10 @@ slots:
     slot_uri: rdf:type
     multivalued: true
     range: IndicatorSubClass
-
+  has_iadopt_variable:
+    slot_uri: pehterms:hasVariable
+    range: IAdoptVariable
+    domain: ObservableProperty
   calculation_design:
     range: CalculationDesign
   calculation_name:

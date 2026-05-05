@@ -913,11 +913,12 @@
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "QUDTQuantityKind",
+      "owner": "IAdoptVariable",
       "domain_of": [
         "NamedThing",
         "QUDTUnit",
-        "QUDTQuantityKind"
+        "QUDTQuantityKind",
+        "IAdoptVariable"
       ],
       "range": "uriorcurie",
       "required": true,
@@ -1761,6 +1762,22 @@
       ],
       "range": "IndicatorSubClass",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_iadopt_variable",
+      "definition_uri": "https://w3id.org/peh/terms/has_iadopt_variable",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasVariable"
+      ],
+      "domain": "ObservableProperty",
+      "slot_uri": "https://w3id.org/peh/terms/hasVariable",
+      "owner": "ObservableProperty",
+      "domain_of": [
+        "ObservableProperty"
+      ],
+      "range": "IAdoptVariable",
       "@type": "SlotDefinition"
     },
     {
@@ -4110,6 +4127,7 @@
         "relevant_observation_types",
         "calculation_design",
         "validation_designs",
+        "has_iadopt_variable",
         "has_observable_property_type",
         "translations",
         "context_aliases"
@@ -5007,13 +5025,25 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataExtract",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "IAdoptVariable",
+      "definition_uri": "https://w3id.org/peh/terms/IAdoptVariable",
+      "description": "Placeholder class for actual IAdoptVariable",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/IAdoptVariable",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-04-21T07:45:06",
-  "source_file_size": 36706,
-  "generation_date": "2026-04-21T07:45:27",
+  "source_file_date": "2026-05-05T12:06:36",
+  "source_file_size": 36932,
+  "generation_date": "2026-05-05T12:06:59",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

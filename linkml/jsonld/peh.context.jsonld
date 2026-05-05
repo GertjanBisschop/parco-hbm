@@ -208,6 +208,10 @@
          "@type": "@id",
          "@id": "groupings"
       },
+      "has_iadopt_variable": {
+         "@type": "@id",
+         "@id": "hasVariable"
+      },
       "has_observable_property_type": {
          "@type": "@id",
          "@id": "rdf:type"
@@ -888,6 +892,9 @@
       },
       "HomeEnvironment": {
          "@id": "HomeEnvironment"
+      },
+      "IAdoptVariable": {
+         "@id": "IAdoptVariable"
       },
       "Indicator": {
          "@id": "wikidata:Q937228"

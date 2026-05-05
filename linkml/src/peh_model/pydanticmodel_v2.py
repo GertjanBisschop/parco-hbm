@@ -921,6 +921,7 @@ class ObservableProperty(HasTranslations, HasContextAliases, NamedThing):
     relevant_observation_types: Optional[list[ObservationType]] = Field(default=None)
     calculation_design: Optional[CalculationDesign] = Field(default=None)
     validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
+    has_iadopt_variable: Optional[str] = Field(default=None)
     has_observable_property_type: Optional[list[str]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
@@ -2000,6 +2001,17 @@ class DataExtract(ConfiguredBaseModel):
     observed_values: Optional[list[ObservedValue]] = Field(default=None)
 
 
+class IAdoptVariable(ConfiguredBaseModel):
+    """
+    Placeholder class for actual IAdoptVariable
+    """
+
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+
+
 # Model rebuild
 # see https://pydantic-docs.helpmanual.io/usage/models/#rebuilding-a-model
 EntityList.model_rebuild()
@@ -2074,3 +2086,4 @@ ResearchObjective.model_rebuild()
 ProcessingAction.model_rebuild()
 ProcessingStep.model_rebuild()
 DataExtract.model_rebuild()
+IAdoptVariable.model_rebuild()
