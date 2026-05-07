@@ -160,11 +160,10 @@ classes:
       - HasValidationStatus
     slots:
       - grouping_id_list
-      - biochementity_type
       - molweight_grampermol
-      - parent_compounds
-      - group_compound_members
-      - member_of_group_compounds
+      - has_role
+      - is_metabolite_of
+      - is_isomer_of
   
   Matrix:
     class_uri: wikidata:Q685816
@@ -682,6 +681,14 @@ classes:
       Placeholder class for actual IAdoptVariable
     slots:
       - id
+  BioChemRole:
+    description: >- 
+      A role is particular behaviour which a material entity may exhibit.
+    slots:
+      - id
+    close_mappings: 
+      - http://purl.obolibrary.org/obo/chebi_50906
+
 slots:
   id:
     identifier: true
@@ -783,33 +790,6 @@ slots:
   validation_institute:
   validation_remark:
 
-  biochementity_type:
-    range: BioChemEntityType
-  molweight_grampermol:
-    range: decimal
-  parent_compounds:
-    multivalued: true
-    range: BioChemEntitySubClass
-    slot_uri: rdfs:subClassOf
-  group_compound_members:
-    multivalued: true
-    domain: BioChemEntity
-    range: BioChemEntity
-    slot_uri: skos:narrower
-    description: >-
-      For a compound that groups other compounds, links to members of the group.
-      Inverse of the BioChemEntity member_of_group_compounds slot
-    inverse: member_of_group_compounds
-  member_of_group_compounds:
-    multivalued: true
-    domain: BioChemEntity
-    range: BioChemEntity
-    slot_uri: skos:broader
-    description: >-
-      Declares the compound being part of one or more group compounds.
-      Inverse of the BioChemEntity group_compound_members slot
-    inverse: group_compound_members
-
   matrix_subclasses:
     multivalued: true
     inlined_as_list: true
@@ -842,6 +822,27 @@ slots:
   biochementity:
     range: BioChemEntity
     inlined: false
+
+  molweight_grampermol:
+    range: decimal
+    description: The molecular weight of the chemical entity in g/mol
+    unit:
+      ucum_code: "g/mol"
+  is_metabolite_of:
+    description: Indicates that this molecular entity is a metabolite of another molecular entity
+    range: BioChemEntity
+    multivalued: true
+    slot_uri: pehterms:isMetaboliteOf
+  is_isomer_of:
+    description: Indicates that this molecular entity is an isomer of another molecular entity
+    range: BioChemEntity
+    multivalued: true
+    slot_uri: pehterms:isIsomerOf
+  has_role:
+    multivalued: true
+    slot_uri: http://purl.obolibrary.org/obo/RO_0000087
+    range: BioChemRole
+    domain: BioChemEntity
 
   categorical:
     range: boolean
@@ -1268,12 +1269,6 @@ enums:
       exposuremarker:
       geomarker:
       observation:
-  BioChemEntityType:
-    permissible_values:
-      compound_group:
-      compound:
-      conjugated_compound:
-      unconjugated_compound:
   ResearchPopulationType:
     permissible_values:
       general_population:
