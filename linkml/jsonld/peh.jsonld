@@ -516,25 +516,6 @@
       ]
     },
     {
-      "name": "BioChemEntityType",
-      "definition_uri": "https://w3id.org/peh/terms/BioChemEntityType",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "permissible_values": [
-        {
-          "text": "compound_group"
-        },
-        {
-          "text": "compound"
-        },
-        {
-          "text": "conjugated_compound"
-        },
-        {
-          "text": "unconjugated_compound"
-        }
-      ]
-    },
-    {
       "name": "ResearchPopulationType",
       "definition_uri": "https://w3id.org/peh/terms/ResearchPopulationType",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -913,12 +894,13 @@
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "IAdoptVariable",
+      "owner": "BioChemRole",
       "domain_of": [
         "NamedThing",
         "QUDTUnit",
         "QUDTQuantityKind",
-        "IAdoptVariable"
+        "IAdoptVariable",
+        "BioChemRole"
       ],
       "range": "uriorcurie",
       "required": true,
@@ -1359,84 +1341,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "biochementity_type",
-      "definition_uri": "https://w3id.org/peh/terms/biochementity_type",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/biochementity_type",
-      "owner": "BioChemEntitySubClass",
-      "domain_of": [
-        "BioChemEntitySubClass"
-      ],
-      "range": "BioChemEntityType",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "molweight_grampermol",
-      "definition_uri": "https://w3id.org/peh/terms/molweight_grampermol",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/molweight_grampermol",
-      "owner": "BioChemEntitySubClass",
-      "domain_of": [
-        "BioChemEntitySubClass"
-      ],
-      "range": "decimal",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "parent_compounds",
-      "definition_uri": "https://w3id.org/peh/terms/parent_compounds",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
-      ],
-      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-      "owner": "BioChemEntitySubClass",
-      "domain_of": [
-        "BioChemEntitySubClass"
-      ],
-      "range": "BioChemEntitySubClass",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "group_compound_members",
-      "definition_uri": "https://w3id.org/peh/terms/group_compound_members",
-      "description": "For a compound that groups other compounds, links to members of the group. Inverse of the BioChemEntity member_of_group_compounds slot",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "http://www.w3.org/2004/02/skos/core#narrower"
-      ],
-      "domain": "BioChemEntity",
-      "slot_uri": "http://www.w3.org/2004/02/skos/core#narrower",
-      "owner": "group_compound_members",
-      "domain_of": [
-        "BioChemEntitySubClass"
-      ],
-      "inverse": "member_of_group_compounds",
-      "range": "BioChemEntity",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "member_of_group_compounds",
-      "definition_uri": "https://w3id.org/peh/terms/member_of_group_compounds",
-      "description": "Declares the compound being part of one or more group compounds. Inverse of the BioChemEntity group_compound_members slot",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "http://www.w3.org/2004/02/skos/core#broader"
-      ],
-      "domain": "BioChemEntity",
-      "slot_uri": "http://www.w3.org/2004/02/skos/core#broader",
-      "owner": "member_of_group_compounds",
-      "domain_of": [
-        "BioChemEntitySubClass"
-      ],
-      "inverse": "group_compound_members",
-      "range": "BioChemEntity",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "matrix_subclasses",
       "definition_uri": "https://w3id.org/peh/terms/matrix_subclasses",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -1588,6 +1492,74 @@
         "IndicatorSubClass"
       ],
       "range": "BioChemEntity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "molweight_grampermol",
+      "definition_uri": "https://w3id.org/peh/terms/molweight_grampermol",
+      "description": "The molecular weight of the chemical entity in g/mol",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slot_uri": "https://w3id.org/peh/terms/molweight_grampermol",
+      "owner": "BioChemEntitySubClass",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "decimal",
+      "unit": {
+        "ucum_code": "g/mol",
+        "@type": "UnitOfMeasure"
+      },
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "is_metabolite_of",
+      "definition_uri": "https://w3id.org/peh/terms/is_metabolite_of",
+      "description": "Indicates that this molecular entity is a metabolite of another molecular entity",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/isMetaboliteOf"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isMetaboliteOf",
+      "owner": "BioChemEntitySubClass",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "BioChemEntity",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "is_isomer_of",
+      "definition_uri": "https://w3id.org/peh/terms/is_isomer_of",
+      "description": "Indicates that this molecular entity is an isomer of another molecular entity",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/isIsomerOf"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isIsomerOf",
+      "owner": "BioChemEntitySubClass",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "BioChemEntity",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_role",
+      "definition_uri": "https://w3id.org/peh/terms/has_role",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000087"
+      ],
+      "domain": "BioChemEntity",
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000087",
+      "owner": "has_role",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "BioChemRole",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3767,11 +3739,10 @@
         "remark",
         "exact_matches",
         "grouping_id_list",
-        "biochementity_type",
         "molweight_grampermol",
-        "parent_compounds",
-        "group_compound_members",
-        "member_of_group_compounds",
+        "has_role",
+        "is_metabolite_of",
+        "is_isomer_of",
         "aliases",
         "context_aliases",
         "translations",
@@ -5037,13 +5008,28 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/IAdoptVariable",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "BioChemRole",
+      "definition_uri": "https://w3id.org/peh/terms/BioChemRole",
+      "description": "A role is particular behaviour which a material entity may exhibit.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/chebi_50906"
+      ],
+      "slots": [
+        "id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/BioChemRole",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-05-05T12:06:36",
-  "source_file_size": 36932,
-  "generation_date": "2026-05-05T12:06:59",
+  "source_file_date": "2026-05-07T11:56:26",
+  "source_file_size": 36775,
+  "generation_date": "2026-05-07T11:56:43",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

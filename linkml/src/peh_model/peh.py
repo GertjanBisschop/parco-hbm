@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-05T12:06:59
+# Generation date: 2026-05-07T11:56:43
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -234,6 +234,10 @@ class ProcessingStepId(NamedThingId):
 
 
 class IAdoptVariableId(URIorCURIE):
+    pass
+
+
+class BioChemRoleId(URIorCURIE):
     pass
 
 
@@ -949,18 +953,14 @@ class BioChemEntitySubClass(NamedThing):
     grouping_id_list: Optional[
         Union[Union[str, GroupingId], list[Union[str, GroupingId]]]
     ] = empty_list()
-    biochementity_type: Optional[Union[str, "BioChemEntityType"]] = None
     molweight_grampermol: Optional[Decimal] = None
-    parent_compounds: Optional[
-        Union[
-            Union[str, BioChemEntitySubClassId],
-            list[Union[str, BioChemEntitySubClassId]],
-        ]
+    has_role: Optional[
+        Union[Union[str, BioChemRoleId], list[Union[str, BioChemRoleId]]]
     ] = empty_list()
-    group_compound_members: Optional[
+    is_metabolite_of: Optional[
         Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
     ] = empty_list()
-    member_of_group_compounds: Optional[
+    is_isomer_of: Optional[
         Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
     ] = empty_list()
     aliases: Optional[Union[str, list[str]]] = empty_list()
@@ -993,45 +993,34 @@ class BioChemEntitySubClass(NamedThing):
             for v in self.grouping_id_list
         ]
 
-        if self.biochementity_type is not None and not isinstance(
-            self.biochementity_type, BioChemEntityType
-        ):
-            self.biochementity_type = BioChemEntityType(self.biochementity_type)
-
         if self.molweight_grampermol is not None and not isinstance(
             self.molweight_grampermol, Decimal
         ):
             self.molweight_grampermol = Decimal(self.molweight_grampermol)
 
-        if not isinstance(self.parent_compounds, list):
-            self.parent_compounds = (
-                [self.parent_compounds] if self.parent_compounds is not None else []
-            )
-        self.parent_compounds = [
-            v if isinstance(v, BioChemEntitySubClassId) else BioChemEntitySubClassId(v)
-            for v in self.parent_compounds
+        if not isinstance(self.has_role, list):
+            self.has_role = [self.has_role] if self.has_role is not None else []
+        self.has_role = [
+            v if isinstance(v, BioChemRoleId) else BioChemRoleId(v)
+            for v in self.has_role
         ]
 
-        if not isinstance(self.group_compound_members, list):
-            self.group_compound_members = (
-                [self.group_compound_members]
-                if self.group_compound_members is not None
-                else []
+        if not isinstance(self.is_metabolite_of, list):
+            self.is_metabolite_of = (
+                [self.is_metabolite_of] if self.is_metabolite_of is not None else []
             )
-        self.group_compound_members = [
+        self.is_metabolite_of = [
             v if isinstance(v, BioChemEntityId) else BioChemEntityId(v)
-            for v in self.group_compound_members
+            for v in self.is_metabolite_of
         ]
 
-        if not isinstance(self.member_of_group_compounds, list):
-            self.member_of_group_compounds = (
-                [self.member_of_group_compounds]
-                if self.member_of_group_compounds is not None
-                else []
+        if not isinstance(self.is_isomer_of, list):
+            self.is_isomer_of = (
+                [self.is_isomer_of] if self.is_isomer_of is not None else []
             )
-        self.member_of_group_compounds = [
+        self.is_isomer_of = [
             v if isinstance(v, BioChemEntityId) else BioChemEntityId(v)
-            for v in self.member_of_group_compounds
+            for v in self.is_isomer_of
         ]
 
         if not isinstance(self.aliases, list):
@@ -4066,6 +4055,30 @@ class IAdoptVariable(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+@dataclass(repr=False)
+class BioChemRole(YAMLRoot):
+    """
+    A role is particular behaviour which a material entity may exhibit.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["BioChemRole"]
+    class_class_curie: ClassVar[str] = "pehterms:BioChemRole"
+    class_name: ClassVar[str] = "BioChemRole"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.BioChemRole
+
+    id: Union[str, BioChemRoleId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BioChemRoleId):
+            self.id = BioChemRoleId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
 # Enumerations
 class ValidationStatus(EnumDefinitionImpl):
 
@@ -4140,18 +4153,6 @@ class IndicatorType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="IndicatorType",
-    )
-
-
-class BioChemEntityType(EnumDefinitionImpl):
-
-    compound_group = PermissibleValue(text="compound_group")
-    compound = PermissibleValue(text="compound")
-    conjugated_compound = PermissibleValue(text="conjugated_compound")
-    unconjugated_compound = PermissibleValue(text="unconjugated_compound")
-
-    _defn = EnumDefinition(
-        name="BioChemEntityType",
     )
 
 
@@ -4625,60 +4626,6 @@ slots.validation_remark = Slot(
     range=Optional[str],
 )
 
-slots.biochementity_type = Slot(
-    uri=PEHTERMS.biochementity_type,
-    name="biochementity_type",
-    curie=PEHTERMS.curie("biochementity_type"),
-    model_uri=PEHTERMS.biochementity_type,
-    domain=None,
-    range=Optional[Union[str, "BioChemEntityType"]],
-)
-
-slots.molweight_grampermol = Slot(
-    uri=PEHTERMS.molweight_grampermol,
-    name="molweight_grampermol",
-    curie=PEHTERMS.curie("molweight_grampermol"),
-    model_uri=PEHTERMS.molweight_grampermol,
-    domain=None,
-    range=Optional[Decimal],
-)
-
-slots.parent_compounds = Slot(
-    uri=RDFS.subClassOf,
-    name="parent_compounds",
-    curie=RDFS.curie("subClassOf"),
-    model_uri=PEHTERMS.parent_compounds,
-    domain=None,
-    range=Optional[
-        Union[
-            Union[str, BioChemEntitySubClassId],
-            list[Union[str, BioChemEntitySubClassId]],
-        ]
-    ],
-)
-
-slots.group_compound_members = Slot(
-    uri=SKOS.narrower,
-    name="group_compound_members",
-    curie=SKOS.curie("narrower"),
-    model_uri=PEHTERMS.group_compound_members,
-    domain=BioChemEntity,
-    range=Optional[
-        Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
-    ],
-)
-
-slots.member_of_group_compounds = Slot(
-    uri=SKOS.broader,
-    name="member_of_group_compounds",
-    curie=SKOS.curie("broader"),
-    model_uri=PEHTERMS.member_of_group_compounds,
-    domain=BioChemEntity,
-    range=Optional[
-        Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
-    ],
-)
-
 slots.matrix_subclasses = Slot(
     uri=PEHTERMS.matrix_subclasses,
     name="matrix_subclasses",
@@ -4797,6 +4744,46 @@ slots.biochementity = Slot(
     model_uri=PEHTERMS.biochementity,
     domain=None,
     range=Optional[Union[str, BioChemEntityId]],
+)
+
+slots.molweight_grampermol = Slot(
+    uri=PEHTERMS.molweight_grampermol,
+    name="molweight_grampermol",
+    curie=PEHTERMS.curie("molweight_grampermol"),
+    model_uri=PEHTERMS.molweight_grampermol,
+    domain=None,
+    range=Optional[Decimal],
+)
+
+slots.is_metabolite_of = Slot(
+    uri=PEHTERMS.isMetaboliteOf,
+    name="is_metabolite_of",
+    curie=PEHTERMS.curie("isMetaboliteOf"),
+    model_uri=PEHTERMS.is_metabolite_of,
+    domain=None,
+    range=Optional[
+        Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
+    ],
+)
+
+slots.is_isomer_of = Slot(
+    uri=PEHTERMS.isIsomerOf,
+    name="is_isomer_of",
+    curie=PEHTERMS.curie("isIsomerOf"),
+    model_uri=PEHTERMS.is_isomer_of,
+    domain=None,
+    range=Optional[
+        Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
+    ],
+)
+
+slots.has_role = Slot(
+    uri="str(uriorcurie)",
+    name="has_role",
+    curie=None,
+    model_uri=PEHTERMS.has_role,
+    domain=BioChemEntity,
+    range=Optional[Union[Union[str, BioChemRoleId], list[Union[str, BioChemRoleId]]]],
 )
 
 slots.categorical = Slot(

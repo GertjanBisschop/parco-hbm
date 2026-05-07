@@ -104,13 +104,6 @@ class IndicatorType(str, Enum):
     observation = "observation"
 
 
-class BioChemEntityType(str, Enum):
-    compound_group = "compound_group"
-    compound = "compound"
-    conjugated_compound = "conjugated_compound"
-    unconjugated_compound = "unconjugated_compound"
-
-
 class ResearchPopulationType(str, Enum):
     general_population = "general_population"
     person = "person"
@@ -442,16 +435,18 @@ class BioChemEntitySubClass(
     """
 
     grouping_id_list: Optional[list[str]] = Field(default=None)
-    biochementity_type: Optional[BioChemEntityType] = Field(default=None)
-    molweight_grampermol: Optional[Decimal] = Field(default=None)
-    parent_compounds: Optional[list[str]] = Field(default=None)
-    group_compound_members: Optional[list[str]] = Field(
+    molweight_grampermol: Optional[Decimal] = Field(
         default=None,
-        description="""For a compound that groups other compounds, links to members of the group. Inverse of the BioChemEntity member_of_group_compounds slot""",
+        description="""The molecular weight of the chemical entity in g/mol""",
     )
-    member_of_group_compounds: Optional[list[str]] = Field(
+    has_role: Optional[list[str]] = Field(default=None)
+    is_metabolite_of: Optional[list[str]] = Field(
         default=None,
-        description="""Declares the compound being part of one or more group compounds. Inverse of the BioChemEntity group_compound_members slot""",
+        description="""Indicates that this molecular entity is a metabolite of another molecular entity""",
+    )
+    is_isomer_of: Optional[list[str]] = Field(
+        default=None,
+        description="""Indicates that this molecular entity is an isomer of another molecular entity""",
     )
     aliases: Optional[list[str]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
@@ -2012,6 +2007,17 @@ class IAdoptVariable(ConfiguredBaseModel):
     )
 
 
+class BioChemRole(ConfiguredBaseModel):
+    """
+    A role is particular behaviour which a material entity may exhibit.
+    """
+
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+
+
 # Model rebuild
 # see https://pydantic-docs.helpmanual.io/usage/models/#rebuilding-a-model
 EntityList.model_rebuild()
@@ -2087,3 +2093,4 @@ ProcessingAction.model_rebuild()
 ProcessingStep.model_rebuild()
 DataExtract.model_rebuild()
 IAdoptVariable.model_rebuild()
+BioChemRole.model_rebuild()

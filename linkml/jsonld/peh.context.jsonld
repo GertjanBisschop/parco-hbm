@@ -36,14 +36,6 @@
          "@type": "@id",
          "@id": "biochementity_subclasses"
       },
-      "biochementity_type": {
-         "@context": {
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "biochementity_type"
-      },
       "calculation_design": {
          "@type": "@id",
          "@id": "calculation_design"
@@ -196,10 +188,6 @@
       "geographic_scope": {
          "@id": "geographic_scope"
       },
-      "group_compound_members": {
-         "@type": "@id",
-         "@id": "skos:narrower"
-      },
       "grouping_id_list": {
          "@type": "@id",
          "@id": "skos:broader"
@@ -215,6 +203,10 @@
       "has_observable_property_type": {
          "@type": "@id",
          "@id": "rdf:type"
+      },
+      "has_role": {
+         "@type": "@id",
+         "@id": "http://purl.obolibrary.org/obo/RO_0000087"
       },
       "id": "@id",
       "immutable": {
@@ -246,6 +238,14 @@
             "meaning": "@id"
          },
          "@id": "indicator_type"
+      },
+      "is_isomer_of": {
+         "@type": "@id",
+         "@id": "isIsomerOf"
+      },
+      "is_metabolite_of": {
+         "@type": "@id",
+         "@id": "isMetaboliteOf"
       },
       "is_observable_entity_key": {
          "@type": "xsd:boolean",
@@ -296,10 +296,6 @@
       "member_id_list": {
          "@type": "@id",
          "@id": "member_id_list"
-      },
-      "member_of_group_compounds": {
-         "@type": "@id",
-         "@id": "skos:broader"
       },
       "metadata_fields": {
          "@type": "@id",
@@ -436,10 +432,6 @@
       },
       "orcid": {
          "@id": "schema:identifier"
-      },
-      "parent_compounds": {
-         "@type": "@id",
-         "@id": "rdfs:subClassOf"
       },
       "parent_grouping_id_list": {
          "@type": "@id",
@@ -811,6 +803,9 @@
       },
       "BioChemEntitySubClass": {
          "@id": "owl:Class"
+      },
+      "BioChemRole": {
+         "@id": "BioChemRole"
       },
       "CalculationDesign": {
          "@id": "CalculationDesign"
