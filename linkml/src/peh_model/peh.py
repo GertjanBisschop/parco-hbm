@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-08T09:40:29
+# Generation date: 2026-05-08T10:02:04
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -4412,9 +4412,9 @@ slots.description = Slot(
 )
 
 slots.ui_label = Slot(
-    uri=PEHTERMS.ui_label,
+    uri=PEHTERMS.hasUiLabel,
     name="ui_label",
-    curie=PEHTERMS.curie("ui_label"),
+    curie=PEHTERMS.curie("hasUiLabel"),
     model_uri=PEHTERMS.ui_label,
     domain=None,
     range=Optional[str],
@@ -4457,36 +4457,36 @@ slots.rorid = Slot(
 )
 
 slots.label = Slot(
-    uri=PEHTERMS.label,
+    uri=RDFS.label,
     name="label",
-    curie=PEHTERMS.curie("label"),
+    curie=RDFS.curie("label"),
     model_uri=PEHTERMS.label,
     domain=None,
     range=Optional[str],
 )
 
 slots.alias = Slot(
-    uri=PEHTERMS.alias,
+    uri=SCHEMA.alternateName,
     name="alias",
-    curie=PEHTERMS.curie("alias"),
+    curie=SCHEMA.curie("alternateName"),
     model_uri=PEHTERMS.alias,
     domain=None,
     range=Optional[str],
 )
 
 slots.aliases = Slot(
-    uri=PEHTERMS.aliases,
+    uri=SCHEMA.alternateName,
     name="aliases",
-    curie=PEHTERMS.curie("aliases"),
+    curie=SCHEMA.curie("alternateName"),
     model_uri=PEHTERMS.aliases,
     domain=None,
     range=Optional[Union[str, list[str]]],
 )
 
 slots.context_aliases = Slot(
-    uri=PEHTERMS.context_aliases,
+    uri=PEHTERMS.hasContextAlias,
     name="context_aliases",
-    curie=PEHTERMS.curie("context_aliases"),
+    curie=PEHTERMS.curie("hasContextAlias"),
     model_uri=PEHTERMS.context_aliases,
     domain=None,
     range=Optional[Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]],
@@ -4502,18 +4502,18 @@ slots.exact_matches = Slot(
 )
 
 slots.context = Slot(
-    uri=PEHTERMS.context,
+    uri=PEHTERMS.hasContext,
     name="context",
-    curie=PEHTERMS.curie("context"),
+    curie=PEHTERMS.curie("hasContext"),
     model_uri=PEHTERMS.context,
     domain=None,
     range=Optional[Union[str, NamedThingId]],
 )
 
 slots.translations = Slot(
-    uri=PEHTERMS.translations,
+    uri=PEHTERMS.hasTranslation,
     name="translations",
-    curie=PEHTERMS.curie("translations"),
+    curie=PEHTERMS.curie("hasTranslation"),
     model_uri=PEHTERMS.translations,
     domain=None,
     range=Optional[Union[Union[dict, Translation], list[Union[dict, Translation]]]],
@@ -4529,27 +4529,27 @@ slots.property_name = Slot(
 )
 
 slots.language = Slot(
-    uri=PEHTERMS.language,
+    uri=SCHEMA.inLanguage,
     name="language",
-    curie=PEHTERMS.curie("language"),
+    curie=SCHEMA.curie("inLanguage"),
     model_uri=PEHTERMS.language,
     domain=None,
     range=Optional[str],
 )
 
 slots.translated_value = Slot(
-    uri=PEHTERMS.translated_value,
+    uri=PEHTERMS.hasTranslatedValue,
     name="translated_value",
-    curie=PEHTERMS.curie("translated_value"),
+    curie=PEHTERMS.curie("hasTranslatedValue"),
     model_uri=PEHTERMS.translated_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.validation_history = Slot(
-    uri=PEHTERMS.validation_history,
+    uri=PEHTERMS.hasValidationHistoryRecord,
     name="validation_history",
-    curie=PEHTERMS.curie("validation_history"),
+    curie=PEHTERMS.curie("hasValidationHistoryRecord"),
     model_uri=PEHTERMS.validation_history,
     domain=None,
     range=Optional[
@@ -4570,9 +4570,9 @@ slots.quantity_kind = Slot(
 )
 
 slots.groupings = Slot(
-    uri=PEHTERMS.groupings,
+    uri=PEHTERMS.hasGrouping,
     name="groupings",
-    curie=PEHTERMS.curie("groupings"),
+    curie=PEHTERMS.curie("hasGrouping"),
     model_uri=PEHTERMS.groupings,
     domain=None,
     range=Optional[
@@ -4602,63 +4602,63 @@ slots.parent_grouping_id_list = Slot(
 )
 
 slots.current_validation_status = Slot(
-    uri=PEHTERMS.current_validation_status,
+    uri=PEHTERMS.hasCurrentValidationStatus,
     name="current_validation_status",
-    curie=PEHTERMS.curie("current_validation_status"),
+    curie=PEHTERMS.curie("hasCurrentValidationStatus"),
     model_uri=PEHTERMS.current_validation_status,
     domain=None,
     range=Optional[Union[str, "ValidationStatus"]],
 )
 
 slots.validation_datetime = Slot(
-    uri=PEHTERMS.validation_datetime,
+    uri=PEHTERMS.hasValidationDateTime,
     name="validation_datetime",
-    curie=PEHTERMS.curie("validation_datetime"),
+    curie=PEHTERMS.curie("hasValidationDateTime"),
     model_uri=PEHTERMS.validation_datetime,
     domain=None,
     range=Optional[Union[str, XSDDateTime]],
 )
 
 slots.validation_status = Slot(
-    uri=PEHTERMS.validation_status,
+    uri=PEHTERMS.hasValidationStatus,
     name="validation_status",
-    curie=PEHTERMS.curie("validation_status"),
+    curie=PEHTERMS.curie("hasValidationStatus"),
     model_uri=PEHTERMS.validation_status,
     domain=None,
     range=Optional[Union[str, "ValidationStatus"]],
 )
 
 slots.validation_actor = Slot(
-    uri=PEHTERMS.validation_actor,
+    uri=PEHTERMS.hasValidationActor,
     name="validation_actor",
-    curie=PEHTERMS.curie("validation_actor"),
+    curie=PEHTERMS.curie("hasValidationActor"),
     model_uri=PEHTERMS.validation_actor,
     domain=None,
     range=Optional[str],
 )
 
 slots.validation_institute = Slot(
-    uri=PEHTERMS.validation_institute,
+    uri=PEHTERMS.hasValidationInstitute,
     name="validation_institute",
-    curie=PEHTERMS.curie("validation_institute"),
+    curie=PEHTERMS.curie("hasValidationInstitute"),
     model_uri=PEHTERMS.validation_institute,
     domain=None,
     range=Optional[str],
 )
 
 slots.validation_remark = Slot(
-    uri=PEHTERMS.validation_remark,
+    uri=PEHTERMS.hasValidationRemark,
     name="validation_remark",
-    curie=PEHTERMS.curie("validation_remark"),
+    curie=PEHTERMS.curie("hasValidationRemark"),
     model_uri=PEHTERMS.validation_remark,
     domain=None,
     range=Optional[str],
 )
 
 slots.matrix_subclasses = Slot(
-    uri=PEHTERMS.matrix_subclasses,
+    uri=PEHTERMS.hasMatrixSubclass,
     name="matrix_subclasses",
-    curie=PEHTERMS.curie("matrix_subclasses"),
+    curie=PEHTERMS.curie("hasMatrixSubclass"),
     model_uri=PEHTERMS.matrix_subclasses,
     domain=None,
     range=Optional[
@@ -4670,9 +4670,9 @@ slots.matrix_subclasses = Slot(
 )
 
 slots.biochementity_subclasses = Slot(
-    uri=PEHTERMS.biochementity_subclasses,
+    uri=PEHTERMS.hasBioChemEntitySubclass,
     name="biochementity_subclasses",
-    curie=PEHTERMS.curie("biochementity_subclasses"),
+    curie=PEHTERMS.curie("hasBioChemEntitySubclass"),
     model_uri=PEHTERMS.biochementity_subclasses,
     domain=None,
     range=Optional[
@@ -4686,9 +4686,9 @@ slots.biochementity_subclasses = Slot(
 )
 
 slots.indicator_subclasses = Slot(
-    uri=PEHTERMS.indicator_subclasses,
+    uri=PEHTERMS.hasIndicatorSubclass,
     name="indicator_subclasses",
-    curie=PEHTERMS.curie("indicator_subclasses"),
+    curie=PEHTERMS.curie("hasIndicatorSubclass"),
     model_uri=PEHTERMS.indicator_subclasses,
     domain=None,
     range=Optional[
@@ -4711,9 +4711,9 @@ slots.parent_matrices = Slot(
 )
 
 slots.indicator_type = Slot(
-    uri=PEHTERMS.indicator_type,
+    uri=PEHTERMS.hasIndicatorType,
     name="indicator_type",
-    curie=PEHTERMS.curie("indicator_type"),
+    curie=PEHTERMS.curie("hasIndicatorType"),
     model_uri=PEHTERMS.indicator_type,
     domain=None,
     range=Optional[Union[str, "IndicatorType"]],
@@ -4745,36 +4745,36 @@ slots.parent_biochementities = Slot(
 )
 
 slots.property = Slot(
-    uri=PEHTERMS.property,
+    uri=PEHTERMS.hasProperty,
     name="property",
-    curie=PEHTERMS.curie("property"),
+    curie=PEHTERMS.curie("hasProperty"),
     model_uri=PEHTERMS.property,
     domain=None,
     range=Optional[str],
 )
 
 slots.matrix = Slot(
-    uri=PEHTERMS.matrix,
+    uri=PEHTERMS.hasMatrix,
     name="matrix",
-    curie=PEHTERMS.curie("matrix"),
+    curie=PEHTERMS.curie("hasMatrix"),
     model_uri=PEHTERMS.matrix,
     domain=None,
     range=Optional[Union[str, MatrixId]],
 )
 
 slots.constraints = Slot(
-    uri=PEHTERMS.constraints,
+    uri=PEHTERMS.hasConstraint,
     name="constraints",
-    curie=PEHTERMS.curie("constraints"),
+    curie=PEHTERMS.curie("hasConstraint"),
     model_uri=PEHTERMS.constraints,
     domain=None,
     range=Optional[Union[str, list[str]]],
 )
 
 slots.relevant_observable_entity_types = Slot(
-    uri=PEHTERMS.relevant_observable_entity_types,
+    uri=PEHTERMS.hasRelevantObservableEntityType,
     name="relevant_observable_entity_types",
-    curie=PEHTERMS.curie("relevant_observable_entity_types"),
+    curie=PEHTERMS.curie("hasRelevantObservableEntityType"),
     model_uri=PEHTERMS.relevant_observable_entity_types,
     domain=None,
     range=Optional[
@@ -4785,18 +4785,18 @@ slots.relevant_observable_entity_types = Slot(
 )
 
 slots.biochementity = Slot(
-    uri=PEHTERMS.biochementity,
+    uri=PEHTERMS.hasBioChemEntity,
     name="biochementity",
-    curie=PEHTERMS.curie("biochementity"),
+    curie=PEHTERMS.curie("hasBioChemEntity"),
     model_uri=PEHTERMS.biochementity,
     domain=None,
     range=Optional[Union[str, BioChemEntityId]],
 )
 
 slots.molweight_grampermol = Slot(
-    uri=PEHTERMS.molweight_grampermol,
+    uri=PEHTERMS.hasMolecularWeight,
     name="molweight_grampermol",
-    curie=PEHTERMS.curie("molweight_grampermol"),
+    curie=PEHTERMS.curie("hasMolecularWeight"),
     model_uri=PEHTERMS.molweight_grampermol,
     domain=None,
     range=Optional[Decimal],
@@ -4834,36 +4834,36 @@ slots.has_role = Slot(
 )
 
 slots.categorical = Slot(
-    uri=PEHTERMS.categorical,
+    uri=PEHTERMS.isCategorical,
     name="categorical",
-    curie=PEHTERMS.curie("categorical"),
+    curie=PEHTERMS.curie("isCategorical"),
     model_uri=PEHTERMS.categorical,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
 slots.multivalued = Slot(
-    uri=PEHTERMS.multivalued,
+    uri=PEHTERMS.isMultivalued,
     name="multivalued",
-    curie=PEHTERMS.curie("multivalued"),
+    curie=PEHTERMS.curie("isMultivalued"),
     model_uri=PEHTERMS.multivalued,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
 slots.value_type = Slot(
-    uri=PEHTERMS.value_type,
+    uri=PEHTERMS.hasValueType,
     name="value_type",
-    curie=PEHTERMS.curie("value_type"),
+    curie=PEHTERMS.curie("hasValueType"),
     model_uri=PEHTERMS.value_type,
     domain=None,
     range=Optional[str],
 )
 
 slots.value_metadata = Slot(
-    uri=PEHTERMS.value_metadata,
+    uri=PEHTERMS.hasValueMetadata,
     name="value_metadata",
-    curie=PEHTERMS.curie("value_metadata"),
+    curie=PEHTERMS.curie("hasValueMetadata"),
     model_uri=PEHTERMS.value_metadata,
     domain=None,
     range=Optional[
@@ -4875,9 +4875,9 @@ slots.value_metadata = Slot(
 )
 
 slots.value_options = Slot(
-    uri=PEHTERMS.value_options,
+    uri=PEHTERMS.hasValueOption,
     name="value_options",
-    curie=PEHTERMS.curie("value_options"),
+    curie=PEHTERMS.curie("hasValueOption"),
     model_uri=PEHTERMS.value_options,
     domain=None,
     range=Optional[
@@ -4889,63 +4889,63 @@ slots.value_options = Slot(
 )
 
 slots.required = Slot(
-    uri=PEHTERMS.required,
+    uri=PEHTERMS.isRequired,
     name="required",
-    curie=PEHTERMS.curie("required"),
+    curie=PEHTERMS.curie("isRequired"),
     model_uri=PEHTERMS.required,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
 slots.zeroallowed = Slot(
-    uri=PEHTERMS.zeroallowed,
+    uri=PEHTERMS.isZeroAllowed,
     name="zeroallowed",
-    curie=PEHTERMS.curie("zeroallowed"),
+    curie=PEHTERMS.curie("isZeroAllowed"),
     model_uri=PEHTERMS.zeroallowed,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
 slots.min_value = Slot(
-    uri=PEHTERMS.min_value,
+    uri=PEHTERMS.hasMinimumValue,
     name="min_value",
-    curie=PEHTERMS.curie("min_value"),
+    curie=PEHTERMS.curie("hasMinimumValue"),
     model_uri=PEHTERMS.min_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.max_value = Slot(
-    uri=PEHTERMS.max_value,
+    uri=PEHTERMS.hasMaximumValue,
     name="max_value",
-    curie=PEHTERMS.curie("max_value"),
+    curie=PEHTERMS.curie("hasMaximumValue"),
     model_uri=PEHTERMS.max_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.significantdecimals = Slot(
-    uri=PEHTERMS.significantdecimals,
+    uri=PEHTERMS.hasSignificantDecimals,
     name="significantdecimals",
-    curie=PEHTERMS.curie("significantdecimals"),
+    curie=PEHTERMS.curie("hasSignificantDecimals"),
     model_uri=PEHTERMS.significantdecimals,
     domain=None,
     range=Optional[int],
 )
 
 slots.immutable = Slot(
-    uri=PEHTERMS.immutable,
+    uri=PEHTERMS.isImmutable,
     name="immutable",
-    curie=PEHTERMS.curie("immutable"),
+    curie=PEHTERMS.curie("isImmutable"),
     model_uri=PEHTERMS.immutable,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
 slots.relevant_observation_types = Slot(
-    uri=PEHTERMS.relevant_observation_types,
+    uri=PEHTERMS.hasRelevantObservationType,
     name="relevant_observation_types",
-    curie=PEHTERMS.curie("relevant_observation_types"),
+    curie=PEHTERMS.curie("hasRelevantObservationType"),
     model_uri=PEHTERMS.relevant_observation_types,
     domain=None,
     range=Optional[
@@ -4974,63 +4974,63 @@ slots.has_iadopt_variable = Slot(
 )
 
 slots.calculation_design = Slot(
-    uri=PEHTERMS.calculation_design,
+    uri=PEHTERMS.hasCalculationDesign,
     name="calculation_design",
-    curie=PEHTERMS.curie("calculation_design"),
+    curie=PEHTERMS.curie("hasCalculationDesign"),
     model_uri=PEHTERMS.calculation_design,
     domain=None,
     range=Optional[Union[dict, CalculationDesign]],
 )
 
 slots.calculation_name = Slot(
-    uri=PEHTERMS.calculation_name,
+    uri=PEHTERMS.hasCalculationName,
     name="calculation_name",
-    curie=PEHTERMS.curie("calculation_name"),
+    curie=PEHTERMS.curie("hasCalculationName"),
     model_uri=PEHTERMS.calculation_name,
     domain=None,
     range=Optional[str],
 )
 
 slots.conditional = Slot(
-    uri=PEHTERMS.conditional,
+    uri=PEHTERMS.isConditional,
     name="conditional",
-    curie=PEHTERMS.curie("conditional"),
+    curie=PEHTERMS.curie("isConditional"),
     model_uri=PEHTERMS.conditional,
     domain=None,
     range=Optional[str],
 )
 
 slots.calculation_implementation_as_json = Slot(
-    uri=PEHTERMS.calculation_implementation_as_json,
+    uri=PEHTERMS.hasCalculationImplementationAsJson,
     name="calculation_implementation_as_json",
-    curie=PEHTERMS.curie("calculation_implementation_as_json"),
+    curie=PEHTERMS.curie("hasCalculationImplementationAsJson"),
     model_uri=PEHTERMS.calculation_implementation_as_json,
     domain=None,
     range=Optional[str],
 )
 
 slots.calculation_implementation = Slot(
-    uri=PEHTERMS.calculation_implementation,
+    uri=PEHTERMS.hasCalculationImplementation,
     name="calculation_implementation",
-    curie=PEHTERMS.curie("calculation_implementation"),
+    curie=PEHTERMS.curie("hasCalculationImplementation"),
     model_uri=PEHTERMS.calculation_implementation,
     domain=None,
     range=Optional[Union[dict, CalculationImplementation]],
 )
 
 slots.function_name = Slot(
-    uri=PEHTERMS.function_name,
+    uri=PEHTERMS.hasFunctionName,
     name="function_name",
-    curie=PEHTERMS.curie("function_name"),
+    curie=PEHTERMS.curie("hasFunctionName"),
     model_uri=PEHTERMS.function_name,
     domain=None,
     range=Optional[str],
 )
 
 slots.function_kwargs = Slot(
-    uri=PEHTERMS.function_kwargs,
+    uri=PEHTERMS.hasFunctionKeywordArgument,
     name="function_kwargs",
-    curie=PEHTERMS.curie("function_kwargs"),
+    curie=PEHTERMS.curie("hasFunctionKeywordArgument"),
     model_uri=PEHTERMS.function_kwargs,
     domain=None,
     range=Optional[
@@ -5042,9 +5042,9 @@ slots.function_kwargs = Slot(
 )
 
 slots.function_results = Slot(
-    uri=PEHTERMS.function_results,
+    uri=PEHTERMS.hasFunctionResult,
     name="function_results",
-    curie=PEHTERMS.curie("function_results"),
+    curie=PEHTERMS.curie("hasFunctionResult"),
     model_uri=PEHTERMS.function_results,
     domain=None,
     range=Optional[
@@ -5053,9 +5053,9 @@ slots.function_results = Slot(
 )
 
 slots.validation_designs = Slot(
-    uri=PEHTERMS.validation_designs,
+    uri=PEHTERMS.hasValidationDesign,
     name="validation_designs",
-    curie=PEHTERMS.curie("validation_designs"),
+    curie=PEHTERMS.curie("hasValidationDesign"),
     model_uri=PEHTERMS.validation_designs,
     domain=None,
     range=Optional[
@@ -5064,54 +5064,54 @@ slots.validation_designs = Slot(
 )
 
 slots.validation_name = Slot(
-    uri=PEHTERMS.validation_name,
+    uri=PEHTERMS.hasValidationName,
     name="validation_name",
-    curie=PEHTERMS.curie("validation_name"),
+    curie=PEHTERMS.curie("hasValidationName"),
     model_uri=PEHTERMS.validation_name,
     domain=None,
     range=Optional[str],
 )
 
 slots.validation_expression = Slot(
-    uri=PEHTERMS.validation_expression,
+    uri=PEHTERMS.hasValidationExpression,
     name="validation_expression",
-    curie=PEHTERMS.curie("validation_expression"),
+    curie=PEHTERMS.curie("hasValidationExpression"),
     model_uri=PEHTERMS.validation_expression,
     domain=None,
     range=Optional[Union[dict, ValidationExpression]],
 )
 
 slots.validation_condition_expression = Slot(
-    uri=PEHTERMS.validation_condition_expression,
+    uri=PEHTERMS.hasValidationConditionExpression,
     name="validation_condition_expression",
-    curie=PEHTERMS.curie("validation_condition_expression"),
+    curie=PEHTERMS.curie("hasValidationConditionExpression"),
     model_uri=PEHTERMS.validation_condition_expression,
     domain=None,
     range=Optional[Union[dict, ValidationExpression]],
 )
 
 slots.validation_error_level = Slot(
-    uri=PEHTERMS.validation_error_level,
+    uri=PEHTERMS.hasValidationErrorLevel,
     name="validation_error_level",
-    curie=PEHTERMS.curie("validation_error_level"),
+    curie=PEHTERMS.curie("hasValidationErrorLevel"),
     model_uri=PEHTERMS.validation_error_level,
     domain=None,
     range=Optional[Union[str, "ValidationErrorLevel"]],
 )
 
 slots.validation_error_message_template = Slot(
-    uri=PEHTERMS.validation_error_message_template,
+    uri=PEHTERMS.hasValidationErrorMessageTemplate,
     name="validation_error_message_template",
-    curie=PEHTERMS.curie("validation_error_message_template"),
+    curie=PEHTERMS.curie("hasValidationErrorMessageTemplate"),
     model_uri=PEHTERMS.validation_error_message_template,
     domain=None,
     range=Optional[str],
 )
 
 slots.validation_subject_contextual_field_references = Slot(
-    uri=PEHTERMS.validation_subject_contextual_field_references,
+    uri=PEHTERMS.hasValidationSubjectContextualFieldReference,
     name="validation_subject_contextual_field_references",
-    curie=PEHTERMS.curie("validation_subject_contextual_field_references"),
+    curie=PEHTERMS.curie("hasValidationSubjectContextualFieldReference"),
     model_uri=PEHTERMS.validation_subject_contextual_field_references,
     domain=None,
     range=Optional[
@@ -5123,27 +5123,27 @@ slots.validation_subject_contextual_field_references = Slot(
 )
 
 slots.validation_command = Slot(
-    uri=PEHTERMS.validation_command,
+    uri=PEHTERMS.hasValidationCommand,
     name="validation_command",
-    curie=PEHTERMS.curie("validation_command"),
+    curie=PEHTERMS.curie("hasValidationCommand"),
     model_uri=PEHTERMS.validation_command,
     domain=None,
     range=Optional[Union[str, "ValidationCommand"]],
 )
 
 slots.validation_arg_values = Slot(
-    uri=PEHTERMS.validation_arg_values,
+    uri=PEHTERMS.hasValidationArgumentValue,
     name="validation_arg_values",
-    curie=PEHTERMS.curie("validation_arg_values"),
+    curie=PEHTERMS.curie("hasValidationArgumentValue"),
     model_uri=PEHTERMS.validation_arg_values,
     domain=None,
     range=Optional[Union[str, list[str]]],
 )
 
 slots.validation_arg_contextual_field_references = Slot(
-    uri=PEHTERMS.validation_arg_contextual_field_references,
+    uri=PEHTERMS.hasValidationArgumentContextualFieldReference,
     name="validation_arg_contextual_field_references",
-    curie=PEHTERMS.curie("validation_arg_contextual_field_references"),
+    curie=PEHTERMS.curie("hasValidationArgumentContextualFieldReference"),
     model_uri=PEHTERMS.validation_arg_contextual_field_references,
     domain=None,
     range=Optional[
@@ -5155,9 +5155,9 @@ slots.validation_arg_contextual_field_references = Slot(
 )
 
 slots.validation_arg_expressions = Slot(
-    uri=PEHTERMS.validation_arg_expressions,
+    uri=PEHTERMS.hasValidationArgumentExpression,
     name="validation_arg_expressions",
-    curie=PEHTERMS.curie("validation_arg_expressions"),
+    curie=PEHTERMS.curie("hasValidationArgumentExpression"),
     model_uri=PEHTERMS.validation_arg_expressions,
     domain=None,
     range=Optional[
@@ -5168,108 +5168,108 @@ slots.validation_arg_expressions = Slot(
 )
 
 slots.contextual_field_reference = Slot(
-    uri=PEHTERMS.contextual_field_reference,
+    uri=PEHTERMS.hasContextualFieldReference,
     name="contextual_field_reference",
-    curie=PEHTERMS.curie("contextual_field_reference"),
+    curie=PEHTERMS.curie("hasContextualFieldReference"),
     model_uri=PEHTERMS.contextual_field_reference,
     domain=None,
     range=Optional[Union[dict, ContextualFieldReference]],
 )
 
 slots.dataset_label = Slot(
-    uri=PEHTERMS.dataset_label,
+    uri=PEHTERMS.hasDatasetLabel,
     name="dataset_label",
-    curie=PEHTERMS.curie("dataset_label"),
+    curie=PEHTERMS.curie("hasDatasetLabel"),
     model_uri=PEHTERMS.dataset_label,
     domain=None,
     range=Optional[str],
 )
 
 slots.field_label = Slot(
-    uri=PEHTERMS.field_label,
+    uri=PEHTERMS.hasFieldLabel,
     name="field_label",
-    curie=PEHTERMS.curie("field_label"),
+    curie=PEHTERMS.curie("hasFieldLabel"),
     model_uri=PEHTERMS.field_label,
     domain=None,
     range=Optional[str],
 )
 
 slots.process_state = Slot(
-    uri=PEHTERMS.process_state,
+    uri=PEHTERMS.hasProcessState,
     name="process_state",
-    curie=PEHTERMS.curie("process_state"),
+    curie=PEHTERMS.curie("hasProcessState"),
     model_uri=PEHTERMS.process_state,
     domain=None,
     range=Optional[str],
 )
 
 slots.imputation_state = Slot(
-    uri=PEHTERMS.imputation_state,
+    uri=PEHTERMS.hasImputationState,
     name="imputation_state",
-    curie=PEHTERMS.curie("imputation_state"),
+    curie=PEHTERMS.curie("hasImputationState"),
     model_uri=PEHTERMS.imputation_state,
     domain=None,
     range=Optional[str],
 )
 
 slots.mapping_name = Slot(
-    uri=PEHTERMS.mapping_name,
+    uri=PEHTERMS.hasMappingName,
     name="mapping_name",
-    curie=PEHTERMS.curie("mapping_name"),
+    curie=PEHTERMS.curie("hasMappingName"),
     model_uri=PEHTERMS.mapping_name,
     domain=None,
     range=Optional[str],
 )
 
 slots.round_decimals = Slot(
-    uri=PEHTERMS.round_decimals,
+    uri=PEHTERMS.hasRoundDecimals,
     name="round_decimals",
-    curie=PEHTERMS.curie("round_decimals"),
+    curie=PEHTERMS.curie("hasRoundDecimals"),
     model_uri=PEHTERMS.round_decimals,
     domain=None,
     range=Optional[int],
 )
 
 slots.scale_factor = Slot(
-    uri=PEHTERMS.scale_factor,
+    uri=PEHTERMS.hasScaleFactor,
     name="scale_factor",
-    curie=PEHTERMS.curie("scale_factor"),
+    curie=PEHTERMS.curie("hasScaleFactor"),
     model_uri=PEHTERMS.scale_factor,
     domain=None,
     range=Optional[Decimal],
 )
 
 slots.field = Slot(
-    uri=PEHTERMS.field,
+    uri=PEHTERMS.hasField,
     name="field",
-    curie=PEHTERMS.curie("field"),
+    curie=PEHTERMS.curie("hasField"),
     model_uri=PEHTERMS.field,
     domain=None,
     range=Optional[Union[str, ObservablePropertyMetadataFieldId]],
 )
 
 slots.key = Slot(
-    uri=PEHTERMS.key,
+    uri=PEHTERMS.hasKey,
     name="key",
-    curie=PEHTERMS.curie("key"),
+    curie=PEHTERMS.curie("hasKey"),
     model_uri=PEHTERMS.key,
     domain=None,
     range=Optional[str],
 )
 
 slots.value = Slot(
-    uri=PEHTERMS.value,
+    uri=RDF.value,
     name="value",
-    curie=PEHTERMS.curie("value"),
+    curie=RDF.curie("value"),
     model_uri=PEHTERMS.value,
     domain=None,
     range=Optional[str],
 )
 
 slots.metadata_fields = Slot(
-    uri=PEHTERMS.metadata_fields,
+    uri=PEHTERMS.hasMetadataField,
     name="metadata_fields",
-    curie=PEHTERMS.curie("metadata_fields"),
+    curie=PEHTERMS.curie("hasMetadataField"),
     model_uri=PEHTERMS.metadata_fields,
     domain=None,
     range=Optional[
@@ -5284,9 +5284,9 @@ slots.metadata_fields = Slot(
 )
 
 slots.stakeholders = Slot(
-    uri=PEHTERMS.stakeholders,
+    uri=PEHTERMS.hasStakeholder,
     name="stakeholders",
-    curie=PEHTERMS.curie("stakeholders"),
+    curie=PEHTERMS.curie("hasStakeholder"),
     model_uri=PEHTERMS.stakeholders,
     domain=None,
     range=Optional[
@@ -5298,27 +5298,27 @@ slots.stakeholders = Slot(
 )
 
 slots.project_id_list = Slot(
-    uri=PEHTERMS.project_id_list,
+    uri=PEHTERMS.hasProject,
     name="project_id_list",
-    curie=PEHTERMS.curie("project_id_list"),
+    curie=PEHTERMS.curie("hasProject"),
     model_uri=PEHTERMS.project_id_list,
     domain=None,
     range=Optional[Union[Union[str, ProjectId], list[Union[str, ProjectId]]]],
 )
 
 slots.study_id_list = Slot(
-    uri=PEHTERMS.study_id_list,
+    uri=PEHTERMS.hasStudy,
     name="study_id_list",
-    curie=PEHTERMS.curie("study_id_list"),
+    curie=PEHTERMS.curie("hasStudy"),
     model_uri=PEHTERMS.study_id_list,
     domain=None,
     range=Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]],
 )
 
 slots.observation_group_id_list = Slot(
-    uri=PEHTERMS.observation_group_id_list,
+    uri=PEHTERMS.hasObservationGroup,
     name="observation_group_id_list",
-    curie=PEHTERMS.curie("observation_group_id_list"),
+    curie=PEHTERMS.curie("hasObservationGroup"),
     model_uri=PEHTERMS.observation_group_id_list,
     domain=None,
     range=Optional[
@@ -5327,36 +5327,36 @@ slots.observation_group_id_list = Slot(
 )
 
 slots.observation_id_list = Slot(
-    uri=PEHTERMS.observation_id_list,
+    uri=PEHTERMS.hasObservation,
     name="observation_id_list",
-    curie=PEHTERMS.curie("observation_id_list"),
+    curie=PEHTERMS.curie("hasObservation"),
     model_uri=PEHTERMS.observation_id_list,
     domain=None,
     range=Optional[Union[Union[str, ObservationId], list[Union[str, ObservationId]]]],
 )
 
 slots.member_id_list = Slot(
-    uri=PEHTERMS.member_id_list,
+    uri=PEHTERMS.hasMember,
     name="member_id_list",
-    curie=PEHTERMS.curie("member_id_list"),
+    curie=PEHTERMS.curie("hasMember"),
     model_uri=PEHTERMS.member_id_list,
     domain=None,
     range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]],
 )
 
 slots.sample_id_list = Slot(
-    uri=PEHTERMS.sample_id_list,
+    uri=PEHTERMS.hasSample,
     name="sample_id_list",
-    curie=PEHTERMS.curie("sample_id_list"),
+    curie=PEHTERMS.curie("hasSample"),
     model_uri=PEHTERMS.sample_id_list,
     domain=None,
     range=Optional[Union[Union[str, SampleId], list[Union[str, SampleId]]]],
 )
 
 slots.projects = Slot(
-    uri=PEHTERMS.projects,
+    uri=PEHTERMS.hasProject,
     name="projects",
-    curie=PEHTERMS.curie("projects"),
+    curie=PEHTERMS.curie("hasProject"),
     model_uri=PEHTERMS.projects,
     domain=None,
     range=Optional[
@@ -5368,36 +5368,36 @@ slots.projects = Slot(
 )
 
 slots.geographic_scope = Slot(
-    uri=PEHTERMS.geographic_scope,
+    uri=SCHEMA.spatialCoverage,
     name="geographic_scope",
-    curie=PEHTERMS.curie("geographic_scope"),
+    curie=SCHEMA.curie("spatialCoverage"),
     model_uri=PEHTERMS.geographic_scope,
     domain=None,
     range=Optional[str],
 )
 
 slots.default_language = Slot(
-    uri=PEHTERMS.default_language,
+    uri=SCHEMA.inLanguage,
     name="default_language",
-    curie=PEHTERMS.curie("default_language"),
+    curie=SCHEMA.curie("inLanguage"),
     model_uri=PEHTERMS.default_language,
     domain=None,
     range=Optional[str],
 )
 
 slots.stakeholder = Slot(
-    uri=PEHTERMS.stakeholder,
+    uri=PEHTERMS.hasStakeholder,
     name="stakeholder",
-    curie=PEHTERMS.curie("stakeholder"),
+    curie=PEHTERMS.curie("hasStakeholder"),
     model_uri=PEHTERMS.stakeholder,
     domain=None,
     range=Optional[Union[str, StakeholderId]],
 )
 
 slots.project_stakeholders = Slot(
-    uri=PEHTERMS.project_stakeholders,
+    uri=PEHTERMS.hasProjectStakeholder,
     name="project_stakeholders",
-    curie=PEHTERMS.curie("project_stakeholders"),
+    curie=PEHTERMS.curie("hasProjectStakeholder"),
     model_uri=PEHTERMS.project_stakeholders,
     domain=None,
     range=Optional[
@@ -5406,9 +5406,9 @@ slots.project_stakeholders = Slot(
 )
 
 slots.studies = Slot(
-    uri=PEHTERMS.studies,
+    uri=PEHTERMS.hasStudy,
     name="studies",
-    curie=PEHTERMS.curie("studies"),
+    curie=PEHTERMS.curie("hasStudy"),
     model_uri=PEHTERMS.studies,
     domain=None,
     range=Optional[
@@ -5417,18 +5417,18 @@ slots.studies = Slot(
 )
 
 slots.project_roles = Slot(
-    uri=PEHTERMS.project_roles,
+    uri=PEHTERMS.hasProjectRole,
     name="project_roles",
-    curie=PEHTERMS.curie("project_roles"),
+    curie=PEHTERMS.curie("hasProjectRole"),
     model_uri=PEHTERMS.project_roles,
     domain=None,
     range=Optional[Union[Union[str, "ProjectRole"], list[Union[str, "ProjectRole"]]]],
 )
 
 slots.study_stakeholders = Slot(
-    uri=PEHTERMS.study_stakeholders,
+    uri=PEHTERMS.hasStudyStakeholder,
     name="study_stakeholders",
-    curie=PEHTERMS.curie("study_stakeholders"),
+    curie=PEHTERMS.curie("hasStudyStakeholder"),
     model_uri=PEHTERMS.study_stakeholders,
     domain=None,
     range=Optional[
@@ -5437,27 +5437,27 @@ slots.study_stakeholders = Slot(
 )
 
 slots.research_population_type = Slot(
-    uri=PEHTERMS.research_population_type,
+    uri=PEHTERMS.hasResearchPopulationType,
     name="research_population_type",
-    curie=PEHTERMS.curie("research_population_type"),
+    curie=PEHTERMS.curie("hasResearchPopulationType"),
     model_uri=PEHTERMS.research_population_type,
     domain=None,
     range=Optional[Union[str, "ResearchPopulationType"]],
 )
 
 slots.study_roles = Slot(
-    uri=PEHTERMS.study_roles,
+    uri=PEHTERMS.hasStudyRole,
     name="study_roles",
-    curie=PEHTERMS.curie("study_roles"),
+    curie=PEHTERMS.curie("hasStudyRole"),
     model_uri=PEHTERMS.study_roles,
     domain=None,
     range=Optional[Union[Union[str, "StudyRole"], list[Union[str, "StudyRole"]]]],
 )
 
 slots.observation_groups = Slot(
-    uri=PEHTERMS.observation_groups,
+    uri=PEHTERMS.hasObservationGroup,
     name="observation_groups",
-    curie=PEHTERMS.curie("observation_groups"),
+    curie=PEHTERMS.curie("hasObservationGroup"),
     model_uri=PEHTERMS.observation_groups,
     domain=None,
     range=Optional[
@@ -5469,9 +5469,9 @@ slots.observation_groups = Slot(
 )
 
 slots.observations = Slot(
-    uri=PEHTERMS.observations,
+    uri=PEHTERMS.hasObservation,
     name="observations",
-    curie=PEHTERMS.curie("observations"),
+    curie=PEHTERMS.curie("hasObservation"),
     model_uri=PEHTERMS.observations,
     domain=None,
     range=Optional[
@@ -5483,9 +5483,9 @@ slots.observations = Slot(
 )
 
 slots.derived_observations = Slot(
-    uri=PEHTERMS.derived_observations,
+    uri=PEHTERMS.hasDerivedObservation,
     name="derived_observations",
-    curie=PEHTERMS.curie("derived_observations"),
+    curie=PEHTERMS.curie("hasDerivedObservation"),
     model_uri=PEHTERMS.derived_observations,
     domain=None,
     range=Optional[
@@ -5497,18 +5497,18 @@ slots.derived_observations = Slot(
 )
 
 slots.linktype = Slot(
-    uri=PEHTERMS.linktype,
+    uri=PEHTERMS.hasLinkType,
     name="linktype",
-    curie=PEHTERMS.curie("linktype"),
+    curie=PEHTERMS.curie("hasLinkType"),
     model_uri=PEHTERMS.linktype,
     domain=None,
     range=Optional[Union[str, "LinkType"]],
 )
 
 slots.physical_entities = Slot(
-    uri=PEHTERMS.physical_entities,
+    uri=PEHTERMS.hasPhysicalEntity,
     name="physical_entities",
-    curie=PEHTERMS.curie("physical_entities"),
+    curie=PEHTERMS.curie("hasPhysicalEntity"),
     model_uri=PEHTERMS.physical_entities,
     domain=None,
     range=Optional[
@@ -5520,9 +5520,9 @@ slots.physical_entities = Slot(
 )
 
 slots.physical_entity_links = Slot(
-    uri=PEHTERMS.physical_entity_links,
+    uri=PEHTERMS.hasPhysicalEntityLink,
     name="physical_entity_links",
-    curie=PEHTERMS.curie("physical_entity_links"),
+    curie=PEHTERMS.curie("hasPhysicalEntityLink"),
     model_uri=PEHTERMS.physical_entity_links,
     domain=None,
     range=Optional[
@@ -5531,18 +5531,18 @@ slots.physical_entity_links = Slot(
 )
 
 slots.physical_entity = Slot(
-    uri=PEHTERMS.physical_entity,
+    uri=PEHTERMS.hasPhysicalEntity,
     name="physical_entity",
-    curie=PEHTERMS.curie("physical_entity"),
+    curie=PEHTERMS.curie("hasPhysicalEntity"),
     model_uri=PEHTERMS.physical_entity,
     domain=None,
     range=Optional[Union[str, PhysicalEntityId]],
 )
 
 slots.study_entities = Slot(
-    uri=PEHTERMS.study_entities,
+    uri=PEHTERMS.hasStudyEntity,
     name="study_entities",
-    curie=PEHTERMS.curie("study_entities"),
+    curie=PEHTERMS.curie("hasStudyEntity"),
     model_uri=PEHTERMS.study_entities,
     domain=None,
     range=Optional[
@@ -5554,18 +5554,18 @@ slots.study_entities = Slot(
 )
 
 slots.study_entity_id_list = Slot(
-    uri=PEHTERMS.study_entity_id_list,
+    uri=PEHTERMS.hasStudyEntity,
     name="study_entity_id_list",
-    curie=PEHTERMS.curie("study_entity_id_list"),
+    curie=PEHTERMS.curie("hasStudyEntity"),
     model_uri=PEHTERMS.study_entity_id_list,
     domain=None,
     range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]],
 )
 
 slots.study_entity_links = Slot(
-    uri=PEHTERMS.study_entity_links,
+    uri=PEHTERMS.hasStudyEntityLink,
     name="study_entity_links",
-    curie=PEHTERMS.curie("study_entity_links"),
+    curie=PEHTERMS.curie("hasStudyEntityLink"),
     model_uri=PEHTERMS.study_entity_links,
     domain=None,
     range=Optional[
@@ -5574,81 +5574,81 @@ slots.study_entity_links = Slot(
 )
 
 slots.study_entity = Slot(
-    uri=PEHTERMS.study_entity,
+    uri=PEHTERMS.hasStudyEntity,
     name="study_entity",
-    curie=PEHTERMS.curie("study_entity"),
+    curie=PEHTERMS.curie("hasStudyEntity"),
     model_uri=PEHTERMS.study_entity,
     domain=None,
     range=Optional[Union[str, StudyEntityId]],
 )
 
 slots.recruited_in_project = Slot(
-    uri=PEHTERMS.recruited_in_project,
+    uri=PEHTERMS.wasRecruitedInProject,
     name="recruited_in_project",
-    curie=PEHTERMS.curie("recruited_in_project"),
+    curie=PEHTERMS.curie("wasRecruitedInProject"),
     model_uri=PEHTERMS.recruited_in_project,
     domain=None,
     range=Optional[Union[str, ProjectId]],
 )
 
 slots.sampled_in_project = Slot(
-    uri=PEHTERMS.sampled_in_project,
+    uri=PEHTERMS.wasSampledInProject,
     name="sampled_in_project",
-    curie=PEHTERMS.curie("sampled_in_project"),
+    curie=PEHTERMS.curie("wasSampledInProject"),
     model_uri=PEHTERMS.sampled_in_project,
     domain=None,
     range=Optional[Union[str, ProjectId]],
 )
 
 slots.physical_label = Slot(
-    uri=PEHTERMS.physical_label,
+    uri=PEHTERMS.hasPhysicalLabel,
     name="physical_label",
-    curie=PEHTERMS.curie("physical_label"),
+    curie=PEHTERMS.curie("hasPhysicalLabel"),
     model_uri=PEHTERMS.physical_label,
     domain=None,
     range=Optional[str],
 )
 
 slots.location = Slot(
-    uri=PEHTERMS.location,
+    uri=SCHEMA.location,
     name="location",
-    curie=PEHTERMS.curie("location"),
+    curie=SCHEMA.curie("location"),
     model_uri=PEHTERMS.location,
     domain=None,
     range=Optional[str],
 )
 
 slots.observation = Slot(
-    uri=PEHTERMS.observation,
+    uri=PEHTERMS.hasObservation,
     name="observation",
-    curie=PEHTERMS.curie("observation"),
+    curie=PEHTERMS.curie("hasObservation"),
     model_uri=PEHTERMS.observation,
     domain=None,
     range=Optional[Union[str, ObservationId]],
 )
 
 slots.observation_type = Slot(
-    uri=PEHTERMS.observation_type,
+    uri=PEHTERMS.hasObservationType,
     name="observation_type",
-    curie=PEHTERMS.curie("observation_type"),
+    curie=PEHTERMS.curie("hasObservationType"),
     model_uri=PEHTERMS.observation_type,
     domain=None,
     range=Optional[Union[str, "ObservationType"]],
 )
 
 slots.observation_design = Slot(
-    uri=PEHTERMS.observation_design,
+    uri=PEHTERMS.hasObservationDesign,
     name="observation_design",
-    curie=PEHTERMS.curie("observation_design"),
+    curie=PEHTERMS.curie("hasObservationDesign"),
     model_uri=PEHTERMS.observation_design,
     domain=None,
     range=Optional[Union[str, ObservationDesignId]],
 )
 
 slots.observation_designs = Slot(
-    uri=PEHTERMS.observation_designs,
+    uri=PEHTERMS.hasObservationDesign,
     name="observation_designs",
-    curie=PEHTERMS.curie("observation_designs"),
+    curie=PEHTERMS.curie("hasObservationDesign"),
     model_uri=PEHTERMS.observation_designs,
     domain=None,
     range=Optional[
@@ -5660,9 +5660,9 @@ slots.observation_designs = Slot(
 )
 
 slots.observation_design_id_list = Slot(
-    uri=PEHTERMS.observation_design_id_list,
+    uri=PEHTERMS.hasObservationDesign,
     name="observation_design_id_list",
-    curie=PEHTERMS.curie("observation_design_id_list"),
+    curie=PEHTERMS.curie("hasObservationDesign"),
     model_uri=PEHTERMS.observation_design_id_list,
     domain=None,
     range=Optional[
@@ -5671,18 +5671,18 @@ slots.observation_design_id_list = Slot(
 )
 
 slots.observation_result_type = Slot(
-    uri=PEHTERMS.observation_result_type,
+    uri=PEHTERMS.hasObservationResultType,
     name="observation_result_type",
-    curie=PEHTERMS.curie("observation_result_type"),
+    curie=PEHTERMS.curie("hasObservationResultType"),
     model_uri=PEHTERMS.observation_result_type,
     domain=None,
     range=Optional[Union[str, "ObservationResultType"]],
 )
 
 slots.observable_property_specifications = Slot(
-    uri=PEHTERMS.observable_property_specifications,
+    uri=PEHTERMS.hasObservablePropertySpecification,
     name="observable_property_specifications",
-    curie=PEHTERMS.curie("observable_property_specifications"),
+    curie=PEHTERMS.curie("hasObservablePropertySpecification"),
     model_uri=PEHTERMS.observable_property_specifications,
     domain=None,
     range=Optional[
@@ -5694,18 +5694,18 @@ slots.observable_property_specifications = Slot(
 )
 
 slots.specification_category = Slot(
-    uri=PEHTERMS.specification_category,
+    uri=PEHTERMS.hasSpecificationCategory,
     name="specification_category",
-    curie=PEHTERMS.curie("specification_category"),
+    curie=PEHTERMS.curie("hasSpecificationCategory"),
     model_uri=PEHTERMS.specification_category,
     domain=None,
     range=Optional[Union[str, "ObservablePropertySpecificationCategory"]],
 )
 
 slots.observation_results = Slot(
-    uri=PEHTERMS.observation_results,
+    uri=PEHTERMS.hasObservationResult,
     name="observation_results",
-    curie=PEHTERMS.curie("observation_results"),
+    curie=PEHTERMS.curie("hasObservationResult"),
     model_uri=PEHTERMS.observation_results,
     domain=None,
     range=Optional[
@@ -5717,9 +5717,9 @@ slots.observation_results = Slot(
 )
 
 slots.observation_result_id_list = Slot(
-    uri=PEHTERMS.observation_result_id_list,
+    uri=PEHTERMS.hasObservationResult,
     name="observation_result_id_list",
-    curie=PEHTERMS.curie("observation_result_id_list"),
+    curie=PEHTERMS.curie("hasObservationResult"),
     model_uri=PEHTERMS.observation_result_id_list,
     domain=None,
     range=Optional[
@@ -5728,36 +5728,36 @@ slots.observation_result_id_list = Slot(
 )
 
 slots.observable_entity_type = Slot(
-    uri=PEHTERMS.observable_entity_type,
+    uri=PEHTERMS.hasObservableEntityType,
     name="observable_entity_type",
-    curie=PEHTERMS.curie("observable_entity_type"),
+    curie=PEHTERMS.curie("hasObservableEntityType"),
     model_uri=PEHTERMS.observable_entity_type,
     domain=None,
     range=Optional[Union[str, "ObservableEntityType"]],
 )
 
 slots.observable_entity_id_list = Slot(
-    uri=PEHTERMS.observable_entity_id_list,
+    uri=PEHTERMS.hasObservableEntity,
     name="observable_entity_id_list",
-    curie=PEHTERMS.curie("observable_entity_id_list"),
+    curie=PEHTERMS.curie("hasObservableEntity"),
     model_uri=PEHTERMS.observable_entity_id_list,
     domain=None,
     range=Optional[Union[Union[str, StudyEntityId], list[Union[str, StudyEntityId]]]],
 )
 
 slots.observable_entity = Slot(
-    uri=PEHTERMS.observable_entity,
+    uri=PEHTERMS.hasObservableEntity,
     name="observable_entity",
-    curie=PEHTERMS.curie("observable_entity"),
+    curie=PEHTERMS.curie("hasObservableEntity"),
     model_uri=PEHTERMS.observable_entity,
     domain=None,
     range=Optional[Union[str, StudyEntityId]],
 )
 
 slots.observable_properties = Slot(
-    uri=PEHTERMS.observable_properties,
+    uri=PEHTERMS.hasObservableProperty,
     name="observable_properties",
-    curie=PEHTERMS.curie("observable_properties"),
+    curie=PEHTERMS.curie("hasObservableProperty"),
     model_uri=PEHTERMS.observable_properties,
     domain=None,
     range=Optional[
@@ -5769,18 +5769,18 @@ slots.observable_properties = Slot(
 )
 
 slots.observable_property = Slot(
-    uri=PEHTERMS.observable_property,
+    uri=PEHTERMS.hasObservableProperty,
     name="observable_property",
-    curie=PEHTERMS.curie("observable_property"),
+    curie=PEHTERMS.curie("hasObservableProperty"),
     model_uri=PEHTERMS.observable_property,
     domain=None,
     range=Optional[Union[str, ObservablePropertyId]],
 )
 
 slots.observed_values = Slot(
-    uri=PEHTERMS.observed_values,
+    uri=PEHTERMS.hasObservedValue,
     name="observed_values",
-    curie=PEHTERMS.curie("observed_values"),
+    curie=PEHTERMS.curie("hasObservedValue"),
     model_uri=PEHTERMS.observed_values,
     domain=None,
     range=Optional[Union[Union[dict, ObservedValue], list[Union[dict, ObservedValue]]]],
@@ -5796,99 +5796,99 @@ slots.unit = Slot(
 )
 
 slots.raw_value = Slot(
-    uri=PEHTERMS.raw_value,
+    uri=PEHTERMS.hasRawValue,
     name="raw_value",
-    curie=PEHTERMS.curie("raw_value"),
+    curie=PEHTERMS.curie("hasRawValue"),
     model_uri=PEHTERMS.raw_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.raw_unit = Slot(
-    uri=PEHTERMS.raw_unit,
+    uri=PEHTERMS.hasRawUnit,
     name="raw_unit",
-    curie=PEHTERMS.curie("raw_unit"),
+    curie=PEHTERMS.curie("hasRawUnit"),
     model_uri=PEHTERMS.raw_unit,
     domain=None,
     range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.imputed_value = Slot(
-    uri=PEHTERMS.imputed_value,
+    uri=PEHTERMS.hasImputedValue,
     name="imputed_value",
-    curie=PEHTERMS.curie("imputed_value"),
+    curie=PEHTERMS.curie("hasImputedValue"),
     model_uri=PEHTERMS.imputed_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.imputed_unit = Slot(
-    uri=PEHTERMS.imputed_unit,
+    uri=PEHTERMS.hasImputedUnit,
     name="imputed_unit",
-    curie=PEHTERMS.curie("imputed_unit"),
+    curie=PEHTERMS.curie("hasImputedUnit"),
     model_uri=PEHTERMS.imputed_unit,
     domain=None,
     range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.normalised_value = Slot(
-    uri=PEHTERMS.normalised_value,
+    uri=PEHTERMS.hasNormalisedValue,
     name="normalised_value",
-    curie=PEHTERMS.curie("normalised_value"),
+    curie=PEHTERMS.curie("hasNormalisedValue"),
     model_uri=PEHTERMS.normalised_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.normalised_unit = Slot(
-    uri=PEHTERMS.normalised_unit,
+    uri=PEHTERMS.hasNormalisedUnit,
     name="normalised_unit",
-    curie=PEHTERMS.curie("normalised_unit"),
+    curie=PEHTERMS.curie("hasNormalisedUnit"),
     model_uri=PEHTERMS.normalised_unit,
     domain=None,
     range=Optional[Union[str, QUDTUnitId]],
 )
 
 slots.value_as_string = Slot(
-    uri=PEHTERMS.value_as_string,
+    uri=PEHTERMS.hasValueAsString,
     name="value_as_string",
-    curie=PEHTERMS.curie("value_as_string"),
+    curie=PEHTERMS.curie("hasValueAsString"),
     model_uri=PEHTERMS.value_as_string,
     domain=None,
     range=Optional[str],
 )
 
 slots.quality_data = Slot(
-    uri=PEHTERMS.quality_data,
+    uri=PEHTERMS.hasQualityData,
     name="quality_data",
-    curie=PEHTERMS.curie("quality_data"),
+    curie=PEHTERMS.curie("hasQualityData"),
     model_uri=PEHTERMS.quality_data,
     domain=None,
     range=Optional[Union[Union[dict, QualityData], list[Union[dict, QualityData]]]],
 )
 
 slots.quality_context_key = Slot(
-    uri=PEHTERMS.quality_context_key,
+    uri=PEHTERMS.hasQualityContextKey,
     name="quality_context_key",
-    curie=PEHTERMS.curie("quality_context_key"),
+    curie=PEHTERMS.curie("hasQualityContextKey"),
     model_uri=PEHTERMS.quality_context_key,
     domain=None,
     range=Optional[str],
 )
 
 slots.quality_value = Slot(
-    uri=PEHTERMS.quality_value,
+    uri=PEHTERMS.hasQualityValue,
     name="quality_value",
-    curie=PEHTERMS.curie("quality_value"),
+    curie=PEHTERMS.curie("hasQualityValue"),
     model_uri=PEHTERMS.quality_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.provenance_data = Slot(
-    uri=PEHTERMS.provenance_data,
+    uri=PEHTERMS.hasProvenanceData,
     name="provenance_data",
-    curie=PEHTERMS.curie("provenance_data"),
+    curie=PEHTERMS.curie("hasProvenanceData"),
     model_uri=PEHTERMS.provenance_data,
     domain=None,
     range=Optional[
@@ -5897,36 +5897,36 @@ slots.provenance_data = Slot(
 )
 
 slots.provenance_context_key = Slot(
-    uri=PEHTERMS.provenance_context_key,
+    uri=PEHTERMS.hasProvenanceContextKey,
     name="provenance_context_key",
-    curie=PEHTERMS.curie("provenance_context_key"),
+    curie=PEHTERMS.curie("hasProvenanceContextKey"),
     model_uri=PEHTERMS.provenance_context_key,
     domain=None,
     range=Optional[str],
 )
 
 slots.provenance_value = Slot(
-    uri=PEHTERMS.provenance_value,
+    uri=PEHTERMS.hasProvenanceValue,
     name="provenance_value",
-    curie=PEHTERMS.curie("provenance_value"),
+    curie=PEHTERMS.curie("hasProvenanceValue"),
     model_uri=PEHTERMS.provenance_value,
     domain=None,
     range=Optional[str],
 )
 
 slots.layout = Slot(
-    uri=PEHTERMS.layout,
+    uri=PEHTERMS.hasLayout,
     name="layout",
-    curie=PEHTERMS.curie("layout"),
+    curie=PEHTERMS.curie("hasLayout"),
     model_uri=PEHTERMS.layout,
     domain=None,
     range=Optional[Union[str, DataLayoutId]],
 )
 
 slots.layouts = Slot(
-    uri=PEHTERMS.layouts,
+    uri=PEHTERMS.hasLayout,
     name="layouts",
-    curie=PEHTERMS.curie("layouts"),
+    curie=PEHTERMS.curie("hasLayout"),
     model_uri=PEHTERMS.layouts,
     domain=None,
     range=Optional[
@@ -5938,18 +5938,18 @@ slots.layouts = Slot(
 )
 
 slots.section = Slot(
-    uri=PEHTERMS.section,
+    uri=PEHTERMS.hasSection,
     name="section",
-    curie=PEHTERMS.curie("section"),
+    curie=PEHTERMS.curie("hasSection"),
     model_uri=PEHTERMS.section,
     domain=None,
     range=Optional[Union[str, DataLayoutSectionId]],
 )
 
 slots.sections = Slot(
-    uri=PEHTERMS.sections,
+    uri=PEHTERMS.hasSection,
     name="sections",
-    curie=PEHTERMS.curie("sections"),
+    curie=PEHTERMS.curie("hasSection"),
     model_uri=PEHTERMS.sections,
     domain=None,
     range=Optional[
@@ -5961,18 +5961,18 @@ slots.sections = Slot(
 )
 
 slots.section_type = Slot(
-    uri=PEHTERMS.section_type,
+    uri=PEHTERMS.hasSectionType,
     name="section_type",
-    curie=PEHTERMS.curie("section_type"),
+    curie=PEHTERMS.curie("hasSectionType"),
     model_uri=PEHTERMS.section_type,
     domain=None,
     range=Optional[Union[str, "DataLayoutSectionType"]],
 )
 
 slots.elements = Slot(
-    uri=PEHTERMS.elements,
+    uri=PEHTERMS.hasElement,
     name="elements",
-    curie=PEHTERMS.curie("elements"),
+    curie=PEHTERMS.curie("hasElement"),
     model_uri=PEHTERMS.elements,
     domain=None,
     range=Optional[
@@ -5981,45 +5981,45 @@ slots.elements = Slot(
 )
 
 slots.element_type = Slot(
-    uri=PEHTERMS.element_type,
+    uri=PEHTERMS.hasElementType,
     name="element_type",
-    curie=PEHTERMS.curie("element_type"),
+    curie=PEHTERMS.curie("hasElementType"),
     model_uri=PEHTERMS.element_type,
     domain=None,
     range=Optional[Union[str, "DataLayoutElementType"]],
 )
 
 slots.element_style = Slot(
-    uri=PEHTERMS.element_style,
+    uri=PEHTERMS.hasElementStyle,
     name="element_style",
-    curie=PEHTERMS.curie("element_style"),
+    curie=PEHTERMS.curie("hasElementStyle"),
     model_uri=PEHTERMS.element_style,
     domain=None,
     range=Optional[Union[str, "DataLayoutElementStyle"]],
 )
 
 slots.is_observable_entity_key = Slot(
-    uri=PEHTERMS.is_observable_entity_key,
+    uri=PEHTERMS.isObservableEntityKey,
     name="is_observable_entity_key",
-    curie=PEHTERMS.curie("is_observable_entity_key"),
+    curie=PEHTERMS.curie("isObservableEntityKey"),
     model_uri=PEHTERMS.is_observable_entity_key,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
 slots.foreign_key_link = Slot(
-    uri=PEHTERMS.foreign_key_link,
+    uri=PEHTERMS.hasForeignKeyLink,
     name="foreign_key_link",
-    curie=PEHTERMS.curie("foreign_key_link"),
+    curie=PEHTERMS.curie("hasForeignKeyLink"),
     model_uri=PEHTERMS.foreign_key_link,
     domain=None,
     range=Optional[Union[dict, DataLayoutElementLink]],
 )
 
 slots.import_configs = Slot(
-    uri=PEHTERMS.import_configs,
+    uri=PEHTERMS.hasImportConfig,
     name="import_configs",
-    curie=PEHTERMS.curie("import_configs"),
+    curie=PEHTERMS.curie("hasImportConfig"),
     model_uri=PEHTERMS.import_configs,
     domain=None,
     range=Optional[
@@ -6031,18 +6031,18 @@ slots.import_configs = Slot(
 )
 
 slots.section_mapping = Slot(
-    uri=PEHTERMS.section_mapping,
+    uri=PEHTERMS.hasSectionMapping,
     name="section_mapping",
-    curie=PEHTERMS.curie("section_mapping"),
+    curie=PEHTERMS.curie("hasSectionMapping"),
     model_uri=PEHTERMS.section_mapping,
     domain=None,
     range=Optional[Union[dict, DataImportSectionMapping]],
 )
 
 slots.section_mapping_links = Slot(
-    uri=PEHTERMS.section_mapping_links,
+    uri=PEHTERMS.hasSectionMappingLink,
     name="section_mapping_links",
-    curie=PEHTERMS.curie("section_mapping_links"),
+    curie=PEHTERMS.curie("hasSectionMappingLink"),
     model_uri=PEHTERMS.section_mapping_links,
     domain=None,
     range=Optional[
@@ -6054,9 +6054,9 @@ slots.section_mapping_links = Slot(
 )
 
 slots.data_requests = Slot(
-    uri=PEHTERMS.data_requests,
+    uri=PEHTERMS.hasDataRequest,
     name="data_requests",
-    curie=PEHTERMS.curie("data_requests"),
+    curie=PEHTERMS.curie("hasDataRequest"),
     model_uri=PEHTERMS.data_requests,
     domain=None,
     range=Optional[
@@ -6068,63 +6068,63 @@ slots.data_requests = Slot(
 )
 
 slots.data_roles = Slot(
-    uri=PEHTERMS.data_roles,
+    uri=PEHTERMS.hasDataRole,
     name="data_roles",
-    curie=PEHTERMS.curie("data_roles"),
+    curie=PEHTERMS.curie("hasDataRole"),
     model_uri=PEHTERMS.data_roles,
     domain=None,
     range=Optional[Union[Union[str, "DataRole"], list[Union[str, "DataRole"]]]],
 )
 
 slots.contacts = Slot(
-    uri=PEHTERMS.contacts,
+    uri=PEHTERMS.hasContact,
     name="contacts",
-    curie=PEHTERMS.curie("contacts"),
+    curie=PEHTERMS.curie("hasContact"),
     model_uri=PEHTERMS.contacts,
     domain=None,
     range=Optional[Union[Union[dict, Contact], list[Union[dict, Contact]]]],
 )
 
 slots.contact_roles = Slot(
-    uri=PEHTERMS.contact_roles,
+    uri=PEHTERMS.hasContactRole,
     name="contact_roles",
-    curie=PEHTERMS.curie("contact_roles"),
+    curie=PEHTERMS.curie("hasContactRole"),
     model_uri=PEHTERMS.contact_roles,
     domain=None,
     range=Optional[Union[Union[str, "ContactRole"], list[Union[str, "ContactRole"]]]],
 )
 
 slots.contact_email = Slot(
-    uri=PEHTERMS.contact_email,
+    uri=SCHEMA.email,
     name="contact_email",
-    curie=PEHTERMS.curie("contact_email"),
+    curie=SCHEMA.curie("email"),
     model_uri=PEHTERMS.contact_email,
     domain=None,
     range=Optional[str],
 )
 
 slots.contact_phone = Slot(
-    uri=PEHTERMS.contact_phone,
+    uri=SCHEMA.telephone,
     name="contact_phone",
-    curie=PEHTERMS.curie("contact_phone"),
+    curie=SCHEMA.curie("telephone"),
     model_uri=PEHTERMS.contact_phone,
     domain=None,
     range=Optional[str],
 )
 
 slots.request_properties = Slot(
-    uri=PEHTERMS.request_properties,
+    uri=PEHTERMS.hasRequestProperty,
     name="request_properties",
-    curie=PEHTERMS.curie("request_properties"),
+    curie=PEHTERMS.curie("hasRequestProperty"),
     model_uri=PEHTERMS.request_properties,
     domain=None,
     range=Optional[str],
 )
 
 slots.data_stakeholders = Slot(
-    uri=PEHTERMS.data_stakeholders,
+    uri=PEHTERMS.hasDataStakeholder,
     name="data_stakeholders",
-    curie=PEHTERMS.curie("data_stakeholders"),
+    curie=PEHTERMS.curie("hasDataStakeholder"),
     model_uri=PEHTERMS.data_stakeholders,
     domain=None,
     range=Optional[
@@ -6133,9 +6133,9 @@ slots.data_stakeholders = Slot(
 )
 
 slots.research_objectives = Slot(
-    uri=PEHTERMS.research_objectives,
+    uri=PEHTERMS.hasResearchObjective,
     name="research_objectives",
-    curie=PEHTERMS.curie("research_objectives"),
+    curie=PEHTERMS.curie("hasResearchObjective"),
     model_uri=PEHTERMS.research_objectives,
     domain=None,
     range=Optional[
@@ -6144,9 +6144,9 @@ slots.research_objectives = Slot(
 )
 
 slots.processing_actions = Slot(
-    uri=PEHTERMS.processing_actions,
+    uri=PEHTERMS.hasProcessingAction,
     name="processing_actions",
-    curie=PEHTERMS.curie("processing_actions"),
+    curie=PEHTERMS.curie("hasProcessingAction"),
     model_uri=PEHTERMS.processing_actions,
     domain=None,
     range=Optional[
@@ -6155,9 +6155,9 @@ slots.processing_actions = Slot(
 )
 
 slots.processing_steps = Slot(
-    uri=PEHTERMS.processing_steps,
+    uri=PEHTERMS.hasProcessingStep,
     name="processing_steps",
-    curie=PEHTERMS.curie("processing_steps"),
+    curie=PEHTERMS.curie("hasProcessingStep"),
     model_uri=PEHTERMS.processing_steps,
     domain=None,
     range=Optional[
@@ -6166,27 +6166,27 @@ slots.processing_steps = Slot(
 )
 
 slots.remark_on_content = Slot(
-    uri=PEHTERMS.remark_on_content,
+    uri=PEHTERMS.hasRemarkOnContent,
     name="remark_on_content",
-    curie=PEHTERMS.curie("remark_on_content"),
+    curie=PEHTERMS.curie("hasRemarkOnContent"),
     model_uri=PEHTERMS.remark_on_content,
     domain=None,
     range=Optional[str],
 )
 
 slots.remark_on_methodology = Slot(
-    uri=PEHTERMS.remark_on_methodology,
+    uri=PEHTERMS.hasRemarkOnMethodology,
     name="remark_on_methodology",
-    curie=PEHTERMS.curie("remark_on_methodology"),
+    curie=PEHTERMS.curie("hasRemarkOnMethodology"),
     model_uri=PEHTERMS.remark_on_methodology,
     domain=None,
     range=Optional[str],
 )
 
 slots.observed_entity_properties = Slot(
-    uri=PEHTERMS.observed_entity_properties,
+    uri=PEHTERMS.hasObservedEntityProperty,
     name="observed_entity_properties",
-    curie=PEHTERMS.curie("observed_entity_properties"),
+    curie=PEHTERMS.curie("hasObservedEntityProperty"),
     model_uri=PEHTERMS.observed_entity_properties,
     domain=None,
     range=Optional[
@@ -6198,81 +6198,81 @@ slots.observed_entity_properties = Slot(
 )
 
 slots.processing_description = Slot(
-    uri=PEHTERMS.processing_description,
+    uri=PEHTERMS.hasProcessingDescription,
     name="processing_description",
-    curie=PEHTERMS.curie("processing_description"),
+    curie=PEHTERMS.curie("hasProcessingDescription"),
     model_uri=PEHTERMS.processing_description,
     domain=None,
     range=Optional[str],
 )
 
 slots.objective_type = Slot(
-    uri=PEHTERMS.objective_type,
+    uri=PEHTERMS.hasObjectiveType,
     name="objective_type",
-    curie=PEHTERMS.curie("objective_type"),
+    curie=PEHTERMS.curie("hasObjectiveType"),
     model_uri=PEHTERMS.objective_type,
     domain=None,
     range=Optional[Union[str, "ObjectiveType"]],
 )
 
 slots.authors = Slot(
-    uri=PEHTERMS.authors,
+    uri=SCHEMA.author,
     name="authors",
-    curie=PEHTERMS.curie("authors"),
+    curie=SCHEMA.curie("author"),
     model_uri=PEHTERMS.authors,
     domain=None,
     range=Optional[Union[str, list[str]]],
 )
 
 slots.start_date = Slot(
-    uri=PEHTERMS.start_date,
+    uri=SCHEMA.startDate,
     name="start_date",
-    curie=PEHTERMS.curie("start_date"),
+    curie=SCHEMA.curie("startDate"),
     model_uri=PEHTERMS.start_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.end_date = Slot(
-    uri=PEHTERMS.end_date,
+    uri=SCHEMA.endDate,
     name="end_date",
-    curie=PEHTERMS.curie("end_date"),
+    curie=SCHEMA.curie("endDate"),
     model_uri=PEHTERMS.end_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.delivery_date = Slot(
-    uri=PEHTERMS.delivery_date,
+    uri=PEHTERMS.hasDeliveryDate,
     name="delivery_date",
-    curie=PEHTERMS.curie("delivery_date"),
+    curie=PEHTERMS.curie("hasDeliveryDate"),
     model_uri=PEHTERMS.delivery_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.observation_start_date = Slot(
-    uri=PEHTERMS.observation_start_date,
+    uri=PEHTERMS.hasObservationStartDate,
     name="observation_start_date",
-    curie=PEHTERMS.curie("observation_start_date"),
+    curie=PEHTERMS.curie("hasObservationStartDate"),
     model_uri=PEHTERMS.observation_start_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.observation_end_date = Slot(
-    uri=PEHTERMS.observation_end_date,
+    uri=PEHTERMS.hasObservationEndDate,
     name="observation_end_date",
-    curie=PEHTERMS.curie("observation_end_date"),
+    curie=PEHTERMS.curie("hasObservationEndDate"),
     model_uri=PEHTERMS.observation_end_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.collection_date = Slot(
-    uri=PEHTERMS.collection_date,
+    uri=PEHTERMS.hasCollectionDate,
     name="collection_date",
-    curie=PEHTERMS.curie("collection_date"),
+    curie=PEHTERMS.curie("hasCollectionDate"),
     model_uri=PEHTERMS.collection_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],

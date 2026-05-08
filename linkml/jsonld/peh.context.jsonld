@@ -20,55 +20,55 @@
       "wikidata": "https://www.wikidata.org/wiki/",
       "@vocab": "https://w3id.org/peh/terms/",
       "alias": {
-         "@id": "alias"
+         "@id": "schema:alternateName"
       },
       "aliases": {
-         "@id": "aliases"
+         "@id": "schema:alternateName"
       },
       "authors": {
-         "@id": "authors"
+         "@id": "schema:author"
       },
       "biochementity": {
          "@type": "@id",
-         "@id": "biochementity"
+         "@id": "hasBioChemEntity"
       },
       "biochementity_subclasses": {
          "@type": "@id",
-         "@id": "biochementity_subclasses"
+         "@id": "hasBioChemEntitySubclass"
       },
       "calculation_design": {
          "@type": "@id",
-         "@id": "calculation_design"
+         "@id": "hasCalculationDesign"
       },
       "calculation_implementation": {
          "@type": "@id",
-         "@id": "calculation_implementation"
+         "@id": "hasCalculationImplementation"
       },
       "calculation_implementation_as_json": {
-         "@id": "calculation_implementation_as_json"
+         "@id": "hasCalculationImplementationAsJson"
       },
       "calculation_name": {
-         "@id": "calculation_name"
+         "@id": "hasCalculationName"
       },
       "categorical": {
          "@type": "xsd:boolean",
-         "@id": "categorical"
+         "@id": "isCategorical"
       },
       "collection_date": {
          "@type": "xsd:date",
-         "@id": "collection_date"
+         "@id": "hasCollectionDate"
       },
       "conditional": {
-         "@id": "conditional"
+         "@id": "isConditional"
       },
       "constraints": {
-         "@id": "constraints"
+         "@id": "hasConstraint"
       },
       "contact_email": {
-         "@id": "contact_email"
+         "@id": "schema:email"
       },
       "contact_phone": {
-         "@id": "contact_phone"
+         "@id": "schema:telephone"
       },
       "contact_roles": {
          "@context": {
@@ -76,23 +76,23 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "contact_roles"
+         "@id": "hasContactRole"
       },
       "contacts": {
          "@type": "@id",
-         "@id": "contacts"
+         "@id": "hasContact"
       },
       "context": {
          "@type": "@id",
-         "@id": "context"
+         "@id": "hasContext"
       },
       "context_aliases": {
          "@type": "@id",
-         "@id": "context_aliases"
+         "@id": "hasContextAlias"
       },
       "contextual_field_reference": {
          "@type": "@id",
-         "@id": "contextual_field_reference"
+         "@id": "hasContextualFieldReference"
       },
       "current_validation_status": {
          "@context": {
@@ -100,11 +100,11 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "current_validation_status"
+         "@id": "hasCurrentValidationStatus"
       },
       "data_requests": {
          "@type": "@id",
-         "@id": "data_requests"
+         "@id": "hasDataRequest"
       },
       "data_roles": {
          "@context": {
@@ -112,25 +112,25 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "data_roles"
+         "@id": "hasDataRole"
       },
       "data_stakeholders": {
          "@type": "@id",
-         "@id": "data_stakeholders"
+         "@id": "hasDataStakeholder"
       },
       "dataset_label": {
-         "@id": "dataset_label"
+         "@id": "hasDatasetLabel"
       },
       "default_language": {
-         "@id": "default_language"
+         "@id": "schema:inLanguage"
       },
       "delivery_date": {
          "@type": "xsd:date",
-         "@id": "delivery_date"
+         "@id": "hasDeliveryDate"
       },
       "derived_observations": {
          "@type": "@id",
-         "@id": "derived_observations"
+         "@id": "hasDerivedObservation"
       },
       "description": {
          "@id": "schema:description"
@@ -141,7 +141,7 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "element_style"
+         "@id": "hasElementStyle"
       },
       "element_type": {
          "@context": {
@@ -149,15 +149,15 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "element_type"
+         "@id": "hasElementType"
       },
       "elements": {
          "@type": "@id",
-         "@id": "elements"
+         "@id": "hasElement"
       },
       "end_date": {
          "@type": "xsd:date",
-         "@id": "end_date"
+         "@id": "schema:endDate"
       },
       "exact_matches": {
          "@type": "xsd:anyURI",
@@ -165,28 +165,28 @@
       },
       "field": {
          "@type": "@id",
-         "@id": "field"
+         "@id": "hasField"
       },
       "field_label": {
-         "@id": "field_label"
+         "@id": "hasFieldLabel"
       },
       "foreign_key_link": {
          "@type": "@id",
-         "@id": "foreign_key_link"
+         "@id": "hasForeignKeyLink"
       },
       "function_kwargs": {
          "@type": "@id",
-         "@id": "function_kwargs"
+         "@id": "hasFunctionKeywordArgument"
       },
       "function_name": {
-         "@id": "function_name"
+         "@id": "hasFunctionName"
       },
       "function_results": {
          "@type": "@id",
-         "@id": "function_results"
+         "@id": "hasFunctionResult"
       },
       "geographic_scope": {
-         "@id": "geographic_scope"
+         "@id": "schema:spatialCoverage"
       },
       "grouping_id_list": {
          "@type": "@id",
@@ -194,7 +194,7 @@
       },
       "groupings": {
          "@type": "@id",
-         "@id": "groupings"
+         "@id": "hasGrouping"
       },
       "has_iadopt_variable": {
          "@type": "@id",
@@ -211,25 +211,25 @@
       "id": "@id",
       "immutable": {
          "@type": "xsd:boolean",
-         "@id": "immutable"
+         "@id": "isImmutable"
       },
       "import_configs": {
          "@type": "@id",
-         "@id": "import_configs"
+         "@id": "hasImportConfig"
       },
       "imputation_state": {
-         "@id": "imputation_state"
+         "@id": "hasImputationState"
       },
       "imputed_unit": {
          "@type": "@id",
-         "@id": "imputed_unit"
+         "@id": "hasImputedUnit"
       },
       "imputed_value": {
-         "@id": "imputed_value"
+         "@id": "hasImputedValue"
       },
       "indicator_subclasses": {
          "@type": "@id",
-         "@id": "indicator_subclasses"
+         "@id": "hasIndicatorSubclass"
       },
       "indicator_type": {
          "@context": {
@@ -237,7 +237,7 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "indicator_type"
+         "@id": "hasIndicatorType"
       },
       "is_isomer_of": {
          "@type": "@id",
@@ -249,24 +249,24 @@
       },
       "is_observable_entity_key": {
          "@type": "xsd:boolean",
-         "@id": "is_observable_entity_key"
+         "@id": "isObservableEntityKey"
       },
       "key": {
-         "@id": "key"
+         "@id": "hasKey"
       },
       "label": {
-         "@id": "label"
+         "@id": "rdfs:label"
       },
       "language": {
-         "@id": "language"
+         "@id": "schema:inLanguage"
       },
       "layout": {
          "@type": "@id",
-         "@id": "layout"
+         "@id": "hasLayout"
       },
       "layouts": {
          "@type": "@id",
-         "@id": "layouts"
+         "@id": "hasLayout"
       },
       "linktype": {
          "@context": {
@@ -274,53 +274,53 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "linktype"
+         "@id": "hasLinkType"
       },
       "location": {
-         "@id": "location"
+         "@id": "schema:location"
       },
       "mapping_name": {
-         "@id": "mapping_name"
+         "@id": "hasMappingName"
       },
       "matrix": {
          "@type": "@id",
-         "@id": "matrix"
+         "@id": "hasMatrix"
       },
       "matrix_subclasses": {
          "@type": "@id",
-         "@id": "matrix_subclasses"
+         "@id": "hasMatrixSubclass"
       },
       "max_value": {
-         "@id": "max_value"
+         "@id": "hasMaximumValue"
       },
       "member_id_list": {
          "@type": "@id",
-         "@id": "member_id_list"
+         "@id": "hasMember"
       },
       "metadata_fields": {
          "@type": "@id",
-         "@id": "metadata_fields"
+         "@id": "hasMetadataField"
       },
       "min_value": {
-         "@id": "min_value"
+         "@id": "hasMinimumValue"
       },
       "molweight_grampermol": {
          "@type": "xsd:decimal",
-         "@id": "molweight_grampermol"
+         "@id": "hasMolecularWeight"
       },
       "multivalued": {
          "@type": "xsd:boolean",
-         "@id": "multivalued"
+         "@id": "isMultivalued"
       },
       "name": {
          "@id": "rdfs:label"
       },
       "normalised_unit": {
          "@type": "@id",
-         "@id": "normalised_unit"
+         "@id": "hasNormalisedUnit"
       },
       "normalised_value": {
-         "@id": "normalised_value"
+         "@id": "hasNormalisedValue"
       },
       "objective_type": {
          "@context": {
@@ -328,15 +328,15 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "objective_type"
+         "@id": "hasObjectiveType"
       },
       "observable_entity": {
          "@type": "@id",
-         "@id": "observable_entity"
+         "@id": "hasObservableEntity"
       },
       "observable_entity_id_list": {
          "@type": "@id",
-         "@id": "observable_entity_id_list"
+         "@id": "hasObservableEntity"
       },
       "observable_entity_type": {
          "@context": {
@@ -344,55 +344,55 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "observable_entity_type"
+         "@id": "hasObservableEntityType"
       },
       "observable_properties": {
          "@type": "@id",
-         "@id": "observable_properties"
+         "@id": "hasObservableProperty"
       },
       "observable_property": {
          "@type": "@id",
-         "@id": "observable_property"
+         "@id": "hasObservableProperty"
       },
       "observable_property_specifications": {
          "@type": "@id",
-         "@id": "observable_property_specifications"
+         "@id": "hasObservablePropertySpecification"
       },
       "observation": {
          "@type": "@id",
-         "@id": "observation"
+         "@id": "hasObservation"
       },
       "observation_design": {
          "@type": "@id",
-         "@id": "observation_design"
+         "@id": "hasObservationDesign"
       },
       "observation_design_id_list": {
          "@type": "@id",
-         "@id": "observation_design_id_list"
+         "@id": "hasObservationDesign"
       },
       "observation_designs": {
          "@type": "@id",
-         "@id": "observation_designs"
+         "@id": "hasObservationDesign"
       },
       "observation_end_date": {
          "@type": "xsd:date",
-         "@id": "observation_end_date"
+         "@id": "hasObservationEndDate"
       },
       "observation_group_id_list": {
          "@type": "@id",
-         "@id": "observation_group_id_list"
+         "@id": "hasObservationGroup"
       },
       "observation_groups": {
          "@type": "@id",
-         "@id": "observation_groups"
+         "@id": "hasObservationGroup"
       },
       "observation_id_list": {
          "@type": "@id",
-         "@id": "observation_id_list"
+         "@id": "hasObservation"
       },
       "observation_result_id_list": {
          "@type": "@id",
-         "@id": "observation_result_id_list"
+         "@id": "hasObservationResult"
       },
       "observation_result_type": {
          "@context": {
@@ -400,15 +400,15 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "observation_result_type"
+         "@id": "hasObservationResultType"
       },
       "observation_results": {
          "@type": "@id",
-         "@id": "observation_results"
+         "@id": "hasObservationResult"
       },
       "observation_start_date": {
          "@type": "xsd:date",
-         "@id": "observation_start_date"
+         "@id": "hasObservationStartDate"
       },
       "observation_type": {
          "@context": {
@@ -416,19 +416,19 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "observation_type"
+         "@id": "hasObservationType"
       },
       "observations": {
          "@type": "@id",
-         "@id": "observations"
+         "@id": "hasObservation"
       },
       "observed_entity_properties": {
          "@type": "@id",
-         "@id": "observed_entity_properties"
+         "@id": "hasObservedEntityProperty"
       },
       "observed_values": {
          "@type": "@id",
-         "@id": "observed_values"
+         "@id": "hasObservedValue"
       },
       "orcid": {
          "@id": "schema:identifier"
@@ -451,36 +451,36 @@
       },
       "physical_entities": {
          "@type": "@id",
-         "@id": "physical_entities"
+         "@id": "hasPhysicalEntity"
       },
       "physical_entity": {
          "@type": "@id",
-         "@id": "physical_entity"
+         "@id": "hasPhysicalEntity"
       },
       "physical_entity_links": {
          "@type": "@id",
-         "@id": "physical_entity_links"
+         "@id": "hasPhysicalEntityLink"
       },
       "physical_label": {
-         "@id": "physical_label"
+         "@id": "hasPhysicalLabel"
       },
       "process_state": {
-         "@id": "process_state"
+         "@id": "hasProcessState"
       },
       "processing_actions": {
          "@type": "@id",
-         "@id": "processing_actions"
+         "@id": "hasProcessingAction"
       },
       "processing_description": {
-         "@id": "processing_description"
+         "@id": "hasProcessingDescription"
       },
       "processing_steps": {
          "@type": "@id",
-         "@id": "processing_steps"
+         "@id": "hasProcessingStep"
       },
       "project_id_list": {
          "@type": "@id",
-         "@id": "project_id_list"
+         "@id": "hasProject"
       },
       "project_roles": {
          "@context": {
@@ -488,41 +488,41 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "project_roles"
+         "@id": "hasProjectRole"
       },
       "project_stakeholders": {
          "@type": "@id",
-         "@id": "project_stakeholders"
+         "@id": "hasProjectStakeholder"
       },
       "projects": {
          "@type": "@id",
-         "@id": "projects"
+         "@id": "hasProject"
       },
       "property": {
-         "@id": "property"
+         "@id": "hasProperty"
       },
       "property_name": {
          "@id": "schema:identifier"
       },
       "provenance_context_key": {
-         "@id": "provenance_context_key"
+         "@id": "hasProvenanceContextKey"
       },
       "provenance_data": {
          "@type": "@id",
-         "@id": "provenance_data"
+         "@id": "hasProvenanceData"
       },
       "provenance_value": {
-         "@id": "provenance_value"
+         "@id": "hasProvenanceValue"
       },
       "quality_context_key": {
-         "@id": "quality_context_key"
+         "@id": "hasQualityContextKey"
       },
       "quality_data": {
          "@type": "@id",
-         "@id": "quality_data"
+         "@id": "hasQualityData"
       },
       "quality_value": {
-         "@id": "quality_value"
+         "@id": "hasQualityValue"
       },
       "quantity_kind": {
          "@type": "@id",
@@ -530,14 +530,14 @@
       },
       "raw_unit": {
          "@type": "@id",
-         "@id": "raw_unit"
+         "@id": "hasRawUnit"
       },
       "raw_value": {
-         "@id": "raw_value"
+         "@id": "hasRawValue"
       },
       "recruited_in_project": {
          "@type": "@id",
-         "@id": "recruited_in_project"
+         "@id": "wasRecruitedInProject"
       },
       "relevant_observable_entity_types": {
          "@context": {
@@ -545,7 +545,7 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "relevant_observable_entity_types"
+         "@id": "hasRelevantObservableEntityType"
       },
       "relevant_observation_types": {
          "@context": {
@@ -553,27 +553,27 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "relevant_observation_types"
+         "@id": "hasRelevantObservationType"
       },
       "remark": {
          "@id": "schema:comment"
       },
       "remark_on_content": {
-         "@id": "remark_on_content"
+         "@id": "hasRemarkOnContent"
       },
       "remark_on_methodology": {
-         "@id": "remark_on_methodology"
+         "@id": "hasRemarkOnMethodology"
       },
       "request_properties": {
-         "@id": "request_properties"
+         "@id": "hasRequestProperty"
       },
       "required": {
          "@type": "xsd:boolean",
-         "@id": "required"
+         "@id": "isRequired"
       },
       "research_objectives": {
          "@type": "@id",
-         "@id": "research_objectives"
+         "@id": "hasResearchObjective"
       },
       "research_population_type": {
          "@context": {
@@ -581,38 +581,38 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "research_population_type"
+         "@id": "hasResearchPopulationType"
       },
       "rorid": {
          "@id": "schema:identifier"
       },
       "round_decimals": {
          "@type": "xsd:integer",
-         "@id": "round_decimals"
+         "@id": "hasRoundDecimals"
       },
       "sample_id_list": {
          "@type": "@id",
-         "@id": "sample_id_list"
+         "@id": "hasSample"
       },
       "sampled_in_project": {
          "@type": "@id",
-         "@id": "sampled_in_project"
+         "@id": "wasSampledInProject"
       },
       "scale_factor": {
          "@type": "xsd:decimal",
-         "@id": "scale_factor"
+         "@id": "hasScaleFactor"
       },
       "section": {
          "@type": "@id",
-         "@id": "section"
+         "@id": "hasSection"
       },
       "section_mapping": {
          "@type": "@id",
-         "@id": "section_mapping"
+         "@id": "hasSectionMapping"
       },
       "section_mapping_links": {
          "@type": "@id",
-         "@id": "section_mapping_links"
+         "@id": "hasSectionMappingLink"
       },
       "section_type": {
          "@context": {
@@ -620,18 +620,18 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "section_type"
+         "@id": "hasSectionType"
       },
       "sections": {
          "@type": "@id",
-         "@id": "sections"
+         "@id": "hasSection"
       },
       "short_name": {
          "@id": "schema:alternateName"
       },
       "significantdecimals": {
          "@type": "xsd:integer",
-         "@id": "significantdecimals"
+         "@id": "hasSignificantDecimals"
       },
       "specification_category": {
          "@context": {
@@ -639,43 +639,43 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "specification_category"
+         "@id": "hasSpecificationCategory"
       },
       "stakeholder": {
          "@type": "@id",
-         "@id": "stakeholder"
+         "@id": "hasStakeholder"
       },
       "stakeholders": {
          "@type": "@id",
-         "@id": "stakeholders"
+         "@id": "hasStakeholder"
       },
       "start_date": {
          "@type": "xsd:date",
-         "@id": "start_date"
+         "@id": "schema:startDate"
       },
       "studies": {
          "@type": "@id",
-         "@id": "studies"
+         "@id": "hasStudy"
       },
       "study_entities": {
          "@type": "@id",
-         "@id": "study_entities"
+         "@id": "hasStudyEntity"
       },
       "study_entity": {
          "@type": "@id",
-         "@id": "study_entity"
+         "@id": "hasStudyEntity"
       },
       "study_entity_id_list": {
          "@type": "@id",
-         "@id": "study_entity_id_list"
+         "@id": "hasStudyEntity"
       },
       "study_entity_links": {
          "@type": "@id",
-         "@id": "study_entity_links"
+         "@id": "hasStudyEntityLink"
       },
       "study_id_list": {
          "@type": "@id",
-         "@id": "study_id_list"
+         "@id": "hasStudy"
       },
       "study_roles": {
          "@context": {
@@ -683,39 +683,39 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "study_roles"
+         "@id": "hasStudyRole"
       },
       "study_stakeholders": {
          "@type": "@id",
-         "@id": "study_stakeholders"
+         "@id": "hasStudyStakeholder"
       },
       "translated_value": {
-         "@id": "translated_value"
+         "@id": "hasTranslatedValue"
       },
       "translations": {
          "@type": "@id",
-         "@id": "translations"
+         "@id": "hasTranslation"
       },
       "ui_label": {
-         "@id": "ui_label"
+         "@id": "hasUiLabel"
       },
       "unit": {
          "@type": "@id",
          "@id": "qudt:hasUnit"
       },
       "validation_actor": {
-         "@id": "validation_actor"
+         "@id": "hasValidationActor"
       },
       "validation_arg_contextual_field_references": {
          "@type": "@id",
-         "@id": "validation_arg_contextual_field_references"
+         "@id": "hasValidationArgumentContextualFieldReference"
       },
       "validation_arg_expressions": {
          "@type": "@id",
-         "@id": "validation_arg_expressions"
+         "@id": "hasValidationArgumentExpression"
       },
       "validation_arg_values": {
-         "@id": "validation_arg_values"
+         "@id": "hasValidationArgumentValue"
       },
       "validation_command": {
          "@context": {
@@ -723,19 +723,19 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "validation_command"
+         "@id": "hasValidationCommand"
       },
       "validation_condition_expression": {
          "@type": "@id",
-         "@id": "validation_condition_expression"
+         "@id": "hasValidationConditionExpression"
       },
       "validation_datetime": {
          "@type": "xsd:dateTime",
-         "@id": "validation_datetime"
+         "@id": "hasValidationDateTime"
       },
       "validation_designs": {
          "@type": "@id",
-         "@id": "validation_designs"
+         "@id": "hasValidationDesign"
       },
       "validation_error_level": {
          "@context": {
@@ -743,27 +743,27 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "validation_error_level"
+         "@id": "hasValidationErrorLevel"
       },
       "validation_error_message_template": {
-         "@id": "validation_error_message_template"
+         "@id": "hasValidationErrorMessageTemplate"
       },
       "validation_expression": {
          "@type": "@id",
-         "@id": "validation_expression"
+         "@id": "hasValidationExpression"
       },
       "validation_history": {
          "@type": "@id",
-         "@id": "validation_history"
+         "@id": "hasValidationHistoryRecord"
       },
       "validation_institute": {
-         "@id": "validation_institute"
+         "@id": "hasValidationInstitute"
       },
       "validation_name": {
-         "@id": "validation_name"
+         "@id": "hasValidationName"
       },
       "validation_remark": {
-         "@id": "validation_remark"
+         "@id": "hasValidationRemark"
       },
       "validation_status": {
          "@context": {
@@ -771,28 +771,28 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "validation_status"
+         "@id": "hasValidationStatus"
       },
       "validation_subject_contextual_field_references": {
          "@type": "@id",
-         "@id": "validation_subject_contextual_field_references"
+         "@id": "hasValidationSubjectContextualFieldReference"
       },
       "value": {
-         "@id": "value"
+         "@id": "rdf:value"
       },
       "value_as_string": {
-         "@id": "value_as_string"
+         "@id": "hasValueAsString"
       },
       "value_metadata": {
          "@type": "@id",
-         "@id": "value_metadata"
+         "@id": "hasValueMetadata"
       },
       "value_options": {
          "@type": "@id",
-         "@id": "value_options"
+         "@id": "hasValueOption"
       },
       "value_type": {
-         "@id": "value_type"
+         "@id": "hasValueType"
       },
       "was_derived_from": {
          "@type": "@id",
@@ -800,7 +800,7 @@
       },
       "zeroallowed": {
          "@type": "xsd:boolean",
-         "@id": "zeroallowed"
+         "@id": "isZeroAllowed"
       },
       "BioChemEntity": {
          "@id": "schema:BioChemEntity"

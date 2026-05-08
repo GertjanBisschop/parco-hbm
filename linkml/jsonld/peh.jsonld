@@ -970,7 +970,10 @@
       "definition_uri": "https://w3id.org/peh/terms/ui_label",
       "description": "Human readable label, to be used in user interactions through forms or documents.",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/ui_label",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasUiLabel"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasUiLabel",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -1047,7 +1050,10 @@
       "name": "label",
       "definition_uri": "https://w3id.org/peh/terms/label",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/label",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#label",
       "owner": "DataLayoutElementLink",
       "domain_of": [
         "ObservablePropertyValueOption",
@@ -1061,7 +1067,10 @@
       "name": "alias",
       "definition_uri": "https://w3id.org/peh/terms/alias",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/alias",
+      "mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "slot_uri": "http://schema.org/alternateName",
       "owner": "ContextAlias",
       "domain_of": [
         "ContextAlias"
@@ -1073,7 +1082,10 @@
       "name": "aliases",
       "definition_uri": "https://w3id.org/peh/terms/aliases",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/aliases",
+      "mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "slot_uri": "http://schema.org/alternateName",
       "owner": "HasAliases",
       "domain_of": [
         "HasAliases"
@@ -1087,7 +1099,10 @@
       "name": "context_aliases",
       "definition_uri": "https://w3id.org/peh/terms/context_aliases",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/context_aliases",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasContextAlias"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasContextAlias",
       "owner": "HasContextAliases",
       "domain_of": [
         "HasContextAliases"
@@ -1118,7 +1133,10 @@
       "name": "context",
       "definition_uri": "https://w3id.org/peh/terms/context",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/context",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasContext"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasContext",
       "owner": "ContextAlias",
       "domain_of": [
         "ContextAlias"
@@ -1130,7 +1148,10 @@
       "name": "translations",
       "definition_uri": "https://w3id.org/peh/terms/translations",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/translations",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasTranslation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasTranslation",
       "owner": "HasTranslations",
       "domain_of": [
         "HasTranslations"
@@ -1161,7 +1182,10 @@
       "name": "language",
       "definition_uri": "https://w3id.org/peh/terms/language",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/language",
+      "mappings": [
+        "http://schema.org/inLanguage"
+      ],
+      "slot_uri": "http://schema.org/inLanguage",
       "owner": "Translation",
       "domain_of": [
         "Translation"
@@ -1173,7 +1197,10 @@
       "name": "translated_value",
       "definition_uri": "https://w3id.org/peh/terms/translated_value",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/translated_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasTranslatedValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasTranslatedValue",
       "owner": "Translation",
       "domain_of": [
         "Translation"
@@ -1185,7 +1212,10 @@
       "name": "validation_history",
       "definition_uri": "https://w3id.org/peh/terms/validation_history",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_history",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationHistoryRecord"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationHistoryRecord",
       "owner": "HasValidationStatus",
       "domain_of": [
         "HasValidationStatus"
@@ -1223,7 +1253,10 @@
       "name": "groupings",
       "definition_uri": "https://w3id.org/peh/terms/groupings",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/groupings",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasGrouping"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasGrouping",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -1272,7 +1305,10 @@
       "name": "current_validation_status",
       "definition_uri": "https://w3id.org/peh/terms/current_validation_status",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/current_validation_status",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasCurrentValidationStatus"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasCurrentValidationStatus",
       "owner": "HasValidationStatus",
       "domain_of": [
         "HasValidationStatus"
@@ -1284,7 +1320,10 @@
       "name": "validation_datetime",
       "definition_uri": "https://w3id.org/peh/terms/validation_datetime",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_datetime",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationDateTime"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationDateTime",
       "owner": "ValidationHistoryRecord",
       "domain_of": [
         "ValidationHistoryRecord"
@@ -1296,7 +1335,10 @@
       "name": "validation_status",
       "definition_uri": "https://w3id.org/peh/terms/validation_status",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_status",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationStatus"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationStatus",
       "owner": "ValidationHistoryRecord",
       "domain_of": [
         "ValidationHistoryRecord"
@@ -1308,7 +1350,10 @@
       "name": "validation_actor",
       "definition_uri": "https://w3id.org/peh/terms/validation_actor",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_actor",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationActor"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationActor",
       "owner": "ValidationHistoryRecord",
       "domain_of": [
         "ValidationHistoryRecord"
@@ -1320,7 +1365,10 @@
       "name": "validation_institute",
       "definition_uri": "https://w3id.org/peh/terms/validation_institute",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_institute",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationInstitute"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationInstitute",
       "owner": "ValidationHistoryRecord",
       "domain_of": [
         "ValidationHistoryRecord"
@@ -1332,7 +1380,10 @@
       "name": "validation_remark",
       "definition_uri": "https://w3id.org/peh/terms/validation_remark",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_remark",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationRemark"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationRemark",
       "owner": "ValidationHistoryRecord",
       "domain_of": [
         "ValidationHistoryRecord"
@@ -1344,7 +1395,10 @@
       "name": "matrix_subclasses",
       "definition_uri": "https://w3id.org/peh/terms/matrix_subclasses",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/matrix_subclasses",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMatrixSubclass"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMatrixSubclass",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -1359,7 +1413,10 @@
       "name": "biochementity_subclasses",
       "definition_uri": "https://w3id.org/peh/terms/biochementity_subclasses",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/biochementity_subclasses",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasBioChemEntitySubclass"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasBioChemEntitySubclass",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -1374,7 +1431,10 @@
       "name": "indicator_subclasses",
       "definition_uri": "https://w3id.org/peh/terms/indicator_subclasses",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/indicator_subclasses",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasIndicatorSubclass"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasIndicatorSubclass",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -1405,7 +1465,10 @@
       "name": "indicator_type",
       "definition_uri": "https://w3id.org/peh/terms/indicator_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/indicator_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasIndicatorType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasIndicatorType",
       "owner": "IndicatorSubClass",
       "domain_of": [
         "IndicatorSubClass"
@@ -1449,7 +1512,10 @@
       "name": "property",
       "definition_uri": "https://w3id.org/peh/terms/property",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/property",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProperty",
       "owner": "IndicatorSubClass",
       "domain_of": [
         "IndicatorSubClass"
@@ -1461,7 +1527,10 @@
       "name": "matrix",
       "definition_uri": "https://w3id.org/peh/terms/matrix",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/matrix",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMatrix"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMatrix",
       "owner": "SampleCollection",
       "domain_of": [
         "IndicatorSubClass",
@@ -1475,7 +1544,10 @@
       "name": "constraints",
       "definition_uri": "https://w3id.org/peh/terms/constraints",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/constraints",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasConstraint"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasConstraint",
       "owner": "SampleCollection",
       "domain_of": [
         "IndicatorSubClass",
@@ -1490,7 +1562,10 @@
       "name": "relevant_observable_entity_types",
       "definition_uri": "https://w3id.org/peh/terms/relevant_observable_entity_types",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/relevant_observable_entity_types",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRelevantObservableEntityType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRelevantObservableEntityType",
       "owner": "ObservableProperty",
       "domain_of": [
         "IndicatorSubClass",
@@ -1504,7 +1579,10 @@
       "name": "biochementity",
       "definition_uri": "https://w3id.org/peh/terms/biochementity",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/biochementity",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasBioChemEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasBioChemEntity",
       "owner": "IndicatorSubClass",
       "domain_of": [
         "IndicatorSubClass"
@@ -1517,7 +1595,10 @@
       "definition_uri": "https://w3id.org/peh/terms/molweight_grampermol",
       "description": "The molecular weight of the chemical entity in g/mol",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/molweight_grampermol",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMolecularWeight"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMolecularWeight",
       "owner": "BioChemEntitySubClass",
       "domain_of": [
         "BioChemEntitySubClass"
@@ -1584,7 +1665,10 @@
       "name": "categorical",
       "definition_uri": "https://w3id.org/peh/terms/categorical",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/categorical",
+      "mappings": [
+        "https://w3id.org/peh/terms/isCategorical"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isCategorical",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1596,7 +1680,10 @@
       "name": "multivalued",
       "definition_uri": "https://w3id.org/peh/terms/multivalued",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/multivalued",
+      "mappings": [
+        "https://w3id.org/peh/terms/isMultivalued"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isMultivalued",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1608,7 +1695,10 @@
       "name": "value_type",
       "definition_uri": "https://w3id.org/peh/terms/value_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/value_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValueType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValueType",
       "owner": "CalculationResult",
       "domain_of": [
         "ObservableProperty",
@@ -1623,7 +1713,10 @@
       "name": "value_metadata",
       "definition_uri": "https://w3id.org/peh/terms/value_metadata",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/value_metadata",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValueMetadata"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValueMetadata",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1638,7 +1731,10 @@
       "name": "value_options",
       "definition_uri": "https://w3id.org/peh/terms/value_options",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/value_options",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValueOption"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValueOption",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1653,7 +1749,10 @@
       "name": "required",
       "definition_uri": "https://w3id.org/peh/terms/required",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/required",
+      "mappings": [
+        "https://w3id.org/peh/terms/isRequired"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isRequired",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1665,7 +1764,10 @@
       "name": "zeroallowed",
       "definition_uri": "https://w3id.org/peh/terms/zeroallowed",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/zeroallowed",
+      "mappings": [
+        "https://w3id.org/peh/terms/isZeroAllowed"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isZeroAllowed",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1678,7 +1780,10 @@
       "definition_uri": "https://w3id.org/peh/terms/min_value",
       "description": "String representation of the expected lower bound in observations, usable for data validation",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/min_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMinimumValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMinimumValue",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1691,7 +1796,10 @@
       "definition_uri": "https://w3id.org/peh/terms/max_value",
       "description": "String representation of the expected upper bound in observations, usable for data validation",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/max_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMaximumValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMaximumValue",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1704,7 +1812,10 @@
       "definition_uri": "https://w3id.org/peh/terms/significantdecimals",
       "description": "Variable precision indication, expressed as the number of significant decimals",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/significantdecimals",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSignificantDecimals"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSignificantDecimals",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1717,7 +1828,10 @@
       "definition_uri": "https://w3id.org/peh/terms/immutable",
       "description": "Variable values are not expected to change over time (e.g. birthdate of a person)",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/immutable",
+      "mappings": [
+        "https://w3id.org/peh/terms/isImmutable"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isImmutable",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1729,7 +1843,10 @@
       "name": "relevant_observation_types",
       "definition_uri": "https://w3id.org/peh/terms/relevant_observation_types",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/relevant_observation_types",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRelevantObservationType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRelevantObservationType",
       "owner": "ObservableProperty",
       "domain_of": [
         "ObservableProperty"
@@ -1774,7 +1891,10 @@
       "name": "calculation_design",
       "definition_uri": "https://w3id.org/peh/terms/calculation_design",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/calculation_design",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasCalculationDesign"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasCalculationDesign",
       "owner": "ObservablePropertySpecification",
       "domain_of": [
         "ObservableProperty",
@@ -1789,7 +1909,10 @@
       "name": "calculation_name",
       "definition_uri": "https://w3id.org/peh/terms/calculation_name",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/calculation_name",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasCalculationName"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasCalculationName",
       "owner": "CalculationDesign",
       "domain_of": [
         "CalculationDesign"
@@ -1801,7 +1924,10 @@
       "name": "conditional",
       "definition_uri": "https://w3id.org/peh/terms/conditional",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/conditional",
+      "mappings": [
+        "https://w3id.org/peh/terms/isConditional"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isConditional",
       "owner": "ValidationDesign",
       "domain_of": [
         "CalculationDesign",
@@ -1814,7 +1940,10 @@
       "name": "calculation_implementation_as_json",
       "definition_uri": "https://w3id.org/peh/terms/calculation_implementation_as_json",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/calculation_implementation_as_json",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasCalculationImplementationAsJson"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasCalculationImplementationAsJson",
       "owner": "CalculationDesign",
       "domain_of": [
         "CalculationDesign"
@@ -1826,7 +1955,10 @@
       "name": "calculation_implementation",
       "definition_uri": "https://w3id.org/peh/terms/calculation_implementation",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/calculation_implementation",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasCalculationImplementation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasCalculationImplementation",
       "owner": "CalculationDesign",
       "domain_of": [
         "CalculationDesign"
@@ -1840,7 +1972,10 @@
       "name": "function_name",
       "definition_uri": "https://w3id.org/peh/terms/function_name",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/function_name",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFunctionName"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFunctionName",
       "owner": "CalculationImplementation",
       "domain_of": [
         "CalculationImplementation"
@@ -1852,7 +1987,10 @@
       "name": "function_kwargs",
       "definition_uri": "https://w3id.org/peh/terms/function_kwargs",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/function_kwargs",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFunctionKeywordArgument"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFunctionKeywordArgument",
       "owner": "CalculationImplementation",
       "domain_of": [
         "CalculationImplementation"
@@ -1867,7 +2005,10 @@
       "name": "function_results",
       "definition_uri": "https://w3id.org/peh/terms/function_results",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/function_results",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFunctionResult"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFunctionResult",
       "owner": "CalculationImplementation",
       "domain_of": [
         "CalculationImplementation"
@@ -1882,7 +2023,10 @@
       "name": "validation_designs",
       "definition_uri": "https://w3id.org/peh/terms/validation_designs",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_designs",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationDesign"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationDesign",
       "owner": "DataLayoutSection",
       "domain_of": [
         "ObservableProperty",
@@ -1899,7 +2043,10 @@
       "name": "validation_name",
       "definition_uri": "https://w3id.org/peh/terms/validation_name",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_name",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationName"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationName",
       "owner": "ValidationDesign",
       "domain_of": [
         "ValidationDesign"
@@ -1911,7 +2058,10 @@
       "name": "validation_expression",
       "definition_uri": "https://w3id.org/peh/terms/validation_expression",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_expression",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationExpression",
       "owner": "ValidationDesign",
       "domain_of": [
         "ValidationDesign"
@@ -1925,7 +2075,10 @@
       "name": "validation_condition_expression",
       "definition_uri": "https://w3id.org/peh/terms/validation_condition_expression",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_condition_expression",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationConditionExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationConditionExpression",
       "owner": "ValidationExpression",
       "domain_of": [
         "ValidationExpression"
@@ -1939,7 +2092,10 @@
       "name": "validation_error_level",
       "definition_uri": "https://w3id.org/peh/terms/validation_error_level",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_error_level",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationErrorLevel"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationErrorLevel",
       "owner": "ValidationDesign",
       "domain_of": [
         "ValidationDesign"
@@ -1951,7 +2107,10 @@
       "name": "validation_error_message_template",
       "definition_uri": "https://w3id.org/peh/terms/validation_error_message_template",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_error_message_template",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationErrorMessageTemplate"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationErrorMessageTemplate",
       "owner": "ValidationDesign",
       "domain_of": [
         "ValidationDesign"
@@ -1963,7 +2122,10 @@
       "name": "validation_subject_contextual_field_references",
       "definition_uri": "https://w3id.org/peh/terms/validation_subject_contextual_field_references",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_subject_contextual_field_references",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationSubjectContextualFieldReference"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationSubjectContextualFieldReference",
       "owner": "ValidationExpression",
       "domain_of": [
         "ValidationExpression"
@@ -1978,7 +2140,10 @@
       "name": "validation_command",
       "definition_uri": "https://w3id.org/peh/terms/validation_command",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_command",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationCommand"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationCommand",
       "owner": "ValidationExpression",
       "domain_of": [
         "ValidationExpression"
@@ -1990,7 +2155,10 @@
       "name": "validation_arg_values",
       "definition_uri": "https://w3id.org/peh/terms/validation_arg_values",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_arg_values",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationArgumentValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationArgumentValue",
       "owner": "ValidationExpression",
       "domain_of": [
         "ValidationExpression"
@@ -2003,7 +2171,10 @@
       "name": "validation_arg_contextual_field_references",
       "definition_uri": "https://w3id.org/peh/terms/validation_arg_contextual_field_references",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_arg_contextual_field_references",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationArgumentContextualFieldReference"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationArgumentContextualFieldReference",
       "owner": "ValidationExpression",
       "domain_of": [
         "ValidationExpression"
@@ -2018,7 +2189,10 @@
       "name": "validation_arg_expressions",
       "definition_uri": "https://w3id.org/peh/terms/validation_arg_expressions",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/validation_arg_expressions",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationArgumentExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationArgumentExpression",
       "owner": "ValidationExpression",
       "domain_of": [
         "ValidationExpression"
@@ -2033,7 +2207,10 @@
       "name": "contextual_field_reference",
       "definition_uri": "https://w3id.org/peh/terms/contextual_field_reference",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/contextual_field_reference",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasContextualFieldReference"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasContextualFieldReference",
       "owner": "CalculationResult",
       "domain_of": [
         "CalculationKeywordArgument",
@@ -2048,7 +2225,10 @@
       "name": "dataset_label",
       "definition_uri": "https://w3id.org/peh/terms/dataset_label",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/dataset_label",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDatasetLabel"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDatasetLabel",
       "owner": "ContextualFieldReference",
       "domain_of": [
         "ContextualFieldReference"
@@ -2060,7 +2240,10 @@
       "name": "field_label",
       "definition_uri": "https://w3id.org/peh/terms/field_label",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/field_label",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFieldLabel"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFieldLabel",
       "owner": "ContextualFieldReference",
       "domain_of": [
         "ContextualFieldReference"
@@ -2072,7 +2255,10 @@
       "name": "process_state",
       "definition_uri": "https://w3id.org/peh/terms/process_state",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/process_state",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProcessState"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProcessState",
       "owner": "CalculationKeywordArgument",
       "domain_of": [
         "CalculationKeywordArgument"
@@ -2084,7 +2270,10 @@
       "name": "imputation_state",
       "definition_uri": "https://w3id.org/peh/terms/imputation_state",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/imputation_state",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasImputationState"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasImputationState",
       "owner": "CalculationKeywordArgument",
       "domain_of": [
         "CalculationKeywordArgument"
@@ -2096,7 +2285,10 @@
       "name": "mapping_name",
       "definition_uri": "https://w3id.org/peh/terms/mapping_name",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/mapping_name",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMappingName"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMappingName",
       "owner": "CalculationResult",
       "domain_of": [
         "CalculationKeywordArgument",
@@ -2109,7 +2301,10 @@
       "name": "round_decimals",
       "definition_uri": "https://w3id.org/peh/terms/round_decimals",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/round_decimals",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRoundDecimals"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRoundDecimals",
       "owner": "CalculationResult",
       "domain_of": [
         "CalculationResult"
@@ -2121,7 +2316,10 @@
       "name": "scale_factor",
       "definition_uri": "https://w3id.org/peh/terms/scale_factor",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/scale_factor",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasScaleFactor"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasScaleFactor",
       "owner": "CalculationResult",
       "domain_of": [
         "CalculationResult"
@@ -2133,7 +2331,10 @@
       "name": "field",
       "definition_uri": "https://w3id.org/peh/terms/field",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/field",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasField"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasField",
       "owner": "ObservablePropertyMetadataElement",
       "domain_of": [
         "ObservablePropertyMetadataElement"
@@ -2145,7 +2346,10 @@
       "name": "key",
       "definition_uri": "https://w3id.org/peh/terms/key",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/key",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasKey"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasKey",
       "owner": "ObservablePropertyValueOption",
       "domain_of": [
         "ObservablePropertyValueOption"
@@ -2158,7 +2362,10 @@
       "definition_uri": "https://w3id.org/peh/terms/value",
       "description": "String representation of a measured or configured value, to be parsed according to the corresponding value type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/value",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      ],
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservablePropertyValueOption",
@@ -2173,7 +2380,10 @@
       "name": "metadata_fields",
       "definition_uri": "https://w3id.org/peh/terms/metadata_fields",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/metadata_fields",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMetadataField"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMetadataField",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2188,7 +2398,10 @@
       "name": "stakeholders",
       "definition_uri": "https://w3id.org/peh/terms/stakeholders",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/stakeholders",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStakeholder"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStakeholder",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2203,7 +2416,10 @@
       "name": "project_id_list",
       "definition_uri": "https://w3id.org/peh/terms/project_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/project_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProject"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProject",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -2216,7 +2432,10 @@
       "name": "study_id_list",
       "definition_uri": "https://w3id.org/peh/terms/study_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudy"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudy",
       "owner": "Project",
       "domain_of": [
         "Project"
@@ -2229,7 +2448,10 @@
       "name": "observation_group_id_list",
       "definition_uri": "https://w3id.org/peh/terms/observation_group_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_group_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationGroup"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationGroup",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -2242,7 +2464,10 @@
       "name": "observation_id_list",
       "definition_uri": "https://w3id.org/peh/terms/observation_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservation",
       "owner": "DataImportSectionMappingLink",
       "domain_of": [
         "ObservationGroup",
@@ -2256,7 +2481,10 @@
       "name": "member_id_list",
       "definition_uri": "https://w3id.org/peh/terms/member_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/member_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasMember"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasMember",
       "owner": "StudyPopulation",
       "domain_of": [
         "StudyPopulation"
@@ -2269,7 +2497,10 @@
       "name": "sample_id_list",
       "definition_uri": "https://w3id.org/peh/terms/sample_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/sample_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSample"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSample",
       "owner": "SampleCollection",
       "domain_of": [
         "SampleCollection"
@@ -2282,7 +2513,10 @@
       "name": "projects",
       "definition_uri": "https://w3id.org/peh/terms/projects",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/projects",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProject"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProject",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2297,7 +2531,10 @@
       "name": "geographic_scope",
       "definition_uri": "https://w3id.org/peh/terms/geographic_scope",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/geographic_scope",
+      "mappings": [
+        "http://schema.org/spatialCoverage"
+      ],
+      "slot_uri": "http://schema.org/spatialCoverage",
       "owner": "Stakeholder",
       "domain_of": [
         "Stakeholder"
@@ -2309,7 +2546,10 @@
       "name": "default_language",
       "definition_uri": "https://w3id.org/peh/terms/default_language",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/default_language",
+      "mappings": [
+        "http://schema.org/inLanguage"
+      ],
+      "slot_uri": "http://schema.org/inLanguage",
       "owner": "Study",
       "domain_of": [
         "Project",
@@ -2322,7 +2562,10 @@
       "name": "stakeholder",
       "definition_uri": "https://w3id.org/peh/terms/stakeholder",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/stakeholder",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStakeholder"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStakeholder",
       "owner": "DataStakeholder",
       "domain_of": [
         "ProjectStakeholder",
@@ -2336,7 +2579,10 @@
       "name": "project_stakeholders",
       "definition_uri": "https://w3id.org/peh/terms/project_stakeholders",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/project_stakeholders",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProjectStakeholder"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProjectStakeholder",
       "owner": "Project",
       "domain_of": [
         "Project"
@@ -2351,7 +2597,10 @@
       "name": "studies",
       "definition_uri": "https://w3id.org/peh/terms/studies",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/studies",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudy"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudy",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2366,7 +2615,10 @@
       "name": "project_roles",
       "definition_uri": "https://w3id.org/peh/terms/project_roles",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/project_roles",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProjectRole"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProjectRole",
       "owner": "ProjectStakeholder",
       "domain_of": [
         "ProjectStakeholder"
@@ -2379,7 +2631,10 @@
       "name": "study_stakeholders",
       "definition_uri": "https://w3id.org/peh/terms/study_stakeholders",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_stakeholders",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudyStakeholder"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudyStakeholder",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -2394,7 +2649,10 @@
       "name": "research_population_type",
       "definition_uri": "https://w3id.org/peh/terms/research_population_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/research_population_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasResearchPopulationType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasResearchPopulationType",
       "owner": "StudyPopulation",
       "domain_of": [
         "StudyPopulation"
@@ -2406,7 +2664,10 @@
       "name": "study_roles",
       "definition_uri": "https://w3id.org/peh/terms/study_roles",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_roles",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudyRole"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudyRole",
       "owner": "StudyStakeholder",
       "domain_of": [
         "StudyStakeholder"
@@ -2419,7 +2680,10 @@
       "name": "observation_groups",
       "definition_uri": "https://w3id.org/peh/terms/observation_groups",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_groups",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationGroup"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationGroup",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2434,7 +2698,10 @@
       "name": "observations",
       "definition_uri": "https://w3id.org/peh/terms/observations",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observations",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservation",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2449,7 +2716,10 @@
       "name": "derived_observations",
       "definition_uri": "https://w3id.org/peh/terms/derived_observations",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/derived_observations",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDerivedObservation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDerivedObservation",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2464,7 +2734,10 @@
       "name": "linktype",
       "definition_uri": "https://w3id.org/peh/terms/linktype",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/linktype",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasLinkType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasLinkType",
       "owner": "StudyEntityLink",
       "domain_of": [
         "PhysicalEntityLink",
@@ -2477,7 +2750,10 @@
       "name": "physical_entities",
       "definition_uri": "https://w3id.org/peh/terms/physical_entities",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/physical_entities",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasPhysicalEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasPhysicalEntity",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2492,7 +2768,10 @@
       "name": "physical_entity_links",
       "definition_uri": "https://w3id.org/peh/terms/physical_entity_links",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/physical_entity_links",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasPhysicalEntityLink"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasPhysicalEntityLink",
       "owner": "PhysicalEntity",
       "domain_of": [
         "PhysicalEntity"
@@ -2507,7 +2786,10 @@
       "name": "physical_entity",
       "definition_uri": "https://w3id.org/peh/terms/physical_entity",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/physical_entity",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasPhysicalEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasPhysicalEntity",
       "owner": "StudyEntity",
       "domain_of": [
         "PhysicalEntityLink",
@@ -2520,7 +2802,10 @@
       "name": "study_entities",
       "definition_uri": "https://w3id.org/peh/terms/study_entities",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_entities",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudyEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudyEntity",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2535,7 +2820,10 @@
       "name": "study_entity_id_list",
       "definition_uri": "https://w3id.org/peh/terms/study_entity_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_entity_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudyEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudyEntity",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -2548,7 +2836,10 @@
       "name": "study_entity_links",
       "definition_uri": "https://w3id.org/peh/terms/study_entity_links",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_entity_links",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudyEntityLink"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudyEntityLink",
       "owner": "StudyEntity",
       "domain_of": [
         "StudyEntity"
@@ -2563,7 +2854,10 @@
       "name": "study_entity",
       "definition_uri": "https://w3id.org/peh/terms/study_entity",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/study_entity",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasStudyEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasStudyEntity",
       "owner": "StudyEntityLink",
       "domain_of": [
         "StudyEntityLink"
@@ -2575,7 +2869,10 @@
       "name": "recruited_in_project",
       "definition_uri": "https://w3id.org/peh/terms/recruited_in_project",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/recruited_in_project",
+      "mappings": [
+        "https://w3id.org/peh/terms/wasRecruitedInProject"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/wasRecruitedInProject",
       "owner": "Person",
       "domain_of": [
         "Person"
@@ -2587,7 +2884,10 @@
       "name": "sampled_in_project",
       "definition_uri": "https://w3id.org/peh/terms/sampled_in_project",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/sampled_in_project",
+      "mappings": [
+        "https://w3id.org/peh/terms/wasSampledInProject"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/wasSampledInProject",
       "owner": "Sample",
       "domain_of": [
         "Sample"
@@ -2599,7 +2899,10 @@
       "name": "physical_label",
       "definition_uri": "https://w3id.org/peh/terms/physical_label",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/physical_label",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasPhysicalLabel"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasPhysicalLabel",
       "owner": "Sample",
       "domain_of": [
         "Sample"
@@ -2611,7 +2914,10 @@
       "name": "location",
       "definition_uri": "https://w3id.org/peh/terms/location",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/location",
+      "mappings": [
+        "http://schema.org/location"
+      ],
+      "slot_uri": "http://schema.org/location",
       "owner": "Geolocation",
       "domain_of": [
         "Geolocation"
@@ -2623,7 +2929,10 @@
       "name": "observation",
       "definition_uri": "https://w3id.org/peh/terms/observation",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservation",
       "range": "Observation",
       "@type": "SlotDefinition"
     },
@@ -2631,7 +2940,10 @@
       "name": "observation_type",
       "definition_uri": "https://w3id.org/peh/terms/observation_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationType",
       "owner": "Observation",
       "domain_of": [
         "Observation"
@@ -2643,7 +2955,10 @@
       "name": "observation_design",
       "definition_uri": "https://w3id.org/peh/terms/observation_design",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_design",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationDesign"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationDesign",
       "owner": "Observation",
       "domain_of": [
         "Observation"
@@ -2655,7 +2970,10 @@
       "name": "observation_designs",
       "definition_uri": "https://w3id.org/peh/terms/observation_designs",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_designs",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationDesign"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationDesign",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2670,7 +2988,10 @@
       "name": "observation_design_id_list",
       "definition_uri": "https://w3id.org/peh/terms/observation_design_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_design_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationDesign"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationDesign",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -2683,7 +3004,10 @@
       "name": "observation_result_type",
       "definition_uri": "https://w3id.org/peh/terms/observation_result_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_result_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationResultType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationResultType",
       "owner": "ObservationResult",
       "domain_of": [
         "ObservableProperty",
@@ -2697,7 +3021,10 @@
       "name": "observable_property_specifications",
       "definition_uri": "https://w3id.org/peh/terms/observable_property_specifications",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observable_property_specifications",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservablePropertySpecification"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservablePropertySpecification",
       "owner": "ObservationDesign",
       "domain_of": [
         "ObservationDesign"
@@ -2712,7 +3039,10 @@
       "name": "specification_category",
       "definition_uri": "https://w3id.org/peh/terms/specification_category",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/specification_category",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSpecificationCategory"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSpecificationCategory",
       "owner": "ObservablePropertySpecification",
       "domain_of": [
         "ObservablePropertySpecification"
@@ -2724,7 +3054,10 @@
       "name": "observation_results",
       "definition_uri": "https://w3id.org/peh/terms/observation_results",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_results",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationResult"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationResult",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2739,7 +3072,10 @@
       "name": "observation_result_id_list",
       "definition_uri": "https://w3id.org/peh/terms/observation_result_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_result_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationResult"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationResult",
       "owner": "Observation",
       "domain_of": [
         "Observation"
@@ -2752,7 +3088,10 @@
       "name": "observable_entity_type",
       "definition_uri": "https://w3id.org/peh/terms/observable_entity_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observable_entity_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservableEntityType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservableEntityType",
       "owner": "DataLayoutSection",
       "domain_of": [
         "ObservationDesign",
@@ -2765,7 +3104,10 @@
       "name": "observable_entity_id_list",
       "definition_uri": "https://w3id.org/peh/terms/observable_entity_id_list",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observable_entity_id_list",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservableEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservableEntity",
       "owner": "ObservationDesign",
       "domain_of": [
         "ObservationDesign"
@@ -2778,7 +3120,10 @@
       "name": "observable_entity",
       "definition_uri": "https://w3id.org/peh/terms/observable_entity",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observable_entity",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservableEntity"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservableEntity",
       "owner": "ObservedEntityProperty",
       "domain_of": [
         "ObservedValue",
@@ -2791,7 +3136,10 @@
       "name": "observable_properties",
       "definition_uri": "https://w3id.org/peh/terms/observable_properties",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observable_properties",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservableProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservableProperty",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -2806,7 +3154,10 @@
       "name": "observable_property",
       "definition_uri": "https://w3id.org/peh/terms/observable_property",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observable_property",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservableProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservableProperty",
       "owner": "ObservedEntityProperty",
       "domain_of": [
         "CalculationKeywordArgument",
@@ -2823,7 +3174,10 @@
       "name": "observed_values",
       "definition_uri": "https://w3id.org/peh/terms/observed_values",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observed_values",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservedValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservedValue",
       "owner": "DataExtract",
       "domain_of": [
         "EntityList",
@@ -2865,7 +3219,10 @@
       "name": "raw_value",
       "definition_uri": "https://w3id.org/peh/terms/raw_value",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/raw_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRawValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRawValue",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2884,7 +3241,10 @@
         }
       ],
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/raw_unit",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRawUnit"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRawUnit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2896,7 +3256,10 @@
       "name": "imputed_value",
       "definition_uri": "https://w3id.org/peh/terms/imputed_value",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/imputed_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasImputedValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasImputedValue",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2915,7 +3278,10 @@
         }
       ],
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/imputed_unit",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasImputedUnit"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasImputedUnit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2927,7 +3293,10 @@
       "name": "normalised_value",
       "definition_uri": "https://w3id.org/peh/terms/normalised_value",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/normalised_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasNormalisedValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasNormalisedValue",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2946,7 +3315,10 @@
         }
       ],
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/normalised_unit",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasNormalisedUnit"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasNormalisedUnit",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2958,7 +3330,10 @@
       "name": "value_as_string",
       "definition_uri": "https://w3id.org/peh/terms/value_as_string",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/value_as_string",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValueAsString"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValueAsString",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2970,7 +3345,10 @@
       "name": "quality_data",
       "definition_uri": "https://w3id.org/peh/terms/quality_data",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/quality_data",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasQualityData"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasQualityData",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -2985,7 +3363,10 @@
       "name": "quality_context_key",
       "definition_uri": "https://w3id.org/peh/terms/quality_context_key",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/quality_context_key",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasQualityContextKey"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasQualityContextKey",
       "owner": "QualityData",
       "domain_of": [
         "QualityData"
@@ -2997,7 +3378,10 @@
       "name": "quality_value",
       "definition_uri": "https://w3id.org/peh/terms/quality_value",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/quality_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasQualityValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasQualityValue",
       "owner": "QualityData",
       "domain_of": [
         "QualityData"
@@ -3009,7 +3393,10 @@
       "name": "provenance_data",
       "definition_uri": "https://w3id.org/peh/terms/provenance_data",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/provenance_data",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProvenanceData"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProvenanceData",
       "owner": "ObservedValue",
       "domain_of": [
         "ObservedValue"
@@ -3024,7 +3411,10 @@
       "name": "provenance_context_key",
       "definition_uri": "https://w3id.org/peh/terms/provenance_context_key",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/provenance_context_key",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProvenanceContextKey"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProvenanceContextKey",
       "owner": "ProvenanceData",
       "domain_of": [
         "ProvenanceData"
@@ -3036,7 +3426,10 @@
       "name": "provenance_value",
       "definition_uri": "https://w3id.org/peh/terms/provenance_value",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/provenance_value",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProvenanceValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProvenanceValue",
       "owner": "ProvenanceData",
       "domain_of": [
         "ProvenanceData"
@@ -3048,7 +3441,10 @@
       "name": "layout",
       "definition_uri": "https://w3id.org/peh/terms/layout",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/layout",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasLayout"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasLayout",
       "owner": "DataImportConfig",
       "domain_of": [
         "DataImportConfig"
@@ -3060,7 +3456,10 @@
       "name": "layouts",
       "definition_uri": "https://w3id.org/peh/terms/layouts",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/layouts",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasLayout"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasLayout",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -3075,7 +3474,10 @@
       "name": "section",
       "definition_uri": "https://w3id.org/peh/terms/section",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/section",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSection"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSection",
       "owner": "DataImportSectionMappingLink",
       "domain_of": [
         "DataLayoutElementLink",
@@ -3088,7 +3490,10 @@
       "name": "sections",
       "definition_uri": "https://w3id.org/peh/terms/sections",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/sections",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSection"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSection",
       "owner": "DataLayout",
       "domain_of": [
         "DataLayout"
@@ -3103,7 +3508,10 @@
       "name": "section_type",
       "definition_uri": "https://w3id.org/peh/terms/section_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/section_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSectionType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSectionType",
       "owner": "DataLayoutSection",
       "domain_of": [
         "DataLayoutSection"
@@ -3115,7 +3523,10 @@
       "name": "elements",
       "definition_uri": "https://w3id.org/peh/terms/elements",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/elements",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasElement"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasElement",
       "owner": "DataLayoutSection",
       "domain_of": [
         "DataLayoutSection"
@@ -3130,7 +3541,10 @@
       "name": "element_type",
       "definition_uri": "https://w3id.org/peh/terms/element_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/element_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasElementType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasElementType",
       "owner": "DataLayoutElement",
       "domain_of": [
         "DataLayoutElement"
@@ -3142,7 +3556,10 @@
       "name": "element_style",
       "definition_uri": "https://w3id.org/peh/terms/element_style",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/element_style",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasElementStyle"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasElementStyle",
       "owner": "DataLayoutElement",
       "domain_of": [
         "DataLayoutElement"
@@ -3154,7 +3571,10 @@
       "name": "is_observable_entity_key",
       "definition_uri": "https://w3id.org/peh/terms/is_observable_entity_key",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/is_observable_entity_key",
+      "mappings": [
+        "https://w3id.org/peh/terms/isObservableEntityKey"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/isObservableEntityKey",
       "owner": "DataLayoutElement",
       "domain_of": [
         "DataLayoutElement"
@@ -3166,7 +3586,10 @@
       "name": "foreign_key_link",
       "definition_uri": "https://w3id.org/peh/terms/foreign_key_link",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/foreign_key_link",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasForeignKeyLink"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasForeignKeyLink",
       "owner": "DataLayoutElement",
       "domain_of": [
         "DataLayoutElement"
@@ -3180,7 +3603,10 @@
       "name": "import_configs",
       "definition_uri": "https://w3id.org/peh/terms/import_configs",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/import_configs",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasImportConfig"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasImportConfig",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -3195,7 +3621,10 @@
       "name": "section_mapping",
       "definition_uri": "https://w3id.org/peh/terms/section_mapping",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/section_mapping",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSectionMapping"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSectionMapping",
       "owner": "DataImportConfig",
       "domain_of": [
         "DataImportConfig"
@@ -3209,7 +3638,10 @@
       "name": "section_mapping_links",
       "definition_uri": "https://w3id.org/peh/terms/section_mapping_links",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/section_mapping_links",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSectionMappingLink"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSectionMappingLink",
       "owner": "DataImportSectionMapping",
       "domain_of": [
         "DataImportSectionMapping"
@@ -3224,7 +3656,10 @@
       "name": "data_requests",
       "definition_uri": "https://w3id.org/peh/terms/data_requests",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/data_requests",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDataRequest"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDataRequest",
       "owner": "EntityList",
       "domain_of": [
         "EntityList"
@@ -3239,7 +3674,10 @@
       "name": "data_roles",
       "definition_uri": "https://w3id.org/peh/terms/data_roles",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/data_roles",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDataRole"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDataRole",
       "owner": "DataStakeholder",
       "domain_of": [
         "DataStakeholder"
@@ -3252,7 +3690,10 @@
       "name": "contacts",
       "definition_uri": "https://w3id.org/peh/terms/contacts",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/contacts",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasContact"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasContact",
       "owner": "DataStakeholder",
       "domain_of": [
         "ProjectStakeholder",
@@ -3270,7 +3711,10 @@
       "name": "contact_roles",
       "definition_uri": "https://w3id.org/peh/terms/contact_roles",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/contact_roles",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasContactRole"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasContactRole",
       "owner": "Contact",
       "domain_of": [
         "Contact"
@@ -3283,7 +3727,10 @@
       "name": "contact_email",
       "definition_uri": "https://w3id.org/peh/terms/contact_email",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/contact_email",
+      "mappings": [
+        "http://schema.org/email"
+      ],
+      "slot_uri": "http://schema.org/email",
       "owner": "Contact",
       "domain_of": [
         "Contact"
@@ -3295,7 +3742,10 @@
       "name": "contact_phone",
       "definition_uri": "https://w3id.org/peh/terms/contact_phone",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/contact_phone",
+      "mappings": [
+        "http://schema.org/telephone"
+      ],
+      "slot_uri": "http://schema.org/telephone",
       "owner": "Contact",
       "domain_of": [
         "Contact"
@@ -3307,7 +3757,10 @@
       "name": "request_properties",
       "definition_uri": "https://w3id.org/peh/terms/request_properties",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/request_properties",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRequestProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRequestProperty",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3319,7 +3772,10 @@
       "name": "data_stakeholders",
       "definition_uri": "https://w3id.org/peh/terms/data_stakeholders",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/data_stakeholders",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDataStakeholder"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDataStakeholder",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3332,7 +3788,10 @@
       "name": "research_objectives",
       "definition_uri": "https://w3id.org/peh/terms/research_objectives",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/research_objectives",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasResearchObjective"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasResearchObjective",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3345,7 +3804,10 @@
       "name": "processing_actions",
       "definition_uri": "https://w3id.org/peh/terms/processing_actions",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/processing_actions",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProcessingAction"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProcessingAction",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3358,7 +3820,10 @@
       "name": "processing_steps",
       "definition_uri": "https://w3id.org/peh/terms/processing_steps",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/processing_steps",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProcessingStep"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProcessingStep",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3371,7 +3836,10 @@
       "name": "remark_on_content",
       "definition_uri": "https://w3id.org/peh/terms/remark_on_content",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/remark_on_content",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRemarkOnContent"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRemarkOnContent",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3383,7 +3851,10 @@
       "name": "remark_on_methodology",
       "definition_uri": "https://w3id.org/peh/terms/remark_on_methodology",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/remark_on_methodology",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasRemarkOnMethodology"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasRemarkOnMethodology",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3395,7 +3866,10 @@
       "name": "observed_entity_properties",
       "definition_uri": "https://w3id.org/peh/terms/observed_entity_properties",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observed_entity_properties",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservedEntityProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservedEntityProperty",
       "owner": "DataRequest",
       "domain_of": [
         "DataRequest"
@@ -3410,7 +3884,10 @@
       "name": "processing_description",
       "definition_uri": "https://w3id.org/peh/terms/processing_description",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/processing_description",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasProcessingDescription"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasProcessingDescription",
       "owner": "DataStakeholder",
       "domain_of": [
         "DataStakeholder"
@@ -3422,7 +3899,10 @@
       "name": "objective_type",
       "definition_uri": "https://w3id.org/peh/terms/objective_type",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/objective_type",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObjectiveType"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObjectiveType",
       "owner": "ResearchObjective",
       "domain_of": [
         "ResearchObjective"
@@ -3434,7 +3914,10 @@
       "name": "authors",
       "definition_uri": "https://w3id.org/peh/terms/authors",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/authors",
+      "mappings": [
+        "http://schema.org/author"
+      ],
+      "slot_uri": "http://schema.org/author",
       "owner": "ResearchObjective",
       "domain_of": [
         "ResearchObjective"
@@ -3447,7 +3930,10 @@
       "name": "start_date",
       "definition_uri": "https://w3id.org/peh/terms/start_date",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/start_date",
+      "mappings": [
+        "http://schema.org/startDate"
+      ],
+      "slot_uri": "http://schema.org/startDate",
       "owner": "ProcessingStep",
       "domain_of": [
         "Project",
@@ -3462,7 +3948,10 @@
       "name": "end_date",
       "definition_uri": "https://w3id.org/peh/terms/end_date",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/end_date",
+      "mappings": [
+        "http://schema.org/endDate"
+      ],
+      "slot_uri": "http://schema.org/endDate",
       "owner": "ObservationGroup",
       "domain_of": [
         "Project",
@@ -3476,7 +3965,10 @@
       "name": "delivery_date",
       "definition_uri": "https://w3id.org/peh/terms/delivery_date",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/delivery_date",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDeliveryDate"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDeliveryDate",
       "owner": "ProcessingStep",
       "domain_of": [
         "ProcessingStep"
@@ -3488,7 +3980,10 @@
       "name": "observation_start_date",
       "definition_uri": "https://w3id.org/peh/terms/observation_start_date",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_start_date",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationStartDate"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationStartDate",
       "owner": "ObservationResult",
       "domain_of": [
         "ObservationResult"
@@ -3500,7 +3995,10 @@
       "name": "observation_end_date",
       "definition_uri": "https://w3id.org/peh/terms/observation_end_date",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/observation_end_date",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationEndDate"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationEndDate",
       "owner": "ObservationResult",
       "domain_of": [
         "ObservationResult"
@@ -3512,7 +4010,10 @@
       "name": "collection_date",
       "definition_uri": "https://w3id.org/peh/terms/collection_date",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "slot_uri": "https://w3id.org/peh/terms/collection_date",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasCollectionDate"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasCollectionDate",
       "owner": "Sample",
       "domain_of": [
         "Sample"
@@ -5046,9 +5547,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-05-08T09:40:06",
-  "source_file_size": 36967,
-  "generation_date": "2026-05-08T09:40:29",
+  "source_file_date": "2026-05-08T10:01:45",
+  "source_file_size": 43716,
+  "generation_date": "2026-05-08T10:02:04",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

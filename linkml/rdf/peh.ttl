@@ -9,34 +9,34 @@
 <https://w3id.org/peh/terms/PEH-Model> a linkml:SchemaDefinition ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     pav:version "0.6.0" ;
-    sh:declare [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace "http://schema.org/"^^xsd:anyURI ;
-            sh:prefix "schema" ],
-        [ sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
-            sh:prefix "skos" ],
-        [ sh:namespace "https://w3id.org/peh/"^^xsd:anyURI ;
-            sh:prefix "peh" ],
-        [ sh:namespace "https://qudt.org/vocab/unit/"^^xsd:anyURI ;
+    sh:declare [ sh:namespace "https://qudt.org/vocab/unit/"^^xsd:anyURI ;
             sh:prefix "qudtunit" ],
-        [ sh:namespace "https://w3id.org/peh/terms/"^^xsd:anyURI ;
-            sh:prefix "pehterms" ],
         [ sh:namespace "https://qudt.org/schema/qudt/"^^xsd:anyURI ;
             sh:prefix "qudt" ],
-        [ sh:namespace "https://w3id.org/iadopt/ont/"^^xsd:anyURI ;
-            sh:prefix "iop" ],
-        [ sh:namespace "https://www.wikidata.org/wiki/"^^xsd:anyURI ;
-            sh:prefix "wikidata" ],
-        [ sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
-            sh:prefix "prov" ],
         [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
             sh:prefix "owl" ],
-        [ sh:namespace "https://w3id.org/linkml/"^^xsd:anyURI ;
-            sh:prefix "linkml" ],
+        [ sh:namespace "https://www.wikidata.org/wiki/"^^xsd:anyURI ;
+            sh:prefix "wikidata" ],
+        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
+            sh:prefix "prov" ],
         [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
             sh:prefix "rdf" ],
         [ sh:namespace "http://qudt.org/2.1/vocab/quantitykind"^^xsd:anyURI ;
-            sh:prefix "qudtqk" ] ;
+            sh:prefix "qudtqk" ],
+        [ sh:namespace "https://w3id.org/peh/terms/"^^xsd:anyURI ;
+            sh:prefix "pehterms" ],
+        [ sh:namespace "https://w3id.org/iadopt/ont/"^^xsd:anyURI ;
+            sh:prefix "iop" ],
+        [ sh:namespace "https://w3id.org/linkml/"^^xsd:anyURI ;
+            sh:prefix "linkml" ],
+        [ sh:namespace "https://w3id.org/peh/"^^xsd:anyURI ;
+            sh:prefix "peh" ],
+        [ sh:namespace "http://schema.org/"^^xsd:anyURI ;
+            sh:prefix "schema" ],
+        [ sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
+            sh:prefix "skos" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
         <https://w3id.org/peh/terms/BioChemEntitySubClass>,
         <https://w3id.org/peh/terms/BioChemRole>,
@@ -132,7 +132,7 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2026-05-08T09:40:33"^^xsd:dateTime ;
+    linkml:generation_date "2026-05-08T10:02:08"^^xsd:dateTime ;
     linkml:id "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:imports "linkml:types"^^xsd:anyURI ;
     linkml:metamodel_version "1.7.0" ;
@@ -326,8 +326,8 @@
         <https://w3id.org/peh/terms/was_derived_from>,
         <https://w3id.org/peh/terms/zeroallowed> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2026-05-08T09:40:06"^^xsd:dateTime ;
-    linkml:source_file_size 36967 ;
+    linkml:source_file_date "2026-05-08T10:01:45"^^xsd:dateTime ;
+    linkml:source_file_size 43716 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,
@@ -766,31 +766,35 @@
 
 <https://w3id.org/peh/terms/alias> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/alternateName"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/alias"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ContextAlias> ;
     linkml:owner <https://w3id.org/peh/terms/ContextAlias> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/alias"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/alternateName"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/authors> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/author"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/authors"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ResearchObjective> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ResearchObjective> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/authors"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/author"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/biochementity> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasBioChemEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/biochementity"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:range <https://w3id.org/peh/terms/BioChemEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/biochementity"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasBioChemEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/biochementity_subclasses> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasBioChemEntitySubclass"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/biochementity_subclasses"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -798,85 +802,95 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/biochementity_subclasses"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasBioChemEntitySubclass"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/calculation_implementation> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasCalculationImplementation"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/calculation_implementation"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:owner <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:range <https://w3id.org/peh/terms/CalculationImplementation> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/calculation_implementation"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasCalculationImplementation"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/calculation_implementation_as_json> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasCalculationImplementationAsJson"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/calculation_implementation_as_json"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/calculation_implementation_as_json"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasCalculationImplementationAsJson"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/calculation_name> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasCalculationName"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/calculation_name"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationDesign> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/calculation_name"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasCalculationName"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/categorical> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isCategorical"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/categorical"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/boolean> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/categorical"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isCategorical"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/collection_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasCollectionDate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/collection_date"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Sample> ;
     linkml:owner <https://w3id.org/peh/terms/Sample> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/collection_date"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasCollectionDate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/contact_email> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/email"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/contact_email"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Contact> ;
     linkml:owner <https://w3id.org/peh/terms/Contact> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/contact_email"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/email"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/contact_phone> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/telephone"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/contact_phone"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Contact> ;
     linkml:owner <https://w3id.org/peh/terms/Contact> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/contact_phone"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/telephone"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/contact_roles> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasContactRole"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/contact_roles"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Contact> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Contact> ;
     linkml:range <https://w3id.org/peh/terms/ContactRole> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/contact_roles"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasContactRole"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/context> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasContext"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/context"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ContextAlias> ;
     linkml:owner <https://w3id.org/peh/terms/ContextAlias> ;
     linkml:range <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/context"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasContext"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/data_requests> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasDataRequest"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/data_requests"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -884,33 +898,36 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/DataRequest> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/data_requests"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasDataRequest"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/data_roles> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasDataRole"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/data_roles"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/DataRole> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/data_roles"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasDataRole"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/data_stakeholders> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasDataStakeholder"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/data_stakeholders"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/DataStakeholder> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/data_stakeholders"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasDataStakeholder"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/dataset_label> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasDatasetLabel"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/dataset_label"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ContextualFieldReference> ;
     linkml:owner <https://w3id.org/peh/terms/ContextualFieldReference> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/dataset_label"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasDatasetLabel"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/datetime> a linkml:TypeDefinition ;
     skos:editorialNote "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"." ;
@@ -925,14 +942,16 @@
 
 <https://w3id.org/peh/terms/delivery_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasDeliveryDate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/delivery_date"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ProcessingStep> ;
     linkml:owner <https://w3id.org/peh/terms/ProcessingStep> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/delivery_date"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasDeliveryDate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/derived_observations> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasDerivedObservation"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/derived_observations"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -940,26 +959,29 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/DerivedObservation> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/derived_observations"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasDerivedObservation"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/element_style> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasElementStyle"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/element_style"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutElementStyle> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/element_style"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasElementStyle"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/element_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasElementType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/element_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutElementType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/element_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasElementType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/elements> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasElement"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/elements"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:inlined true ;
@@ -967,36 +989,40 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutElement> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/elements"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasElement"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/field> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasField"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/field"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> ;
     linkml:owner <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> ;
     linkml:range <https://w3id.org/peh/terms/ObservablePropertyMetadataField> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/field"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasField"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/field_label> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasFieldLabel"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/field_label"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ContextualFieldReference> ;
     linkml:owner <https://w3id.org/peh/terms/ContextualFieldReference> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/field_label"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasFieldLabel"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/foreign_key_link> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasForeignKeyLink"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/foreign_key_link"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutElementLink> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/foreign_key_link"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasForeignKeyLink"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/function_kwargs> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasFunctionKeywordArgument"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/function_kwargs"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:inlined true ;
@@ -1004,18 +1030,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:range <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/function_kwargs"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasFunctionKeywordArgument"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/function_name> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasFunctionName"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/function_name"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/function_name"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasFunctionName"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/function_results> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasFunctionResult"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/function_results"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:inlined true ;
@@ -1023,18 +1051,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/CalculationImplementation> ;
     linkml:range <https://w3id.org/peh/terms/CalculationResult> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/function_results"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasFunctionResult"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/geographic_scope> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/spatialCoverage"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/geographic_scope"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Stakeholder> ;
     linkml:owner <https://w3id.org/peh/terms/Stakeholder> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/geographic_scope"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/spatialCoverage"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/groupings> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasGrouping"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/groupings"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1042,7 +1072,7 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/Grouping> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/groupings"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasGrouping"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/has_iadopt_variable> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -1066,15 +1096,17 @@
 
 <https://w3id.org/peh/terms/immutable> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isImmutable"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/immutable"^^xsd:anyURI ;
     linkml:description "Variable values are not expected to change over time (e.g. birthdate of a person)" ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/boolean> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/immutable"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isImmutable"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/import_configs> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasImportConfig"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/import_configs"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1082,18 +1114,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/DataImportConfig> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/import_configs"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasImportConfig"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/imputation_state> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasImputationState"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/imputation_state"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/imputation_state"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasImputationState"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/imputed_unit> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasImputedUnit"^^xsd:anyURI ;
     linkml:annotations [ a linkml:Annotation ;
             skos:example "qudt:Unit" ;
             linkml:tag "rdf_type"^^xsd:anyURI ] ;
@@ -1101,18 +1135,20 @@
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/QUDTUnit> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/imputed_unit"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasImputedUnit"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/imputed_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasImputedValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/imputed_value"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/imputed_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasImputedValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/indicator_subclasses> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasIndicatorSubclass"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/indicator_subclasses"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1120,15 +1156,16 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/IndicatorSubClass> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/indicator_subclasses"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasIndicatorSubclass"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/indicator_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasIndicatorType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/indicator_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:range <https://w3id.org/peh/terms/IndicatorType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/indicator_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasIndicatorType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/is_isomer_of> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -1154,38 +1191,43 @@
 
 <https://w3id.org/peh/terms/is_observable_entity_key> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isObservableEntityKey"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/is_observable_entity_key"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutElement> ;
     linkml:range <https://w3id.org/peh/terms/boolean> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/is_observable_entity_key"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isObservableEntityKey"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/key> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasKey"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/key"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservablePropertyValueOption> ;
     linkml:owner <https://w3id.org/peh/terms/ObservablePropertyValueOption> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/key"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasKey"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/language> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/inLanguage"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/language"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Translation> ;
     linkml:owner <https://w3id.org/peh/terms/Translation> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/language"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/inLanguage"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/layout> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasLayout"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/layout"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataImportConfig> ;
     linkml:owner <https://w3id.org/peh/terms/DataImportConfig> ;
     linkml:range <https://w3id.org/peh/terms/DataLayout> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/layout"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasLayout"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/layouts> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasLayout"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/layouts"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1193,10 +1235,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/DataLayout> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/layouts"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasLayout"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/matrix_subclasses> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMatrixSubclass"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/matrix_subclasses"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1204,28 +1247,31 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/MatrixSubClass> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/matrix_subclasses"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMatrixSubclass"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/max_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMaximumValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/max_value"^^xsd:anyURI ;
     linkml:description "String representation of the expected upper bound in observations, usable for data validation" ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/max_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMaximumValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/member_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMember"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/member_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/StudyPopulation> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/StudyPopulation> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/member_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMember"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/metadata_fields> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMetadataField"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/metadata_fields"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1233,38 +1279,42 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/ObservablePropertyMetadataField> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/metadata_fields"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMetadataField"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/min_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMinimumValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/min_value"^^xsd:anyURI ;
     linkml:description "String representation of the expected lower bound in observations, usable for data validation" ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/min_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMinimumValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/molweight_grampermol> a linkml:SlotDefinition ;
     qudt:unit [ a qudt:Unit ;
             qudt:ucumCode "g/mol" ] ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMolecularWeight"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/molweight_grampermol"^^xsd:anyURI ;
     linkml:description "The molecular weight of the chemical entity in g/mol" ;
     linkml:domain_of <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
     linkml:owner <https://w3id.org/peh/terms/BioChemEntitySubClass> ;
     linkml:range <https://w3id.org/peh/terms/decimal> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/molweight_grampermol"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMolecularWeight"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/multivalued> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isMultivalued"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/multivalued"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/boolean> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/multivalued"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isMultivalued"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/normalised_unit> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasNormalisedUnit"^^xsd:anyURI ;
     linkml:annotations [ a linkml:Annotation ;
             skos:example "qudt:Unit" ;
             linkml:tag "rdf_type"^^xsd:anyURI ] ;
@@ -1272,35 +1322,39 @@
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/QUDTUnit> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/normalised_unit"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasNormalisedUnit"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/normalised_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasNormalisedValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/normalised_value"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/normalised_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasNormalisedValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/objective_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObjectiveType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/objective_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ResearchObjective> ;
     linkml:owner <https://w3id.org/peh/terms/ResearchObjective> ;
     linkml:range <https://w3id.org/peh/terms/ObjectiveType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/objective_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObjectiveType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observable_entity_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservableEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observable_entity_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservationDesign> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservationDesign> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observable_entity_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservableEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observable_properties> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservableProperty"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observable_properties"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1308,10 +1362,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/ObservableProperty> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observable_properties"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservableProperty"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observable_property_specifications> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservablePropertySpecification"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observable_property_specifications"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservationDesign> ;
     linkml:inlined true ;
@@ -1319,25 +1374,28 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservationDesign> ;
     linkml:range <https://w3id.org/peh/terms/ObservablePropertySpecification> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observable_property_specifications"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservablePropertySpecification"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservation"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation"^^xsd:anyURI ;
     linkml:range <https://w3id.org/peh/terms/Observation> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservation"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_design_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationDesign"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_design_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/ObservationDesign> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_design_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationDesign"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_designs> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationDesign"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_designs"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1345,27 +1403,30 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/ObservationDesign> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_designs"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationDesign"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_end_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationEndDate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_end_date"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservationResult> ;
     linkml:owner <https://w3id.org/peh/terms/ObservationResult> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_end_date"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationEndDate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_group_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationGroup"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_group_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Study> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Study> ;
     linkml:range <https://w3id.org/peh/terms/ObservationGroup> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_group_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationGroup"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_groups> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationGroup"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_groups"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1373,10 +1434,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/ObservationGroup> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_groups"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationGroup"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_results> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationResult"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_results"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1384,18 +1446,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/ObservationResult> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_results"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationResult"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_start_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationStartDate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_start_date"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservationResult> ;
     linkml:owner <https://w3id.org/peh/terms/ObservationResult> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_start_date"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationStartDate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observations> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservation"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observations"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1403,10 +1467,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/Observation> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observations"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservation"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observed_entity_properties> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservedEntityProperty"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observed_entity_properties"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:inlined true ;
@@ -1414,7 +1479,7 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/ObservedEntityProperty> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observed_entity_properties"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservedEntityProperty"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/orcid> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -1470,6 +1535,7 @@
 
 <https://w3id.org/peh/terms/physical_entities> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasPhysicalEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/physical_entities"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1477,70 +1543,78 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/PhysicalEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/physical_entities"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasPhysicalEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/physical_label> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasPhysicalLabel"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/physical_label"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Sample> ;
     linkml:owner <https://w3id.org/peh/terms/Sample> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/physical_label"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasPhysicalLabel"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/process_state> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProcessState"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/process_state"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationKeywordArgument> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/process_state"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProcessState"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/processing_actions> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProcessingAction"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/processing_actions"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/ProcessingAction> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/processing_actions"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProcessingAction"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/processing_description> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProcessingDescription"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/processing_description"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:owner <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/processing_description"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProcessingDescription"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/processing_steps> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProcessingStep"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/processing_steps"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/ProcessingStep> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/processing_steps"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProcessingStep"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/project_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProject"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/project_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Study> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Study> ;
     linkml:range <https://w3id.org/peh/terms/Project> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/project_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProject"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/project_roles> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProjectRole"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/project_roles"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ProjectStakeholder> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ProjectStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/ProjectRole> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/project_roles"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProjectRole"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/project_stakeholders> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProjectStakeholder"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/project_stakeholders"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Project> ;
     linkml:inlined true ;
@@ -1548,10 +1622,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Project> ;
     linkml:range <https://w3id.org/peh/terms/ProjectStakeholder> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/project_stakeholders"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProjectStakeholder"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/projects> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProject"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/projects"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1559,26 +1634,29 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/Project> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/projects"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProject"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/property> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProperty"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/property"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/property"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProperty"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/provenance_context_key> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProvenanceContextKey"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/provenance_context_key"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ProvenanceData> ;
     linkml:owner <https://w3id.org/peh/terms/ProvenanceData> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/provenance_context_key"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProvenanceContextKey"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/provenance_data> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProvenanceData"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/provenance_data"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:inlined true ;
@@ -1586,26 +1664,29 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/ProvenanceData> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/provenance_data"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProvenanceData"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/provenance_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasProvenanceValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/provenance_value"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ProvenanceData> ;
     linkml:owner <https://w3id.org/peh/terms/ProvenanceData> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/provenance_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasProvenanceValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/quality_context_key> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasQualityContextKey"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/quality_context_key"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/QualityData> ;
     linkml:owner <https://w3id.org/peh/terms/QualityData> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/quality_context_key"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasQualityContextKey"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/quality_data> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasQualityData"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/quality_data"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:inlined true ;
@@ -1613,18 +1694,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/QualityData> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/quality_data"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasQualityData"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/quality_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasQualityValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/quality_value"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/QualityData> ;
     linkml:owner <https://w3id.org/peh/terms/QualityData> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/quality_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasQualityValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/raw_unit> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRawUnit"^^xsd:anyURI ;
     linkml:annotations [ a linkml:Annotation ;
             skos:example "qudt:Unit" ;
             linkml:tag "rdf_type"^^xsd:anyURI ] ;
@@ -1632,73 +1715,81 @@
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/QUDTUnit> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/raw_unit"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRawUnit"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/raw_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRawValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/raw_value"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/raw_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRawValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/recruited_in_project> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/wasRecruitedInProject"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/recruited_in_project"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Person> ;
     linkml:owner <https://w3id.org/peh/terms/Person> ;
     linkml:range <https://w3id.org/peh/terms/Project> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/recruited_in_project"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/wasRecruitedInProject"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/relevant_observation_types> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRelevantObservationType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/relevant_observation_types"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/ObservationType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/relevant_observation_types"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRelevantObservationType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/remark_on_content> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRemarkOnContent"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/remark_on_content"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/remark_on_content"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRemarkOnContent"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/remark_on_methodology> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRemarkOnMethodology"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/remark_on_methodology"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/remark_on_methodology"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRemarkOnMethodology"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/request_properties> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRequestProperty"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/request_properties"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/request_properties"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRequestProperty"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/research_objectives> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasResearchObjective"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/research_objectives"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataRequest> ;
     linkml:range <https://w3id.org/peh/terms/ResearchObjective> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/research_objectives"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasResearchObjective"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/research_population_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasResearchPopulationType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/research_population_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/StudyPopulation> ;
     linkml:owner <https://w3id.org/peh/terms/StudyPopulation> ;
     linkml:range <https://w3id.org/peh/terms/ResearchPopulationType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/research_population_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasResearchPopulationType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/rorid> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -1711,49 +1802,55 @@
 
 <https://w3id.org/peh/terms/round_decimals> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRoundDecimals"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/round_decimals"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/integer> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/round_decimals"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRoundDecimals"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/sample_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSample"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/sample_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:range <https://w3id.org/peh/terms/Sample> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/sample_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSample"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/sampled_in_project> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/wasSampledInProject"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/sampled_in_project"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Sample> ;
     linkml:owner <https://w3id.org/peh/terms/Sample> ;
     linkml:range <https://w3id.org/peh/terms/Project> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/sampled_in_project"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/wasSampledInProject"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/scale_factor> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasScaleFactor"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/scale_factor"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/decimal> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/scale_factor"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasScaleFactor"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/section_mapping> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSectionMapping"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/section_mapping"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataImportConfig> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:owner <https://w3id.org/peh/terms/DataImportConfig> ;
     linkml:range <https://w3id.org/peh/terms/DataImportSectionMapping> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/section_mapping"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSectionMapping"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/section_mapping_links> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSectionMappingLink"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/section_mapping_links"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataImportSectionMapping> ;
     linkml:inlined true ;
@@ -1761,18 +1858,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataImportSectionMapping> ;
     linkml:range <https://w3id.org/peh/terms/DataImportSectionMappingLink> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/section_mapping_links"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSectionMappingLink"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/section_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSectionType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/section_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutSectionType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/section_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSectionType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/sections> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSection"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/sections"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayout> ;
     linkml:inlined true ;
@@ -1780,27 +1879,30 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataLayout> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutSection> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/sections"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSection"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/significantdecimals> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSignificantDecimals"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/significantdecimals"^^xsd:anyURI ;
     linkml:description "Variable precision indication, expressed as the number of significant decimals" ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/integer> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/significantdecimals"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSignificantDecimals"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/specification_category> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSpecificationCategory"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/specification_category"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservablePropertySpecification> ;
     linkml:owner <https://w3id.org/peh/terms/ObservablePropertySpecification> ;
     linkml:range <https://w3id.org/peh/terms/ObservablePropertySpecificationCategory> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/specification_category"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSpecificationCategory"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/stakeholders> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStakeholder"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/stakeholders"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1808,10 +1910,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/Stakeholder> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/stakeholders"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStakeholder"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/studies> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudy"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/studies"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1819,10 +1922,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/Study> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/studies"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudy"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/study_entities> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudyEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_entities"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/EntityList> ;
     linkml:inlined true ;
@@ -1830,45 +1934,50 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/EntityList> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_entities"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudyEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/study_entity> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudyEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_entity"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/StudyEntityLink> ;
     linkml:owner <https://w3id.org/peh/terms/StudyEntityLink> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_entity"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudyEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/study_entity_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudyEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_entity_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Study> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Study> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_entity_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudyEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/study_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudy"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Project> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Project> ;
     linkml:range <https://w3id.org/peh/terms/Study> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudy"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/study_roles> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudyRole"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_roles"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/StudyStakeholder> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/StudyStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/StudyRole> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_roles"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudyRole"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/study_stakeholders> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudyStakeholder"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_stakeholders"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Study> ;
     linkml:inlined true ;
@@ -1876,26 +1985,29 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Study> ;
     linkml:range <https://w3id.org/peh/terms/StudyStakeholder> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_stakeholders"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudyStakeholder"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/translated_value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasTranslatedValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/translated_value"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Translation> ;
     linkml:owner <https://w3id.org/peh/terms/Translation> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/translated_value"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasTranslatedValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_actor> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationActor"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_actor"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_actor"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationActor"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_arg_contextual_field_references> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationArgumentContextualFieldReference"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_arg_contextual_field_references"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:inlined true ;
@@ -1903,10 +2015,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/ContextualFieldReference> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_arg_contextual_field_references"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationArgumentContextualFieldReference"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_arg_expressions> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationArgumentExpression"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_arg_expressions"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:inlined true ;
@@ -1914,103 +2027,115 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/ValidationExpression> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_arg_expressions"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationArgumentExpression"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_arg_values> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationArgumentValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_arg_values"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_arg_values"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationArgumentValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_command> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationCommand"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_command"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/ValidationCommand> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_command"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationCommand"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_condition_expression> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationConditionExpression"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_condition_expression"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/ValidationExpression> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_condition_expression"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationConditionExpression"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_datetime> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationDateTime"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_datetime"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:range <https://w3id.org/peh/terms/datetime> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_datetime"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationDateTime"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_error_level> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationErrorLevel"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_error_level"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:range <https://w3id.org/peh/terms/ValidationErrorLevel> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_error_level"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationErrorLevel"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_error_message_template> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationErrorMessageTemplate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_error_message_template"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_error_message_template"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationErrorMessageTemplate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_expression> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationExpression"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_expression"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:range <https://w3id.org/peh/terms/ValidationExpression> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_expression"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationExpression"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_institute> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationInstitute"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_institute"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_institute"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationInstitute"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_name> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationName"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_name"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_name"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationName"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_remark> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationRemark"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_remark"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_remark"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationRemark"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_status> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationStatus"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_status"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
     linkml:range <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_status"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationStatus"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_subject_contextual_field_references> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationSubjectContextualFieldReference"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_subject_contextual_field_references"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:inlined true ;
@@ -2018,18 +2143,20 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ValidationExpression> ;
     linkml:range <https://w3id.org/peh/terms/ContextualFieldReference> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_subject_contextual_field_references"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationSubjectContextualFieldReference"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/value_as_string> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValueAsString"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/value_as_string"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/value_as_string"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValueAsString"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/value_metadata> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValueMetadata"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/value_metadata"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:inlined true ;
@@ -2037,10 +2164,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/ObservablePropertyMetadataElement> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/value_metadata"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValueMetadata"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/value_options> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValueOption"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/value_options"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:inlined true ;
@@ -2048,15 +2176,16 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/ObservablePropertyValueOption> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/value_options"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValueOption"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/zeroallowed> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isZeroAllowed"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/zeroallowed"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/boolean> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/zeroallowed"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isZeroAllowed"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/DataExtract> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2185,6 +2314,7 @@
 
 <https://w3id.org/peh/terms/calculation_design> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasCalculationDesign"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/calculation_design"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty>,
         <https://w3id.org/peh/terms/ObservablePropertySpecification> ;
@@ -2192,16 +2322,17 @@
     linkml:inlined_as_list true ;
     linkml:owner <https://w3id.org/peh/terms/ObservablePropertySpecification> ;
     linkml:range <https://w3id.org/peh/terms/CalculationDesign> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/calculation_design"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasCalculationDesign"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/conditional> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isConditional"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/conditional"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationDesign>,
         <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/ValidationDesign> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/conditional"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isConditional"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/decimal> a linkml:TypeDefinition ;
     skos:broadMatch "schema:Number"^^xsd:anyURI ;
@@ -2215,12 +2346,13 @@
 
 <https://w3id.org/peh/terms/default_language> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/inLanguage"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/default_language"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Project>,
         <https://w3id.org/peh/terms/Study> ;
     linkml:owner <https://w3id.org/peh/terms/Study> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/default_language"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/inLanguage"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/has_role> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2245,84 +2377,93 @@
 
 <https://w3id.org/peh/terms/linktype> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasLinkType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/linktype"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/PhysicalEntityLink>,
         <https://w3id.org/peh/terms/StudyEntityLink> ;
     linkml:owner <https://w3id.org/peh/terms/StudyEntityLink> ;
     linkml:range <https://w3id.org/peh/terms/LinkType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/linktype"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasLinkType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/location> a linkml:SlotDefinition ;
     skos:exactMatch "schema:location"^^xsd:anyURI,
         "wikidata:Q2221906"^^xsd:anyURI ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/location"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/location"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Geolocation> ;
     linkml:owner <https://w3id.org/peh/terms/Geolocation> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/location"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/location"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/mapping_name> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMappingName"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/mapping_name"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument>,
         <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/mapping_name"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMappingName"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observable_entity> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservableEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observable_entity"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservedEntityProperty>,
         <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedEntityProperty> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observable_entity"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservableEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observable_entity_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservableEntityType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observable_entity_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutSection>,
         <https://w3id.org/peh/terms/ObservationDesign> ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:range <https://w3id.org/peh/terms/ObservableEntityType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observable_entity_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservableEntityType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_design> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationDesign"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_design"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Observation> ;
     linkml:owner <https://w3id.org/peh/terms/Observation> ;
     linkml:range <https://w3id.org/peh/terms/ObservationDesign> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_design"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationDesign"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservation"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataImportSectionMappingLink>,
         <https://w3id.org/peh/terms/ObservationGroup> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataImportSectionMappingLink> ;
     linkml:range <https://w3id.org/peh/terms/Observation> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservation"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_result_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationResult"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_result_id_list"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Observation> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/Observation> ;
     linkml:range <https://w3id.org/peh/terms/ObservationResult> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_result_id_list"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationResult"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/Observation> ;
     linkml:owner <https://w3id.org/peh/terms/Observation> ;
     linkml:range <https://w3id.org/peh/terms/ObservationType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/property_name> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2349,31 +2490,34 @@
 
 <https://w3id.org/peh/terms/relevant_observable_entity_types> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasRelevantObservableEntityType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/relevant_observable_entity_types"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/ObservableEntityType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/relevant_observable_entity_types"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasRelevantObservableEntityType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/required> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/isRequired"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/required"^^xsd:anyURI ;
     linkml:description "Must be provided for the observation to be valid" ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:owner <https://w3id.org/peh/terms/ObservableProperty> ;
     linkml:range <https://w3id.org/peh/terms/boolean> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/required"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/isRequired"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/section> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSection"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/section"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataImportSectionMappingLink>,
         <https://w3id.org/peh/terms/DataLayoutElementLink> ;
     linkml:owner <https://w3id.org/peh/terms/DataImportSectionMappingLink> ;
     linkml:range <https://w3id.org/peh/terms/DataLayoutSection> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/section"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSection"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/uriorcurie> a linkml:TypeDefinition ;
     skos:editorialNote "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"." ;
@@ -2439,16 +2583,18 @@
 
 <https://w3id.org/peh/terms/aliases> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/alternateName"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/aliases"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/HasAliases> ;
     linkml:inlined_as_list true ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/HasAliases> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/aliases"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/alternateName"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/constraints> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasConstraint"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/constraints"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/Sample>,
@@ -2456,10 +2602,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/constraints"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasConstraint"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/contextual_field_reference> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasContextualFieldReference"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/contextual_field_reference"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument>,
         <https://w3id.org/peh/terms/CalculationResult> ;
@@ -2468,25 +2615,27 @@
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/ContextualFieldReference> ;
     linkml:required true ;
-    linkml:slot_uri "https://w3id.org/peh/terms/contextual_field_reference"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasContextualFieldReference"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/current_validation_status> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasCurrentValidationStatus"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/current_validation_status"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/HasValidationStatus> ;
     linkml:owner <https://w3id.org/peh/terms/HasValidationStatus> ;
     linkml:range <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/current_validation_status"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasCurrentValidationStatus"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/end_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/endDate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/end_date"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservationGroup>,
         <https://w3id.org/peh/terms/Project>,
         <https://w3id.org/peh/terms/Study> ;
     linkml:owner <https://w3id.org/peh/terms/ObservationGroup> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/end_date"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/endDate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/grouping_id_list> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2502,36 +2651,40 @@
 
 <https://w3id.org/peh/terms/label> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/label"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutElement>,
         <https://w3id.org/peh/terms/DataLayoutElementLink>,
         <https://w3id.org/peh/terms/ObservablePropertyValueOption> ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutElementLink> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/label"^^xsd:anyURI .
+    linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/matrix> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasMatrix"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/matrix"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
         <https://w3id.org/peh/terms/Sample>,
         <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
     linkml:range <https://w3id.org/peh/terms/Matrix> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/matrix"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasMatrix"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observation_result_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservationResultType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observation_result_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservableProperty>,
         <https://w3id.org/peh/terms/ObservationDesign>,
         <https://w3id.org/peh/terms/ObservationResult> ;
     linkml:owner <https://w3id.org/peh/terms/ObservationResult> ;
     linkml:range <https://w3id.org/peh/terms/ObservationResultType> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observation_result_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservationResultType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/observed_values> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservedValue"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observed_values"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataExtract>,
         <https://w3id.org/peh/terms/EntityList>,
@@ -2541,20 +2694,22 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataExtract> ;
     linkml:range <https://w3id.org/peh/terms/ObservedValue> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observed_values"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservedValue"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/stakeholder> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStakeholder"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/stakeholder"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataStakeholder>,
         <https://w3id.org/peh/terms/ProjectStakeholder>,
         <https://w3id.org/peh/terms/StudyStakeholder> ;
     linkml:owner <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/Stakeholder> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/stakeholder"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStakeholder"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_designs> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationDesign"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_designs"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataLayoutSection>,
         <https://w3id.org/peh/terms/ObservableProperty>,
@@ -2564,10 +2719,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataLayoutSection> ;
     linkml:range <https://w3id.org/peh/terms/ValidationDesign> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_designs"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationDesign"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_history> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValidationHistoryRecord"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/validation_history"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/HasValidationStatus> ;
     linkml:inlined true ;
@@ -2575,7 +2731,7 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/HasValidationStatus> ;
     linkml:range <https://w3id.org/peh/terms/ValidationHistoryRecord> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/validation_history"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValidationHistoryRecord"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/BioChemEntity> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2688,6 +2844,7 @@
 
 <https://w3id.org/peh/terms/contacts> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasContact"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/contacts"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/DataRequest>,
         <https://w3id.org/peh/terms/DataStakeholder>,
@@ -2698,10 +2855,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/DataStakeholder> ;
     linkml:range <https://w3id.org/peh/terms/Contact> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/contacts"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasContact"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/start_date> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/startDate"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/start_date"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/ObservationGroup>,
         <https://w3id.org/peh/terms/ProcessingStep>,
@@ -2709,7 +2867,7 @@
         <https://w3id.org/peh/terms/Study> ;
     linkml:owner <https://w3id.org/peh/terms/ProcessingStep> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/start_date"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/startDate"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/unit> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2728,6 +2886,7 @@
 
 <https://w3id.org/peh/terms/value_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasValueType"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/value_type"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument>,
         <https://w3id.org/peh/terms/CalculationResult>,
@@ -2735,7 +2894,7 @@
         <https://w3id.org/peh/terms/ObservablePropertyMetadataField> ;
     linkml:owner <https://w3id.org/peh/terms/CalculationResult> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/value_type"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasValueType"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/DataImportConfig> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2897,6 +3056,7 @@
 
 <https://w3id.org/peh/terms/value> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/value"^^xsd:anyURI ;
     linkml:description "String representation of a measured or configured value, to be parsed according to the corresponding value type" ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument>,
@@ -2906,7 +3066,7 @@
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:required true ;
-    linkml:slot_uri "https://w3id.org/peh/terms/value"^^xsd:anyURI .
+    linkml:slot_uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/ContextAlias> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3012,6 +3172,7 @@
 
 <https://w3id.org/peh/terms/observable_property> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasObservableProperty"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/observable_property"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/CalculationKeywordArgument>,
         <https://w3id.org/peh/terms/CalculationResult>,
@@ -3021,7 +3182,7 @@
         <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:owner <https://w3id.org/peh/terms/ObservedEntityProperty> ;
     linkml:range <https://w3id.org/peh/terms/ObservableProperty> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/observable_property"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasObservableProperty"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/CalculationImplementation> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3065,6 +3226,7 @@
 
 <https://w3id.org/peh/terms/physical_entity_links> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasPhysicalEntityLink"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/physical_entity_links"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/PhysicalEntity> ;
     linkml:inlined true ;
@@ -3072,7 +3234,7 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/PhysicalEntity> ;
     linkml:range <https://w3id.org/peh/terms/PhysicalEntityLink> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/physical_entity_links"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasPhysicalEntityLink"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/CalculationDesign> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3104,6 +3266,7 @@
 
 <https://w3id.org/peh/terms/study_entity_links> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasStudyEntityLink"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/study_entity_links"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/StudyEntity> ;
     linkml:inlined true ;
@@ -3111,7 +3274,7 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/StudyEntity> ;
     linkml:range <https://w3id.org/peh/terms/StudyEntityLink> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/study_entity_links"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasStudyEntityLink"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/DataStakeholder> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3194,12 +3357,13 @@
 
 <https://w3id.org/peh/terms/physical_entity> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasPhysicalEntity"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/physical_entity"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/PhysicalEntityLink>,
         <https://w3id.org/peh/terms/StudyEntity> ;
     linkml:owner <https://w3id.org/peh/terms/StudyEntity> ;
     linkml:range <https://w3id.org/peh/terms/PhysicalEntity> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/physical_entity"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasPhysicalEntity"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/DataLayoutSection> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3367,6 +3531,7 @@
 
 <https://w3id.org/peh/terms/context_aliases> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasContextAlias"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/context_aliases"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/HasContextAliases> ;
     linkml:inlined true ;
@@ -3374,10 +3539,11 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/HasContextAliases> ;
     linkml:range <https://w3id.org/peh/terms/ContextAlias> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/context_aliases"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasContextAlias"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/translations> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasTranslation"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/translations"^^xsd:anyURI ;
     linkml:domain_of <https://w3id.org/peh/terms/HasTranslations> ;
     linkml:inlined true ;
@@ -3385,7 +3551,7 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/peh/terms/HasTranslations> ;
     linkml:range <https://w3id.org/peh/terms/Translation> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/translations"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasTranslation"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/CalculationResult> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3614,12 +3780,13 @@
 
 <https://w3id.org/peh/terms/ui_label> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasUiLabel"^^xsd:anyURI ;
     linkml:definition_uri "https://w3id.org/peh/terms/ui_label"^^xsd:anyURI ;
     linkml:description "Human readable label, to be used in user interactions through forms or documents." ;
     linkml:domain_of <https://w3id.org/peh/terms/NamedThing> ;
     linkml:owner <https://w3id.org/peh/terms/NamedThing> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/ui_label"^^xsd:anyURI .
+    linkml:slot_uri "https://w3id.org/peh/terms/hasUiLabel"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/EntityList> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
