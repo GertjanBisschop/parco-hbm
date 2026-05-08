@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.5.3
+version: 0.6.0
 
 imports:
   - linkml:types
@@ -164,6 +164,7 @@ classes:
       - has_role
       - is_metabolite_of
       - is_isomer_of
+      - parent_biochementities
   
   Matrix:
     class_uri: wikidata:Q685816
@@ -183,7 +184,7 @@ classes:
     description: >
       Template class used to generate OWL Classes.
     slots:
-      - parent_matrix
+      - parent_matrices
 
   Indicator:
     class_uri: wikidata:Q937228
@@ -210,7 +211,7 @@ classes:
       - grouping_id_list
       - relevant_observable_entity_types
       - biochementity
-      - parent_indicator
+      - parent_indicators
 
   QUDTUnit:
     class_uri: qudt:Unit
@@ -803,14 +804,20 @@ slots:
     inlined_as_list: true
     range: IndicatorSubClass
 
-  parent_matrix:
+  parent_matrices:
     range: MatrixSubClass
     slot_uri: rdfs:subClassOf
+    multivalued: true
   indicator_type:
     range: IndicatorType
-  parent_indicator:
+  parent_indicators:
     range: IndicatorSubClass
     slot_uri: rdfs:subClassOf
+    multivalued: true
+  parent_biochementities:
+    range: BioChemEntitySubClass
+    slot_uri: rdfs:subClassOf
+    multivalued: true
   property:
   matrix:
     range: Matrix
