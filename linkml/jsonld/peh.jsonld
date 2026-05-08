@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "imports": [
     "linkml:types"
   ],
@@ -1386,8 +1386,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "parent_matrix",
-      "definition_uri": "https://w3id.org/peh/terms/parent_matrix",
+      "name": "parent_matrices",
+      "definition_uri": "https://w3id.org/peh/terms/parent_matrices",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "http://www.w3.org/2000/01/rdf-schema#subClassOf"
@@ -1398,6 +1398,7 @@
         "MatrixSubClass"
       ],
       "range": "MatrixSubClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1413,8 +1414,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "parent_indicator",
-      "definition_uri": "https://w3id.org/peh/terms/parent_indicator",
+      "name": "parent_indicators",
+      "definition_uri": "https://w3id.org/peh/terms/parent_indicators",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "http://www.w3.org/2000/01/rdf-schema#subClassOf"
@@ -1425,6 +1426,23 @@
         "IndicatorSubClass"
       ],
       "range": "IndicatorSubClass",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "parent_biochementities",
+      "definition_uri": "https://w3id.org/peh/terms/parent_biochementities",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+      ],
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "owner": "BioChemEntitySubClass",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "BioChemEntitySubClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3743,6 +3761,7 @@
         "has_role",
         "is_metabolite_of",
         "is_isomer_of",
+        "parent_biochementities",
         "aliases",
         "context_aliases",
         "translations",
@@ -3802,7 +3821,7 @@
         "description",
         "remark",
         "exact_matches",
-        "parent_matrix",
+        "parent_matrices",
         "translations",
         "context_aliases"
       ],
@@ -3864,7 +3883,7 @@
         "grouping_id_list",
         "relevant_observable_entity_types",
         "biochementity",
-        "parent_indicator",
+        "parent_indicators",
         "context_aliases",
         "translations"
       ],
@@ -5027,9 +5046,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-05-07T11:56:26",
-  "source_file_size": 36775,
-  "generation_date": "2026-05-07T11:56:43",
+  "source_file_date": "2026-05-08T09:40:06",
+  "source_file_size": 36967,
+  "generation_date": "2026-05-08T09:40:29",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

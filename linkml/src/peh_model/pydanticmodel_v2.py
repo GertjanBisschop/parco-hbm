@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.7.0"
-version = "0.5.3"
+version = "0.6.0"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -448,6 +448,7 @@ class BioChemEntitySubClass(
         default=None,
         description="""Indicates that this molecular entity is an isomer of another molecular entity""",
     )
+    parent_biochementities: Optional[list[str]] = Field(default=None)
     aliases: Optional[list[str]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
@@ -518,7 +519,7 @@ class MatrixSubClass(HasTranslations, HasContextAliases, NamedThing):
 
     """
 
-    parent_matrix: Optional[str] = Field(default=None)
+    parent_matrices: Optional[list[str]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     id: str = Field(
@@ -593,7 +594,7 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
         default=None
     )
     biochementity: Optional[str] = Field(default=None)
-    parent_indicator: Optional[str] = Field(default=None)
+    parent_indicators: Optional[list[str]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(

@@ -433,15 +433,19 @@
       "orcid": {
          "@id": "schema:identifier"
       },
+      "parent_biochementities": {
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
+      },
       "parent_grouping_id_list": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
       },
-      "parent_indicator": {
+      "parent_indicators": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
       },
-      "parent_matrix": {
+      "parent_matrices": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
       },

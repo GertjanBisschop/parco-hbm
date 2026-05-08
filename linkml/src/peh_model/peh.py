@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-07T11:56:43
+# Generation date: 2026-05-08T09:40:29
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.7.0"
-version = "0.5.3"
+version = "0.6.0"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -963,6 +963,12 @@ class BioChemEntitySubClass(NamedThing):
     is_isomer_of: Optional[
         Union[Union[str, BioChemEntityId], list[Union[str, BioChemEntityId]]]
     ] = empty_list()
+    parent_biochementities: Optional[
+        Union[
+            Union[str, BioChemEntitySubClassId],
+            list[Union[str, BioChemEntitySubClassId]],
+        ]
+    ] = empty_list()
     aliases: Optional[Union[str, list[str]]] = empty_list()
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
@@ -1021,6 +1027,17 @@ class BioChemEntitySubClass(NamedThing):
         self.is_isomer_of = [
             v if isinstance(v, BioChemEntityId) else BioChemEntityId(v)
             for v in self.is_isomer_of
+        ]
+
+        if not isinstance(self.parent_biochementities, list):
+            self.parent_biochementities = (
+                [self.parent_biochementities]
+                if self.parent_biochementities is not None
+                else []
+            )
+        self.parent_biochementities = [
+            v if isinstance(v, BioChemEntitySubClassId) else BioChemEntitySubClassId(v)
+            for v in self.parent_biochementities
         ]
 
         if not isinstance(self.aliases, list):
@@ -1131,7 +1148,9 @@ class MatrixSubClass(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.MatrixSubClass
 
     id: Union[str, MatrixSubClassId] = None
-    parent_matrix: Optional[Union[str, MatrixSubClassId]] = None
+    parent_matrices: Optional[
+        Union[Union[str, MatrixSubClassId], list[Union[str, MatrixSubClassId]]]
+    ] = empty_list()
     translations: Optional[
         Union[Union[dict, Translation], list[Union[dict, Translation]]]
     ] = empty_list()
@@ -1145,10 +1164,14 @@ class MatrixSubClass(NamedThing):
         if not isinstance(self.id, MatrixSubClassId):
             self.id = MatrixSubClassId(self.id)
 
-        if self.parent_matrix is not None and not isinstance(
-            self.parent_matrix, MatrixSubClassId
-        ):
-            self.parent_matrix = MatrixSubClassId(self.parent_matrix)
+        if not isinstance(self.parent_matrices, list):
+            self.parent_matrices = (
+                [self.parent_matrices] if self.parent_matrices is not None else []
+            )
+        self.parent_matrices = [
+            v if isinstance(v, MatrixSubClassId) else MatrixSubClassId(v)
+            for v in self.parent_matrices
+        ]
 
         if not isinstance(self.translations, list):
             self.translations = (
@@ -1223,7 +1246,9 @@ class IndicatorSubClass(NamedThing):
         ]
     ] = empty_list()
     biochementity: Optional[Union[str, BioChemEntityId]] = None
-    parent_indicator: Optional[Union[str, IndicatorSubClassId]] = None
+    parent_indicators: Optional[
+        Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
+    ] = empty_list()
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
     ] = empty_list()
@@ -1286,10 +1311,14 @@ class IndicatorSubClass(NamedThing):
         ):
             self.biochementity = BioChemEntityId(self.biochementity)
 
-        if self.parent_indicator is not None and not isinstance(
-            self.parent_indicator, IndicatorSubClassId
-        ):
-            self.parent_indicator = IndicatorSubClassId(self.parent_indicator)
+        if not isinstance(self.parent_indicators, list):
+            self.parent_indicators = (
+                [self.parent_indicators] if self.parent_indicators is not None else []
+            )
+        self.parent_indicators = [
+            v if isinstance(v, IndicatorSubClassId) else IndicatorSubClassId(v)
+            for v in self.parent_indicators
+        ]
 
         if not isinstance(self.context_aliases, list):
             self.context_aliases = (
@@ -4670,13 +4699,15 @@ slots.indicator_subclasses = Slot(
     ],
 )
 
-slots.parent_matrix = Slot(
+slots.parent_matrices = Slot(
     uri=RDFS.subClassOf,
-    name="parent_matrix",
+    name="parent_matrices",
     curie=RDFS.curie("subClassOf"),
-    model_uri=PEHTERMS.parent_matrix,
+    model_uri=PEHTERMS.parent_matrices,
     domain=None,
-    range=Optional[Union[str, MatrixSubClassId]],
+    range=Optional[
+        Union[Union[str, MatrixSubClassId], list[Union[str, MatrixSubClassId]]]
+    ],
 )
 
 slots.indicator_type = Slot(
@@ -4688,13 +4719,29 @@ slots.indicator_type = Slot(
     range=Optional[Union[str, "IndicatorType"]],
 )
 
-slots.parent_indicator = Slot(
+slots.parent_indicators = Slot(
     uri=RDFS.subClassOf,
-    name="parent_indicator",
+    name="parent_indicators",
     curie=RDFS.curie("subClassOf"),
-    model_uri=PEHTERMS.parent_indicator,
+    model_uri=PEHTERMS.parent_indicators,
     domain=None,
-    range=Optional[Union[str, IndicatorSubClassId]],
+    range=Optional[
+        Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
+    ],
+)
+
+slots.parent_biochementities = Slot(
+    uri=RDFS.subClassOf,
+    name="parent_biochementities",
+    curie=RDFS.curie("subClassOf"),
+    model_uri=PEHTERMS.parent_biochementities,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[str, BioChemEntitySubClassId],
+            list[Union[str, BioChemEntitySubClassId]],
+        ]
+    ],
 )
 
 slots.property = Slot(
