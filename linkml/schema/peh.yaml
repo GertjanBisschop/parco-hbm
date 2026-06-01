@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.6.0
+version: 0.6.1
 
 imports:
   - linkml:types
@@ -160,6 +160,7 @@ classes:
       - HasValidationStatus
     slots:
       - grouping_id_list
+      - group_labels
       - molweight_grampermol
       - has_role
       - is_metabolite_of
@@ -787,6 +788,11 @@ slots:
     multivalued: true
     range: Grouping
     slot_uri: skos:broader
+  group_labels:
+    multivalued: true
+    range: string
+    inlined_as_list: true
+    slot_uri: pehterms:hasGroupLabel
   parent_grouping_id_list:
     multivalued: true
     range: Grouping
