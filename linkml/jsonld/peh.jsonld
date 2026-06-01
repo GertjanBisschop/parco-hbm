@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "imports": [
     "linkml:types"
   ],
@@ -73,7 +73,7 @@
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
       "notes": [
-        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string. If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -1283,6 +1283,23 @@
       ],
       "range": "Grouping",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "group_labels",
+      "definition_uri": "https://w3id.org/peh/terms/group_labels",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasGroupLabel"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasGroupLabel",
+      "owner": "BioChemEntitySubClass",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4258,6 +4275,7 @@
         "remark",
         "exact_matches",
         "grouping_id_list",
+        "group_labels",
         "molweight_grampermol",
         "has_role",
         "is_metabolite_of",
@@ -5545,11 +5563,11 @@
       "@type": "ClassDefinition"
     }
   ],
-  "metamodel_version": "1.7.0",
+  "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-05-08T10:01:45",
-  "source_file_size": 43716,
-  "generation_date": "2026-05-08T10:02:04",
+  "source_file_date": "2026-06-01T11:31:33",
+  "source_file_size": 43856,
+  "generation_date": "2026-06-01T11:31:56",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

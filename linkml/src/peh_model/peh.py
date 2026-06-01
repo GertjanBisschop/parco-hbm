@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-08T10:02:04
+# Generation date: 2026-06-01T11:31:57
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -48,8 +48,8 @@ from linkml_runtime.utils.metamodelcore import (
     XSDDateTime,
 )
 
-metamodel_version = "1.7.0"
-version = "0.6.0"
+metamodel_version = "1.11.0"
+version = "0.6.1"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -953,6 +953,7 @@ class BioChemEntitySubClass(NamedThing):
     grouping_id_list: Optional[
         Union[Union[str, GroupingId], list[Union[str, GroupingId]]]
     ] = empty_list()
+    group_labels: Optional[Union[str, list[str]]] = empty_list()
     molweight_grampermol: Optional[Decimal] = None
     has_role: Optional[
         Union[Union[str, BioChemRoleId], list[Union[str, BioChemRoleId]]]
@@ -997,6 +998,14 @@ class BioChemEntitySubClass(NamedThing):
         self.grouping_id_list = [
             v if isinstance(v, GroupingId) else GroupingId(v)
             for v in self.grouping_id_list
+        ]
+
+        if not isinstance(self.group_labels, list):
+            self.group_labels = (
+                [self.group_labels] if self.group_labels is not None else []
+            )
+        self.group_labels = [
+            v if isinstance(v, str) else str(v) for v in self.group_labels
         ]
 
         if self.molweight_grampermol is not None and not isinstance(
@@ -4590,6 +4599,15 @@ slots.grouping_id_list = Slot(
     model_uri=PEHTERMS.grouping_id_list,
     domain=None,
     range=Optional[Union[Union[str, GroupingId], list[Union[str, GroupingId]]]],
+)
+
+slots.group_labels = Slot(
+    uri=PEHTERMS.hasGroupLabel,
+    name="group_labels",
+    curie=PEHTERMS.curie("hasGroupLabel"),
+    model_uri=PEHTERMS.group_labels,
+    domain=None,
+    range=Optional[Union[str, list[str]]],
 )
 
 slots.parent_grouping_id_list = Slot(

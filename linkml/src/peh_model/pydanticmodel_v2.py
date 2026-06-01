@@ -18,8 +18,8 @@ from pydantic import (
     model_serializer,
 )
 
-metamodel_version = "1.7.0"
-version = "0.6.0"
+metamodel_version = "1.11.0"
+version = "0.6.1"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -435,6 +435,7 @@ class BioChemEntitySubClass(
     """
 
     grouping_id_list: Optional[list[str]] = Field(default=None)
+    group_labels: Optional[list[str]] = Field(default=None)
     molweight_grampermol: Optional[Decimal] = Field(
         default=None,
         description="""The molecular weight of the chemical entity in g/mol""",

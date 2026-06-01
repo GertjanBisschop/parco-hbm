@@ -188,6 +188,9 @@
       "geographic_scope": {
          "@id": "schema:spatialCoverage"
       },
+      "group_labels": {
+         "@id": "hasGroupLabel"
+      },
       "grouping_id_list": {
          "@type": "@id",
          "@id": "skos:broader"
