@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.6.2
+version: 0.6.1
 
 imports:
   - linkml:types
@@ -187,6 +187,7 @@ classes:
       Template class used to generate OWL Classes.
     slots:
       - parent_matrices
+      - suggester
 
   Indicator:
     class_uri: wikidata:Q937228
@@ -214,6 +215,7 @@ classes:
       - relevant_observable_entity_types
       - biochementity
       - parent_indicators
+      - suggester
 
   QUDTUnit:
     class_uri: qudt:Unit
