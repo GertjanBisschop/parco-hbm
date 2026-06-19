@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.6.1"
+version = "0.6.2"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -450,6 +450,10 @@ class BioChemEntitySubClass(
         description="""Indicates that this molecular entity is an isomer of another molecular entity""",
     )
     parent_biochementities: Optional[list[str]] = Field(default=None)
+    suggester: Optional[str] = Field(
+        default=None,
+        description="""ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication.""",
+    )
     aliases: Optional[list[str]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)

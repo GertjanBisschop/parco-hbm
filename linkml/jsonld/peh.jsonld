@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "imports": [
     "linkml:types"
   ],
@@ -1014,6 +1014,22 @@
         "DerivedObservation"
       ],
       "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "suggester",
+      "definition_uri": "https://w3id.org/peh/terms/suggester",
+      "description": "ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "http://www.w3.org/ns/prov#wasAttributedTo"
+      ],
+      "slot_uri": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "owner": "BioChemEntitySubClass",
+      "domain_of": [
+        "BioChemEntitySubClass"
+      ],
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -4281,6 +4297,7 @@
         "is_metabolite_of",
         "is_isomer_of",
         "parent_biochementities",
+        "suggester",
         "aliases",
         "context_aliases",
         "translations",
@@ -5565,9 +5582,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-06-01T11:31:33",
-  "source_file_size": 43856,
-  "generation_date": "2026-06-01T11:31:56",
+  "source_file_date": "2026-06-19T11:32:08",
+  "source_file_size": 44119,
+  "generation_date": "2026-06-19T11:32:28",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

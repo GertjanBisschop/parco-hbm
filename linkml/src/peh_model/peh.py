@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-01T11:31:57
+# Generation date: 2026-06-19T11:32:28
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.6.1"
+version = "0.6.2"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -970,6 +970,7 @@ class BioChemEntitySubClass(NamedThing):
             list[Union[str, BioChemEntitySubClassId]],
         ]
     ] = empty_list()
+    suggester: Optional[Union[str, URIorCURIE]] = None
     aliases: Optional[Union[str, list[str]]] = empty_list()
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
@@ -1048,6 +1049,9 @@ class BioChemEntitySubClass(NamedThing):
             v if isinstance(v, BioChemEntitySubClassId) else BioChemEntitySubClassId(v)
             for v in self.parent_biochementities
         ]
+
+        if self.suggester is not None and not isinstance(self.suggester, URIorCURIE):
+            self.suggester = URIorCURIE(self.suggester)
 
         if not isinstance(self.aliases, list):
             self.aliases = [self.aliases] if self.aliases is not None else []
@@ -4445,6 +4449,15 @@ slots.was_derived_from = Slot(
     model_uri=PEHTERMS.was_derived_from,
     domain=NamedThing,
     range=Optional[Union[str, NamedThingId]],
+)
+
+slots.suggester = Slot(
+    uri=PROV.wasAttributedTo,
+    name="suggester",
+    curie=PROV.curie("wasAttributedTo"),
+    model_uri=PEHTERMS.suggester,
+    domain=None,
+    range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.orcid = Slot(

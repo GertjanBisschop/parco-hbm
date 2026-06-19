@@ -692,6 +692,10 @@
          "@type": "@id",
          "@id": "hasStudyStakeholder"
       },
+      "suggester": {
+         "@type": "xsd:anyURI",
+         "@id": "prov:wasAttributedTo"
+      },
       "translated_value": {
          "@id": "hasTranslatedValue"
       },
