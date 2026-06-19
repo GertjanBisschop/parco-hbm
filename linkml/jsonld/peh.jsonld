@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.6.2",
+  "version": "0.6.1",
   "imports": [
     "linkml:types"
   ],
@@ -1025,9 +1025,11 @@
         "http://www.w3.org/ns/prov#wasAttributedTo"
       ],
       "slot_uri": "http://www.w3.org/ns/prov#wasAttributedTo",
-      "owner": "BioChemEntitySubClass",
+      "owner": "IndicatorSubClass",
       "domain_of": [
-        "BioChemEntitySubClass"
+        "BioChemEntitySubClass",
+        "MatrixSubClass",
+        "IndicatorSubClass"
       ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
@@ -4358,6 +4360,7 @@
         "remark",
         "exact_matches",
         "parent_matrices",
+        "suggester",
         "translations",
         "context_aliases"
       ],
@@ -4420,6 +4423,7 @@
         "relevant_observable_entity_types",
         "biochementity",
         "parent_indicators",
+        "suggester",
         "context_aliases",
         "translations"
       ],
@@ -5582,9 +5586,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-06-19T11:32:08",
-  "source_file_size": 44119,
-  "generation_date": "2026-06-19T11:32:28",
+  "source_file_date": "2026-06-19T11:37:04",
+  "source_file_size": 44155,
+  "generation_date": "2026-06-19T11:37:22",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

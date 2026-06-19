@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.6.2"
+version = "0.6.1"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -525,6 +525,10 @@ class MatrixSubClass(HasTranslations, HasContextAliases, NamedThing):
     """
 
     parent_matrices: Optional[list[str]] = Field(default=None)
+    suggester: Optional[str] = Field(
+        default=None,
+        description="""ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication.""",
+    )
     translations: Optional[list[Translation]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     id: str = Field(
@@ -600,6 +604,10 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
     )
     biochementity: Optional[str] = Field(default=None)
     parent_indicators: Optional[list[str]] = Field(default=None)
+    suggester: Optional[str] = Field(
+        default=None,
+        description="""ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication.""",
+    )
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(

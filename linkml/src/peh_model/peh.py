@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-19T11:32:28
+# Generation date: 2026-06-19T11:37:22
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.6.2"
+version = "0.6.1"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -1164,6 +1164,7 @@ class MatrixSubClass(NamedThing):
     parent_matrices: Optional[
         Union[Union[str, MatrixSubClassId], list[Union[str, MatrixSubClassId]]]
     ] = empty_list()
+    suggester: Optional[Union[str, URIorCURIE]] = None
     translations: Optional[
         Union[Union[dict, Translation], list[Union[dict, Translation]]]
     ] = empty_list()
@@ -1185,6 +1186,9 @@ class MatrixSubClass(NamedThing):
             v if isinstance(v, MatrixSubClassId) else MatrixSubClassId(v)
             for v in self.parent_matrices
         ]
+
+        if self.suggester is not None and not isinstance(self.suggester, URIorCURIE):
+            self.suggester = URIorCURIE(self.suggester)
 
         if not isinstance(self.translations, list):
             self.translations = (
@@ -1262,6 +1266,7 @@ class IndicatorSubClass(NamedThing):
     parent_indicators: Optional[
         Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
     ] = empty_list()
+    suggester: Optional[Union[str, URIorCURIE]] = None
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
     ] = empty_list()
@@ -1332,6 +1337,9 @@ class IndicatorSubClass(NamedThing):
             v if isinstance(v, IndicatorSubClassId) else IndicatorSubClassId(v)
             for v in self.parent_indicators
         ]
+
+        if self.suggester is not None and not isinstance(self.suggester, URIorCURIE):
+            self.suggester = URIorCURIE(self.suggester)
 
         if not isinstance(self.context_aliases, list):
             self.context_aliases = (
