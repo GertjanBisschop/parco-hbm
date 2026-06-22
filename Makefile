@@ -31,6 +31,7 @@ PYMODEL = $(SRC)/src/peh_model
 CHANGELOG_SCRIPT_PATH=$(SRC)/scripts/changelog.py
 PUBLISH_SCRIPT_PATH=$(SRC)/scripts/publish.py
 SYNC_VERSION_SCRIPT_PATH=$(SRC)/scripts/sync_versions.py
+PACKAGE_INIT_PATH=$(PYMODEL)/__init__.py
 CHANGELOG_SCHEMA_PATH=$(SRC)/changelog/changelog.schema.yaml
 CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
 
@@ -136,7 +137,7 @@ gen-project: make-dirs
 # sync schema and pyproject.toml version
 # ================================
 sync-version:
-	python3 $(SYNC_VERSION_SCRIPT_PATH) --yaml-file $(SOURCE_SCHEMA_PATH) --toml-file pyproject.toml
+	python3 $(SYNC_VERSION_SCRIPT_PATH) --yaml-file $(SOURCE_SCHEMA_PATH) --toml-file pyproject.toml --init-file $(PACKAGE_INIT_PATH)
 
 # ================================
 # Linting
