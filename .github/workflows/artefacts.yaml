@@ -58,7 +58,7 @@ jobs:
             exit 0
           fi
           
-          git add linkml/jsonld/ linkml/owl/ linkml/rdf/ linkml/src/peh_model/
+          git add pyproject.toml linkml/jsonld/ linkml/owl/ linkml/rdf/ linkml/src/peh_model/
           git commit -m "Auto-generate model artifacts [skip ci]"
           
           # Use token to push changes
