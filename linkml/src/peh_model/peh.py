@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-19T11:37:22
+# Generation date: 2026-06-22T10:48:03
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.6.1"
+version = "0.6.2"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -210,6 +210,10 @@ class DataLayoutSectionId(NamedThingId):
 
 
 class DataImportConfigId(NamedThingId):
+    pass
+
+
+class DataExportConfigId(NamedThingId):
     pass
 
 
@@ -3560,6 +3564,7 @@ class DataLayoutElement(YAMLRoot):
     observable_property: Optional[Union[str, ObservablePropertyId]] = None
     is_observable_entity_key: Optional[Union[bool, Bool]] = None
     foreign_key_link: Optional[Union[dict, "DataLayoutElementLink"]] = None
+    order: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.label is not None and not isinstance(self.label, str):
@@ -3591,6 +3596,9 @@ class DataLayoutElement(YAMLRoot):
             self.foreign_key_link = DataLayoutElementLink(
                 **as_dict(self.foreign_key_link)
             )
+
+        if self.order is not None and not isinstance(self.order, int):
+            self.order = int(self.order)
 
         super().__post_init__(**kwargs)
 
@@ -3732,6 +3740,42 @@ class DataImportSectionMappingLink(YAMLRoot):
             v if isinstance(v, ObservationId) else ObservationId(v)
             for v in self.observation_id_list
         ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataExportConfig(NamedThing):
+    """
+    Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataExportConfig"]
+    class_class_curie: ClassVar[str] = "pehterms:DataExportConfig"
+    class_name: ClassVar[str] = "DataExportConfig"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataExportConfig
+
+    id: Union[str, DataExportConfigId] = None
+    layout: Optional[Union[str, DataLayoutId]] = None
+    section_mapping: Optional[Union[dict, DataImportSectionMapping]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataExportConfigId):
+            self.id = DataExportConfigId(self.id)
+
+        if self.layout is not None and not isinstance(self.layout, DataLayoutId):
+            self.layout = DataLayoutId(self.layout)
+
+        if self.section_mapping is not None and not isinstance(
+            self.section_mapping, DataImportSectionMapping
+        ):
+            self.section_mapping = DataImportSectionMapping(
+                **as_dict(self.section_mapping)
+            )
 
         super().__post_init__(**kwargs)
 
@@ -6053,6 +6097,15 @@ slots.foreign_key_link = Slot(
     model_uri=PEHTERMS.foreign_key_link,
     domain=None,
     range=Optional[Union[dict, DataLayoutElementLink]],
+)
+
+slots.order = Slot(
+    uri=PEHTERMS.hasOrder,
+    name="order",
+    curie=PEHTERMS.curie("hasOrder"),
+    model_uri=PEHTERMS.order,
+    domain=None,
+    range=Optional[int],
 )
 
 slots.import_configs = Slot(

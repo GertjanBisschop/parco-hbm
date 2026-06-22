@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.6.1"
+version = "0.6.2"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -1755,6 +1755,10 @@ class DataLayoutElement(ConfiguredBaseModel):
     observable_property: Optional[str] = Field(default=None)
     is_observable_entity_key: Optional[bool] = Field(default=None)
     foreign_key_link: Optional[DataLayoutElementLink] = Field(default=None)
+    order: Optional[int] = Field(
+        default=None,
+        description="""Integer determining the order of elements in the form modeled by the data layout""",
+    )
 
 
 class DataLayoutElementLink(ConfiguredBaseModel):
@@ -1816,6 +1820,39 @@ class DataImportSectionMappingLink(ConfiguredBaseModel):
 
     section: Optional[str] = Field(default=None)
     observation_id_list: Optional[list[str]] = Field(default=None)
+
+
+class DataExportConfig(NamedThing):
+    """
+    Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
+    """
+
+    layout: Optional[str] = Field(default=None)
+    section_mapping: Optional[DataImportSectionMapping] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
 
 
 class DataRequest(NamedThing):
@@ -2099,6 +2136,7 @@ DataLayoutElementLink.model_rebuild()
 DataImportConfig.model_rebuild()
 DataImportSectionMapping.model_rebuild()
 DataImportSectionMappingLink.model_rebuild()
+DataExportConfig.model_rebuild()
 DataRequest.model_rebuild()
 ObservedEntityProperty.model_rebuild()
 DataStakeholder.model_rebuild()

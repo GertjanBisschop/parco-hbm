@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.6.1
+version: 0.6.2
 
 imports:
   - linkml:types
@@ -601,6 +601,7 @@ classes:
       - observable_property
       - is_observable_entity_key
       - foreign_key_link
+      - order
   DataLayoutElementLink:
     description: >-
       Configuration that refers to an element in a layout section
@@ -626,6 +627,14 @@ classes:
     slots:
       - section
       - observation_id_list
+
+  DataExportConfig:
+    description: >-
+      Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
+    is_a: NamedThing
+    slots:
+     - layout
+     - section_mapping
 
   DataRequest:
     description: >-
@@ -1320,6 +1329,11 @@ slots:
   foreign_key_link:
     slot_uri: pehterms:hasForeignKeyLink
     range: DataLayoutElementLink
+  order:
+    slot_uri: pehterms:hasOrder
+    range: integer
+    description: >-
+      Integer determining the order of elements in the form modeled by the data layout
   import_configs:
     slot_uri: pehterms:hasImportConfig
     multivalued: true

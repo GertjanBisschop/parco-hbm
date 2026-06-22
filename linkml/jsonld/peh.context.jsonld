@@ -436,6 +436,10 @@
       "orcid": {
          "@id": "schema:identifier"
       },
+      "order": {
+         "@type": "xsd:integer",
+         "@id": "hasOrder"
+      },
       "parent_biochementities": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
@@ -838,6 +842,9 @@
       },
       "ContextualFieldReference": {
          "@id": "ContextualFieldReference"
+      },
+      "DataExportConfig": {
+         "@id": "DataExportConfig"
       },
       "DataExtract": {
          "@id": "DataExtract"

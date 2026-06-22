@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "imports": [
     "linkml:types"
   ],
@@ -3480,9 +3480,10 @@
         "https://w3id.org/peh/terms/hasLayout"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasLayout",
-      "owner": "DataImportConfig",
+      "owner": "DataExportConfig",
       "domain_of": [
-        "DataImportConfig"
+        "DataImportConfig",
+        "DataExportConfig"
       ],
       "range": "DataLayout",
       "@type": "SlotDefinition"
@@ -3635,6 +3636,22 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "order",
+      "definition_uri": "https://w3id.org/peh/terms/order",
+      "description": "Integer determining the order of elements in the form modeled by the data layout",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasOrder"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasOrder",
+      "owner": "DataLayoutElement",
+      "domain_of": [
+        "DataLayoutElement"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "import_configs",
       "definition_uri": "https://w3id.org/peh/terms/import_configs",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -3660,9 +3677,10 @@
         "https://w3id.org/peh/terms/hasSectionMapping"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasSectionMapping",
-      "owner": "DataImportConfig",
+      "owner": "DataExportConfig",
       "domain_of": [
-        "DataImportConfig"
+        "DataImportConfig",
+        "DataExportConfig"
       ],
       "range": "DataImportSectionMapping",
       "inlined": true,
@@ -5353,7 +5371,8 @@
         "element_style",
         "observable_property",
         "is_observable_entity_key",
-        "foreign_key_link"
+        "foreign_key_link",
+        "order"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataLayoutElement",
@@ -5416,6 +5435,27 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataImportSectionMappingLink",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataExportConfig",
+      "definition_uri": "https://w3id.org/peh/terms/DataExportConfig",
+      "description": "Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches",
+        "layout",
+        "section_mapping"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/DataExportConfig",
       "@type": "ClassDefinition"
     },
     {
@@ -5586,9 +5626,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-06-19T11:37:04",
-  "source_file_size": 44155,
-  "generation_date": "2026-06-19T11:37:22",
+  "source_file_date": "2026-06-22T10:47:40",
+  "source_file_size": 44567,
+  "generation_date": "2026-06-22T10:48:03",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",
