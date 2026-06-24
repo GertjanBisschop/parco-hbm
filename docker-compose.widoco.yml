@@ -1,0 +1,24 @@
+services:
+  widoco:
+    image: ghcr.io/dgarijo/widoco:v1.4.25
+    user: "0:0"
+    working_dir: /usr/local/widoco
+    entrypoint:
+      - /bin/sh
+      - -c
+    volumes:
+      - ./linkml/owl:/usr/local/widoco/in:ro
+      - ${WIDOCO_DOCS_OUT:-./_site/widoco}:/usr/local/widoco/out
+    command:
+      - >
+        java -jar widoco.jar
+        -ontFile /usr/local/widoco/in/peh.widoco-focus.ttl
+        -outFolder /usr/local/widoco/out
+        -rewriteAll
+        -getOntologyMetadata
+        -ignoreIndividuals
+        -webVowl
+        -uniteSections;
+        status=$$?;
+        chown -R ${HOST_UID:-1000}:${HOST_GID:-1000} /usr/local/widoco/out;
+        exit $$status
