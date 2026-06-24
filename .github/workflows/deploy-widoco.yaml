@@ -3,6 +3,16 @@ name: Deploy WIDOCO Documentation
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/deploy-widoco.yaml'
+      - 'Makefile'
+      - 'docker-compose.widoco.yml'
+      - 'linkml/docs/**'
+      - 'linkml/schema/**'
+      - 'linkml/scripts/build_widoco_focus.py'
+      - 'linkml/scripts/postprocess_widoco_html.py'
+      - 'linkml/scripts/validate_widoco_focus.py'
   push:
     branches:
       - main
@@ -18,19 +28,14 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: widoco-pages
-  cancel-in-progress: false
+  group: widoco-pages-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -41,11 +46,40 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install -e ".[docs]"
+      - name: Install uv
+        run: python -m pip install --upgrade uv
+
+      - name: Create virtual environment
+        run: uv sync --extra docs
 
       - name: Build WIDOCO site
         run: make widoco-docs
+
+      - name: Upload WIDOCO build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: widoco-site
+          path: _site/widoco
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download WIDOCO build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: widoco-site
+          path: _site/widoco
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
