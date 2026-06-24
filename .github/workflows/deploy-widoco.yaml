@@ -3,19 +3,9 @@ name: Deploy WIDOCO Documentation
 
 on:
   workflow_dispatch:
+  release:
+    types: [published]
   pull_request:
-    paths:
-      - '.github/workflows/deploy-widoco.yaml'
-      - 'Makefile'
-      - 'docker-compose.widoco.yml'
-      - 'linkml/docs/**'
-      - 'linkml/schema/**'
-      - 'linkml/scripts/build_widoco_focus.py'
-      - 'linkml/scripts/postprocess_widoco_html.py'
-      - 'linkml/scripts/validate_widoco_focus.py'
-  push:
-    branches:
-      - main
     paths:
       - '.github/workflows/deploy-widoco.yaml'
       - 'Makefile'
@@ -64,7 +54,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'release'
     runs-on: ubuntu-latest
     permissions:
       contents: read

@@ -1,4 +1,12 @@
 ---
+# Archived workflow.
+#
+# This MkDocs-based GitHub Pages deployment has been retired in favor of
+# `.github/workflows/deploy-widoco.yaml`.
+#
+# GitHub Actions only runs workflows located directly in `.github/workflows/`;
+# keeping this file in the `archive/` subdirectory preserves it as historical
+# documentation without allowing it to trigger.
 name: Auto-deployment of PEH-model Documentation
 on:
   workflow_dispatch:
