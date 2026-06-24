@@ -1,0 +1,49 @@
+ontology_uri: https://w3id.org/peh/peh-model-focused
+title: PEH-Model focused documentation profile
+
+core_classes:
+  - Observation
+  - ObservationGroup
+  - ObservableProperty
+  - DerivedObservation
+  - Matrix
+  - BioChemEntity
+  - Indicator
+
+helper_class_projections:
+  MatrixSubClass: Matrix
+  BioChemEntitySubClass: BioChemEntity
+  IndicatorSubClass: Indicator
+
+extra_slot_sources:
+  Matrix: MatrixSubClass
+  BioChemEntity: BioChemEntitySubClass
+  Indicator: IndicatorSubClass
+
+range_dependencies: direct
+enum_ranges_as_datatype: true
+
+forbidden_classes:
+  - MatrixSubClass
+  - BioChemEntitySubClass
+  - IndicatorSubClass
+
+required_property_shapes:
+  - property: pehterms:hasObservationDesign
+    domain: Observation
+    range: ObservationDesign
+  - property: pehterms:hasObservationResult
+    domain: Observation
+    range: ObservationResult
+  - property: pehterms:hasObservation
+    domain: ObservationGroup
+    range: Observation
+  - property: pehterms:hasMatrix
+    domain: Indicator
+    range: Matrix
+  - property: pehterms:hasBioChemEntity
+    domain: Indicator
+    range: BioChemEntity
+  - property: qudt:hasQuantityKind
+    domain: Indicator
+    range: QUDTQuantityKind

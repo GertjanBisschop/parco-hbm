@@ -1,0 +1,607 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix peh: <https://w3id.org/peh/> .
+@prefix pehterms: <https://w3id.org/peh/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.obolibrary.org/obo/RO_0000087> a owl:ObjectProperty ;
+    rdfs:label "RO_0000087" ;
+    dcterms:identifier "has_role" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range pehterms:BioChemRole ;
+    skos:scopeNote "Multivalued property." .
+
+schema1:alternateName a owl:DatatypeProperty ;
+    rdfs:label "alternateName" ;
+    dcterms:identifier "aliases",
+        "short_name" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:string ;
+    skos:definition "Shortened name or code, preferrably unique within the context the entity is (typically) used in." ;
+    skos:scopeNote "Multivalued property." .
+
+schema1:comment a owl:DatatypeProperty ;
+    rdfs:label "comment" ;
+    dcterms:identifier "remark" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:string ;
+    skos:definition "Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties." .
+
+schema1:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:string ;
+    skos:definition "Long form description or definition for the entity." .
+
+schema1:endDate a owl:DatatypeProperty ;
+    rdfs:label "endDate" ;
+    dcterms:identifier "end_date" ;
+    rdfs:domain pehterms:ObservationGroup ;
+    rdfs:range xsd:date .
+
+schema1:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier" ;
+    dcterms:identifier "id" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier)." .
+
+schema1:startDate a owl:DatatypeProperty ;
+    rdfs:label "startDate" ;
+    dcterms:identifier "start_date" ;
+    rdfs:domain pehterms:ObservationGroup ;
+    rdfs:range xsd:date .
+
+rdf:type a owl:ObjectProperty ;
+    rdfs:label "type" ;
+    dcterms:identifier "has_observable_property_type" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:Indicator ;
+    skos:scopeNote "Multivalued property." .
+
+rdfs:label a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    dcterms:identifier "name" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:string ;
+    skos:definition "Common human readable name" .
+
+rdfs:subClassOf a owl:ObjectProperty ;
+    rdfs:label "subClassOf" ;
+    dcterms:identifier "parent_biochementities",
+        "parent_indicators",
+        "parent_matrices" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:Indicator,
+        pehterms:Matrix ;
+    rdfs:range pehterms:BioChemEntity,
+        pehterms:Indicator,
+        pehterms:Matrix ;
+    skos:scopeNote "Multivalued property." .
+
+skos:broader a owl:ObjectProperty ;
+    rdfs:label "broader" ;
+    dcterms:identifier "grouping_id_list" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:Indicator,
+        pehterms:ObservableProperty ;
+    rdfs:range pehterms:Grouping ;
+    skos:scopeNote "Multivalued property." .
+
+skos:exactMatch a owl:DatatypeProperty ;
+    rdfs:label "exactMatch" ;
+    dcterms:identifier "exact_matches" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:anyURI ;
+    skos:scopeNote "Multivalued property." .
+
+prov:wasAttributedTo a owl:DatatypeProperty ;
+    rdfs:label "wasAttributedTo" ;
+    dcterms:identifier "suggester" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:Indicator,
+        pehterms:Matrix ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication." .
+
+prov:wasDerivedFrom a owl:ObjectProperty ;
+    rdfs:label "wasDerivedFrom" ;
+    dcterms:identifier "was_derived_from" ;
+    rdfs:domain pehterms:DerivedObservation ;
+    rdfs:range pehterms:NamedThing .
+
+<https://qudt.org/schema/qudt/hasQuantityKind> a owl:ObjectProperty ;
+    rdfs:label "hasQuantityKind" ;
+    dcterms:identifier "quantity_kind" ;
+    rdfs:domain pehterms:Indicator,
+        pehterms:ObservableProperty ;
+    rdfs:range pehterms:QUDTQuantityKind .
+
+<https://qudt.org/schema/qudt/hasUnit> a owl:ObjectProperty ;
+    rdfs:label "hasUnit" ;
+    dcterms:identifier "unit" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:QUDTUnit .
+
+pehterms:hasBioChemEntity a owl:ObjectProperty ;
+    rdfs:label "hasBioChemEntity" ;
+    dcterms:identifier "biochementity" ;
+    rdfs:domain pehterms:Indicator ;
+    rdfs:range pehterms:BioChemEntity .
+
+pehterms:hasCalculationDesign a owl:ObjectProperty ;
+    rdfs:label "hasCalculationDesign" ;
+    dcterms:identifier "calculation_design" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:CalculationDesign .
+
+pehterms:hasConstraint a owl:DatatypeProperty ;
+    rdfs:label "hasConstraint" ;
+    dcterms:identifier "constraints" ;
+    rdfs:domain pehterms:Indicator ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasContextAlias a owl:ObjectProperty ;
+    rdfs:label "hasContextAlias" ;
+    dcterms:identifier "context_aliases" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty ;
+    rdfs:range pehterms:ContextAlias ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasCurrentValidationStatus a owl:DatatypeProperty ;
+    rdfs:label "hasCurrentValidationStatus" ;
+    dcterms:identifier "current_validation_status" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Controlled value set: ValidationStatus." .
+
+pehterms:hasGroupLabel a owl:DatatypeProperty ;
+    rdfs:label "hasGroupLabel" ;
+    dcterms:identifier "group_labels" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasIndicatorType a owl:DatatypeProperty ;
+    rdfs:label "hasIndicatorType" ;
+    dcterms:identifier "indicator_type" ;
+    rdfs:domain pehterms:Indicator ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Controlled value set: IndicatorType." .
+
+pehterms:hasMatrix a owl:ObjectProperty ;
+    rdfs:label "hasMatrix" ;
+    dcterms:identifier "matrix" ;
+    rdfs:domain pehterms:Indicator ;
+    rdfs:range pehterms:Matrix .
+
+pehterms:hasMaximumValue a owl:DatatypeProperty ;
+    rdfs:label "hasMaximumValue" ;
+    dcterms:identifier "max_value" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:string ;
+    skos:definition "String representation of the expected upper bound in observations, usable for data validation" .
+
+pehterms:hasMinimumValue a owl:DatatypeProperty ;
+    rdfs:label "hasMinimumValue" ;
+    dcterms:identifier "min_value" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:string ;
+    skos:definition "String representation of the expected lower bound in observations, usable for data validation" .
+
+pehterms:hasMolecularWeight a owl:DatatypeProperty ;
+    rdfs:label "hasMolecularWeight" ;
+    dcterms:identifier "molweight_grampermol" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The molecular weight of the chemical entity in g/mol" .
+
+pehterms:hasObservation a owl:ObjectProperty ;
+    rdfs:label "hasObservation" ;
+    dcterms:identifier "observation_id_list" ;
+    rdfs:domain pehterms:ObservationGroup ;
+    rdfs:range pehterms:Observation ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasObservationDesign a owl:ObjectProperty ;
+    rdfs:label "hasObservationDesign" ;
+    dcterms:identifier "observation_design" ;
+    rdfs:domain pehterms:DerivedObservation,
+        pehterms:Observation ;
+    rdfs:range pehterms:ObservationDesign .
+
+pehterms:hasObservationResult a owl:ObjectProperty ;
+    rdfs:label "hasObservationResult" ;
+    dcterms:identifier "observation_result_id_list" ;
+    rdfs:domain pehterms:DerivedObservation,
+        pehterms:Observation ;
+    rdfs:range pehterms:ObservationResult ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasObservationResultType a owl:DatatypeProperty ;
+    rdfs:label "hasObservationResultType" ;
+    dcterms:identifier "observation_result_type" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Controlled value set: ObservationResultType." .
+
+pehterms:hasObservationType a owl:DatatypeProperty ;
+    rdfs:label "hasObservationType" ;
+    dcterms:identifier "observation_type" ;
+    rdfs:domain pehterms:DerivedObservation,
+        pehterms:Observation ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Controlled value set: ObservationType." .
+
+pehterms:hasPhysicalEntity a owl:ObjectProperty ;
+    rdfs:label "hasPhysicalEntity" ;
+    dcterms:identifier "physical_entity" ;
+    rdfs:domain pehterms:ObservationGroup ;
+    rdfs:range pehterms:PhysicalEntity .
+
+pehterms:hasProperty a owl:DatatypeProperty ;
+    rdfs:label "hasProperty" ;
+    dcterms:identifier "property" ;
+    rdfs:domain pehterms:Indicator ;
+    rdfs:range xsd:string .
+
+pehterms:hasRelevantObservableEntityType a owl:DatatypeProperty ;
+    rdfs:label "hasRelevantObservableEntityType" ;
+    dcterms:identifier "relevant_observable_entity_types" ;
+    rdfs:domain pehterms:Indicator,
+        pehterms:ObservableProperty ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Controlled value set: ObservableEntityType.",
+        "Multivalued property." .
+
+pehterms:hasRelevantObservationType a owl:DatatypeProperty ;
+    rdfs:label "hasRelevantObservationType" ;
+    dcterms:identifier "relevant_observation_types" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Controlled value set: ObservationType.",
+        "Multivalued property." .
+
+pehterms:hasSignificantDecimals a owl:DatatypeProperty ;
+    rdfs:label "hasSignificantDecimals" ;
+    dcterms:identifier "significantdecimals" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:integer ;
+    skos:definition "Variable precision indication, expressed as the number of significant decimals" .
+
+pehterms:hasStudyEntityLink a owl:ObjectProperty ;
+    rdfs:label "hasStudyEntityLink" ;
+    dcterms:identifier "study_entity_links" ;
+    rdfs:domain pehterms:ObservationGroup ;
+    rdfs:range pehterms:StudyEntityLink ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasTranslation a owl:ObjectProperty ;
+    rdfs:label "hasTranslation" ;
+    dcterms:identifier "translations" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty ;
+    rdfs:range pehterms:Translation ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasUiLabel a owl:DatatypeProperty ;
+    rdfs:label "hasUiLabel" ;
+    dcterms:identifier "ui_label" ;
+    rdfs:domain pehterms:BioChemEntity,
+        pehterms:DerivedObservation,
+        pehterms:Indicator,
+        pehterms:Matrix,
+        pehterms:ObservableProperty,
+        pehterms:Observation,
+        pehterms:ObservationGroup ;
+    rdfs:range xsd:string ;
+    skos:definition "Human readable label, to be used in user interactions through forms or documents." .
+
+pehterms:hasValidationDesign a owl:ObjectProperty ;
+    rdfs:label "hasValidationDesign" ;
+    dcterms:identifier "validation_designs" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:ValidationDesign ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasValidationHistoryRecord a owl:ObjectProperty ;
+    rdfs:label "hasValidationHistoryRecord" ;
+    dcterms:identifier "validation_history" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range pehterms:ValidationHistoryRecord ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasValueMetadata a owl:ObjectProperty ;
+    rdfs:label "hasValueMetadata" ;
+    dcterms:identifier "value_metadata" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:ObservablePropertyMetadataElement ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasValueOption a owl:ObjectProperty ;
+    rdfs:label "hasValueOption" ;
+    dcterms:identifier "value_options" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:ObservablePropertyValueOption ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:hasValueType a owl:DatatypeProperty ;
+    rdfs:label "hasValueType" ;
+    dcterms:identifier "value_type" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:string .
+
+pehterms:hasVariable a owl:ObjectProperty ;
+    rdfs:label "hasVariable" ;
+    dcterms:identifier "has_iadopt_variable" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range pehterms:IAdoptVariable .
+
+pehterms:isCategorical a owl:DatatypeProperty ;
+    rdfs:label "isCategorical" ;
+    dcterms:identifier "categorical" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:boolean .
+
+pehterms:isImmutable a owl:DatatypeProperty ;
+    rdfs:label "isImmutable" ;
+    dcterms:identifier "immutable" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Variable values are not expected to change over time (e.g. birthdate of a person)" .
+
+pehterms:isIsomerOf a owl:ObjectProperty ;
+    rdfs:label "isIsomerOf" ;
+    dcterms:identifier "is_isomer_of" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range pehterms:BioChemEntity ;
+    skos:definition "Indicates that this molecular entity is an isomer of another molecular entity" ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:isMetaboliteOf a owl:ObjectProperty ;
+    rdfs:label "isMetaboliteOf" ;
+    dcterms:identifier "is_metabolite_of" ;
+    rdfs:domain pehterms:BioChemEntity ;
+    rdfs:range pehterms:BioChemEntity ;
+    skos:definition "Indicates that this molecular entity is a metabolite of another molecular entity" ;
+    skos:scopeNote "Multivalued property." .
+
+pehterms:isMultivalued a owl:DatatypeProperty ;
+    rdfs:label "isMultivalued" ;
+    dcterms:identifier "multivalued" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:boolean .
+
+pehterms:isRequired a owl:DatatypeProperty ;
+    rdfs:label "isRequired" ;
+    dcterms:identifier "required" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:boolean .
+
+pehterms:isZeroAllowed a owl:DatatypeProperty ;
+    rdfs:label "isZeroAllowed" ;
+    dcterms:identifier "zeroallowed" ;
+    rdfs:domain pehterms:ObservableProperty ;
+    rdfs:range xsd:boolean .
+
+pehterms:BioChemRole a owl:Class ;
+    rdfs:label "BioChemRole" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A role is particular behaviour which a material entity may exhibit." ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Bio Chem Role" .
+
+pehterms:CalculationDesign a owl:Class ;
+    rdfs:label "CalculationDesign" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "Definition of a calculation method for deriving an observational value from other variables and/or contexts" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Calculation Design" .
+
+pehterms:ContextAlias a owl:Class ;
+    rdfs:label "ContextAlias" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "An alternative term as it is used in a known scope or context (e.g. a community, project or study) for any of the entities and its properties" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Context Alias" .
+
+pehterms:Grouping a owl:Class ;
+    rdfs:label "Grouping" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "A generic grouping entity that allows categorising entities in a hierarchical structure" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Grouping" .
+
+pehterms:IAdoptVariable a owl:Class ;
+    rdfs:label "IAdoptVariable" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "Placeholder class for actual IAdoptVariable" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "I Adopt Variable" .
+
+pehterms:ObservablePropertyMetadataElement a owl:Class ;
+    rdfs:label "ObservablePropertyMetadataElement" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "Key-value element that adds contextual metadata to an Observable Property instance" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observable Property Metadata Element" .
+
+pehterms:ObservablePropertyValueOption a owl:Class ;
+    rdfs:label "ObservablePropertyValueOption" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "Potential selection choices for Observable Properties that are categorical variables" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observable Property Value Option" .
+
+pehterms:ObservationDesign a owl:Class ;
+    rdfs:label "ObservationDesign" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observation Design" .
+
+pehterms:ObservationResult a owl:Class ;
+    rdfs:label "ObservationResult" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "The result of an observational effort in Personal Exposure and Health research" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observation Result" .
+
+pehterms:PhysicalEntity a owl:Class ;
+    rdfs:label "PhysicalEntity" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "A digital placeholder for a physical entity as it exists in the real world, " ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Physical Entity" .
+
+pehterms:QUDTQuantityKind a owl:Class ;
+    rdfs:label "QUDTQuantityKind" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Q U D T Quantity Kind" .
+
+pehterms:QUDTUnit a owl:Class ;
+    rdfs:label "QUDTUnit" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Q U D T Unit" .
+
+pehterms:StudyEntityLink a owl:Class ;
+    rdfs:label "StudyEntityLink" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A relational property that allows creating qualified links to study entities" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Study Entity Link" .
+
+pehterms:Translation a owl:Class ;
+    rdfs:label "Translation" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A translation for any of the entity properties, defining the property, the language and the translated term" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Translation" .
+
+pehterms:ValidationDesign a owl:Class ;
+    rdfs:label "ValidationDesign" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "Definition of a validation rule for automatically imposing business logic constraints" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Validation Design" .
+
+pehterms:ValidationHistoryRecord a owl:Class ;
+    rdfs:label "ValidationHistoryRecord" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A list of events representing a historical record on the entity validation status" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Validation History Record" .
+
+pehterms:NamedThing a owl:Class ;
+    rdfs:label "NamedThing" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "An abstract model for any of the identifiable entities" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Named Thing" .
+
+pehterms:DerivedObservation a owl:Class ;
+    rdfs:label "DerivedObservation" ;
+    rdfs:subClassOf pehterms:Observation ;
+    skos:definition "An observation in which all observed values are derived from a prior observation through analytical or statistical processing." ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Derived Observation" .
+
+pehterms:Observation a owl:Class ;
+    rdfs:label "Observation" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "The registration of the intent to perform a set of observations as well as the resulting observed values" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observation" .
+
+pehterms:ObservationGroup a owl:Class ;
+    rdfs:label "ObservationGroup" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A grouped collection of observations, intended and/or executed, as part of a Personal Exposure and Health research study" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observation Group" .
+
+pehterms:Matrix a owl:Class ;
+    rdfs:label "Matrix" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Matrix" .
+
+pehterms:Indicator a owl:Class ;
+    rdfs:label "Indicator" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Indicator" .
+
+pehterms:BioChemEntity a owl:Class ;
+    rdfs:label "BioChemEntity" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Bio Chem Entity" .
+
+peh:peh-model-focused a owl:Ontology ;
+    rdfs:label "PEH-Model focused documentation profile" ;
+    dcterms:source peh:peh-model ;
+    pav:version "0.6.2" ;
+    owl:versionInfo "0.6.2" ;
+    skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" .
+
+pehterms:ObservableProperty a owl:Class ;
+    rdfs:label "ObservableProperty" ;
+    rdfs:subClassOf pehterms:NamedThing ;
+    skos:definition "A fully defined variable that allows registering an observation about any of the entities relevant to Personal Exposure and Health research" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Observable Property" .
+

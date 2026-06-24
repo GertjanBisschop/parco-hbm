@@ -47,6 +47,7 @@ src/patterns/all_pattern_terms.txt
 
 # from makefile
 _temp/*
+_site/
 .env
 
 ## Python specific
