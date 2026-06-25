@@ -1,0 +1,45 @@
+PREFIX iop: <https://w3id.org/iadopt/ont/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX pehterms: <https://w3id.org/peh/terms/>
+PREFIX qudt: <https://qudt.org/schema/qudt/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?indicator rdf:type iop:Variable .
+  ?indicator iop:hasProperty ?quantity_kind .
+  ?indicator iop:hasMatrix ?matrix .
+  ?indicator iop:hasObjectOfInterest ?biochementity .
+  ?indicator iop:hasConstraint ?constraint .
+
+  ?quantity_kind rdf:type iop:Property .
+  ?matrix rdf:type owl:Class, iop:Entity .
+  ?biochementity rdf:type owl:Class, iop:Entity .
+  ?constraint rdf:type iop:Constraint .
+  ?constraint iop:constrains ?constrained .
+}
+WHERE {
+  {
+    ?indicator rdfs:subClassOf+ pehterms:Indicator .
+  }
+  UNION
+  {
+    ?indicator rdf:type/rdfs:subClassOf* pehterms:Indicator .
+  }
+
+  OPTIONAL {
+    ?indicator (iop:hasProperty|qudt:hasQuantityKind) ?quantity_kind .
+  }
+  OPTIONAL {
+    ?indicator (iop:hasMatrix|pehterms:hasMatrix) ?matrix .
+  }
+  OPTIONAL {
+    ?indicator (iop:hasObjectOfInterest|pehterms:hasBioChemEntity) ?biochementity .
+  }
+  OPTIONAL {
+    ?indicator (iop:hasConstraint|pehterms:hasConstraint) ?constraint .
+  }
+  OPTIONAL {
+    ?constraint (iop:constrains|pehterms:constrains) ?constrained .
+  }
+}

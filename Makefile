@@ -32,12 +32,14 @@ OWL_LEGACY_PATH = $(SRC)/owl/$(SCHEMA_NAME).owl
 WIDOCO_INPUT_PATH = $(SRC)/owl/$(SCHEMA_NAME).widoco-focus.ttl
 WIDOCO_PROFILE_PATH = $(SRC)/docs/widoco-profile.yaml
 WIDOCO_DOCS_OUT ?= _site/widoco
+WIDOCO_PYTHON ?= uv run python
 HOST_UID ?= $(shell id -u)
 HOST_GID ?= $(shell id -g)
 
 CHANGELOG_SCRIPT_PATH=$(SRC)/scripts/changelog.py
 PUBLISH_SCRIPT_PATH=$(SRC)/scripts/publish.py
 SYNC_VERSION_SCRIPT_PATH=$(SRC)/scripts/sync_versions.py
+ONTOLOGY_ALIGNMENT_SCRIPT_PATH=$(SRC)/scripts/add_ontology_alignments.py
 PACKAGE_INIT_PATH=$(PYMODEL)/__init__.py
 CHANGELOG_SCHEMA_PATH=$(SRC)/changelog/changelog.schema.yaml
 CHANGELOG_PATH=$(SRC)/changelog/_upcoming.yaml
@@ -133,6 +135,7 @@ gen-project: make-dirs
 		-d $(DEST) $(SOURCE_SCHEMA_PATH)
 # MAKE OWL
 	gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions $(SOURCE_SCHEMA_PATH) > $(OWL_CANONICAL_PATH)
+	$(WIDOCO_PYTHON) $(ONTOLOGY_ALIGNMENT_SCRIPT_PATH) $(OWL_CANONICAL_PATH)
 	cp $(OWL_CANONICAL_PATH) $(OWL_LEGACY_PATH)
 # MAKE RDF
 	gen-rdf $(SOURCE_SCHEMA_PATH) > $(DEST)/peh.ttl
@@ -190,10 +193,11 @@ make-dirs:
 	mkdir -p $(SRC)/rdf
 
 widoco-input:
-	$(PYTHON) $(SRC)/scripts/build_widoco_focus.py $(SOURCE_SCHEMA_PATH) --profile $(WIDOCO_PROFILE_PATH) -o $(WIDOCO_INPUT_PATH)
+	$(WIDOCO_PYTHON) $(SRC)/scripts/build_widoco_focus.py $(SOURCE_SCHEMA_PATH) --profile $(WIDOCO_PROFILE_PATH) -o $(WIDOCO_INPUT_PATH)
+	$(WIDOCO_PYTHON) $(ONTOLOGY_ALIGNMENT_SCRIPT_PATH) $(WIDOCO_INPUT_PATH)
 
 check-widoco-input: widoco-input
-	$(PYTHON) $(SRC)/scripts/validate_widoco_focus.py $(WIDOCO_INPUT_PATH) --schema $(SOURCE_SCHEMA_PATH) --profile $(WIDOCO_PROFILE_PATH)
+	$(WIDOCO_PYTHON) $(SRC)/scripts/validate_widoco_focus.py $(WIDOCO_INPUT_PATH) --schema $(SOURCE_SCHEMA_PATH) --profile $(WIDOCO_PROFILE_PATH)
 
 check-ontology-docs-input:
 	@test -f "$(WIDOCO_INPUT_PATH)" || (echo "Missing $(WIDOCO_INPUT_PATH). Run make widoco-input first." && exit 1)
@@ -201,11 +205,11 @@ check-ontology-docs-input:
 widoco-docs: check-widoco-input check-ontology-docs-input
 	mkdir -p $(WIDOCO_DOCS_OUT)
 	WIDOCO_DOCS_OUT=./$(WIDOCO_DOCS_OUT) HOST_UID=$(HOST_UID) HOST_GID=$(HOST_GID) docker compose -f docker-compose.widoco.yml run --rm widoco
-	$(PYTHON) $(SRC)/scripts/postprocess_widoco_html.py $(WIDOCO_DOCS_OUT)
+	$(WIDOCO_PYTHON) $(SRC)/scripts/postprocess_widoco_html.py $(WIDOCO_DOCS_OUT)
 	@echo "WIDOCO documentation generated in $(WIDOCO_DOCS_OUT)"
 
 postprocess-widoco-docs:
-	$(PYTHON) $(SRC)/scripts/postprocess_widoco_html.py $(WIDOCO_DOCS_OUT)
+	$(WIDOCO_PYTHON) $(SRC)/scripts/postprocess_widoco_html.py $(WIDOCO_DOCS_OUT)
 
 serve-widoco-docs:
 	python3 -m http.server 8000 -d $(WIDOCO_DOCS_OUT)

@@ -116,6 +116,14 @@ def camel_to_words(name: str) -> str:
     return re.sub(r"(?<!^)([A-Z])", r" \1", name).strip()
 
 
+def add_description(graph: Graph, subject: URIRef, description: str | None) -> None:
+    if not description:
+        return
+    literal = Literal(description)
+    graph.add((subject, SKOS.definition, literal))
+    graph.add((subject, RDFS.comment, literal))
+
+
 def add_property(
     graph: Graph,
     prop_uri: URIRef,
@@ -132,8 +140,7 @@ def add_property(
     graph.add((prop_uri, RDFS.domain, class_uri(domain_class)))
 
     description = slot_def.get("description")
-    if description:
-        graph.add((prop_uri, SKOS.definition, Literal(description)))
+    add_description(graph, prop_uri, description)
 
     if is_enum(range_name, enums):
         graph.add((prop_uri, RDFS.range, XSD.string))
@@ -212,7 +219,7 @@ def build_graph(schema: dict[str, Any], profile: dict[str, Any]) -> Graph:
     graph.add((ontology_uri, RDFS.label, Literal(profile["title"])))
     graph.add((ontology_uri, PAV.version, Literal(str(schema.get("version", "")))))
     graph.add((ontology_uri, OWL.versionInfo, Literal(str(schema.get("version", "")))))
-    graph.add((ontology_uri, SKOS.definition, Literal(schema.get("description", ""))))
+    add_description(graph, ontology_uri, schema.get("description"))
     graph.add((ontology_uri, DCTERMS.source, URIRef(schema["id"])))
     if profile.get("abstract"):
         graph.add((ontology_uri, DCTERMS["abstract"], Literal(profile["abstract"], lang="en")))
@@ -230,8 +237,7 @@ def build_graph(schema: dict[str, Any], profile: dict[str, Any]) -> Graph:
         graph.add((uri, RDF.type, OWL.Class))
         graph.add((uri, RDFS.label, Literal(class_name)))
         graph.add((uri, SKOS.prefLabel, Literal(camel_to_words(class_name))))
-        if class_def.get("description"):
-            graph.add((uri, SKOS.definition, Literal(class_def["description"])))
+        add_description(graph, uri, class_def.get("description"))
         graph.add((uri, SKOS.inScheme, ontology_uri))
 
         parent = projected_range(class_def.get("is_a", ""), profile)
