@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema1: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix widoco: <https://w3id.org/widoco/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://purl.obolibrary.org/obo/RO_0000087> a owl:ObjectProperty ;
@@ -593,10 +594,12 @@ pehterms:BioChemEntity a owl:Class ;
 
 peh:peh-model-focused a owl:Ontology ;
     rdfs:label "PEH-Model focused documentation profile" ;
+    dcterms:abstract "The Personal Exposure and Health (PEH) data model provides a domain-specific structure for the data and metadata involved in human biomonitoring and personal exposure research. It supports annotation with harmonised vocabularies and provides a generic observed-data abstraction layer that facilitates broader cross-domain interoperability."@en ;
     dcterms:source peh:peh-model ;
     pav:version "0.6.2" ;
     owl:versionInfo "0.6.2" ;
-    skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" .
+    skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
+    widoco:introduction "The PEH data model is the result of consolidation and harmonisation efforts in the human biomonitoring research field, together with an initiative to broaden the model's scope so it can include additional sources of relevant information such as environmental and geospatial observations. The model is defined using LinkML and published as ontology serializations for downstream semantic systems. It mainly supports the annotation of observations and their observable properties, aligns with established semantic models such as SOSA and I-ADOPT, and supports the construction and maintenance of project vocabularies for matrices, biochemical entities, indicators and related controlled terms. In addition to adding semantic context to projects, studies and datasets that use it, the model provides a stable foundation for generated Python data classes and higher-level tools that configure and validate PEH studies from the outset."@en .
 
 pehterms:ObservableProperty a owl:Class ;
     rdfs:label "ObservableProperty" ;
