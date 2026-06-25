@@ -31,6 +31,7 @@ PEH = Namespace("https://w3id.org/peh/")
 PEHTERMS = Namespace("https://w3id.org/peh/terms/")
 PAV = Namespace("http://purl.org/pav/")
 SCHEMA = Namespace("http://schema.org/")
+WIDOCO = Namespace("https://w3id.org/widoco/vocab#")
 
 
 def load_schema(path: Path) -> dict[str, Any]:
@@ -200,6 +201,7 @@ def build_graph(schema: dict[str, Any], profile: dict[str, Any]) -> Graph:
         "rdfs": RDFS,
         "schema": SCHEMA,
         "skos": SKOS,
+        "widoco": WIDOCO,
         "xsd": XSD,
     }
     for prefix, namespace in namespace_bindings.items():
@@ -212,6 +214,10 @@ def build_graph(schema: dict[str, Any], profile: dict[str, Any]) -> Graph:
     graph.add((ontology_uri, OWL.versionInfo, Literal(str(schema.get("version", "")))))
     graph.add((ontology_uri, SKOS.definition, Literal(schema.get("description", ""))))
     graph.add((ontology_uri, DCTERMS.source, URIRef(schema["id"])))
+    if profile.get("abstract"):
+        graph.add((ontology_uri, DCTERMS["abstract"], Literal(profile["abstract"], lang="en")))
+    if profile.get("introduction"):
+        graph.add((ontology_uri, WIDOCO.introduction, Literal(profile["introduction"], lang="en")))
 
     classes = schema["classes"]
     slots = schema["slots"]

@@ -1,5 +1,22 @@
 ontology_uri: https://w3id.org/peh/peh-model-focused
 title: PEH-Model focused documentation profile
+abstract: >-
+  The Personal Exposure and Health (PEH) data model provides a domain-specific
+  structure for the data and metadata involved in human biomonitoring and
+  personal exposure research. It supports annotation with harmonised
+  vocabularies and provides a generic observed-data abstraction layer that
+  facilitates broader cross-domain interoperability.
+introduction: >-
+  The PEH data model is the result of consolidation and harmonisation efforts in
+  the human biomonitoring research field, together with an initiative to broaden
+  the model's scope so it can include additional sources of relevant information
+  such as environmental and geospatial observations. The model is defined using
+  LinkML and published as ontology serializations for downstream semantic
+  systems. It mainly supports the annotation of observations and their
+  observable properties, aligns with established semantic models such as SOSA
+  and I-ADOPT, and supports the construction and maintenance of project
+  vocabularies for matrices, biochemical entities, indicators and related
+  controlled terms.
 
 core_classes:
   - Observation
