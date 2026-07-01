@@ -4288,4 +4288,5 @@ pehterms:NamedThing a owl:Class ;
     owl:onProperty linkml:mixins ;
     owl:someValuesFrom pehterms:HasContextAliases .
 
-
+# PEH ontology alignment axioms
+<https://w3id.org/peh/terms/Indicator> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iadopt/ont/Variable> .

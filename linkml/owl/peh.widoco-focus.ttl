@@ -22,6 +22,7 @@ schema1:alternateName a owl:DatatypeProperty ;
     rdfs:label "alternateName" ;
     dcterms:identifier "aliases",
         "short_name" ;
+    rdfs:comment "Shortened name or code, preferrably unique within the context the entity is (typically) used in." ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:DerivedObservation,
         pehterms:Indicator,
@@ -36,6 +37,7 @@ schema1:alternateName a owl:DatatypeProperty ;
 schema1:comment a owl:DatatypeProperty ;
     rdfs:label "comment" ;
     dcterms:identifier "remark" ;
+    rdfs:comment "Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties." ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:DerivedObservation,
         pehterms:Indicator,
@@ -48,6 +50,7 @@ schema1:comment a owl:DatatypeProperty ;
 
 schema1:description a owl:DatatypeProperty ;
     rdfs:label "description" ;
+    rdfs:comment "Long form description or definition for the entity." ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:DerivedObservation,
         pehterms:Indicator,
@@ -67,6 +70,7 @@ schema1:endDate a owl:DatatypeProperty ;
 schema1:identifier a owl:DatatypeProperty ;
     rdfs:label "identifier" ;
     dcterms:identifier "id" ;
+    rdfs:comment "Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier)." ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:DerivedObservation,
         pehterms:Indicator,
@@ -93,6 +97,7 @@ rdf:type a owl:ObjectProperty ;
 rdfs:label a owl:DatatypeProperty ;
     rdfs:label "label" ;
     dcterms:identifier "name" ;
+    rdfs:comment "Common human readable name" ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:DerivedObservation,
         pehterms:Indicator,
@@ -141,6 +146,7 @@ skos:exactMatch a owl:DatatypeProperty ;
 prov:wasAttributedTo a owl:DatatypeProperty ;
     rdfs:label "wasAttributedTo" ;
     dcterms:identifier "suggester" ;
+    rdfs:comment "ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication." ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:Indicator,
         pehterms:Matrix ;
@@ -178,11 +184,11 @@ pehterms:hasCalculationDesign a owl:ObjectProperty ;
     rdfs:domain pehterms:ObservableProperty ;
     rdfs:range pehterms:CalculationDesign .
 
-pehterms:hasConstraint a owl:DatatypeProperty ;
+pehterms:hasConstraint a owl:ObjectProperty ;
     rdfs:label "hasConstraint" ;
     dcterms:identifier "constraints" ;
     rdfs:domain pehterms:Indicator ;
-    rdfs:range xsd:string ;
+    rdfs:range pehterms:NamedThing ;
     skos:scopeNote "Multivalued property." .
 
 pehterms:hasContextAlias a owl:ObjectProperty ;
@@ -225,6 +231,7 @@ pehterms:hasMatrix a owl:ObjectProperty ;
 pehterms:hasMaximumValue a owl:DatatypeProperty ;
     rdfs:label "hasMaximumValue" ;
     dcterms:identifier "max_value" ;
+    rdfs:comment "String representation of the expected upper bound in observations, usable for data validation" ;
     rdfs:domain pehterms:ObservableProperty ;
     rdfs:range xsd:string ;
     skos:definition "String representation of the expected upper bound in observations, usable for data validation" .
@@ -232,6 +239,7 @@ pehterms:hasMaximumValue a owl:DatatypeProperty ;
 pehterms:hasMinimumValue a owl:DatatypeProperty ;
     rdfs:label "hasMinimumValue" ;
     dcterms:identifier "min_value" ;
+    rdfs:comment "String representation of the expected lower bound in observations, usable for data validation" ;
     rdfs:domain pehterms:ObservableProperty ;
     rdfs:range xsd:string ;
     skos:definition "String representation of the expected lower bound in observations, usable for data validation" .
@@ -239,6 +247,7 @@ pehterms:hasMinimumValue a owl:DatatypeProperty ;
 pehterms:hasMolecularWeight a owl:DatatypeProperty ;
     rdfs:label "hasMolecularWeight" ;
     dcterms:identifier "molweight_grampermol" ;
+    rdfs:comment "The molecular weight of the chemical entity in g/mol" ;
     rdfs:domain pehterms:BioChemEntity ;
     rdfs:range xsd:decimal ;
     skos:definition "The molecular weight of the chemical entity in g/mol" .
@@ -289,8 +298,10 @@ pehterms:hasPhysicalEntity a owl:ObjectProperty ;
 pehterms:hasProperty a owl:DatatypeProperty ;
     rdfs:label "hasProperty" ;
     dcterms:identifier "property" ;
+    rdfs:comment "Any property that cannot be expressed as a QUDTQuantityKind" ;
     rdfs:domain pehterms:Indicator ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:string ;
+    skos:definition "Any property that cannot be expressed as a QUDTQuantityKind" .
 
 pehterms:hasRelevantObservableEntityType a owl:DatatypeProperty ;
     rdfs:label "hasRelevantObservableEntityType" ;
@@ -312,6 +323,7 @@ pehterms:hasRelevantObservationType a owl:DatatypeProperty ;
 pehterms:hasSignificantDecimals a owl:DatatypeProperty ;
     rdfs:label "hasSignificantDecimals" ;
     dcterms:identifier "significantdecimals" ;
+    rdfs:comment "Variable precision indication, expressed as the number of significant decimals" ;
     rdfs:domain pehterms:ObservableProperty ;
     rdfs:range xsd:integer ;
     skos:definition "Variable precision indication, expressed as the number of significant decimals" .
@@ -336,6 +348,7 @@ pehterms:hasTranslation a owl:ObjectProperty ;
 pehterms:hasUiLabel a owl:DatatypeProperty ;
     rdfs:label "hasUiLabel" ;
     dcterms:identifier "ui_label" ;
+    rdfs:comment "Human readable label, to be used in user interactions through forms or documents." ;
     rdfs:domain pehterms:BioChemEntity,
         pehterms:DerivedObservation,
         pehterms:Indicator,
@@ -395,6 +408,7 @@ pehterms:isCategorical a owl:DatatypeProperty ;
 pehterms:isImmutable a owl:DatatypeProperty ;
     rdfs:label "isImmutable" ;
     dcterms:identifier "immutable" ;
+    rdfs:comment "Variable values are not expected to change over time (e.g. birthdate of a person)" ;
     rdfs:domain pehterms:ObservableProperty ;
     rdfs:range xsd:boolean ;
     skos:definition "Variable values are not expected to change over time (e.g. birthdate of a person)" .
@@ -402,6 +416,7 @@ pehterms:isImmutable a owl:DatatypeProperty ;
 pehterms:isIsomerOf a owl:ObjectProperty ;
     rdfs:label "isIsomerOf" ;
     dcterms:identifier "is_isomer_of" ;
+    rdfs:comment "Indicates that this molecular entity is an isomer of another molecular entity" ;
     rdfs:domain pehterms:BioChemEntity ;
     rdfs:range pehterms:BioChemEntity ;
     skos:definition "Indicates that this molecular entity is an isomer of another molecular entity" ;
@@ -410,6 +425,7 @@ pehterms:isIsomerOf a owl:ObjectProperty ;
 pehterms:isMetaboliteOf a owl:ObjectProperty ;
     rdfs:label "isMetaboliteOf" ;
     dcterms:identifier "is_metabolite_of" ;
+    rdfs:comment "Indicates that this molecular entity is a metabolite of another molecular entity" ;
     rdfs:domain pehterms:BioChemEntity ;
     rdfs:range pehterms:BioChemEntity ;
     skos:definition "Indicates that this molecular entity is a metabolite of another molecular entity" ;
@@ -435,6 +451,7 @@ pehterms:isZeroAllowed a owl:DatatypeProperty ;
 
 pehterms:BioChemRole a owl:Class ;
     rdfs:label "BioChemRole" ;
+    rdfs:comment "A role is particular behaviour which a material entity may exhibit." ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "A role is particular behaviour which a material entity may exhibit." ;
     skos:inScheme peh:peh-model-focused ;
@@ -442,6 +459,7 @@ pehterms:BioChemRole a owl:Class ;
 
 pehterms:CalculationDesign a owl:Class ;
     rdfs:label "CalculationDesign" ;
+    rdfs:comment "Definition of a calculation method for deriving an observational value from other variables and/or contexts" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "Definition of a calculation method for deriving an observational value from other variables and/or contexts" ;
     skos:inScheme peh:peh-model-focused ;
@@ -449,6 +467,7 @@ pehterms:CalculationDesign a owl:Class ;
 
 pehterms:ContextAlias a owl:Class ;
     rdfs:label "ContextAlias" ;
+    rdfs:comment "An alternative term as it is used in a known scope or context (e.g. a community, project or study) for any of the entities and its properties" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "An alternative term as it is used in a known scope or context (e.g. a community, project or study) for any of the entities and its properties" ;
     skos:inScheme peh:peh-model-focused ;
@@ -456,6 +475,7 @@ pehterms:ContextAlias a owl:Class ;
 
 pehterms:Grouping a owl:Class ;
     rdfs:label "Grouping" ;
+    rdfs:comment "A generic grouping entity that allows categorising entities in a hierarchical structure" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "A generic grouping entity that allows categorising entities in a hierarchical structure" ;
     skos:inScheme peh:peh-model-focused ;
@@ -463,6 +483,7 @@ pehterms:Grouping a owl:Class ;
 
 pehterms:IAdoptVariable a owl:Class ;
     rdfs:label "IAdoptVariable" ;
+    rdfs:comment "Placeholder class for actual IAdoptVariable" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "Placeholder class for actual IAdoptVariable" ;
     skos:inScheme peh:peh-model-focused ;
@@ -470,6 +491,7 @@ pehterms:IAdoptVariable a owl:Class ;
 
 pehterms:ObservablePropertyMetadataElement a owl:Class ;
     rdfs:label "ObservablePropertyMetadataElement" ;
+    rdfs:comment "Key-value element that adds contextual metadata to an Observable Property instance" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "Key-value element that adds contextual metadata to an Observable Property instance" ;
     skos:inScheme peh:peh-model-focused ;
@@ -477,6 +499,7 @@ pehterms:ObservablePropertyMetadataElement a owl:Class ;
 
 pehterms:ObservablePropertyValueOption a owl:Class ;
     rdfs:label "ObservablePropertyValueOption" ;
+    rdfs:comment "Potential selection choices for Observable Properties that are categorical variables" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "Potential selection choices for Observable Properties that are categorical variables" ;
     skos:inScheme peh:peh-model-focused ;
@@ -484,6 +507,7 @@ pehterms:ObservablePropertyValueOption a owl:Class ;
 
 pehterms:ObservationDesign a owl:Class ;
     rdfs:label "ObservationDesign" ;
+    rdfs:comment "The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "The setup of the observation, listing the study entity type being observed (and -optionally- the entities), as well as the the properties being recorded" ;
     skos:inScheme peh:peh-model-focused ;
@@ -491,6 +515,7 @@ pehterms:ObservationDesign a owl:Class ;
 
 pehterms:ObservationResult a owl:Class ;
     rdfs:label "ObservationResult" ;
+    rdfs:comment "The result of an observational effort in Personal Exposure and Health research" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "The result of an observational effort in Personal Exposure and Health research" ;
     skos:inScheme peh:peh-model-focused ;
@@ -498,6 +523,7 @@ pehterms:ObservationResult a owl:Class ;
 
 pehterms:PhysicalEntity a owl:Class ;
     rdfs:label "PhysicalEntity" ;
+    rdfs:comment "A digital placeholder for a physical entity as it exists in the real world, " ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "A digital placeholder for a physical entity as it exists in the real world, " ;
     skos:inScheme peh:peh-model-focused ;
@@ -517,6 +543,7 @@ pehterms:QUDTUnit a owl:Class ;
 
 pehterms:StudyEntityLink a owl:Class ;
     rdfs:label "StudyEntityLink" ;
+    rdfs:comment "A relational property that allows creating qualified links to study entities" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "A relational property that allows creating qualified links to study entities" ;
     skos:inScheme peh:peh-model-focused ;
@@ -524,6 +551,7 @@ pehterms:StudyEntityLink a owl:Class ;
 
 pehterms:Translation a owl:Class ;
     rdfs:label "Translation" ;
+    rdfs:comment "A translation for any of the entity properties, defining the property, the language and the translated term" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "A translation for any of the entity properties, defining the property, the language and the translated term" ;
     skos:inScheme peh:peh-model-focused ;
@@ -531,6 +559,7 @@ pehterms:Translation a owl:Class ;
 
 pehterms:ValidationDesign a owl:Class ;
     rdfs:label "ValidationDesign" ;
+    rdfs:comment "Definition of a validation rule for automatically imposing business logic constraints" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "Definition of a validation rule for automatically imposing business logic constraints" ;
     skos:inScheme peh:peh-model-focused ;
@@ -538,27 +567,31 @@ pehterms:ValidationDesign a owl:Class ;
 
 pehterms:ValidationHistoryRecord a owl:Class ;
     rdfs:label "ValidationHistoryRecord" ;
+    rdfs:comment "A list of events representing a historical record on the entity validation status" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "A list of events representing a historical record on the entity validation status" ;
     skos:inScheme peh:peh-model-focused ;
     skos:prefLabel "Validation History Record" .
 
-pehterms:NamedThing a owl:Class ;
-    rdfs:label "NamedThing" ;
-    rdfs:subClassOf owl:Thing ;
-    skos:definition "An abstract model for any of the identifiable entities" ;
-    skos:inScheme peh:peh-model-focused ;
-    skos:prefLabel "Named Thing" .
-
 pehterms:DerivedObservation a owl:Class ;
     rdfs:label "DerivedObservation" ;
+    rdfs:comment "An observation in which all observed values are derived from a prior observation through analytical or statistical processing." ;
     rdfs:subClassOf pehterms:Observation ;
     skos:definition "An observation in which all observed values are derived from a prior observation through analytical or statistical processing." ;
     skos:inScheme peh:peh-model-focused ;
     skos:prefLabel "Derived Observation" .
 
+pehterms:NamedThing a owl:Class ;
+    rdfs:label "NamedThing" ;
+    rdfs:comment "An abstract model for any of the identifiable entities" ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "An abstract model for any of the identifiable entities" ;
+    skos:inScheme peh:peh-model-focused ;
+    skos:prefLabel "Named Thing" .
+
 pehterms:Observation a owl:Class ;
     rdfs:label "Observation" ;
+    rdfs:comment "The registration of the intent to perform a set of observations as well as the resulting observed values" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "The registration of the intent to perform a set of observations as well as the resulting observed values" ;
     skos:inScheme peh:peh-model-focused ;
@@ -566,6 +599,7 @@ pehterms:Observation a owl:Class ;
 
 pehterms:ObservationGroup a owl:Class ;
     rdfs:label "ObservationGroup" ;
+    rdfs:comment "A grouped collection of observations, intended and/or executed, as part of a Personal Exposure and Health research study" ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "A grouped collection of observations, intended and/or executed, as part of a Personal Exposure and Health research study" ;
     skos:inScheme peh:peh-model-focused ;
@@ -573,6 +607,7 @@ pehterms:ObservationGroup a owl:Class ;
 
 pehterms:Matrix a owl:Class ;
     rdfs:label "Matrix" ;
+    rdfs:comment "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies" ;
     skos:inScheme peh:peh-model-focused ;
@@ -580,13 +615,15 @@ pehterms:Matrix a owl:Class ;
 
 pehterms:Indicator a owl:Class ;
     rdfs:label "Indicator" ;
+    rdfs:comment "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain. Intentionally aligns with the I-Adopt variable class." ;
     rdfs:subClassOf pehterms:NamedThing ;
-    skos:definition "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain" ;
+    skos:definition "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain. Intentionally aligns with the I-Adopt variable class." ;
     skos:inScheme peh:peh-model-focused ;
     skos:prefLabel "Indicator" .
 
 pehterms:BioChemEntity a owl:Class ;
     rdfs:label "BioChemEntity" ;
+    rdfs:comment "A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain" ;
     skos:inScheme peh:peh-model-focused ;
@@ -597,14 +634,18 @@ peh:peh-model-focused a owl:Ontology ;
     dcterms:abstract "The Personal Exposure and Health (PEH) data model provides a domain-specific structure for the data and metadata involved in human biomonitoring and personal exposure research. It supports annotation with harmonised vocabularies and provides a generic observed-data abstraction layer that facilitates broader cross-domain interoperability."@en ;
     dcterms:source peh:peh-model ;
     pav:version "0.6.2" ;
+    rdfs:comment "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
     owl:versionInfo "0.6.2" ;
     skos:definition "Entity and relation ontology and datamodel for Personal Exposure and Health data" ;
-    widoco:introduction "The PEH data model is the result of consolidation and harmonisation efforts in the human biomonitoring research field, together with an initiative to broaden the model's scope so it can include additional sources of relevant information such as environmental and geospatial observations. The model is defined using LinkML and published as ontology serializations for downstream semantic systems. It mainly supports the annotation of observations and their observable properties, aligns with established semantic models such as SOSA and I-ADOPT, and supports the construction and maintenance of project vocabularies for matrices, biochemical entities, indicators and related controlled terms. In addition to adding semantic context to projects, studies and datasets that use it, the model provides a stable foundation for generated Python data classes and higher-level tools that configure and validate PEH studies from the outset."@en .
+    widoco:introduction "The PEH data model is the result of consolidation and harmonisation efforts in the human biomonitoring research field, together with an initiative to broaden the model's scope so it can include additional sources of relevant information such as environmental and geospatial observations. The model is defined using LinkML and published as ontology serializations for downstream semantic systems. It mainly supports the annotation of observations and their observable properties, aligns with established semantic models such as SOSA and I-ADOPT, and supports the construction and maintenance of project vocabularies for matrices, biochemical entities, indicators and related controlled terms."@en .
 
 pehterms:ObservableProperty a owl:Class ;
     rdfs:label "ObservableProperty" ;
+    rdfs:comment "A fully defined variable that allows registering an observation about any of the entities relevant to Personal Exposure and Health research" ;
     rdfs:subClassOf pehterms:NamedThing ;
     skos:definition "A fully defined variable that allows registering an observation about any of the entities relevant to Personal Exposure and Health research" ;
     skos:inScheme peh:peh-model-focused ;
     skos:prefLabel "Observable Property" .
 
+# PEH ontology alignment axioms
+<https://w3id.org/peh/terms/Indicator> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iadopt/ont/Variable> .
