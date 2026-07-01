@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-22T10:48:03
+# Generation date: 2026-07-01T10:02:36
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -353,6 +353,12 @@ class EntityList(YAMLRoot):
             list[Union[dict, "DataImportConfig"]],
         ]
     ] = empty_dict()
+    export_configs: Optional[
+        Union[
+            dict[Union[str, DataExportConfigId], Union[dict, "DataExportConfig"]],
+            list[Union[dict, "DataExportConfig"]],
+        ]
+    ] = empty_dict()
     data_requests: Optional[
         Union[
             dict[Union[str, DataRequestId], Union[dict, "DataRequest"]],
@@ -471,6 +477,13 @@ class EntityList(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="import_configs",
             slot_type=DataImportConfig,
+            key_name="id",
+            keyed=True,
+        )
+
+        self._normalize_inlined_as_list(
+            slot_name="export_configs",
+            slot_type=DataExportConfig,
             key_name="id",
             keyed=True,
         )
@@ -868,8 +881,8 @@ class BioChemEntity(NamedThing):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA["BioChemEntity"]
-    class_class_curie: ClassVar[str] = "schema:BioChemEntity"
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["BioChemEntity"]
+    class_class_curie: ClassVar[str] = "pehterms:BioChemEntity"
     class_name: ClassVar[str] = "BioChemEntity"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.BioChemEntity
 
@@ -1111,8 +1124,8 @@ class Matrix(NamedThing):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WIKIDATA["Q685816"]
-    class_class_curie: ClassVar[str] = "wikidata:Q685816"
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["Matrix"]
+    class_class_curie: ClassVar[str] = "pehterms:Matrix"
     class_name: ClassVar[str] = "Matrix"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.Matrix
 
@@ -1218,13 +1231,14 @@ class MatrixSubClass(NamedThing):
 @dataclass(repr=False)
 class Indicator(NamedThing):
     """
-    Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
+    Any measurable or observable variable that can describe data or context in the Personal Exposure and Health
+    domain. Intentionally aligns with the I-Adopt variable class.
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WIKIDATA["Q937228"]
-    class_class_curie: ClassVar[str] = "wikidata:Q937228"
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["Indicator"]
+    class_class_curie: ClassVar[str] = "pehterms:Indicator"
     class_name: ClassVar[str] = "Indicator"
     class_model_uri: ClassVar[URIRef] = PEHTERMS.Indicator
 
@@ -1253,11 +1267,15 @@ class IndicatorSubClass(NamedThing):
     class_model_uri: ClassVar[URIRef] = PEHTERMS.IndicatorSubClass
 
     id: Union[str, IndicatorSubClassId] = None
-    indicator_type: Optional[Union[str, "IndicatorType"]] = None
-    property: Optional[str] = None
     quantity_kind: Optional[Union[str, QUDTQuantityKindId]] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, list[str]]] = empty_list()
+    biochementity: Optional[Union[str, BioChemEntityId]] = None
+    constraints: Optional[
+        Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]
+    ] = empty_list()
+    suggester: Optional[Union[str, URIorCURIE]] = None
+    indicator_type: Optional[Union[str, "IndicatorType"]] = None
+    property: Optional[str] = None
     grouping_id_list: Optional[
         Union[Union[str, GroupingId], list[Union[str, GroupingId]]]
     ] = empty_list()
@@ -1266,11 +1284,9 @@ class IndicatorSubClass(NamedThing):
             Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]
         ]
     ] = empty_list()
-    biochementity: Optional[Union[str, BioChemEntityId]] = None
     parent_indicators: Optional[
         Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
     ] = empty_list()
-    suggester: Optional[Union[str, URIorCURIE]] = None
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
     ] = empty_list()
@@ -1284,14 +1300,6 @@ class IndicatorSubClass(NamedThing):
         if not isinstance(self.id, IndicatorSubClassId):
             self.id = IndicatorSubClassId(self.id)
 
-        if self.indicator_type is not None and not isinstance(
-            self.indicator_type, IndicatorType
-        ):
-            self.indicator_type = IndicatorType(self.indicator_type)
-
-        if self.property is not None and not isinstance(self.property, str):
-            self.property = str(self.property)
-
         if self.quantity_kind is not None and not isinstance(
             self.quantity_kind, QUDTQuantityKindId
         ):
@@ -1300,13 +1308,30 @@ class IndicatorSubClass(NamedThing):
         if self.matrix is not None and not isinstance(self.matrix, MatrixId):
             self.matrix = MatrixId(self.matrix)
 
+        if self.biochementity is not None and not isinstance(
+            self.biochementity, BioChemEntityId
+        ):
+            self.biochementity = BioChemEntityId(self.biochementity)
+
         if not isinstance(self.constraints, list):
             self.constraints = (
                 [self.constraints] if self.constraints is not None else []
             )
         self.constraints = [
-            v if isinstance(v, str) else str(v) for v in self.constraints
+            v if isinstance(v, NamedThingId) else NamedThingId(v)
+            for v in self.constraints
         ]
+
+        if self.suggester is not None and not isinstance(self.suggester, URIorCURIE):
+            self.suggester = URIorCURIE(self.suggester)
+
+        if self.indicator_type is not None and not isinstance(
+            self.indicator_type, IndicatorType
+        ):
+            self.indicator_type = IndicatorType(self.indicator_type)
+
+        if self.property is not None and not isinstance(self.property, str):
+            self.property = str(self.property)
 
         if not isinstance(self.grouping_id_list, list):
             self.grouping_id_list = (
@@ -1328,11 +1353,6 @@ class IndicatorSubClass(NamedThing):
             for v in self.relevant_observable_entity_types
         ]
 
-        if self.biochementity is not None and not isinstance(
-            self.biochementity, BioChemEntityId
-        ):
-            self.biochementity = BioChemEntityId(self.biochementity)
-
         if not isinstance(self.parent_indicators, list):
             self.parent_indicators = (
                 [self.parent_indicators] if self.parent_indicators is not None else []
@@ -1341,9 +1361,6 @@ class IndicatorSubClass(NamedThing):
             v if isinstance(v, IndicatorSubClassId) else IndicatorSubClassId(v)
             for v in self.parent_indicators
         ]
-
-        if self.suggester is not None and not isinstance(self.suggester, URIorCURIE):
-            self.suggester = URIorCURIE(self.suggester)
 
         if not isinstance(self.context_aliases, list):
             self.context_aliases = (
@@ -1484,7 +1501,9 @@ class Sample(PhysicalEntity):
 
     id: Union[str, SampleId] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, list[str]]] = empty_list()
+    constraints: Optional[
+        Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]
+    ] = empty_list()
     sampled_in_project: Optional[Union[str, ProjectId]] = None
     physical_label: Optional[str] = None
     collection_date: Optional[Union[str, XSDDate]] = None
@@ -1503,7 +1522,8 @@ class Sample(PhysicalEntity):
                 [self.constraints] if self.constraints is not None else []
             )
         self.constraints = [
-            v if isinstance(v, str) else str(v) for v in self.constraints
+            v if isinstance(v, NamedThingId) else NamedThingId(v)
+            for v in self.constraints
         ]
 
         if self.sampled_in_project is not None and not isinstance(
@@ -2951,7 +2971,9 @@ class SampleCollection(StudyEntity):
 
     id: Union[str, SampleCollectionId] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[Union[str, list[str]]] = empty_list()
+    constraints: Optional[
+        Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]
+    ] = empty_list()
     sample_id_list: Optional[
         Union[Union[str, SampleId], list[Union[str, SampleId]]]
     ] = empty_list()
@@ -2970,7 +2992,8 @@ class SampleCollection(StudyEntity):
                 [self.constraints] if self.constraints is not None else []
             )
         self.constraints = [
-            v if isinstance(v, str) else str(v) for v in self.constraints
+            v if isinstance(v, NamedThingId) else NamedThingId(v)
+            for v in self.constraints
         ]
 
         if not isinstance(self.sample_id_list, list):
@@ -4851,7 +4874,7 @@ slots.constraints = Slot(
     curie=PEHTERMS.curie("hasConstraint"),
     model_uri=PEHTERMS.constraints,
     domain=None,
-    range=Optional[Union[str, list[str]]],
+    range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]],
 )
 
 slots.relevant_observable_entity_types = Slot(
@@ -6118,6 +6141,20 @@ slots.import_configs = Slot(
         Union[
             dict[Union[str, DataImportConfigId], Union[dict, DataImportConfig]],
             list[Union[dict, DataImportConfig]],
+        ]
+    ],
+)
+
+slots.export_configs = Slot(
+    uri=PEHTERMS.hasExportConfig,
+    name="export_configs",
+    curie=PEHTERMS.curie("hasExportConfig"),
+    model_uri=PEHTERMS.export_configs,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[Union[str, DataExportConfigId], Union[dict, DataExportConfig]],
+            list[Union[dict, DataExportConfig]],
         ]
     ],
 )

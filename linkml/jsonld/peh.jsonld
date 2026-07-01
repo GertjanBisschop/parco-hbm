@@ -1546,6 +1546,7 @@
     {
       "name": "property",
       "definition_uri": "https://w3id.org/peh/terms/property",
+      "description": "Any property that cannot be expressed as a QUDTQuantityKind",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasProperty"
@@ -1589,7 +1590,7 @@
         "Sample",
         "SampleCollection"
       ],
-      "range": "string",
+      "range": "NamedThing",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -3670,6 +3671,24 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "export_configs",
+      "definition_uri": "https://w3id.org/peh/terms/export_configs",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasExportConfig"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasExportConfig",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "DataExportConfig",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "section_mapping",
       "definition_uri": "https://w3id.org/peh/terms/section_mapping",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -4098,6 +4117,7 @@
         "observed_values",
         "layouts",
         "import_configs",
+        "export_configs",
         "data_requests",
         "matrix_subclasses",
         "biochementity_subclasses",
@@ -4259,7 +4279,7 @@
       "definition_uri": "https://w3id.org/peh/terms/BioChemEntity",
       "description": "A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
+      "close_mappings": [
         "schema:BioChemEntity"
       ],
       "is_a": "NamedThing",
@@ -4284,7 +4304,7 @@
         "validation_history"
       ],
       "slot_usage": {},
-      "class_uri": "http://schema.org/BioChemEntity",
+      "class_uri": "https://w3id.org/peh/terms/BioChemEntity",
       "@type": "ClassDefinition"
     },
     {
@@ -4333,7 +4353,7 @@
       "definition_uri": "https://w3id.org/peh/terms/Matrix",
       "description": "The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
+      "close_mappings": [
         "wikidata:Q685816"
       ],
       "is_a": "NamedThing",
@@ -4353,7 +4373,7 @@
         "translations"
       ],
       "slot_usage": {},
-      "class_uri": "https://www.wikidata.org/wiki/Q685816",
+      "class_uri": "https://w3id.org/peh/terms/Matrix",
       "@type": "ClassDefinition"
     },
     {
@@ -4389,13 +4409,11 @@
     {
       "name": "Indicator",
       "definition_uri": "https://w3id.org/peh/terms/Indicator",
-      "description": "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain",
+      "description": "Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain. Intentionally aligns with the I-Adopt variable class.",
       "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "wikidata:Q937228"
-      ],
       "close_mappings": [
-        "iop:Variable"
+        "iop:Variable",
+        "wikidata:Q937228"
       ],
       "is_a": "NamedThing",
       "slots": [
@@ -4408,7 +4426,7 @@
         "exact_matches"
       ],
       "slot_usage": {},
-      "class_uri": "https://www.wikidata.org/wiki/Q937228",
+      "class_uri": "https://w3id.org/peh/terms/Indicator",
       "@type": "ClassDefinition"
     },
     {
@@ -4432,16 +4450,16 @@
         "description",
         "remark",
         "exact_matches",
-        "indicator_type",
-        "property",
         "quantity_kind",
         "matrix",
+        "biochementity",
         "constraints",
+        "suggester",
+        "indicator_type",
+        "property",
         "grouping_id_list",
         "relevant_observable_entity_types",
-        "biochementity",
         "parent_indicators",
-        "suggester",
         "context_aliases",
         "translations"
       ],
@@ -5626,9 +5644,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-06-22T10:47:40",
-  "source_file_size": 44567,
-  "generation_date": "2026-06-22T10:48:03",
+  "source_file_date": "2026-07-01T10:02:15",
+  "source_file_size": 44927,
+  "generation_date": "2026-07-01T10:02:36",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

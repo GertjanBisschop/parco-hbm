@@ -55,6 +55,7 @@ classes:
       - observed_values
       - layouts
       - import_configs
+      - export_configs
       - data_requests
       # subclass templates
       - matrix_subclasses
@@ -138,10 +139,10 @@ classes:
       - translated_value
   
   BioChemEntity:
-    class_uri:
-      schema:BioChemEntity
     description: >-
       A biological, chemical or biochemical entity that is relevant to the Personal Exposure and Health domain
+    close_mappings:
+      - schema:BioChemEntity
     is_a: NamedThing
     mixins:
       - HasAliases
@@ -169,9 +170,10 @@ classes:
       - suggester
   
   Matrix:
-    class_uri: wikidata:Q685816
     description: >-
       The physical medium or biological substrate from which a biomarker, or other analyte is quantified in observational studies
+    close_mappings: 
+      - wikidata:Q685816
     is_a: NamedThing
     mixins:
       - HasContextAliases
@@ -190,11 +192,11 @@ classes:
       - suggester
 
   Indicator:
-    class_uri: wikidata:Q937228
     description: >-
-      Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
+      Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain. Intentionally aligns with the I-Adopt variable class.
     close_mappings:
       - iop:Variable
+      - wikidata:Q937228
     is_a: NamedThing
 
   IndicatorSubClass:
@@ -206,16 +208,16 @@ classes:
       - HasContextAliases
       - HasTranslations
     slots:
-      - indicator_type
-      - property
       - quantity_kind
       - matrix
+      - biochementity
       - constraints
+      - suggester
+      - indicator_type
+      - property
       - grouping_id_list
       - relevant_observable_entity_types
-      - biochementity
       - parent_indicators
-      - suggester
 
   QUDTUnit:
     class_uri: qudt:Unit
@@ -864,6 +866,8 @@ slots:
     slot_uri: rdfs:subClassOf
     multivalued: true
   property:
+    description: >-
+      Any property that cannot be expressed as a QUDTQuantityKind
     slot_uri: pehterms:hasProperty
   matrix:
     slot_uri: pehterms:hasMatrix
@@ -871,6 +875,8 @@ slots:
   constraints:
     slot_uri: pehterms:hasConstraint
     multivalued: true
+    range: NamedThing
+    inlined_as_list: false
   relevant_observable_entity_types:
     slot_uri: pehterms:hasRelevantObservableEntityType
     multivalued: true
@@ -1339,6 +1345,11 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: DataImportConfig
+  export_configs:
+    slot_uri: pehterms:hasExportConfig
+    multivalued: true
+    inlined_as_list: true
+    range: DataExportConfig
   section_mapping:
     slot_uri: pehterms:hasSectionMapping
     range: DataImportSectionMapping

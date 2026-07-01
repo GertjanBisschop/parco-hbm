@@ -62,6 +62,7 @@
          "@id": "isConditional"
       },
       "constraints": {
+         "@type": "@id",
          "@id": "hasConstraint"
       },
       "contact_email": {
@@ -162,6 +163,10 @@
       "exact_matches": {
          "@type": "xsd:anyURI",
          "@id": "skos:exactMatch"
+      },
+      "export_configs": {
+         "@type": "@id",
+         "@id": "hasExportConfig"
       },
       "field": {
          "@type": "@id",
@@ -814,7 +819,7 @@
          "@id": "isZeroAllowed"
       },
       "BioChemEntity": {
-         "@id": "schema:BioChemEntity"
+         "@id": "BioChemEntity"
       },
       "BioChemEntitySubClass": {
          "@id": "owl:Class"
@@ -910,13 +915,13 @@
          "@id": "IAdoptVariable"
       },
       "Indicator": {
-         "@id": "wikidata:Q937228"
+         "@id": "Indicator"
       },
       "IndicatorSubClass": {
          "@id": "owl:Class"
       },
       "Matrix": {
-         "@id": "wikidata:Q685816"
+         "@id": "Matrix"
       },
       "MatrixSubClass": {
          "@id": "owl:Class"

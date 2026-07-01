@@ -251,6 +251,7 @@ class EntityList(ConfiguredBaseModel):
     observed_values: Optional[list[ObservedValue]] = Field(default=None)
     layouts: Optional[list[DataLayout]] = Field(default=None)
     import_configs: Optional[list[DataImportConfig]] = Field(default=None)
+    export_configs: Optional[list[DataExportConfig]] = Field(default=None)
     data_requests: Optional[list[DataRequest]] = Field(default=None)
     matrix_subclasses: Optional[list[MatrixSubClass]] = Field(default=None)
     biochementity_subclasses: Optional[list[BioChemEntitySubClass]] = Field(
@@ -559,7 +560,7 @@ class MatrixSubClass(HasTranslations, HasContextAliases, NamedThing):
 
 class Indicator(NamedThing):
     """
-    Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain
+    Any measurable or observable variable that can describe data or context in the Personal Exposure and Health domain. Intentionally aligns with the I-Adopt variable class.
     """
 
     id: str = Field(
@@ -593,21 +594,24 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
     Template class used to generate OWL Classes
     """
 
-    indicator_type: Optional[IndicatorType] = Field(default=None)
-    property: Optional[str] = Field(default=None)
     quantity_kind: Optional[str] = Field(default=None)
     matrix: Optional[str] = Field(default=None)
-    constraints: Optional[list[str]] = Field(default=None)
-    grouping_id_list: Optional[list[str]] = Field(default=None)
-    relevant_observable_entity_types: Optional[list[ObservableEntityType]] = Field(
-        default=None
-    )
     biochementity: Optional[str] = Field(default=None)
-    parent_indicators: Optional[list[str]] = Field(default=None)
+    constraints: Optional[list[str]] = Field(default=None)
     suggester: Optional[str] = Field(
         default=None,
         description="""ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication.""",
     )
+    indicator_type: Optional[IndicatorType] = Field(default=None)
+    property: Optional[str] = Field(
+        default=None,
+        description="""Any property that cannot be expressed as a QUDTQuantityKind""",
+    )
+    grouping_id_list: Optional[list[str]] = Field(default=None)
+    relevant_observable_entity_types: Optional[list[ObservableEntityType]] = Field(
+        default=None
+    )
+    parent_indicators: Optional[list[str]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(
