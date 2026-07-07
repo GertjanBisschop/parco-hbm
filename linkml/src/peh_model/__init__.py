@@ -3,7 +3,7 @@
 import os
 import pathlib
 
-__version__ = "0.6.2"
+__version__ = "0.6.3"
 
 
 def get_schema_path():
