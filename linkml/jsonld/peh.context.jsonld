@@ -175,6 +175,33 @@
       "field_label": {
          "@id": "hasFieldLabel"
       },
+      "filter_arg_contextual_field_references": {
+         "@type": "@id",
+         "@id": "hasFilterArgumentContextualFieldReference"
+      },
+      "filter_arg_expressions": {
+         "@type": "@id",
+         "@id": "hasFilterArgumentExpression"
+      },
+      "filter_arg_values": {
+         "@id": "hasFilterArgumentValue"
+      },
+      "filter_command": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "hasFilterCommand"
+      },
+      "filter_condition_expression": {
+         "@type": "@id",
+         "@id": "hasFilterConditionExpression"
+      },
+      "filter_subject_contextual_field_references": {
+         "@type": "@id",
+         "@id": "hasFilterSubjectContextualFieldReference"
+      },
       "foreign_key_link": {
          "@type": "@id",
          "@id": "hasForeignKeyLink"
@@ -385,6 +412,10 @@
       "observation_end_date": {
          "@type": "xsd:date",
          "@id": "hasObservationEndDate"
+      },
+      "observation_filter_expression": {
+         "@type": "@id",
+         "@id": "hasObservationFilterExpression"
       },
       "observation_group_id_list": {
          "@type": "@id",
@@ -890,6 +921,9 @@
       "Environment": {
          "@id": "Environment"
       },
+      "Expression": {
+         "@id": "Expression"
+      },
       "Geolocation": {
          "@id": "Geolocation"
       },
@@ -949,6 +983,9 @@
       },
       "ObservationDesign": {
          "@id": "ObservationDesign"
+      },
+      "ObservationFilterExpression": {
+         "@id": "ObservationFilterExpression"
       },
       "ObservationGroup": {
          "@id": "ObservationGroup"

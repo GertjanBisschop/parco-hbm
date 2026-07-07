@@ -87,6 +87,29 @@ class ValidationErrorLevel(str, Enum):
     fatal = "fatal"
 
 
+class ObservationFilterCommand(str, Enum):
+    """
+    Command vocabulary for observation filter expressions.
+    """
+
+    is_equal_to = "is_equal_to"
+    is_greater_than_or_equal_to = "is_greater_than_or_equal_to"
+    is_greater_than = "is_greater_than"
+    is_less_than_or_equal_to = "is_less_than_or_equal_to"
+    is_less_than = "is_less_than"
+    is_not_equal_to = "is_not_equal_to"
+    is_in = "is_in"
+    is_not_in = "is_not_in"
+    is_null = "is_null"
+    is_not_null = "is_not_null"
+    conjunction = "conjunction"
+    disjunction = "disjunction"
+    contains = "contains"
+    starts_with = "starts_with"
+    ends_with = "ends_with"
+    matches_regex = "matches_regex"
+
+
 class DataLayoutElementStyle(str, Enum):
     standard = "standard"
     main_title = "main_title"
@@ -1089,24 +1112,46 @@ class ValidationDesign(ConfiguredBaseModel):
     conditional: Optional[str] = Field(default=None)
 
 
-class ValidationExpression(ConfiguredBaseModel):
+class Expression(ConfiguredBaseModel):
+    """
+    An abstract logical expression tree, allowing commands, contextual field references, literal arguments, and nested expressions to be combined into boolean predicates.
+    """
+
+    pass
+
+
+class ValidationExpression(Expression):
     """
     A logical expression, allowing for combining arguments into more complex validation rules
     """
 
     validation_subject_contextual_field_references: Optional[
         list[ContextualFieldReference]
-    ] = Field(default=None)
-    validation_condition_expression: Optional[ValidationExpression] = Field(
-        default=None
+    ] = Field(
+        default=None,
+        description="""Contextual field references identifying the values that are the subject of a validation command.""",
     )
-    validation_command: Optional[ValidationCommand] = Field(default=None)
-    validation_arg_values: Optional[list[str]] = Field(default=None)
+    validation_condition_expression: Optional[ValidationExpression] = Field(
+        default=None,
+        description="""Optional validation expression that must match before the main validation expression is evaluated as a conditional predicate.""",
+    )
+    validation_command: Optional[ValidationCommand] = Field(
+        default=None,
+        description="""Command defining the operation used to evaluate a validation expression.""",
+    )
+    validation_arg_values: Optional[list[str]] = Field(
+        default=None,
+        description="""Literal argument values passed to a validation command.""",
+    )
     validation_arg_contextual_field_references: Optional[
         list[ContextualFieldReference]
-    ] = Field(default=None)
+    ] = Field(
+        default=None,
+        description="""Contextual field references identifying values used as arguments to a validation command.""",
+    )
     validation_arg_expressions: Optional[list[ValidationExpression]] = Field(
-        default=None
+        default=None,
+        description="""Nested validation expressions used as arguments to a compound validation command.""",
     )
 
 
@@ -1833,6 +1878,10 @@ class DataExportConfig(NamedThing):
 
     layout: Optional[str] = Field(default=None)
     section_mapping: Optional[DataImportSectionMapping] = Field(default=None)
+    observation_filter_expression: Optional[ObservationFilterExpression] = Field(
+        default=None,
+        description="""Expression determining which observation results are retained in an export.""",
+    )
     id: str = Field(
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
@@ -1857,6 +1906,41 @@ class DataExportConfig(NamedThing):
         description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
     )
     exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class ObservationFilterExpression(Expression):
+    """
+    A logical expression used to decide whether an observation result should be retained in an export. Rows are retained when the expression evaluates to true.
+    """
+
+    filter_subject_contextual_field_references: Optional[
+        list[ContextualFieldReference]
+    ] = Field(
+        default=None,
+        description="""Contextual field references identifying the results that are the subject of an observation filter command.""",
+    )
+    filter_condition_expression: Optional[ObservationFilterExpression] = Field(
+        default=None,
+        description="""Optional filter expression that must match before the main filter expression is evaluated as a conditional predicate.""",
+    )
+    filter_command: ObservationFilterCommand = Field(
+        default=...,
+        description="""Command defining the operation used to evaluate an observation filter expression.""",
+    )
+    filter_arg_values: Optional[list[str]] = Field(
+        default=None,
+        description="""Literal argument values passed to an observation filter command.""",
+    )
+    filter_arg_contextual_field_references: Optional[list[ContextualFieldReference]] = (
+        Field(
+            default=None,
+            description="""Contextual field references identifying values used as arguments to an observation filter command.""",
+        )
+    )
+    filter_arg_expressions: Optional[list[ObservationFilterExpression]] = Field(
+        default=None,
+        description="""Nested filter expressions used as arguments to a compound observation filter command.""",
+    )
 
 
 class DataRequest(NamedThing):
@@ -2110,6 +2194,7 @@ CalculationImplementation.model_rebuild()
 CalculationKeywordArgument.model_rebuild()
 CalculationResult.model_rebuild()
 ValidationDesign.model_rebuild()
+Expression.model_rebuild()
 ValidationExpression.model_rebuild()
 ContextualFieldReference.model_rebuild()
 Contact.model_rebuild()
@@ -2141,6 +2226,7 @@ DataImportConfig.model_rebuild()
 DataImportSectionMapping.model_rebuild()
 DataImportSectionMappingLink.model_rebuild()
 DataExportConfig.model_rebuild()
+ObservationFilterExpression.model_rebuild()
 DataRequest.model_rebuild()
 ObservedEntityProperty.model_rebuild()
 DataStakeholder.model_rebuild()

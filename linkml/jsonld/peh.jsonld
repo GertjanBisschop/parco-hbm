@@ -469,6 +469,62 @@
       ]
     },
     {
+      "name": "ObservationFilterCommand",
+      "definition_uri": "https://w3id.org/peh/terms/ObservationFilterCommand",
+      "description": "Command vocabulary for observation filter expressions.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "permissible_values": [
+        {
+          "text": "is_equal_to"
+        },
+        {
+          "text": "is_greater_than_or_equal_to"
+        },
+        {
+          "text": "is_greater_than"
+        },
+        {
+          "text": "is_less_than_or_equal_to"
+        },
+        {
+          "text": "is_less_than"
+        },
+        {
+          "text": "is_not_equal_to"
+        },
+        {
+          "text": "is_in"
+        },
+        {
+          "text": "is_not_in"
+        },
+        {
+          "text": "is_null"
+        },
+        {
+          "text": "is_not_null"
+        },
+        {
+          "text": "conjunction"
+        },
+        {
+          "text": "disjunction"
+        },
+        {
+          "text": "contains"
+        },
+        {
+          "text": "starts_with"
+        },
+        {
+          "text": "ends_with"
+        },
+        {
+          "text": "matches_regex"
+        }
+      ]
+    },
+    {
       "name": "DataLayoutElementStyle",
       "definition_uri": "https://w3id.org/peh/terms/DataLayoutElementStyle",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -2108,23 +2164,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "validation_condition_expression",
-      "definition_uri": "https://w3id.org/peh/terms/validation_condition_expression",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "https://w3id.org/peh/terms/hasValidationConditionExpression"
-      ],
-      "slot_uri": "https://w3id.org/peh/terms/hasValidationConditionExpression",
-      "owner": "ValidationExpression",
-      "domain_of": [
-        "ValidationExpression"
-      ],
-      "range": "ValidationExpression",
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "validation_error_level",
       "definition_uri": "https://w3id.org/peh/terms/validation_error_level",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -2157,6 +2196,7 @@
     {
       "name": "validation_subject_contextual_field_references",
       "definition_uri": "https://w3id.org/peh/terms/validation_subject_contextual_field_references",
+      "description": "Contextual field references identifying the values that are the subject of a validation command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasValidationSubjectContextualFieldReference"
@@ -2173,8 +2213,27 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "validation_condition_expression",
+      "definition_uri": "https://w3id.org/peh/terms/validation_condition_expression",
+      "description": "Optional validation expression that must match before the main validation expression is evaluated as a conditional predicate.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasValidationConditionExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasValidationConditionExpression",
+      "owner": "ValidationExpression",
+      "domain_of": [
+        "ValidationExpression"
+      ],
+      "range": "ValidationExpression",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "validation_command",
       "definition_uri": "https://w3id.org/peh/terms/validation_command",
+      "description": "Command defining the operation used to evaluate a validation expression.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasValidationCommand"
@@ -2190,6 +2249,7 @@
     {
       "name": "validation_arg_values",
       "definition_uri": "https://w3id.org/peh/terms/validation_arg_values",
+      "description": "Literal argument values passed to a validation command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasValidationArgumentValue"
@@ -2206,6 +2266,7 @@
     {
       "name": "validation_arg_contextual_field_references",
       "definition_uri": "https://w3id.org/peh/terms/validation_arg_contextual_field_references",
+      "description": "Contextual field references identifying values used as arguments to a validation command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasValidationArgumentContextualFieldReference"
@@ -2224,6 +2285,7 @@
     {
       "name": "validation_arg_expressions",
       "definition_uri": "https://w3id.org/peh/terms/validation_arg_expressions",
+      "description": "Nested validation expressions used as arguments to a compound validation command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasValidationArgumentExpression"
@@ -3707,6 +3769,132 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "observation_filter_expression",
+      "definition_uri": "https://w3id.org/peh/terms/observation_filter_expression",
+      "description": "Expression determining which observation results are retained in an export.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationFilterExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationFilterExpression",
+      "owner": "DataExportConfig",
+      "domain_of": [
+        "DataExportConfig"
+      ],
+      "range": "ObservationFilterExpression",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_subject_contextual_field_references",
+      "definition_uri": "https://w3id.org/peh/terms/filter_subject_contextual_field_references",
+      "description": "Contextual field references identifying the results that are the subject of an observation filter command.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterSubjectContextualFieldReference"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterSubjectContextualFieldReference",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "range": "ContextualFieldReference",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_condition_expression",
+      "definition_uri": "https://w3id.org/peh/terms/filter_condition_expression",
+      "description": "Optional filter expression that must match before the main filter expression is evaluated as a conditional predicate.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterConditionExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterConditionExpression",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "range": "ObservationFilterExpression",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_command",
+      "definition_uri": "https://w3id.org/peh/terms/filter_command",
+      "description": "Command defining the operation used to evaluate an observation filter expression.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterCommand"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterCommand",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "range": "ObservationFilterCommand",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_arg_values",
+      "definition_uri": "https://w3id.org/peh/terms/filter_arg_values",
+      "description": "Literal argument values passed to an observation filter command.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterArgumentValue"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterArgumentValue",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_arg_contextual_field_references",
+      "definition_uri": "https://w3id.org/peh/terms/filter_arg_contextual_field_references",
+      "description": "Contextual field references identifying values used as arguments to an observation filter command.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterArgumentContextualFieldReference"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterArgumentContextualFieldReference",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "range": "ContextualFieldReference",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_arg_expressions",
+      "definition_uri": "https://w3id.org/peh/terms/filter_arg_expressions",
+      "description": "Nested filter expressions used as arguments to a compound observation filter command.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterArgumentExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterArgumentExpression",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "range": "ObservationFilterExpression",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "section_mapping_links",
       "definition_uri": "https://w3id.org/peh/terms/section_mapping_links",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -4091,6 +4279,28 @@
         "Sample"
       ],
       "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ObservationFilterExpression_filter_command",
+      "definition_uri": "https://w3id.org/peh/terms/filter_command",
+      "description": "Command defining the operation used to evaluate an observation filter expression.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterCommand"
+      ],
+      "is_a": "filter_command",
+      "domain": "ObservationFilterExpression",
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterCommand",
+      "alias": "filter_command",
+      "owner": "ObservationFilterExpression",
+      "domain_of": [
+        "ObservationFilterExpression"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "filter_command",
+      "range": "ObservationFilterCommand",
+      "required": true,
       "@type": "SlotDefinition"
     }
   ],
@@ -4858,10 +5068,21 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "Expression",
+      "definition_uri": "https://w3id.org/peh/terms/Expression",
+      "description": "An abstract logical expression tree, allowing commands, contextual field references, literal arguments, and nested expressions to be combined into boolean predicates.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "abstract": true,
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/Expression",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ValidationExpression",
       "definition_uri": "https://w3id.org/peh/terms/ValidationExpression",
       "description": "A logical expression, allowing for combining arguments into more complex validation rules",
       "from_schema": "https://w3id.org/peh/peh-model",
+      "is_a": "Expression",
       "slots": [
         "validation_subject_contextual_field_references",
         "validation_condition_expression",
@@ -5470,10 +5691,29 @@
         "remark",
         "exact_matches",
         "layout",
-        "section_mapping"
+        "section_mapping",
+        "observation_filter_expression"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataExportConfig",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservationFilterExpression",
+      "definition_uri": "https://w3id.org/peh/terms/ObservationFilterExpression",
+      "description": "A logical expression used to decide whether an observation result should be retained in an export. Rows are retained when the expression evaluates to true.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "is_a": "Expression",
+      "slots": [
+        "filter_subject_contextual_field_references",
+        "filter_condition_expression",
+        "ObservationFilterExpression_filter_command",
+        "filter_arg_values",
+        "filter_arg_contextual_field_references",
+        "filter_arg_expressions"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/ObservationFilterExpression",
       "@type": "ClassDefinition"
     },
     {
@@ -5644,9 +5884,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-07-01T10:02:15",
-  "source_file_size": 44927,
-  "generation_date": "2026-07-01T10:02:36",
+  "source_file_date": "2026-07-07T11:32:30",
+  "source_file_size": 48669,
+  "generation_date": "2026-07-07T11:32:55",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

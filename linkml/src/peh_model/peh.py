@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-01T10:02:36
+# Generation date: 2026-07-07T11:32:55
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -2257,8 +2257,22 @@ class ValidationDesign(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+class Expression(YAMLRoot):
+    """
+    An abstract logical expression tree, allowing commands, contextual field references, literal arguments, and nested
+    expressions to be combined into boolean predicates.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["Expression"]
+    class_class_curie: ClassVar[str] = "pehterms:Expression"
+    class_name: ClassVar[str] = "Expression"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.Expression
+
+
 @dataclass(repr=False)
-class ValidationExpression(YAMLRoot):
+class ValidationExpression(Expression):
     """
     A logical expression, allowing for combining arguments into more complex validation rules
     """
@@ -3783,6 +3797,9 @@ class DataExportConfig(NamedThing):
     id: Union[str, DataExportConfigId] = None
     layout: Optional[Union[str, DataLayoutId]] = None
     section_mapping: Optional[Union[dict, DataImportSectionMapping]] = None
+    observation_filter_expression: Optional[
+        Union[dict, "ObservationFilterExpression"]
+    ] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -3799,6 +3816,112 @@ class DataExportConfig(NamedThing):
             self.section_mapping = DataImportSectionMapping(
                 **as_dict(self.section_mapping)
             )
+
+        if self.observation_filter_expression is not None and not isinstance(
+            self.observation_filter_expression, ObservationFilterExpression
+        ):
+            self.observation_filter_expression = ObservationFilterExpression(
+                **as_dict(self.observation_filter_expression)
+            )
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ObservationFilterExpression(Expression):
+    """
+    A logical expression used to decide whether an observation result should be retained in an export. Rows are
+    retained when the expression evaluates to true.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationFilterExpression"]
+    class_class_curie: ClassVar[str] = "pehterms:ObservationFilterExpression"
+    class_name: ClassVar[str] = "ObservationFilterExpression"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservationFilterExpression
+
+    filter_command: Union[str, "ObservationFilterCommand"] = None
+    filter_subject_contextual_field_references: Optional[
+        Union[
+            Union[dict, ContextualFieldReference],
+            list[Union[dict, ContextualFieldReference]],
+        ]
+    ] = empty_list()
+    filter_condition_expression: Optional[
+        Union[dict, "ObservationFilterExpression"]
+    ] = None
+    filter_arg_values: Optional[Union[str, list[str]]] = empty_list()
+    filter_arg_contextual_field_references: Optional[
+        Union[
+            Union[dict, ContextualFieldReference],
+            list[Union[dict, ContextualFieldReference]],
+        ]
+    ] = empty_list()
+    filter_arg_expressions: Optional[
+        Union[
+            Union[dict, "ObservationFilterExpression"],
+            list[Union[dict, "ObservationFilterExpression"]],
+        ]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.filter_command):
+            self.MissingRequiredField("filter_command")
+        if not isinstance(self.filter_command, ObservationFilterCommand):
+            self.filter_command = ObservationFilterCommand(self.filter_command)
+
+        if not isinstance(self.filter_subject_contextual_field_references, list):
+            self.filter_subject_contextual_field_references = (
+                [self.filter_subject_contextual_field_references]
+                if self.filter_subject_contextual_field_references is not None
+                else []
+            )
+        self.filter_subject_contextual_field_references = [
+            (
+                v
+                if isinstance(v, ContextualFieldReference)
+                else ContextualFieldReference(**as_dict(v))
+            )
+            for v in self.filter_subject_contextual_field_references
+        ]
+
+        if self.filter_condition_expression is not None and not isinstance(
+            self.filter_condition_expression, ObservationFilterExpression
+        ):
+            self.filter_condition_expression = ObservationFilterExpression(
+                **as_dict(self.filter_condition_expression)
+            )
+
+        if not isinstance(self.filter_arg_values, list):
+            self.filter_arg_values = (
+                [self.filter_arg_values] if self.filter_arg_values is not None else []
+            )
+        self.filter_arg_values = [
+            v if isinstance(v, str) else str(v) for v in self.filter_arg_values
+        ]
+
+        if not isinstance(self.filter_arg_contextual_field_references, list):
+            self.filter_arg_contextual_field_references = (
+                [self.filter_arg_contextual_field_references]
+                if self.filter_arg_contextual_field_references is not None
+                else []
+            )
+        self.filter_arg_contextual_field_references = [
+            (
+                v
+                if isinstance(v, ContextualFieldReference)
+                else ContextualFieldReference(**as_dict(v))
+            )
+            for v in self.filter_arg_contextual_field_references
+        ]
+
+        self._normalize_inlined_as_list(
+            slot_name="filter_arg_expressions",
+            slot_type=ObservationFilterExpression,
+            key_name="filter_command",
+            keyed=False,
+        )
 
         super().__post_init__(**kwargs)
 
@@ -4243,6 +4366,34 @@ class ValidationErrorLevel(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ValidationErrorLevel",
+    )
+
+
+class ObservationFilterCommand(EnumDefinitionImpl):
+    """
+    Command vocabulary for observation filter expressions.
+    """
+
+    is_equal_to = PermissibleValue(text="is_equal_to")
+    is_greater_than_or_equal_to = PermissibleValue(text="is_greater_than_or_equal_to")
+    is_greater_than = PermissibleValue(text="is_greater_than")
+    is_less_than_or_equal_to = PermissibleValue(text="is_less_than_or_equal_to")
+    is_less_than = PermissibleValue(text="is_less_than")
+    is_not_equal_to = PermissibleValue(text="is_not_equal_to")
+    is_in = PermissibleValue(text="is_in")
+    is_not_in = PermissibleValue(text="is_not_in")
+    is_null = PermissibleValue(text="is_null")
+    is_not_null = PermissibleValue(text="is_not_null")
+    conjunction = PermissibleValue(text="conjunction")
+    disjunction = PermissibleValue(text="disjunction")
+    contains = PermissibleValue(text="contains")
+    starts_with = PermissibleValue(text="starts_with")
+    ends_with = PermissibleValue(text="ends_with")
+    matches_regex = PermissibleValue(text="matches_regex")
+
+    _defn = EnumDefinition(
+        name="ObservationFilterCommand",
+        description="Command vocabulary for observation filter expressions.",
     )
 
 
@@ -5187,15 +5338,6 @@ slots.validation_expression = Slot(
     range=Optional[Union[dict, ValidationExpression]],
 )
 
-slots.validation_condition_expression = Slot(
-    uri=PEHTERMS.hasValidationConditionExpression,
-    name="validation_condition_expression",
-    curie=PEHTERMS.curie("hasValidationConditionExpression"),
-    model_uri=PEHTERMS.validation_condition_expression,
-    domain=None,
-    range=Optional[Union[dict, ValidationExpression]],
-)
-
 slots.validation_error_level = Slot(
     uri=PEHTERMS.hasValidationErrorLevel,
     name="validation_error_level",
@@ -5226,6 +5368,15 @@ slots.validation_subject_contextual_field_references = Slot(
             list[Union[dict, ContextualFieldReference]],
         ]
     ],
+)
+
+slots.validation_condition_expression = Slot(
+    uri=PEHTERMS.hasValidationConditionExpression,
+    name="validation_condition_expression",
+    curie=PEHTERMS.curie("hasValidationConditionExpression"),
+    model_uri=PEHTERMS.validation_condition_expression,
+    domain=None,
+    range=Optional[Union[dict, ValidationExpression]],
 )
 
 slots.validation_command = Slot(
@@ -6168,6 +6319,84 @@ slots.section_mapping = Slot(
     range=Optional[Union[dict, DataImportSectionMapping]],
 )
 
+slots.observation_filter_expression = Slot(
+    uri=PEHTERMS.hasObservationFilterExpression,
+    name="observation_filter_expression",
+    curie=PEHTERMS.curie("hasObservationFilterExpression"),
+    model_uri=PEHTERMS.observation_filter_expression,
+    domain=None,
+    range=Optional[Union[dict, ObservationFilterExpression]],
+)
+
+slots.filter_subject_contextual_field_references = Slot(
+    uri=PEHTERMS.hasFilterSubjectContextualFieldReference,
+    name="filter_subject_contextual_field_references",
+    curie=PEHTERMS.curie("hasFilterSubjectContextualFieldReference"),
+    model_uri=PEHTERMS.filter_subject_contextual_field_references,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ContextualFieldReference],
+            list[Union[dict, ContextualFieldReference]],
+        ]
+    ],
+)
+
+slots.filter_condition_expression = Slot(
+    uri=PEHTERMS.hasFilterConditionExpression,
+    name="filter_condition_expression",
+    curie=PEHTERMS.curie("hasFilterConditionExpression"),
+    model_uri=PEHTERMS.filter_condition_expression,
+    domain=None,
+    range=Optional[Union[dict, ObservationFilterExpression]],
+)
+
+slots.filter_command = Slot(
+    uri=PEHTERMS.hasFilterCommand,
+    name="filter_command",
+    curie=PEHTERMS.curie("hasFilterCommand"),
+    model_uri=PEHTERMS.filter_command,
+    domain=None,
+    range=Optional[Union[str, "ObservationFilterCommand"]],
+)
+
+slots.filter_arg_values = Slot(
+    uri=PEHTERMS.hasFilterArgumentValue,
+    name="filter_arg_values",
+    curie=PEHTERMS.curie("hasFilterArgumentValue"),
+    model_uri=PEHTERMS.filter_arg_values,
+    domain=None,
+    range=Optional[Union[str, list[str]]],
+)
+
+slots.filter_arg_contextual_field_references = Slot(
+    uri=PEHTERMS.hasFilterArgumentContextualFieldReference,
+    name="filter_arg_contextual_field_references",
+    curie=PEHTERMS.curie("hasFilterArgumentContextualFieldReference"),
+    model_uri=PEHTERMS.filter_arg_contextual_field_references,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ContextualFieldReference],
+            list[Union[dict, ContextualFieldReference]],
+        ]
+    ],
+)
+
+slots.filter_arg_expressions = Slot(
+    uri=PEHTERMS.hasFilterArgumentExpression,
+    name="filter_arg_expressions",
+    curie=PEHTERMS.curie("hasFilterArgumentExpression"),
+    model_uri=PEHTERMS.filter_arg_expressions,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ObservationFilterExpression],
+            list[Union[dict, ObservationFilterExpression]],
+        ]
+    ],
+)
+
 slots.section_mapping_links = Slot(
     uri=PEHTERMS.hasSectionMappingLink,
     name="section_mapping_links",
@@ -6405,4 +6634,13 @@ slots.collection_date = Slot(
     model_uri=PEHTERMS.collection_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
+)
+
+slots.ObservationFilterExpression_filter_command = Slot(
+    uri=PEHTERMS.hasFilterCommand,
+    name="ObservationFilterExpression_filter_command",
+    curie=PEHTERMS.curie("hasFilterCommand"),
+    model_uri=PEHTERMS.ObservationFilterExpression_filter_command,
+    domain=ObservationFilterExpression,
+    range=Union[str, "ObservationFilterCommand"],
 )
