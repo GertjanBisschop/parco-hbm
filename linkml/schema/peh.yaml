@@ -382,7 +382,12 @@ classes:
       - validation_error_level
       - validation_error_message_template
       - conditional
+  Expression:
+    abstract: true
+    description: >-
+      An abstract logical expression tree, allowing commands, contextual field references, literal arguments, and nested expressions to be combined into boolean predicates.
   ValidationExpression:
+    is_a: Expression
     description: >-
       A logical expression, allowing for combining arguments into more complex validation rules
     slots:
@@ -635,8 +640,23 @@ classes:
       Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
     is_a: NamedThing
     slots:
-     - layout
-     - section_mapping
+      - layout
+      - section_mapping
+      - observation_filter_expression
+  ObservationFilterExpression:
+    is_a: Expression
+    description: >-
+      A logical expression used to decide whether an observation result should be retained in an export. Rows are retained when the expression evaluates to true.
+    slots:
+      - filter_subject_contextual_field_references
+      - filter_condition_expression
+      - filter_command
+      - filter_arg_values
+      - filter_arg_contextual_field_references
+      - filter_arg_expressions
+    slot_usage:
+      filter_command:
+        required: true
 
   DataRequest:
     description: >-
@@ -993,31 +1013,43 @@ slots:
   validation_expression:
     slot_uri: pehterms:hasValidationExpression
     range: ValidationExpression
-  validation_condition_expression:
-    slot_uri: pehterms:hasValidationConditionExpression
-    range: ValidationExpression
   validation_error_level:
     slot_uri: pehterms:hasValidationErrorLevel
     range: ValidationErrorLevel
   validation_error_message_template:
     slot_uri: pehterms:hasValidationErrorMessageTemplate
   validation_subject_contextual_field_references:
+    description: >-
+      Contextual field references identifying the values that are the subject of a validation command.
     slot_uri: pehterms:hasValidationSubjectContextualFieldReference
     multivalued: true
     inlined_as_list: true
     range: ContextualFieldReference
+  validation_condition_expression:
+    description: >-
+      Optional validation expression that must match before the main validation expression is evaluated as a conditional predicate.
+    slot_uri: pehterms:hasValidationConditionExpression
+    range: ValidationExpression
   validation_command:
+    description: >-
+      Command defining the operation used to evaluate a validation expression.
     slot_uri: pehterms:hasValidationCommand
     range: ValidationCommand
   validation_arg_values:
+    description: >-
+      Literal argument values passed to a validation command.
     slot_uri: pehterms:hasValidationArgumentValue
     multivalued: true
   validation_arg_contextual_field_references:
+    description: >-
+      Contextual field references identifying values used as arguments to a validation command.
     slot_uri: pehterms:hasValidationArgumentContextualFieldReference
     multivalued: true
     inlined_as_list: true
     range: ContextualFieldReference
   validation_arg_expressions:
+    description: >-
+      Nested validation expressions used as arguments to a compound validation command.
     slot_uri: pehterms:hasValidationArgumentExpression
     multivalued: true
     inlined_as_list: true
@@ -1353,6 +1385,47 @@ slots:
   section_mapping:
     slot_uri: pehterms:hasSectionMapping
     range: DataImportSectionMapping
+  observation_filter_expression:
+    description: >-
+      Expression determining which observation results are retained in an export.
+    slot_uri: pehterms:hasObservationFilterExpression
+    range: ObservationFilterExpression
+  filter_subject_contextual_field_references:
+    description: >-
+      Contextual field references identifying the results that are the subject of an observation filter command.
+    slot_uri: pehterms:hasFilterSubjectContextualFieldReference
+    multivalued: true
+    inlined_as_list: true
+    range: ContextualFieldReference
+  filter_condition_expression:
+    description: >-
+      Optional filter expression that must match before the main filter expression is evaluated as a conditional predicate.
+    slot_uri: pehterms:hasFilterConditionExpression
+    range: ObservationFilterExpression
+  filter_command:
+    description: >-
+      Command defining the operation used to evaluate an observation filter expression.
+    slot_uri: pehterms:hasFilterCommand
+    range: ObservationFilterCommand
+  filter_arg_values:
+    description: >-
+      Literal argument values passed to an observation filter command.
+    slot_uri: pehterms:hasFilterArgumentValue
+    multivalued: true
+  filter_arg_contextual_field_references:
+    description: >-
+      Contextual field references identifying values used as arguments to an observation filter command.
+    slot_uri: pehterms:hasFilterArgumentContextualFieldReference
+    multivalued: true
+    inlined_as_list: true
+    range: ContextualFieldReference
+  filter_arg_expressions:
+    description: >-
+      Nested filter expressions used as arguments to a compound observation filter command.
+    slot_uri: pehterms:hasFilterArgumentExpression
+    multivalued: true
+    inlined_as_list: true
+    range: ObservationFilterExpression
   section_mapping_links:
     slot_uri: pehterms:hasSectionMappingLink
     multivalued: true
@@ -1465,6 +1538,26 @@ enums:
       warning:
       error:
       fatal:
+  ObservationFilterCommand:
+    description: >-
+      Command vocabulary for observation filter expressions.
+    permissible_values:
+      is_equal_to:
+      is_greater_than_or_equal_to:
+      is_greater_than:
+      is_less_than_or_equal_to:
+      is_less_than:
+      is_not_equal_to:
+      is_in:
+      is_not_in:
+      is_null:
+      is_not_null:
+      conjunction:
+      disjunction:
+      contains:
+      starts_with:
+      ends_with:
+      matches_regex:
   DataLayoutElementStyle:
     permissible_values:
       standard:
