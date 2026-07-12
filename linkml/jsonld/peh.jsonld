@@ -2566,10 +2566,10 @@
         "https://w3id.org/peh/terms/hasObservation"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasObservation",
-      "owner": "DataImportSectionMappingLink",
+      "owner": "DataSectionMappingLink",
       "domain_of": [
         "ObservationGroup",
-        "DataImportSectionMappingLink"
+        "DataSectionMappingLink"
       ],
       "range": "Observation",
       "multivalued": true,
@@ -3577,10 +3577,10 @@
         "https://w3id.org/peh/terms/hasSection"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasSection",
-      "owner": "DataImportSectionMappingLink",
+      "owner": "DataSectionMappingLink",
       "domain_of": [
         "DataLayoutElementLink",
-        "DataImportSectionMappingLink"
+        "DataSectionMappingLink"
       ],
       "range": "DataLayoutSection",
       "@type": "SlotDefinition"
@@ -3751,6 +3751,41 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "data_filter",
+      "definition_uri": "https://w3id.org/peh/terms/data_filter",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasDataFilter"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasDataFilter",
+      "owner": "DataLayoutSection",
+      "domain_of": [
+        "DataLayoutSection"
+      ],
+      "range": "DataFilter",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "filter_expression",
+      "definition_uri": "https://w3id.org/peh/terms/filter_expression",
+      "description": "Expression determining which records are retained by a data filter.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasFilterExpression"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasFilterExpression",
+      "owner": "DataFilter",
+      "domain_of": [
+        "DataFilter"
+      ],
+      "range": "FilterExpression",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "section_mapping",
       "definition_uri": "https://w3id.org/peh/terms/section_mapping",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -3763,25 +3798,7 @@
         "DataImportConfig",
         "DataExportConfig"
       ],
-      "range": "DataImportSectionMapping",
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "observation_filter_expression",
-      "definition_uri": "https://w3id.org/peh/terms/observation_filter_expression",
-      "description": "Expression determining which observation results are retained in an export.",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "mappings": [
-        "https://w3id.org/peh/terms/hasObservationFilterExpression"
-      ],
-      "slot_uri": "https://w3id.org/peh/terms/hasObservationFilterExpression",
-      "owner": "DataExportConfig",
-      "domain_of": [
-        "DataExportConfig"
-      ],
-      "range": "ObservationFilterExpression",
+      "range": "DataSectionMapping",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -3789,15 +3806,15 @@
     {
       "name": "filter_subject_contextual_field_references",
       "definition_uri": "https://w3id.org/peh/terms/filter_subject_contextual_field_references",
-      "description": "Contextual field references identifying the results that are the subject of an observation filter command.",
+      "description": "Contextual field references identifying the values that are the subject of a filter command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasFilterSubjectContextualFieldReference"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasFilterSubjectContextualFieldReference",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
       "range": "ContextualFieldReference",
       "multivalued": true,
@@ -3814,11 +3831,11 @@
         "https://w3id.org/peh/terms/hasFilterConditionExpression"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasFilterConditionExpression",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
-      "range": "ObservationFilterExpression",
+      "range": "FilterExpression",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -3826,15 +3843,15 @@
     {
       "name": "filter_command",
       "definition_uri": "https://w3id.org/peh/terms/filter_command",
-      "description": "Command defining the operation used to evaluate an observation filter expression.",
+      "description": "Command defining the operation used to evaluate a filter expression.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasFilterCommand"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasFilterCommand",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
       "range": "ObservationFilterCommand",
       "@type": "SlotDefinition"
@@ -3842,15 +3859,15 @@
     {
       "name": "filter_arg_values",
       "definition_uri": "https://w3id.org/peh/terms/filter_arg_values",
-      "description": "Literal argument values passed to an observation filter command.",
+      "description": "Literal argument values passed to a filter command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasFilterArgumentValue"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasFilterArgumentValue",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
       "range": "string",
       "multivalued": true,
@@ -3859,15 +3876,15 @@
     {
       "name": "filter_arg_contextual_field_references",
       "definition_uri": "https://w3id.org/peh/terms/filter_arg_contextual_field_references",
-      "description": "Contextual field references identifying values used as arguments to an observation filter command.",
+      "description": "Contextual field references identifying values used as arguments to a filter command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasFilterArgumentContextualFieldReference"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasFilterArgumentContextualFieldReference",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
       "range": "ContextualFieldReference",
       "multivalued": true,
@@ -3878,17 +3895,17 @@
     {
       "name": "filter_arg_expressions",
       "definition_uri": "https://w3id.org/peh/terms/filter_arg_expressions",
-      "description": "Nested filter expressions used as arguments to a compound observation filter command.",
+      "description": "Nested filter expressions used as arguments to a compound filter command.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasFilterArgumentExpression"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasFilterArgumentExpression",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
-      "range": "ObservationFilterExpression",
+      "range": "FilterExpression",
       "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
@@ -3902,11 +3919,11 @@
         "https://w3id.org/peh/terms/hasSectionMappingLink"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasSectionMappingLink",
-      "owner": "DataImportSectionMapping",
+      "owner": "DataSectionMapping",
       "domain_of": [
-        "DataImportSectionMapping"
+        "DataSectionMapping"
       ],
-      "range": "DataImportSectionMappingLink",
+      "range": "DataSectionMappingLink",
       "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
@@ -4282,20 +4299,20 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ObservationFilterExpression_filter_command",
+      "name": "FilterExpression_filter_command",
       "definition_uri": "https://w3id.org/peh/terms/filter_command",
-      "description": "Command defining the operation used to evaluate an observation filter expression.",
+      "description": "Command defining the operation used to evaluate a filter expression.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
         "https://w3id.org/peh/terms/hasFilterCommand"
       ],
       "is_a": "filter_command",
-      "domain": "ObservationFilterExpression",
+      "domain": "FilterExpression",
       "slot_uri": "https://w3id.org/peh/terms/hasFilterCommand",
       "alias": "filter_command",
-      "owner": "ObservationFilterExpression",
+      "owner": "FilterExpression",
       "domain_of": [
-        "ObservationFilterExpression"
+        "FilterExpression"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "filter_command",
@@ -5579,7 +5596,7 @@
     {
       "name": "DataLayoutSection",
       "definition_uri": "https://w3id.org/peh/terms/DataLayoutSection",
-      "description": "Definition for an individual layout or data section, as part of a full layout. Each section contains the information on a single observation.",
+      "description": "Definition for an individual layout or data section, as part of a full layout.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -5593,7 +5610,8 @@
         "section_type",
         "observable_entity_type",
         "elements",
-        "validation_designs"
+        "validation_designs",
+        "data_filter"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataLayoutSection",
@@ -5652,34 +5670,9 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "DataImportSectionMapping",
-      "definition_uri": "https://w3id.org/peh/terms/DataImportSectionMapping",
-      "description": "Configuration for mapping structured data from a known layout to one or more study observations",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slots": [
-        "section_mapping_links"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/peh/terms/DataImportSectionMapping",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "DataImportSectionMappingLink",
-      "definition_uri": "https://w3id.org/peh/terms/DataImportSectionMappingLink",
-      "description": "Configuration that links a data layout section to one or more observations",
-      "from_schema": "https://w3id.org/peh/peh-model",
-      "slots": [
-        "section",
-        "observation_id_list"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/peh/terms/DataImportSectionMappingLink",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "DataExportConfig",
       "definition_uri": "https://w3id.org/peh/terms/DataExportConfig",
-      "description": "Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to",
+      "description": "Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be exported from",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "NamedThing",
       "slots": [
@@ -5691,29 +5684,65 @@
         "remark",
         "exact_matches",
         "layout",
-        "section_mapping",
-        "observation_filter_expression"
+        "section_mapping"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataExportConfig",
       "@type": "ClassDefinition"
     },
     {
-      "name": "ObservationFilterExpression",
-      "definition_uri": "https://w3id.org/peh/terms/ObservationFilterExpression",
-      "description": "A logical expression used to decide whether an observation result should be retained in an export. Rows are retained when the expression evaluates to true.",
+      "name": "DataSectionMapping",
+      "definition_uri": "https://w3id.org/peh/terms/DataSectionMapping",
+      "description": "Configuration for mapping structured data sections from a known layout to one or more study observations",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "section_mapping_links"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/DataSectionMapping",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataSectionMappingLink",
+      "definition_uri": "https://w3id.org/peh/terms/DataSectionMappingLink",
+      "description": "Configuration that links a data layout section to one or more observations",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "section",
+        "observation_id_list"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/DataSectionMappingLink",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataFilter",
+      "definition_uri": "https://w3id.org/peh/terms/DataFilter",
+      "description": "A filter applied to a DataLayoutSection",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "filter_expression"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/DataFilter",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FilterExpression",
+      "definition_uri": "https://w3id.org/peh/terms/FilterExpression",
+      "description": "A logical expression used to decide whether data should be retained by a filter. Rows are retained when the expression evaluates to true.",
       "from_schema": "https://w3id.org/peh/peh-model",
       "is_a": "Expression",
       "slots": [
         "filter_subject_contextual_field_references",
         "filter_condition_expression",
-        "ObservationFilterExpression_filter_command",
+        "FilterExpression_filter_command",
         "filter_arg_values",
         "filter_arg_contextual_field_references",
         "filter_arg_expressions"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/peh/terms/ObservationFilterExpression",
+      "class_uri": "https://w3id.org/peh/terms/FilterExpression",
       "@type": "ClassDefinition"
     },
     {
@@ -5884,9 +5913,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-07-07T11:37:26",
-  "source_file_size": 48669,
-  "generation_date": "2026-07-07T11:37:47",
+  "source_file_date": "2026-07-12T20:45:36",
+  "source_file_size": 48650,
+  "generation_date": "2026-07-12T20:46:01",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

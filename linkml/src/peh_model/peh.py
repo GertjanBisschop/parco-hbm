@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-07T11:37:48
+# Generation date: 2026-07-12T20:46:02
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -3524,8 +3524,7 @@ class DataLayout(NamedThing):
 @dataclass(repr=False)
 class DataLayoutSection(NamedThing):
     """
-    Definition for an individual layout or data section, as part of a full layout. Each section contains the
-    information on a single observation.
+    Definition for an individual layout or data section, as part of a full layout.
     """
 
     _inherited_slots: ClassVar[list[str]] = []
@@ -3544,6 +3543,7 @@ class DataLayoutSection(NamedThing):
     validation_designs: Optional[
         Union[Union[dict, ValidationDesign], list[Union[dict, ValidationDesign]]]
     ] = empty_list()
+    data_filter: Optional[Union[dict, "DataFilter"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -3578,6 +3578,11 @@ class DataLayoutSection(NamedThing):
             v if isinstance(v, ValidationDesign) else ValidationDesign(**as_dict(v))
             for v in self.validation_designs
         ]
+
+        if self.data_filter is not None and not isinstance(
+            self.data_filter, DataFilter
+        ):
+            self.data_filter = DataFilter(**as_dict(self.data_filter))
 
         super().__post_init__(**kwargs)
 
@@ -3683,7 +3688,7 @@ class DataImportConfig(NamedThing):
 
     id: Union[str, DataImportConfigId] = None
     layout: Optional[Union[str, DataLayoutId]] = None
-    section_mapping: Optional[Union[dict, "DataImportSectionMapping"]] = None
+    section_mapping: Optional[Union[dict, "DataSectionMapping"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -3695,32 +3700,65 @@ class DataImportConfig(NamedThing):
             self.layout = DataLayoutId(self.layout)
 
         if self.section_mapping is not None and not isinstance(
-            self.section_mapping, DataImportSectionMapping
+            self.section_mapping, DataSectionMapping
         ):
-            self.section_mapping = DataImportSectionMapping(
-                **as_dict(self.section_mapping)
-            )
+            self.section_mapping = DataSectionMapping(**as_dict(self.section_mapping))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class DataImportSectionMapping(YAMLRoot):
+class DataExportConfig(NamedThing):
     """
-    Configuration for mapping structured data from a known layout to one or more study observations
+    Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be exported
+    from
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataImportSectionMapping"]
-    class_class_curie: ClassVar[str] = "pehterms:DataImportSectionMapping"
-    class_name: ClassVar[str] = "DataImportSectionMapping"
-    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataImportSectionMapping
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataExportConfig"]
+    class_class_curie: ClassVar[str] = "pehterms:DataExportConfig"
+    class_name: ClassVar[str] = "DataExportConfig"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataExportConfig
+
+    id: Union[str, DataExportConfigId] = None
+    layout: Optional[Union[str, DataLayoutId]] = None
+    section_mapping: Optional[Union[dict, "DataSectionMapping"]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DataExportConfigId):
+            self.id = DataExportConfigId(self.id)
+
+        if self.layout is not None and not isinstance(self.layout, DataLayoutId):
+            self.layout = DataLayoutId(self.layout)
+
+        if self.section_mapping is not None and not isinstance(
+            self.section_mapping, DataSectionMapping
+        ):
+            self.section_mapping = DataSectionMapping(**as_dict(self.section_mapping))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataSectionMapping(YAMLRoot):
+    """
+    Configuration for mapping structured data sections from a known layout to one or more study observations
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataSectionMapping"]
+    class_class_curie: ClassVar[str] = "pehterms:DataSectionMapping"
+    class_name: ClassVar[str] = "DataSectionMapping"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataSectionMapping
 
     section_mapping_links: Optional[
         Union[
-            Union[dict, "DataImportSectionMappingLink"],
-            list[Union[dict, "DataImportSectionMappingLink"]],
+            Union[dict, "DataSectionMappingLink"],
+            list[Union[dict, "DataSectionMappingLink"]],
         ]
     ] = empty_list()
 
@@ -3734,8 +3772,8 @@ class DataImportSectionMapping(YAMLRoot):
         self.section_mapping_links = [
             (
                 v
-                if isinstance(v, DataImportSectionMappingLink)
-                else DataImportSectionMappingLink(**as_dict(v))
+                if isinstance(v, DataSectionMappingLink)
+                else DataSectionMappingLink(**as_dict(v))
             )
             for v in self.section_mapping_links
         ]
@@ -3744,17 +3782,17 @@ class DataImportSectionMapping(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DataImportSectionMappingLink(YAMLRoot):
+class DataSectionMappingLink(YAMLRoot):
     """
     Configuration that links a data layout section to one or more observations
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataImportSectionMappingLink"]
-    class_class_curie: ClassVar[str] = "pehterms:DataImportSectionMappingLink"
-    class_name: ClassVar[str] = "DataImportSectionMappingLink"
-    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataImportSectionMappingLink
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataSectionMappingLink"]
+    class_class_curie: ClassVar[str] = "pehterms:DataSectionMappingLink"
+    class_name: ClassVar[str] = "DataSectionMappingLink"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataSectionMappingLink
 
     section: Optional[Union[str, DataLayoutSectionId]] = None
     observation_id_list: Optional[
@@ -3782,64 +3820,42 @@ class DataImportSectionMappingLink(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DataExportConfig(NamedThing):
+class DataFilter(YAMLRoot):
     """
-    Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
+    A filter applied to a DataLayoutSection
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataExportConfig"]
-    class_class_curie: ClassVar[str] = "pehterms:DataExportConfig"
-    class_name: ClassVar[str] = "DataExportConfig"
-    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataExportConfig
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["DataFilter"]
+    class_class_curie: ClassVar[str] = "pehterms:DataFilter"
+    class_name: ClassVar[str] = "DataFilter"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.DataFilter
 
-    id: Union[str, DataExportConfigId] = None
-    layout: Optional[Union[str, DataLayoutId]] = None
-    section_mapping: Optional[Union[dict, DataImportSectionMapping]] = None
-    observation_filter_expression: Optional[
-        Union[dict, "ObservationFilterExpression"]
-    ] = None
+    filter_expression: Optional[Union[dict, "FilterExpression"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DataExportConfigId):
-            self.id = DataExportConfigId(self.id)
-
-        if self.layout is not None and not isinstance(self.layout, DataLayoutId):
-            self.layout = DataLayoutId(self.layout)
-
-        if self.section_mapping is not None and not isinstance(
-            self.section_mapping, DataImportSectionMapping
+        if self.filter_expression is not None and not isinstance(
+            self.filter_expression, FilterExpression
         ):
-            self.section_mapping = DataImportSectionMapping(
-                **as_dict(self.section_mapping)
-            )
-
-        if self.observation_filter_expression is not None and not isinstance(
-            self.observation_filter_expression, ObservationFilterExpression
-        ):
-            self.observation_filter_expression = ObservationFilterExpression(
-                **as_dict(self.observation_filter_expression)
-            )
+            self.filter_expression = FilterExpression(**as_dict(self.filter_expression))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class ObservationFilterExpression(Expression):
+class FilterExpression(Expression):
     """
-    A logical expression used to decide whether an observation result should be retained in an export. Rows are
-    retained when the expression evaluates to true.
+    A logical expression used to decide whether data should be retained by a filter. Rows are retained when the
+    expression evaluates to true.
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationFilterExpression"]
-    class_class_curie: ClassVar[str] = "pehterms:ObservationFilterExpression"
-    class_name: ClassVar[str] = "ObservationFilterExpression"
-    class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservationFilterExpression
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["FilterExpression"]
+    class_class_curie: ClassVar[str] = "pehterms:FilterExpression"
+    class_name: ClassVar[str] = "FilterExpression"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.FilterExpression
 
     filter_command: Union[str, "ObservationFilterCommand"] = None
     filter_subject_contextual_field_references: Optional[
@@ -3848,9 +3864,7 @@ class ObservationFilterExpression(Expression):
             list[Union[dict, ContextualFieldReference]],
         ]
     ] = empty_list()
-    filter_condition_expression: Optional[
-        Union[dict, "ObservationFilterExpression"]
-    ] = None
+    filter_condition_expression: Optional[Union[dict, "FilterExpression"]] = None
     filter_arg_values: Optional[Union[str, list[str]]] = empty_list()
     filter_arg_contextual_field_references: Optional[
         Union[
@@ -3859,10 +3873,7 @@ class ObservationFilterExpression(Expression):
         ]
     ] = empty_list()
     filter_arg_expressions: Optional[
-        Union[
-            Union[dict, "ObservationFilterExpression"],
-            list[Union[dict, "ObservationFilterExpression"]],
-        ]
+        Union[Union[dict, "FilterExpression"], list[Union[dict, "FilterExpression"]]]
     ] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3887,9 +3898,9 @@ class ObservationFilterExpression(Expression):
         ]
 
         if self.filter_condition_expression is not None and not isinstance(
-            self.filter_condition_expression, ObservationFilterExpression
+            self.filter_condition_expression, FilterExpression
         ):
-            self.filter_condition_expression = ObservationFilterExpression(
+            self.filter_condition_expression = FilterExpression(
                 **as_dict(self.filter_condition_expression)
             )
 
@@ -3918,7 +3929,7 @@ class ObservationFilterExpression(Expression):
 
         self._normalize_inlined_as_list(
             slot_name="filter_arg_expressions",
-            slot_type=ObservationFilterExpression,
+            slot_type=FilterExpression,
             key_name="filter_command",
             keyed=False,
         )
@@ -6310,22 +6321,31 @@ slots.export_configs = Slot(
     ],
 )
 
+slots.data_filter = Slot(
+    uri=PEHTERMS.hasDataFilter,
+    name="data_filter",
+    curie=PEHTERMS.curie("hasDataFilter"),
+    model_uri=PEHTERMS.data_filter,
+    domain=None,
+    range=Optional[Union[dict, DataFilter]],
+)
+
+slots.filter_expression = Slot(
+    uri=PEHTERMS.hasFilterExpression,
+    name="filter_expression",
+    curie=PEHTERMS.curie("hasFilterExpression"),
+    model_uri=PEHTERMS.filter_expression,
+    domain=None,
+    range=Optional[Union[dict, FilterExpression]],
+)
+
 slots.section_mapping = Slot(
     uri=PEHTERMS.hasSectionMapping,
     name="section_mapping",
     curie=PEHTERMS.curie("hasSectionMapping"),
     model_uri=PEHTERMS.section_mapping,
     domain=None,
-    range=Optional[Union[dict, DataImportSectionMapping]],
-)
-
-slots.observation_filter_expression = Slot(
-    uri=PEHTERMS.hasObservationFilterExpression,
-    name="observation_filter_expression",
-    curie=PEHTERMS.curie("hasObservationFilterExpression"),
-    model_uri=PEHTERMS.observation_filter_expression,
-    domain=None,
-    range=Optional[Union[dict, ObservationFilterExpression]],
+    range=Optional[Union[dict, DataSectionMapping]],
 )
 
 slots.filter_subject_contextual_field_references = Slot(
@@ -6348,7 +6368,7 @@ slots.filter_condition_expression = Slot(
     curie=PEHTERMS.curie("hasFilterConditionExpression"),
     model_uri=PEHTERMS.filter_condition_expression,
     domain=None,
-    range=Optional[Union[dict, ObservationFilterExpression]],
+    range=Optional[Union[dict, FilterExpression]],
 )
 
 slots.filter_command = Slot(
@@ -6390,10 +6410,7 @@ slots.filter_arg_expressions = Slot(
     model_uri=PEHTERMS.filter_arg_expressions,
     domain=None,
     range=Optional[
-        Union[
-            Union[dict, ObservationFilterExpression],
-            list[Union[dict, ObservationFilterExpression]],
-        ]
+        Union[Union[dict, FilterExpression], list[Union[dict, FilterExpression]]]
     ],
 )
 
@@ -6405,8 +6422,8 @@ slots.section_mapping_links = Slot(
     domain=None,
     range=Optional[
         Union[
-            Union[dict, DataImportSectionMappingLink],
-            list[Union[dict, DataImportSectionMappingLink]],
+            Union[dict, DataSectionMappingLink],
+            list[Union[dict, DataSectionMappingLink]],
         ]
     ],
 )
@@ -6636,11 +6653,11 @@ slots.collection_date = Slot(
     range=Optional[Union[str, XSDDate]],
 )
 
-slots.ObservationFilterExpression_filter_command = Slot(
+slots.FilterExpression_filter_command = Slot(
     uri=PEHTERMS.hasFilterCommand,
-    name="ObservationFilterExpression_filter_command",
+    name="FilterExpression_filter_command",
     curie=PEHTERMS.curie("hasFilterCommand"),
-    model_uri=PEHTERMS.ObservationFilterExpression_filter_command,
-    domain=ObservationFilterExpression,
+    model_uri=PEHTERMS.FilterExpression_filter_command,
+    domain=FilterExpression,
     range=Union[str, "ObservationFilterCommand"],
 )

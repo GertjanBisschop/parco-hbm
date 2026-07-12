@@ -1760,13 +1760,14 @@ class DataLayout(NamedThing):
 
 class DataLayoutSection(NamedThing):
     """
-    Definition for an individual layout or data section, as part of a full layout. Each section contains the information on a single observation.
+    Definition for an individual layout or data section, as part of a full layout.
     """
 
     section_type: Optional[DataLayoutSectionType] = Field(default=None)
     observable_entity_type: Optional[ObservableEntityType] = Field(default=None)
     elements: Optional[list[DataLayoutElement]] = Field(default=None)
     validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
+    data_filter: Optional[DataFilter] = Field(default=None)
     id: str = Field(
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
@@ -1825,7 +1826,7 @@ class DataImportConfig(NamedThing):
     """
 
     layout: Optional[str] = Field(default=None)
-    section_mapping: Optional[DataImportSectionMapping] = Field(default=None)
+    section_mapping: Optional[DataSectionMapping] = Field(default=None)
     id: str = Field(
         default=...,
         description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
@@ -1852,17 +1853,48 @@ class DataImportConfig(NamedThing):
     exact_matches: Optional[list[str]] = Field(default=None)
 
 
-class DataImportSectionMapping(ConfiguredBaseModel):
+class DataExportConfig(NamedThing):
     """
-    Configuration for mapping structured data from a known layout to one or more study observations
+    Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be exported from
     """
 
-    section_mapping_links: Optional[list[DataImportSectionMappingLink]] = Field(
-        default=None
+    layout: Optional[str] = Field(default=None)
+    section_mapping: Optional[DataSectionMapping] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
     )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
 
 
-class DataImportSectionMappingLink(ConfiguredBaseModel):
+class DataSectionMapping(ConfiguredBaseModel):
+    """
+    Configuration for mapping structured data sections from a known layout to one or more study observations
+    """
+
+    section_mapping_links: Optional[list[DataSectionMappingLink]] = Field(default=None)
+
+
+class DataSectionMappingLink(ConfiguredBaseModel):
     """
     Configuration that links a data layout section to one or more observations
     """
@@ -1871,75 +1903,49 @@ class DataImportSectionMappingLink(ConfiguredBaseModel):
     observation_id_list: Optional[list[str]] = Field(default=None)
 
 
-class DataExportConfig(NamedThing):
+class DataFilter(ConfiguredBaseModel):
     """
-    Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
+    A filter applied to a DataLayoutSection
     """
 
-    layout: Optional[str] = Field(default=None)
-    section_mapping: Optional[DataImportSectionMapping] = Field(default=None)
-    observation_filter_expression: Optional[ObservationFilterExpression] = Field(
+    filter_expression: Optional[FilterExpression] = Field(
         default=None,
-        description="""Expression determining which observation results are retained in an export.""",
+        description="""Expression determining which records are retained by a data filter.""",
     )
-    id: str = Field(
-        default=...,
-        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
-    )
-    short_name: Optional[str] = Field(
-        default=None,
-        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
-    )
-    name: Optional[str] = Field(
-        default=None, description="""Common human readable name"""
-    )
-    ui_label: Optional[str] = Field(
-        default=None,
-        description="""Human readable label, to be used in user interactions through forms or documents.""",
-    )
-    description: Optional[str] = Field(
-        default=None,
-        description="""Long form description or definition for the entity.""",
-    )
-    remark: Optional[str] = Field(
-        default=None,
-        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
-    )
-    exact_matches: Optional[list[str]] = Field(default=None)
 
 
-class ObservationFilterExpression(Expression):
+class FilterExpression(Expression):
     """
-    A logical expression used to decide whether an observation result should be retained in an export. Rows are retained when the expression evaluates to true.
+    A logical expression used to decide whether data should be retained by a filter. Rows are retained when the expression evaluates to true.
     """
 
     filter_subject_contextual_field_references: Optional[
         list[ContextualFieldReference]
     ] = Field(
         default=None,
-        description="""Contextual field references identifying the results that are the subject of an observation filter command.""",
+        description="""Contextual field references identifying the values that are the subject of a filter command.""",
     )
-    filter_condition_expression: Optional[ObservationFilterExpression] = Field(
+    filter_condition_expression: Optional[FilterExpression] = Field(
         default=None,
         description="""Optional filter expression that must match before the main filter expression is evaluated as a conditional predicate.""",
     )
     filter_command: ObservationFilterCommand = Field(
         default=...,
-        description="""Command defining the operation used to evaluate an observation filter expression.""",
+        description="""Command defining the operation used to evaluate a filter expression.""",
     )
     filter_arg_values: Optional[list[str]] = Field(
         default=None,
-        description="""Literal argument values passed to an observation filter command.""",
+        description="""Literal argument values passed to a filter command.""",
     )
     filter_arg_contextual_field_references: Optional[list[ContextualFieldReference]] = (
         Field(
             default=None,
-            description="""Contextual field references identifying values used as arguments to an observation filter command.""",
+            description="""Contextual field references identifying values used as arguments to a filter command.""",
         )
     )
-    filter_arg_expressions: Optional[list[ObservationFilterExpression]] = Field(
+    filter_arg_expressions: Optional[list[FilterExpression]] = Field(
         default=None,
-        description="""Nested filter expressions used as arguments to a compound observation filter command.""",
+        description="""Nested filter expressions used as arguments to a compound filter command.""",
     )
 
 
@@ -2223,10 +2229,11 @@ DataLayoutSection.model_rebuild()
 DataLayoutElement.model_rebuild()
 DataLayoutElementLink.model_rebuild()
 DataImportConfig.model_rebuild()
-DataImportSectionMapping.model_rebuild()
-DataImportSectionMappingLink.model_rebuild()
 DataExportConfig.model_rebuild()
-ObservationFilterExpression.model_rebuild()
+DataSectionMapping.model_rebuild()
+DataSectionMappingLink.model_rebuild()
+DataFilter.model_rebuild()
+FilterExpression.model_rebuild()
 DataRequest.model_rebuild()
 ObservedEntityProperty.model_rebuild()
 DataStakeholder.model_rebuild()

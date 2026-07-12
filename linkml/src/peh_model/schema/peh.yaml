@@ -591,13 +591,14 @@ classes:
       - sections
   DataLayoutSection:
     description: >-
-      Definition for an individual layout or data section, as part of a full layout. Each section contains the information on a single observation.
+      Definition for an individual layout or data section, as part of a full layout.
     is_a: NamedThing
     slots:
       - section_type
       - observable_entity_type
       - elements
       - validation_designs
+      - data_filter
   DataLayoutElement:
     description: >-
       Definition for an individual layout or data element, as part of a layout section
@@ -623,30 +624,33 @@ classes:
     slots:
       - layout
       - section_mapping
-  DataImportSectionMapping:
+  DataExportConfig:
     description: >-
-      Configuration for mapping structured data from a known layout to one or more study observations
+      Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be exported from
+    is_a: NamedThing
+    slots:
+      - layout
+      - section_mapping
+  DataSectionMapping:
+    description: >-
+      Configuration for mapping structured data sections from a known layout to one or more study observations
     slots:
       - section_mapping_links
-  DataImportSectionMappingLink:
+  DataSectionMappingLink:
     description: >-
       Configuration that links a data layout section to one or more observations
     slots:
       - section
       - observation_id_list
-
-  DataExportConfig:
+  DataFilter:
     description: >-
-      Configuration for outgoing data, defining the expected DataLayout and the Observation(s) the data will be added to
-    is_a: NamedThing
+      A filter applied to a DataLayoutSection
     slots:
-      - layout
-      - section_mapping
-      - observation_filter_expression
-  ObservationFilterExpression:
+      - filter_expression    
+  FilterExpression:
     is_a: Expression
     description: >-
-      A logical expression used to decide whether an observation result should be retained in an export. Rows are retained when the expression evaluates to true.
+      A logical expression used to decide whether data should be retained by a filter. Rows are retained when the expression evaluates to true.
     slots:
       - filter_subject_contextual_field_references
       - filter_condition_expression
@@ -1382,17 +1386,22 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: DataExportConfig
+  data_filter:
+    slot_uri: pehterms:hasDataFilter
+    range: DataFilter
+    inlined: true
+  filter_expression:
+    description: >-
+      Expression determining which records are retained by a data filter.
+    slot_uri: pehterms:hasFilterExpression
+    range: FilterExpression
+    inlined: true
   section_mapping:
     slot_uri: pehterms:hasSectionMapping
-    range: DataImportSectionMapping
-  observation_filter_expression:
-    description: >-
-      Expression determining which observation results are retained in an export.
-    slot_uri: pehterms:hasObservationFilterExpression
-    range: ObservationFilterExpression
+    range: DataSectionMapping
   filter_subject_contextual_field_references:
     description: >-
-      Contextual field references identifying the results that are the subject of an observation filter command.
+      Contextual field references identifying the values that are the subject of a filter command.
     slot_uri: pehterms:hasFilterSubjectContextualFieldReference
     multivalued: true
     inlined_as_list: true
@@ -1401,36 +1410,36 @@ slots:
     description: >-
       Optional filter expression that must match before the main filter expression is evaluated as a conditional predicate.
     slot_uri: pehterms:hasFilterConditionExpression
-    range: ObservationFilterExpression
+    range: FilterExpression
   filter_command:
     description: >-
-      Command defining the operation used to evaluate an observation filter expression.
+      Command defining the operation used to evaluate a filter expression.
     slot_uri: pehterms:hasFilterCommand
     range: ObservationFilterCommand
   filter_arg_values:
     description: >-
-      Literal argument values passed to an observation filter command.
+      Literal argument values passed to a filter command.
     slot_uri: pehterms:hasFilterArgumentValue
     multivalued: true
   filter_arg_contextual_field_references:
     description: >-
-      Contextual field references identifying values used as arguments to an observation filter command.
+      Contextual field references identifying values used as arguments to a filter command.
     slot_uri: pehterms:hasFilterArgumentContextualFieldReference
     multivalued: true
     inlined_as_list: true
     range: ContextualFieldReference
   filter_arg_expressions:
     description: >-
-      Nested filter expressions used as arguments to a compound observation filter command.
+      Nested filter expressions used as arguments to a compound filter command.
     slot_uri: pehterms:hasFilterArgumentExpression
     multivalued: true
     inlined_as_list: true
-    range: ObservationFilterExpression
+    range: FilterExpression
   section_mapping_links:
     slot_uri: pehterms:hasSectionMappingLink
     multivalued: true
     inlined_as_list: true
-    range: DataImportSectionMappingLink
+    range: DataSectionMappingLink
 
   data_requests:
     slot_uri: pehterms:hasDataRequest

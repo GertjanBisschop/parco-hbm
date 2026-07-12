@@ -103,6 +103,10 @@
          },
          "@id": "hasCurrentValidationStatus"
       },
+      "data_filter": {
+         "@type": "@id",
+         "@id": "hasDataFilter"
+      },
       "data_requests": {
          "@type": "@id",
          "@id": "hasDataRequest"
@@ -197,6 +201,10 @@
       "filter_condition_expression": {
          "@type": "@id",
          "@id": "hasFilterConditionExpression"
+      },
+      "filter_expression": {
+         "@type": "@id",
+         "@id": "hasFilterExpression"
       },
       "filter_subject_contextual_field_references": {
          "@type": "@id",
@@ -412,10 +420,6 @@
       "observation_end_date": {
          "@type": "xsd:date",
          "@id": "hasObservationEndDate"
-      },
-      "observation_filter_expression": {
-         "@type": "@id",
-         "@id": "hasObservationFilterExpression"
       },
       "observation_group_id_list": {
          "@type": "@id",
@@ -885,14 +889,11 @@
       "DataExtract": {
          "@id": "DataExtract"
       },
+      "DataFilter": {
+         "@id": "DataFilter"
+      },
       "DataImportConfig": {
          "@id": "DataImportConfig"
-      },
-      "DataImportSectionMapping": {
-         "@id": "DataImportSectionMapping"
-      },
-      "DataImportSectionMappingLink": {
-         "@id": "DataImportSectionMappingLink"
       },
       "DataLayout": {
          "@id": "DataLayout"
@@ -909,6 +910,12 @@
       "DataRequest": {
          "@id": "DataRequest"
       },
+      "DataSectionMapping": {
+         "@id": "DataSectionMapping"
+      },
+      "DataSectionMappingLink": {
+         "@id": "DataSectionMappingLink"
+      },
       "DataStakeholder": {
          "@id": "DataStakeholder"
       },
@@ -923,6 +930,9 @@
       },
       "Expression": {
          "@id": "Expression"
+      },
+      "FilterExpression": {
+         "@id": "FilterExpression"
       },
       "Geolocation": {
          "@id": "Geolocation"
@@ -983,9 +993,6 @@
       },
       "ObservationDesign": {
          "@id": "ObservationDesign"
-      },
-      "ObservationFilterExpression": {
-         "@id": "ObservationFilterExpression"
       },
       "ObservationGroup": {
          "@id": "ObservationGroup"
