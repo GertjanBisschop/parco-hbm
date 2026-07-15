@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "imports": [
     "linkml:types"
   ],
@@ -5913,9 +5913,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-07-15T19:21:57",
+  "source_file_date": "2026-07-15T19:33:09",
   "source_file_size": 48652,
-  "generation_date": "2026-07-15T19:22:19",
+  "generation_date": "2026-07-15T19:33:34",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",
