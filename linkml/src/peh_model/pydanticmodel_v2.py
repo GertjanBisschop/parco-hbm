@@ -1647,7 +1647,6 @@ class ObservablePropertySpecification(ConfiguredBaseModel):
         default=None
     )
     calculation_design: Optional[CalculationDesign] = Field(default=None)
-    validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
 
 
 class ObservationResult(NamedThing):
@@ -1809,6 +1808,7 @@ class DataLayoutElement(ConfiguredBaseModel):
         default=None,
         description="""Integer determining the order of elements in the form modeled by the data layout""",
     )
+    validation_designs: Optional[list[ValidationDesign]] = Field(default=None)
 
 
 class DataLayoutElementLink(ConfiguredBaseModel):

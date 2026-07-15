@@ -2119,11 +2119,11 @@
         "https://w3id.org/peh/terms/hasValidationDesign"
       ],
       "slot_uri": "https://w3id.org/peh/terms/hasValidationDesign",
-      "owner": "DataLayoutSection",
+      "owner": "DataLayoutElement",
       "domain_of": [
         "ObservableProperty",
-        "ObservablePropertySpecification",
-        "DataLayoutSection"
+        "DataLayoutSection",
+        "DataLayoutElement"
       ],
       "range": "ValidationDesign",
       "multivalued": true,
@@ -5492,8 +5492,7 @@
       "slots": [
         "observable_property",
         "specification_category",
-        "calculation_design",
-        "validation_designs"
+        "calculation_design"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/ObservablePropertySpecification",
@@ -5629,7 +5628,8 @@
         "observable_property",
         "is_observable_entity_key",
         "foreign_key_link",
-        "order"
+        "order",
+        "validation_designs"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/DataLayoutElement",
@@ -5913,9 +5913,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-07-12T20:49:49",
-  "source_file_size": 48650,
-  "generation_date": "2026-07-12T20:50:10",
+  "source_file_date": "2026-07-15T19:21:57",
+  "source_file_size": 48652,
+  "generation_date": "2026-07-15T19:22:19",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

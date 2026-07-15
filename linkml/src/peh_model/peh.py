@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-12T20:50:10
+# Generation date: 2026-07-15T19:22:19
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -3244,9 +3244,6 @@ class ObservablePropertySpecification(YAMLRoot):
         Union[str, "ObservablePropertySpecificationCategory"]
     ] = None
     calculation_design: Optional[Union[dict, CalculationDesign]] = None
-    validation_designs: Optional[
-        Union[Union[dict, ValidationDesign], list[Union[dict, ValidationDesign]]]
-    ] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.observable_property is not None and not isinstance(
@@ -3267,15 +3264,6 @@ class ObservablePropertySpecification(YAMLRoot):
             self.calculation_design = CalculationDesign(
                 **as_dict(self.calculation_design)
             )
-
-        if not isinstance(self.validation_designs, list):
-            self.validation_designs = (
-                [self.validation_designs] if self.validation_designs is not None else []
-            )
-        self.validation_designs = [
-            v if isinstance(v, ValidationDesign) else ValidationDesign(**as_dict(v))
-            for v in self.validation_designs
-        ]
 
         super().__post_init__(**kwargs)
 
@@ -3607,6 +3595,9 @@ class DataLayoutElement(YAMLRoot):
     is_observable_entity_key: Optional[Union[bool, Bool]] = None
     foreign_key_link: Optional[Union[dict, "DataLayoutElementLink"]] = None
     order: Optional[int] = None
+    validation_designs: Optional[
+        Union[Union[dict, ValidationDesign], list[Union[dict, ValidationDesign]]]
+    ] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.label is not None and not isinstance(self.label, str):
@@ -3641,6 +3632,15 @@ class DataLayoutElement(YAMLRoot):
 
         if self.order is not None and not isinstance(self.order, int):
             self.order = int(self.order)
+
+        if not isinstance(self.validation_designs, list):
+            self.validation_designs = (
+                [self.validation_designs] if self.validation_designs is not None else []
+            )
+        self.validation_designs = [
+            v if isinstance(v, ValidationDesign) else ValidationDesign(**as_dict(v))
+            for v in self.validation_designs
+        ]
 
         super().__post_init__(**kwargs)
 
