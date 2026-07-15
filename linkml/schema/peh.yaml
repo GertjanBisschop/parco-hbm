@@ -542,7 +542,6 @@ classes:
     - observable_property
     - specification_category
     - calculation_design
-    - validation_designs
   ObservationResult:
     description: >-
       The result of an observational effort in Personal Exposure and Health research
@@ -610,6 +609,7 @@ classes:
       - is_observable_entity_key
       - foreign_key_link
       - order
+      - validation_designs
   DataLayoutElementLink:
     description: >-
       Configuration that refers to an element in a layout section
