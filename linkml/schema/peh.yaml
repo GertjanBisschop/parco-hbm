@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.7.1
+version: 0.7.2
 
 imports:
   - linkml:types
@@ -213,11 +213,27 @@ classes:
       - biochementity
       - constraints
       - suggester
+      - parent_indicators
+      # TO BE DEPRECATED
       - indicator_type
       - property
       - grouping_id_list
       - relevant_observable_entity_types
-      - parent_indicators
+
+  IAdoptConstraint:
+    class_uri: iop:Constraint
+    description: >-
+      Structured I-ADOPT constraint used when projecting an indicator to an
+      I-ADOPT Variable. Constraints are usually serialized as blank nodes with a
+      human-readable label, but may carry an identifier when a reusable
+      constraint resource is needed. The constraint node is typed as
+      iop:Constraint and constrains a matrix, object of interest, statistical
+      modifier, or other entity.
+    slots:
+      - constraint_id
+      - name
+      - description
+      - constrains
 
   QUDTUnit:
     class_uri: qudt:Unit
@@ -247,7 +263,7 @@ classes:
     is_a: PhysicalEntity
     slots:
       - matrix
-      - constraints
+      - sample_constraints
       - sampled_in_project
       - physical_label
       - collection_date
@@ -502,7 +518,7 @@ classes:
     is_a: StudyEntity
     slots:
       - matrix
-      - constraints
+      - sample_constraints
       - sample_id_list
   StudySubject:
     description: >-
@@ -893,14 +909,26 @@ slots:
     description: >-
       Any property that cannot be expressed as a QUDTQuantityKind
     slot_uri: pehterms:hasProperty
+  sample_constraints:
+    slot_uri: pehterms:hasSampleConstraint
+    multivalued: true
+    inlined_as_list: true
   matrix:
     slot_uri: pehterms:hasMatrix
     range: Matrix
   constraints:
-    slot_uri: pehterms:hasConstraint
+    slot_uri: iop:hasConstraint
     multivalued: true
+    inlined_as_list: true
+    range: IAdoptConstraint
+  constraint_id:
+    slot_uri: schema:identifier
+    description: Optional URI or CURIE for a reusable I-ADOPT constraint. Omit for the usual blank-node constraint.
+    range: uriorcurie
+  constrains:
+    slot_uri: iop:constrains
+    description: Entity constrained by an I-ADOPT constraint.
     range: NamedThing
-    inlined_as_list: false
   relevant_observable_entity_types:
     slot_uri: pehterms:hasRelevantObservableEntityType
     multivalued: true
