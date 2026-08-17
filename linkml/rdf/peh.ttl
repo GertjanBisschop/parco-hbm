@@ -8,35 +8,35 @@
 
 <https://w3id.org/peh/terms/PEH-Model> a linkml:SchemaDefinition ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    pav:version "0.7.1" ;
-    sh:declare [ sh:namespace "http://qudt.org/2.1/vocab/quantitykind"^^xsd:anyURI ;
-            sh:prefix "qudtqk" ],
-        [ sh:namespace "https://w3id.org/peh/"^^xsd:anyURI ;
-            sh:prefix "peh" ],
-        [ sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
-            sh:prefix "prov" ],
+    pav:version "0.7.2" ;
+    sh:declare [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+            sh:prefix "rdf" ],
         [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
             sh:prefix "owl" ],
-        [ sh:namespace "https://qudt.org/schema/qudt/"^^xsd:anyURI ;
-            sh:prefix "qudt" ],
-        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace "https://qudt.org/vocab/unit/"^^xsd:anyURI ;
-            sh:prefix "qudtunit" ],
-        [ sh:namespace "https://www.wikidata.org/wiki/"^^xsd:anyURI ;
-            sh:prefix "wikidata" ],
-        [ sh:namespace "https://w3id.org/iadopt/ont/"^^xsd:anyURI ;
-            sh:prefix "iop" ],
         [ sh:namespace "http://schema.org/"^^xsd:anyURI ;
             sh:prefix "schema" ],
-        [ sh:namespace "https://w3id.org/peh/terms/"^^xsd:anyURI ;
-            sh:prefix "pehterms" ],
-        [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
-            sh:prefix "rdf" ],
+        [ sh:namespace "https://www.wikidata.org/wiki/"^^xsd:anyURI ;
+            sh:prefix "wikidata" ],
+        [ sh:namespace "https://w3id.org/peh/"^^xsd:anyURI ;
+            sh:prefix "peh" ],
         [ sh:namespace "https://w3id.org/linkml/"^^xsd:anyURI ;
             sh:prefix "linkml" ],
+        [ sh:namespace "http://qudt.org/2.1/vocab/quantitykind"^^xsd:anyURI ;
+            sh:prefix "qudtqk" ],
+        [ sh:namespace "https://qudt.org/vocab/unit/"^^xsd:anyURI ;
+            sh:prefix "qudtunit" ],
         [ sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
-            sh:prefix "skos" ] ;
+            sh:prefix "skos" ],
+        [ sh:namespace "https://w3id.org/iadopt/ont/"^^xsd:anyURI ;
+            sh:prefix "iop" ],
+        [ sh:namespace "https://qudt.org/schema/qudt/"^^xsd:anyURI ;
+            sh:prefix "qudt" ],
+        [ sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
+            sh:prefix "prov" ],
+        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "https://w3id.org/peh/terms/"^^xsd:anyURI ;
+            sh:prefix "pehterms" ] ;
     linkml:classes <https://w3id.org/peh/terms/BioChemEntity>,
         <https://w3id.org/peh/terms/BioChemEntitySubClass>,
         <https://w3id.org/peh/terms/BioChemRole>,
@@ -71,6 +71,7 @@
         <https://w3id.org/peh/terms/HasTranslations>,
         <https://w3id.org/peh/terms/HasValidationStatus>,
         <https://w3id.org/peh/terms/HomeEnvironment>,
+        <https://w3id.org/peh/terms/IAdoptConstraint>,
         <https://w3id.org/peh/terms/IAdoptVariable>,
         <https://w3id.org/peh/terms/Indicator>,
         <https://w3id.org/peh/terms/IndicatorSubClass>,
@@ -137,7 +138,7 @@
         <https://w3id.org/peh/terms/ValidationCommand>,
         <https://w3id.org/peh/terms/ValidationErrorLevel>,
         <https://w3id.org/peh/terms/ValidationStatus> ;
-    linkml:generation_date "2026-07-15T19:33:41"^^xsd:dateTime ;
+    linkml:generation_date "2026-08-17T10:17:12"^^xsd:dateTime ;
     linkml:id "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:imports "linkml:types"^^xsd:anyURI ;
     linkml:metamodel_version "1.11.0" ;
@@ -154,6 +155,8 @@
         <https://w3id.org/peh/terms/categorical>,
         <https://w3id.org/peh/terms/collection_date>,
         <https://w3id.org/peh/terms/conditional>,
+        <https://w3id.org/peh/terms/constrains>,
+        <https://w3id.org/peh/terms/constraint_id>,
         <https://w3id.org/peh/terms/constraints>,
         <https://w3id.org/peh/terms/contact_email>,
         <https://w3id.org/peh/terms/contact_phone>,
@@ -292,6 +295,7 @@
         <https://w3id.org/peh/terms/research_population_type>,
         <https://w3id.org/peh/terms/rorid>,
         <https://w3id.org/peh/terms/round_decimals>,
+        <https://w3id.org/peh/terms/sample_constraints>,
         <https://w3id.org/peh/terms/sample_id_list>,
         <https://w3id.org/peh/terms/sampled_in_project>,
         <https://w3id.org/peh/terms/scale_factor>,
@@ -344,8 +348,8 @@
         <https://w3id.org/peh/terms/was_derived_from>,
         <https://w3id.org/peh/terms/zeroallowed> ;
     linkml:source_file "peh.yaml" ;
-    linkml:source_file_date "2026-07-15T19:33:09"^^xsd:dateTime ;
-    linkml:source_file_size 48652 ;
+    linkml:source_file_date "2026-08-17T10:16:41"^^xsd:dateTime ;
+    linkml:source_file_size 49683 ;
     linkml:types <https://w3id.org/peh/terms/boolean>,
         <https://w3id.org/peh/terms/curie>,
         <https://w3id.org/peh/terms/date>,
@@ -884,6 +888,38 @@
     linkml:owner <https://w3id.org/peh/terms/Sample> ;
     linkml:range <https://w3id.org/peh/terms/date> ;
     linkml:slot_uri "https://w3id.org/peh/terms/hasCollectionDate"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/constrains> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/iadopt/ont/constrains"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/constrains"^^xsd:anyURI ;
+    linkml:description "Entity constrained by an I-ADOPT constraint." ;
+    linkml:domain_of <https://w3id.org/peh/terms/IAdoptConstraint> ;
+    linkml:owner <https://w3id.org/peh/terms/IAdoptConstraint> ;
+    linkml:range <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:slot_uri "https://w3id.org/iadopt/ont/constrains"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/constraint_id> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://schema.org/identifier"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/constraint_id"^^xsd:anyURI ;
+    linkml:description "Optional URI or CURIE for a reusable I-ADOPT constraint. Omit for the usual blank-node constraint." ;
+    linkml:domain_of <https://w3id.org/peh/terms/IAdoptConstraint> ;
+    linkml:owner <https://w3id.org/peh/terms/IAdoptConstraint> ;
+    linkml:range <https://w3id.org/peh/terms/uriorcurie> ;
+    linkml:slot_uri "http://schema.org/identifier"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/constraints> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/iadopt/ont/hasConstraint"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/constraints"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
+    linkml:range <https://w3id.org/peh/terms/IAdoptConstraint> ;
+    linkml:slot_uri "https://w3id.org/iadopt/ont/hasConstraint"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/contact_email> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2686,6 +2722,18 @@
     linkml:range <https://w3id.org/peh/terms/boolean> ;
     linkml:slot_uri "https://w3id.org/peh/terms/isRequired"^^xsd:anyURI .
 
+<https://w3id.org/peh/terms/sample_constraints> a linkml:SlotDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "https://w3id.org/peh/terms/hasSampleConstraint"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/sample_constraints"^^xsd:anyURI ;
+    linkml:domain_of <https://w3id.org/peh/terms/Sample>,
+        <https://w3id.org/peh/terms/SampleCollection> ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
+    linkml:range <https://w3id.org/peh/terms/string> ;
+    linkml:slot_uri "https://w3id.org/peh/terms/hasSampleConstraint"^^xsd:anyURI .
+
 <https://w3id.org/peh/terms/section> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     skos:mappingRelation "https://w3id.org/peh/terms/hasSection"^^xsd:anyURI ;
@@ -2795,18 +2843,6 @@
     linkml:owner <https://w3id.org/peh/terms/HasAliases> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "http://schema.org/alternateName"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/constraints> a linkml:SlotDefinition ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "https://w3id.org/peh/terms/hasConstraint"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/constraints"^^xsd:anyURI ;
-    linkml:domain_of <https://w3id.org/peh/terms/IndicatorSubClass>,
-        <https://w3id.org/peh/terms/Sample>,
-        <https://w3id.org/peh/terms/SampleCollection> ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/peh/terms/SampleCollection> ;
-    linkml:range <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:slot_uri "https://w3id.org/peh/terms/hasConstraint"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/contextual_field_reference> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -2932,16 +2968,6 @@
     linkml:owner <https://w3id.org/peh/terms/IndicatorSubClass> ;
     linkml:range <https://w3id.org/peh/terms/uriorcurie> ;
     linkml:slot_uri "http://www.w3.org/ns/prov#wasAttributedTo"^^xsd:anyURI .
-
-<https://w3id.org/peh/terms/uriorcurie> a linkml:TypeDefinition ;
-    skos:editorialNote "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"." ;
-    skos:inScheme "https://w3id.org/linkml/types"^^xsd:anyURI ;
-    linkml:base "URIorCURIE" ;
-    linkml:definition_uri "https://w3id.org/linkml/Uriorcurie"^^xsd:anyURI ;
-    linkml:description "a URI or a CURIE" ;
-    linkml:imported_from "linkml:types" ;
-    linkml:repr "str" ;
-    linkml:uri "http://www.w3.org/2001/XMLSchema#anyURI"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/validation_designs> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3097,6 +3123,16 @@
     linkml:owner <https://w3id.org/peh/terms/ObservedValue> ;
     linkml:range <https://w3id.org/peh/terms/QUDTUnit> ;
     linkml:slot_uri "https://qudt.org/schema/qudt/hasUnit"^^xsd:anyURI .
+
+<https://w3id.org/peh/terms/uriorcurie> a linkml:TypeDefinition ;
+    skos:editorialNote "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"." ;
+    skos:inScheme "https://w3id.org/linkml/types"^^xsd:anyURI ;
+    linkml:base "URIorCURIE" ;
+    linkml:definition_uri "https://w3id.org/linkml/Uriorcurie"^^xsd:anyURI ;
+    linkml:description "a URI or a CURIE" ;
+    linkml:imported_from "linkml:types" ;
+    linkml:repr "str" ;
+    linkml:uri "http://www.w3.org/2001/XMLSchema#anyURI"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/value_type> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3362,14 +3398,14 @@
     linkml:description "A collection of samples that is itself also a study entity that observations can be recorded for" ;
     linkml:is_a <https://w3id.org/peh/terms/StudyEntity> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/constraints>,
-        <https://w3id.org/peh/terms/description>,
+    linkml:slots <https://w3id.org/peh/terms/description>,
         <https://w3id.org/peh/terms/exact_matches>,
         <https://w3id.org/peh/terms/id>,
         <https://w3id.org/peh/terms/matrix>,
         <https://w3id.org/peh/terms/name>,
         <https://w3id.org/peh/terms/physical_entity>,
         <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/sample_constraints>,
         <https://w3id.org/peh/terms/sample_id_list>,
         <https://w3id.org/peh/terms/short_name>,
         <https://w3id.org/peh/terms/study_entity_links>,
@@ -3473,6 +3509,18 @@
         <https://w3id.org/peh/terms/calculation_implementation_as_json>,
         <https://w3id.org/peh/terms/calculation_name>,
         <https://w3id.org/peh/terms/conditional> .
+
+<https://w3id.org/peh/terms/IAdoptConstraint> a linkml:ClassDefinition ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "iop:Constraint"^^xsd:anyURI ;
+    linkml:class_uri "https://w3id.org/iadopt/ont/Constraint"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/IAdoptConstraint"^^xsd:anyURI ;
+    linkml:description "Structured I-ADOPT constraint used when projecting an indicator to an I-ADOPT Variable. Constraints are usually serialized as blank nodes with a human-readable label, but may carry an identifier when a reusable constraint resource is needed. The constraint node is typed as iop:Constraint and constrains a matrix, object of interest, statistical modifier, or other entity." ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/constrains>,
+        <https://w3id.org/peh/terms/constraint_id>,
+        <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/name> .
 
 <https://w3id.org/peh/terms/PhysicalEntity> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -3578,7 +3626,6 @@
     linkml:is_a <https://w3id.org/peh/terms/PhysicalEntity> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/peh/terms/collection_date>,
-        <https://w3id.org/peh/terms/constraints>,
         <https://w3id.org/peh/terms/description>,
         <https://w3id.org/peh/terms/exact_matches>,
         <https://w3id.org/peh/terms/id>,
@@ -3587,6 +3634,7 @@
         <https://w3id.org/peh/terms/physical_entity_links>,
         <https://w3id.org/peh/terms/physical_label>,
         <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/sample_constraints>,
         <https://w3id.org/peh/terms/sampled_in_project>,
         <https://w3id.org/peh/terms/short_name>,
         <https://w3id.org/peh/terms/ui_label> .
@@ -3975,16 +4023,22 @@
         <https://w3id.org/peh/terms/value>,
         <https://w3id.org/peh/terms/value_as_string> .
 
-<https://w3id.org/peh/terms/description> a linkml:SlotDefinition ;
-    skos:exactMatch "http://www.w3.org/2004/02/skos/core#definition"^^xsd:anyURI ;
+<https://w3id.org/peh/terms/NamedThing> a linkml:ClassDefinition ;
+    skos:closeMatch "prov:Entity"^^xsd:anyURI,
+        "schema:Thing"^^xsd:anyURI ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "http://schema.org/description"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/description"^^xsd:anyURI ;
-    linkml:description "Long form description or definition for the entity." ;
-    linkml:domain_of <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:owner <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "http://schema.org/description"^^xsd:anyURI .
+    linkml:abstract true ;
+    linkml:class_uri "https://w3id.org/peh/terms/NamedThing"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/NamedThing"^^xsd:anyURI ;
+    linkml:description "An abstract model for any of the identifiable entities" ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/peh/terms/description>,
+        <https://w3id.org/peh/terms/exact_matches>,
+        <https://w3id.org/peh/terms/id>,
+        <https://w3id.org/peh/terms/name>,
+        <https://w3id.org/peh/terms/remark>,
+        <https://w3id.org/peh/terms/short_name>,
+        <https://w3id.org/peh/terms/ui_label> .
 
 <https://w3id.org/peh/terms/exact_matches> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -4028,23 +4082,6 @@
     linkml:range <https://w3id.org/peh/terms/string> ;
     linkml:slot_uri "https://w3id.org/peh/terms/hasUiLabel"^^xsd:anyURI .
 
-<https://w3id.org/peh/terms/NamedThing> a linkml:ClassDefinition ;
-    skos:closeMatch "prov:Entity"^^xsd:anyURI,
-        "schema:Thing"^^xsd:anyURI ;
-    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    linkml:abstract true ;
-    linkml:class_uri "https://w3id.org/peh/terms/NamedThing"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/NamedThing"^^xsd:anyURI ;
-    linkml:description "An abstract model for any of the identifiable entities" ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/peh/terms/description>,
-        <https://w3id.org/peh/terms/exact_matches>,
-        <https://w3id.org/peh/terms/id>,
-        <https://w3id.org/peh/terms/name>,
-        <https://w3id.org/peh/terms/remark>,
-        <https://w3id.org/peh/terms/short_name>,
-        <https://w3id.org/peh/terms/ui_label> .
-
 <https://w3id.org/peh/terms/ObservableProperty> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
     linkml:class_uri "https://w3id.org/peh/terms/ObservableProperty"^^xsd:anyURI ;
@@ -4085,18 +4122,17 @@
         <https://w3id.org/peh/terms/value_type>,
         <https://w3id.org/peh/terms/zeroallowed> .
 
-<https://w3id.org/peh/terms/name> a linkml:SlotDefinition ;
-    skos:exactMatch "http://schema.org/name"^^xsd:anyURI,
-        "http://www.w3.org/2004/02/skos/core#prefLabel"^^xsd:anyURI ;
+<https://w3id.org/peh/terms/description> a linkml:SlotDefinition ;
+    skos:exactMatch "http://www.w3.org/2004/02/skos/core#definition"^^xsd:anyURI ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
-    skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI ;
-    linkml:definition_uri "https://w3id.org/peh/terms/name"^^xsd:anyURI ;
-    linkml:description "Common human readable name" ;
-    linkml:domain_of <https://w3id.org/peh/terms/Contact>,
+    skos:mappingRelation "http://schema.org/description"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/description"^^xsd:anyURI ;
+    linkml:description "Long form description or definition for the entity." ;
+    linkml:domain_of <https://w3id.org/peh/terms/IAdoptConstraint>,
         <https://w3id.org/peh/terms/NamedThing> ;
-    linkml:owner <https://w3id.org/peh/terms/Contact> ;
+    linkml:owner <https://w3id.org/peh/terms/IAdoptConstraint> ;
     linkml:range <https://w3id.org/peh/terms/string> ;
-    linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI .
+    linkml:slot_uri "http://schema.org/description"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/EntityList> a linkml:ClassDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
@@ -4126,6 +4162,20 @@
         <https://w3id.org/peh/terms/studies>,
         <https://w3id.org/peh/terms/study_entities> ;
     linkml:tree_root true .
+
+<https://w3id.org/peh/terms/name> a linkml:SlotDefinition ;
+    skos:exactMatch "http://schema.org/name"^^xsd:anyURI,
+        "http://www.w3.org/2004/02/skos/core#prefLabel"^^xsd:anyURI ;
+    skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;
+    skos:mappingRelation "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI ;
+    linkml:definition_uri "https://w3id.org/peh/terms/name"^^xsd:anyURI ;
+    linkml:description "Common human readable name" ;
+    linkml:domain_of <https://w3id.org/peh/terms/Contact>,
+        <https://w3id.org/peh/terms/IAdoptConstraint>,
+        <https://w3id.org/peh/terms/NamedThing> ;
+    linkml:owner <https://w3id.org/peh/terms/Contact> ;
+    linkml:range <https://w3id.org/peh/terms/string> ;
+    linkml:slot_uri "http://www.w3.org/2000/01/rdf-schema#label"^^xsd:anyURI .
 
 <https://w3id.org/peh/terms/id> a linkml:SlotDefinition ;
     skos:inScheme "https://w3id.org/peh/peh-model"^^xsd:anyURI ;

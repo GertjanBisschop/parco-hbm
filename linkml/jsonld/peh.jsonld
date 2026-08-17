@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "imports": [
     "linkml:types"
   ],
@@ -997,6 +997,7 @@
       "owner": "Contact",
       "domain_of": [
         "NamedThing",
+        "IAdoptConstraint",
         "Contact"
       ],
       "range": "string",
@@ -1014,9 +1015,10 @@
         "http://www.w3.org/2004/02/skos/core#definition"
       ],
       "slot_uri": "http://schema.org/description",
-      "owner": "NamedThing",
+      "owner": "IAdoptConstraint",
       "domain_of": [
-        "NamedThing"
+        "NamedThing",
+        "IAdoptConstraint"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1616,6 +1618,24 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sample_constraints",
+      "definition_uri": "https://w3id.org/peh/terms/sample_constraints",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSampleConstraint"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSampleConstraint",
+      "owner": "SampleCollection",
+      "domain_of": [
+        "Sample",
+        "SampleCollection"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "matrix",
       "definition_uri": "https://w3id.org/peh/terms/matrix",
       "from_schema": "https://w3id.org/peh/peh-model",
@@ -1637,17 +1657,49 @@
       "definition_uri": "https://w3id.org/peh/terms/constraints",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
-        "https://w3id.org/peh/terms/hasConstraint"
+        "https://w3id.org/iadopt/ont/hasConstraint"
       ],
-      "slot_uri": "https://w3id.org/peh/terms/hasConstraint",
-      "owner": "SampleCollection",
+      "slot_uri": "https://w3id.org/iadopt/ont/hasConstraint",
+      "owner": "IndicatorSubClass",
       "domain_of": [
-        "IndicatorSubClass",
-        "Sample",
-        "SampleCollection"
+        "IndicatorSubClass"
+      ],
+      "range": "IAdoptConstraint",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "constraint_id",
+      "definition_uri": "https://w3id.org/peh/terms/constraint_id",
+      "description": "Optional URI or CURIE for a reusable I-ADOPT constraint. Omit for the usual blank-node constraint.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "slot_uri": "http://schema.org/identifier",
+      "owner": "IAdoptConstraint",
+      "domain_of": [
+        "IAdoptConstraint"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "constrains",
+      "definition_uri": "https://w3id.org/peh/terms/constrains",
+      "description": "Entity constrained by an I-ADOPT constraint.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/iadopt/ont/constrains"
+      ],
+      "slot_uri": "https://w3id.org/iadopt/ont/constrains",
+      "owner": "IAdoptConstraint",
+      "domain_of": [
+        "IAdoptConstraint"
       ],
       "range": "NamedThing",
-      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4682,16 +4734,34 @@
         "biochementity",
         "constraints",
         "suggester",
+        "parent_indicators",
         "indicator_type",
         "property",
         "grouping_id_list",
         "relevant_observable_entity_types",
-        "parent_indicators",
         "context_aliases",
         "translations"
       ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/2002/07/owl#Class",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IAdoptConstraint",
+      "definition_uri": "https://w3id.org/peh/terms/IAdoptConstraint",
+      "description": "Structured I-ADOPT constraint used when projecting an indicator to an I-ADOPT Variable. Constraints are usually serialized as blank nodes with a human-readable label, but may carry an identifier when a reusable constraint resource is needed. The constraint node is typed as iop:Constraint and constrains a matrix, object of interest, statistical modifier, or other entity.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "iop:Constraint"
+      ],
+      "slots": [
+        "constraint_id",
+        "name",
+        "description",
+        "constrains"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/iadopt/ont/Constraint",
       "@type": "ClassDefinition"
     },
     {
@@ -4772,7 +4842,7 @@
         "exact_matches",
         "physical_entity_links",
         "matrix",
-        "constraints",
+        "sample_constraints",
         "sampled_in_project",
         "physical_label",
         "collection_date"
@@ -5367,7 +5437,7 @@
         "physical_entity",
         "study_entity_links",
         "matrix",
-        "constraints",
+        "sample_constraints",
         "sample_id_list"
       ],
       "slot_usage": {},
@@ -5913,9 +5983,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-07-15T19:33:09",
-  "source_file_size": 48652,
-  "generation_date": "2026-07-15T19:33:34",
+  "source_file_date": "2026-08-17T10:16:41",
+  "source_file_size": 49683,
+  "generation_date": "2026-08-17T10:17:05",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

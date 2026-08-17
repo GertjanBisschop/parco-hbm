@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.7.1"
+version = "0.7.2"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -620,11 +620,12 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
     quantity_kind: Optional[str] = Field(default=None)
     matrix: Optional[str] = Field(default=None)
     biochementity: Optional[str] = Field(default=None)
-    constraints: Optional[list[str]] = Field(default=None)
+    constraints: Optional[list[IAdoptConstraint]] = Field(default=None)
     suggester: Optional[str] = Field(
         default=None,
         description="""ORCID of the person who suggested this entity, recorded as the provenance attribution (prov:wasAttributedTo) of the resulting nanopublication.""",
     )
+    parent_indicators: Optional[list[str]] = Field(default=None)
     indicator_type: Optional[IndicatorType] = Field(default=None)
     property: Optional[str] = Field(
         default=None,
@@ -634,7 +635,6 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
     relevant_observable_entity_types: Optional[list[ObservableEntityType]] = Field(
         default=None
     )
-    parent_indicators: Optional[list[str]] = Field(default=None)
     context_aliases: Optional[list[ContextAlias]] = Field(default=None)
     translations: Optional[list[Translation]] = Field(default=None)
     id: str = Field(
@@ -661,6 +661,27 @@ class IndicatorSubClass(HasTranslations, HasContextAliases, NamedThing):
         description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
     )
     exact_matches: Optional[list[str]] = Field(default=None)
+
+
+class IAdoptConstraint(ConfiguredBaseModel):
+    """
+    Structured I-ADOPT constraint used when projecting an indicator to an I-ADOPT Variable. Constraints are usually serialized as blank nodes with a human-readable label, but may carry an identifier when a reusable constraint resource is needed. The constraint node is typed as iop:Constraint and constrains a matrix, object of interest, statistical modifier, or other entity.
+    """
+
+    constraint_id: Optional[str] = Field(
+        default=None,
+        description="""Optional URI or CURIE for a reusable I-ADOPT constraint. Omit for the usual blank-node constraint.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    constrains: Optional[str] = Field(
+        default=None, description="""Entity constrained by an I-ADOPT constraint."""
+    )
 
 
 class QUDTUnit(ConfiguredBaseModel):
@@ -724,7 +745,7 @@ class Sample(PhysicalEntity):
     """
 
     matrix: Optional[str] = Field(default=None)
-    constraints: Optional[list[str]] = Field(default=None)
+    sample_constraints: Optional[list[str]] = Field(default=None)
     sampled_in_project: Optional[str] = Field(default=None)
     physical_label: Optional[str] = Field(default=None)
     collection_date: Optional[date] = Field(default=None)
@@ -1435,7 +1456,7 @@ class SampleCollection(StudyEntity):
     """
 
     matrix: Optional[str] = Field(default=None)
-    constraints: Optional[list[str]] = Field(default=None)
+    sample_constraints: Optional[list[str]] = Field(default=None)
     sample_id_list: Optional[list[str]] = Field(default=None)
     physical_entity: Optional[str] = Field(default=None)
     study_entity_links: Optional[list[StudyEntityLink]] = Field(default=None)
@@ -2181,6 +2202,7 @@ Matrix.model_rebuild()
 MatrixSubClass.model_rebuild()
 Indicator.model_rebuild()
 IndicatorSubClass.model_rebuild()
+IAdoptConstraint.model_rebuild()
 QUDTUnit.model_rebuild()
 QUDTQuantityKind.model_rebuild()
 PhysicalEntity.model_rebuild()

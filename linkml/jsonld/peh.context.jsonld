@@ -61,9 +61,17 @@
       "conditional": {
          "@id": "isConditional"
       },
+      "constrains": {
+         "@type": "@id",
+         "@id": "iop:constrains"
+      },
+      "constraint_id": {
+         "@type": "xsd:anyURI",
+         "@id": "schema:identifier"
+      },
       "constraints": {
          "@type": "@id",
-         "@id": "hasConstraint"
+         "@id": "iop:hasConstraint"
       },
       "contact_email": {
          "@id": "schema:email"
@@ -637,6 +645,9 @@
          "@type": "xsd:integer",
          "@id": "hasRoundDecimals"
       },
+      "sample_constraints": {
+         "@id": "hasSampleConstraint"
+      },
       "sample_id_list": {
          "@type": "@id",
          "@id": "hasSample"
@@ -954,6 +965,9 @@
       },
       "HomeEnvironment": {
          "@id": "HomeEnvironment"
+      },
+      "IAdoptConstraint": {
+         "@id": "iop:Constraint"
       },
       "IAdoptVariable": {
          "@id": "IAdoptVariable"

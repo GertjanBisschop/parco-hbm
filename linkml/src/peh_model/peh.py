@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-15T19:33:34
+# Generation date: 2026-08-17T10:17:05
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.7.1"
+version = "0.7.2"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -1271,9 +1271,12 @@ class IndicatorSubClass(NamedThing):
     matrix: Optional[Union[str, MatrixId]] = None
     biochementity: Optional[Union[str, BioChemEntityId]] = None
     constraints: Optional[
-        Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]
+        Union[Union[dict, "IAdoptConstraint"], list[Union[dict, "IAdoptConstraint"]]]
     ] = empty_list()
     suggester: Optional[Union[str, URIorCURIE]] = None
+    parent_indicators: Optional[
+        Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
+    ] = empty_list()
     indicator_type: Optional[Union[str, "IndicatorType"]] = None
     property: Optional[str] = None
     grouping_id_list: Optional[
@@ -1283,9 +1286,6 @@ class IndicatorSubClass(NamedThing):
         Union[
             Union[str, "ObservableEntityType"], list[Union[str, "ObservableEntityType"]]
         ]
-    ] = empty_list()
-    parent_indicators: Optional[
-        Union[Union[str, IndicatorSubClassId], list[Union[str, IndicatorSubClassId]]]
     ] = empty_list()
     context_aliases: Optional[
         Union[Union[dict, ContextAlias], list[Union[dict, ContextAlias]]]
@@ -1318,12 +1318,21 @@ class IndicatorSubClass(NamedThing):
                 [self.constraints] if self.constraints is not None else []
             )
         self.constraints = [
-            v if isinstance(v, NamedThingId) else NamedThingId(v)
+            v if isinstance(v, IAdoptConstraint) else IAdoptConstraint(**as_dict(v))
             for v in self.constraints
         ]
 
         if self.suggester is not None and not isinstance(self.suggester, URIorCURIE):
             self.suggester = URIorCURIE(self.suggester)
+
+        if not isinstance(self.parent_indicators, list):
+            self.parent_indicators = (
+                [self.parent_indicators] if self.parent_indicators is not None else []
+            )
+        self.parent_indicators = [
+            v if isinstance(v, IndicatorSubClassId) else IndicatorSubClassId(v)
+            for v in self.parent_indicators
+        ]
 
         if self.indicator_type is not None and not isinstance(
             self.indicator_type, IndicatorType
@@ -1353,15 +1362,6 @@ class IndicatorSubClass(NamedThing):
             for v in self.relevant_observable_entity_types
         ]
 
-        if not isinstance(self.parent_indicators, list):
-            self.parent_indicators = (
-                [self.parent_indicators] if self.parent_indicators is not None else []
-            )
-        self.parent_indicators = [
-            v if isinstance(v, IndicatorSubClassId) else IndicatorSubClassId(v)
-            for v in self.parent_indicators
-        ]
-
         if not isinstance(self.context_aliases, list):
             self.context_aliases = (
                 [self.context_aliases] if self.context_aliases is not None else []
@@ -1379,6 +1379,47 @@ class IndicatorSubClass(NamedThing):
             v if isinstance(v, Translation) else Translation(**as_dict(v))
             for v in self.translations
         ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class IAdoptConstraint(YAMLRoot):
+    """
+    Structured I-ADOPT constraint used when projecting an indicator to an I-ADOPT Variable. Constraints are usually
+    serialized as blank nodes with a human-readable label, but may carry an identifier when a reusable constraint
+    resource is needed. The constraint node is typed as iop:Constraint and constrains a matrix, object of interest,
+    statistical modifier, or other entity.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = IOP["Constraint"]
+    class_class_curie: ClassVar[str] = "iop:Constraint"
+    class_name: ClassVar[str] = "IAdoptConstraint"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.IAdoptConstraint
+
+    constraint_id: Optional[Union[str, URIorCURIE]] = None
+    name: Optional[str] = None
+    description: Optional[str] = None
+    constrains: Optional[Union[str, NamedThingId]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.constraint_id is not None and not isinstance(
+            self.constraint_id, URIorCURIE
+        ):
+            self.constraint_id = URIorCURIE(self.constraint_id)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if self.constrains is not None and not isinstance(
+            self.constrains, NamedThingId
+        ):
+            self.constrains = NamedThingId(self.constrains)
 
         super().__post_init__(**kwargs)
 
@@ -1501,9 +1542,7 @@ class Sample(PhysicalEntity):
 
     id: Union[str, SampleId] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[
-        Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]
-    ] = empty_list()
+    sample_constraints: Optional[Union[str, list[str]]] = empty_list()
     sampled_in_project: Optional[Union[str, ProjectId]] = None
     physical_label: Optional[str] = None
     collection_date: Optional[Union[str, XSDDate]] = None
@@ -1517,13 +1556,12 @@ class Sample(PhysicalEntity):
         if self.matrix is not None and not isinstance(self.matrix, MatrixId):
             self.matrix = MatrixId(self.matrix)
 
-        if not isinstance(self.constraints, list):
-            self.constraints = (
-                [self.constraints] if self.constraints is not None else []
+        if not isinstance(self.sample_constraints, list):
+            self.sample_constraints = (
+                [self.sample_constraints] if self.sample_constraints is not None else []
             )
-        self.constraints = [
-            v if isinstance(v, NamedThingId) else NamedThingId(v)
-            for v in self.constraints
+        self.sample_constraints = [
+            v if isinstance(v, str) else str(v) for v in self.sample_constraints
         ]
 
         if self.sampled_in_project is not None and not isinstance(
@@ -2985,9 +3023,7 @@ class SampleCollection(StudyEntity):
 
     id: Union[str, SampleCollectionId] = None
     matrix: Optional[Union[str, MatrixId]] = None
-    constraints: Optional[
-        Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]
-    ] = empty_list()
+    sample_constraints: Optional[Union[str, list[str]]] = empty_list()
     sample_id_list: Optional[
         Union[Union[str, SampleId], list[Union[str, SampleId]]]
     ] = empty_list()
@@ -3001,13 +3037,12 @@ class SampleCollection(StudyEntity):
         if self.matrix is not None and not isinstance(self.matrix, MatrixId):
             self.matrix = MatrixId(self.matrix)
 
-        if not isinstance(self.constraints, list):
-            self.constraints = (
-                [self.constraints] if self.constraints is not None else []
+        if not isinstance(self.sample_constraints, list):
+            self.sample_constraints = (
+                [self.sample_constraints] if self.sample_constraints is not None else []
             )
-        self.constraints = [
-            v if isinstance(v, NamedThingId) else NamedThingId(v)
-            for v in self.constraints
+        self.sample_constraints = [
+            v if isinstance(v, str) else str(v) for v in self.sample_constraints
         ]
 
         if not isinstance(self.sample_id_list, list):
@@ -5021,6 +5056,15 @@ slots.property = Slot(
     range=Optional[str],
 )
 
+slots.sample_constraints = Slot(
+    uri=PEHTERMS.hasSampleConstraint,
+    name="sample_constraints",
+    curie=PEHTERMS.curie("hasSampleConstraint"),
+    model_uri=PEHTERMS.sample_constraints,
+    domain=None,
+    range=Optional[Union[str, list[str]]],
+)
+
 slots.matrix = Slot(
     uri=PEHTERMS.hasMatrix,
     name="matrix",
@@ -5031,12 +5075,32 @@ slots.matrix = Slot(
 )
 
 slots.constraints = Slot(
-    uri=PEHTERMS.hasConstraint,
+    uri=IOP.hasConstraint,
     name="constraints",
-    curie=PEHTERMS.curie("hasConstraint"),
+    curie=IOP.curie("hasConstraint"),
     model_uri=PEHTERMS.constraints,
     domain=None,
-    range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]],
+    range=Optional[
+        Union[Union[dict, IAdoptConstraint], list[Union[dict, IAdoptConstraint]]]
+    ],
+)
+
+slots.constraint_id = Slot(
+    uri=SCHEMA.identifier,
+    name="constraint_id",
+    curie=SCHEMA.curie("identifier"),
+    model_uri=PEHTERMS.constraint_id,
+    domain=None,
+    range=Optional[Union[str, URIorCURIE]],
+)
+
+slots.constrains = Slot(
+    uri=IOP.constrains,
+    name="constrains",
+    curie=IOP.curie("constrains"),
+    model_uri=PEHTERMS.constrains,
+    domain=None,
+    range=Optional[Union[str, NamedThingId]],
 )
 
 slots.relevant_observable_entity_types = Slot(
