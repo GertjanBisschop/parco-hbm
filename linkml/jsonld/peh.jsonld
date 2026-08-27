@@ -2,7 +2,7 @@
   "name": "PEH-Model",
   "description": "Entity and relation ontology and datamodel for Personal Exposure and Health data",
   "id": "https://w3id.org/peh/peh-model",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "imports": [
     "linkml:types"
   ],
@@ -1793,10 +1793,13 @@
       "definition_uri": "https://w3id.org/peh/terms/has_role",
       "from_schema": "https://w3id.org/peh/peh-model",
       "mappings": [
+        "https://w3id.org/peh/terms/hasRole"
+      ],
+      "close_mappings": [
         "http://purl.obolibrary.org/obo/RO_0000087"
       ],
       "domain": "BioChemEntity",
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000087",
+      "slot_uri": "https://w3id.org/peh/terms/hasRole",
       "owner": "has_role",
       "domain_of": [
         "BioChemEntitySubClass"
@@ -4351,6 +4354,122 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "target_observable_property_id",
+      "definition_uri": "https://w3id.org/peh/terms/target_observable_property_id",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasTargetObservableProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasTargetObservableProperty",
+      "owner": "ObservablePropertyMapping",
+      "domain_of": [
+        "ObservablePropertyMapping"
+      ],
+      "range": "ObservableProperty",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source_observable_property_ids",
+      "definition_uri": "https://w3id.org/peh/terms/source_observable_property_ids",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSourceObservableProperty"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSourceObservableProperty",
+      "owner": "ObservablePropertyMapping",
+      "domain_of": [
+        "ObservablePropertyMapping"
+      ],
+      "range": "ObservableProperty",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "target_observation_id",
+      "definition_uri": "https://w3id.org/peh/terms/target_observation_id",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasTargetObservation"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasTargetObservation",
+      "owner": "ObservationAssembly",
+      "domain_of": [
+        "ObservationAssembly"
+      ],
+      "range": "Observation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source_observation_groups",
+      "definition_uri": "https://w3id.org/peh/terms/source_observation_groups",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasSourceObservationGroup"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasSourceObservationGroup",
+      "owner": "ObservationAssembly",
+      "domain_of": [
+        "ObservationAssembly"
+      ],
+      "range": "ObservationGroup",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "observable_property_mappings",
+      "definition_uri": "https://w3id.org/peh/terms/observable_property_mappings",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservablePropertyMapping"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservablePropertyMapping",
+      "owner": "ObservationAssembly",
+      "domain_of": [
+        "ObservationAssembly"
+      ],
+      "range": "ObservablePropertyMapping",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "observation_assemblies",
+      "definition_uri": "https://w3id.org/peh/terms/observation_assemblies",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationAssembly"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationAssembly",
+      "owner": "ObservationAlignment",
+      "domain_of": [
+        "ObservationAlignment"
+      ],
+      "range": "ObservationAssembly",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "observation_alignments",
+      "definition_uri": "https://w3id.org/peh/terms/observation_alignments",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "mappings": [
+        "https://w3id.org/peh/terms/hasObservationAlignment"
+      ],
+      "slot_uri": "https://w3id.org/peh/terms/hasObservationAlignment",
+      "owner": "EntityList",
+      "domain_of": [
+        "EntityList"
+      ],
+      "range": "ObservationAlignment",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "FilterExpression_filter_command",
       "definition_uri": "https://w3id.org/peh/terms/filter_command",
       "description": "Command defining the operation used to evaluate a filter expression.",
@@ -4394,6 +4513,7 @@
         "observation_designs",
         "observation_results",
         "observed_values",
+        "observation_alignments",
         "layouts",
         "import_configs",
         "export_configs",
@@ -5180,6 +5300,53 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/peh/terms/ValidationExpression",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservablePropertyMapping",
+      "definition_uri": "https://w3id.org/peh/terms/ObservablePropertyMapping",
+      "description": "Align one target ObservableProperty with one source property per input series.      ",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "target_observable_property_id",
+        "source_observable_property_ids"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/ObservablePropertyMapping",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservationAssembly",
+      "definition_uri": "https://w3id.org/peh/terms/ObservationAssembly",
+      "description": "Authoring model for one output Observation.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "slots": [
+        "target_observation_id",
+        "source_observation_groups",
+        "observable_property_mappings"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/ObservationAssembly",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservationAlignment",
+      "definition_uri": "https://w3id.org/peh/terms/ObservationAlignment",
+      "description": "Semantic alignment plan over Observations and ObservableProperties.",
+      "from_schema": "https://w3id.org/peh/peh-model",
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "short_name",
+        "name",
+        "ui_label",
+        "description",
+        "remark",
+        "exact_matches",
+        "observation_assemblies"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/peh/terms/ObservationAlignment",
       "@type": "ClassDefinition"
     },
     {
@@ -5983,9 +6150,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "peh.yaml",
-  "source_file_date": "2026-08-17T10:16:41",
-  "source_file_size": 49683,
-  "generation_date": "2026-08-17T10:17:05",
+  "source_file_date": "2026-08-27T06:30:32",
+  "source_file_size": 51463,
+  "generation_date": "2026-08-27T06:30:54",
   "@type": "SchemaDefinition",
   "@context": [
     "_temp/jsonld/peh.context.jsonld",

@@ -3,7 +3,7 @@ name: PEH-Model
 description: |-
   Entity and relation ontology and datamodel for Personal Exposure and Health data
 
-version: 0.7.2
+version: 0.7.3
 
 imports:
   - linkml:types
@@ -53,6 +53,7 @@ classes:
       - observation_designs
       - observation_results
       - observed_values
+      - observation_alignments
       - layouts
       - import_configs
       - export_configs
@@ -413,6 +414,27 @@ classes:
       - validation_arg_values
       - validation_arg_contextual_field_references
       - validation_arg_expressions
+  # ObservationMapping
+  ObservablePropertyMapping:
+    description: >-
+      Align one target ObservableProperty with one source property per input series.      
+    slots:
+      - target_observable_property_id
+      - source_observable_property_ids
+  ObservationAssembly:
+    description: >-
+      Authoring model for one output Observation.
+    slots:
+      - target_observation_id
+      - source_observation_groups
+      - observable_property_mappings
+  ObservationAlignment:
+    is_a: NamedThing
+    description: >-
+      Semantic alignment plan over Observations and ObservableProperties.
+    slots:
+      - observation_assemblies    
+  
   ContextualFieldReference:
     description: >-
       A two-level reference, identifying a field or column in a named series of two-dimensional datasets
@@ -956,7 +978,9 @@ slots:
     slot_uri: pehterms:isIsomerOf
   has_role:
     multivalued: true
-    slot_uri: http://purl.obolibrary.org/obo/RO_0000087
+    slot_uri: pehterms:hasRole
+    close_mappings: 
+    - http://purl.obolibrary.org/obo/RO_0000087
     range: BioChemRole
     domain: BioChemEntity
 
@@ -1544,6 +1568,40 @@ slots:
   collection_date:
     slot_uri: pehterms:hasCollectionDate
     range: date
+  # ObservationAlignment
+  target_observable_property_id:
+    slot_uri: pehterms:hasTargetObservableProperty
+    range: ObservableProperty
+    inlined: false
+  source_observable_property_ids:
+    slot_uri: pehterms:hasSourceObservableProperty
+    range: ObservableProperty
+    multivalued: true
+    inlined_as_list: false
+  target_observation_id:
+    slot_uri: pehterms:hasTargetObservation
+    range: Observation
+    inlined: false
+  source_observation_groups:
+    slot_uri: pehterms:hasSourceObservationGroup
+    range: ObservationGroup
+    multivalued: true
+    inlined_as_list: false
+  observable_property_mappings:
+    slot_uri: pehterms:hasObservablePropertyMapping
+    range: ObservablePropertyMapping
+    inlined_as_list: true
+    multivalued: true
+  observation_assemblies:
+    slot_uri: pehterms:hasObservationAssembly
+    inlined_as_list: true
+    multivalued: true
+    range: ObservationAssembly
+  observation_alignments:
+    slot_uri: pehterms:hasObservationAlignment
+    range: ObservationAlignment
+    multivalued: true
+    inlined_as_list: true
 
 enums:
   ValidationStatus:

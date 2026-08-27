@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.7.2"
+version = "0.7.3"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -272,6 +272,7 @@ class EntityList(ConfiguredBaseModel):
     observation_designs: Optional[list[ObservationDesign]] = Field(default=None)
     observation_results: Optional[list[ObservationResult]] = Field(default=None)
     observed_values: Optional[list[ObservedValue]] = Field(default=None)
+    observation_alignments: Optional[list[ObservationAlignment]] = Field(default=None)
     layouts: Optional[list[DataLayout]] = Field(default=None)
     import_configs: Optional[list[DataImportConfig]] = Field(default=None)
     export_configs: Optional[list[DataExportConfig]] = Field(default=None)
@@ -1174,6 +1175,59 @@ class ValidationExpression(Expression):
         default=None,
         description="""Nested validation expressions used as arguments to a compound validation command.""",
     )
+
+
+class ObservablePropertyMapping(ConfiguredBaseModel):
+    """
+    Align one target ObservableProperty with one source property per input series.
+    """
+
+    target_observable_property_id: Optional[str] = Field(default=None)
+    source_observable_property_ids: Optional[list[str]] = Field(default=None)
+
+
+class ObservationAssembly(ConfiguredBaseModel):
+    """
+    Authoring model for one output Observation.
+    """
+
+    target_observation_id: Optional[str] = Field(default=None)
+    source_observation_groups: Optional[list[str]] = Field(default=None)
+    observable_property_mappings: Optional[list[ObservablePropertyMapping]] = Field(
+        default=None
+    )
+
+
+class ObservationAlignment(NamedThing):
+    """
+    Semantic alignment plan over Observations and ObservableProperties.
+    """
+
+    observation_assemblies: Optional[list[ObservationAssembly]] = Field(default=None)
+    id: str = Field(
+        default=...,
+        description="""Machine readable, unique identifier; ideally a URI/GUPRI (Globally Unique, Persistent, Resolvable Identifier).""",
+    )
+    short_name: Optional[str] = Field(
+        default=None,
+        description="""Shortened name or code, preferrably unique within the context the entity is (typically) used in.""",
+    )
+    name: Optional[str] = Field(
+        default=None, description="""Common human readable name"""
+    )
+    ui_label: Optional[str] = Field(
+        default=None,
+        description="""Human readable label, to be used in user interactions through forms or documents.""",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""Long form description or definition for the entity.""",
+    )
+    remark: Optional[str] = Field(
+        default=None,
+        description="""Additional comment, note or remark providing context on the use of an entity or the interpretation of its properties.""",
+    )
+    exact_matches: Optional[list[str]] = Field(default=None)
 
 
 class ContextualFieldReference(ConfiguredBaseModel):
@@ -2224,6 +2278,9 @@ CalculationResult.model_rebuild()
 ValidationDesign.model_rebuild()
 Expression.model_rebuild()
 ValidationExpression.model_rebuild()
+ObservablePropertyMapping.model_rebuild()
+ObservationAssembly.model_rebuild()
+ObservationAlignment.model_rebuild()
 ContextualFieldReference.model_rebuild()
 Contact.model_rebuild()
 Stakeholder.model_rebuild()

@@ -1,5 +1,5 @@
 # Auto generated from peh.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-17T10:17:05
+# Generation date: 2026-08-27T06:30:54
 # Schema: PEH-Model
 #
 # id: https://w3id.org/peh/peh-model
@@ -49,7 +49,7 @@ from linkml_runtime.utils.metamodelcore import (
 )
 
 metamodel_version = "1.11.0"
-version = "0.7.2"
+version = "0.7.3"
 
 # Namespaces
 IOP = CurieNamespace("iop", "https://w3id.org/iadopt/ont/")
@@ -146,6 +146,10 @@ class ObservablePropertyId(NamedThingId):
 
 
 class ObservablePropertyMetadataFieldId(NamedThingId):
+    pass
+
+
+class ObservationAlignmentId(NamedThingId):
     pass
 
 
@@ -341,6 +345,14 @@ class EntityList(YAMLRoot):
     observed_values: Optional[
         Union[Union[dict, "ObservedValue"], list[Union[dict, "ObservedValue"]]]
     ] = empty_list()
+    observation_alignments: Optional[
+        Union[
+            dict[
+                Union[str, ObservationAlignmentId], Union[dict, "ObservationAlignment"]
+            ],
+            list[Union[dict, "ObservationAlignment"]],
+        ]
+    ] = empty_dict()
     layouts: Optional[
         Union[
             dict[Union[str, DataLayoutId], Union[dict, "DataLayout"]],
@@ -469,6 +481,13 @@ class EntityList(YAMLRoot):
             v if isinstance(v, ObservedValue) else ObservedValue(**as_dict(v))
             for v in self.observed_values
         ]
+
+        self._normalize_inlined_as_list(
+            slot_name="observation_alignments",
+            slot_type=ObservationAlignment,
+            key_name="id",
+            keyed=True,
+        )
 
         self._normalize_inlined_as_list(
             slot_name="layouts", slot_type=DataLayout, key_name="id", keyed=True
@@ -2412,6 +2431,147 @@ class ValidationExpression(Expression):
                 else ValidationExpression(**as_dict(v))
             )
             for v in self.validation_arg_expressions
+        ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ObservablePropertyMapping(YAMLRoot):
+    """
+    Align one target ObservableProperty with one source property per input series.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservablePropertyMapping"]
+    class_class_curie: ClassVar[str] = "pehterms:ObservablePropertyMapping"
+    class_name: ClassVar[str] = "ObservablePropertyMapping"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservablePropertyMapping
+
+    target_observable_property_id: Optional[Union[str, ObservablePropertyId]] = None
+    source_observable_property_ids: Optional[
+        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.target_observable_property_id is not None and not isinstance(
+            self.target_observable_property_id, ObservablePropertyId
+        ):
+            self.target_observable_property_id = ObservablePropertyId(
+                self.target_observable_property_id
+            )
+
+        if not isinstance(self.source_observable_property_ids, list):
+            self.source_observable_property_ids = (
+                [self.source_observable_property_ids]
+                if self.source_observable_property_ids is not None
+                else []
+            )
+        self.source_observable_property_ids = [
+            v if isinstance(v, ObservablePropertyId) else ObservablePropertyId(v)
+            for v in self.source_observable_property_ids
+        ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ObservationAssembly(YAMLRoot):
+    """
+    Authoring model for one output Observation.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationAssembly"]
+    class_class_curie: ClassVar[str] = "pehterms:ObservationAssembly"
+    class_name: ClassVar[str] = "ObservationAssembly"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservationAssembly
+
+    target_observation_id: Optional[Union[str, ObservationId]] = None
+    source_observation_groups: Optional[
+        Union[Union[str, ObservationGroupId], list[Union[str, ObservationGroupId]]]
+    ] = empty_list()
+    observable_property_mappings: Optional[
+        Union[
+            Union[dict, ObservablePropertyMapping],
+            list[Union[dict, ObservablePropertyMapping]],
+        ]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.target_observation_id is not None and not isinstance(
+            self.target_observation_id, ObservationId
+        ):
+            self.target_observation_id = ObservationId(self.target_observation_id)
+
+        if not isinstance(self.source_observation_groups, list):
+            self.source_observation_groups = (
+                [self.source_observation_groups]
+                if self.source_observation_groups is not None
+                else []
+            )
+        self.source_observation_groups = [
+            v if isinstance(v, ObservationGroupId) else ObservationGroupId(v)
+            for v in self.source_observation_groups
+        ]
+
+        if not isinstance(self.observable_property_mappings, list):
+            self.observable_property_mappings = (
+                [self.observable_property_mappings]
+                if self.observable_property_mappings is not None
+                else []
+            )
+        self.observable_property_mappings = [
+            (
+                v
+                if isinstance(v, ObservablePropertyMapping)
+                else ObservablePropertyMapping(**as_dict(v))
+            )
+            for v in self.observable_property_mappings
+        ]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ObservationAlignment(NamedThing):
+    """
+    Semantic alignment plan over Observations and ObservableProperties.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PEHTERMS["ObservationAlignment"]
+    class_class_curie: ClassVar[str] = "pehterms:ObservationAlignment"
+    class_name: ClassVar[str] = "ObservationAlignment"
+    class_model_uri: ClassVar[URIRef] = PEHTERMS.ObservationAlignment
+
+    id: Union[str, ObservationAlignmentId] = None
+    observation_assemblies: Optional[
+        Union[Union[dict, ObservationAssembly], list[Union[dict, ObservationAssembly]]]
+    ] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObservationAlignmentId):
+            self.id = ObservationAlignmentId(self.id)
+
+        if not isinstance(self.observation_assemblies, list):
+            self.observation_assemblies = (
+                [self.observation_assemblies]
+                if self.observation_assemblies is not None
+                else []
+            )
+        self.observation_assemblies = [
+            (
+                v
+                if isinstance(v, ObservationAssembly)
+                else ObservationAssembly(**as_dict(v))
+            )
+            for v in self.observation_assemblies
         ]
 
         super().__post_init__(**kwargs)
@@ -5157,9 +5317,9 @@ slots.is_isomer_of = Slot(
 )
 
 slots.has_role = Slot(
-    uri="str(uriorcurie)",
+    uri=PEHTERMS.hasRole,
     name="has_role",
-    curie=None,
+    curie=PEHTERMS.curie("hasRole"),
     model_uri=PEHTERMS.has_role,
     domain=BioChemEntity,
     range=Optional[Union[Union[str, BioChemRoleId], list[Union[str, BioChemRoleId]]]],
@@ -6715,6 +6875,85 @@ slots.collection_date = Slot(
     model_uri=PEHTERMS.collection_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
+)
+
+slots.target_observable_property_id = Slot(
+    uri=PEHTERMS.hasTargetObservableProperty,
+    name="target_observable_property_id",
+    curie=PEHTERMS.curie("hasTargetObservableProperty"),
+    model_uri=PEHTERMS.target_observable_property_id,
+    domain=None,
+    range=Optional[Union[str, ObservablePropertyId]],
+)
+
+slots.source_observable_property_ids = Slot(
+    uri=PEHTERMS.hasSourceObservableProperty,
+    name="source_observable_property_ids",
+    curie=PEHTERMS.curie("hasSourceObservableProperty"),
+    model_uri=PEHTERMS.source_observable_property_ids,
+    domain=None,
+    range=Optional[
+        Union[Union[str, ObservablePropertyId], list[Union[str, ObservablePropertyId]]]
+    ],
+)
+
+slots.target_observation_id = Slot(
+    uri=PEHTERMS.hasTargetObservation,
+    name="target_observation_id",
+    curie=PEHTERMS.curie("hasTargetObservation"),
+    model_uri=PEHTERMS.target_observation_id,
+    domain=None,
+    range=Optional[Union[str, ObservationId]],
+)
+
+slots.source_observation_groups = Slot(
+    uri=PEHTERMS.hasSourceObservationGroup,
+    name="source_observation_groups",
+    curie=PEHTERMS.curie("hasSourceObservationGroup"),
+    model_uri=PEHTERMS.source_observation_groups,
+    domain=None,
+    range=Optional[
+        Union[Union[str, ObservationGroupId], list[Union[str, ObservationGroupId]]]
+    ],
+)
+
+slots.observable_property_mappings = Slot(
+    uri=PEHTERMS.hasObservablePropertyMapping,
+    name="observable_property_mappings",
+    curie=PEHTERMS.curie("hasObservablePropertyMapping"),
+    model_uri=PEHTERMS.observable_property_mappings,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ObservablePropertyMapping],
+            list[Union[dict, ObservablePropertyMapping]],
+        ]
+    ],
+)
+
+slots.observation_assemblies = Slot(
+    uri=PEHTERMS.hasObservationAssembly,
+    name="observation_assemblies",
+    curie=PEHTERMS.curie("hasObservationAssembly"),
+    model_uri=PEHTERMS.observation_assemblies,
+    domain=None,
+    range=Optional[
+        Union[Union[dict, ObservationAssembly], list[Union[dict, ObservationAssembly]]]
+    ],
+)
+
+slots.observation_alignments = Slot(
+    uri=PEHTERMS.hasObservationAlignment,
+    name="observation_alignments",
+    curie=PEHTERMS.curie("hasObservationAlignment"),
+    model_uri=PEHTERMS.observation_alignments,
+    domain=None,
+    range=Optional[
+        Union[
+            dict[Union[str, ObservationAlignmentId], Union[dict, ObservationAlignment]],
+            list[Union[dict, ObservationAlignment]],
+        ]
+    ],
 )
 
 slots.FilterExpression_filter_command = Slot(

@@ -257,7 +257,7 @@
       },
       "has_role": {
          "@type": "@id",
-         "@id": "http://purl.obolibrary.org/obo/RO_0000087"
+         "@id": "hasRole"
       },
       "id": "@id",
       "immutable": {
@@ -405,6 +405,10 @@
          "@type": "@id",
          "@id": "hasObservableProperty"
       },
+      "observable_property_mappings": {
+         "@type": "@id",
+         "@id": "hasObservablePropertyMapping"
+      },
       "observable_property_specifications": {
          "@type": "@id",
          "@id": "hasObservablePropertySpecification"
@@ -412,6 +416,14 @@
       "observation": {
          "@type": "@id",
          "@id": "hasObservation"
+      },
+      "observation_alignments": {
+         "@type": "@id",
+         "@id": "hasObservationAlignment"
+      },
+      "observation_assemblies": {
+         "@type": "@id",
+         "@id": "hasObservationAssembly"
       },
       "observation_design": {
          "@type": "@id",
@@ -691,6 +703,14 @@
          "@type": "xsd:integer",
          "@id": "hasSignificantDecimals"
       },
+      "source_observable_property_ids": {
+         "@type": "@id",
+         "@id": "hasSourceObservableProperty"
+      },
+      "source_observation_groups": {
+         "@type": "@id",
+         "@id": "hasSourceObservationGroup"
+      },
       "specification_category": {
          "@context": {
             "text": "skos:notation",
@@ -750,6 +770,14 @@
       "suggester": {
          "@type": "xsd:anyURI",
          "@id": "prov:wasAttributedTo"
+      },
+      "target_observable_property_id": {
+         "@type": "@id",
+         "@id": "hasTargetObservableProperty"
+      },
+      "target_observation_id": {
+         "@type": "@id",
+         "@id": "hasTargetObservation"
       },
       "translated_value": {
          "@id": "hasTranslatedValue"
@@ -990,6 +1018,9 @@
       "ObservableProperty": {
          "@id": "ObservableProperty"
       },
+      "ObservablePropertyMapping": {
+         "@id": "ObservablePropertyMapping"
+      },
       "ObservablePropertyMetadataElement": {
          "@id": "ObservablePropertyMetadataElement"
       },
@@ -1004,6 +1035,12 @@
       },
       "Observation": {
          "@id": "Observation"
+      },
+      "ObservationAlignment": {
+         "@id": "ObservationAlignment"
+      },
+      "ObservationAssembly": {
+         "@id": "ObservationAssembly"
       },
       "ObservationDesign": {
          "@id": "ObservationDesign"
