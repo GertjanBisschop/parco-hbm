@@ -978,7 +978,9 @@ slots:
     slot_uri: pehterms:isIsomerOf
   has_role:
     multivalued: true
-    slot_uri: http://purl.obolibrary.org/obo/RO_0000087
+    slot_uri: pehterms:hasRole
+    close_mappings: 
+    - http://purl.obolibrary.org/obo/RO_0000087
     range: BioChemRole
     domain: BioChemEntity
 
